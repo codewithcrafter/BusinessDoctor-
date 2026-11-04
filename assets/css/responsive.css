@@ -1,0 +1,685 @@
+/**
+ * BusinessDoctor Enterprise Responsive Stylesheet
+ * Responsive Breakpoints:
+ * - Desktop Large (1440px+)
+ * - Desktop Medium & Laptop (1366px - 1025px)
+ * - Tablet Landscape & Portrait (1024px - 769px)
+ * - Handheld / Mobile (768px, 430px, 390px, 360px)
+ */
+
+@media (max-width: 1200px) {
+  .stage-card {
+    width: 370px;
+    min-height: 430px;
+    padding: 2.25rem 1.75rem;
+  }
+
+  .capabilities-nav-bar {
+    gap: 0.35rem;
+  }
+
+  .cap-tab-btn {
+    padding: 0.75rem 1rem;
+    font-size: 0.82rem;
+  }
+}
+
+@media (max-width: 1024px) {
+  :root {
+    --header-height: 74px;
+  }
+
+  .nav-menu, .nav-actions .btn {
+    display: none;
+  }
+
+  .menu-toggle {
+    display: block;
+  }
+
+  .hero-scroll-track {
+    height: 210vh;
+  }
+
+  .hero-editorial-layer {
+    width: 100%;
+    max-width: 100%;
+  }
+
+  .hero-revealed-layer {
+    width: 100%;
+    max-width: 100%;
+  }
+
+  .hero-visual-layer {
+    width: 100%;
+    left: 0;
+    right: auto;
+    opacity: 0;
+  }
+
+  .hero-grid {
+    grid-template-columns: 1fr;
+    gap: 3.5rem;
+  }
+
+  .capability-editorial-card {
+    grid-template-columns: 1fr;
+  }
+
+  .cap-card-sidebar {
+    border-left: none;
+    border-top: 1px solid rgba(161, 126, 145, 0.2);
+  }
+
+  .cases-editorial-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .cases-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .mission-vision-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1.5rem;
+  }
+
+  .mv-panel {
+    padding: 2.25rem 1.75rem;
+  }
+
+  .vital-ticker {
+    padding: 1.25rem 2rem;
+  }
+
+  .vital-ticker-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1.5rem 2rem;
+  }
+
+  .vital-item:nth-child(2)::after,
+  .vital-item:nth-child(4)::after {
+    display: none !important;
+  }
+
+  .vital-item:nth-child(1)::after,
+  .vital-item:nth-child(3)::after {
+    display: block;
+    right: -1rem;
+    height: 70%;
+    top: 15%;
+  }
+
+  .vital-item:nth-child(1),
+  .vital-item:nth-child(2) {
+    border-bottom: 1px solid rgba(161, 126, 145, 0.22);
+    padding-bottom: 1.25rem;
+  }
+
+  .stage-card {
+    width: 340px;
+    min-height: 420px;
+    padding: 2.25rem 1.75rem;
+  }
+
+  .insights-editorial-grid {
+    grid-template-columns: 1fr;
+    gap: 2.5rem;
+  }
+
+  .trust-grid,
+  .accountability-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1.5rem;
+  }
+
+  .accountability-connector-strip {
+    display: none;
+  }
+
+  .footer-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 2.5rem;
+  }
+
+  .calc-grid {
+    grid-template-columns: 1fr;
+    gap: 2.5rem;
+  }
+}
+
+@media (max-width: 768px) {
+  :root {
+    --header-height: 72px;
+  }
+
+  .section {
+    padding-top: 4rem;
+    padding-bottom: 4rem;
+  }
+
+  .nav-menu, .nav-actions .btn {
+    display: none;
+  }
+
+  .menu-toggle {
+    display: block;
+  }
+
+  .hero-scroll-track {
+    height: 180vh;
+  }
+
+  .hero-sticky-stage {
+    min-height: auto;
+    height: 100vh;
+  }
+
+  .hero-stage-inner {
+    padding-top: calc(var(--header-height, 72px) + 0.5rem);
+    padding-bottom: 2rem;
+  }
+
+  .hero-anim-viewport {
+    min-height: 380px;
+  }
+
+  .hero-editorial-layer {
+    width: 100%;
+    max-width: 100%;
+  }
+
+  .hero-revealed-layer {
+    width: 100%;
+    max-width: 100%;
+  }
+
+  .hero-visual-layer {
+    width: 100%;
+  }
+
+  .hero-headline-oversized {
+    font-size: 2.3rem;
+  }
+
+  .matrix-grid {
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+  }
+
+  .cap-card-body, .cap-card-sidebar {
+    padding: 2.5rem 1.75rem;
+  }
+
+  .cases-editorial-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .cases-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .stage-top-bar {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    gap: 1.5rem;
+  }
+
+  .stage-header-col {
+    align-items: center;
+    text-align: center;
+    width: 100%;
+  }
+
+  .stage-controls-col {
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+  }
+
+  .stage-controls-row {
+    width: 100%;
+    justify-content: center;
+    gap: 0.75rem;
+    flex-wrap: wrap;
+  }
+
+  .stage-pills-row {
+    display: none;
+  }
+
+  .stage-card {
+    width: calc(100vw - 3.5rem);
+    max-width: 380px;
+    min-height: 400px;
+    padding: 2rem 1.5rem;
+  }
+
+  .approach-title {
+    font-size: 1.45rem;
+  }
+
+  .trust-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .accountability-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1.5rem;
+  }
+
+  .accountability-section {
+    padding: 4.5rem 0 5rem;
+  }
+
+  .enterprise-closing-cta {
+    padding: 3.5rem 1.75rem;
+  }
+
+  .hud-kpi-grid {
+    grid-template-columns: 1fr 1fr;
+    gap: 0.75rem;
+    margin-bottom: 0.85rem;
+  }
+
+  .form-grid-2 {
+    grid-template-columns: 1fr;
+  }
+
+  .footer-grid {
+    grid-template-columns: 1fr;
+    gap: 2rem;
+  }
+
+  .footer-bottom {
+    flex-direction: column;
+    gap: 1rem;
+    text-align: center;
+  }
+
+  .mission-vision-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1.5rem;
+  }
+
+  .mv-panel {
+    padding: 2rem 1.65rem;
+  }
+
+  .vital-ticker {
+    padding: 1.15rem 1.25rem;
+  }
+
+  .vital-ticker-grid {
+    grid-template-columns: repeat(2, 1fr) !important;
+    gap: 1.25rem;
+    text-align: center;
+  }
+
+  .vital-number {
+    font-size: 1.75rem;
+  }
+
+  .vital-item:nth-child(1)::after,
+  .vital-item:nth-child(3)::after {
+    display: block !important;
+    right: -0.625rem;
+    height: 65%;
+    top: 17.5%;
+  }
+
+  .vital-item:nth-child(2)::after,
+  .vital-item:nth-child(4)::after {
+    display: none !important;
+  }
+
+  .vital-item:nth-child(1),
+  .vital-item:nth-child(2) {
+    border-bottom: 1px solid rgba(161, 126, 145, 0.22);
+    padding-bottom: 1rem;
+  }
+}
+
+@media (max-width: 767px) {
+  .mission-vision-grid {
+    grid-template-columns: 1fr;
+    gap: 1.75rem;
+  }
+
+  .mv-panel {
+    padding: 2.25rem 1.65rem;
+  }
+}
+
+@media (max-width: 640px) {
+  .accountability-grid {
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .enterprise-hud-card {
+    padding: 1.35rem 1.15rem;
+  }
+
+  .hud-top-bar {
+    margin-bottom: 1rem;
+    padding-bottom: 0.75rem;
+  }
+
+  .hud-kpi-grid {
+    gap: 0.65rem;
+    margin-bottom: 1rem;
+  }
+
+  .hud-kpi-box {
+    padding: 0.75rem 0.85rem;
+  }
+
+  .hud-kpi-value {
+    font-size: 1.35rem;
+  }
+
+  .hud-capabilities-strip {
+    padding: 0.65rem 0.85rem;
+    font-size: 0.72rem;
+  }
+
+  .mv-panel {
+    padding: 1.85rem 1.25rem;
+  }
+
+  .mv-heading {
+    font-size: 1.35rem;
+  }
+
+  .mv-statement {
+    font-size: 0.95rem;
+    line-height: 1.6;
+    margin-bottom: 1.5rem;
+  }
+
+  .mv-pattern-bg {
+    width: 200px;
+    height: 200px;
+    top: -20px;
+    right: -20px;
+  }
+
+  .vital-ticker {
+    padding: 1rem 0.85rem;
+  }
+
+  .vital-ticker-grid {
+    grid-template-columns: repeat(2, 1fr) !important;
+    gap: 1rem 0.75rem;
+  }
+
+  .vital-number {
+    font-size: clamp(1.4rem, 5.2vw, 1.65rem);
+    letter-spacing: -0.02em;
+  }
+
+  .vital-label {
+    font-size: 0.76rem;
+    line-height: 1.25;
+  }
+
+  .vital-item:nth-child(1)::after,
+  .vital-item:nth-child(3)::after {
+    display: block !important;
+    right: -0.375rem;
+    height: 60%;
+    top: 20%;
+  }
+
+  .vital-item:nth-child(2)::after,
+  .vital-item:nth-child(4)::after {
+    display: none !important;
+  }
+
+  .vital-item:nth-child(1),
+  .vital-item:nth-child(2) {
+    border-bottom: 1px solid rgba(161, 126, 145, 0.2);
+    padding-bottom: 0.85rem;
+  }
+  .stage-card {
+    width: calc(100vw - 2.5rem);
+    min-height: 380px;
+    padding: 1.75rem 1.25rem;
+  }
+
+  .stage-drag-hint {
+    display: none;
+  }
+
+  .hero-actions-group {
+    flex-direction: column;
+    width: 100%;
+  }
+
+  .hero-actions-group .btn {
+    width: 100%;
+  }
+
+  .closing-cta-buttons {
+    flex-direction: column;
+    width: 100%;
+  }
+
+  .closing-cta-buttons .btn {
+    width: 100%;
+  }
+
+  .calc-wrapper {
+    padding: 2rem 1.25rem;
+  }
+
+  .matrix-card {
+    padding: 1.75rem;
+  }
+
+  .enterprise-hud-card {
+    padding: 1.75rem;
+  }
+
+  .cap-nav-arrow {
+    width: 38px !important;
+    height: 38px !important;
+    min-width: 38px !important;
+    min-height: 38px !important;
+  }
+
+  .capabilities-nav-wrapper {
+    gap: 0.45rem !important;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .hero-scroll-track {
+    height: auto !important;
+  }
+
+  .hero-sticky-stage {
+    position: relative !important;
+    height: auto !important;
+    max-height: none !important;
+    overflow: visible !important;
+    padding-top: 4.5rem;
+    padding-bottom: 5.5rem;
+  }
+
+  .hero-stage-inner {
+    padding-top: 0 !important;
+    padding-bottom: 0 !important;
+  }
+
+  .hero-anim-viewport {
+    display: grid !important;
+    grid-template-columns: 1.15fr 0.85fr !important;
+    gap: 4rem !important;
+    min-height: auto !important;
+  }
+
+  .hero-editorial-layer {
+    position: relative !important;
+    top: auto !important;
+    transform: none !important;
+    width: 100% !important;
+    max-width: 100% !important;
+    opacity: 1 !important;
+  }
+
+  .hero-visual-layer {
+    position: relative !important;
+    top: auto !important;
+    right: auto !important;
+    transform: none !important;
+    width: 100% !important;
+    opacity: 1 !important;
+  }
+
+  .hero-revealed-layer {
+    display: none !important;
+  }
+
+  .hero-scroll-indicator {
+    display: none !important;
+  }
+
+  .hud-kpi-box {
+    transform: none !important;
+  }
+}
+
+/* ============================================================
+   RESPONSIVE RULES FOR 3 NEW SECTIONS
+   ============================================================ */
+@media (max-width: 1200px) {
+  .tools-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+@media (max-width: 992px) {
+  .benefits-layout-grid {
+    grid-template-columns: 1fr;
+    gap: 2.5rem;
+  }
+
+  .benefits-viz-container {
+    position: static;
+    top: auto;
+    min-height: auto;
+    margin-top: 1rem;
+  }
+
+  .results-cards-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .tools-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 768px) {
+  .benefits-section,
+  .real-results-section,
+  .tools-section {
+    padding: 4.5rem 0;
+  }
+
+  .benefits-layout-grid {
+    gap: 2rem;
+  }
+
+  .benefits-accordion-trigger {
+    font-size: 1.05rem;
+    padding: 1.15rem 1.25rem;
+  }
+
+  .benefits-accordion-panel {
+    padding: 0 1.25rem 1.25rem 3.5rem;
+  }
+
+  .benefits-viz-container {
+    padding: 1.5rem 1.25rem;
+  }
+
+  .results-cards-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .result-card-header {
+    padding: 1.5rem;
+  }
+
+  .result-card-body {
+    padding: 1.5rem;
+  }
+
+  .result-card-footer {
+    padding: 1.25rem 1.5rem;
+  }
+
+  .tools-filter-strip {
+    gap: 0.5rem;
+    margin: 2rem 0;
+  }
+
+  .tool-filter-btn {
+    padding: 0.4rem 1rem;
+    font-size: 0.8rem;
+  }
+}
+
+@media (max-width: 992px) {
+  .philosophy-editorial-grid {
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+  }
+
+  .commitments-grid {
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .about-philosophy-section,
+  .commitments-section {
+    padding: 3.5rem 0;
+  }
+
+  .philosophy-editorial-block,
+  .commitment-card {
+    padding: 1.75rem 1.5rem;
+  }
+
+  .kpi-strip-section {
+    padding: 2rem 0;
+  }
+}
+
+@media (max-width: 480px) {
+  .tools-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .benefits-accordion-panel {
+    padding: 0 1rem 1.25rem 1rem;
+  }
+
+  .philosophy-editorial-block,
+  .commitment-card {
+    padding: 1.5rem 1.25rem;
+  }
+
+  .commitment-title {
+    font-size: 1.2rem;
+  }
+}

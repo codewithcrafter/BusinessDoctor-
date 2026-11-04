@@ -1,0 +1,65 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 630" width="1200" height="630">
+  <defs>
+    <linearGradient id="bg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#0b1320"/>
+      <stop offset="100%" stop-color="#111d33"/>
+    </linearGradient>
+    <linearGradient id="tealGrad" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#0d9488"/>
+      <stop offset="100%" stop-color="#2dd4bf"/>
+    </linearGradient>
+  </defs>
+
+  <!-- Background -->
+  <rect width="1200" height="630" fill="url(#bg)"/>
+  
+  <!-- Subtle Grid Pattern -->
+  <g opacity="0.06" stroke="#ffffff" stroke-width="1">
+    <line x1="0" y1="105" x2="1200" y2="105"/>
+    <line x1="0" y1="210" x2="1200" y2="210"/>
+    <line x1="0" y1="315" x2="1200" y2="315"/>
+    <line x1="0" y1="420" x2="1200" y2="420"/>
+    <line x1="0" y1="525" x2="1200" y2="525"/>
+    <line x1="200" y1="0" x2="200" y2="630"/>
+    <line x1="400" y1="0" x2="400" y2="630"/>
+    <line x1="600" y1="0" x2="600" y2="630"/>
+    <line x1="800" y1="0" x2="800" y2="630"/>
+    <line x1="1000" y1="0" x2="1000" y2="630"/>
+  </g>
+
+  <!-- Brand Badge Pill -->
+  <rect x="80" y="80" width="340" height="42" rx="21" fill="rgba(13, 148, 136, 0.15)" stroke="#0d9488" stroke-width="1.5"/>
+  <circle cx="106" cy="101" r="5" fill="#10b981"/>
+  <text x="126" y="106" font-family="'JetBrains Mono', monospace" font-size="14" font-weight="600" fill="#2dd4bf" letter-spacing="1.5">ENTERPRISE IT &amp; DIGITAL SERVICES</text>
+
+  <!-- Main Headline -->
+  <text x="80" y="220" font-family="'Plus Jakarta Sans', sans-serif" font-size="64" font-weight="800" fill="#ffffff" letter-spacing="-1">
+    Engineering Technology.
+  </text>
+  <text x="80" y="295" font-family="'Plus Jakarta Sans', sans-serif" font-size="64" font-weight="800" fill="url(#tealGrad)" letter-spacing="-1">
+    Accelerating Digital Growth.
+  </text>
+
+  <!-- Subheadline -->
+  <text x="80" y="375" font-family="'Inter', sans-serif" font-size="24" fill="#94a3b8" max-width="800">
+    Custom Web Applications • SEO &amp; Paid Media • UI/UX Design • Amazon &amp; Flipkart Growth
+  </text>
+
+  <!-- Bottom Brand Block -->
+  <g transform="translate(80, 480)">
+    <!-- Symbol -->
+    <rect width="64" height="64" rx="14" fill="#0d9488"/>
+    <g transform="translate(16, 16)" stroke="#ffffff" stroke-width="3" fill="none" stroke-linecap="round" stroke-linejoin="round">
+      <polyline points="20 24 28 16 20 8"/>
+      <polyline points="12 8 4 16 12 24"/>
+    </g>
+    <!-- Brand Name -->
+    <text x="84" y="38" font-family="'Plus Jakarta Sans', sans-serif" font-size="32" font-weight="800" fill="#ffffff">
+      Business<tspan fill="#2dd4bf">Doctor</tspan>
+    </text>
+    <text x="84" y="58" font-family="'JetBrains Mono', monospace" font-size="13" fill="#64748b" letter-spacing="2">
+      WWW.BUSINESSDOCTOR.COM
+    </text>
+  </g>
+</svg>
+

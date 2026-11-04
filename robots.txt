@@ -1,0 +1,10 @@
+User-agent: *
+Allow: /
+Disallow: /admin/
+Disallow: /api/
+Disallow: /database/
+Disallow: /includes/
+Disallow: /scratch/
+
+Sitemap: https://businessdoctor.com/sitemap.xml
+
