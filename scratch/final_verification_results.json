@@ -1,0 +1,92 @@
+[
+  {
+    "viewport": "01_small_iphone_320x568",
+    "dimensions": "320x568",
+    "fullHeightVerified": true,
+    "zeroUnderlyingExposure": true,
+    "firstItemIsHome": false,
+    "reopenResetSuccess": true,
+    "ctaAccessible": true,
+    "bodyLockFunctional": true
+  },
+  {
+    "viewport": "02_iphone_se_375x667",
+    "dimensions": "375x667",
+    "fullHeightVerified": true,
+    "zeroUnderlyingExposure": true,
+    "firstItemIsHome": false,
+    "reopenResetSuccess": true,
+    "ctaAccessible": true,
+    "bodyLockFunctional": true
+  },
+  {
+    "viewport": "03_iphone_14_390x844",
+    "dimensions": "390x844",
+    "fullHeightVerified": true,
+    "zeroUnderlyingExposure": true,
+    "firstItemIsHome": false,
+    "reopenResetSuccess": true,
+    "ctaAccessible": true,
+    "bodyLockFunctional": true
+  },
+  {
+    "viewport": "04_pixel_412x915",
+    "dimensions": "412x915",
+    "fullHeightVerified": true,
+    "zeroUnderlyingExposure": true,
+    "firstItemIsHome": false,
+    "reopenResetSuccess": true,
+    "ctaAccessible": true,
+    "bodyLockFunctional": true
+  },
+  {
+    "viewport": "05_pixel_10_412x924",
+    "dimensions": "412x924",
+    "fullHeightVerified": true,
+    "zeroUnderlyingExposure": true,
+    "firstItemIsHome": false,
+    "reopenResetSuccess": true,
+    "ctaAccessible": true,
+    "bodyLockFunctional": true
+  },
+  {
+    "viewport": "06_large_iphone_430x932",
+    "dimensions": "430x932",
+    "fullHeightVerified": true,
+    "zeroUnderlyingExposure": true,
+    "firstItemIsHome": false,
+    "reopenResetSuccess": true,
+    "ctaAccessible": true,
+    "bodyLockFunctional": true
+  },
+  {
+    "viewport": "07_short_viewport_390x667",
+    "dimensions": "390x667",
+    "fullHeightVerified": true,
+    "zeroUnderlyingExposure": true,
+    "firstItemIsHome": false,
+    "reopenResetSuccess": true,
+    "ctaAccessible": true,
+    "bodyLockFunctional": true
+  },
+  {
+    "viewport": "08_tablet_768x1024",
+    "dimensions": "768x1024",
+    "fullHeightVerified": true,
+    "zeroUnderlyingExposure": true,
+    "firstItemIsHome": false,
+    "reopenResetSuccess": true,
+    "ctaAccessible": true,
+    "bodyLockFunctional": true
+  },
+  {
+    "viewport": "09_landscape_844x390",
+    "dimensions": "844x390",
+    "fullHeightVerified": true,
+    "zeroUnderlyingExposure": true,
+    "firstItemIsHome": false,
+    "reopenResetSuccess": true,
+    "ctaAccessible": true,
+    "bodyLockFunctional": true
+  }
+]

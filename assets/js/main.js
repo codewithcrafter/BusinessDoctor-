@@ -18,37 +18,141 @@ document.addEventListener('DOMContentLoaded', () => {
     handleScroll();
   }
 
-  // 2. Mobile Drawer Navigation
+  // 2. Mobile Drawer Navigation & Accordion Controller
   const menuToggle = document.getElementById('menuToggleBtn') || document.querySelector('.menu-toggle');
   const mobileDrawer = document.getElementById('mobileDrawer') || document.querySelector('.mobile-drawer');
+  const drawerBackdrop = document.getElementById('mobileDrawerBackdrop');
+  const drawerCloseBtn = document.getElementById('mobileDrawerCloseBtn');
+  const servicesToggle = document.getElementById('mobileServicesToggle');
+  const servicesAccordion = document.getElementById('mobileServicesAccordion');
+  const drawerScrollBody = document.getElementById('mobileDrawerScrollBody') || (mobileDrawer ? mobileDrawer.querySelector('.mobile-drawer-scroll-body') : null);
+
+  let savedPageScrollY = 0;
+
+  function openMobileDrawer() {
+    if (!mobileDrawer) return;
+
+    // 1. Record current scroll offset before lock
+    savedPageScrollY = window.scrollY || window.pageYOffset || 0;
+
+    // 2. Reset drawer scroll position to 0 so "Home" is always at the top
+    if (drawerScrollBody) {
+      drawerScrollBody.scrollTop = 0;
+    }
+    mobileDrawer.scrollTop = 0;
+
+    // 3. Open drawer and backdrop
+    mobileDrawer.classList.add('open');
+    if (drawerBackdrop) drawerBackdrop.classList.add('open');
+
+    // 4. Update aria attributes and toggle icon
+    if (menuToggle) {
+      menuToggle.setAttribute('aria-expanded', 'true');
+      menuToggle.setAttribute('aria-label', 'Close mobile navigation menu');
+      menuToggle.innerHTML = '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>';
+    }
+    mobileDrawer.setAttribute('aria-hidden', 'false');
+
+    // 5. Lock background scroll
+    document.body.classList.add('mobile-nav-lock');
+    document.documentElement.classList.add('mobile-nav-lock');
+  }
+
+  function closeMobileDrawer() {
+    if (!mobileDrawer) return;
+
+    mobileDrawer.classList.remove('open');
+    if (drawerBackdrop) drawerBackdrop.classList.remove('open');
+
+    if (menuToggle) {
+      menuToggle.setAttribute('aria-expanded', 'false');
+      menuToggle.setAttribute('aria-label', 'Toggle mobile navigation menu');
+      menuToggle.innerHTML = '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="18" x2="21" y2="18"/></svg>';
+    }
+    mobileDrawer.setAttribute('aria-hidden', 'true');
+
+    // Unlock background scroll
+    document.body.classList.remove('mobile-nav-lock');
+    document.documentElement.classList.remove('mobile-nav-lock');
+
+    // Restore background page scroll position smoothly
+    if (typeof savedPageScrollY === 'number' && savedPageScrollY > 0) {
+      window.scrollTo(0, savedPageScrollY);
+    }
+  }
 
   if (menuToggle && mobileDrawer) {
+    // Toggle button in header
     menuToggle.addEventListener('click', (e) => {
       e.stopPropagation();
-      const isOpen = mobileDrawer.classList.toggle('open');
-      menuToggle.setAttribute('aria-expanded', isOpen ? 'true' : 'false');
-      menuToggle.innerHTML = isOpen 
-        ? '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>'
-        : '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="18" x2="21" y2="18"/></svg>';
+      if (mobileDrawer.classList.contains('open')) {
+        closeMobileDrawer();
+      } else {
+        openMobileDrawer();
+      }
     });
 
-    // Close on link click
+    // Close button inside drawer
+    if (drawerCloseBtn) {
+      drawerCloseBtn.addEventListener('click', (e) => {
+        e.stopPropagation();
+        closeMobileDrawer();
+        if (menuToggle) menuToggle.focus();
+      });
+    }
+
+    // Backdrop click to close
+    if (drawerBackdrop) {
+      drawerBackdrop.addEventListener('click', () => {
+        closeMobileDrawer();
+      });
+    }
+
+    // IT Services Expandable Accordion
+    if (servicesToggle && servicesAccordion) {
+      servicesToggle.addEventListener('click', (e) => {
+        e.preventDefault();
+        e.stopPropagation();
+        const isExpanded = servicesAccordion.classList.toggle('is-expanded');
+        servicesToggle.setAttribute('aria-expanded', isExpanded ? 'true' : 'false');
+        servicesToggle.setAttribute('aria-label', isExpanded ? 'Collapse IT Services Submenu' : 'Expand IT Services Submenu');
+        const toggleText = servicesToggle.querySelector('.accordion-toggle-text');
+        if (toggleText) {
+          toggleText.textContent = isExpanded ? 'Collapse' : 'Expand';
+        }
+      });
+    }
+
+    // Close on any navigation link click (except accordion toggle itself)
     mobileDrawer.querySelectorAll('a').forEach(link => {
       link.addEventListener('click', () => {
-        mobileDrawer.classList.remove('open');
-        menuToggle.setAttribute('aria-expanded', 'false');
-        menuToggle.innerHTML = '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="18" x2="21" y2="18"/></svg>';
+        closeMobileDrawer();
       });
     });
 
     // Close on outside click
     document.addEventListener('click', (e) => {
-      if (mobileDrawer.classList.contains('open') && !mobileDrawer.contains(e.target) && !menuToggle.contains(e.target)) {
-        mobileDrawer.classList.remove('open');
-        menuToggle.setAttribute('aria-expanded', 'false');
-        menuToggle.innerHTML = '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="18" x2="21" y2="18"/></svg>';
+      if (mobileDrawer.classList.contains('open') && 
+          !mobileDrawer.contains(e.target) && 
+          !menuToggle.contains(e.target)) {
+        closeMobileDrawer();
       }
     });
+
+    // Close on Escape key press
+    document.addEventListener('keydown', (e) => {
+      if (e.key === 'Escape' && mobileDrawer.classList.contains('open')) {
+        closeMobileDrawer();
+        if (menuToggle) menuToggle.focus();
+      }
+    });
+
+    // Auto-close on resize to desktop viewport
+    window.addEventListener('resize', () => {
+      if (window.innerWidth > 1024 && mobileDrawer.classList.contains('open')) {
+        closeMobileDrawer();
+      }
+    }, { passive: true });
   }
 
   // 3. Robust Services Mega Menu Interaction Controller
@@ -752,8 +856,31 @@ function initHeroScrollAnimation() {
   const sticky = document.getElementById('heroStickyStage');
   if (!track || !sticky) return;
 
-  // Check prefers-reduced-motion
-  if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+  // Check prefers-reduced-motion or mobile viewport (below 768px uses natural responsive flow)
+  if (window.matchMedia('(prefers-reduced-motion: reduce)').matches || window.innerWidth <= 768) {
+    const editorialLayer = document.getElementById('heroEditorialLayer');
+    const visualLayer = document.getElementById('heroVisualLayer');
+    const hudCard = document.getElementById('heroHudCard');
+    const scrollIndicator = document.getElementById('heroScrollIndicator');
+    if (editorialLayer) {
+      editorialLayer.style.opacity = '1';
+      editorialLayer.style.transform = 'none';
+      editorialLayer.style.pointerEvents = 'auto';
+    }
+    if (visualLayer) {
+      visualLayer.style.opacity = '1';
+      visualLayer.style.transform = 'none';
+      visualLayer.style.pointerEvents = 'auto';
+    }
+    if (hudCard) {
+      hudCard.style.transform = 'none';
+    }
+    if (scrollIndicator) {
+      scrollIndicator.style.display = 'none';
+    }
+    if (typeof window.triggerKpiDataStrip === 'function') {
+      window.triggerKpiDataStrip();
+    }
     return;
   }
 

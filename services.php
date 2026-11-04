@@ -48,7 +48,7 @@ require_once __DIR__ . '/includes/header.php';
                 <span><?= e($p['tagline']) ?></span>
               </div>
 
-              <h2 style="font-size: 2.1rem; color: var(--color-text); font-weight: 800; margin-bottom: 1.25rem; line-height: 1.2;">
+              <h2 class="cap-card-title" style="color: var(--color-text); font-weight: 800; margin-bottom: 1.25rem; line-height: 1.2;">
                 <?= e($p['name']) ?>
               </h2>
               <p style="font-size: 1.05rem; color: var(--color-text-muted); line-height: 1.65; margin-bottom: 2rem;">

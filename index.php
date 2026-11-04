@@ -379,7 +379,7 @@ require_once __DIR__ . '/includes/header.php';
           <span class="matrix-badge">Fragmented Vendors &amp; Generic Agencies</span>
         </div>
         <h3>Disconnected Work, Technical Debt &amp; Wasted Ad Budgets</h3>
-        <p style="font-size: 0.95rem; color: #7f1d1d; line-height: 1.6;">
+        <p style="font-size: 0.95rem; color: #cbd5e1; line-height: 1.6;">
           Hiring separate freelancers or specialized agencies leads to finger-pointing, slow project delivery, bloated code, and unoptimized ad spend.
         </p>
 
