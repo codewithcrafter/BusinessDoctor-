@@ -19,104 +19,86 @@ class Database
             return self::$instance;
         }
 
+        // ============================================================
+        // 1. SQLITE DRIVER (Explicitly selected via DB_DRIVER=sqlite)
+        // ============================================================
+        if (DB_DRIVER === 'sqlite') {
+            try {
+                $sqlitePath = DB_SQLITE_PATH;
+                $dbDir = dirname($sqlitePath);
+                if (!is_dir($dbDir)) {
+                    mkdir($dbDir, 0755, true);
+                }
+
+                $firstInit = !file_exists($sqlitePath) || filesize($sqlitePath) === 0;
+
+                self::$instance = new PDO('sqlite:' . $sqlitePath, null, null, [
+                    PDO::ATTR_ERRMODE            => PDO::ERRMODE_EXCEPTION,
+                    PDO::ATTR_DEFAULT_FETCH_MODE => PDO::FETCH_ASSOC,
+                    PDO::ATTR_TIMEOUT            => 5,
+                ]);
+
+                // Optimize SQLite for concurrent web traffic and data integrity
+                self::$instance->exec("PRAGMA journal_mode = WAL;");
+                self::$instance->exec("PRAGMA busy_timeout = 5000;");
+                self::$instance->exec("PRAGMA foreign_keys = ON;");
+
+                self::$driver = 'sqlite';
+
+                if ($firstInit) {
+                    self::initializeSQLiteTables(self::$instance);
+                }
+
+                return self::$instance;
+            } catch (PDOException $e) {
+                error_log('[DATABASE ERROR] SQLite connection failed: ' . $e->getMessage());
+                if (APP_ENV === 'production') {
+                    http_response_code(500);
+                    die('<!DOCTYPE html><html><head><title>Service Unavailable</title></head><body style="font-family:sans-serif;text-align:center;padding:5rem 2rem;"><h2>Service Temporarily Unavailable</h2><p>Our database engine is undergoing scheduled maintenance or is momentarily unreachable. Please refresh in a few moments.</p></body></html>');
+                } else {
+                    die('Fatal Database Failure: Unable to establish SQLite data persistence layer. ' . htmlspecialchars($e->getMessage()));
+                }
+            }
+        }
+
+        // ============================================================
+        // 2. MYSQL DRIVER (Explicitly selected via DB_DRIVER=mysql)
+        // ============================================================
         $host = DB_HOST;
         $port = (int)DB_PORT;
 
-        // ============================================================
-        // 1. PRODUCTION ENVIRONMENT: MANDATORY MYSQL CONNECTION
-        //    Never silently fallback to SQLite in production!
-        // ============================================================
-        if (APP_ENV === 'production') {
-            try {
-                $dsn = sprintf(
-                    'mysql:host=%s;port=%d;dbname=%s;charset=%s',
-                    $host,
-                    $port,
-                    DB_NAME,
-                    DB_CHARSET
-                );
-
-                $options = [
-                    PDO::ATTR_ERRMODE            => PDO::ERRMODE_EXCEPTION,
-                    PDO::ATTR_DEFAULT_FETCH_MODE => PDO::FETCH_ASSOC,
-                    PDO::ATTR_EMULATE_PREPARES   => false,
-                    PDO::ATTR_TIMEOUT            => 5,
-                ];
-
-                if (defined('PDO::MYSQL_ATTR_INIT_COMMAND')) {
-                    $options[PDO::MYSQL_ATTR_INIT_COMMAND] = "SET NAMES " . DB_CHARSET . " COLLATE utf8mb4_unicode_ci";
-                }
-
-                self::$instance = new PDO($dsn, DB_USER, DB_PASS, $options);
-                self::$driver = 'mysql';
-                return self::$instance;
-            } catch (PDOException $e) {
-                // Log full technical trace internally; never leak credentials or DSN to public output
-                error_log('[PRODUCTION CRITICAL] MySQL connection failed: ' . $e->getMessage());
-                http_response_code(500);
-                die('<!DOCTYPE html><html><head><title>Service Unavailable</title></head><body style="font-family:sans-serif;text-align:center;padding:5rem 2rem;"><h2>Service Temporarily Unavailable</h2><p>Our database engine is undergoing scheduled maintenance or is momentarily unreachable. Please refresh in a few moments.</p></body></html>');
-            }
-        }
-
-        // ============================================================
-        // 2. DEVELOPMENT / LOCAL ENVIRONMENT: MYSQL WITH SQLITE FALLBACK
-        // ============================================================
-        // Fast pre-check: verify if MySQL port is actively listening before PDO connect
-        $mysqlReachable = false;
-        $socket = @fsockopen($host, $port, $errno, $errstr, 0.05);
-        if (is_resource($socket)) {
-            fclose($socket);
-            $mysqlReachable = true;
-        }
-
-        if ($mysqlReachable) {
-            try {
-                $dsn = sprintf(
-                    'mysql:host=%s;port=%d;dbname=%s;charset=%s',
-                    $host,
-                    $port,
-                    DB_NAME,
-                    DB_CHARSET
-                );
-
-                $options = [
-                    PDO::ATTR_ERRMODE            => PDO::ERRMODE_EXCEPTION,
-                    PDO::ATTR_DEFAULT_FETCH_MODE => PDO::FETCH_ASSOC,
-                    PDO::ATTR_EMULATE_PREPARES   => false,
-                    PDO::ATTR_TIMEOUT            => 2,
-                ];
-
-                self::$instance = new PDO($dsn, DB_USER, DB_PASS, $options);
-                self::$driver = 'mysql';
-                return self::$instance;
-            } catch (PDOException $e) {
-                error_log('Local MySQL unavailable, engaging development SQLite storage: ' . $e->getMessage());
-            }
-        }
-
-        // Local SQLite Resilient Driver (Development Only)
         try {
-            $sqlitePath = DB_SQLITE_PATH;
-            $dbDir = dirname($sqlitePath);
-            if (!is_dir($dbDir)) {
-                mkdir($dbDir, 0755, true);
-            }
+            $dsn = sprintf(
+                'mysql:host=%s;port=%d;dbname=%s;charset=%s',
+                $host,
+                $port,
+                DB_NAME,
+                DB_CHARSET
+            );
 
-            $firstInit = !file_exists($sqlitePath) || filesize($sqlitePath) === 0;
-
-            self::$instance = new PDO('sqlite:' . $sqlitePath, null, null, [
+            $options = [
                 PDO::ATTR_ERRMODE            => PDO::ERRMODE_EXCEPTION,
                 PDO::ATTR_DEFAULT_FETCH_MODE => PDO::FETCH_ASSOC,
-            ]);
-            self::$driver = 'sqlite';
+                PDO::ATTR_EMULATE_PREPARES   => false,
+                PDO::ATTR_TIMEOUT            => 5,
+            ];
 
-            if ($firstInit) {
-                self::initializeSQLiteTables(self::$instance);
+            if (defined('PDO::MYSQL_ATTR_INIT_COMMAND')) {
+                $options[PDO::MYSQL_ATTR_INIT_COMMAND] = "SET NAMES " . DB_CHARSET . " COLLATE utf8mb4_unicode_ci";
             }
 
+            self::$instance = new PDO($dsn, DB_USER, DB_PASS, $options);
+            self::$driver = 'mysql';
             return self::$instance;
         } catch (PDOException $e) {
-            die('Fatal Database Failure: Unable to establish data persistence layer. ' . htmlspecialchars($e->getMessage()));
+            // Log full technical trace internally; never leak credentials or DSN to public output
+            error_log('[PRODUCTION CRITICAL] MySQL connection failed: ' . $e->getMessage());
+            if (APP_ENV === 'production') {
+                http_response_code(500);
+                die('<!DOCTYPE html><html><head><title>Service Unavailable</title></head><body style="font-family:sans-serif;text-align:center;padding:5rem 2rem;"><h2>Service Temporarily Unavailable</h2><p>Our database engine is undergoing scheduled maintenance or is momentarily unreachable. Please refresh in a few moments.</p></body></html>');
+            } else {
+                die('Fatal Database Failure: MySQL connection error: ' . htmlspecialchars($e->getMessage()));
+            }
         }
     }
 

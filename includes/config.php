@@ -77,20 +77,27 @@ define('APP_PHONE', '+1 (800) 492-3628');
 define('APP_HEADQUARTERS', 'Floor 42, Executive Tech Park, Innovation District');
 
 // Base URL calculation (safe fallback for CLI & varied web servers)
-$protocol = (!empty($_SERVER['HTTPS']) && $_SERVER['HTTPS'] !== 'off' || (isset($_SERVER['SERVER_PORT']) && (int)$_SERVER['SERVER_PORT'] === 443)) ? "https://" : "http://";
-$host = $_SERVER['HTTP_HOST'] ?? '127.0.0.1:8000';
-$scriptDir = dirname($_SERVER['SCRIPT_NAME'] ?? '');
-$scriptDir = rtrim(str_replace('\\', '/', $scriptDir), '/');
+$envAppUrl = getenv('APP_URL');
+if (!empty($envAppUrl)) {
+    define('BASE_URL', rtrim($envAppUrl, '/'));
+} else {
+    $protocol = (!empty($_SERVER['HTTPS']) && $_SERVER['HTTPS'] !== 'off' || (isset($_SERVER['SERVER_PORT']) && (int)$_SERVER['SERVER_PORT'] === 443)) ? "https://" : "http://";
+    $host = $_SERVER['HTTP_HOST'] ?? 'demo.businessdoctor.com';
+    $scriptDir = dirname($_SERVER['SCRIPT_NAME'] ?? '');
+    $scriptDir = rtrim(str_replace('\\', '/', $scriptDir), '/');
 
-$parts = explode('/', trim($scriptDir, '/'));
-if (end($parts) === 'admin' || end($parts) === 'api') {
-    array_pop($parts);
+    $parts = explode('/', trim($scriptDir, '/'));
+    if (end($parts) === 'admin' || end($parts) === 'api') {
+        array_pop($parts);
+    }
+    $basePath = empty($parts) ? '' : '/' . implode('/', $parts);
+    define('BASE_URL', $protocol . $host . $basePath);
 }
-$basePath = empty($parts) ? '' : '/' . implode('/', $parts);
-define('BASE_URL', $protocol . $host . $basePath);
+define('APP_URL', BASE_URL);
 define('ROOT_PATH', dirname(__DIR__));
 
-// Database Configuration
+// Database Configuration - Explicit Driver Selection
+define('DB_DRIVER', strtolower(trim((string)(getenv('DB_DRIVER') ?: 'sqlite'))));
 define('DB_HOST', getenv('DB_HOST') ?: '127.0.0.1');
 define('DB_PORT', getenv('DB_PORT') ?: '3306');
 define('DB_NAME', getenv('DB_NAME') ?: 'businessdoctor');
@@ -98,4 +105,5 @@ define('DB_USER', getenv('DB_USER') ?: 'root');
 define('DB_PASS', getenv('DB_PASS') ?: '');
 define('DB_CHARSET', 'utf8mb4');
 
-define('DB_SQLITE_PATH', ROOT_PATH . DIRECTORY_SEPARATOR . 'database' . DIRECTORY_SEPARATOR . 'businessdoctor.sqlite');
+$sqliteEnv = getenv('DB_SQLITE_PATH');
+define('DB_SQLITE_PATH', !empty($sqliteEnv) ? (str_starts_with($sqliteEnv, '/') || str_contains($sqliteEnv, ':') ? $sqliteEnv : ROOT_PATH . DIRECTORY_SEPARATOR . str_replace('/', DIRECTORY_SEPARATOR, $sqliteEnv)) : ROOT_PATH . DIRECTORY_SEPARATOR . 'database' . DIRECTORY_SEPARATOR . 'businessdoctor.sqlite');
