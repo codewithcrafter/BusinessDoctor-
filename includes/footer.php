@@ -23,7 +23,7 @@ $practices = getPracticeAreas();
         <p>
           Established international IT solutions and digital growth firm. We engineer high-performance web software, execute data-driven digital marketing, design distinctive brand systems, and scale multi-channel marketplace operations.
         </p>
-        <div style="margin-top: 1.5rem; display: flex; align-items: center; gap: 0.75rem; font-family: var(--font-mono); font-size: 0.8rem; color: var(--color-accent);">
+        <div class="footer-status-strip" style="margin-top: 1.5rem; display: flex; align-items: center; gap: 0.65rem; font-family: var(--font-mono); font-size: 0.78rem; color: var(--color-accent); flex-wrap: wrap; line-height: 1.4;">
           <span class="pill-dot"></span>
           <span>ENTERPRISE ENGINEERING & DIGITAL OPERATIONS ACTIVE 24/7</span>
         </div>
@@ -62,7 +62,7 @@ $practices = getPracticeAreas();
         </p>
         <form class="newsletter-form" action="/api/newsletter-subscribe.php" method="POST">
           <input type="hidden" name="csrf_token" value="<?= getCsrfToken() ?>">
-          <div style="display: flex; gap: 0.5rem; width: 100%;">
+          <div class="newsletter-input-group" style="display: flex; gap: 0.5rem; width: 100%;">
             <input type="email" name="email" required placeholder="executive@enterprise.com" class="cta-input" style="font-size: 0.88rem; padding: 0.75rem 1rem;">
             <button type="submit" class="btn btn-accent btn-sm" style="flex-shrink: 0;">
               Subscribe

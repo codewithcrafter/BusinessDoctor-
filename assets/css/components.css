@@ -199,18 +199,26 @@
 }
 
 .brand-logo-img {
-  height: 52px;
+  height: 50px;
   width: auto;
-  max-width: 170px;
+  max-width: 160px;
   object-fit: contain;
   display: block;
   image-rendering: -webkit-optimize-contrast;
+  flex-shrink: 0;
 }
 
 @media (max-width: 768px) {
   .brand-logo-img {
     height: 44px;
-    max-width: 140px;
+    max-width: 135px;
+  }
+}
+
+@media (max-width: 360px) {
+  .brand-logo-img {
+    height: 38px;
+    max-width: 115px;
   }
 }
 

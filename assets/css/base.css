@@ -14,6 +14,8 @@ html {
   scroll-behavior: smooth;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  overflow-x: hidden;
+  max-width: 100vw;
 }
 
 body {
@@ -23,6 +25,7 @@ body {
   color: var(--color-text);
   background-color: var(--color-background);
   overflow-x: hidden;
+  max-width: 100vw;
   min-height: 100vh;
   display: flex;
   flex-direction: column;
@@ -100,8 +103,22 @@ ul, ol {
   max-width: var(--container-max);
   margin-left: auto;
   margin-right: auto;
-  padding-left: 2rem;
-  padding-right: 2rem;
+  padding-left: clamp(1rem, 4vw, 2rem);
+  padding-right: clamp(1rem, 4vw, 2rem);
+}
+
+@media (max-width: 480px) {
+  .container {
+    padding-left: 1rem;
+    padding-right: 1rem;
+  }
+}
+
+@media (max-width: 360px) {
+  .container {
+    padding-left: 0.85rem;
+    padding-right: 0.85rem;
+  }
 }
 
 .container-narrow {

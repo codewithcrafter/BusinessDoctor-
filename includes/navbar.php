@@ -114,19 +114,6 @@ $practiceAreas = getPracticeAreas();
 
 <!-- Mobile Drawer Menu -->
 <aside class="mobile-drawer" id="mobileDrawer" role="dialog" aria-modal="true" aria-label="Mobile Navigation Menu" aria-hidden="true">
-  <div class="mobile-drawer-topbar">
-    <a href="index.php" class="mobile-drawer-brand" aria-label="BusinessDoctor Home" style="display: flex; align-items: center; text-decoration: none;">
-      <img src="/assets/img/bdr-logo.png" alt="BusinessDoctor" style="height: 38px; width: auto; max-width: 130px; object-fit: contain; display: block;">
-    </a>
-    <button type="button" class="mobile-drawer-close" id="mobileDrawerCloseBtn" aria-label="Close navigation menu">
-      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
-        <line x1="18" y1="6" x2="6" y2="18"/>
-        <line x1="6" y1="6" x2="18" y2="18"/>
-      </svg>
-      <span>Close</span>
-    </button>
-  </div>
-
   <div class="mobile-drawer-content mobile-drawer-scroll-body" id="mobileDrawerScrollBody">
     <nav class="mobile-nav-list" aria-label="Mobile Main Navigation">
       <!-- 1. Home -->

@@ -177,8 +177,14 @@
   }
 
   .menu-toggle {
-    display: block;
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
     color: #F4F8FC !important;
+    min-width: 44px !important;
+    min-height: 44px !important;
+    flex-shrink: 0 !important;
+    margin-left: auto !important;
   }
 
   .menu-toggle:hover,
@@ -186,8 +192,25 @@
     color: #00C9C1 !important;
   }
 
+  .site-header {
+    height: var(--header-height, 72px) !important;
+    min-height: var(--header-height, 72px) !important;
+  }
+
+  .navbar {
+    flex-wrap: nowrap !important;
+    gap: 0.75rem !important;
+  }
+
+  .brand-logo {
+    min-width: 0 !important;
+    flex-shrink: 0 !important;
+  }
+
   .hero-scroll-track {
     height: auto !important;
+    overflow: hidden !important;
+    overflow-x: clip !important;
   }
 
   .hero-sticky-stage {
@@ -195,9 +218,25 @@
     height: auto !important;
     min-height: auto !important;
     max-height: none !important;
-    overflow: visible !important;
+    overflow: hidden !important;
     padding-top: calc(var(--header-height, 72px) + 1.25rem) !important;
     padding-bottom: 3rem !important;
+  }
+
+  .hero-ambient-glow.glow-1 {
+    width: 280px !important;
+    height: 280px !important;
+    top: -40px !important;
+    right: -40px !important;
+    opacity: 0.45 !important;
+  }
+
+  .hero-ambient-glow.glow-2 {
+    width: 240px !important;
+    height: 240px !important;
+    bottom: -40px !important;
+    left: -40px !important;
+    opacity: 0.45 !important;
   }
 
   .hero-stage-inner {
@@ -239,7 +278,86 @@
   }
 
   .hero-headline-oversized {
-    font-size: 2.3rem;
+    font-size: clamp(1.85rem, 6.2vw, 2.45rem) !important;
+    line-height: 1.15 !important;
+    letter-spacing: -0.025em !important;
+    word-break: break-word !important;
+    overflow-wrap: break-word !important;
+  }
+
+  .hero-lead-text {
+    font-size: clamp(0.95rem, 3.8vw, 1.08rem) !important;
+    line-height: 1.6 !important;
+    max-width: 100% !important;
+  }
+
+  .hero-actions-group {
+    display: flex !important;
+    flex-direction: column !important;
+    width: 100% !important;
+    gap: 0.75rem !important;
+  }
+
+  .hero-actions-group .btn {
+    width: 100% !important;
+    justify-content: center !important;
+  }
+
+  .hero-trust-strip {
+    display: flex !important;
+    flex-wrap: wrap !important;
+    font-size: 0.68rem !important;
+    line-height: 1.4 !important;
+    gap: 0.45rem !important;
+  }
+
+  .card {
+    padding: 1.75rem 1.25rem !important;
+    border-radius: var(--radius-lg) !important;
+  }
+
+  .capabilities-nav-wrapper {
+    width: 100% !important;
+    max-width: 100% !important;
+    overflow: hidden !important;
+    justify-content: flex-start !important;
+  }
+
+  .capabilities-nav-bar {
+    width: 100% !important;
+    overflow-x: auto !important;
+    -webkit-overflow-scrolling: touch !important;
+    scroll-snap-type: x mandatory !important;
+    padding-bottom: 0.65rem !important;
+  }
+
+  .footer-status-strip {
+    font-size: 0.74rem !important;
+    flex-wrap: wrap !important;
+    word-break: break-word !important;
+    line-height: 1.35 !important;
+  }
+
+  .newsletter-input-group {
+    flex-direction: column !important;
+    width: 100% !important;
+    gap: 0.65rem !important;
+  }
+
+  .newsletter-input-group .cta-input {
+    width: 100% !important;
+    font-size: 0.95rem !important;
+  }
+
+  .newsletter-input-group .btn {
+    width: 100% !important;
+    justify-content: center !important;
+  }
+
+  .footer-legal-links {
+    flex-wrap: wrap !important;
+    justify-content: center !important;
+    gap: 0.85rem !important;
   }
 
   .matrix-grid {
@@ -625,32 +743,47 @@
   }
 
   .matrix-card {
-    padding: 1.75rem;
+    padding: 1.5rem 1.15rem !important;
   }
 
   .enterprise-hud-card {
-    padding: 1.75rem;
+    padding: 1.25rem 0.95rem !important;
+  }
+
+  .card {
+    padding: 1.35rem 0.95rem !important;
   }
 
   .cap-nav-arrow {
-    width: 38px !important;
-    height: 38px !important;
-    min-width: 38px !important;
-    min-height: 38px !important;
+    display: none !important;
   }
 
   .capabilities-nav-wrapper {
-    gap: 0.45rem !important;
+    gap: 0 !important;
+    width: 100% !important;
+  }
+
+  .capabilities-nav-bar {
+    width: 100% !important;
+    overflow-x: auto !important;
+    -webkit-overflow-scrolling: touch !important;
+    scroll-snap-type: x mandatory !important;
+    padding-bottom: 0.5rem !important;
+  }
+
+  .cap-tab-btn {
+    padding: 0.65rem 0.85rem !important;
+    font-size: 0.78rem !important;
   }
 
   .cap-card-body,
   .cap-card-sidebar {
-    padding: 1.75rem 1.15rem !important;
+    padding: 1.5rem 1rem !important;
   }
 
   .cap-card-title,
   .cap-card-body h2 {
-    font-size: clamp(1.35rem, 5.5vw, 1.75rem) !important;
+    font-size: clamp(1.25rem, 5.2vw, 1.65rem) !important;
     line-height: 1.25 !important;
     word-break: break-word !important;
     overflow-wrap: break-word !important;
@@ -658,9 +791,84 @@
   }
 
   .cap-card-eyebrow {
-    font-size: 0.72rem !important;
+    font-size: 0.7rem !important;
     flex-wrap: wrap !important;
     gap: 0.35rem !important;
+  }
+}
+
+/* ============================================================
+   EXTRA SMALL MOBILE SCREENS (320px - 360px)
+   ============================================================ */
+@media (max-width: 360px) {
+  :root {
+    --header-height: 66px;
+  }
+
+  .container {
+    padding-left: 0.85rem !important;
+    padding-right: 0.85rem !important;
+  }
+
+  .brand-logo-img {
+    height: 38px !important;
+    max-width: 115px !important;
+  }
+
+  .hero-headline-oversized {
+    font-size: 1.6rem !important;
+    line-height: 1.15 !important;
+  }
+
+  .hero-lead-text {
+    font-size: 0.92rem !important;
+  }
+
+  .section-title {
+    font-size: 1.5rem !important;
+  }
+
+  .lead {
+    font-size: 0.92rem !important;
+  }
+
+  .vital-ticker-grid {
+    grid-template-columns: 1fr !important;
+  }
+
+  .vital-item:nth-child(odd) {
+    border-right: none !important;
+  }
+
+  .vital-item {
+    border-bottom: 1px solid rgba(0, 201, 193, 0.18) !important;
+    padding: 0.75rem 0.35rem !important;
+  }
+
+  .vital-number {
+    font-size: 1.45rem !important;
+  }
+
+  .hud-kpi-grid {
+    grid-template-columns: 1fr !important;
+  }
+
+  .btn {
+    padding: 0.75rem 1rem !important;
+    font-size: 0.86rem !important;
+  }
+
+  .card {
+    padding: 1.15rem 0.75rem !important;
+  }
+
+  .enterprise-hud-card {
+    padding: 1.1rem 0.75rem !important;
+  }
+
+  .cap-tab-btn {
+    padding: 0.55rem 0.75rem !important;
+    font-size: 0.75rem !important;
   }
 }
 

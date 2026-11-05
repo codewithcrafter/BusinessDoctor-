@@ -38,7 +38,7 @@ require_once __DIR__ . '/includes/header.php';
 <!-- Header Hero -->
 <section class="section hero-enterprise" style="padding-top: 5rem; padding-bottom: 4rem;">
   <div class="container" style="max-width: 900px;">
-    <div style="display: flex; align-items: center; gap: 0.85rem; margin-bottom: 1.25rem;">
+    <div style="display: flex; align-items: center; gap: 0.85rem; margin-bottom: 1.25rem; flex-wrap: wrap;">
       <span class="eyebrow-badge" style="margin-bottom: 0;"><?= e($insight['category']) ?></span>
       <span style="font-family: var(--font-mono); font-size: 0.82rem; color: var(--color-secondary); font-weight: 700;"><?= e($insight['reading_time']) ?></span>
       <span style="font-family: var(--font-mono); font-size: 0.82rem; color: var(--color-text-light);">● <?= formatExecutiveDate($insight['published_at'] ?? 'now') ?></span>
@@ -48,7 +48,7 @@ require_once __DIR__ . '/includes/header.php';
       <?= e($insight['title']) ?>
     </h1>
 
-    <div style="display: flex; align-items: center; gap: 1rem; border-top: 1px solid var(--color-slate-200); padding-top: 1.5rem; margin-top: 2rem;">
+    <div style="display: flex; align-items: center; gap: 1rem; border-top: 1px solid var(--color-slate-200); padding-top: 1.5rem; margin-top: 2rem; flex-wrap: wrap;">
       <div style="width: 48px; height: 48px; border-radius: var(--radius-sm); background: var(--color-primary); color: var(--color-accent); font-family: var(--font-display); font-weight: 800; display: flex; align-items: center; justify-content: center; font-size: 1.1rem; border: 1px solid rgba(161, 126, 145,0.3);">
         <?= strtoupper(substr($insight['author'] ?: $insight['author_name'], 0, 2)) ?>
       </div>

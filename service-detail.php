@@ -103,7 +103,7 @@ require_once __DIR__ . '/includes/header.php';
 <section class="section hero-enterprise" style="padding-top: 5rem; padding-bottom: 4rem;">
   <div class="container">
     <div style="max-width: 880px;">
-      <div style="display: flex; align-items: center; gap: 0.85rem; margin-bottom: 1.25rem;">
+      <div style="display: flex; align-items: center; gap: 0.85rem; margin-bottom: 1.25rem; flex-wrap: wrap;">
         <span style="font-family: var(--font-mono); font-size: 0.82rem; font-weight: 700; color: var(--color-secondary); letter-spacing: 0.1em;">
           DISCIPLINE // <?= e($practice['number']) ?>
         </span>
