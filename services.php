@@ -74,7 +74,7 @@ require_once __DIR__ . '/includes/header.php';
             </div>
 
             <div style="display: flex; gap: 1rem; flex-wrap: wrap; align-items: center;">
-              <a href="service-detail.php?slug=<?= urlencode($slug) ?>" class="btn btn-primary">
+              <a href="<?= getServiceUrl($slug) ?>" class="btn btn-primary">
                 <span>View Full <?= e($p['short_title']) ?> Roadmap</span>
                 <svg class="btn-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
                   <line x1="5" y1="12" x2="19" y2="12"/>

@@ -15,7 +15,7 @@ $pageDescription = 'Examine verified case studies of businesses scaled through c
 $cases = [];
 try {
     $pdo = Database::getConnection();
-    $stmt = $pdo->query("SELECT * FROM case_studies ORDER BY sort_order ASC");
+    $stmt = $pdo->query("SELECT * FROM case_studies WHERE status = 'published' AND is_deleted = 0 ORDER BY sort_order ASC, id DESC");
     $cases = $stmt->fetchAll();
 } catch (Exception $e) {}
 

@@ -168,20 +168,37 @@ class Database
                 id INTEGER PRIMARY KEY AUTOINCREMENT,
                 slug TEXT NOT NULL UNIQUE,
                 title TEXT NOT NULL,
+                client_name TEXT NULL,
                 client_industry TEXT NOT NULL,
+                industry TEXT NULL,
                 practice_area TEXT NOT NULL,
+                service_category TEXT NULL,
+                project_summary TEXT NULL,
                 baseline_metric TEXT NOT NULL,
                 outcome_metric TEXT NOT NULL,
                 metric_label TEXT NOT NULL,
                 challenge TEXT NOT NULL,
                 prescription TEXT NOT NULL,
+                solution TEXT NULL,
+                implementation TEXT NULL,
                 result_description TEXT NOT NULL,
+                results TEXT NULL,
+                featured_image TEXT NULL,
+                cover_image_alt TEXT NULL,
+                gallery TEXT NULL,
                 quote_text TEXT NULL,
                 quote_author TEXT NULL,
                 quote_title TEXT NULL,
+                seo_title TEXT NULL,
+                seo_description TEXT NULL,
+                status TEXT NOT NULL DEFAULT 'published',
                 is_featured INTEGER NOT NULL DEFAULT 0,
                 sort_order INTEGER NOT NULL DEFAULT 0,
-                created_at TEXT DEFAULT CURRENT_TIMESTAMP
+                published_at TEXT DEFAULT CURRENT_TIMESTAMP,
+                created_at TEXT DEFAULT CURRENT_TIMESTAMP,
+                updated_at TEXT DEFAULT CURRENT_TIMESTAMP,
+                deleted_at TEXT NULL,
+                is_deleted INTEGER NOT NULL DEFAULT 0
             );
 
             CREATE TABLE IF NOT EXISTS insights (
@@ -191,11 +208,38 @@ class Database
                 title TEXT NOT NULL,
                 reading_time TEXT NOT NULL DEFAULT '6 min read',
                 summary TEXT NOT NULL,
+                excerpt TEXT NULL,
                 content TEXT NOT NULL,
+                featured_image TEXT NULL,
+                cover_image_alt TEXT NULL,
                 author_name TEXT NOT NULL,
-                author_title TEXT NOT NULL,
+                author TEXT NULL,
+                author_title TEXT NOT NULL DEFAULT 'Senior Consultant',
+                author_bio TEXT NULL,
+                tags TEXT NULL,
+                seo_title TEXT NULL,
+                seo_description TEXT NULL,
+                canonical_url TEXT NULL,
+                is_featured INTEGER NOT NULL DEFAULT 0,
+                schema_mode TEXT NOT NULL DEFAULT 'auto',
+                custom_schema_json TEXT NULL,
+                status TEXT NOT NULL DEFAULT 'published',
                 is_published INTEGER NOT NULL DEFAULT 1,
-                published_at TEXT DEFAULT CURRENT_TIMESTAMP
+                published_at TEXT DEFAULT CURRENT_TIMESTAMP,
+                created_at TEXT DEFAULT CURRENT_TIMESTAMP,
+                updated_at TEXT DEFAULT CURRENT_TIMESTAMP,
+                deleted_at TEXT NULL,
+                is_deleted INTEGER NOT NULL DEFAULT 0
+            );
+
+            CREATE TABLE IF NOT EXISTS media (
+                id INTEGER PRIMARY KEY AUTOINCREMENT,
+                filename TEXT NOT NULL,
+                original_name TEXT NOT NULL,
+                file_path TEXT NOT NULL,
+                file_size INTEGER NOT NULL,
+                mime_type TEXT NOT NULL,
+                created_at TEXT DEFAULT CURRENT_TIMESTAMP
             );
 
             CREATE TABLE IF NOT EXISTS login_rate_limits (
@@ -204,6 +248,21 @@ class Database
                 last_attempt TEXT NOT NULL,
                 locked_until TEXT NULL
             );
+
+            CREATE TABLE IF NOT EXISTS page_schemas (
+                id INTEGER PRIMARY KEY AUTOINCREMENT,
+                page_key TEXT NOT NULL,
+                page_url TEXT NOT NULL,
+                schema_name TEXT NOT NULL,
+                schema_type TEXT NOT NULL,
+                schema_description TEXT NULL,
+                schema_json TEXT NOT NULL,
+                status TEXT NOT NULL DEFAULT 'active',
+                created_at TEXT DEFAULT CURRENT_TIMESTAMP,
+                updated_at TEXT DEFAULT CURRENT_TIMESTAMP
+            );
+            CREATE INDEX IF NOT EXISTS idx_page_schemas_page_key ON page_schemas (page_key);
+            CREATE INDEX IF NOT EXISTS idx_page_schemas_status ON page_schemas (status);
         ");
 
         // Seed Default Admin: username "admin", password "Admin@BusinessDoctor2026"

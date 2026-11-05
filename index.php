@@ -10,20 +10,31 @@ require_once __DIR__ . '/includes/config.php';
 require_once __DIR__ . '/includes/db.php';
 require_once __DIR__ . '/includes/functions.php';
 
+// Local development / built-in server fallback routing for clean /services/ URLs
+$reqPath = parse_url($_SERVER['REQUEST_URI'] ?? '', PHP_URL_PATH);
+if ($reqPath !== null && preg_match('#^/services/([a-zA-Z0-9_-]+)/?$#', $reqPath, $sm)) {
+    $_GET['slug'] = $sm[1];
+    require __DIR__ . '/service-detail.php';
+    exit;
+} elseif ($reqPath === '/services' || $reqPath === '/services/') {
+    require __DIR__ . '/services.php';
+    exit;
+}
+
 $pageTitle = 'BusinessDoctor — Enterprise IT Solutions & Digital Growth Firm';
 $pageDescription = 'BusinessDoctor engineers custom web and software applications, executes high-ROI performance marketing, designs distinctive brand systems, and scales enterprise e-commerce.';
 
 $featuredCases = [];
 try {
     $pdo = Database::getConnection();
-    $stmt = $pdo->query("SELECT * FROM case_studies WHERE is_featured = 1 ORDER BY sort_order ASC LIMIT 3");
+    $stmt = $pdo->query("SELECT * FROM case_studies WHERE is_featured = 1 AND status = 'published' AND is_deleted = 0 ORDER BY sort_order ASC, id DESC LIMIT 3");
     $featuredCases = $stmt->fetchAll();
 } catch (Exception $e) {}
 
 $insightsList = [];
 try {
     $pdo = Database::getConnection();
-    $stmt = $pdo->query("SELECT * FROM insights WHERE is_published = 1 ORDER BY published_at DESC LIMIT 3");
+    $stmt = $pdo->query("SELECT * FROM insights WHERE status = 'published' AND is_deleted = 0 ORDER BY published_at DESC, id DESC LIMIT 3");
     $insightsList = $stmt->fetchAll();
 } catch (Exception $e) {}
 
@@ -312,7 +323,7 @@ require_once __DIR__ . '/includes/header.php';
               </div>
 
               <div>
-                <a href="service-detail.php?slug=<?= urlencode($slug) ?>" class="btn btn-primary">
+                <a href="<?= getServiceUrl($slug) ?>" class="btn btn-primary">
                   <span>Explore Full <?= e($p['short_title']) ?> Roadmap</span>
                   <svg class="btn-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
                     <line x1="5" y1="12" x2="19" y2="12"/>

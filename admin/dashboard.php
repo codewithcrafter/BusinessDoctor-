@@ -1,29 +1,22 @@
 <?php
 /**
- * BusinessDoctor Executive Admin Dashboard - IT & Digital Services
- * Client Project Console & Digital Audit Pipeline
+ * BusinessDoctor Executive Admin Dashboard
+ * Client Project Console & CMS Overview
  */
 
 declare(strict_types=1);
 
-require_once __DIR__ . '/../includes/config.php';
-require_once __DIR__ . '/../includes/db.php';
-require_once __DIR__ . '/../includes/functions.php';
+require_once __DIR__ . '/includes/auth.php';
 
-// Auth Protection
-if (empty($_SESSION['admin_user'])) {
-    header("Location: login.php");
-    exit;
-}
-
-$pdo = Database::getConnection();
 $message = '';
+$msgType = 'info';
 
-// Handle Status Updates with CSRF Verification
+// Handle Audit Status Updates
 if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['action'])) {
     if ($_POST['action'] === 'update_diagnostic_status') {
         if (!verifyCsrfToken($_POST['csrf_token'] ?? '')) {
             $message = "Security session expired. Status update rejected.";
+            $msgType = "error";
         } else {
             $id = (int)($_POST['id'] ?? 0);
             $newStatus = trim($_POST['status'] ?? 'pending');
@@ -32,291 +25,333 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['action'])) {
                 $stmt = $pdo->prepare("UPDATE diagnostic_requests SET status = ? WHERE id = ?");
                 $stmt->execute([$newStatus, $id]);
                 $message = "Audit request #{$id} status updated to '{$newStatus}'.";
+                $msgType = "success";
             }
         }
     }
 }
 
 // Fetch Metrics
-$diagCount = $pdo->query("SELECT COUNT(*) FROM diagnostic_requests")->fetchColumn();
-$pendingDiagCount = $pdo->query("SELECT COUNT(*) FROM diagnostic_requests WHERE status = 'pending'")->fetchColumn();
-$contactCount = $pdo->query("SELECT COUNT(*) FROM contact_inquiries")->fetchColumn();
-$subCount = $pdo->query("SELECT COUNT(*) FROM newsletter_subscribers WHERE is_active = 1")->fetchColumn();
+$diagCount = (int)$pdo->query("SELECT COUNT(*) FROM diagnostic_requests")->fetchColumn();
+$pendingDiagCount = (int)$pdo->query("SELECT COUNT(*) FROM diagnostic_requests WHERE status = 'pending'")->fetchColumn();
+$contactCount = (int)$pdo->query("SELECT COUNT(*) FROM contact_inquiries")->fetchColumn();
+$subCount = (int)$pdo->query("SELECT COUNT(*) FROM newsletter_subscribers WHERE is_active = 1")->fetchColumn();
+$blogCount = (int)$pdo->query("SELECT COUNT(*) FROM insights WHERE is_deleted = 0")->fetchColumn();
+$publishedBlogCount = (int)$pdo->query("SELECT COUNT(*) FROM insights WHERE is_deleted = 0 AND status = 'published'")->fetchColumn();
+$caseCount = (int)$pdo->query("SELECT COUNT(*) FROM case_studies WHERE is_deleted = 0")->fetchColumn();
+$publishedCaseCount = (int)$pdo->query("SELECT COUNT(*) FROM case_studies WHERE is_deleted = 0 AND status = 'published'")->fetchColumn();
 
-// Fetch Latest Audit Submissions
-$diagnostics = $pdo->query("SELECT * FROM diagnostic_requests ORDER BY created_at DESC LIMIT 50")->fetchAll();
+// Fetch Recent Records
+$recentBlogs = $pdo->query("SELECT id, title, category, author_name, status, published_at FROM insights WHERE is_deleted = 0 ORDER BY id DESC LIMIT 5")->fetchAll();
+$recentCases = $pdo->query("SELECT id, title, client_name, industry, status, is_featured FROM case_studies WHERE is_deleted = 0 ORDER BY id DESC LIMIT 5")->fetchAll();
+$diagnostics = $pdo->query("SELECT * FROM diagnostic_requests ORDER BY created_at DESC LIMIT 15")->fetchAll();
+$contacts = $pdo->query("SELECT * FROM contact_inquiries ORDER BY created_at DESC LIMIT 10")->fetchAll();
 
-// Fetch Latest Contact Inquiries
-$contacts = $pdo->query("SELECT * FROM contact_inquiries ORDER BY created_at DESC LIMIT 20")->fetchAll();
-
-// Fetch Latest Newsletter Subscribers
-$subscribers = $pdo->query("SELECT * FROM newsletter_subscribers ORDER BY created_at DESC LIMIT 20")->fetchAll();
+$pageTitle = 'Executive Dashboard';
+require_once __DIR__ . '/includes/header.php';
 ?>
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Client Projects Console — BusinessDoctor</title>
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@500;600&family=Plus+Jakarta+Sans:wght@700;800&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="../assets/css/variables.css">
-  <link rel="stylesheet" href="../assets/css/base.css">
-  <link rel="stylesheet" href="../assets/css/components.css">
-  <style>
-    body { background-color: #061326 !important; color: #F4F8FC !important; }
-    .admin-nav { background: #071A2C; color: #F4F8FC; padding: 1.25rem 2rem; display: flex; justify-content: space-between; align-items: center; border-bottom: 1px solid rgba(0, 201, 193, 0.20); }
-    .admin-stats {
-      display: grid;
-      grid-template-columns: repeat(4, 1fr);
-      gap: 1.5rem;
-      margin-top: 2rem;
-      margin-bottom: 2.5rem;
-    }
-    .admin-stat-card { background: #0D223A; border: 1px solid rgba(0, 201, 193, 0.20); border-radius: var(--radius-lg); padding: 1.75rem; box-shadow: var(--shadow-sm); color: #F4F8FC; }
-    .data-table { width: 100%; border-collapse: collapse; font-size: 0.88rem; background: #0D223A; border-radius: var(--radius-lg); overflow: hidden; border: 1px solid rgba(0, 201, 193, 0.20); }
-    .data-table th { background: #071A2C; color: #00C9C1; font-family: var(--font-mono); font-size: 0.75rem; text-transform: uppercase; padding: 1rem 1.25rem; text-align: left; border-bottom: 1px solid rgba(0, 201, 193, 0.20); }
-    .data-table td { padding: 1rem 1.25rem; border-bottom: 1px solid rgba(0, 201, 193, 0.12); vertical-align: middle; color: #F4F8FC; }
-    .data-table tr:hover { background-color: #073B42; }
-  </style>
-</head>
-<body style="background-color: #061326; color: #F4F8FC;">
 
-  <!-- Admin Nav -->
-  <header class="admin-nav">
-    <div style="display: flex; align-items: center; gap: 1rem;">
-      <a href="../index.php" class="brand-logo" style="color: #ffffff;">
-        <div class="brand-symbol">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2">
-            <polyline points="16 18 22 12 16 6"/>
-            <polyline points="8 6 2 12 8 18"/>
-          </svg>
-        </div>
-        <span>Business<span class="brand-text-accent">Doctor</span></span>
-      </a>
-      <span class="pill-tag dark" style="font-size: 0.72rem;">CLIENT PROJECTS CONSOLE</span>
+<?php if ($message): ?>
+  <div class="adm-toast <?= $msgType === 'error' ? 'error' : '' ?>" style="margin-bottom: 1.5rem; max-width: 100%;">
+    <span><?= e($message) ?></span>
+  </div>
+<?php endif; ?>
+
+<!-- Quick Actions Header -->
+<div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 1.75rem; flex-wrap: wrap; gap: 1rem;">
+  <div>
+    <h2 style="font-size: 1.5rem; font-weight: 800; color: #ffffff; margin: 0 0 0.35rem; font-family: var(--adm-font-display);">Executive Control Center</h2>
+    <p style="margin: 0; color: var(--adm-text-muted); font-size: 0.9rem;">Content Management System &amp; Enterprise Project Inquiries</p>
+  </div>
+  <div style="display: flex; gap: 0.75rem; flex-wrap: wrap;">
+    <a href="blog-create.php" class="btn-adm btn-adm-primary">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" width="16" height="16" stroke-width="2"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg>
+      <span>New Blog Post</span>
+    </a>
+    <a href="case-study-create.php" class="btn-adm btn-adm-secondary">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" width="16" height="16" stroke-width="2"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg>
+      <span>New Case Study</span>
+    </a>
+    <a href="media.php" class="btn-adm btn-adm-secondary">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" width="16" height="16" stroke-width="2"><rect x="3" y="3" width="18" height="18" rx="2" ry="2"/><circle cx="8.5" cy="8.5" r="1.5"/><polyline points="21 15 16 10 5 21"/></svg>
+      <span>Upload Media</span>
+    </a>
+  </div>
+</div>
+
+<!-- Stats Grid -->
+<div class="admin-stats-grid">
+  <div class="admin-stat-box">
+    <div class="admin-stat-icon">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/></svg>
     </div>
-
-    <div style="display: flex; align-items: center; gap: 1.5rem;">
-      <div style="font-size: 0.88rem; color: var(--color-slate-300);">
-        Signed in as: <strong style="color: #ffffff;"><?= e($_SESSION['admin_user']['full_name']) ?></strong>
-      </div>
-      <a href="../index.php" target="_blank" class="btn btn-secondary btn-sm" style="background: transparent; color: #ffffff; border-color: rgba(255,255,255,0.2);">
-        View Website ↗
-      </a>
-      <a href="logout.php" class="btn btn-primary btn-sm">
-        Sign Out
-      </a>
-    </div>
-  </header>
-
-  <div class="container" style="padding-top: 2.5rem; padding-bottom: 4rem;">
-
-    <?php if ($message): ?>
-      <div class="form-alert <?= stripos($message, 'rejected') !== false || stripos($message, 'expired') !== false ? 'error' : 'success' ?>">
-        <?= e($message) ?>
-      </div>
-    <?php endif; ?>
-
-    <!-- Overview Statistics -->
-    <div class="admin-stats">
-      <div class="admin-stat-card">
-        <div style="font-family: var(--font-mono); font-size: 0.75rem; color: var(--color-slate-500); text-transform: uppercase;">Total Digital Audits</div>
-        <div style="font-family: var(--font-display); font-size: 2rem; font-weight: 800; color: var(--color-slate-900); margin-top: 0.25rem;">
-          <?= $diagCount ?>
-        </div>
-      </div>
-      <div class="admin-stat-card">
-        <div style="font-family: var(--font-mono); font-size: 0.75rem; color: #dc2626; text-transform: uppercase;">Pending Review</div>
-        <div style="font-family: var(--font-display); font-size: 2rem; font-weight: 800; color: #dc2626; margin-top: 0.25rem;">
-          <?= $pendingDiagCount ?>
-        </div>
-      </div>
-      <div class="admin-stat-card">
-        <div style="font-family: var(--font-mono); font-size: 0.75rem; color: var(--color-slate-500); text-transform: uppercase;">Project Inquiries</div>
-        <div style="font-family: var(--font-display); font-size: 2rem; font-weight: 800; color: var(--color-slate-900); margin-top: 0.25rem;">
-          <?= $contactCount ?>
-        </div>
-      </div>
-      <div class="admin-stat-card">
-        <div style="font-family: var(--font-mono); font-size: 0.75rem; color: var(--color-teal-600); text-transform: uppercase;">Newsletter Subscribers</div>
-        <div style="font-family: var(--font-display); font-size: 2rem; font-weight: 800; color: var(--color-teal-600); margin-top: 0.25rem;">
-          <?= $subCount ?>
-        </div>
-      </div>
-    </div>
-
-    <!-- 1. Audit Requests Pipeline -->
-    <div style="margin-bottom: 3.5rem;">
-      <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 1.25rem;">
-        <div>
-          <h2 style="font-size: 1.4rem;">Website & Digital Audit Intake Queue</h2>
-          <p style="font-size: 0.9rem; color: var(--color-slate-500); margin: 0;">Incoming client audit requests, real domain telemetry, readiness scores and review statuses.</p>
-        </div>
-        <span class="pill-tag" style="font-size: 0.75rem;">Database Storage: Active</span>
-      </div>
-
-      <?php if (empty($diagnostics)): ?>
-        <div class="card" style="text-align: center; padding: 3rem; color: var(--color-slate-500);">
-          No audit requests registered yet. Requests submitted from the homepage or audit page will appear here immediately.
-        </div>
-      <?php else: ?>
-        <div style="overflow-x: auto;">
-          <table class="data-table">
-            <thead>
-              <tr>
-                <th>Ref No</th>
-                <th>Company / Domain</th>
-                <th>Client Contact</th>
-                <th>Primary Need</th>
-                <th>Revenue</th>
-                <th>Readiness Score</th>
-                <th>Telemetry & Scope Summary</th>
-                <th>Status</th>
-                <th>Received</th>
-              </tr>
-            </thead>
-            <tbody>
-              <?php foreach ($diagnostics as $row): ?>
-                <tr>
-                  <td>
-                    <strong style="font-family: var(--font-mono); color: var(--color-teal-600);"><?= e($row['reference_no']) ?></strong>
-                  </td>
-                  <td>
-                    <strong><?= e($row['company_name']) ?></strong>
-                    <?php if (!empty($row['website_url'])): ?>
-                      <div style="font-size: 0.78rem; color: var(--color-slate-500);">
-                        <a href="<?= e(safeUrl($row['website_url'])) ?>" target="_blank" rel="noopener noreferrer" style="color: var(--color-slate-500);">
-                          <?= e($row['website_url']) ?> ↗
-                        </a>
-                      </div>
-                    <?php endif; ?>
-                  </td>
-                  <td>
-                    <div><?= e($row['contact_name']) ?></div>
-                    <div style="font-size: 0.78rem; color: var(--color-slate-500);"><?= e($row['work_email']) ?></div>
-                    <?php if (!empty($row['phone'])): ?>
-                      <div style="font-size: 0.75rem; color: var(--color-slate-400);"><?= e($row['phone']) ?></div>
-                    <?php endif; ?>
-                  </td>
-                  <td>
-                    <span class="pill-tag" style="font-size: 0.7rem;">
-                      <?= e(ucfirst(str_replace('_', ' ', $row['primary_bottleneck']))) ?>
-                    </span>
-                  </td>
-                  <td>
-                    <span style="font-size: 0.82rem; font-family: var(--font-mono); color: var(--color-slate-700);">
-                      <?= e(str_replace('_', ' ', $row['revenue_bracket'])) ?>
-                    </span>
-                  </td>
-                  <td>
-                    <span style="font-family: var(--font-display); font-weight: 800; font-size: 1.1rem; color: <?= $row['health_score'] < 60 ? '#ef4444' : '#0d9488' ?>;">
-                      <?= (int)$row['health_score'] ?>%
-                    </span>
-                  </td>
-                  <td style="font-size: 0.78rem; max-width: 260px; color: var(--color-slate-600); line-height: 1.4;">
-                    <?= e($row['diagnostic_summary'] ?: '—') ?>
-                  </td>
-                  <td>
-                    <form method="POST" action="dashboard.php" style="display: flex; gap: 0.35rem; align-items: center;">
-                      <input type="hidden" name="csrf_token" value="<?= getCsrfToken() ?>">
-                      <input type="hidden" name="action" value="update_diagnostic_status">
-                      <input type="hidden" name="id" value="<?= (int)$row['id'] ?>">
-                      <select name="status" onchange="this.form.submit()" class="form-select" style="padding: 0.35rem 0.65rem; font-size: 0.8rem; border-radius: var(--radius-sm);">
-                        <option value="pending" <?= $row['status'] === 'pending' ? 'selected' : '' ?>>Pending Review</option>
-                        <option value="in_review" <?= $row['status'] === 'in_review' ? 'selected' : '' ?>>In Review</option>
-                        <option value="prescribed" <?= $row['status'] === 'prescribed' ? 'selected' : '' ?>>Scope Sent</option>
-                        <option value="completed" <?= $row['status'] === 'completed' ? 'selected' : '' ?>>Completed</option>
-                        <option value="archived" <?= $row['status'] === 'archived' ? 'selected' : '' ?>>Archived</option>
-                      </select>
-                    </form>
-                  </td>
-                  <td style="font-size: 0.8rem; color: var(--color-slate-500); font-family: var(--font-mono);">
-                    <?= formatExecutiveDate($row['created_at']) ?>
-                  </td>
-                </tr>
-              <?php endforeach; ?>
-            </tbody>
-          </table>
-        </div>
-      <?php endif; ?>
-    </div>
-
-    <!-- 2. Direct Contact Inquiries -->
-    <div style="margin-bottom: 3.5rem;">
-      <h2 style="font-size: 1.4rem; margin-bottom: 1.25rem;">Direct Project Proposals & Inquiries</h2>
-      <?php if (empty($contacts)): ?>
-        <div class="card" style="text-align: center; padding: 2.5rem; color: var(--color-slate-500);">
-          No consultation messages received yet.
-        </div>
-      <?php else: ?>
-        <div style="overflow-x: auto;">
-          <table class="data-table">
-            <thead>
-              <tr>
-                <th>Client Name</th>
-                <th>Email / Phone</th>
-                <th>Organization</th>
-                <th>Service Interest</th>
-                <th>Message Excerpt</th>
-                <th>Received</th>
-              </tr>
-            </thead>
-            <tbody>
-              <?php foreach ($contacts as $c): ?>
-                <tr>
-                  <td><strong><?= e($c['full_name']) ?></strong></td>
-                  <td>
-                    <div><?= e($c['email']) ?></div>
-                    <?php if (!empty($c['phone'])): ?>
-                      <div style="font-size: 0.75rem; color: var(--color-slate-500);"><?= e($c['phone']) ?></div>
-                    <?php endif; ?>
-                  </td>
-                  <td><?= e($c['organization'] ?: '—') ?></td>
-                  <td><span class="pill-tag" style="font-size: 0.7rem;"><?= e($c['service_interest']) ?></span></td>
-                  <td style="max-width: 300px; font-size: 0.85rem; color: var(--color-slate-600);"><?= e($c['message']) ?></td>
-                  <td style="font-size: 0.8rem; color: var(--color-slate-500); font-family: var(--font-mono);"><?= formatExecutiveDate($c['created_at']) ?></td>
-                </tr>
-              <?php endforeach; ?>
-            </tbody>
-          </table>
-        </div>
-      <?php endif; ?>
-    </div>
-
-    <!-- 3. Newsletter Subscribers -->
     <div>
-      <h2 style="font-size: 1.4rem; margin-bottom: 1.25rem;">Tech Newsletter Subscribers</h2>
-      <?php if (empty($subscribers)): ?>
-        <div class="card" style="text-align: center; padding: 2rem; color: var(--color-slate-500);">
-          No subscribers yet.
-        </div>
-      <?php else: ?>
-        <table class="data-table">
+      <div class="admin-stat-val"><?= $blogCount ?></div>
+      <div class="admin-stat-lbl">Blogs (<?= $publishedBlogCount ?> live)</div>
+    </div>
+  </div>
+
+  <div class="admin-stat-box">
+    <div class="admin-stat-icon" style="background-color: rgba(59, 130, 246, 0.15); color: #60A5FA;">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 19a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h5l2 3h9a2 2 0 0 1 2 2z"/></svg>
+    </div>
+    <div>
+      <div class="admin-stat-val"><?= $caseCount ?></div>
+      <div class="admin-stat-lbl">Case Studies (<?= $publishedCaseCount ?> live)</div>
+    </div>
+  </div>
+
+  <div class="admin-stat-box">
+    <div class="admin-stat-icon" style="background-color: rgba(239, 68, 68, 0.15); color: #F87171;">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 12h-4l-3 9L9 3l-3 9H2"/></svg>
+    </div>
+    <div>
+      <div class="admin-stat-val"><?= $diagCount ?></div>
+      <div class="admin-stat-lbl">Audits (<?= $pendingDiagCount ?> pending)</div>
+    </div>
+  </div>
+
+  <div class="admin-stat-box">
+    <div class="admin-stat-icon" style="background-color: rgba(16, 185, 129, 0.15); color: #34D399;">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+    </div>
+    <div>
+      <div class="admin-stat-val"><?= $contactCount ?></div>
+      <div class="admin-stat-lbl">Project Inquiries</div>
+    </div>
+  </div>
+</div>
+
+<!-- Two-Column Overview: Recent Content -->
+<div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(460px, 1fr)); gap: 1.75rem; margin-bottom: 2rem;">
+  
+  <!-- Recent Blogs -->
+  <div class="admin-card">
+    <div class="admin-card-header">
+      <h3 class="admin-card-title">Recent Blog Articles</h3>
+      <a href="blogs.php" class="btn-adm btn-adm-secondary btn-adm-sm">View All &rarr;</a>
+    </div>
+    <?php if (empty($recentBlogs)): ?>
+      <p style="color: var(--adm-text-dim); text-align: center; padding: 2rem 0;">No blog articles found. Create your first post!</p>
+    <?php else: ?>
+      <div class="admin-table-wrapper">
+        <table class="admin-table">
           <thead>
             <tr>
-              <th>Subscriber Email</th>
-              <th>Channel Source</th>
-              <th>IP Address</th>
-              <th>Subscribed At</th>
+              <th>Title</th>
+              <th>Category</th>
+              <th>Status</th>
+              <th style="text-align: right;">Action</th>
             </tr>
           </thead>
           <tbody>
-            <?php foreach ($subscribers as $s): ?>
+            <?php foreach ($recentBlogs as $rb): ?>
               <tr>
-                <td><strong><?= e($s['email']) ?></strong></td>
-                <td><span class="pill-tag" style="font-size: 0.7rem;"><?= e($s['source_page']) ?></span></td>
-                <td style="font-family: var(--font-mono); font-size: 0.8rem; color: var(--color-slate-500);"><?= e($s['ip_address'] ?: '—') ?></td>
-                <td style="font-family: var(--font-mono); font-size: 0.8rem; color: var(--color-slate-500);"><?= formatExecutiveDate($s['created_at']) ?></td>
+                <td>
+                  <a href="blog-edit.php?id=<?= $rb['id'] ?>" style="color: #ffffff; text-decoration: none; font-weight: 600;">
+                    <?= e(mb_strimwidth($rb['title'], 0, 40, '...')) ?>
+                  </a>
+                </td>
+                <td><span style="font-size: 0.8rem; color: var(--adm-text-muted);"><?= e($rb['category']) ?></span></td>
+                <td>
+                  <span class="status-pill status-<?= $rb['status'] === 'published' ? 'published' : 'draft' ?>">
+                    <?= e($rb['status']) ?>
+                  </span>
+                </td>
+                <td style="text-align: right; white-space: nowrap;">
+                  <a href="blog-edit.php?id=<?= $rb['id'] ?>" class="btn-adm btn-adm-secondary btn-adm-sm">Edit</a>
+                </td>
               </tr>
             <?php endforeach; ?>
           </tbody>
         </table>
-      <?php endif; ?>
-    </div>
-
+      </div>
+    <?php endif; ?>
   </div>
 
-</body>
-</html>
+  <!-- Recent Case Studies -->
+  <div class="admin-card">
+    <div class="admin-card-header">
+      <h3 class="admin-card-title">Recent Case Studies</h3>
+      <a href="case-studies.php" class="btn-adm btn-adm-secondary btn-adm-sm">View All &rarr;</a>
+    </div>
+    <?php if (empty($recentCases)): ?>
+      <p style="color: var(--adm-text-dim); text-align: center; padding: 2rem 0;">No case studies found.</p>
+    <?php else: ?>
+      <div class="admin-table-wrapper">
+        <table class="admin-table">
+          <thead>
+            <tr>
+              <th>Title / Client</th>
+              <th>Industry</th>
+              <th>Status</th>
+              <th style="text-align: right;">Action</th>
+            </tr>
+          </thead>
+          <tbody>
+            <?php foreach ($recentCases as $rc): ?>
+              <tr>
+                <td>
+                  <a href="case-study-edit.php?id=<?= $rc['id'] ?>" style="color: #ffffff; text-decoration: none; font-weight: 600;">
+                    <?= e(mb_strimwidth($rc['title'], 0, 36, '...')) ?>
+                  </a>
+                  <?php if (!empty($rc['client_name'])): ?>
+                    <div style="font-size: 0.74rem; color: var(--adm-teal);"><?= e($rc['client_name']) ?></div>
+                  <?php endif; ?>
+                </td>
+                <td><span style="font-size: 0.8rem; color: var(--adm-text-muted);"><?= e($rc['industry'] ?? 'Enterprise') ?></span></td>
+                <td>
+                  <span class="status-pill status-<?= $rc['status'] === 'published' ? 'published' : 'draft' ?>">
+                    <?= e($rc['status']) ?>
+                  </span>
+                </td>
+                <td style="text-align: right; white-space: nowrap;">
+                  <a href="case-study-edit.php?id=<?= $rc['id'] ?>" class="btn-adm btn-adm-secondary btn-adm-sm">Edit</a>
+                </td>
+              </tr>
+            <?php endforeach; ?>
+          </tbody>
+        </table>
+      </div>
+    <?php endif; ?>
+  </div>
+
+</div>
+
+<!-- Digital Audit Intake Pipeline -->
+<div class="admin-card">
+  <div class="admin-card-header">
+    <div>
+      <h3 class="admin-card-title">Digital Audit Intake Queue</h3>
+      <p style="margin: 0.25rem 0 0; color: var(--adm-text-muted); font-size: 0.82rem;">Incoming client requests, technical domain telemetry, and review status</p>
+    </div>
+    <span class="status-pill status-published">Active Pipeline</span>
+  </div>
+
+  <?php if (empty($diagnostics)): ?>
+    <p style="color: var(--adm-text-dim); text-align: center; padding: 2rem 0;">No digital audit requests logged yet.</p>
+  <?php else: ?>
+    <div class="admin-table-wrapper">
+      <table class="admin-table">
+        <thead>
+          <tr>
+            <th>Ref #</th>
+            <th>Company &amp; Lead</th>
+            <th>Website URL</th>
+            <th>Score</th>
+            <th>Status</th>
+            <th>Update Status</th>
+          </tr>
+        </thead>
+        <tbody>
+          <?php foreach ($diagnostics as $d): ?>
+            <tr>
+              <td>
+                <span style="font-family: var(--adm-font-mono); font-weight: 700; color: var(--adm-teal); font-size: 0.8rem;">
+                  <?= e($d['reference_no']) ?>
+                </span>
+                <div style="font-size: 0.72rem; color: var(--adm-text-dim);"><?= e(date('M d, H:i', strtotime($d['created_at']))) ?></div>
+              </td>
+              <td>
+                <div style="font-weight: 600; color: #ffffff;"><?= e($d['company_name']) ?></div>
+                <div style="font-size: 0.78rem; color: var(--adm-text-muted);"><?= e($d['contact_name']) ?> &bull; <?= e($d['work_email']) ?></div>
+              </td>
+              <td>
+                <?php if (!empty($d['website_url'])): ?>
+                  <a href="<?= safeUrl($d['website_url']) ?>" target="_blank" rel="noopener" style="color: var(--adm-teal); text-decoration: underline; font-size: 0.82rem;">
+                    <?= e(mb_strimwidth($d['website_url'], 0, 30, '...')) ?>
+                  </a>
+                <?php else: ?>
+                  <span style="color: var(--adm-text-dim); font-size: 0.8rem;">Not provided</span>
+                <?php endif; ?>
+              </td>
+              <td>
+                <span style="font-family: var(--adm-font-display); font-weight: 800; font-size: 1rem; color: <?= (int)$d['health_score'] >= 75 ? '#34D399' : ((int)$d['health_score'] >= 50 ? '#FBBF24' : '#F87171') ?>;">
+                  <?= (int)$d['health_score'] ?>/100
+                </span>
+              </td>
+              <td>
+                <span class="status-pill status-<?= $d['status'] === 'completed' ? 'published' : ($d['status'] === 'archived' ? 'archived' : 'draft') ?>">
+                  <?= e($d['status']) ?>
+                </span>
+              </td>
+              <td>
+                <form method="POST" style="display: flex; gap: 0.4rem; align-items: center;">
+                  <input type="hidden" name="action" value="update_diagnostic_status">
+                  <input type="hidden" name="id" value="<?= $d['id'] ?>">
+                  <input type="hidden" name="csrf_token" value="<?= getCsrfToken() ?>">
+                  <select name="status" class="adm-select" style="padding: 0.25rem 0.5rem; font-size: 0.76rem; width: auto;">
+                    <option value="pending" <?= $d['status'] === 'pending' ? 'selected' : '' ?>>Pending</option>
+                    <option value="in_review" <?= $d['status'] === 'in_review' ? 'selected' : '' ?>>In Review</option>
+                    <option value="prescribed" <?= $d['status'] === 'prescribed' ? 'selected' : '' ?>>Prescribed</option>
+                    <option value="completed" <?= $d['status'] === 'completed' ? 'selected' : '' ?>>Completed</option>
+                    <option value="archived" <?= $d['status'] === 'archived' ? 'selected' : '' ?>>Archived</option>
+                  </select>
+                  <button type="submit" class="btn-adm btn-adm-secondary btn-adm-sm" style="padding: 0.25rem 0.5rem; font-size: 0.74rem;">
+                    Save
+                  </button>
+                </form>
+              </td>
+            </tr>
+          <?php endforeach; ?>
+        </tbody>
+      </table>
+    </div>
+  <?php endif; ?>
+</div>
+
+<!-- Project Contact Inquiries -->
+<div class="admin-card">
+  <div class="admin-card-header">
+    <div>
+      <h3 class="admin-card-title">Recent Direct Contact Inquiries</h3>
+      <p style="margin: 0.25rem 0 0; color: var(--adm-text-muted); font-size: 0.82rem;">Inbound consultation requests via contact form</p>
+    </div>
+    <span class="status-pill status-published"><?= $contactCount ?> Total</span>
+  </div>
+
+  <?php if (empty($contacts)): ?>
+    <p style="color: var(--adm-text-dim); text-align: center; padding: 2rem 0;">No inquiries received yet.</p>
+  <?php else: ?>
+    <div class="admin-table-wrapper">
+      <table class="admin-table">
+        <thead>
+          <tr>
+            <th>Date</th>
+            <th>Name &amp; Organization</th>
+            <th>Email &amp; Phone</th>
+            <th>Service Interest</th>
+            <th>Message</th>
+          </tr>
+        </thead>
+        <tbody>
+          <?php foreach ($contacts as $co): ?>
+            <tr>
+              <td style="white-space: nowrap; font-family: var(--adm-font-mono); font-size: 0.76rem; color: var(--adm-text-dim);">
+                <?= e(date('M d, Y', strtotime($co['created_at']))) ?>
+              </td>
+              <td>
+                <div style="font-weight: 600; color: #ffffff;"><?= e($co['full_name']) ?></div>
+                <div style="font-size: 0.75rem; color: var(--adm-teal);"><?= e($co['organization'] ?: 'Direct Client') ?></div>
+              </td>
+              <td>
+                <div><a href="mailto:<?= e($co['email']) ?>" style="color: var(--adm-text); text-decoration: none;"><?= e($co['email']) ?></a></div>
+                <div style="font-size: 0.75rem; color: var(--adm-text-dim); font-family: var(--adm-font-mono);"><?= e($co['phone'] ?: 'No phone') ?></div>
+              </td>
+              <td>
+                <span class="status-pill status-published" style="background: rgba(0, 201, 193, 0.1); color: var(--adm-teal); border: 1px solid rgba(0,201,193,0.25);">
+                  <?= e($co['service_interest']) ?>
+                </span>
+              </td>
+              <td style="max-width: 280px; font-size: 0.82rem; color: var(--adm-text-muted);">
+                <?= e(mb_strimwidth($co['message'], 0, 80, '...')) ?>
+              </td>
+            </tr>
+          <?php endforeach; ?>
+        </tbody>
+      </table>
+    </div>
+  <?php endif; ?>
+</div>
+
+<?php require_once __DIR__ . '/includes/footer.php'; ?>

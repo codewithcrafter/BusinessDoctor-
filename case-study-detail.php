@@ -14,7 +14,7 @@ $slug = trim($_GET['slug'] ?? '');
 $case = null;
 try {
     $pdo = Database::getConnection();
-    $stmt = $pdo->prepare("SELECT * FROM case_studies WHERE slug = ? LIMIT 1");
+    $stmt = $pdo->prepare("SELECT * FROM case_studies WHERE slug = ? AND status = 'published' AND is_deleted = 0 LIMIT 1");
     $stmt->execute([$slug]);
     $case = $stmt->fetch();
 } catch (Exception $e) {}
@@ -24,8 +24,11 @@ if (!$case) {
     exit;
 }
 
-$pageTitle = $case['title'] . ' — Client Case Study | BusinessDoctor';
-$pageDescription = substr($case['challenge'], 0, 150);
+$pageTitle = (!empty($case['seo_title']) ? $case['seo_title'] : $case['title']) . ' — Client Case Study | BusinessDoctor';
+$pageDescription = !empty($case['seo_description']) ? $case['seo_description'] : substr($case['challenge'], 0, 150);
+
+$schemaPageKey = 'case-study-detail';
+$schemaContextData = $case;
 
 require_once __DIR__ . '/includes/header.php';
 ?>
@@ -35,8 +38,11 @@ require_once __DIR__ . '/includes/header.php';
   <div class="container">
     <div style="max-width: 940px;">
       <div style="display: flex; align-items: center; gap: 0.85rem; margin-bottom: 1.25rem;">
-        <span class="eyebrow-badge" style="margin-bottom: 0;"><?= e($case['client_industry']) ?></span>
-        <span style="font-family: var(--font-mono); font-size: 0.82rem; color: var(--color-secondary); font-weight: 700;"><?= e($case['practice_area']) ?></span>
+        <span class="eyebrow-badge" style="margin-bottom: 0;"><?= e($case['industry'] ?: $case['client_industry']) ?></span>
+        <span style="font-family: var(--font-mono); font-size: 0.82rem; color: var(--color-secondary); font-weight: 700;"><?= e($case['service_category'] ?: $case['practice_area']) ?></span>
+        <?php if (!empty($case['client_name'])): ?>
+          <span style="font-family: var(--font-mono); font-size: 0.82rem; color: var(--color-teal-400); font-weight: 700;">● <?= e($case['client_name']) ?></span>
+        <?php endif; ?>
       </div>
       <h1 class="hero-headline-oversized" style="font-size: clamp(2.2rem, 4vw, 3.4rem); margin-bottom: 1.5rem;">
         <?= e($case['title']) ?>
@@ -75,6 +81,11 @@ require_once __DIR__ . '/includes/header.php';
 <!-- Deep Dive Case Body -->
 <section class="section" style="background-color: var(--color-surface); border-top: 1px solid var(--color-slate-200); border-bottom: 1px solid var(--color-slate-200);">
   <div class="container" style="max-width: 900px;">
+    <?php if (!empty($case['featured_image'])): ?>
+      <div style="margin-bottom: 3rem; border-radius: var(--radius-lg); overflow: hidden; border: 1px solid var(--color-slate-200); box-shadow: var(--shadow-md);">
+        <img src="<?= e($case['featured_image']) ?>" alt="<?= e($case['title']) ?>" style="width: 100%; max-height: 440px; object-fit: cover; display: block;">
+      </div>
+    <?php endif; ?>
     <!-- Section 1: The Challenge -->
     <div style="margin-bottom: 3.5rem;">
       <div style="font-family: var(--font-mono); font-size: 0.75rem; color: var(--color-secondary); font-weight: 700; text-transform: uppercase; letter-spacing: 0.1em; margin-bottom: 0.5rem;">

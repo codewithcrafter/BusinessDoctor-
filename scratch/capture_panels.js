@@ -2,79 +2,102 @@ const { spawn } = require('child_process');
 const fs = require('fs');
 const path = require('path');
 
-const ARTIFACT_DIR = 'C:\\Users\\user\\.gemini\\antigravity\\brain\\18684505-2438-4107-b6f3-8223edf48149';
-const SCRATCH_DIR = 'c:\\Users\\user\\Desktop\\businessdoctor\\scratch';
+const SCREENSHOT_DIR = path.join(__dirname, 'schema_fullwidth_proof');
 
 async function capturePanels() {
-  const chromePath = 'C:\\Program Files\\Google\\Chrome\\Application\\chrome.exe';
-  const port = 9870;
-  const chrome = spawn(chromePath, [
+  const port = 9960;
+  const chrome = spawn('C:\\Program Files\\Google\\Chrome\\Application\\chrome.exe', [
     '--headless=new',
+    '--incognito',
+    '--disable-cache',
     '--disable-gpu',
     '--disable-extensions',
+    '--unsafely-treat-insecure-origin-as-secure=http://127.0.0.1:8000',
     `--remote-debugging-port=${port}`,
-    '--window-size=1920,1080',
-    'http://127.0.0.1:8000/about.php'
+    'about:blank'
   ]);
 
-  try {
-    await new Promise(r => setTimeout(r, 2000));
-    const res = await fetch(`http://127.0.0.1:${port}/json/list`);
-    const pages = await res.json();
-    const page = pages.find(p => p.type === 'page' && !p.url.startsWith('chrome-extension')) || pages[0];
+  await new Promise(r => setTimeout(r, 1500));
+  const res = await fetch(`http://127.0.0.1:${port}/json/list`);
+  const pages = await res.json();
+  const targetPage = pages.find(p => p.type === 'page') || pages[0];
+  const ws = new WebSocket(targetPage.webSocketDebuggerUrl);
 
-    const ws = new WebSocket(page.webSocketDebuggerUrl);
-    let idCounter = 1;
-    const callbacks = new Map();
-
-    ws.onmessage = (evt) => {
-      const data = JSON.parse(evt.data);
-      if (callbacks.has(data.id)) {
-        callbacks.get(data.id)(data);
-        callbacks.delete(data.id);
-      }
-    };
-
-    await new Promise(r => ws.onopen = r);
-
-    function send(method, params = {}) {
-      return new Promise(resolve => {
-        const id = idCounter++;
-        callbacks.set(id, resolve);
-        ws.send(JSON.stringify({ id, method, params }));
-      });
-    }
-
-    await send('Page.enable');
-    await send('Runtime.enable');
-    await new Promise(r => setTimeout(r, 500));
-
-    // Scroll directly to the grid
-    await send('Runtime.evaluate', {
-      expression: `
-        (() => {
-          const grid = document.querySelector('.mission-vision-grid');
-          if (grid) {
-            const r = grid.getBoundingClientRect();
-            window.scrollTo(0, window.scrollY + r.top - 120);
-          }
-        })()
-      `
+  let msgId = 1;
+  function send(method, params = {}) {
+    return new Promise((resolve, reject) => {
+      const id = msgId++;
+      const to = setTimeout(() => reject(new Error(`Timeout on ${method}`)), 15000);
+      const onMsg = (evt) => {
+        const data = JSON.parse(evt.data);
+        if (data.id === id) {
+          clearTimeout(to);
+          ws.removeEventListener('message', onMsg);
+          if (data.error) reject(data.error);
+          else resolve(data.result);
+        }
+      };
+      ws.addEventListener('message', onMsg);
+      ws.send(JSON.stringify({ id, method, params }));
     });
-
-    await new Promise(r => setTimeout(r, 600));
-
-    const shot = await send('Page.captureScreenshot', { format: 'png' });
-    fs.writeFileSync(path.join(ARTIFACT_DIR, 'about_mission_vision.png'), Buffer.from(shot.result.data, 'base64'));
-    fs.writeFileSync(path.join(SCRATCH_DIR, 'about_mission_vision.png'), Buffer.from(shot.result.data, 'base64'));
-
-    ws.close();
-  } catch (err) {
-    console.error('Error:', err);
-  } finally {
-    chrome.kill();
   }
+
+  await new Promise(r => ws.onopen = r);
+  await send('Page.enable');
+  await send('Runtime.enable');
+
+  // Login
+  await send('Page.navigate', { url: 'http://127.0.0.1:8000/admin/login.php' });
+  await new Promise(r => setTimeout(r, 500));
+  await send('Runtime.evaluate', {
+    expression: `(() => {
+      document.querySelector('input[name="username"]').value = 'admin';
+      document.querySelector('input[name="password"]').value = 'Admin@BusinessDoctor2026';
+      document.querySelector('form').submit();
+    })()`
+  });
+  await new Promise(r => setTimeout(r, 1000));
+
+  // 1440px desktop
+  await send('Emulation.setDeviceMetricsOverride', {
+    width: 1440,
+    height: 900,
+    deviceScaleFactor: 1,
+    mobile: false
+  });
+  await send('Page.navigate', { url: 'http://127.0.0.1:8000/admin/blog-create.php' });
+  await new Promise(r => setTimeout(r, 1000));
+
+  // Scroll to schema panel
+  await send('Runtime.evaluate', {
+    expression: `document.querySelector('.adm-schema-panel').scrollIntoView()`
+  });
+  await new Promise(r => setTimeout(r, 400));
+
+  const shot1440 = await send('Page.captureScreenshot', { format: 'png' });
+  fs.writeFileSync(path.join(SCREENSHOT_DIR, 'schema_panel_1440_in_view.png'), Buffer.from(shot1440.data, 'base64'));
+
+  // Mobile 390px
+  await send('Emulation.setDeviceMetricsOverride', {
+    width: 390,
+    height: 844,
+    deviceScaleFactor: 1,
+    mobile: true
+  });
+  await send('Page.navigate', { url: 'http://127.0.0.1:8000/admin/blog-create.php' });
+  await new Promise(r => setTimeout(r, 1000));
+
+  await send('Runtime.evaluate', {
+    expression: `document.querySelector('.adm-schema-panel').scrollIntoView()`
+  });
+  await new Promise(r => setTimeout(r, 400));
+
+  const shot390 = await send('Page.captureScreenshot', { format: 'png' });
+  fs.writeFileSync(path.join(SCREENSHOT_DIR, 'schema_panel_390_in_view.png'), Buffer.from(shot390.data, 'base64'));
+
+  ws.close();
+  chrome.kill();
+  console.log('Targeted screenshots captured!');
 }
 
-capturePanels();
-
+capturePanels().catch(console.error);

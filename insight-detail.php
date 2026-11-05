@@ -14,7 +14,7 @@ $slug = trim($_GET['slug'] ?? '');
 $insight = null;
 try {
     $pdo = Database::getConnection();
-    $stmt = $pdo->prepare("SELECT * FROM insights WHERE slug = ? AND is_published = 1 LIMIT 1");
+    $stmt = $pdo->prepare("SELECT * FROM insights WHERE slug = ? AND status = 'published' AND is_deleted = 0 LIMIT 1");
     $stmt->execute([$slug]);
     $insight = $stmt->fetch();
 } catch (Exception $e) {}
@@ -24,8 +24,15 @@ if (!$insight) {
     exit;
 }
 
-$pageTitle = $insight['title'] . ' — Perspectives | BusinessDoctor';
-$pageDescription = $insight['summary'];
+$pageTitle = (!empty($insight['seo_title']) ? $insight['seo_title'] : $insight['title']) . ' — Perspectives | BusinessDoctor';
+$pageDescription = !empty($insight['seo_description']) ? $insight['seo_description'] : (!empty($insight['excerpt']) ? $insight['excerpt'] : $insight['summary']);
+
+if (!empty($insight['canonical_url'])) {
+    $canonicalUrl = $insight['canonical_url'];
+}
+
+$schemaPageKey = 'insight-detail';
+$schemaContextData = $insight;
 
 require_once __DIR__ . '/includes/header.php';
 ?>
@@ -36,7 +43,7 @@ require_once __DIR__ . '/includes/header.php';
     <div style="display: flex; align-items: center; gap: 0.85rem; margin-bottom: 1.25rem;">
       <span class="eyebrow-badge" style="margin-bottom: 0;"><?= e($insight['category']) ?></span>
       <span style="font-family: var(--font-mono); font-size: 0.82rem; color: var(--color-secondary); font-weight: 700;"><?= e($insight['reading_time']) ?></span>
-      <span style="font-family: var(--font-mono); font-size: 0.82rem; color: var(--color-text-light);">● <?= formatExecutiveDate($insight['published_at']) ?></span>
+      <span style="font-family: var(--font-mono); font-size: 0.82rem; color: var(--color-text-light);">● <?= formatExecutiveDate($insight['published_at'] ?? 'now') ?></span>
     </div>
 
     <h1 class="hero-headline-oversized" style="font-size: clamp(2.2rem, 4vw, 3.4rem); margin-bottom: 1.5rem;">
@@ -45,10 +52,10 @@ require_once __DIR__ . '/includes/header.php';
 
     <div style="display: flex; align-items: center; gap: 1rem; border-top: 1px solid var(--color-slate-200); padding-top: 1.5rem; margin-top: 2rem;">
       <div style="width: 48px; height: 48px; border-radius: var(--radius-sm); background: var(--color-primary); color: var(--color-accent); font-family: var(--font-display); font-weight: 800; display: flex; align-items: center; justify-content: center; font-size: 1.1rem; border: 1px solid rgba(161, 126, 145,0.3);">
-        <?= substr($insight['author_name'], 0, 2) ?>
+        <?= strtoupper(substr($insight['author'] ?: $insight['author_name'], 0, 2)) ?>
       </div>
       <div>
-        <div style="font-family: var(--font-display); font-weight: 700; color: var(--color-text); font-size: 1.05rem;"><?= e($insight['author_name']) ?></div>
+        <div style="font-family: var(--font-display); font-weight: 700; color: var(--color-text); font-size: 1.05rem;"><?= e($insight['author'] ?: $insight['author_name']) ?></div>
         <div style="font-size: 0.82rem; color: var(--color-text-light); font-family: var(--font-mono);"><?= e($insight['author_title']) ?></div>
       </div>
     </div>
@@ -58,13 +65,19 @@ require_once __DIR__ . '/includes/header.php';
 <!-- Article Body -->
 <section class="section" style="background-color: var(--color-surface); border-top: 1px solid var(--color-slate-200); border-bottom: 1px solid var(--color-slate-200);">
   <div class="container" style="max-width: 900px;">
+    <?php if (!empty($insight['featured_image'])): ?>
+      <div style="margin-bottom: 2.5rem; border-radius: var(--radius-lg); overflow: hidden; border: 1px solid var(--color-slate-200); box-shadow: var(--shadow-md);">
+        <img src="<?= e($insight['featured_image']) ?>" alt="<?= e($insight['title']) ?>" style="width: 100%; max-height: 440px; object-fit: cover; display: block;">
+      </div>
+    <?php endif; ?>
+
     <!-- Abstract Box -->
     <div style="background: var(--color-bg); border: 1px solid var(--color-slate-200); border-left: 4px solid var(--color-secondary); border-radius: var(--radius-lg); padding: 2.25rem; margin-bottom: 3.5rem;">
       <div style="font-size: 0.78rem; font-family: var(--font-mono); text-transform: uppercase; color: var(--color-secondary); letter-spacing: 0.1em; margin-bottom: 0.75rem; font-weight: 700;">
         KEY EXECUTIVE SUMMARY
       </div>
       <p style="font-size: 1.1rem; line-height: 1.7; color: var(--color-text); margin: 0; font-style: italic;">
-        <?= e($insight['summary']) ?>
+        <?= e(!empty($insight['excerpt']) ? $insight['excerpt'] : $insight['summary']) ?>
       </p>
     </div>
 

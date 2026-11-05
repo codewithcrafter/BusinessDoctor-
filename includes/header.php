@@ -19,7 +19,11 @@ $canonicalParams = '';
 if (!empty($parsedUri['query'])) {
     parse_str($parsedUri['query'], $qp);
     if (!empty($qp['slug'])) {
-        $canonicalParams = '?slug=' . urlencode($qp['slug']);
+        if (str_contains($cleanPath, 'service-detail')) {
+            $cleanPath = '/services/' . rawurlencode($qp['slug']);
+        } else {
+            $canonicalParams = '?slug=' . urlencode($qp['slug']);
+        }
     }
 }
 $canonicalUrl = $canonicalUrl ?? (BASE_URL . $cleanPath . $canonicalParams);
@@ -46,60 +50,14 @@ $canonicalUrl = $canonicalUrl ?? (BASE_URL . $cleanPath . $canonicalParams);
   <meta name="twitter:card" content="summary_large_image">
   <meta name="twitter:title" content="<?= e($pageTitle) ?>">
   <meta name="twitter:description" content="<?= e($pageDescription) ?>">
+  <meta name="twitter:url" content="<?= e($canonicalUrl) ?>">
   <meta name="twitter:image" content="<?= e(BASE_URL . '/assets/img/og-preview.svg') ?>">
 
-  <!-- Structured Data: Schema.org JSON-LD -->
-  <script type="application/ld+json">
-  {
-    "@context": "https://schema.org",
-    "@type": "ProfessionalService",
-    "name": "<?= APP_NAME ?>",
-    "legalName": "<?= APP_LEGAL_NAME ?>",
-    "url": "<?= BASE_URL ?>",
-    "description": "<?= APP_TAGLINE ?>",
-    "telephone": "<?= APP_PHONE ?>",
-    "email": "<?= APP_EMAIL ?>",
-    "priceRange": "$$$",
-    "address": {
-      "@type": "PostalAddress",
-      "streetAddress": "<?= APP_HEADQUARTERS ?>"
-    },
-    "hasOfferCatalog": {
-      "@type": "OfferCatalog",
-      "name": "IT & Digital Services Portfolio",
-      "itemListElement": [
-        {
-          "@type": "Offer",
-          "itemOffered": {
-            "@type": "Service",
-            "name": "Web & Custom Software Development"
-          }
-        },
-        {
-          "@type": "Offer",
-          "itemOffered": {
-            "@type": "Service",
-            "name": "Digital Marketing & Performance SEO"
-          }
-        },
-        {
-          "@type": "Offer",
-          "itemOffered": {
-            "@type": "Service",
-            "name": "UI/UX Design & Brand Identity"
-          }
-        },
-        {
-          "@type": "Offer",
-          "itemOffered": {
-            "@type": "Service",
-            "name": "E-Commerce & Marketplace Management"
-          }
-        }
-      ]
-    }
-  }
-  </script>
+  <!-- Structured Data: Dynamic Schema.org JSON-LD CMS -->
+  <?php
+  require_once __DIR__ . '/schema-renderer.php';
+  echo renderPageSchemas($schemaPageKey ?? null, $schemaContextData ?? []);
+  ?>
 
   <!-- Typography: Plus Jakarta Sans, Inter, JetBrains Mono -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -107,10 +65,10 @@ $canonicalUrl = $canonicalUrl ?? (BASE_URL . $cleanPath . $canonicalParams);
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@500;600;700&family=Plus+Jakarta+Sans:wght@600;700;800&display=swap" rel="stylesheet">
 
   <!-- Core Stylesheets -->
-  <link rel="stylesheet" href="assets/css/variables.css">
-  <link rel="stylesheet" href="assets/css/base.css">
-  <link rel="stylesheet" href="assets/css/components.css">
-  <link rel="stylesheet" href="assets/css/responsive.css">
+  <link rel="stylesheet" href="/assets/css/variables.css">
+  <link rel="stylesheet" href="/assets/css/base.css">
+  <link rel="stylesheet" href="/assets/css/components.css">
+  <link rel="stylesheet" href="/assets/css/responsive.css">
 
   <!-- Favicon SVG (Code brackets / IT tech icon) -->
   <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%230d9488' stroke-width='2.5'><polyline points='16 18 22 12 16 6'/><polyline points='8 6 2 12 8 18'/></svg>">

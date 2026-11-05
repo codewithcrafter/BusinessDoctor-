@@ -1,0 +1,35 @@
+warning: in the working copy of '.htaccess', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'admin/dashboard.php', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'case-studies.php', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'case-study-detail.php', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'database/schema.sql', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'includes/db.php', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'includes/footer.php', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'includes/functions.php', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'includes/header.php', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'includes/navbar.php', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'index.php', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'insight-detail.php', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'insights.php', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'scratch/capture_panels.js', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'service-detail.php', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'services.php', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'sitemap.xml', LF will be replaced by CRLF the next time Git touches it
+ .htaccess                 |  18 [32m++[m
+ admin/dashboard.php       | 567 [32m++++++++++++++++++++++++[m[31m----------------------[m
+ case-studies.php          |   2 [32m+[m[31m-[m
+ case-study-detail.php     |  21 [32m+[m[31m-[m
+ database/schema.sql       |  79 [32m++++++[m[31m-[m
+ includes/db.php           |  65 [32m+++++[m[31m-[m
+ includes/footer.php       |  10 [32m+[m[31m-[m
+ includes/functions.php    | 106 [32m+++++++++[m
+ includes/header.php       |  72 [32m++[m[31m----[m
+ includes/navbar.php       |  15 [32m+[m[31m-[m
+ index.php                 |  17 [32m+[m[31m-[m
+ insight-detail.php        |  27 [32m++[m[31m-[m
+ insights.php              |   2 [32m+[m[31m-[m
+ scratch/capture_panels.js | 137 [32m++++++[m[31m-----[m
+ service-detail.php        |  79 [32m++++++[m[31m-[m
+ services.php              |   2 [32m+[m[31m-[m
+ sitemap.xml               |  24 [32m+[m[31m-[m
+ 17 files changed, 809 insertions(+), 434 deletions(-)

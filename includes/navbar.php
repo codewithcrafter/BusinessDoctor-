@@ -48,7 +48,7 @@ $practiceAreas = getPracticeAreas();
               <!-- Services List (2 columns of 3 services) -->
               <div class="mega-services-cols">
                 <?php foreach ($practiceAreas as $slug => $p): ?>
-                  <a href="service-detail.php?slug=<?= urlencode($slug) ?>" class="mega-service-item">
+                  <a href="<?= getServiceUrl($slug) ?>" class="mega-service-item">
                     <div class="mega-item-icon"><?= $p['icon'] ?></div>
                     <div class="mega-item-text">
                       <div class="mega-item-title">
@@ -163,8 +163,17 @@ $practiceAreas = getPracticeAreas();
               <span class="mobile-sublink-num">&rarr;</span>
               <span class="mobile-sublink-name">Overview &ndash; All IT Services</span>
             </a>
-            <?php foreach ($practiceAreas as $slug => $p): ?>
-              <a href="service-detail.php?slug=<?= urlencode($slug) ?>" class="mobile-submenu-link <?= (isset($_GET['slug']) && $_GET['slug'] === $slug) ? 'active' : '' ?>">
+            <?php 
+              $currentNavSlug = $_GET['slug'] ?? '';
+              if ($currentNavSlug === '') {
+                  $currPath = parse_url($_SERVER['REQUEST_URI'] ?? '', PHP_URL_PATH);
+                  if ($currPath && preg_match('#^/services/([a-zA-Z0-9_-]+)#', $currPath, $m)) {
+                      $currentNavSlug = $m[1];
+                  }
+              }
+              foreach ($practiceAreas as $slug => $p): 
+            ?>
+              <a href="<?= getServiceUrl($slug) ?>" class="mobile-submenu-link <?= ($currentNavSlug === $slug) ? 'active' : '' ?>">
                 <span class="mobile-sublink-num"><?= e($p['number']) ?>.</span>
                 <span class="mobile-sublink-name"><?= e($p['name']) ?></span>
               </a>

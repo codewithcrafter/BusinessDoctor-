@@ -40,7 +40,7 @@ $practices = getPracticeAreas();
         <h4 class="footer-title">IT & Digital Disciplines</h4>
         <div class="footer-links">
           <?php foreach ($practices as $slug => $p): ?>
-            <a href="service-detail.php?slug=<?= urlencode($slug) ?>" class="footer-link">
+            <a href="<?= getServiceUrl($slug) ?>" class="footer-link">
               <?= e($p['name']) ?>
             </a>
           <?php endforeach; ?>
@@ -66,7 +66,7 @@ $practices = getPracticeAreas();
         <p style="font-size: 0.88rem; color: rgba(255, 255, 255, 0.7); margin-bottom: 1.25rem;">
           Subscribe to our executive brief covering software engineering architectures, SEO algorithms, and digital growth frameworks.
         </p>
-        <form class="newsletter-form" action="api/newsletter-subscribe.php" method="POST">
+        <form class="newsletter-form" action="/api/newsletter-subscribe.php" method="POST">
           <input type="hidden" name="csrf_token" value="<?= getCsrfToken() ?>">
           <div style="display: flex; gap: 0.5rem; width: 100%;">
             <input type="email" name="email" required placeholder="executive@enterprise.com" class="cta-input" style="font-size: 0.88rem; padding: 0.75rem 1rem;">
@@ -97,8 +97,8 @@ $practices = getPracticeAreas();
 </footer>
 
 <!-- Core Vanilla JavaScript -->
-<script src="assets/js/main.js?v=<?= filemtime(__DIR__ . '/../assets/js/main.js') ?>"></script>
-<script src="assets/js/diagnostic-calculator.js"></script>
-<script src="assets/js/form-handler.js"></script>
+<script src="/assets/js/main.js?v=<?= filemtime(__DIR__ . '/../assets/js/main.js') ?>"></script>
+<script src="/assets/js/diagnostic-calculator.js"></script>
+<script src="/assets/js/form-handler.js"></script>
 </body>
 </html>

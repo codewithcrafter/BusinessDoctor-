@@ -91,26 +91,45 @@ CREATE TABLE IF NOT EXISTS `case_studies` (
     `id` INT UNSIGNED AUTO_INCREMENT PRIMARY KEY,
     `slug` VARCHAR(120) NOT NULL UNIQUE,
     `title` VARCHAR(200) NOT NULL,
+    `client_name` VARCHAR(150) NULL,
     `client_industry` VARCHAR(100) NOT NULL,
+    `industry` VARCHAR(100) NULL,
     `practice_area` VARCHAR(100) NOT NULL,
+    `service_category` VARCHAR(100) NULL,
+    `project_summary` TEXT NULL,
     `baseline_metric` VARCHAR(100) NOT NULL,
     `outcome_metric` VARCHAR(100) NOT NULL,
     `metric_label` VARCHAR(120) NOT NULL,
     `challenge` TEXT NOT NULL,
     `prescription` TEXT NOT NULL,
+    `solution` TEXT NULL,
+    `implementation` TEXT NULL,
     `result_description` TEXT NOT NULL,
+    `results` TEXT NULL,
+    `featured_image` VARCHAR(255) NULL,
+    `cover_image_alt` VARCHAR(255) NULL,
+    `gallery` TEXT NULL,
     `quote_text` TEXT NULL,
     `quote_author` VARCHAR(120) NULL,
     `quote_title` VARCHAR(120) NULL,
+    `seo_title` VARCHAR(255) NULL,
+    `seo_description` TEXT NULL,
+    `status` ENUM('draft', 'published', 'archived') NOT NULL DEFAULT 'published',
     `is_featured` TINYINT(1) NOT NULL DEFAULT 0,
     `sort_order` INT NOT NULL DEFAULT 0,
+    `published_at` DATETIME NULL,
     `created_at` TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+    `updated_at` TIMESTAMP DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
+    `deleted_at` DATETIME NULL,
+    `is_deleted` TINYINT(1) NOT NULL DEFAULT 0,
     INDEX `idx_slug` (`slug`),
-    INDEX `idx_featured` (`is_featured`)
+    INDEX `idx_featured` (`is_featured`),
+    INDEX `idx_status` (`status`),
+    INDEX `idx_deleted` (`is_deleted`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 -- ------------------------------------------------------------
--- 6. Tech Insights & Articles Table
+-- 6. Tech Insights & Articles Table (Blog CMS)
 -- ------------------------------------------------------------
 CREATE TABLE IF NOT EXISTS `insights` (
     `id` INT UNSIGNED AUTO_INCREMENT PRIMARY KEY,
@@ -119,23 +138,73 @@ CREATE TABLE IF NOT EXISTS `insights` (
     `title` VARCHAR(255) NOT NULL,
     `reading_time` VARCHAR(30) NOT NULL DEFAULT '6 min read',
     `summary` TEXT NOT NULL,
+    `excerpt` TEXT NULL,
     `content` LONGTEXT NOT NULL,
+    `featured_image` VARCHAR(255) NULL,
+    `cover_image_alt` VARCHAR(255) NULL,
     `author_name` VARCHAR(120) NOT NULL,
-    `author_title` VARCHAR(120) NOT NULL,
+    `author` VARCHAR(120) NULL,
+    `author_title` VARCHAR(120) NOT NULL DEFAULT 'Senior Consultant',
+    `author_bio` TEXT NULL,
+    `tags` VARCHAR(255) NULL,
+    `seo_title` VARCHAR(255) NULL,
+    `seo_description` TEXT NULL,
+    `canonical_url` VARCHAR(255) NULL,
+    `is_featured` TINYINT(1) NOT NULL DEFAULT 0,
+    `schema_mode` VARCHAR(20) NOT NULL DEFAULT 'auto',
+    `custom_schema_json` LONGTEXT NULL,
+    `status` ENUM('draft', 'published', 'archived') NOT NULL DEFAULT 'published',
     `is_published` TINYINT(1) NOT NULL DEFAULT 1,
     `published_at` DATETIME NOT NULL DEFAULT CURRENT_TIMESTAMP,
+    `created_at` TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+    `updated_at` TIMESTAMP DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
+    `deleted_at` DATETIME NULL,
+    `is_deleted` TINYINT(1) NOT NULL DEFAULT 0,
     INDEX `idx_slug` (`slug`),
-    INDEX `idx_category` (`category`)
+    INDEX `idx_category` (`category`),
+    INDEX `idx_status` (`status`),
+    INDEX `idx_deleted` (`is_deleted`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 -- ------------------------------------------------------------
--- 7. Login Rate Limiting Table (Brute-Force Protection)
+-- 7. Media Library Table
+-- ------------------------------------------------------------
+CREATE TABLE IF NOT EXISTS `media` (
+    `id` INT UNSIGNED AUTO_INCREMENT PRIMARY KEY,
+    `filename` VARCHAR(255) NOT NULL,
+    `original_name` VARCHAR(255) NOT NULL,
+    `file_path` VARCHAR(255) NOT NULL,
+    `file_size` INT UNSIGNED NOT NULL,
+    `mime_type` VARCHAR(60) NOT NULL,
+    `created_at` TIMESTAMP DEFAULT CURRENT_TIMESTAMP
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+-- ------------------------------------------------------------
+-- 8. Login Rate Limiting Table (Brute-Force Protection)
 -- ------------------------------------------------------------
 CREATE TABLE IF NOT EXISTS `login_rate_limits` (
     `ip_address` VARCHAR(45) NOT NULL PRIMARY KEY,
     `attempts` INT UNSIGNED NOT NULL DEFAULT 1,
     `last_attempt` DATETIME NOT NULL,
     `locked_until` DATETIME NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+-- ------------------------------------------------------------
+-- 9. Page SEO Schemas Table (Schema.org JSON-LD CMS)
+-- ------------------------------------------------------------
+CREATE TABLE IF NOT EXISTS `page_schemas` (
+    `id` INT UNSIGNED AUTO_INCREMENT PRIMARY KEY,
+    `page_key` VARCHAR(100) NOT NULL,
+    `page_url` VARCHAR(255) NOT NULL,
+    `schema_name` VARCHAR(150) NOT NULL,
+    `schema_type` VARCHAR(100) NOT NULL,
+    `schema_description` TEXT NULL,
+    `schema_json` MEDIUMTEXT NOT NULL,
+    `status` ENUM('active', 'draft', 'inactive') NOT NULL DEFAULT 'active',
+    `created_at` TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+    `updated_at` TIMESTAMP DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
+    INDEX `idx_page_key` (`page_key`),
+    INDEX `idx_status` (`status`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 -- ------------------------------------------------------------

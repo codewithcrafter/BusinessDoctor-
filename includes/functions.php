@@ -17,6 +17,30 @@ function e(?string $string): string
 }
 
 /**
+ * Sanitize rich article HTML to prevent XSS while allowing safe formatting, tables, images, and embeds
+ */
+function sanitizeArticleHtml(?string $html): string
+{
+    if (empty($html)) {
+        return '';
+    }
+    
+    // Strip malicious executable tags
+    $disallowedTags = 'script|style|iframe|object|embed|applet|form|input|button|select|textarea|frameset|frame|meta|link';
+    $clean = preg_replace('#<(' . $disallowedTags . ')[^>]*>.*?</\1>#is', '', $html);
+    $clean = preg_replace('#<(' . $disallowedTags . ')[^>]*>#is', '', $clean);
+    
+    // Strip inline event attributes like onclick, onerror, onload, etc.
+    $clean = preg_replace('/\son\w+\s*=\s*("[^"]*"|\'[^\']*\'|[^\s>]+)/i', '', $clean);
+    
+    // Neutralize dangerous javascript: and vbscript: URIs
+    $clean = preg_replace('/href\s*=\s*["\']\s*(?:javascript|vbscript):[^"\']*["\']/i', 'href="#"', $clean);
+    $clean = preg_replace('/src\s*=\s*["\']\s*(?:javascript|vbscript):[^"\']*["\']/i', 'src=""', $clean);
+
+    return trim($clean);
+}
+
+/**
  * Sanitize external URL to prevent javascript: and data: XSS injections
  */
 function safeUrl(?string $url): string
@@ -67,7 +91,24 @@ function isActivePage(string ...$pages): string
             return 'active';
         }
     }
+
+    // Also check REQUEST_URI for clean routes such as /services or /services/{slug}
+    $reqUri = parse_url($_SERVER['REQUEST_URI'] ?? '', PHP_URL_PATH);
+    if ($reqUri !== null && (str_starts_with($reqUri, '/services') || $reqUri === '/services')) {
+        if (in_array('services.php', $pages, true) || in_array('service-detail.php', $pages, true)) {
+            return 'active';
+        }
+    }
+
     return '';
+}
+
+/**
+ * Return clean SEO-friendly URL for a service
+ */
+function getServiceUrl(string $slug): string
+{
+    return '/services/' . rawurlencode($slug);
 }
 
 /**
@@ -676,5 +717,70 @@ function getPracticeBySlug(string $slug): ?array
         return $practices[$legacyMap[$slug]];
     }
 
+    return null;
+}
+
+/**
+ * Generate a unique URL slug for CMS content
+ */
+function generateUniqueSlug(string $title, string $table, ?int $excludeId = null): string
+{
+    $slug = strtolower(trim($title));
+    $slug = preg_replace('/[^a-z0-9-]+/', '-', $slug);
+    $slug = trim((string)preg_replace('/-+/', '-', $slug), '-');
+    if (empty($slug)) {
+        $slug = 'post-' . bin2hex(random_bytes(3));
+    }
+
+    // Protect allowed table names
+    $allowedTables = ['insights', 'case_studies'];
+    if (!in_array($table, $allowedTables, true)) {
+        throw new InvalidArgumentException('Invalid table name for slug generation.');
+    }
+
+    $pdo = Database::getConnection();
+    $baseSlug = $slug;
+    $counter = 1;
+
+    while (true) {
+        $sql = "SELECT id FROM {$table} WHERE slug = ? " . ($excludeId !== null ? "AND id != ?" : "") . " LIMIT 1";
+        $stmt = $pdo->prepare($sql);
+        $params = $excludeId !== null ? [$slug, $excludeId] : [$slug];
+        $stmt->execute($params);
+        if (!$stmt->fetch()) {
+            return $slug;
+        }
+        $counter++;
+        $slug = $baseSlug . '-' . $counter;
+    }
+}
+
+/**
+ * Set session flash message
+ */
+function setFlashMessage(string $type, string $message): void
+{
+    if (session_status() === PHP_SESSION_NONE && !headers_sent()) {
+        session_start();
+    }
+    $_SESSION['flash_message'] = [
+        'type' => in_array($type, ['success', 'error', 'info', 'warning'], true) ? $type : 'info',
+        'message' => $message
+    ];
+}
+
+/**
+ * Get and clear session flash message
+ */
+function getFlashMessage(): ?array
+{
+    if (session_status() === PHP_SESSION_NONE && !headers_sent()) {
+        session_start();
+    }
+    if (!empty($_SESSION['flash_message'])) {
+        $msg = $_SESSION['flash_message'];
+        unset($_SESSION['flash_message']);
+        return $msg;
+    }
     return null;
 }

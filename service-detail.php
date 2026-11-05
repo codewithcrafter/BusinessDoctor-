@@ -9,14 +9,70 @@ require_once __DIR__ . '/includes/config.php';
 require_once __DIR__ . '/includes/db.php';
 require_once __DIR__ . '/includes/functions.php';
 
-$slug = trim($_GET['slug'] ?? 'web-software-development');
-$practice = getPracticeBySlug($slug);
-
-if (!$practice) {
-    header("Location: services.php");
+// 1. Legacy URL 301 Permanent Redirect
+// If client requested /service-detail.php?slug=... directly, 301 redirect to /services/{slug}
+$reqUri = $_SERVER['REQUEST_URI'] ?? '';
+if (str_contains($reqUri, 'service-detail.php')) {
+    $rawSlug = trim($_GET['slug'] ?? '');
+    if ($rawSlug !== '') {
+        $p = getPracticeBySlug($rawSlug);
+        $redirectSlug = $p ? $p['slug'] : rawurlencode($rawSlug);
+        $targetUrl = '/services/' . $redirectSlug;
+    } else {
+        $targetUrl = '/services.php';
+    }
+    header("Location: " . $targetUrl, true, 301);
     exit;
 }
 
+// 2. Validate Service Slug
+$slug = trim($_GET['slug'] ?? '');
+if ($slug === '') {
+    header("Location: /services.php", true, 301);
+    exit;
+}
+
+$practice = getPracticeBySlug($slug);
+
+if (!$practice) {
+    http_response_code(404);
+    $pageTitle = 'Service Not Found — BusinessDoctor';
+    $pageDescription = 'The requested practice area could not be found. Explore our enterprise IT and digital capabilities.';
+    $canonicalUrl = BASE_URL . '/services.php';
+    require_once __DIR__ . '/includes/header.php';
+    ?>
+    <section class="section hero-enterprise" style="padding-top: 6rem; padding-bottom: 6rem; text-align: center;">
+      <div class="container" style="max-width: 760px;">
+        <span class="eyebrow-badge" style="margin-bottom: 1.25rem;">
+          <span class="pill-dot" style="background-color: var(--color-error, #ef4444);"></span>
+          <span>HTTP 404 &mdash; PRACTICE AREA NOT FOUND</span>
+        </span>
+        <h1 class="hero-headline-oversized" style="font-size: clamp(2.2rem, 4vw, 3.2rem); margin-bottom: 1.25rem;">
+          Capability Not Recognized
+        </h1>
+        <p class="hero-lead-text" style="margin-bottom: 2.5rem;">
+          The service discipline <code><?= e($slug) ?></code> is not part of our enterprise roadmap, or the URL has changed.
+        </p>
+        <div style="display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap;">
+          <a href="<?= BASE_URL ?>/services.php" class="btn btn-primary btn-lg">
+            <span>Explore All Capabilities</span>
+            <svg class="btn-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <line x1="5" y1="12" x2="19" y2="12"/>
+              <polyline points="12 5 19 12 12 19"/>
+            </svg>
+          </a>
+          <a href="<?= BASE_URL ?>/contact.php" class="btn btn-secondary btn-lg">
+            <span>Inquire About Custom Engineering</span>
+          </a>
+        </div>
+      </div>
+    </section>
+    <?php
+    require_once __DIR__ . '/includes/footer.php';
+    exit;
+}
+
+$canonicalUrl = BASE_URL . '/services/' . $practice['slug'];
 $pageTitle = $practice['name'] . ' — BusinessDoctor Enterprise Capabilities';
 $pageDescription = $practice['summary'];
 
@@ -32,6 +88,13 @@ try {
         $relatedCase = $stmt->fetch();
     }
 } catch (Exception $e) {}
+
+$schemaPageKey = 'service-detail';
+$schemaContextData = [
+    'title' => $practice['name'],
+    'summary' => $practice['summary'],
+    'canonical_url' => $canonicalUrl
+];
 
 require_once __DIR__ . '/includes/header.php';
 ?>
@@ -52,14 +115,14 @@ require_once __DIR__ . '/includes/header.php';
       <p class="hero-lead-text"><?= e($practice['description']) ?></p>
 
       <div style="display: flex; gap: 1rem; flex-wrap: wrap; margin-top: 2rem;">
-        <a href="contact.php?service=<?= urlencode($practice['name']) ?>" class="btn btn-accent btn-lg">
+        <a href="/contact.php?service=<?= urlencode($practice['name']) ?>" class="btn btn-accent btn-lg">
           <span>Request a Project Proposal</span>
           <svg class="btn-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
             <line x1="5" y1="12" x2="19" y2="12"/>
             <polyline points="12 5 19 12 12 19"/>
           </svg>
         </a>
-        <a href="services.php" class="btn btn-secondary btn-lg">
+        <a href="/services.php" class="btn btn-secondary btn-lg">
           <span>All Capabilities</span>
         </a>
       </div>
@@ -130,14 +193,14 @@ require_once __DIR__ . '/includes/header.php';
               RELATED CLIENT SUCCESS
             </div>
             <h4 style="font-size: 1.2rem; margin-bottom: 0.75rem; color: var(--color-text); line-height: 1.35;">
-              <a href="case-study-detail.php?slug=<?= urlencode($relatedCase['slug']) ?>" style="color: var(--color-text); text-decoration: none;">
+              <a href="/case-study-detail.php?slug=<?= urlencode($relatedCase['slug']) ?>" style="color: var(--color-text); text-decoration: none;">
                 <?= e($relatedCase['title']) ?>
               </a>
             </h4>
             <p style="font-size: 0.9rem; color: var(--color-text-muted); margin-bottom: 1.25rem; line-height: 1.55;">
               <?= e(substr($relatedCase['challenge'], 0, 140)) ?>...
             </p>
-            <a href="case-study-detail.php?slug=<?= urlencode($relatedCase['slug']) ?>" class="case-card-action">
+            <a href="/case-study-detail.php?slug=<?= urlencode($relatedCase['slug']) ?>" class="case-card-action">
               <span>Read Full Case Study</span>
               <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
                 <line x1="5" y1="12" x2="19" y2="12"/>
@@ -161,14 +224,14 @@ require_once __DIR__ . '/includes/header.php';
           Connect with our senior technical architects to discuss your project requirements and receive a formal scope of work.
         </p>
         <div class="closing-cta-buttons">
-          <a href="contact.php?service=<?= urlencode($practice['name']) ?>" class="btn btn-accent btn-lg">
+          <a href="/contact.php?service=<?= urlencode($practice['name']) ?>" class="btn btn-accent btn-lg">
             <span>Request a Project Proposal</span>
             <svg class="btn-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
               <line x1="5" y1="12" x2="19" y2="12"/>
               <polyline points="12 5 19 12 12 19"/>
             </svg>
           </a>
-          <a href="audit.php" class="btn btn-outline-gold btn-lg">
+          <a href="/audit.php" class="btn btn-outline-gold btn-lg">
             <span>Request Free Digital Audit</span>
           </a>
         </div>

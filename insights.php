@@ -15,7 +15,7 @@ $pageDescription = 'Articles and engineering guides on custom web architecture, 
 $insights = [];
 try {
     $pdo = Database::getConnection();
-    $stmt = $pdo->query("SELECT * FROM insights WHERE is_published = 1 ORDER BY published_at DESC");
+    $stmt = $pdo->query("SELECT * FROM insights WHERE status = 'published' AND is_deleted = 0 ORDER BY published_at DESC, id DESC");
     $insights = $stmt->fetchAll();
 } catch (Exception $e) {}
 
