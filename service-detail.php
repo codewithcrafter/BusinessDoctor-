@@ -193,14 +193,14 @@ require_once __DIR__ . '/includes/header.php';
               RELATED CLIENT SUCCESS
             </div>
             <h4 style="font-size: 1.2rem; margin-bottom: 0.75rem; color: var(--color-text); line-height: 1.35;">
-              <a href="/case-study-detail.php?slug=<?= urlencode($relatedCase['slug']) ?>" style="color: var(--color-text); text-decoration: none;">
+              <a href="<?= getCaseStudyUrl($relatedCase['slug']) ?>" style="color: var(--color-text); text-decoration: none;">
                 <?= e($relatedCase['title']) ?>
               </a>
             </h4>
             <p style="font-size: 0.9rem; color: var(--color-text-muted); margin-bottom: 1.25rem; line-height: 1.55;">
               <?= e(substr($relatedCase['challenge'], 0, 140)) ?>...
             </p>
-            <a href="/case-study-detail.php?slug=<?= urlencode($relatedCase['slug']) ?>" class="case-card-action">
+            <a href="<?= getCaseStudyUrl($relatedCase['slug']) ?>" class="case-card-action">
               <span>Read Full Case Study</span>
               <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
                 <line x1="5" y1="12" x2="19" y2="12"/>

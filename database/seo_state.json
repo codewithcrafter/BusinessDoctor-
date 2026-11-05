@@ -1,0 +1,17 @@
+{
+    "success": true,
+    "last_generation_time": "2026-11-05 19:17:21",
+    "duration_ms": 80,
+    "published_blogs_count": 3,
+    "published_case_studies_count": 3,
+    "total_urls_in_sitemap": 19,
+    "errors": [],
+    "files": {
+        "sitemap_xml": true,
+        "sitemap_html": true,
+        "llms_txt": true,
+        "llms_full_txt": true,
+        "blog_md_count": 3,
+        "case_study_md_count": 3
+    }
+}

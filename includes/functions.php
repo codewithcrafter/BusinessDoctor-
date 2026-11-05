@@ -112,6 +112,30 @@ function getServiceUrl(string $slug): string
 }
 
 /**
+ * Return clean SEO-friendly URL for a case study
+ */
+function getCaseStudyUrl(string $slug): string
+{
+    return '/case-studies/' . rawurlencode($slug);
+}
+
+/**
+ * Return clean SEO-friendly URL for a blog / insight article
+ */
+function getInsightUrl(string $slug): string
+{
+    return '/insights/' . rawurlencode($slug);
+}
+
+/**
+ * Alias for getInsightUrl
+ */
+function getBlogUrl(string $slug): string
+{
+    return getInsightUrl($slug);
+}
+
+/**
  * Format timestamp to executive presentation format
  */
 function formatExecutiveDate(string $timestamp): string

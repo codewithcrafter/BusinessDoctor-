@@ -1,0 +1,36 @@
+# BusinessDoctor
+> Engineering Technology. Accelerating Digital Growth.
+
+BusinessDoctor is an enterprise IT solutions and digital services practice. We engineer high-performance custom web applications, scale revenue via data-driven digital marketing and SEO, craft modern UI/UX design systems, manage Amazon and Flipkart e-commerce operations, produce studio creative media, and architect secure cloud infrastructure.
+
+## Core Capabilities & Services
+- [Web & Custom Software Development](https://businessdoctor.com/services/web-software-development): Custom enterprise websites, fast web applications, client portals, and secure database solutions engineered with modern PHP, HTML5, and clean JavaScript.
+- [Digital Marketing & Performance Ads](https://businessdoctor.com/services/digital-marketing-seo): Comprehensive SEO, high-ROI Google Ads campaigns, social media marketing, and data-backed lead generation strategies that drive qualified customer acquisition.
+- [UI/UX Design & Brand Identity](https://businessdoctor.com/services/ui-ux-branding): Modern UI/UX design, interactive prototypes, corporate logo design, brand style guides, and digital marketing creatives that make your brand stand out.
+- [E-Commerce & Marketplace Management](https://businessdoctor.com/services/ecommerce-marketplaces): Full-lifecycle e-commerce growth: Amazon and Flipkart account management, A+ content, catalog SEO, Buy Box protection, and marketplace advertising.
+- [Creative Production & Video Marketing](https://businessdoctor.com/services/creative-video-production): High-resolution commercial product photography, brand promo videos, engaging Reels and Shorts, and motion graphics that captivate digital audiences.
+- [Cloud Solutions & IT Consulting](https://businessdoctor.com/services/cloud-it-consulting): Strategic IT consulting, cloud server setup, continuous website maintenance, security audits, and business process automation.
+
+## Primary Public Pages
+- [Homepage](https://businessdoctor.com/): Official company portal and capabilities overview.
+- [About Us](https://businessdoctor.com/about.php): Company philosophy, executive leadership, and engineering principles.
+- [IT Services Portfolio](https://businessdoctor.com/services.php): Full catalog of IT consulting and software engineering solutions.
+- [Digital Architecture Audit](https://businessdoctor.com/audit.php): Free interactive digital health, performance, and security diagnostic tool.
+- [Case Studies](https://businessdoctor.com/case-studies.php): Verified enterprise transformations and quantified business outcomes.
+- [Insights & Perspectives](https://businessdoctor.com/insights.php): Technical perspectives, cloud blueprints, and growth frameworks.
+- [Contact Us](https://businessdoctor.com/contact.php): Enterprise advisory inquiry and consultation scheduling.
+
+## Published Case Studies
+- [Scaling B2B Acquisition: 240% Demo Booking Growth for PayGuard](https://businessdoctor.com/case-studies/fintech-saas-funnel-resuscitation): Enterprise FinTech SaaS ($290 CAC / 4.6% Demo Conv Qualified Pipeline Growth) ([Markdown](https://businessdoctor.com/content-md/case-studies/fintech-saas-funnel-resuscitation.md))
+- [Custom E-Commerce Architecture: Sub-Second Load & 162% Revenue Surge for AURA Atelier](https://businessdoctor.com/case-studies/d2c-apparel-vital-infrastructure-overhaul): Luxury D2C & Apparel (0.68s Page Load / 3.9% Conv Net Conversion Surge) ([Markdown](https://businessdoctor.com/content-md/case-studies/d2c-apparel-vital-infrastructure-overhaul.md))
+- [Marketplace Management & ROAS Scaling: 4.6x Ad Return for Apex Industrial](https://businessdoctor.com/case-studies/multichannel-retail-marketplace-dominance): Industrial Equipment & B2B Retail (4.6x ROAS / 94% Buy Box Control Marketplace Revenue Scale) ([Markdown](https://businessdoctor.com/content-md/case-studies/multichannel-retail-marketplace-dominance.md))
+
+## Published Perspectives & Technical Articles
+- [Modern UI/UX Design as a Revenue Multiplier: Why Premium Design Eliminates Price Resistance](https://businessdoctor.com/insights/brand-architecture-as-risk-mitigation): UI/UX & Branding ([Markdown](https://businessdoctor.com/content-md/blogs/brand-architecture-as-risk-mitigation.md))
+- [The Speed Advantage: How Sub-Second Load Times Drive Search Rankings and Sales](https://businessdoctor.com/insights/core-web-vitals-and-enterprise-valuation): Web Development ([Markdown](https://businessdoctor.com/content-md/blogs/core-web-vitals-and-enterprise-valuation.md))
+- [Why Increasing Ad Spend on a Slow, Broken Website Drains Your Marketing Budget](https://businessdoctor.com/insights/the-symptom-trap-why-ad-spend-fails-broken-funnels): Web & Digital Strategy ([Markdown](https://businessdoctor.com/content-md/blogs/the-symptom-trap-why-ad-spend-fails-broken-funnels.md))
+
+## Machine-Readable Resources
+- [XML Sitemap](https://businessdoctor.com/sitemap.xml): Machine-readable XML sitemap protocol index.
+- [HTML Sitemap](https://businessdoctor.com/sitemap.html): Human-navigable architectural sitemap.
+- [Full LLM Documentation](https://businessdoctor.com/llms-full.txt): Comprehensive deep-dive documentation for AI models.

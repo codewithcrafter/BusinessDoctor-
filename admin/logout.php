@@ -11,6 +11,6 @@ $_SESSION['admin_user'] = null;
 unset($_SESSION['admin_user']);
 session_destroy();
 
-header("Location: login.php");
+header("Location: /admin");
 exit;
 

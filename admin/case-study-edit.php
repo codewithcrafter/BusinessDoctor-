@@ -186,6 +186,15 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
                 $id
             ]);
 
+            // Automatic SEO, Schema, Sitemap, Markdown & LLM Optimization Hook
+            try {
+                require_once __DIR__ . '/../includes/seo-service.php';
+                $oldSlug = (!empty($case['slug']) && $case['slug'] !== $finalSlug) ? $case['slug'] : null;
+                seo_on_case_study_changed($id, $oldSlug);
+            } catch (Throwable $seoErr) {
+                error_log('[SEO HOOK ERROR] case-study-edit.php: ' . $seoErr->getMessage());
+            }
+
             setFlashMessage('success', "Case study '{$title}' updated successfully as " . strtoupper($status) . ".");
             header('Location: case-studies.php');
             exit;
@@ -210,7 +219,7 @@ require_once __DIR__ . '/includes/header.php';
     </p>
   </div>
   <div style="display: flex; gap: 0.75rem;">
-    <a href="../case-study-detail.php?slug=<?= urlencode($case['slug']) ?>" target="_blank" rel="noopener" class="btn-adm btn-adm-secondary">
+    <a href="../case-studies/<?= urlencode($case['slug']) ?>" target="_blank" rel="noopener" class="btn-adm btn-adm-secondary">
       Preview on Website ↗
     </a>
     <a href="case-studies.php" class="btn-adm btn-adm-secondary">
@@ -254,7 +263,7 @@ require_once __DIR__ . '/includes/header.php';
             URL Slug <span class="required">*</span>
           </label>
           <input type="text" id="caseSlug" name="slug" value="<?= e($slug) ?>" class="adm-input" style="font-family: var(--adm-font-mono); font-size: 0.85rem;">
-          <div class="adm-hint">Public URL: <code>case-study-detail.php?slug=<?= e($slug) ?></code></div>
+          <div class="adm-hint">Public URL: <code>/case-studies/<?= e($slug) ?></code></div>
         </div>
 
         <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 1rem;">

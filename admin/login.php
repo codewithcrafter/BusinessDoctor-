@@ -10,7 +10,12 @@ require_once __DIR__ . '/../includes/db.php';
 require_once __DIR__ . '/../includes/functions.php';
 
 if (!empty($_SESSION['admin_user'])) {
-    header("Location: dashboard.php");
+    $uri = parse_url($_SERVER['REQUEST_URI'] ?? '', PHP_URL_PATH);
+    if ($uri === '/admin' || $uri === '/admin/') {
+        require __DIR__ . '/dashboard.php';
+        exit;
+    }
+    header("Location: /admin");
     exit;
 }
 
@@ -54,7 +59,14 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
                             'role' => $user['role']
                         ];
 
-                        header("Location: dashboard.php");
+                        $uri = parse_url($_SERVER['REQUEST_URI'] ?? '', PHP_URL_PATH);
+                        if ($uri === '/admin/login.php') {
+                            header("Location: /admin");
+                            exit;
+                        }
+
+                        // Display the existing admin dashboard internally at /admin
+                        require __DIR__ . '/dashboard.php';
                         exit;
                     } else {
                         recordFailedLogin($clientIp);
@@ -79,24 +91,21 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@500;600&family=Plus+Jakarta+Sans:wght@700;800&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="../assets/css/variables.css">
-  <link rel="stylesheet" href="../assets/css/base.css">
-  <link rel="stylesheet" href="../assets/css/components.css">
+  <link rel="stylesheet" href="/assets/css/variables.css">
+  <link rel="stylesheet" href="/assets/css/base.css">
+  <link rel="stylesheet" href="/assets/css/components.css">
+  <link rel="icon" type="image/png" sizes="32x32" href="/assets/img/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="180x180" href="/assets/img/favicon-180x180.png">
+  <link rel="apple-touch-icon" sizes="180x180" href="/assets/img/favicon-180x180.png">
 </head>
 <body style="background-color: var(--color-obsidian); display: flex; align-items: center; justify-content: center; min-height: 100vh; padding: 2rem;">
 
   <div class="card" style="width: 100%; max-width: 440px; background: var(--color-dark-surface); border-color: rgba(255,255,255,0.1); color: var(--color-white); box-shadow: var(--shadow-xl);">
     <div style="text-align: center; margin-bottom: 2rem;">
-      <a href="../index.php" class="brand-logo" style="justify-content: center; color: #ffffff; margin-bottom: 1rem;">
-        <div class="brand-symbol">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2">
-            <polyline points="16 18 22 12 16 6"/>
-            <polyline points="8 6 2 12 8 18"/>
-          </svg>
-        </div>
-        <span>Business<span class="brand-text-accent">Doctor</span></span>
+      <a href="/" class="brand-logo" aria-label="BusinessDoctor Home" style="justify-content: center; margin-bottom: 1rem;">
+        <img src="/assets/img/bdr-logo.png" alt="BusinessDoctor" style="height: 68px; width: auto; max-width: 220px; object-fit: contain; display: block;">
       </a>
-      <div style="font-family: var(--font-mono); font-size: 0.75rem; color: var(--color-teal-400);">
+      <div style="font-family: var(--font-mono); font-size: 0.75rem; color: var(--color-teal-400); letter-spacing: 0.05em;">
         ● CLIENT PROJECTS & AUDIT CONSOLE
       </div>
     </div>
@@ -107,7 +116,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
       </div>
     <?php endif; ?>
 
-    <form method="POST" action="login.php">
+    <form method="POST" action="">
       <input type="hidden" name="csrf_token" value="<?= getCsrfToken() ?>">
 
       <div class="form-group">

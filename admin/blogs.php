@@ -40,6 +40,14 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['action'])) {
             $update->execute([$id]);
             setFlashMessage('success', "Blog post restored from trash.");
         }
+
+        // Automatic SEO, Schema, Sitemap, Markdown & LLM Optimization Hook
+        try {
+            require_once __DIR__ . '/../includes/seo-service.php';
+            seo_on_blog_changed($id);
+        } catch (Throwable $seoErr) {
+            error_log('[SEO HOOK ERROR] blogs.php: ' . $seoErr->getMessage());
+        }
     }
 
     header('Location: blogs.php' . (!empty($_GET['trash']) ? '?trash=1' : (!empty($_GET['status']) ? '?status=' . urlencode($_GET['status']) : '')));
@@ -298,7 +306,7 @@ require_once __DIR__ . '/includes/header.php';
                   
                   <?php if (!$viewTrash): ?>
                     <!-- Live Preview Link -->
-                    <a href="../insight-detail.php?slug=<?= urlencode($b['slug']) ?>" target="_blank" rel="noopener" class="btn-adm btn-adm-secondary btn-adm-sm" title="Preview on live site">
+                    <a href="../insights/<?= urlencode($b['slug']) ?>" target="_blank" rel="noopener" class="btn-adm btn-adm-secondary btn-adm-sm" title="Preview on live site">
                       View ↗
                     </a>
 

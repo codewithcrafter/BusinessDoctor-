@@ -27,10 +27,8 @@ if (!$insight) {
 $pageTitle = (!empty($insight['seo_title']) ? $insight['seo_title'] : $insight['title']) . ' — Perspectives | BusinessDoctor';
 $pageDescription = !empty($insight['seo_description']) ? $insight['seo_description'] : (!empty($insight['excerpt']) ? $insight['excerpt'] : $insight['summary']);
 
-if (!empty($insight['canonical_url'])) {
-    $canonicalUrl = $insight['canonical_url'];
-}
-
+$canonicalUrl = !empty($insight['canonical_url']) ? $insight['canonical_url'] : ('https://businessdoctor.com/insights/' . rawurlencode($insight['slug']));
+$markdownUrl = 'https://businessdoctor.com/content-md/blogs/' . rawurlencode($insight['slug']) . '.md';
 $schemaPageKey = 'insight-detail';
 $schemaContextData = $insight;
 

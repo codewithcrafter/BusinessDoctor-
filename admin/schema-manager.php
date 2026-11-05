@@ -8,6 +8,30 @@ declare(strict_types=1);
 
 require_once __DIR__ . '/includes/auth.php';
 require_once __DIR__ . '/../includes/schema-renderer.php';
+require_once __DIR__ . '/../includes/seo-service.php';
+
+// Handle Manual "Regenerate All SEO Files" Recovery Action
+if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['action']) && $_POST['action'] === 'regenerate_seo') {
+    if (!verifyCsrfToken($_POST['csrf_token'] ?? '')) {
+        setFlashMessage('error', 'Security token expired. Please retry.');
+    } else {
+        try {
+            $genResult = seo_regenerate_all();
+            if ($genResult['success']) {
+                $countUrls = $genResult['state']['total_urls_in_sitemap'] ?? 0;
+                $blogMd = $genResult['state']['files']['blog_md_count'] ?? 0;
+                $caseMd = $genResult['state']['files']['case_study_md_count'] ?? 0;
+                setFlashMessage('success', "All SEO resources regenerated successfully: {$countUrls} sitemap URLs, {$blogMd} blog markdown, {$caseMd} case-study markdown, llms.txt & llms-full.txt ({$genResult['duration_ms']} ms).");
+            } else {
+                setFlashMessage('error', 'SEO generation finished with errors: ' . implode('; ', $genResult['errors']));
+            }
+        } catch (Throwable $e) {
+            setFlashMessage('error', 'Failed to regenerate SEO resources: ' . $e->getMessage());
+        }
+    }
+    header('Location: schema-manager.php');
+    exit;
+}
 
 // Handle Deletion
 if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['action']) && $_POST['action'] === 'delete') {
@@ -88,6 +112,8 @@ $availableTypes = [
     'ProfessionalService'
 ];
 
+$seoStatus = seo_get_status();
+
 $pageTitle = 'Schema Management CMS';
 $activeNav = 'schema-manager';
 require_once __DIR__ . '/includes/header.php';
@@ -151,6 +177,154 @@ require_once __DIR__ . '/includes/header.php';
       <div class="admin-stat-val"><?= $totalSupportedPages ?></div>
       <div class="admin-stat-lbl">Supported Templates</div>
     </div>
+  </div>
+</div>
+
+<!-- ================= SEO GENERATION & AUTOMATION STATUS PANEL ================= -->
+<div class="admin-card" style="margin-bottom: 1.75rem; padding: 1.5rem 1.75rem; border: 1px solid rgba(0, 201, 193, 0.25); background: linear-gradient(180deg, #07172C 0%, #051020 100%);">
+  <div style="display: flex; justify-content: space-between; align-items: flex-start; flex-wrap: wrap; gap: 1rem; margin-bottom: 1.25rem;">
+    <div>
+      <div style="display: flex; align-items: center; gap: 0.65rem; margin-bottom: 0.35rem;">
+        <div style="width: 28px; height: 28px; border-radius: 6px; background: rgba(0, 201, 193, 0.15); color: var(--adm-teal); display: flex; align-items: center; justify-content: center;">
+          <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2.5"><circle cx="12" cy="12" r="10"/><path d="m4.93 4.93 4.24 4.24"/><path d="m14.83 9.17 4.24-4.24"/><path d="m14.83 14.83 4.24 4.24"/><path d="m9.17 14.83-4.24 4.24"/><circle cx="12" cy="12" r="2"/></svg>
+        </div>
+        <h3 style="font-size: 1.25rem; font-weight: 700; color: #FFFFFF; margin: 0; font-family: var(--adm-font-display);">
+          Automatic SEO, Sitemap, Markdown &amp; LLM Optimization Engine
+        </h3>
+        <span class="status-pill status-published" style="font-size: 0.72rem; padding: 2px 8px;">
+          ● Event-Driven Active
+        </span>
+      </div>
+      <p style="color: var(--adm-text-muted); font-size: 0.85rem; margin: 0; max-width: 760px; line-height: 1.5;">
+        All SEO resources automatically synchronize when articles and case studies are created, edited, published, unpublished, deleted, or restored.
+      </p>
+    </div>
+
+    <!-- Manual Recovery Action Button -->
+    <form method="POST" action="schema-manager.php" style="margin: 0;" onsubmit="return confirm('Regenerate all public sitemaps, markdown documents, and LLM text files now?');">
+      <input type="hidden" name="csrf_token" value="<?= getCsrfToken() ?>">
+      <input type="hidden" name="action" value="regenerate_seo">
+      <button type="submit" class="btn-adm btn-adm-secondary btn-adm-sm" style="display: inline-flex; align-items: center; gap: 0.45rem; border-color: rgba(0, 201, 193, 0.4); color: var(--adm-teal);">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" width="14" height="14" stroke-width="2"><polyline points="23 4 23 10 17 10"/><polyline points="1 20 1 14 7 14"/><path d="M3.51 9a9 9 0 0 1 14.85-3.36L23 10M1 14l4.64 4.36A9 9 0 0 0 20.49 15"/></svg>
+        <span>Regenerate All SEO Files</span>
+      </button>
+    </form>
+  </div>
+
+  <?php if (!empty($seoStatus['last_error'])): ?>
+    <div style="background: rgba(239, 68, 68, 0.15); border: 1px solid #EF4444; border-radius: 6px; padding: 0.75rem 1rem; color: #FCA5A5; font-size: 0.82rem; margin-bottom: 1.25rem;">
+      <strong>Generation Alert:</strong> <?= e($seoStatus['last_error']) ?>
+    </div>
+  <?php endif; ?>
+
+  <!-- Telemetry Row -->
+  <div style="display: flex; gap: 1.5rem; flex-wrap: wrap; margin-bottom: 1.25rem; font-size: 0.8rem; font-family: var(--adm-font-mono); color: var(--adm-text-dim); border-bottom: 1px solid var(--adm-border-subtle); padding-bottom: 1rem;">
+    <div>Last Execution: <strong style="color: #FFFFFF;"><?= $seoStatus['last_generation_time'] ? e($seoStatus['last_generation_time']) : 'Auto-Sync Ready' ?></strong></div>
+    <?php if (!empty($seoStatus['duration_ms'])): ?>
+      <div>Execution Speed: <strong style="color: #34D399;"><?= (int)$seoStatus['duration_ms'] ?> ms</strong></div>
+    <?php endif; ?>
+    <div>Domain: <strong style="color: var(--adm-teal);"><?= e(SeoService::resolveProductionBaseUrl()) ?></strong></div>
+  </div>
+
+  <!-- Resource Status Cards Grid -->
+  <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 1rem;">
+    
+    <!-- 1. sitemap.xml -->
+    <div style="background: rgba(255, 255, 255, 0.03); border: 1px solid var(--adm-border); border-radius: 8px; padding: 1rem;">
+      <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 0.4rem;">
+        <span style="font-weight: 700; color: #FFFFFF; font-size: 0.88rem;">Sitemap XML</span>
+        <span class="status-pill <?= $seoStatus['sitemap_xml']['exists'] ? 'status-published' : 'status-draft' ?>" style="font-size: 0.68rem; padding: 1px 6px;">
+          <?= $seoStatus['sitemap_xml']['exists'] ? 'Active' : 'Missing' ?>
+        </span>
+      </div>
+      <div style="font-size: 0.75rem; color: var(--adm-text-muted); font-family: var(--adm-font-mono); margin-bottom: 0.65rem;">
+        Size: <?= number_format($seoStatus['sitemap_xml']['size']) ?> bytes &bull; <?= $seoStatus['sitemap_xml']['modified'] ? date('M j, H:i', strtotime($seoStatus['sitemap_xml']['modified'])) : 'N/A' ?>
+      </div>
+      <a href="../sitemap.xml" target="_blank" rel="noopener" style="font-size: 0.8rem; color: var(--adm-teal); text-decoration: none; font-weight: 600; display: inline-flex; align-items: center; gap: 0.25rem;">
+        <span>/sitemap.xml</span>
+        <svg viewBox="0 0 24 24" width="11" height="11" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
+      </a>
+    </div>
+
+    <!-- 2. sitemap.html -->
+    <div style="background: rgba(255, 255, 255, 0.03); border: 1px solid var(--adm-border); border-radius: 8px; padding: 1rem;">
+      <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 0.4rem;">
+        <span style="font-weight: 700; color: #FFFFFF; font-size: 0.88rem;">HTML Sitemap</span>
+        <span class="status-pill <?= $seoStatus['sitemap_html']['exists'] ? 'status-published' : 'status-draft' ?>" style="font-size: 0.68rem; padding: 1px 6px;">
+          <?= $seoStatus['sitemap_html']['exists'] ? 'Active' : 'Missing' ?>
+        </span>
+      </div>
+      <div style="font-size: 0.75rem; color: var(--adm-text-muted); font-family: var(--adm-font-mono); margin-bottom: 0.65rem;">
+        Size: <?= number_format($seoStatus['sitemap_html']['size']) ?> bytes &bull; <?= $seoStatus['sitemap_html']['modified'] ? date('M j, H:i', strtotime($seoStatus['sitemap_html']['modified'])) : 'N/A' ?>
+      </div>
+      <a href="../sitemap.html" target="_blank" rel="noopener" style="font-size: 0.8rem; color: var(--adm-teal); text-decoration: none; font-weight: 600; display: inline-flex; align-items: center; gap: 0.25rem;">
+        <span>/sitemap.html</span>
+        <svg viewBox="0 0 24 24" width="11" height="11" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
+      </a>
+    </div>
+
+    <!-- 3. llms.txt -->
+    <div style="background: rgba(255, 255, 255, 0.03); border: 1px solid var(--adm-border); border-radius: 8px; padding: 1rem;">
+      <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 0.4rem;">
+        <span style="font-weight: 700; color: #FFFFFF; font-size: 0.88rem;">LLM Index</span>
+        <span class="status-pill <?= $seoStatus['llms_txt']['exists'] ? 'status-published' : 'status-draft' ?>" style="font-size: 0.68rem; padding: 1px 6px;">
+          <?= $seoStatus['llms_txt']['exists'] ? 'Active' : 'Missing' ?>
+        </span>
+      </div>
+      <div style="font-size: 0.75rem; color: var(--adm-text-muted); font-family: var(--adm-font-mono); margin-bottom: 0.65rem;">
+        Size: <?= number_format($seoStatus['llms_txt']['size']) ?> bytes &bull; <?= $seoStatus['llms_txt']['modified'] ? date('M j, H:i', strtotime($seoStatus['llms_txt']['modified'])) : 'N/A' ?>
+      </div>
+      <a href="../llms.txt" target="_blank" rel="noopener" style="font-size: 0.8rem; color: #14E5D4; text-decoration: none; font-weight: 600; display: inline-flex; align-items: center; gap: 0.25rem;">
+        <span>/llms.txt</span>
+        <svg viewBox="0 0 24 24" width="11" height="11" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
+      </a>
+    </div>
+
+    <!-- 4. llms-full.txt -->
+    <div style="background: rgba(255, 255, 255, 0.03); border: 1px solid var(--adm-border); border-radius: 8px; padding: 1rem;">
+      <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 0.4rem;">
+        <span style="font-weight: 700; color: #FFFFFF; font-size: 0.88rem;">LLM Full Docs</span>
+        <span class="status-pill <?= $seoStatus['llms_full_txt']['exists'] ? 'status-published' : 'status-draft' ?>" style="font-size: 0.68rem; padding: 1px 6px;">
+          <?= $seoStatus['llms_full_txt']['exists'] ? 'Active' : 'Missing' ?>
+        </span>
+      </div>
+      <div style="font-size: 0.75rem; color: var(--adm-text-muted); font-family: var(--adm-font-mono); margin-bottom: 0.65rem;">
+        Size: <?= number_format($seoStatus['llms_full_txt']['size']) ?> bytes &bull; <?= $seoStatus['llms_full_txt']['modified'] ? date('M j, H:i', strtotime($seoStatus['llms_full_txt']['modified'])) : 'N/A' ?>
+      </div>
+      <a href="../llms-full.txt" target="_blank" rel="noopener" style="font-size: 0.8rem; color: #14E5D4; text-decoration: none; font-weight: 600; display: inline-flex; align-items: center; gap: 0.25rem;">
+        <span>/llms-full.txt</span>
+        <svg viewBox="0 0 24 24" width="11" height="11" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
+      </a>
+    </div>
+
+    <!-- 5. Blog Markdown Count -->
+    <div style="background: rgba(255, 255, 255, 0.03); border: 1px solid var(--adm-border); border-radius: 8px; padding: 1rem;">
+      <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 0.4rem;">
+        <span style="font-weight: 700; color: #FFFFFF; font-size: 0.88rem;">Blog Markdown</span>
+        <span class="status-pill status-published" style="font-size: 0.68rem; padding: 1px 6px;">
+          <?= (int)$seoStatus['markdown']['blogs_md_count'] ?> / <?= (int)$seoStatus['markdown']['blogs_published'] ?> Synced
+        </span>
+      </div>
+      <div style="font-size: 0.75rem; color: var(--adm-text-muted); font-family: var(--adm-font-mono); margin-bottom: 0.65rem;">
+        /content-md/blogs/*.md
+      </div>
+      <span style="font-size: 0.8rem; color: var(--adm-text-dim);">Auto-purged on unpublish</span>
+    </div>
+
+    <!-- 6. Case Study Markdown Count -->
+    <div style="background: rgba(255, 255, 255, 0.03); border: 1px solid var(--adm-border); border-radius: 8px; padding: 1rem;">
+      <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 0.4rem;">
+        <span style="font-weight: 700; color: #FFFFFF; font-size: 0.88rem;">Case Study Markdown</span>
+        <span class="status-pill status-published" style="font-size: 0.68rem; padding: 1px 6px;">
+          <?= (int)$seoStatus['markdown']['cases_md_count'] ?> / <?= (int)$seoStatus['markdown']['cases_published'] ?> Synced
+        </span>
+      </div>
+      <div style="font-size: 0.75rem; color: var(--adm-text-muted); font-family: var(--adm-font-mono); margin-bottom: 0.65rem;">
+        /content-md/case-studies/*.md
+      </div>
+      <span style="font-size: 0.8rem; color: var(--adm-text-dim);">Auto-purged on unpublish</span>
+    </div>
+
   </div>
 </div>
 

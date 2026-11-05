@@ -10,7 +10,7 @@ require_once __DIR__ . '/../../includes/db.php';
 require_once __DIR__ . '/../../includes/functions.php';
 
 if (empty($_SESSION['admin_user'])) {
-    header("Location: login.php");
+    header("Location: /admin");
     exit;
 }
 

@@ -1359,7 +1359,7 @@ require_once __DIR__ . '/includes/header.php';
 
             <!-- 7. View Case Study Link -->
             <div class="result-card-footer">
-              <a href="case-study-detail.php?slug=<?= urlencode($case['slug']) ?>" class="result-card-action">
+              <a href="<?= getCaseStudyUrl($case['slug']) ?>" class="result-card-action">
                 <span>View Full Case Study</span>
                 <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
                   <line x1="5" y1="12" x2="19" y2="12"/>
@@ -1625,7 +1625,7 @@ require_once __DIR__ . '/includes/header.php';
                 <div class="insight-author-name"><?= e($leadPost['author_name']) ?></div>
                 <div class="insight-author-title"><?= e($leadPost['author_title']) ?></div>
               </div>
-              <a href="insight-detail.php?slug=<?= urlencode($leadPost['slug']) ?>" class="btn btn-primary btn-sm">
+              <a href="<?= getInsightUrl($leadPost['slug']) ?>" class="btn btn-primary btn-sm">
                 <span>Read Analysis</span>
                 <svg class="btn-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
                   <line x1="5" y1="12" x2="19" y2="12"/>
@@ -1639,7 +1639,7 @@ require_once __DIR__ . '/includes/header.php';
         <!-- Companion Articles Column -->
         <div class="insights-list-col">
           <?php foreach ($subPosts as $post): ?>
-            <a href="insight-detail.php?slug=<?= urlencode($post['slug']) ?>" class="insight-compact-card">
+            <a href="<?= getInsightUrl($post['slug']) ?>" class="insight-compact-card">
               <div class="insight-meta-strip">
                 <span class="insight-category-badge"><?= e($post['category']) ?></span>
                 <span>•</span>

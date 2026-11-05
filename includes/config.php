@@ -53,7 +53,22 @@ if (APP_ENV === 'production') {
 }
 
 // Session security initialization
-if (session_status() === PHP_SESSION_NONE && !headers_sent()) {
+if (session_status() === PHP_SESSION_NONE && !headers_sent() && php_sapi_name() !== 'cli') {
+    $savePath = session_save_path();
+    $sysTemp = sys_get_temp_dir();
+    if (empty($savePath) || !@is_writable($savePath)) {
+        if (!empty($sysTemp) && @is_writable($sysTemp)) {
+            @session_save_path($sysTemp);
+        } else {
+            $localSessions = __DIR__ . '/../database/sessions';
+            if (!is_dir($localSessions)) {
+                @mkdir($localSessions, 0777, true);
+            }
+            if (@is_writable($localSessions)) {
+                @session_save_path($localSessions);
+            }
+        }
+    }
     ini_set('session.cookie_httponly', '1');
     ini_set('session.use_only_cookies', '1');
     ini_set('session.cookie_samesite', 'Lax');
@@ -81,13 +96,13 @@ $envAppUrl = getenv('APP_URL');
 if (!empty($envAppUrl)) {
     define('BASE_URL', rtrim($envAppUrl, '/'));
 } else {
-    $protocol = (!empty($_SERVER['HTTPS']) && $_SERVER['HTTPS'] !== 'off' || (isset($_SERVER['SERVER_PORT']) && (int)$_SERVER['SERVER_PORT'] === 443)) ? "https://" : "http://";
-    $host = $_SERVER['HTTP_HOST'] ?? 'demo.businessdoctor.com';
+    $protocol = (!empty($_SERVER['HTTPS']) && $_SERVER['HTTPS'] !== 'off' || (isset($_SERVER['SERVER_PORT']) && (int)$_SERVER['SERVER_PORT'] === 443) || empty($_SERVER['HTTP_HOST'])) ? "https://" : "http://";
+    $host = $_SERVER['HTTP_HOST'] ?? 'businessdoctor.com';
     $scriptDir = dirname($_SERVER['SCRIPT_NAME'] ?? '');
     $scriptDir = rtrim(str_replace('\\', '/', $scriptDir), '/');
 
     $parts = explode('/', trim($scriptDir, '/'));
-    if (end($parts) === 'admin' || end($parts) === 'api') {
+    if (in_array(end($parts), ['admin', 'api', 'scratch', 'tests'], true)) {
         array_pop($parts);
     }
     $basePath = empty($parts) ? '' : '/' . implode('/', $parts);

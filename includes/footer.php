@@ -17,14 +17,8 @@ $practices = getPracticeAreas();
     <div class="footer-grid">
       <!-- Col 1: Brand & Overview -->
       <div class="footer-col footer-brand">
-        <a href="index.php" class="brand-logo" style="color: #ffffff;">
-          <div class="brand-symbol">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2">
-              <polyline points="16 18 22 12 16 6"/>
-              <polyline points="8 6 2 12 8 18"/>
-            </svg>
-          </div>
-          <span>Business<span style="color: var(--color-accent); font-weight: 700;">Doctor</span></span>
+        <a href="index.php" class="brand-logo" aria-label="BusinessDoctor Home" style="color: #ffffff;">
+          <img src="/assets/img/bdr-logo.png" alt="BusinessDoctor" class="brand-logo-img" style="height: 56px; max-width: 180px;">
         </a>
         <p>
           Established international IT solutions and digital growth firm. We engineer high-performance web software, execute data-driven digital marketing, design distinctive brand systems, and scale multi-channel marketplace operations.

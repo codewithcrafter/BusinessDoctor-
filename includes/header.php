@@ -16,17 +16,30 @@ $requestUri = $_SERVER['REQUEST_URI'] ?? '/';
 $parsedUri = parse_url($requestUri);
 $cleanPath = $parsedUri['path'] ?? '/';
 $canonicalParams = '';
+
+$prodBase = 'https://businessdoctor.com';
+if (defined('BASE_URL') && !empty(BASE_URL)) {
+    $parsedHost = parse_url(BASE_URL, PHP_URL_HOST);
+    if ($parsedHost && !in_array($parsedHost, ['localhost', '127.0.0.1', '::1', '0.0.0.0'], true) && !str_ends_with($parsedHost, '.local')) {
+        $prodBase = rtrim(BASE_URL, '/');
+    }
+}
+
 if (!empty($parsedUri['query'])) {
     parse_str($parsedUri['query'], $qp);
     if (!empty($qp['slug'])) {
-        if (str_contains($cleanPath, 'service-detail')) {
+        if (str_contains($cleanPath, 'service-detail') || str_contains($cleanPath, 'services')) {
             $cleanPath = '/services/' . rawurlencode($qp['slug']);
+        } elseif (str_contains($cleanPath, 'case-study-detail') || str_contains($cleanPath, 'case-studies')) {
+            $cleanPath = '/case-studies/' . rawurlencode($qp['slug']);
+        } elseif (str_contains($cleanPath, 'insight-detail') || str_contains($cleanPath, 'blog-detail') || str_contains($cleanPath, 'insights') || str_contains($cleanPath, 'blogs')) {
+            $cleanPath = '/insights/' . rawurlencode($qp['slug']);
         } else {
             $canonicalParams = '?slug=' . urlencode($qp['slug']);
         }
     }
 }
-$canonicalUrl = $canonicalUrl ?? (BASE_URL . $cleanPath . $canonicalParams);
+$canonicalUrl = $canonicalUrl ?? ($prodBase . $cleanPath . $canonicalParams);
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -37,6 +50,9 @@ $canonicalUrl = $canonicalUrl ?? (BASE_URL . $cleanPath . $canonicalParams);
   <meta name="description" content="<?= e($pageDescription) ?>">
   <meta name="theme-color" content="#061326">
   <link rel="canonical" href="<?= e($canonicalUrl) ?>">
+  <?php if (!empty($markdownUrl)): ?>
+  <link rel="alternate" type="text/markdown" title="Markdown representation" href="<?= e($markdownUrl) ?>">
+  <?php endif; ?>
 
   <!-- Open Graph Protocol -->
   <meta property="og:type" content="<?= e($ogType ?? 'website') ?>">
@@ -70,8 +86,10 @@ $canonicalUrl = $canonicalUrl ?? (BASE_URL . $cleanPath . $canonicalParams);
   <link rel="stylesheet" href="/assets/css/components.css">
   <link rel="stylesheet" href="/assets/css/responsive.css">
 
-  <!-- Favicon SVG (Code brackets / IT tech icon) -->
-  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%230d9488' stroke-width='2.5'><polyline points='16 18 22 12 16 6'/><polyline points='8 6 2 12 8 18'/></svg>">
+  <!-- Favicon & Touch Icons -->
+  <link rel="icon" type="image/png" sizes="32x32" href="/assets/img/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="180x180" href="/assets/img/favicon-180x180.png">
+  <link rel="apple-touch-icon" sizes="180x180" href="/assets/img/favicon-180x180.png">
 </head>
 <body>
 <a href="#main-content" class="skip-link">Skip to main content</a>

@@ -63,7 +63,7 @@ require_once __DIR__ . '/includes/header.php';
 
             <div class="case-card-content">
               <h3 class="case-card-title">
-                <a href="case-study-detail.php?slug=<?= urlencode($c['slug']) ?>" style="color: var(--color-text); text-decoration: none;">
+                <a href="<?= getCaseStudyUrl($c['slug']) ?>" style="color: var(--color-text); text-decoration: none;">
                   <?= e($c['title']) ?>
                 </a>
               </h3>
@@ -94,7 +94,7 @@ require_once __DIR__ . '/includes/header.php';
               <?php endif; ?>
 
               <div style="margin-top: auto;">
-                <a href="case-study-detail.php?slug=<?= urlencode($c['slug']) ?>" class="case-card-action">
+                <a href="<?= getCaseStudyUrl($c['slug']) ?>" class="case-card-action">
                   <span>Read Full Technical Architecture</span>
                   <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
                     <line x1="5" y1="12" x2="19" y2="12"/>

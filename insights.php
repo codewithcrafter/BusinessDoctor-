@@ -54,7 +54,7 @@ require_once __DIR__ . '/includes/header.php';
 
             <div class="case-card-content">
               <h3 class="case-card-title">
-                <a href="insight-detail.php?slug=<?= urlencode($item['slug']) ?>" style="color: var(--color-text); text-decoration: none;">
+                <a href="<?= getInsightUrl($item['slug']) ?>" style="color: var(--color-text); text-decoration: none;">
                   <?= e($item['title']) ?>
                 </a>
               </h3>
@@ -68,7 +68,7 @@ require_once __DIR__ . '/includes/header.php';
                   <div style="font-size: 0.88rem; font-weight: 700; color: var(--color-text);"><?= e($item['author_name']) ?></div>
                   <div style="font-size: 0.76rem; color: var(--color-text-light); font-family: var(--font-mono);"><?= e($item['author_title']) ?></div>
                 </div>
-                <a href="insight-detail.php?slug=<?= urlencode($item['slug']) ?>" class="case-card-action">
+                <a href="<?= getInsightUrl($item['slug']) ?>" class="case-card-action">
                   <span>Read Article</span>
                   <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
                     <line x1="5" y1="12" x2="19" y2="12"/>

@@ -48,6 +48,14 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['action'])) {
             $update->execute([$id]);
             setFlashMessage('success', "Case study restored from trash.");
         }
+
+        // Automatic SEO, Schema, Sitemap, Markdown & LLM Optimization Hook
+        try {
+            require_once __DIR__ . '/../includes/seo-service.php';
+            seo_on_case_study_changed($id);
+        } catch (Throwable $seoErr) {
+            error_log('[SEO HOOK ERROR] case-studies.php: ' . $seoErr->getMessage());
+        }
     }
 
     header('Location: case-studies.php' . (!empty($_GET['trash']) ? '?trash=1' : ''));
@@ -217,7 +225,7 @@ require_once __DIR__ . '/includes/header.php';
                     </a>
                     <div style="font-size: 0.76rem; color: var(--adm-teal); margin-top: 0.2rem;">
                       <?= e($c['client_name'] ?: 'Enterprise Client') ?> &bull; 
-                      <span style="font-family: var(--adm-font-mono); color: var(--adm-text-dim);">case-study-detail.php?slug=<?= e($c['slug']) ?></span>
+                      <span style="font-family: var(--adm-font-mono); color: var(--adm-text-dim);">/case-studies/<?= e($c['slug']) ?></span>
                     </div>
                   </div>
                 </div>
@@ -260,7 +268,7 @@ require_once __DIR__ . '/includes/header.php';
                   
                   <?php if (!$viewTrash): ?>
                     <!-- Live / Preview Link -->
-                    <a href="../case-study-detail.php?slug=<?= urlencode($c['slug']) ?>" target="_blank" rel="noopener" class="btn-adm btn-adm-secondary btn-adm-sm" title="Preview on website">
+                    <a href="../case-studies/<?= urlencode($c['slug']) ?>" target="_blank" rel="noopener" class="btn-adm btn-adm-secondary btn-adm-sm" title="Preview on website">
                       View ↗
                     </a>
 

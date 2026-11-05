@@ -192,6 +192,15 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
                 $id
             ]);
 
+            // Automatic SEO, Schema, Sitemap, Markdown & LLM Optimization Hook
+            try {
+                require_once __DIR__ . '/../includes/seo-service.php';
+                $oldSlug = (!empty($blog['slug']) && $blog['slug'] !== $finalSlug) ? $blog['slug'] : null;
+                seo_on_blog_changed($id, $oldSlug);
+            } catch (Throwable $seoErr) {
+                error_log('[SEO HOOK ERROR] blog-edit.php: ' . $seoErr->getMessage());
+            }
+
             setFlashMessage('success', "Article '{$title}' updated successfully as " . strtoupper($status) . ".");
             header('Location: blogs.php');
             exit;
@@ -235,7 +244,7 @@ require_once __DIR__ . '/includes/header.php';
 
     <!-- Top Action Buttons -->
     <div style="display: flex; gap: 0.65rem; align-items: center; flex-wrap: wrap;">
-      <a href="../insight-detail.php?slug=<?= urlencode($slug) ?>" target="_blank" rel="noopener" class="btn-adm btn-adm-secondary btn-adm-sm" title="Preview on live site">
+      <a href="../insights/<?= urlencode($slug) ?>" target="_blank" rel="noopener" class="btn-adm btn-adm-secondary btn-adm-sm" title="Preview on live site">
         View Live ↗
       </a>
 
@@ -734,7 +743,7 @@ require_once __DIR__ . '/includes/header.php';
 
         <div class="adm-form-group">
           <label class="adm-label" for="canonicalUrl">Canonical URL</label>
-          <input type="url" id="canonicalUrl" name="canonical_url" value="<?= e($canonicalUrl) ?>" class="adm-input" placeholder="https://demo.businessdoctor.com/insight-detail.php?slug=...">
+          <input type="url" id="canonicalUrl" name="canonical_url" value="<?= e($canonicalUrl) ?>" class="adm-input" placeholder="https://businessdoctor.com/insights/...">
           <div class="adm-hint">Overrides default self-referencing canonical URL if syndicating or cross-posting.</div>
         </div>
 
@@ -748,7 +757,7 @@ require_once __DIR__ . '/includes/header.php';
           <div style="font-size: 0.78rem; font-weight: 600; color: var(--adm-text-dim); margin-bottom: 0.4rem;">Google Search Preview:</div>
           <div class="adm-serp-preview">
             <div class="adm-serp-title" id="serpTitlePreview">BusinessDoctor Tech Perspective</div>
-            <div class="adm-serp-url" id="serpUrlPreview">https://demo.businessdoctor.com/insight-detail.php?slug=<?= urlencode($slug) ?></div>
+            <div class="adm-serp-url" id="serpUrlPreview">https://businessdoctor.com/insights/<?= urlencode($slug) ?></div>
             <div class="adm-serp-desc" id="serpDescPreview">Engineering architecture and digital growth frameworks authored by BusinessDoctor.</div>
           </div>
         </div>
@@ -858,7 +867,7 @@ require_once __DIR__ . '/includes/header.php';
 
   <!-- Bottom Workspace Actions Bar (Save Draft & Update / Publish) -->
   <div class="adm-form-actions-bottom">
-    <a href="../insight-detail.php?slug=<?= urlencode($slug) ?>" target="_blank" class="btn-adm btn-adm-secondary" style="padding: 0.65rem 1.25rem;">
+    <a href="../insights/<?= urlencode($slug) ?>" target="_blank" class="btn-adm btn-adm-secondary" style="padding: 0.65rem 1.25rem;">
       View Live Page &nearr;
     </a>
     <button type="button" class="btn-adm btn-adm-secondary" onclick="submitDoc('draft')" style="padding: 0.65rem 1.4rem;">
@@ -1298,11 +1307,11 @@ function copyRecommendedSchema() {
 
 // Build and render the Recommended Schema.org JSON-LD dynamically
 function updateLiveRecommendedSchema() {
-  const baseUrl = 'https://demo.businessdoctor.com';
+  const baseUrl = 'https://businessdoctor.com';
   const title = (document.getElementById('blogTitle') ? document.getElementById('blogTitle').value.trim() : '') || 'Insight Article Title';
   const slug = (document.getElementById('blogSlug') ? document.getElementById('blogSlug').value.trim() : '') || 'article-slug';
   const canonicalField = document.getElementById('canonicalUrl') ? document.getElementById('canonicalUrl').value.trim() : '';
-  const pageUrl = canonicalField || (baseUrl + '/insight-detail.php?slug=' + encodeURIComponent(slug));
+  const pageUrl = canonicalField || (baseUrl + '/insights/' + encodeURIComponent(slug));
   
   const coverImage = (document.getElementById('featuredImagePath') ? document.getElementById('featuredImagePath').value.trim() : '') || 'assets/images/insight-ai-strategy.webp';
   const coverAlt = (document.getElementById('coverImageAlt') ? document.getElementById('coverImageAlt').value.trim() : '') || title;
@@ -1388,7 +1397,7 @@ function updateLiveRecommendedSchema() {
         "url": baseUrl + "/",
         "logo": {
           "@type": "ImageObject",
-          "url": baseUrl + "/assets/img/og-preview.svg"
+          "url": baseUrl + "/assets/img/bdr-logo.png"
         }
       }
     },
@@ -1423,7 +1432,7 @@ function updateLiveRecommendedSchema() {
       "url": baseUrl + "/",
       "logo": {
         "@type": "ImageObject",
-        "url": baseUrl + "/assets/img/og-preview.svg"
+        "url": baseUrl + "/assets/img/bdr-logo.png"
       },
       "sameAs": [
         "https://www.linkedin.com/company/businessdoctor",

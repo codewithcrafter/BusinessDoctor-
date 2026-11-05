@@ -849,3 +849,92 @@
     font-size: 1.2rem;
   }
 }
+
+/* ============================================================
+   ABOUT US EXPANDED CORPORATE SECTIONS RESPONSIVE BREAKPOINTS
+   ============================================================ */
+
+@media (max-width: 1200px) {
+  .core-principles-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 992px) {
+  .about-story-grid {
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+  }
+  .about-capabilities-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1.5rem;
+  }
+  .why-differentiators-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1.5rem;
+  }
+  .core-principles-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1.5rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .about-story-section,
+  .about-services-section,
+  .about-approach-section,
+  .about-why-section,
+  .about-principles-section,
+  .about-closing-cta-section {
+    padding: 3.5rem 0;
+  }
+  .about-capabilities-grid {
+    grid-template-columns: 1fr;
+  }
+  .why-differentiators-grid {
+    grid-template-columns: 1fr;
+  }
+  .core-principles-grid {
+    grid-template-columns: 1fr;
+  }
+  .approach-step-item {
+    flex-direction: column;
+    gap: 1.25rem;
+    padding: 1.75rem 1.5rem;
+  }
+  .about-thesis-strip {
+    flex-direction: column;
+    text-align: center;
+    gap: 1rem;
+    padding: 1.5rem;
+  }
+  .about-story-card,
+  .capability-card,
+  .why-card,
+  .principle-card {
+    padding: 1.75rem 1.5rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .about-story-section,
+  .about-services-section,
+  .about-approach-section,
+  .about-why-section,
+  .about-principles-section,
+  .about-closing-cta-section {
+    padding: 2.75rem 0;
+  }
+  .step-num-bubble {
+    width: 46px;
+    height: 46px;
+    font-size: 1.15rem;
+    border-radius: 10px;
+  }
+  .about-story-card,
+  .capability-card,
+  .why-card,
+  .principle-card {
+    padding: 1.5rem 1.25rem;
+  }
+}

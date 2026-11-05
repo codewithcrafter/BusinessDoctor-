@@ -11,9 +11,15 @@ if (!isset($adminUser)) {
 
 $pageTitle = $pageTitle ?? 'Admin Console';
 $currentScript = basename($_SERVER['SCRIPT_NAME'] ?? '');
-function isNavActive(string ...$pages): string {
-    global $currentScript;
-    return in_array($currentScript, $pages, true) ? 'active' : '';
+if (!function_exists('isNavActive')) {
+    function isNavActive(string ...$pages): string {
+        global $currentScript;
+        $uri = parse_url($_SERVER['REQUEST_URI'] ?? '', PHP_URL_PATH);
+        if (($uri === '/admin' || $uri === '/admin/' || $currentScript === 'index.php') && in_array('dashboard.php', $pages, true)) {
+            return 'active';
+        }
+        return in_array($currentScript, $pages, true) ? 'active' : '';
+    }
 }
 $flash = getFlashMessage();
 ?>
@@ -22,12 +28,16 @@ $flash = getFlashMessage();
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <base href="/admin/">
   <title><?= e($pageTitle) ?> — BusinessDoctor CMS</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@500;600&family=Plus+Jakarta+Sans:wght@700;800&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="../assets/css/variables.css">
-  <link rel="stylesheet" href="../assets/css/admin.css">
+  <link rel="stylesheet" href="/assets/css/variables.css">
+  <link rel="stylesheet" href="/assets/css/admin.css">
+  <link rel="icon" type="image/png" sizes="32x32" href="/assets/img/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="180x180" href="/assets/img/favicon-180x180.png">
+  <link rel="apple-touch-icon" sizes="180x180" href="/assets/img/favicon-180x180.png">
 </head>
 <body class="admin-body">
 
@@ -39,12 +49,8 @@ $flash = getFlashMessage();
   <!-- Sidebar -->
   <aside class="admin-sidebar" id="adminSidebar">
     <div class="admin-sidebar-header">
-      <a href="dashboard.php" class="admin-logo">
-        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2">
-          <polyline points="16 18 22 12 16 6"/>
-          <polyline points="8 6 2 12 8 18"/>
-        </svg>
-        <span>Business<span style="color: var(--adm-teal);">Doctor</span></span>
+      <a href="dashboard.php" class="admin-logo" aria-label="BusinessDoctor Dashboard">
+        <img src="/assets/img/bdr-logo-compact.png" alt="BusinessDoctor" class="admin-logo-img">
       </a>
       <span class="status-pill status-published" style="font-size: 0.65rem;">CMS v2</span>
     </div>

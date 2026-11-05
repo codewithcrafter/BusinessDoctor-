@@ -54,7 +54,7 @@ function getSupportedSchemaPages(): array
         ],
         'case-study-detail' => [
             'name' => 'Individual Case Study Pages',
-            'url' => '/case-study-detail.php',
+            'url' => '/case-studies/{slug}',
             'recommended_types' => ['Article', 'BreadcrumbList'],
             'is_dynamic' => true
         ],
@@ -66,7 +66,7 @@ function getSupportedSchemaPages(): array
         ],
         'insight-detail' => [
             'name' => 'Individual Blog Articles',
-            'url' => '/insight-detail.php',
+            'url' => '/insights/{slug}',
             'recommended_types' => ['BlogPosting', 'BreadcrumbList'],
             'is_dynamic' => true
         ],
@@ -86,8 +86,16 @@ function detectCurrentPageKey(): string
 {
     // Check clean route paths first
     $reqPath = parse_url($_SERVER['REQUEST_URI'] ?? '', PHP_URL_PATH);
-    if ($reqPath !== null && preg_match('#^/services/([a-zA-Z0-9_-]+)#', $reqPath)) {
-        return 'service-detail';
+    if ($reqPath !== null) {
+        if (preg_match('#^/services/([a-zA-Z0-9_-]+)#', $reqPath)) {
+            return 'service-detail';
+        }
+        if (preg_match('#^/case-studies/([a-zA-Z0-9_-]+)#', $reqPath)) {
+            return 'case-study-detail';
+        }
+        if (preg_match('#^/(?:insights|blogs)/([a-zA-Z0-9_-]+)#', $reqPath)) {
+            return 'insight-detail';
+        }
     }
 
     $script = basename($_SERVER['SCRIPT_NAME'] ?? '');
@@ -191,11 +199,15 @@ function extractFaqsFromContent(string $html): array
  */
 function generateArticleSchemaGraph(array $article, string $baseUrl = ''): array
 {
-    $baseUrl = rtrim($baseUrl ?: (defined('BASE_URL') ? BASE_URL : 'https://demo.businessdoctor.com'), '/');
+    $baseUrl = rtrim($baseUrl ?: (defined('BASE_URL') ? BASE_URL : 'https://businessdoctor.com'), '/');
+    $parsedHost = parse_url($baseUrl, PHP_URL_HOST);
+    if (empty($parsedHost) || in_array($parsedHost, ['localhost', '127.0.0.1', '::1', '0.0.0.0'], true) || str_ends_with($parsedHost, '.local')) {
+        $baseUrl = 'https://businessdoctor.com';
+    }
     $appName = defined('APP_NAME') ? APP_NAME : 'BusinessDoctor';
 
     $slug = $article['slug'] ?? '';
-    $articleUrl = !empty($article['canonical_url']) ? $article['canonical_url'] : ($baseUrl . '/insight-detail.php?slug=' . urlencode($slug));
+    $articleUrl = !empty($article['canonical_url']) ? $article['canonical_url'] : ($baseUrl . '/insights/' . rawurlencode($slug));
 
     $title = !empty($article['seo_title']) ? $article['seo_title'] : ($article['title'] ?? 'Insight Article');
     $description = !empty($article['seo_description']) ? $article['seo_description'] : (!empty($article['excerpt']) ? $article['excerpt'] : ($article['summary'] ?? ''));
@@ -263,7 +275,7 @@ function generateArticleSchemaGraph(array $article, string $baseUrl = ''): array
             'url' => $baseUrl . '/',
             'logo' => [
                 '@type' => 'ImageObject',
-                'url' => $baseUrl . '/assets/img/og-preview.svg'
+                'url' => $baseUrl . '/assets/img/bdr-logo.png'
             ]
         ]
     ];
@@ -306,7 +318,7 @@ function generateArticleSchemaGraph(array $article, string $baseUrl = ''): array
         'url' => $baseUrl . '/',
         'logo' => [
             '@type' => 'ImageObject',
-            'url' => $baseUrl . '/assets/img/og-preview.svg'
+            'url' => $baseUrl . '/assets/img/bdr-logo.png'
         ]
     ];
 
@@ -360,6 +372,160 @@ function generateArticleSchemaGraph(array $article, string $baseUrl = ''): array
 }
 
 /**
+ * Generate complete Schema.org JSON-LD Graph for Case Studies
+ * Generates Article, BreadcrumbList, Organization, and FAQPage (if FAQs exist)
+ */
+function generateCaseStudySchemaGraph(array $case, string $baseUrl = ''): array
+{
+    $baseUrl = rtrim($baseUrl ?: (defined('BASE_URL') ? BASE_URL : 'https://businessdoctor.com'), '/');
+    $parsedHost = parse_url($baseUrl, PHP_URL_HOST);
+    if (empty($parsedHost) || in_array($parsedHost, ['localhost', '127.0.0.1', '::1', '0.0.0.0'], true) || str_ends_with($parsedHost, '.local')) {
+        $baseUrl = 'https://businessdoctor.com';
+    }
+    $appName = defined('APP_NAME') ? APP_NAME : 'BusinessDoctor';
+
+    $slug = $case['slug'] ?? '';
+    $caseUrl = !empty($case['canonical_url']) ? $case['canonical_url'] : ($baseUrl . '/case-studies/' . rawurlencode($slug));
+
+    $title = !empty($case['seo_title']) ? $case['seo_title'] : ($case['title'] ?? 'Client Case Study');
+    $description = !empty($case['seo_description']) ? $case['seo_description'] : (!empty($case['project_summary']) ? $case['project_summary'] : substr(strip_tags((string)($case['challenge'] ?? '')), 0, 160));
+    $clientIndustry = $case['industry'] ?: ($case['client_industry'] ?? 'Enterprise Software');
+    $practiceArea = $case['service_category'] ?: ($case['practice_area'] ?? 'Web Engineering');
+
+    $rawPub = !empty($case['published_at']) ? $case['published_at'] : (!empty($case['created_at']) ? $case['created_at'] : 'now');
+    $rawMod = !empty($case['updated_at']) ? $case['updated_at'] : $rawPub;
+    $datePublished = date('c', strtotime((string)$rawPub));
+    $dateModified = date('c', strtotime((string)$rawMod));
+
+    $featuredImg = !empty($case['featured_image']) ? $case['featured_image'] : '';
+    if (!empty($featuredImg)) {
+        if (!preg_match('/^https?:\/\//i', $featuredImg)) {
+            $featuredImg = $baseUrl . '/' . ltrim($featuredImg, '/');
+        }
+    } else {
+        $featuredImg = $baseUrl . '/assets/img/og-preview.svg';
+    }
+
+    // 1. Article Schema for Case Study
+    $articleSchema = [
+        '@context' => 'https://schema.org',
+        '@type' => 'Article',
+        '@id' => $caseUrl . '#casestudy',
+        'isPartOf' => [
+            '@type' => 'WebSite',
+            '@id' => $baseUrl . '/#website',
+            'name' => $appName,
+            'url' => $baseUrl . '/'
+        ],
+        'headline' => $title,
+        'description' => $description,
+        'inLanguage' => 'en-US',
+        'mainEntityOfPage' => [
+            '@type' => 'WebPage',
+            '@id' => $caseUrl
+        ],
+        'url' => $caseUrl,
+        'datePublished' => $datePublished,
+        'dateModified' => $dateModified,
+        'articleSection' => $clientIndustry,
+        'about' => [
+            '@type' => 'Thing',
+            'name' => $practiceArea
+        ],
+        'image' => [
+            '@type' => 'ImageObject',
+            'url' => $featuredImg,
+            'caption' => !empty($case['cover_image_alt']) ? $case['cover_image_alt'] : $title
+        ],
+        'author' => [
+            '@type' => 'Organization',
+            '@id' => $baseUrl . '/#organization',
+            'name' => $appName,
+            'url' => $baseUrl . '/'
+        ],
+        'publisher' => [
+            '@type' => 'Organization',
+            '@id' => $baseUrl . '/#organization',
+            'name' => $appName,
+            'url' => $baseUrl . '/',
+            'logo' => [
+                '@type' => 'ImageObject',
+                'url' => $baseUrl . '/assets/img/bdr-logo.png'
+            ]
+        ]
+    ];
+
+    // 2. Breadcrumbs
+    $breadcrumbs = [
+        '@context' => 'https://schema.org',
+        '@type' => 'BreadcrumbList',
+        'itemListElement' => [
+            [
+                '@type' => 'ListItem',
+                'position' => 1,
+                'name' => 'Home',
+                'item' => $baseUrl . '/'
+            ],
+            [
+                '@type' => 'ListItem',
+                'position' => 2,
+                'name' => 'Case Studies',
+                'item' => $baseUrl . '/case-studies.php'
+            ],
+            [
+                '@type' => 'ListItem',
+                'position' => 3,
+                'name' => $title,
+                'item' => $caseUrl
+            ]
+        ]
+    ];
+
+    // 3. Organization
+    $organization = [
+        '@context' => 'https://schema.org',
+        '@type' => 'Organization',
+        '@id' => $baseUrl . '/#organization',
+        'name' => $appName,
+        'url' => $baseUrl . '/',
+        'logo' => [
+            '@type' => 'ImageObject',
+            'url' => $baseUrl . '/assets/img/bdr-logo.png'
+        ]
+    ];
+
+    $schemas = [
+        'Article' => $articleSchema,
+        'BreadcrumbList' => $breadcrumbs,
+        'Organization' => $organization
+    ];
+
+    // 4. FAQPage if FAQs exist in text
+    $allText = ($case['challenge'] ?? '') . ' ' . ($case['prescription'] ?? '') . ' ' . ($case['solution'] ?? '') . ' ' . ($case['results'] ?? '');
+    $faqs = extractFaqsFromContent($allText);
+    if (!empty($faqs)) {
+        $faqItems = [];
+        foreach ($faqs as $faq) {
+            $faqItems[] = [
+                '@type' => 'Question',
+                'name' => $faq['question'],
+                'acceptedAnswer' => [
+                    '@type' => 'Answer',
+                    'text' => $faq['answer']
+                ]
+            ];
+        }
+        $schemas['FAQPage'] = [
+            '@context' => 'https://schema.org',
+            '@type' => 'FAQPage',
+            'mainEntity' => $faqItems
+        ];
+    }
+
+    return $schemas;
+}
+
+/**
  * Centralized Schema Renderer:
  * Queries active schemas for the page, replaces dynamic tokens, validates JSON, and outputs <script type="application/ld+json">
  */
@@ -372,7 +538,11 @@ function renderPageSchemas(?string $pageKey = null, array $contextData = []): st
     }
 
     try {
-        $baseUrl = rtrim(defined('BASE_URL') ? BASE_URL : 'https://demo.businessdoctor.com', '/');
+        $baseUrl = rtrim(defined('BASE_URL') ? BASE_URL : 'https://businessdoctor.com', '/');
+        $parsedHost = parse_url($baseUrl, PHP_URL_HOST);
+        if (empty($parsedHost) || in_array($parsedHost, ['localhost', '127.0.0.1', '::1', '0.0.0.0'], true) || str_ends_with($parsedHost, '.local')) {
+            $baseUrl = 'https://businessdoctor.com';
+        }
         $appName = defined('APP_NAME') ? APP_NAME : 'BusinessDoctor';
         $output = '';
 
@@ -404,6 +574,40 @@ function renderPageSchemas(?string $pageKey = null, array $contextData = []): st
                 $renderedSchemas[$sig] = true;
                 $pretty = json_encode($schemaObj, JSON_PRETTY_PRINT | JSON_UNESCAPED_SLASHES | JSON_UNESCAPED_UNICODE);
                 $output .= "\n  <!-- Schema.org JSON-LD: " . htmlspecialchars($schemaType) . " (Auto-Generated) -->\n";
+                $output .= "  <script type=\"application/ld+json\">\n" . $pretty . "\n  </script>\n";
+            }
+
+            return $output;
+        }
+
+        // Handle Specialized Case Study Detail Schema Logic
+        if ($pageKey === 'case-study-detail' && !empty($contextData['title'])) {
+            $schemaMode = $contextData['schema_mode'] ?? 'auto';
+
+            if ($schemaMode === 'custom' && !empty($contextData['custom_schema_json'])) {
+                $decoded = json_decode((string)$contextData['custom_schema_json'], true);
+                if (is_array($decoded) && json_last_error() === JSON_ERROR_NONE) {
+                    $sig = md5(json_encode($decoded));
+                    if (!isset($renderedSchemas[$sig])) {
+                        $renderedSchemas[$sig] = true;
+                        $pretty = json_encode($decoded, JSON_PRETTY_PRINT | JSON_UNESCAPED_SLASHES | JSON_UNESCAPED_UNICODE);
+                        $output .= "\n  <!-- Custom Schema.org JSON-LD (Case Study Editorial Custom) -->\n";
+                        $output .= "  <script type=\"application/ld+json\">\n" . $pretty . "\n  </script>\n";
+                        return $output;
+                    }
+                }
+            }
+
+            // Automatically Generated Rich Case Study Schema Graph (Article, BreadcrumbList, Organization, ImageObject)
+            $graph = generateCaseStudySchemaGraph($contextData, $baseUrl);
+            foreach ($graph as $schemaType => $schemaObj) {
+                $sig = md5(json_encode($schemaObj));
+                if (isset($renderedSchemas[$sig])) {
+                    continue;
+                }
+                $renderedSchemas[$sig] = true;
+                $pretty = json_encode($schemaObj, JSON_PRETTY_PRINT | JSON_UNESCAPED_SLASHES | JSON_UNESCAPED_UNICODE);
+                $output .= "\n  <!-- Schema.org JSON-LD: " . htmlspecialchars($schemaType) . " (Auto-Generated Case Study) -->\n";
                 $output .= "  <script type=\"application/ld+json\">\n" . $pretty . "\n  </script>\n";
             }
 

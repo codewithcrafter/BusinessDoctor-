@@ -148,6 +148,16 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
                 $now
             ]);
 
+            $newId = (int)$pdo->lastInsertId();
+
+            // Automatic SEO, Schema, Sitemap, Markdown & LLM Optimization Hook
+            try {
+                require_once __DIR__ . '/../includes/seo-service.php';
+                seo_on_case_study_changed($newId);
+            } catch (Throwable $seoErr) {
+                error_log('[SEO HOOK ERROR] case-study-create.php: ' . $seoErr->getMessage());
+            }
+
             setFlashMessage('success', "Case study '{$title}' created successfully as " . strtoupper($status) . ".");
             header('Location: case-studies.php');
             exit;

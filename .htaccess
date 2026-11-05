@@ -3,8 +3,11 @@
 # Optimized for Hostinger & Shared Web Hosting
 # ============================================================
 
-# 1. Disable Directory Browsing
+# 1. Disable Directory Browsing & Trailing Slash Redirects
 Options -Indexes
+<IfModule mod_dir.c>
+    DirectorySlash Off
+</IfModule>
 
 # 2. Character Encoding
 AddDefaultCharset UTF-8
@@ -23,6 +26,9 @@ AddDefaultCharset UTF-8
     # Block direct web access to sensitive internal directories
     RewriteRule ^(database|scratch|includes)/ - [F,L,NC]
 
+    # Clean Admin URL Rewriting: /admin -> admin/index.php (Login & Dashboard unified controller)
+    RewriteRule ^admin/?$ admin/index.php [L,QSA]
+
     # 301 Redirect legacy /service-detail.php?slug={slug} to clean /services/{slug}
     RewriteCond %{THE_REQUEST} \s/+service-detail(?:\.php)?\?slug=([a-zA-Z0-9_-]+) [NC]
     RewriteRule ^ /services/%1? [R=301,L]
@@ -40,7 +46,86 @@ AddDefaultCharset UTF-8
     RewriteCond %{REQUEST_FILENAME} !-f
     RewriteCond %{REQUEST_FILENAME} !-d
     RewriteRule ^services/?$ services.php [L,QSA]
+
+    # 301 Redirect legacy /case-study-detail.php?slug={slug} to clean /case-studies/{slug}
+    RewriteCond %{THE_REQUEST} \s/+case-study-detail(?:\.php)?\?slug=([a-zA-Z0-9_-]+) [NC]
+    RewriteRule ^ /case-studies/%1? [R=301,L]
+
+    # 301 Redirect legacy /case-study-detail.php without slug to /case-studies.php
+    RewriteCond %{THE_REQUEST} \s/+case-study-detail(?:\.php)?(\s|\?) [NC]
+    RewriteRule ^ /case-studies.php? [R=301,L]
+
+    # Clean Case Study URL Rewriting: /case-studies/{slug} -> /case-study-detail.php?slug={slug}
+    RewriteCond %{REQUEST_FILENAME} !-f
+    RewriteCond %{REQUEST_FILENAME} !-d
+    RewriteRule ^case-studies/([a-zA-Z0-9_-]+)/?$ case-study-detail.php?slug=$1 [L,QSA]
+
+    # Clean Case Studies Index Rewriting: /case-studies -> /case-studies.php
+    RewriteCond %{REQUEST_FILENAME} !-f
+    RewriteCond %{REQUEST_FILENAME} !-d
+    RewriteRule ^case-studies/?$ case-studies.php [L,QSA]
+
+    # 301 Redirect legacy /insight-detail.php?slug={slug} to clean /insights/{slug}
+    RewriteCond %{THE_REQUEST} \s/+insight-detail(?:\.php)?\?slug=([a-zA-Z0-9_-]+) [NC]
+    RewriteRule ^ /insights/%1? [R=301,L]
+
+    # 301 Redirect legacy /blog-detail.php?slug={slug} to clean /insights/{slug}
+    RewriteCond %{THE_REQUEST} \s/+blog-detail(?:\.php)?\?slug=([a-zA-Z0-9_-]+) [NC]
+    RewriteRule ^ /insights/%1? [R=301,L]
+
+    # 301 Redirect legacy /insight-detail.php & /blog-detail.php without slug to /insights.php
+    RewriteCond %{THE_REQUEST} \s/+(insight-detail|blog-detail)(?:\.php)?(\s|\?) [NC]
+    RewriteRule ^ /insights.php? [R=301,L]
+
+    # Clean Insights URL Rewriting: /insights/{slug} -> /insight-detail.php?slug={slug}
+    RewriteCond %{REQUEST_FILENAME} !-f
+    RewriteCond %{REQUEST_FILENAME} !-d
+    RewriteRule ^insights/([a-zA-Z0-9_-]+)/?$ insight-detail.php?slug=$1 [L,QSA]
+
+    # Alias Clean Blogs URL: /blogs/{slug} -> /insight-detail.php?slug={slug}
+    RewriteCond %{REQUEST_FILENAME} !-f
+    RewriteCond %{REQUEST_FILENAME} !-d
+    RewriteRule ^blogs/([a-zA-Z0-9_-]+)/?$ insight-detail.php?slug=$1 [L,QSA]
+
+    # Clean Insights Index Rewriting: /insights -> /insights.php
+    RewriteCond %{REQUEST_FILENAME} !-f
+    RewriteCond %{REQUEST_FILENAME} !-d
+    RewriteRule ^insights/?$ insights.php [L,QSA]
+
+    # Clean Blogs Index Rewriting: /blogs -> /insights.php
+    RewriteCond %{REQUEST_FILENAME} !-f
+    RewriteCond %{REQUEST_FILENAME} !-d
+    RewriteRule ^blogs/?$ insights.php [L,QSA]
+
+    # Clean Markdown Representation Rewriting
+    RewriteCond %{REQUEST_FILENAME} !-f
+    RewriteRule ^blogs/([a-zA-Z0-9_-]+)\.md$ content-md/blogs/$1.md [L]
+    RewriteCond %{REQUEST_FILENAME} !-f
+    RewriteRule ^insights/([a-zA-Z0-9_-]+)\.md$ content-md/blogs/$1.md [L]
+    RewriteCond %{REQUEST_FILENAME} !-f
+    RewriteRule ^case-studies/([a-zA-Z0-9_-]+)\.md$ content-md/case-studies/$1.md [L]
 </IfModule>
+
+# Markdown & Plain Text MIME Configuration
+<IfModule mod_mime.c>
+    AddType text/markdown .md
+    AddType text/plain .txt
+    AddType application/xml .xml
+</IfModule>
+
+<FilesMatch "\.md$">
+    <IfModule mod_headers.c>
+        Header set Content-Type "text/markdown; charset=utf-8"
+        Header set X-Content-Type-Options "nosniff"
+    </IfModule>
+</FilesMatch>
+
+<FilesMatch "^(llms|llms-full)\.txt$">
+    <IfModule mod_headers.c>
+        Header set Content-Type "text/plain; charset=utf-8"
+        Header set X-Content-Type-Options "nosniff"
+    </IfModule>
+</FilesMatch>
 
 # 4. Strict File Access Controls
 <FilesMatch "^\.(env|git|sqlite|sql|log)">

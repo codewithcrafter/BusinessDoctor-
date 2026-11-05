@@ -27,6 +27,8 @@ if (!$case) {
 $pageTitle = (!empty($case['seo_title']) ? $case['seo_title'] : $case['title']) . ' — Client Case Study | BusinessDoctor';
 $pageDescription = !empty($case['seo_description']) ? $case['seo_description'] : substr($case['challenge'], 0, 150);
 
+$canonicalUrl = 'https://businessdoctor.com/case-studies/' . rawurlencode($case['slug']);
+$markdownUrl = 'https://businessdoctor.com/content-md/case-studies/' . rawurlencode($case['slug']) . '.md';
 $schemaPageKey = 'case-study-detail';
 $schemaContextData = $case;
 
