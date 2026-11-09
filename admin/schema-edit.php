@@ -107,6 +107,8 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
                     $id
                 ]);
 
+                require_once __DIR__ . '/../includes/seo-sync.php';
+                SeoSyncEngine::syncAll("Schema updated: {$schemaName} ({$pageKey})");
                 setFlashMessage('success', "Schema '{$schemaName}' updated successfully as " . strtoupper($newStatus) . ".");
                 header('Location: schema-manager.php');
                 exit;
@@ -130,6 +132,8 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
                 ]);
 
                 $newId = (int)$pdo->lastInsertId();
+                require_once __DIR__ . '/../includes/seo-sync.php';
+                SeoSyncEngine::syncAll("New Schema created: {$schemaName} ({$pageKey})");
                 setFlashMessage('success', "New Schema '{$schemaName}' created successfully as " . strtoupper($newStatus) . ".");
                 header('Location: schema-manager.php');
                 exit;

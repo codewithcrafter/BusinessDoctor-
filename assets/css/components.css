@@ -284,14 +284,18 @@
 }
 
 /* Hit area extension downwards from trigger to bridge the hover gap */
-.has-mega-menu .nav-link-dropdown::after {
+/* Hit area extension downwards from trigger to bridge the hover gap - always transparent */
+.has-mega-menu .nav-link-dropdown::after,
+.has-mega-menu .nav-link-dropdown.active::after {
   content: '';
   position: absolute;
   top: 100%;
   left: -10px;
   right: -10px;
   height: 24px;
-  background: transparent;
+  background: transparent !important;
+  box-shadow: none !important;
+  border: none !important;
   pointer-events: auto;
 }
 
@@ -3345,8 +3349,9 @@ body {
 }
 
 .nav-link.active::after {
-  background-color: #00C9C1 !important;
-  box-shadow: 0 0 10px #00C9C1 !important;
+  display: none !important;
+  background: transparent !important;
+  box-shadow: none !important;
 }
 
 .nav-cta-btn {

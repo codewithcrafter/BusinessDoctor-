@@ -554,8 +554,8 @@ body.admin-body {
 /* Form Layouts */
 .adm-form-grid {
   display: grid;
-  grid-template-columns: 2fr 1fr;
-  gap: 2rem;
+  grid-template-columns: 1.85fr 1fr;
+  gap: 1.35rem;
   align-items: start;
 }
 
@@ -1310,14 +1310,14 @@ body.admin-body {
   border: 1px solid var(--adm-border);
   border-bottom-left-radius: var(--adm-radius-lg);
   border-bottom-right-radius: var(--adm-radius-lg);
-  padding: 2.5rem;
-  min-height: 540px;
-  max-height: 800px;
+  padding: 1.5rem 1.75rem;
+  min-height: 380px;
+  max-height: 720px;
   overflow-y: auto;
   color: #F4F8FC;
   font-family: var(--adm-font-sans);
-  font-size: 1.05rem;
-  line-height: 1.85;
+  font-size: 1.02rem;
+  line-height: 1.7;
   outline: none;
 }
 
@@ -1413,8 +1413,8 @@ body.admin-body {
   border: 1px solid var(--adm-border);
   border-radius: var(--adm-radius-lg);
   padding: 2.5rem;
-  min-height: 540px;
-  max-height: 800px;
+  min-height: 380px;
+  max-height: 720px;
   overflow-y: auto;
   box-shadow: 0 10px 40px rgba(0, 0, 0, 0.35);
 }
@@ -1600,8 +1600,9 @@ body.admin-body {
 .adm-schema-panel {
   width: 100%;
   box-sizing: border-box;
-  margin-top: 2rem;
-  padding: 1.75rem 2rem;
+  margin-top: 1.35rem;
+  margin-bottom: 1.35rem;
+  padding: 1.5rem 1.75rem;
 }
 
 .adm-schema-mode-grid {

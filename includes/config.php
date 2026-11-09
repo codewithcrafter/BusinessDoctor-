@@ -74,11 +74,20 @@ define('APP_LEGAL_NAME', 'BusinessDoctor IT Solutions & Digital Services Private
 define('APP_TAGLINE', 'Engineering Technology. Accelerating Digital Growth.');
 define('APP_EMAIL', 'solutions@businessdoctor.com');
 define('APP_PHONE', '+1 (800) 492-3628');
+define('APP_CALL_NUMBER', getenv('APP_CALL_NUMBER') ?: '+18004923628');
+define('APP_WHATSAPP_NUMBER', getenv('APP_WHATSAPP_NUMBER') ?: '18004923628');
+define('APP_WHATSAPP_MESSAGE', getenv('APP_WHATSAPP_MESSAGE') ?: 'Hello BusinessDoctor, I would like to inquire about your enterprise IT and digital services.');
 define('APP_HEADQUARTERS', 'Floor 42, Executive Tech Park, Innovation District');
 
 // Base URL calculation (safe fallback for CLI & varied web servers)
 $envAppUrl = getenv('APP_URL');
-if (!empty($envAppUrl)) {
+// If running on local XAMPP Apache or localhost without custom host domain, dynamically derive base URL
+$currentHost = $_SERVER['HTTP_HOST'] ?? '';
+$isLocalHost = in_array($currentHost, ['127.0.0.1:8000', 'localhost:8000', 'localhost', '127.0.0.1'], true)
+               || str_starts_with($currentHost, 'localhost')
+               || str_starts_with($currentHost, '127.0.0.1');
+
+if (!empty($envAppUrl) && !($isLocalHost && str_contains($envAppUrl, 'demo.businessdoctor.com'))) {
     define('BASE_URL', rtrim($envAppUrl, '/'));
 } else {
     $protocol = (!empty($_SERVER['HTTPS']) && $_SERVER['HTTPS'] !== 'off' || (isset($_SERVER['SERVER_PORT']) && (int)$_SERVER['SERVER_PORT'] === 443)) ? "https://" : "http://";

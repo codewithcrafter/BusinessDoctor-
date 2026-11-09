@@ -1694,4 +1694,34 @@ require_once __DIR__ . '/includes/header.php';
   </div>
 </section>
 
+<!-- ============================================================
+     FIXED FLOATING CONTACT ICONS (HOMEPAGE ONLY)
+     ============================================================ -->
+<aside class="floating-contact-widget" aria-label="Quick Contact Channels" style="position: fixed; bottom: max(24px, env(safe-area-inset-bottom, 24px)); right: max(24px, env(safe-area-inset-right, 24px)); z-index: 990; display: flex; flex-direction: column; gap: 12px; pointer-events: none;">
+
+  <!-- Direct Call Floating Action -->
+  <a href="tel:<?= htmlspecialchars(APP_CALL_NUMBER) ?>" 
+     class="floating-contact-btn floating-call-btn" 
+     aria-label="Call BusinessDoctor at <?= htmlspecialchars(APP_PHONE) ?>"
+     title="Call BusinessDoctor (<?= htmlspecialchars(APP_PHONE) ?>)"
+     style="pointer-events: auto; width: 52px; height: 52px; border-radius: 50%; background: #00C9C1; color: #061326; display: flex; align-items: center; justify-content: center; box-shadow: 0 4px 18px rgba(0, 201, 193, 0.45); transition: transform 0.2s ease, box-shadow 0.2s ease; text-decoration: none;">
+    <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+      <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path>
+    </svg>
+  </a>
+
+  <!-- WhatsApp Floating Action -->
+  <a href="https://wa.me/<?= htmlspecialchars(APP_WHATSAPP_NUMBER) ?>?text=<?= urlencode(APP_WHATSAPP_MESSAGE) ?>" 
+     target="_blank" 
+     rel="noopener noreferrer" 
+     class="floating-contact-btn floating-wa-btn" 
+     aria-label="Chat with BusinessDoctor on WhatsApp"
+     title="Chat on WhatsApp"
+     style="pointer-events: auto; width: 52px; height: 52px; border-radius: 50%; background: #25D366; color: #ffffff; display: flex; align-items: center; justify-content: center; box-shadow: 0 4px 18px rgba(37, 211, 102, 0.45); transition: transform 0.2s ease, box-shadow 0.2s ease; text-decoration: none;">
+    <svg width="25" height="25" viewBox="0 0 24 24" fill="currentColor">
+      <path d="M12.04 2C6.58 2 2.13 6.45 2.13 11.91C2.13 13.66 2.59 15.36 3.45 16.86L2.05 22L7.3 20.62C8.75 21.41 10.38 21.83 12.04 21.83C17.5 21.83 21.95 17.38 21.95 11.92C21.95 9.27 20.92 6.78 19.05 4.91C17.18 3.03 14.69 2 12.04 2M12.05 3.67C14.25 3.67 16.31 4.53 17.87 6.09C19.42 7.65 20.28 9.72 20.28 11.92C20.28 16.46 16.58 20.15 12.04 20.15C10.56 20.15 9.11 19.76 7.85 19L7.55 18.83L4.43 19.65L5.26 16.61L5.06 16.29C4.24 15 3.8 13.47 3.8 11.91C3.81 7.37 7.5 3.67 12.05 3.67M9.53 7.34C9.36 7.34 9.09 7.4 8.87 7.65C8.65 7.89 8.02 8.48 8.02 9.71C8.02 10.94 8.91 12.13 9.03 12.29C9.15 12.46 10.8 15.01 13.32 16.1C13.92 16.36 14.39 16.51 14.75 16.63C15.35 16.82 15.9 16.79 16.34 16.73C16.82 16.66 17.82 16.12 18.03 15.54C18.24 14.95 18.24 14.45 18.18 14.35C18.12 14.24 17.95 14.18 17.7 14.05C17.44 13.93 16.19 13.31 15.96 13.23C15.73 13.14 15.56 13.1 15.4 13.35C15.23 13.6 14.76 14.18 14.61 14.35C14.46 14.52 14.31 14.54 14.06 14.42C13.8 14.29 13 14.03 12.04 13.17C11.3 12.5 10.79 11.68 10.65 11.43C10.5 11.18 10.63 11.04 10.76 10.92C10.88 10.8 11.02 10.61 11.16 10.45C11.3 10.28 11.34 10.16 11.43 9.99C11.51 9.83 11.47 9.68 11.41 9.56C11.34 9.44 10.85 8.24 10.64 7.74C10.44 7.26 10.24 7.32 10.09 7.32C9.94 7.32 9.77 7.34 9.53 7.34Z"/>
+    </svg>
+  </a>
+</aside>
+
 <?php require_once __DIR__ . '/includes/footer.php'; ?>

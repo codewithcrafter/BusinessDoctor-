@@ -6,5 +6,9 @@ Disallow: /database/
 Disallow: /includes/
 Disallow: /scratch/
 
-Sitemap: https://businessdoctor.com/sitemap.xml
+# Sitemap
+Sitemap: https://demo.businessdoctor.com/sitemap.xml
 
+# LLM & AI Discovery Files
+# LLMs: https://demo.businessdoctor.com/llms.txt
+# LLMs-Full: https://demo.businessdoctor.com/llms.md

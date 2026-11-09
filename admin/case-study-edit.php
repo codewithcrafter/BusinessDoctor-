@@ -186,6 +186,8 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
                 $id
             ]);
 
+            require_once __DIR__ . '/../includes/seo-sync.php';
+            SeoSyncEngine::syncAll("Case Study updated: {$title}");
             setFlashMessage('success', "Case study '{$title}' updated successfully as " . strtoupper($status) . ".");
             header('Location: case-studies.php');
             exit;

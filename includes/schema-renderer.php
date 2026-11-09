@@ -466,7 +466,11 @@ function renderPageSchemas(?string $pageKey = null, array $contextData = []): st
             '{{CATEGORY}}' => addslashes($category)
         ];
 
+        $hasBreadcrumbs = false;
         foreach ($schemas as $row) {
+            if (($row['schema_type'] ?? '') === 'BreadcrumbList') {
+                $hasBreadcrumbs = true;
+            }
             $rawJson = $row['schema_json'];
 
             // Replace dynamic tokens
@@ -489,6 +493,103 @@ function renderPageSchemas(?string $pageKey = null, array $contextData = []): st
 
             $output .= "\n  <!-- Schema.org JSON-LD: " . htmlspecialchars($row['schema_name']) . " (" . htmlspecialchars($row['schema_type']) . ") -->\n";
             $output .= "  <script type=\"application/ld+json\">\n" . $prettyJson . "\n  </script>\n";
+        }
+
+        // Auto-inject BreadcrumbList for inner pages if not explicitly declared in page_schemas
+        if ($pageKey !== 'home' && !$hasBreadcrumbs) {
+            $breadcrumbItems = [
+                [
+                    '@type' => 'ListItem',
+                    'position' => 1,
+                    'name' => 'Home',
+                    'item' => $baseUrl . '/'
+                ]
+            ];
+
+            if ($pageKey === 'service-detail') {
+                $breadcrumbItems[] = [
+                    '@type' => 'ListItem',
+                    'position' => 2,
+                    'name' => 'Services Portfolio',
+                    'item' => $baseUrl . '/services.php'
+                ];
+                $breadcrumbItems[] = [
+                    '@type' => 'ListItem',
+                    'position' => 3,
+                    'name' => $articleTitle ?: 'Service Detail',
+                    'item' => $canonicalUrl
+                ];
+            } elseif ($pageKey === 'case-study-detail') {
+                $breadcrumbItems[] = [
+                    '@type' => 'ListItem',
+                    'position' => 2,
+                    'name' => 'Case Studies',
+                    'item' => $baseUrl . '/case-studies.php'
+                ];
+                $breadcrumbItems[] = [
+                    '@type' => 'ListItem',
+                    'position' => 3,
+                    'name' => $articleTitle ?: 'Case Study Detail',
+                    'item' => $canonicalUrl
+                ];
+            } elseif ($pageKey === 'services') {
+                $breadcrumbItems[] = [
+                    '@type' => 'ListItem',
+                    'position' => 2,
+                    'name' => 'Services Portfolio',
+                    'item' => $baseUrl . '/services.php'
+                ];
+            } elseif ($pageKey === 'case-studies') {
+                $breadcrumbItems[] = [
+                    '@type' => 'ListItem',
+                    'position' => 2,
+                    'name' => 'Case Studies',
+                    'item' => $baseUrl . '/case-studies.php'
+                ];
+            } elseif ($pageKey === 'insights') {
+                $breadcrumbItems[] = [
+                    '@type' => 'ListItem',
+                    'position' => 2,
+                    'name' => 'Insights & Perspectives',
+                    'item' => $baseUrl . '/insights.php'
+                ];
+            } elseif ($pageKey === 'about') {
+                $breadcrumbItems[] = [
+                    '@type' => 'ListItem',
+                    'position' => 2,
+                    'name' => 'About Us',
+                    'item' => $baseUrl . '/about.php'
+                ];
+            } elseif ($pageKey === 'contact') {
+                $breadcrumbItems[] = [
+                    '@type' => 'ListItem',
+                    'position' => 2,
+                    'name' => 'Contact Us',
+                    'item' => $baseUrl . '/contact.php'
+                ];
+            } elseif ($pageKey === 'diagnostic') {
+                $breadcrumbItems[] = [
+                    '@type' => 'ListItem',
+                    'position' => 2,
+                    'name' => 'Digital Architecture Audit',
+                    'item' => $baseUrl . '/audit.php'
+                ];
+            }
+
+            if (count($breadcrumbItems) > 1) {
+                $breadcrumbSchema = [
+                    '@context' => 'https://schema.org',
+                    '@type' => 'BreadcrumbList',
+                    'itemListElement' => $breadcrumbItems
+                ];
+                $sig = md5(json_encode($breadcrumbSchema));
+                if (!isset($renderedSchemas[$sig])) {
+                    $renderedSchemas[$sig] = true;
+                    $pretty = json_encode($breadcrumbSchema, JSON_PRETTY_PRINT | JSON_UNESCAPED_SLASHES | JSON_UNESCAPED_UNICODE);
+                    $output .= "\n  <!-- Schema.org JSON-LD: BreadcrumbList (Auto-Generated) -->\n";
+                    $output .= "  <script type=\"application/ld+json\">\n" . $pretty . "\n  </script>\n";
+                }
+            }
         }
 
         return $output;

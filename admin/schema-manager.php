@@ -8,6 +8,7 @@ declare(strict_types=1);
 
 require_once __DIR__ . '/includes/auth.php';
 require_once __DIR__ . '/../includes/schema-renderer.php';
+require_once __DIR__ . '/../includes/seo-sync.php';
 
 // Handle Deletion
 if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['action']) && $_POST['action'] === 'delete') {
@@ -22,6 +23,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['action']) && $_POST['
             if ($sch) {
                 $del = $pdo->prepare("DELETE FROM page_schemas WHERE id = ?");
                 $del->execute([$deleteId]);
+                SeoSyncEngine::syncAll("Schema deleted: {$sch['schema_name']} (ID:{$deleteId})");
                 setFlashMessage('success', "Schema '{$sch['schema_name']}' deleted successfully.");
             }
         }
@@ -88,6 +90,7 @@ $availableTypes = [
     'ProfessionalService'
 ];
 
+$seoSyncStatus = SeoSyncEngine::getSyncStatus();
 $pageTitle = 'Schema Management CMS';
 $activeNav = 'schema-manager';
 require_once __DIR__ . '/includes/header.php';
@@ -106,7 +109,7 @@ require_once __DIR__ . '/includes/header.php';
   <div style="display: flex; gap: 0.75rem; align-items: center;">
     <a href="schema-edit.php" class="btn-adm btn-adm-primary" style="font-weight: 700; box-shadow: 0 4px 15px rgba(0, 201, 193, 0.35);">
       <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" width="16" height="16" stroke-width="2"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg>
-      <span>+ Create New Schema</span>
+      <span>Create New Schema</span>
     </a>
   </div>
 </div>
@@ -150,6 +153,142 @@ require_once __DIR__ . '/includes/header.php';
     <div>
       <div class="admin-stat-val"><?= $totalSupportedPages ?></div>
       <div class="admin-stat-lbl">Supported Templates</div>
+    </div>
+  </div>
+</div>
+
+<!-- Automated SEO, Schema & LLM Discovery Panel -->
+<div class="admin-card" style="padding: 1.5rem; margin-bottom: 1.75rem; border-top: 3px solid var(--adm-teal); background: linear-gradient(180deg, rgba(14, 37, 63, 0.95) 0%, rgba(10, 25, 47, 0.98) 100%);">
+  <div style="display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 1.25rem; flex-wrap: wrap; gap: 1rem;">
+    <div>
+      <div style="display: flex; align-items: center; gap: 0.65rem; margin-bottom: 0.35rem;">
+        <span style="display: inline-flex; width: 10px; height: 10px; border-radius: 50%; background: #10B981; box-shadow: 0 0 10px #10B981;"></span>
+        <h3 style="font-size: 1.15rem; font-weight: 700; color: #FFFFFF; margin: 0; font-family: var(--adm-font-display);">
+          Automated SEO, Schema &amp; AI Discovery System
+        </h3>
+        <span class="status-pill status-pill-active" style="font-size: 0.72rem; padding: 2px 8px;">Synchronized</span>
+      </div>
+      <p style="color: var(--adm-text-muted); font-size: 0.84rem; margin: 0; max-width: 760px;">
+        Centrally automates and keeps 100% in sync: <strong>sitemap.xml</strong>, dynamic <strong>Schema.org JSON-LD</strong>, <strong>llms.txt</strong>, and <strong>llms.md</strong>. Triggers automatically on blog or case study creation, edit, publish, or trash operations.
+      </p>
+    </div>
+
+    <!-- Manual Resync Action Button -->
+    <form method="POST" action="schema-manager.php" style="margin: 0;">
+      <input type="hidden" name="csrf_token" value="<?= getCsrfToken() ?>">
+      <input type="hidden" name="action" value="resync_seo">
+      <button type="submit" class="btn-adm btn-adm-primary" style="display: inline-flex; align-items: center; gap: 0.5rem; font-weight: 700; padding: 0.65rem 1.15rem; box-shadow: 0 4px 15px rgba(0, 201, 193, 0.35);">
+        <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2"><polyline points="23 4 23 10 17 10"/><polyline points="1 20 1 14 7 14"/><path d="M3.51 9a9 9 0 0 1 14.85-3.36L23 10M1 14l4.64 4.36A9 9 0 0 0 20.49 15"/></svg>
+        <span>Resync All SEO Files</span>
+      </button>
+    </form>
+  </div>
+
+  <!-- 4 Output Files Grid -->
+  <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 1rem; margin-bottom: 1.25rem;">
+    <!-- Output 1: sitemap.xml -->
+    <div style="background: rgba(14, 37, 63, 0.6); border: 1px solid rgba(0, 201, 193, 0.2); border-radius: 6px; padding: 1rem;">
+      <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 0.5rem;">
+        <span style="font-family: var(--adm-font-mono); font-size: 0.9rem; font-weight: 700; color: #FFFFFF;">sitemap.xml</span>
+        <span class="status-pill status-pill-active" style="font-size: 0.68rem;">Live</span>
+      </div>
+      <div style="font-size: 0.78rem; color: var(--adm-text-muted); margin-bottom: 0.65rem;">
+        Standard XML sitemap adhering to sitemaps.org schema with clean URLs.
+      </div>
+      <div style="display: flex; justify-content: space-between; align-items: center; font-size: 0.76rem; border-top: 1px solid rgba(255,255,255,0.06); padding-top: 0.5rem;">
+        <span style="color: var(--adm-teal); font-family: var(--adm-font-mono); font-weight: 600;">
+          <?= $seoSyncStatus['metrics']['total_urls_in_sitemap'] ?> URLs (<?= round($seoSyncStatus['files']['sitemap_xml']['size'] / 1024, 1) ?> KB)
+        </span>
+        <a href="../sitemap.xml" target="_blank" rel="noopener" style="color: #60A5FA; text-decoration: none; display: inline-flex; align-items: center; gap: 0.2rem; font-weight: 600;">
+          <span>View</span>
+          <svg viewBox="0 0 24 24" width="11" height="11" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
+        </a>
+      </div>
+    </div>
+
+    <!-- Output 2: Schema Markup -->
+    <div style="background: rgba(14, 37, 63, 0.6); border: 1px solid rgba(0, 201, 193, 0.2); border-radius: 6px; padding: 1rem;">
+      <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 0.5rem;">
+        <span style="font-family: var(--adm-font-mono); font-size: 0.9rem; font-weight: 700; color: #FFFFFF;">Schema Markup</span>
+        <span class="status-pill status-pill-active" style="font-size: 0.68rem;">Validated</span>
+      </div>
+      <div style="font-size: 0.78rem; color: var(--adm-text-muted); margin-bottom: 0.65rem;">
+        Dynamic Schema.org JSON-LD across all public templates &amp; articles.
+      </div>
+      <div style="display: flex; justify-content: space-between; align-items: center; font-size: 0.76rem; border-top: 1px solid rgba(255,255,255,0.06); padding-top: 0.5rem;">
+        <span style="color: var(--adm-teal); font-family: var(--adm-font-mono); font-weight: 600;">
+          <?= $totalActive ?> Active Schemas
+        </span>
+        <span style="color: #A0AEC0; font-size: 0.72rem;">Multi-Graph Injection</span>
+      </div>
+    </div>
+
+    <!-- Output 3: llms.txt -->
+    <div style="background: rgba(14, 37, 63, 0.6); border: 1px solid rgba(0, 201, 193, 0.2); border-radius: 6px; padding: 1rem;">
+      <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 0.5rem;">
+        <span style="font-family: var(--adm-font-mono); font-size: 0.9rem; font-weight: 700; color: #FFFFFF;">llms.txt</span>
+        <span class="status-pill status-pill-active" style="font-size: 0.68rem;">Standard</span>
+      </div>
+      <div style="font-size: 0.78rem; color: var(--adm-text-muted); margin-bottom: 0.65rem;">
+        Concise AI discovery manifest for LLMs, Perplexity, and agents.
+      </div>
+      <div style="display: flex; justify-content: space-between; align-items: center; font-size: 0.76rem; border-top: 1px solid rgba(255,255,255,0.06); padding-top: 0.5rem;">
+        <span style="color: var(--adm-teal); font-family: var(--adm-font-mono); font-weight: 600;">
+          <?= round($seoSyncStatus['files']['llms_txt']['size'] / 1024, 1) ?> KB (llmstxt.org)
+        </span>
+        <a href="../llms.txt" target="_blank" rel="noopener" style="color: #60A5FA; text-decoration: none; display: inline-flex; align-items: center; gap: 0.2rem; font-weight: 600;">
+          <span>View</span>
+          <svg viewBox="0 0 24 24" width="11" height="11" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
+        </a>
+      </div>
+    </div>
+
+    <!-- Output 4: llms.md -->
+    <div style="background: rgba(14, 37, 63, 0.6); border: 1px solid rgba(0, 201, 193, 0.2); border-radius: 6px; padding: 1rem;">
+      <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 0.5rem;">
+        <span style="font-family: var(--adm-font-mono); font-size: 0.9rem; font-weight: 700; color: #FFFFFF;">llms.md</span>
+        <span class="status-pill status-pill-active" style="font-size: 0.68rem;">Deep RAG</span>
+      </div>
+      <div style="font-size: 0.78rem; color: var(--adm-text-muted); margin-bottom: 0.65rem;">
+        Full machine-readable knowledge index with complete catalogs &amp; KPIs.
+      </div>
+      <div style="display: flex; justify-content: space-between; align-items: center; font-size: 0.76rem; border-top: 1px solid rgba(255,255,255,0.06); padding-top: 0.5rem;">
+        <span style="color: var(--adm-teal); font-family: var(--adm-font-mono); font-weight: 600;">
+          <?= round($seoSyncStatus['files']['llms_md']['size'] / 1024, 1) ?> KB (Full Context)
+        </span>
+        <a href="../llms.md" target="_blank" rel="noopener" style="color: #60A5FA; text-decoration: none; display: inline-flex; align-items: center; gap: 0.2rem; font-weight: 600;">
+          <span>View</span>
+          <svg viewBox="0 0 24 24" width="11" height="11" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
+        </a>
+      </div>
+    </div>
+  </div>
+
+  <!-- Operational Sync Audit Details -->
+  <div style="display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 0.75rem; padding: 0.75rem 1rem; background: rgba(10, 25, 47, 0.6); border-radius: 4px; font-size: 0.78rem; color: var(--adm-text-muted);">
+    <div style="display: flex; align-items: center; gap: 1.25rem; flex-wrap: wrap;">
+      <div>
+        <span style="color: var(--adm-text-dim);">Last Synced:</span>
+        <strong style="color: #FFFFFF; font-family: var(--adm-font-mono); margin-left: 0.35rem;"><?= e($seoSyncStatus['last_sync_timestamp']) ?></strong>
+      </div>
+      <div>
+        <span style="color: var(--adm-text-dim);">Trigger:</span>
+        <span style="color: #E2E8F0; margin-left: 0.35rem; font-family: var(--adm-font-mono);"><?= e($seoSyncStatus['trigger_reason']) ?></span>
+      </div>
+      <div>
+        <span style="color: var(--adm-text-dim);">Duration:</span>
+        <span style="color: var(--adm-teal); margin-left: 0.35rem; font-family: var(--adm-font-mono);"><?= e((string)$seoSyncStatus['duration_ms']) ?> ms</span>
+      </div>
+    </div>
+
+    <div style="display: flex; align-items: center; gap: 0.85rem; font-family: var(--adm-font-mono); font-size: 0.74rem;">
+      <span style="color: #94A3B8;"><?= $seoSyncStatus['metrics']['static_pages'] ?> Static</span>
+      <span style="color: rgba(255,255,255,0.2);">|</span>
+      <span style="color: #94A3B8;"><?= $seoSyncStatus['metrics']['services'] ?> Services</span>
+      <span style="color: rgba(255,255,255,0.2);">|</span>
+      <span style="color: #94A3B8;"><?= $seoSyncStatus['metrics']['case_studies'] ?> Cases</span>
+      <span style="color: rgba(255,255,255,0.2);">|</span>
+      <span style="color: #94A3B8;"><?= $seoSyncStatus['metrics']['insights'] ?> Insights</span>
     </div>
   </div>
 </div>
@@ -259,18 +398,21 @@ require_once __DIR__ . '/includes/header.php';
                 </div>
               </td>
               <td style="text-align: right;">
-                <div style="display: inline-flex; gap: 0.35rem; align-items: center;">
-                  <button type="button" class="btn-adm btn-adm-secondary btn-adm-sm" onclick="previewSchema(<?= (int)$s['id'] ?>)" title="Preview JSON-LD Output">
-                    Preview
+                <div style="display: inline-flex; gap: 0.4rem; align-items: center;">
+                  <button type="button" class="btn-adm btn-adm-secondary btn-adm-sm" onclick="previewSchema(<?= (int)$s['id'] ?>)" title="Preview JSON-LD Output" style="padding: 0.35rem 0.65rem; font-size: 0.76rem; display: inline-flex; align-items: center; gap: 0.3rem;">
+                    <svg viewBox="0 0 24 24" width="13" height="13" fill="none" stroke="currentColor" stroke-width="2"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/><circle cx="12" cy="12" r="3"/></svg>
+                    <span>Preview</span>
                   </button>
-                  <button type="button" class="btn-adm btn-adm-secondary btn-adm-sm" onclick="validateSchema(<?= (int)$s['id'] ?>)" title="Validate Schema Structure">
-                    Validate
+                  <button type="button" class="btn-adm btn-adm-secondary btn-adm-sm" onclick="validateSchema(<?= (int)$s['id'] ?>)" title="Validate Schema Structure" style="padding: 0.35rem 0.65rem; font-size: 0.76rem; display: inline-flex; align-items: center; gap: 0.3rem;">
+                    <svg viewBox="0 0 24 24" width="13" height="13" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
+                    <span>Validate</span>
                   </button>
-                  <a href="schema-edit.php?id=<?= (int)$s['id'] ?>" class="btn-adm btn-adm-secondary btn-adm-sm" style="color: var(--adm-teal);" title="Edit Schema">
-                    Edit
+                  <a href="schema-edit.php?id=<?= (int)$s['id'] ?>" class="btn-adm btn-adm-secondary btn-adm-sm" style="color: var(--adm-teal); padding: 0.35rem 0.65rem; font-size: 0.76rem; display: inline-flex; align-items: center; gap: 0.3rem;" title="Edit Schema">
+                    <svg viewBox="0 0 24 24" width="13" height="13" fill="none" stroke="currentColor" stroke-width="2"><path d="M11 4H4a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2v-7"/><path d="M18.5 2.5a2.121 2.121 0 0 1 3 3L12 15l-4 1 1-4 9.5-9.5z"/></svg>
+                    <span>Edit</span>
                   </a>
-                  <button type="button" class="btn-adm btn-adm-secondary btn-adm-sm" style="color: #F87171;" onclick="confirmDeleteSchema(<?= (int)$s['id'] ?>, '<?= e(addslashes($s['schema_name'])) ?>')" title="Delete">
-                    &times;
+                  <button type="button" class="btn-adm btn-adm-secondary btn-adm-sm" style="color: #F87171; border-color: rgba(239, 68, 68, 0.3); padding: 0.35rem 0.55rem;" onclick="confirmDeleteSchema(<?= (int)$s['id'] ?>, '<?= e(addslashes($s['schema_name'])) ?>')" title="Delete Schema Permanently">
+                    <svg viewBox="0 0 24 24" width="13" height="13" fill="none" stroke="currentColor" stroke-width="2"><polyline points="3 6 5 6 21 6"/><path d="M19 6v14a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2V6m3 0V4a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2"/></svg>
                   </button>
                 </div>
               </td>
@@ -350,6 +492,39 @@ require_once __DIR__ . '/includes/header.php';
 // JSON cache of loaded schemas
 const schemasData = <?= json_encode($schemas, JSON_HEX_TAG | JSON_HEX_APOS | JSON_HEX_QUOT | JSON_HEX_AMP) ?>;
 
+function openModal(id) {
+  const modal = document.getElementById(id);
+  if (modal) {
+    modal.classList.add('open');
+    modal.style.display = 'flex';
+  }
+}
+
+function closeModal(id) {
+  const modal = document.getElementById(id);
+  if (modal) {
+    modal.classList.remove('open');
+    modal.style.display = 'none';
+  }
+}
+
+// Modal Backdrop Click & Escape Key Dismissal
+window.addEventListener('click', function(e) {
+  if (e.target.classList && e.target.classList.contains('adm-modal-overlay')) {
+    e.target.classList.remove('open');
+    e.target.style.display = 'none';
+  }
+});
+
+window.addEventListener('keydown', function(e) {
+  if (e.key === 'Escape') {
+    document.querySelectorAll('.adm-modal-overlay.open').forEach(m => {
+      m.classList.remove('open');
+      m.style.display = 'none';
+    });
+  }
+});
+
 function getById(id) {
   return schemasData.find(s => parseInt(s.id) === parseInt(id));
 }
@@ -370,10 +545,14 @@ function previewSchema(id) {
 
 function copyPreviewJson() {
   const text = document.getElementById('previewJsonOutput').textContent;
+  if (!text) return;
   navigator.clipboard.writeText(text).then(() => {
     const btn = document.getElementById('copySchemaBtn');
-    btn.textContent = '✓ Copied!';
-    setTimeout(() => { btn.textContent = 'Copy JSON-LD'; }, 2000);
+    const orig = btn.innerHTML;
+    btn.innerHTML = '<span style="color: #34D399; font-weight: 700;">✓ Copied to Clipboard</span>';
+    setTimeout(() => { btn.innerHTML = orig; }, 2200);
+  }).catch(() => {
+    alert('Clipboard access denied. Please select and copy manually.');
   });
 }
 

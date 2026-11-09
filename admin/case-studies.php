@@ -48,6 +48,8 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['action'])) {
             $update->execute([$id]);
             setFlashMessage('success', "Case study restored from trash.");
         }
+        require_once __DIR__ . '/../includes/seo-sync.php';
+        SeoSyncEngine::syncAll("Case Study status change ({$action}) ID:{$id}");
     }
 
     header('Location: case-studies.php' . (!empty($_GET['trash']) ? '?trash=1' : ''));

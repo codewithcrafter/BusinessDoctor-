@@ -148,6 +148,8 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
                 $now
             ]);
 
+            require_once __DIR__ . '/../includes/seo-sync.php';
+            SeoSyncEngine::syncAll("Case Study created: {$title}");
             setFlashMessage('success', "Case study '{$title}' created successfully as " . strtoupper($status) . ".");
             header('Location: case-studies.php');
             exit;
