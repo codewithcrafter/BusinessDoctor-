@@ -39,11 +39,8 @@ $flash = getFlashMessage();
   <!-- Sidebar -->
   <aside class="admin-sidebar" id="adminSidebar">
     <div class="admin-sidebar-header">
-      <a href="dashboard.php" class="admin-logo">
-        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2">
-          <polyline points="16 18 22 12 16 6"/>
-          <polyline points="8 6 2 12 8 18"/>
-        </svg>
+      <a href="<?= appUrl('admin/dashboard.php') ?>" class="admin-logo" style="display: flex; align-items: center; gap: 0.65rem;">
+        <img src="<?= getAssetUrl('assets/img/bdr_logo_transparent.png') ?>" alt="BusinessDoctor Logo" style="height: 38px; width: auto; object-fit: contain; aspect-ratio: 1816 / 1131; display: inline-block;">
         <span>Business<span style="color: var(--adm-teal);">Doctor</span></span>
       </a>
       <span class="status-pill status-published" style="font-size: 0.65rem;">CMS v2</span>
@@ -69,6 +66,14 @@ $flash = getFlashMessage();
         <a href="blog-create.php" class="admin-menu-link <?= isNavActive('blog-create.php') ?>">
           <svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg>
           <span>Create Blog</span>
+        </a>
+      </li>
+
+            <li class="admin-menu-header">SERVICES</li>
+      <li class="admin-menu-item">
+        <a href="services.php" class="admin-menu-link <?= isNavActive('services.php', 'service-edit.php') ?>">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><rect x="2" y="3" width="20" height="14" rx="2" ry="2"/><line x1="8" y1="21" x2="16" y2="21"/><line x1="12" y1="17" x2="12" y2="21"/></svg>
+          <span>Services Manager</span>
         </a>
       </li>
 

@@ -17,14 +17,8 @@ $practices = getPracticeAreas();
     <div class="footer-grid">
       <!-- Col 1: Brand & Overview -->
       <div class="footer-col footer-brand">
-        <a href="index.php" class="brand-logo" style="color: #ffffff;">
-          <div class="brand-symbol">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2">
-              <polyline points="16 18 22 12 16 6"/>
-              <polyline points="8 6 2 12 8 18"/>
-            </svg>
-          </div>
-          <span>Business<span style="color: var(--color-accent); font-weight: 700;">Doctor</span></span>
+        <a href="<?= appUrl() ?>" class="brand-logo" style="color: #ffffff;" aria-label="BusinessDoctor Home">
+          <img src="<?= getAssetUrl('assets/img/bdr_logo_transparent.png') ?>" alt="BusinessDoctor Logo" class="brand-logo-img" style="height: 52px; width: auto; max-width: 150px; object-fit: contain; aspect-ratio: 1816 / 1131; display: block;">
         </a>
         <p>
           Established international IT solutions and digital growth firm. We engineer high-performance web software, execute data-driven digital marketing, design distinctive brand systems, and scale multi-channel marketplace operations.
@@ -51,22 +45,22 @@ $practices = getPracticeAreas();
       <div class="footer-col">
         <h4 class="footer-title">Enterprise</h4>
         <div class="footer-links">
-          <a href="about.php" class="footer-link">About BusinessDoctor</a>
-          <a href="audit.php" class="footer-link">Free Technical Digital Audit</a>
-          <a href="case-studies.php" class="footer-link">Client Case Studies</a>
-          <a href="insights.php" class="footer-link">Insights & Perspectives</a>
-          <a href="contact.php" class="footer-link">Consultation & Contact</a>
-          <a href="admin/login.php" class="footer-link" style="color: rgba(255, 255, 255, 0.45);">Project Console (Admin)</a>
+          <a href="<?= appUrl('about.php') ?>" class="footer-link">About BusinessDoctor</a>
+          <a href="<?= appUrl('audit.php') ?>" class="footer-link">Free Technical Digital Audit</a>
+          <a href="<?= appUrl('case-studies.php') ?>" class="footer-link">Client Case Studies</a>
+          <a href="<?= appUrl('insights.php') ?>" class="footer-link">Insights & Perspectives</a>
+          <a href="<?= appUrl('contact.php') ?>" class="footer-link">Consultation & Contact</a>
+          <a href="<?= appUrl('admin/login.php') ?>" class="footer-link" style="color: #8FA3B8;">Project Console (Admin)</a>
         </div>
       </div>
 
       <!-- Col 4: Newsletter & Direct Coordinates -->
       <div class="footer-col">
         <h4 class="footer-title">Perspectives Newsletter</h4>
-        <p style="font-size: 0.88rem; color: rgba(255, 255, 255, 0.7); margin-bottom: 1.25rem;">
+        <p style="font-size: 0.88rem; color: #B8C7D9; margin-bottom: 1.25rem;">
           Subscribe to our executive brief covering software engineering architectures, SEO algorithms, and digital growth frameworks.
         </p>
-        <form class="newsletter-form" action="/api/newsletter-subscribe.php" method="POST">
+        <form class="newsletter-form" action="<?= appUrl('api/newsletter-subscribe.php') ?>" method="POST">
           <input type="hidden" name="csrf_token" value="<?= getCsrfToken() ?>">
           <div style="display: flex; gap: 0.5rem; width: 100%;">
             <input type="email" name="email" required placeholder="executive@enterprise.com" class="cta-input" style="font-size: 0.88rem; padding: 0.75rem 1rem;">
@@ -75,7 +69,7 @@ $practices = getPracticeAreas();
             </button>
           </div>
         </form>
-        <div style="margin-top: 1.75rem; font-size: 0.85rem; color: rgba(255, 255, 255, 0.7);">
+        <div style="margin-top: 1.75rem; font-size: 0.85rem; color: #B8C7D9;">
           <div><strong>Direct Line:</strong> <?= APP_PHONE ?></div>
           <div style="margin-top: 0.35rem;"><strong>Inquiries:</strong> <?= APP_EMAIL ?></div>
         </div>
@@ -88,17 +82,18 @@ $practices = getPracticeAreas();
         &copy; <?= date('Y') ?> <?= APP_LEGAL_NAME ?>. All rights reserved.
       </div>
       <div class="footer-legal-links">
-        <a href="contact.php" class="footer-link">Terms of Engagement</a>
-        <a href="contact.php" class="footer-link">Privacy & Governance</a>
-        <a href="contact.php" class="footer-link">Security Compliance</a>
+        <a href="<?= appUrl('contact.php') ?>" class="footer-link">Terms of Engagement</a>
+        <a href="<?= appUrl('contact.php') ?>" class="footer-link">Privacy & Governance</a>
+        <a href="<?= appUrl('contact.php') ?>" class="footer-link">Security Compliance</a>
       </div>
     </div>
   </div>
 </footer>
 
 <!-- Core Vanilla JavaScript -->
-<script src="/assets/js/main.js?v=<?= filemtime(__DIR__ . '/../assets/js/main.js') ?>"></script>
-<script src="/assets/js/diagnostic-calculator.js"></script>
-<script src="/assets/js/form-handler.js"></script>
+<script src="<?= getAssetUrl('assets/js/main.js') ?>?v=<?= filemtime(__DIR__ . '/../assets/js/main.js') ?>"></script>
+<script src="<?= getAssetUrl('assets/js/diagnostic-calculator.js') ?>" ></script>
+<script src="<?= getAssetUrl('assets/js/form-handler.js') ?>" ></script>
+<script src="<?= getAssetUrl('assets/js/services-interactive.js') ?>?v=<?= filemtime(__DIR__ . '/../assets/js/services-interactive.js') ?>"></script>
 </body>
 </html>

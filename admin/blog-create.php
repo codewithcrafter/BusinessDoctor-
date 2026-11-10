@@ -237,7 +237,7 @@ require_once __DIR__ . '/includes/header.php';
         <span>Save Draft</span>
       </button>
 
-      <button type="submit" name="submit_action" value="published" class="btn-adm btn-adm-primary" style="font-weight: 700; box-shadow: 0 4px 15px rgba(0, 201, 193, 0.35);">
+      <button type="submit" name="submit_action" value="published" class="btn-adm btn-adm-primary" style="font-weight: 700; box-shadow: 0 4px 15px rgba(6, 181, 249, 0.35);">
         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" width="16" height="16" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg>
         <span>Publish Article</span>
       </button>
@@ -353,8 +353,8 @@ require_once __DIR__ . '/includes/header.php';
                   <div style="font-size: 0.72rem; color: var(--adm-text-dim); margin-bottom: 6px; font-weight: 600;">TEXT COLOR</div>
                   <div class="adm-color-palette">
                     <div class="adm-color-swatch" style="background:#FFFFFF;" onclick="setTextColor('#FFFFFF')" title="White"></div>
-                    <div class="adm-color-swatch" style="background:#14E5D4;" onclick="setTextColor('#14E5D4')" title="Turquoise"></div>
-                    <div class="adm-color-swatch" style="background:#00C9C1;" onclick="setTextColor('#00C9C1')" title="Teal"></div>
+                    <div class="adm-color-swatch" style="background:#0099DB;" onclick="setTextColor('#0099DB')" title="Turquoise"></div>
+                    <div class="adm-color-swatch" style="background:#06B5F9;" onclick="setTextColor('#06B5F9')" title="Teal"></div>
                     <div class="adm-color-swatch" style="background:#38BDF8;" onclick="setTextColor('#38BDF8')" title="Sky Blue"></div>
                     <div class="adm-color-swatch" style="background:#FBBF24;" onclick="setTextColor('#FBBF24')" title="Gold"></div>
                     <div class="adm-color-swatch" style="background:#F87171;" onclick="setTextColor('#F87171')" title="Coral"></div>
@@ -367,12 +367,12 @@ require_once __DIR__ . '/includes/header.php';
 
               <div class="adm-tb-dropdown-wrap">
                 <button type="button" class="adm-tb-btn" onclick="toggleMenu('highlightColorMenu')" title="Highlight Color">
-                  <span style="background: rgba(0, 201, 193, 0.35); padding: 1px 4px; border-radius: 2px;">HL</span>
+                  <span style="background: rgba(6, 181, 249, 0.35); padding: 1px 4px; border-radius: 2px;">HL</span>
                 </button>
                 <div class="adm-tb-menu" id="highlightColorMenu" style="width: 175px;">
                   <div style="font-size: 0.72rem; color: var(--adm-text-dim); margin-bottom: 6px; font-weight: 600;">HIGHLIGHT COLOR</div>
                   <div class="adm-color-palette">
-                    <div class="adm-color-swatch" style="background:rgba(0, 201, 193, 0.35);" onclick="setHighlightColor('rgba(0, 201, 193, 0.35)')" title="Teal Glow"></div>
+                    <div class="adm-color-swatch" style="background:rgba(6, 181, 249, 0.35);" onclick="setHighlightColor('rgba(6, 181, 249, 0.35)')" title="Teal Glow"></div>
                     <div class="adm-color-swatch" style="background:rgba(56, 189, 248, 0.35);" onclick="setHighlightColor('rgba(56, 189, 248, 0.35)')" title="Blue Glow"></div>
                     <div class="adm-color-swatch" style="background:rgba(251, 191, 36, 0.35);" onclick="setHighlightColor('rgba(251, 191, 36, 0.35)')" title="Gold Glow"></div>
                     <div class="adm-color-swatch" style="background:rgba(248, 113, 113, 0.35);" onclick="setHighlightColor('rgba(248, 113, 113, 0.35)')" title="Coral Glow"></div>
@@ -845,7 +845,7 @@ require_once __DIR__ . '/includes/header.php';
 
       <div id="schemaSyntaxErrorBox" style="display: none; padding: 0.65rem 0.85rem; background: rgba(239, 68, 68, 0.15); border: 1px solid rgba(239, 68, 68, 0.4); border-radius: 4px; color: #FCA5A5; font-size: 0.76rem; font-family: var(--adm-font-mono); margin-bottom: 0.6rem;"></div>
 
-      <textarea name="custom_schema_json" id="customSchemaEditor" rows="14" class="adm-textarea" placeholder="{\n  &quot;@context&quot;: &quot;https://schema.org&quot;,\n  &quot;@type&quot;: &quot;BlogPosting&quot;,\n  ...\n}" style="width: 100%; box-sizing: border-box; font-family: var(--adm-font-mono); font-size: 0.78rem; tab-size: 2; line-height: 1.5; color: #14E5D4; background: #061326; min-height: 340px;" oninput="validateCustomSchemaClient(false)"><?= e($customSchemaJson) ?></textarea>
+      <textarea name="custom_schema_json" id="customSchemaEditor" rows="14" class="adm-textarea" placeholder="{\n  &quot;@context&quot;: &quot;https://schema.org&quot;,\n  &quot;@type&quot;: &quot;BlogPosting&quot;,\n  ...\n}" style="width: 100%; box-sizing: border-box; font-family: var(--adm-font-mono); font-size: 0.78rem; tab-size: 2; line-height: 1.5; color: #0099DB; background: #061326; min-height: 340px;" oninput="validateCustomSchemaClient(false)"><?= e($customSchemaJson) ?></textarea>
       <div class="adm-hint" style="margin-top: 0.4rem;">JSON syntax is strictly validated before saving or publishing. Arbitrary script tags are blocked.</div>
     </div>
 
@@ -992,7 +992,7 @@ require_once __DIR__ . '/includes/header.php';
       <div style="font-size: 0.78rem; color: var(--adm-text-dim); margin-bottom: 0.75rem;">
         This Schema.org JSON-LD multi-type graph will be embedded into the <code>&lt;head&gt;</code> of the article upon publication:
       </div>
-      <pre style="background: #061326; color: #14E5D4; padding: 1rem; border-radius: 6px; border: 1px solid var(--adm-border); font-family: var(--adm-font-mono); font-size: 0.76rem; max-height: 380px; overflow-y: auto; line-height: 1.45;"><code id="compiledSchemaCode"></code></pre>
+      <pre style="background: #061326; color: #0099DB; padding: 1rem; border-radius: 6px; border: 1px solid var(--adm-border); font-family: var(--adm-font-mono); font-size: 0.76rem; max-height: 380px; overflow-y: auto; line-height: 1.45;"><code id="compiledSchemaCode"></code></pre>
     </div>
     <div class="adm-modal-footer">
       <button type="button" class="btn-adm btn-adm-secondary btn-adm-sm" onclick="closeModal('compiledSchemaModal')">Close</button>

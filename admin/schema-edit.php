@@ -200,7 +200,7 @@ require_once __DIR__ . '/includes/header.php';
         <span>Save Draft</span>
       </button>
 
-      <button type="submit" name="submit_action" value="publish" class="btn-adm btn-adm-primary" style="font-weight: 700; box-shadow: 0 4px 15px rgba(0, 201, 193, 0.35);">
+      <button type="submit" name="submit_action" value="publish" class="btn-adm btn-adm-primary" style="font-weight: 700; box-shadow: 0 4px 15px rgba(6, 181, 249, 0.35);">
         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" width="16" height="16" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg>
         <span>Save &amp; Publish</span>
       </button>
@@ -373,7 +373,7 @@ require_once __DIR__ . '/includes/header.php';
           </span>
         </div>
 
-        <pre id="liveJsonPreview" style="background: #040E1B; border: 1px solid var(--adm-border); border-radius: 6px; padding: 1.25rem; font-family: var(--adm-font-mono); font-size: 0.82rem; color: #14E5D4; max-height: 480px; overflow: auto; white-space: pre; margin: 0;"></pre>
+        <pre id="liveJsonPreview" style="background: #040E1B; border: 1px solid var(--adm-border); border-radius: 6px; padding: 1.25rem; font-family: var(--adm-font-mono); font-size: 0.82rem; color: #0099DB; max-height: 480px; overflow: auto; white-space: pre; margin: 0;"></pre>
       </div>
 
       <!-- Quick Template Presets Card -->

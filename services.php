@@ -26,7 +26,7 @@ require_once __DIR__ . '/includes/header.php';
       <span>ENTERPRISE CAPABILITIES</span>
     </div>
     <h1 class="hero-headline-oversized" style="font-size: clamp(2.4rem, 4.5vw, 3.8rem); margin-top: 1rem; margin-bottom: 1.5rem;">
-      Full-Stack Technology &amp; <br><span class="text-gradient-pine">Digital Growth Disciplines</span>
+      Full-Stack Technology &amp; <br><span class="text-brand">Digital Growth Disciplines</span>
     </h1>
     <p class="hero-lead-text" style="max-width: 780px; margin: 0 auto 2rem;">
       We engineer high-performance web software, manage profitable paid acquisition portfolios, and build distinctive brand architectures. Six specialized disciplines operating under one accountable standard.
@@ -57,7 +57,7 @@ require_once __DIR__ . '/includes/header.php';
 
               <!-- Deliverables Grid -->
               <div style="margin-bottom: 2.5rem;">
-                <div style="font-family: var(--font-mono); font-size: 0.75rem; text-transform: uppercase; letter-spacing: 0.1em; color: var(--color-secondary); margin-bottom: 1rem; font-weight: 700;">
+                <div style="font-family: var(--font-mono); font-size: 0.75rem; text-transform: uppercase; letter-spacing: 0.1em; color: #06B5F9; margin-bottom: 1rem; font-weight: 700;">
                   KEY DELIVERABLES &amp; SCOPE
                 </div>
                 <div class="cap-deliverables-list">
@@ -81,7 +81,7 @@ require_once __DIR__ . '/includes/header.php';
                   <polyline points="12 5 19 12 12 19"/>
                 </svg>
               </a>
-              <a href="contact.php?service=<?= urlencode($p['name']) ?>" class="btn btn-secondary">
+              <a href="<?= appUrl('contact.php?service=' . urlencode($p['name'])) ?>" class="btn btn-secondary">
                 <span>Request Project Scope</span>
               </a>
             </div>
@@ -94,7 +94,7 @@ require_once __DIR__ . '/includes/header.php';
                 <span style="font-family: var(--font-mono); font-size: 0.75rem; color: var(--color-accent); font-weight: 700; letter-spacing: 0.1em;">
                   PERFORMANCE BENCHMARKS
                 </span>
-                <div class="practice-icon" style="width: 40px; height: 40px; background: rgba(161, 126, 145,0.15); color: var(--color-accent); border-color: rgba(161, 126, 145,0.3);">
+                <div class="practice-icon" style="width: 40px; height: 40px; background: rgba(6, 181, 249, 0.15); color: var(--color-accent); border-color: rgba(6, 181, 249, 0.3);">
                   <?= $p['icon'] ?>
                 </div>
               </div>
@@ -134,14 +134,14 @@ require_once __DIR__ . '/includes/header.php';
           Our senior technical architects are available to discuss your specifications, provide recommendations, and formulate a transparent scope.
         </p>
         <div class="closing-cta-buttons">
-          <a href="contact.php" class="btn btn-accent btn-lg">
+          <a href="<?= appUrl('contact.php') ?>" class="btn btn-primary btn-lg">
             <span>Get a Project Consultation</span>
             <svg class="btn-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
               <line x1="5" y1="12" x2="19" y2="12"/>
               <polyline points="12 5 19 12 12 19"/>
             </svg>
           </a>
-          <a href="audit.php" class="btn btn-outline-gold btn-lg">
+          <a href="<?= appUrl('audit.php') ?>" class="btn btn-secondary btn-lg">
             <span>Request Free Technical Audit</span>
           </a>
         </div>

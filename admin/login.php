@@ -87,14 +87,8 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
   <div class="card" style="width: 100%; max-width: 440px; background: var(--color-dark-surface); border-color: rgba(255,255,255,0.1); color: var(--color-white); box-shadow: var(--shadow-xl);">
     <div style="text-align: center; margin-bottom: 2rem;">
-      <a href="../index.php" class="brand-logo" style="justify-content: center; color: #ffffff; margin-bottom: 1rem;">
-        <div class="brand-symbol">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2">
-            <polyline points="16 18 22 12 16 6"/>
-            <polyline points="8 6 2 12 8 18"/>
-          </svg>
-        </div>
-        <span>Business<span class="brand-text-accent">Doctor</span></span>
+      <a href="<?= appUrl() ?>" class="brand-logo" style="justify-content: center; color: #ffffff; margin-bottom: 1.25rem; display: flex; flex-direction: column; align-items: center; gap: 0.5rem;" aria-label="BusinessDoctor Home">
+        <img src="<?= getAssetUrl('assets/img/bdr_logo_transparent.png') ?>" alt="BusinessDoctor Logo" style="height: 68px; width: auto; object-fit: contain; aspect-ratio: 1816 / 1131; display: block; margin: 0 auto;">
       </a>
       <div style="font-family: var(--font-mono); font-size: 0.75rem; color: var(--color-teal-400);">
         ● CLIENT PROJECTS & AUDIT CONSOLE
@@ -111,13 +105,13 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
       <input type="hidden" name="csrf_token" value="<?= getCsrfToken() ?>">
 
       <div class="form-group">
-        <label class="form-label" style="color: var(--color-slate-300);" for="username">Administrator Username or Email</label>
-        <input type="text" id="username" name="username" required class="form-control" style="background: rgba(255,255,255,0.06); border-color: rgba(255,255,255,0.15); color: #ffffff;" placeholder="admin" autofocus>
+        <label class="form-label" style="color: #F5F7FA;" for="username">Administrator Username or Email</label>
+        <input type="text" id="username" name="username" required class="form-control" style="background: rgba(255,255,255,0.06); border-color: rgba(6, 181, 249, 0.25); color: #F5F7FA;" placeholder="admin" autofocus>
       </div>
 
       <div class="form-group">
-        <label class="form-label" style="color: var(--color-slate-300);" for="password">Security Password</label>
-        <input type="password" id="password" name="password" required class="form-control" style="background: rgba(255,255,255,0.06); border-color: rgba(255,255,255,0.15); color: #ffffff;" placeholder="••••••••••••••••">
+        <label class="form-label" style="color: #F5F7FA;" for="password">Security Password</label>
+        <input type="password" id="password" name="password" required class="form-control" style="background: rgba(255,255,255,0.06); border-color: rgba(6, 181, 249, 0.25); color: #F5F7FA;" placeholder="••••••••••••••••">
       </div>
 
       <div style="margin-top: 2rem;">
@@ -130,8 +124,8 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         </button>
       </div>
 
-      <div style="margin-top: 1.5rem; text-align: center; font-size: 0.8rem; color: var(--color-slate-400);">
-        Default Credentials: <code style="color: var(--color-teal-400); font-family: var(--font-mono);">admin</code> / <code style="color: var(--color-teal-400); font-family: var(--font-mono);">Admin@BusinessDoctor2026</code>
+      <div style="margin-top: 1.5rem; text-align: center; font-size: 0.8rem; color: #B8C7D9;">
+        Default Credentials: <code style="color: #06B5F9; font-family: var(--font-mono);">admin</code> / <code style="color: #06B5F9; font-family: var(--font-mono);">Admin@BusinessDoctor2026</code>
       </div>
     </form>
   </div>

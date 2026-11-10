@@ -134,7 +134,7 @@ require_once __DIR__ . '/includes/header.php';
         <input type="hidden" name="csrf_token" value="<?= getCsrfToken() ?>">
 
         <!-- Section 1: Business Profile -->
-        <h4 style="font-family: var(--font-mono); font-size: 0.82rem; color: var(--color-secondary); text-transform: uppercase; margin-bottom: 1.25rem; letter-spacing: 0.08em; font-weight: 700;">
+        <h4 style="font-family: var(--font-mono); font-size: 0.82rem; color: #06B5F9; text-transform: uppercase; margin-bottom: 1.25rem; letter-spacing: 0.08em; font-weight: 700;">
           01 // Organization Information
         </h4>
 
@@ -177,7 +177,7 @@ require_once __DIR__ . '/includes/header.php';
         </div>
 
         <!-- Section 2: Technical Needs -->
-        <h4 style="font-family: var(--font-mono); font-size: 0.82rem; color: var(--color-secondary); text-transform: uppercase; margin-top: 2rem; margin-bottom: 1.25rem; letter-spacing: 0.08em; font-weight: 700;">
+        <h4 style="font-family: var(--font-mono); font-size: 0.82rem; color: #06B5F9; text-transform: uppercase; margin-top: 2rem; margin-bottom: 1.25rem; letter-spacing: 0.08em; font-weight: 700;">
           02 // Digital Focus &amp; Objectives
         </h4>
 
@@ -220,7 +220,7 @@ require_once __DIR__ . '/includes/header.php';
         </div>
 
         <div style="display: flex; align-items: center; justify-content: center; gap: 0.5rem; margin-top: 1.5rem; font-family: var(--font-mono); font-size: 0.78rem; color: var(--color-text-light);">
-          <svg style="width: 15px; height: 15px; color: var(--color-secondary);" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <svg style="width: 15px; height: 15px; color: #06B5F9;" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
             <rect x="3" y="11" width="18" height="11" rx="2" ry="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/>
           </svg>
           <span>STRICT CONFIDENTIALITY // NO COMMITMENT REQUIRED // 24-HOUR TURNAROUND</span>

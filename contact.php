@@ -112,39 +112,39 @@ require_once __DIR__ . '/includes/header.php';
           </p>
 
           <div style="display: flex; flex-direction: column; gap: 1.5rem;">
-            <div style="display: flex; align-items: center; gap: 1rem; border-top: 1px solid rgba(255,255,255,0.12); padding-top: 1.25rem;">
-              <div style="width: 44px; height: 44px; border-radius: var(--radius-md); background: rgba(161, 126, 145, 0.15); color: var(--color-accent); display: flex; align-items: center; justify-content: center; flex-shrink: 0;">
+            <div style="display: flex; align-items: center; gap: 1rem; border-top: 1px solid rgba(6, 181, 249, 0.18); padding-top: 1.25rem;">
+              <div style="width: 44px; height: 44px; border-radius: var(--radius-md); background: rgba(6, 181, 249, 0.12); color: #06B5F9; display: flex; align-items: center; justify-content: center; flex-shrink: 0; border: 1px solid rgba(6, 181, 249, 0.25);">
                 <svg style="width: 20px; height: 20px;" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
                   <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/>
                 </svg>
               </div>
               <div>
-                <div style="font-family: var(--font-mono); font-size: 0.72rem; color: rgba(255,255,255,0.6); text-transform: uppercase;">DIRECT OFFICE PHONE</div>
-                <div style="font-size: 1.15rem; font-weight: 700; color: #ffffff;"><?= APP_PHONE ?></div>
+                <div style="font-family: var(--font-mono); font-size: 0.72rem; color: #06B5F9; font-weight: 700; text-transform: uppercase; letter-spacing: 0.05em;">DIRECT OFFICE PHONE</div>
+                <div style="font-size: 1.15rem; font-weight: 700; color: #F5F7FA;"><?= APP_PHONE ?></div>
               </div>
             </div>
 
-            <div style="display: flex; align-items: center; gap: 1rem; border-top: 1px solid rgba(255,255,255,0.12); padding-top: 1.25rem;">
-              <div style="width: 44px; height: 44px; border-radius: var(--radius-md); background: rgba(161, 126, 145, 0.15); color: var(--color-accent); display: flex; align-items: center; justify-content: center; flex-shrink: 0;">
+            <div style="display: flex; align-items: center; gap: 1rem; border-top: 1px solid rgba(6, 181, 249, 0.18); padding-top: 1.25rem;">
+              <div style="width: 44px; height: 44px; border-radius: var(--radius-md); background: rgba(6, 181, 249, 0.12); color: #06B5F9; display: flex; align-items: center; justify-content: center; flex-shrink: 0; border: 1px solid rgba(6, 181, 249, 0.25);">
                 <svg style="width: 20px; height: 20px;" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
                   <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/>
                 </svg>
               </div>
               <div>
-                <div style="font-family: var(--font-mono); font-size: 0.72rem; color: rgba(255,255,255,0.6); text-transform: uppercase;">PROJECT INQUIRIES DESK</div>
-                <div style="font-size: 1.15rem; font-weight: 700; color: #ffffff;"><?= APP_EMAIL ?></div>
+                <div style="font-family: var(--font-mono); font-size: 0.72rem; color: #06B5F9; font-weight: 700; text-transform: uppercase; letter-spacing: 0.05em;">PROJECT INQUIRIES DESK</div>
+                <div style="font-size: 1.15rem; font-weight: 700; color: #F5F7FA;"><?= APP_EMAIL ?></div>
               </div>
             </div>
 
-            <div style="display: flex; align-items: center; gap: 1rem; border-top: 1px solid rgba(255,255,255,0.12); padding-top: 1.25rem;">
-              <div style="width: 44px; height: 44px; border-radius: var(--radius-md); background: rgba(161, 126, 145, 0.15); color: var(--color-accent); display: flex; align-items: center; justify-content: center; flex-shrink: 0;">
+            <div style="display: flex; align-items: center; gap: 1rem; border-top: 1px solid rgba(6, 181, 249, 0.18); padding-top: 1.25rem;">
+              <div style="width: 44px; height: 44px; border-radius: var(--radius-md); background: rgba(6, 181, 249, 0.12); color: #06B5F9; display: flex; align-items: center; justify-content: center; flex-shrink: 0; border: 1px solid rgba(6, 181, 249, 0.25);">
                 <svg style="width: 20px; height: 20px;" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
                   <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/>
                 </svg>
               </div>
               <div>
-                <div style="font-family: var(--font-mono); font-size: 0.72rem; color: rgba(255,255,255,0.6); text-transform: uppercase;">TECHNOLOGY CENTER HEADQUARTERS</div>
-                <div style="font-size: 1rem; font-weight: 600; color: #ffffff;"><?= APP_HEADQUARTERS ?></div>
+                <div style="font-family: var(--font-mono); font-size: 0.72rem; color: #06B5F9; font-weight: 700; text-transform: uppercase; letter-spacing: 0.05em;">TECHNOLOGY CENTER HEADQUARTERS</div>
+                <div style="font-size: 1rem; font-weight: 600; color: #F5F7FA;"><?= APP_HEADQUARTERS ?></div>
               </div>
             </div>
           </div>

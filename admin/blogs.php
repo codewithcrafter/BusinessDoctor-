@@ -27,12 +27,12 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['action'])) {
             $isPub = ($newStatus === 'published') ? 1 : 0;
             $pubAt = ($newStatus === 'published') ? date('Y-m-d H:i:s') : null;
 
-            $update = $pdo->prepare("UPDATE insights SET status = ?, is_published = ?, updated_at = datetime('now') WHERE id = ?");
+            $update = $pdo->prepare("UPDATE insights SET status = ?, is_published = ?, updated_at = CURRENT_TIMESTAMP WHERE id = ?");
             $update->execute([$newStatus, $isPub, $id]);
 
             setFlashMessage('success', "Blog post status changed to {$newStatus}.");
         } elseif ($action === 'soft_delete') {
-            $update = $pdo->prepare("UPDATE insights SET is_deleted = 1, deleted_at = datetime('now'), status = 'draft', is_published = 0 WHERE id = ?");
+            $update = $pdo->prepare("UPDATE insights SET is_deleted = 1, deleted_at = CURRENT_TIMESTAMP, status = 'draft', is_published = 0 WHERE id = ?");
             $update->execute([$id]);
             setFlashMessage('success', "Blog post moved to trash (soft-deleted).");
         } elseif ($action === 'restore') {
@@ -261,7 +261,7 @@ require_once __DIR__ . '/includes/header.php';
                   <?php if (!empty($b['featured_image'])): ?>
                     <img src="../<?= e($b['featured_image']) ?>" alt="<?= e($b['cover_image_alt'] ?: $b['title']) ?>" style="width: 56px; height: 42px; border-radius: 4px; object-fit: cover; flex-shrink: 0; border: 1px solid var(--adm-border);">
                   <?php else: ?>
-                    <div style="width: 56px; height: 42px; border-radius: 4px; background: rgba(0, 201, 193, 0.08); border: 1px solid var(--adm-border); display: flex; align-items: center; justify-content: center; color: var(--adm-teal); font-family: var(--adm-font-mono); font-size: 0.72rem; flex-shrink: 0;">DOC</div>
+                    <div style="width: 56px; height: 42px; border-radius: 4px; background: rgba(6, 181, 249, 0.08); border: 1px solid var(--adm-border); display: flex; align-items: center; justify-content: center; color: var(--adm-teal); font-family: var(--adm-font-mono); font-size: 0.72rem; flex-shrink: 0;">DOC</div>
                   <?php endif; ?>
                   <div>
                     <div style="display: flex; align-items: center; gap: 0.45rem; flex-wrap: wrap;">
@@ -279,7 +279,7 @@ require_once __DIR__ . '/includes/header.php';
                 </div>
               </td>
               <td>
-                <span class="status-pill status-published" style="background: rgba(0, 201, 193, 0.08); color: var(--adm-teal); border-color: rgba(0,201,193,0.25);">
+                <span class="status-pill status-published" style="background: rgba(6, 181, 249, 0.08); color: var(--adm-teal); border-color: rgba(6, 181, 249,0.25);">
                   <?= e($b['category']) ?>
                 </span>
               </td>

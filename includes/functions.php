@@ -85,17 +85,26 @@ function verifyCsrfToken(?string $token): bool
  */
 function isActivePage(string ...$pages): string
 {
+    $reqUri = parse_url($_SERVER['REQUEST_URI'] ?? '', PHP_URL_PATH) ?? '';
     $current = basename($_SERVER['SCRIPT_NAME'] ?? '');
-    foreach ($pages as $p) {
-        if ($current === $p) {
-            return 'active';
-        }
+
+    // Clean handling for Home page
+    if (in_array('index.php', $pages, true)) {
+        $isHome = ($reqUri === '/' || $reqUri === '' || $reqUri === '/index.php'
+            || str_ends_with($reqUri, '/businessdoctor/') || str_ends_with($reqUri, '/businessdoctor/index.php'));
+        return $isHome ? 'active' : '';
     }
 
-    // Also check REQUEST_URI for clean routes such as /services or /services/{slug}
-    $reqUri = parse_url($_SERVER['REQUEST_URI'] ?? '', PHP_URL_PATH);
-    if ($reqUri !== null && (str_starts_with($reqUri, '/services') || $reqUri === '/services')) {
+    // Clean routes for /services or /services/{slug}
+    if (str_contains($reqUri, '/services')) {
         if (in_array('services.php', $pages, true) || in_array('service-detail.php', $pages, true)) {
+            return 'active';
+        }
+        return '';
+    }
+
+    foreach ($pages as $p) {
+        if ($current === $p || str_ends_with($reqUri, '/' . $p) || str_ends_with($reqUri, $p)) {
             return 'active';
         }
     }
@@ -104,11 +113,45 @@ function isActivePage(string ...$pages): string
 }
 
 /**
+ * Return absolute or environment-aware application URL
+ */
+function appUrl(string $path = ''): string
+{
+    $base = defined('BASE_URL') ? rtrim(BASE_URL, '/') : '';
+    $path = ltrim($path, '/');
+    return $path !== '' ? $base . '/' . $path : $base . '/';
+}
+
+/**
+ * Return absolute URL for static assets
+ */
+function getAssetUrl(string $path): string
+{
+    return appUrl(ltrim($path, '/'));
+}
+
+/**
  * Return clean SEO-friendly URL for a service
  */
 function getServiceUrl(string $slug): string
 {
-    return '/services/' . rawurlencode($slug);
+    return appUrl('services/' . rawurlencode($slug));
+}
+
+/**
+ * Return clean SEO-friendly URL for a technical insight article
+ */
+function getInsightUrl(string $slug): string
+{
+    return appUrl('insights/' . rawurlencode($slug));
+}
+
+/**
+ * Return clean SEO-friendly URL for a client case study
+ */
+function getCaseStudyUrl(string $slug): string
+{
+    return appUrl('case-studies/' . rawurlencode($slug));
 }
 
 /**
@@ -582,6 +625,39 @@ function computePreliminaryHealth(string $bottleneck, string $revenue, string $m
  */
 function getPracticeAreas(): array
 {
+    static $cached = null;
+    if ($cached !== null) {
+        return $cached;
+    }
+
+    try {
+        if (class_exists('Database')) {
+            $pdo = Database::getConnection();
+            $stmt = $pdo->query("SELECT * FROM services WHERE is_active = 1 ORDER BY sort_order ASC, id ASC");
+            $rows = $stmt->fetchAll(PDO::FETCH_ASSOC);
+            if (!empty($rows)) {
+                $dbPractices = [];
+                foreach ($rows as $r) {
+                    $dbPractices[$r['slug']] = [
+                        'id' => (int)$r['id'],
+                        'number' => $r['number'],
+                        'name' => $r['name'],
+                        'short_title' => $r['short_title'],
+                        'slug' => $r['slug'],
+                        'tagline' => $r['tagline'],
+                        'summary' => $r['summary'],
+                        'description' => $r['description'],
+                        'deliverables' => json_decode($r['deliverables'] ?? '[]', true) ?: [],
+                        'kpis' => json_decode($r['kpis'] ?? '[]', true) ?: [],
+                        'icon' => $r['icon']
+                    ];
+                }
+                $cached = $dbPractices;
+                return $cached;
+            }
+        }
+    } catch (Throwable $e) {}
+
     return [
         'web-software-development' => [
             'number' => '01',

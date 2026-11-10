@@ -107,7 +107,7 @@ require_once __DIR__ . '/includes/header.php';
   </div>
 
   <div style="display: flex; gap: 0.75rem; align-items: center;">
-    <a href="schema-edit.php" class="btn-adm btn-adm-primary" style="font-weight: 700; box-shadow: 0 4px 15px rgba(0, 201, 193, 0.35);">
+    <a href="schema-edit.php" class="btn-adm btn-adm-primary" style="font-weight: 700; box-shadow: 0 4px 15px rgba(6, 181, 249, 0.35);">
       <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" width="16" height="16" stroke-width="2"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg>
       <span>Create New Schema</span>
     </a>
@@ -117,7 +117,7 @@ require_once __DIR__ . '/includes/header.php';
 <!-- Metrics Overview Cards -->
 <div class="admin-stats-grid" style="grid-template-columns: repeat(auto-fit, minmax(210px, 1fr)); margin-bottom: 1.75rem;">
   <div class="admin-stat-box" style="padding: 1.15rem 1.35rem;">
-    <div class="admin-stat-icon" style="background: rgba(0, 201, 193, 0.15); color: var(--adm-teal);">
+    <div class="admin-stat-icon" style="background: rgba(6, 181, 249, 0.15); color: var(--adm-teal);">
       <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="16 18 22 12 16 6"/><polyline points="8 6 2 12 8 18"/></svg>
     </div>
     <div>
@@ -177,7 +177,7 @@ require_once __DIR__ . '/includes/header.php';
     <form method="POST" action="schema-manager.php" style="margin: 0;">
       <input type="hidden" name="csrf_token" value="<?= getCsrfToken() ?>">
       <input type="hidden" name="action" value="resync_seo">
-      <button type="submit" class="btn-adm btn-adm-primary" style="display: inline-flex; align-items: center; gap: 0.5rem; font-weight: 700; padding: 0.65rem 1.15rem; box-shadow: 0 4px 15px rgba(0, 201, 193, 0.35);">
+      <button type="submit" class="btn-adm btn-adm-primary" style="display: inline-flex; align-items: center; gap: 0.5rem; font-weight: 700; padding: 0.65rem 1.15rem; box-shadow: 0 4px 15px rgba(6, 181, 249, 0.35);">
         <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2"><polyline points="23 4 23 10 17 10"/><polyline points="1 20 1 14 7 14"/><path d="M3.51 9a9 9 0 0 1 14.85-3.36L23 10M1 14l4.64 4.36A9 9 0 0 0 20.49 15"/></svg>
         <span>Resync All SEO Files</span>
       </button>
@@ -187,7 +187,7 @@ require_once __DIR__ . '/includes/header.php';
   <!-- 4 Output Files Grid -->
   <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 1rem; margin-bottom: 1.25rem;">
     <!-- Output 1: sitemap.xml -->
-    <div style="background: rgba(14, 37, 63, 0.6); border: 1px solid rgba(0, 201, 193, 0.2); border-radius: 6px; padding: 1rem;">
+    <div style="background: rgba(14, 37, 63, 0.6); border: 1px solid rgba(6, 181, 249, 0.2); border-radius: 6px; padding: 1rem;">
       <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 0.5rem;">
         <span style="font-family: var(--adm-font-mono); font-size: 0.9rem; font-weight: 700; color: #FFFFFF;">sitemap.xml</span>
         <span class="status-pill status-pill-active" style="font-size: 0.68rem;">Live</span>
@@ -207,7 +207,7 @@ require_once __DIR__ . '/includes/header.php';
     </div>
 
     <!-- Output 2: Schema Markup -->
-    <div style="background: rgba(14, 37, 63, 0.6); border: 1px solid rgba(0, 201, 193, 0.2); border-radius: 6px; padding: 1rem;">
+    <div style="background: rgba(14, 37, 63, 0.6); border: 1px solid rgba(6, 181, 249, 0.2); border-radius: 6px; padding: 1rem;">
       <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 0.5rem;">
         <span style="font-family: var(--adm-font-mono); font-size: 0.9rem; font-weight: 700; color: #FFFFFF;">Schema Markup</span>
         <span class="status-pill status-pill-active" style="font-size: 0.68rem;">Validated</span>
@@ -219,12 +219,12 @@ require_once __DIR__ . '/includes/header.php';
         <span style="color: var(--adm-teal); font-family: var(--adm-font-mono); font-weight: 600;">
           <?= $totalActive ?> Active Schemas
         </span>
-        <span style="color: #A0AEC0; font-size: 0.72rem;">Multi-Graph Injection</span>
+        <span style="color: #B8C7D9; font-size: 0.72rem;">Multi-Graph Injection</span>
       </div>
     </div>
 
     <!-- Output 3: llms.txt -->
-    <div style="background: rgba(14, 37, 63, 0.6); border: 1px solid rgba(0, 201, 193, 0.2); border-radius: 6px; padding: 1rem;">
+    <div style="background: rgba(14, 37, 63, 0.6); border: 1px solid rgba(6, 181, 249, 0.2); border-radius: 6px; padding: 1rem;">
       <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 0.5rem;">
         <span style="font-family: var(--adm-font-mono); font-size: 0.9rem; font-weight: 700; color: #FFFFFF;">llms.txt</span>
         <span class="status-pill status-pill-active" style="font-size: 0.68rem;">Standard</span>
@@ -244,7 +244,7 @@ require_once __DIR__ . '/includes/header.php';
     </div>
 
     <!-- Output 4: llms.md -->
-    <div style="background: rgba(14, 37, 63, 0.6); border: 1px solid rgba(0, 201, 193, 0.2); border-radius: 6px; padding: 1rem;">
+    <div style="background: rgba(14, 37, 63, 0.6); border: 1px solid rgba(6, 181, 249, 0.2); border-radius: 6px; padding: 1rem;">
       <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 0.5rem;">
         <span style="font-family: var(--adm-font-mono); font-size: 0.9rem; font-weight: 700; color: #FFFFFF;">llms.md</span>
         <span class="status-pill status-pill-active" style="font-size: 0.68rem;">Deep RAG</span>
@@ -282,13 +282,13 @@ require_once __DIR__ . '/includes/header.php';
     </div>
 
     <div style="display: flex; align-items: center; gap: 0.85rem; font-family: var(--adm-font-mono); font-size: 0.74rem;">
-      <span style="color: #94A3B8;"><?= $seoSyncStatus['metrics']['static_pages'] ?> Static</span>
+      <span style="color: #B8C7D9;"><?= $seoSyncStatus['metrics']['static_pages'] ?> Static</span>
       <span style="color: rgba(255,255,255,0.2);">|</span>
-      <span style="color: #94A3B8;"><?= $seoSyncStatus['metrics']['services'] ?> Services</span>
+      <span style="color: #B8C7D9;"><?= $seoSyncStatus['metrics']['services'] ?> Services</span>
       <span style="color: rgba(255,255,255,0.2);">|</span>
-      <span style="color: #94A3B8;"><?= $seoSyncStatus['metrics']['case_studies'] ?> Cases</span>
+      <span style="color: #B8C7D9;"><?= $seoSyncStatus['metrics']['case_studies'] ?> Cases</span>
       <span style="color: rgba(255,255,255,0.2);">|</span>
-      <span style="color: #94A3B8;"><?= $seoSyncStatus['metrics']['insights'] ?> Insights</span>
+      <span style="color: #B8C7D9;"><?= $seoSyncStatus['metrics']['insights'] ?> Insights</span>
     </div>
   </div>
 </div>
@@ -362,7 +362,7 @@ require_once __DIR__ . '/includes/header.php';
                   <?= e($displayName) ?>
                 </div>
                 <div style="display: flex; gap: 0.4rem; align-items: center;">
-                  <span style="font-family: var(--adm-font-mono); font-size: 0.72rem; color: var(--adm-teal); background: rgba(0, 201, 193, 0.1); padding: 2px 6px; border-radius: 3px;">
+                  <span style="font-family: var(--adm-font-mono); font-size: 0.72rem; color: var(--adm-teal); background: rgba(6, 181, 249, 0.1); padding: 2px 6px; border-radius: 3px;">
                     key: <?= e($s['page_key']) ?>
                   </span>
                   <?php if ($isDynamic): ?>
@@ -382,7 +382,7 @@ require_once __DIR__ . '/includes/header.php';
                 <div style="font-weight: 600; color: #E2E8F0; font-size: 0.9rem; margin-bottom: 0.25rem;">
                   <?= e($s['schema_name']) ?>
                 </div>
-                <span class="status-pill" style="background: rgba(14, 37, 63, 0.8); color: var(--adm-teal); border: 1px solid rgba(0, 201, 193, 0.3); font-size: 0.74rem;">
+                <span class="status-pill" style="background: rgba(14, 37, 63, 0.8); color: var(--adm-teal); border: 1px solid rgba(6, 181, 249, 0.3); font-size: 0.74rem;">
                   @type: <?= e($s['schema_type']) ?>
                 </span>
               </td>
@@ -442,7 +442,7 @@ require_once __DIR__ . '/includes/header.php';
           Copy JSON-LD
         </button>
       </div>
-      <pre id="previewJsonOutput" style="background: #040E1B; border: 1px solid var(--adm-border); border-radius: 6px; padding: 1.25rem; font-family: var(--adm-font-mono); font-size: 0.85rem; color: #14E5D4; max-height: 440px; overflow: auto; white-space: pre; margin: 0;"></pre>
+      <pre id="previewJsonOutput" style="background: #040E1B; border: 1px solid var(--adm-border); border-radius: 6px; padding: 1.25rem; font-family: var(--adm-font-mono); font-size: 0.85rem; color: #0099DB; max-height: 440px; overflow: auto; white-space: pre; margin: 0;"></pre>
     </div>
     <div class="adm-modal-footer">
       <button type="button" class="btn-adm btn-adm-secondary btn-adm-sm" onclick="closeModal('previewSchemaModal')">Close</button>

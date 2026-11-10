@@ -5,7 +5,7 @@
       <stop offset="100%" stop-color="#111d33"/>
     </linearGradient>
     <linearGradient id="tealGrad" x1="0%" y1="0%" x2="100%" y2="0%">
-      <stop offset="0%" stop-color="#0d9488"/>
+      <stop offset="0%" stop-color="#06B5F9"/>
       <stop offset="100%" stop-color="#2dd4bf"/>
     </linearGradient>
   </defs>
@@ -28,7 +28,7 @@
   </g>
 
   <!-- Brand Badge Pill -->
-  <rect x="80" y="80" width="340" height="42" rx="21" fill="rgba(13, 148, 136, 0.15)" stroke="#0d9488" stroke-width="1.5"/>
+  <rect x="80" y="80" width="340" height="42" rx="21" fill="rgba(13, 148, 136, 0.15)" stroke="#06B5F9" stroke-width="1.5"/>
   <circle cx="106" cy="101" r="5" fill="#10b981"/>
   <text x="126" y="106" font-family="'JetBrains Mono', monospace" font-size="14" font-weight="600" fill="#2dd4bf" letter-spacing="1.5">ENTERPRISE IT &amp; DIGITAL SERVICES</text>
 
@@ -48,7 +48,7 @@
   <!-- Bottom Brand Block -->
   <g transform="translate(80, 480)">
     <!-- Symbol -->
-    <rect width="64" height="64" rx="14" fill="#0d9488"/>
+    <rect width="64" height="64" rx="14" fill="#06B5F9"/>
     <g transform="translate(16, 16)" stroke="#ffffff" stroke-width="3" fill="none" stroke-linecap="round" stroke-linejoin="round">
       <polyline points="20 24 28 16 20 8"/>
       <polyline points="12 8 4 16 12 24"/>

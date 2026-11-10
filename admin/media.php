@@ -92,7 +92,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_FILES['media_files'])) {
                 $relPath = 'assets/uploads/' . $safeName;
                 $stmt = $pdo->prepare("
                     INSERT INTO media (filename, original_name, file_path, file_size, mime_type, created_at)
-                    VALUES (?, ?, ?, ?, ?, datetime('now'))
+                    VALUES (?, ?, ?, ?, ?, CURRENT_TIMESTAMP)
                 ");
                 $stmt->execute([$safeName, $origName, $relPath, $size, $mime]);
                 $successCount++;

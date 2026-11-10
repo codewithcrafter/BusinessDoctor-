@@ -65,10 +65,11 @@ $canonicalUrl = $canonicalUrl ?? (BASE_URL . $cleanPath . $canonicalParams);
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@500;600;700&family=Plus+Jakarta+Sans:wght@600;700;800&display=swap" rel="stylesheet">
 
   <!-- Core Stylesheets -->
-  <link rel="stylesheet" href="/assets/css/variables.css">
-  <link rel="stylesheet" href="/assets/css/base.css">
-  <link rel="stylesheet" href="/assets/css/components.css">
-  <link rel="stylesheet" href="/assets/css/responsive.css">
+  <link rel="stylesheet" href="<?= getAssetUrl('assets/css/variables.css') ?>">
+  <link rel="stylesheet" href="<?= getAssetUrl('assets/css/base.css') ?>">
+  <link rel="stylesheet" href="<?= getAssetUrl('assets/css/components.css') ?>">
+  <link rel="stylesheet" href="<?= getAssetUrl('assets/css/responsive.css') ?>">
+  <link rel="stylesheet" href="<?= getAssetUrl('assets/css/services-redesign.css') ?>">
 
   <!-- Favicon SVG (Code brackets / IT tech icon) -->
   <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%230d9488' stroke-width='2.5'><polyline points='16 18 22 12 16 6'/><polyline points='8 6 2 12 8 18'/></svg>">

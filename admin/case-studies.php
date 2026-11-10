@@ -25,7 +25,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['action'])) {
             $currentStatus = $stmt->fetchColumn();
             $newStatus = ($currentStatus === 'published') ? 'draft' : 'published';
 
-            $update = $pdo->prepare("UPDATE case_studies SET status = ?, updated_at = datetime('now') WHERE id = ?");
+            $update = $pdo->prepare("UPDATE case_studies SET status = ?, updated_at = CURRENT_TIMESTAMP WHERE id = ?");
             $update->execute([$newStatus, $id]);
 
             setFlashMessage('success', "Case study status changed to {$newStatus}.");
@@ -35,12 +35,12 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['action'])) {
             $isFeatured = (int)$stmt->fetchColumn();
             $newVal = $isFeatured ? 0 : 1;
 
-            $update = $pdo->prepare("UPDATE case_studies SET is_featured = ?, updated_at = datetime('now') WHERE id = ?");
+            $update = $pdo->prepare("UPDATE case_studies SET is_featured = ?, updated_at = CURRENT_TIMESTAMP WHERE id = ?");
             $update->execute([$newVal, $id]);
 
             setFlashMessage('success', $newVal ? "Case study marked as featured on homepage." : "Case study unfeatured from homepage.");
         } elseif ($action === 'soft_delete') {
-            $update = $pdo->prepare("UPDATE case_studies SET is_deleted = 1, deleted_at = datetime('now'), status = 'draft' WHERE id = ?");
+            $update = $pdo->prepare("UPDATE case_studies SET is_deleted = 1, deleted_at = CURRENT_TIMESTAMP, status = 'draft' WHERE id = ?");
             $update->execute([$id]);
             setFlashMessage('success', "Case study moved to trash (soft-deleted).");
         } elseif ($action === 'restore') {

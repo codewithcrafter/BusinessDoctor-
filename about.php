@@ -16,17 +16,19 @@ $pageDescription = 'Learn how BusinessDoctor combines custom software engineerin
 require_once __DIR__ . '/includes/header.php';
 ?>
 
+<div class="about-page">
+
 <!-- Page Header Hero -->
-<section class="section hero-enterprise" style="padding-top: 5rem; padding-bottom: 4rem;">
-  <div class="container text-center" style="max-width: 900px; margin: 0 auto;">
+<section class="section hero-enterprise about-hero" id="aboutHero">
+  <div class="container text-center about-hero-container">
     <div class="eyebrow-badge">
       <span class="pill-dot"></span>
       <span>ABOUT OUR COMPANY</span>
     </div>
-    <h1 class="hero-headline-oversized" style="font-size: clamp(2.4rem, 4.5vw, 3.8rem); margin-top: 1rem; margin-bottom: 1.5rem;">
+    <h1 class="hero-headline-oversized about-hero-headline">
       Engineering Technology. <br><span class="text-gradient-pine">Accelerating Scalable Growth.</span>
     </h1>
-    <p class="hero-lead-text" style="max-width: 780px; margin: 0 auto 2rem;">
+    <p class="hero-lead-text about-hero-lead">
       We founded BusinessDoctor to provide modern businesses with a reliable, all-in-one IT and digital growth partner. We eliminate the friction of managing disconnected developers, ad agencies, and designers by bringing them together under one disciplined engineering practice.
     </p>
   </div>
@@ -37,7 +39,7 @@ require_once __DIR__ . '/includes/header.php';
      ============================================================ -->
 <section class="section about-philosophy-section" id="philosophySection">
   <div class="container">
-    <div class="section-header text-center" style="max-width: 820px; margin: 0 auto;">
+    <div class="section-header text-center">
       <div class="eyebrow-badge">
         <span class="pill-dot"></span>
         <span>THE BUSINESSDOCTOR PHILOSOPHY</span>
@@ -75,8 +77,8 @@ require_once __DIR__ . '/includes/header.php';
       <!-- Block 2: Architectural Diagnosis & Care (Focal Block) -->
       <article class="philosophy-editorial-block featured">
         <div class="philosophy-block-header">
-          <span class="philosophy-step-tag" style="color: #00C9C1;">02 // THE CLINICAL DIAGNOSIS</span>
-          <div class="philosophy-block-icon" style="background: rgba(0, 201, 193, 0.15); border-color: #00C9C1;" aria-hidden="true">
+          <span class="philosophy-step-tag" style="color: #06B5F9;">02 // THE CLINICAL DIAGNOSIS</span>
+          <div class="philosophy-block-icon" style="background: rgba(6, 181, 249, 0.15); border-color: #06B5F9;" aria-hidden="true">
             <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
               <circle cx="12" cy="12" r="10"/>
               <line x1="12" y1="8" x2="12" y2="12"/>
@@ -89,8 +91,8 @@ require_once __DIR__ . '/includes/header.php';
           Just as any complex system needs expert trouble-shooters to <span class="highlight-teal">diagnose root technical failures</span> and <span class="highlight-teal">prescribe robust engineering solutions</span>, <strong class="highlight-aqua">BusinessDoctor provides end-to-end technical care for your digital presence</strong>.
         </p>
         <div class="philosophy-tags-strip">
-          <span class="philosophy-pill" style="border-color: rgba(0, 201, 193, 0.4); color: #39E0D5;">Root-Cause Diagnosis</span>
-          <span class="philosophy-pill" style="border-color: rgba(0, 201, 193, 0.4); color: #39E0D5;">Systemic Prescription</span>
+          <span class="philosophy-pill" style="border-color: rgba(6, 181, 249, 0.4); color: #0099DB;">Root-Cause Diagnosis</span>
+          <span class="philosophy-pill" style="border-color: rgba(6, 181, 249, 0.4); color: #0099DB;">Systemic Prescription</span>
         </div>
       </article>
 
@@ -123,7 +125,7 @@ require_once __DIR__ . '/includes/header.php';
      ============================================================ -->
 <section class="section commitments-section" id="commitmentsSection">
   <div class="container">
-    <div class="section-header text-center" style="max-width: 820px; margin: 0 auto;">
+    <div class="section-header text-center">
       <div class="eyebrow-badge">
         <span class="pill-dot"></span>
         <span>OUR OPERATING STANDARDS</span>
@@ -229,7 +231,7 @@ require_once __DIR__ . '/includes/header.php';
       <h2 class="section-title" style="font-size: clamp(2.2rem, 3.8vw, 3.25rem); line-height: 1.15; margin-top: 0.75rem; margin-bottom: 1.25rem;">
         Driven by Purpose. <span class="text-gradient-pine">Defined by Results.</span>
       </h2>
-      <p class="lead" style="max-width: 780px; margin: 0 auto;">
+      <p class="lead">
         We partner with forward-thinking enterprises to architect reliable digital infrastructure and high-velocity growth systems grounded in technical rigor and measurable commercial impact.
       </p>
     </div>
@@ -279,11 +281,11 @@ require_once __DIR__ . '/includes/header.php';
         <!-- Future-Focused Geometric Background Pattern -->
         <div class="mv-pattern-bg" aria-hidden="true">
           <svg width="340" height="340" viewBox="0 0 340 340" fill="none" xmlns="http://www.w3.org/2000/svg">
-            <polygon points="170,30 290,100 290,240 170,310 50,240 50,100" stroke="rgba(0, 201, 193, 0.35)" stroke-width="1.2" stroke-dasharray="6 4"/>
-            <polygon points="170,75 250,125 250,215 170,265 90,215 90,125" stroke="rgba(0, 201, 193, 0.15)" stroke-width="1"/>
-            <line x1="170" y1="30" x2="170" y2="310" stroke="rgba(0, 201, 193, 0.10)" stroke-width="1"/>
-            <line x1="50" y1="170" x2="290" y2="170" stroke="rgba(57, 224, 213, 0.25)" stroke-width="1"/>
-            <circle cx="170" cy="170" r="14" fill="rgba(0, 201, 193, 0.10)" stroke="#39E0D5" stroke-width="1.5"/>
+            <polygon points="170,30 290,100 290,240 170,310 50,240 50,100" stroke="rgba(6, 181, 249, 0.35)" stroke-width="1.2" stroke-dasharray="6 4"/>
+            <polygon points="170,75 250,125 250,215 170,265 90,215 90,125" stroke="rgba(6, 181, 249, 0.15)" stroke-width="1"/>
+            <line x1="170" y1="30" x2="170" y2="310" stroke="rgba(6, 181, 249, 0.10)" stroke-width="1"/>
+            <line x1="50" y1="170" x2="290" y2="170" stroke="rgba(0, 153, 219, 0.25)" stroke-width="1"/>
+            <circle cx="170" cy="170" r="14" fill="rgba(6, 181, 249, 0.10)" stroke="#0099DB" stroke-width="1.5"/>
           </svg>
         </div>
 
@@ -335,7 +337,7 @@ require_once __DIR__ . '/includes/header.php';
           HC
         </div>
         <h3 style="font-size: 1.3rem; margin-bottom: 0.25rem; color: var(--color-text);">Dr. Harrison Croft</h3>
-        <div style="font-family: var(--font-mono); font-size: 0.76rem; color: var(--color-secondary); font-weight: 700; margin-bottom: 1.25rem; text-transform: uppercase; letter-spacing: 0.08em;">
+        <div style="font-family: var(--font-mono); font-size: 0.76rem; color: #06B5F9; font-weight: 700; margin-bottom: 1.25rem; text-transform: uppercase; letter-spacing: 0.08em;">
           MANAGING PARTNER &amp; CHIEF SOLUTIONS OFFICER
         </div>
         <p style="font-size: 0.92rem; color: var(--color-text-muted); line-height: 1.65;">
@@ -348,7 +350,7 @@ require_once __DIR__ . '/includes/header.php';
           KC
         </div>
         <h3 style="font-size: 1.3rem; margin-bottom: 0.25rem; color: var(--color-text);">Kirsten Chen</h3>
-        <div style="font-family: var(--font-mono); font-size: 0.76rem; color: var(--color-secondary); font-weight: 700; margin-bottom: 1.25rem; text-transform: uppercase; letter-spacing: 0.08em;">
+        <div style="font-family: var(--font-mono); font-size: 0.76rem; color: #06B5F9; font-weight: 700; margin-bottom: 1.25rem; text-transform: uppercase; letter-spacing: 0.08em;">
           VP OF ENGINEERING &amp; CLOUD ARCHITECTURE
         </div>
         <p style="font-size: 0.92rem; color: var(--color-text-muted); line-height: 1.65;">
@@ -361,7 +363,7 @@ require_once __DIR__ . '/includes/header.php';
           JM
         </div>
         <h3 style="font-size: 1.3rem; margin-bottom: 0.25rem; color: var(--color-text);">Julian Montgomery</h3>
-        <div style="font-family: var(--font-mono); font-size: 0.76rem; color: var(--color-secondary); font-weight: 700; margin-bottom: 1.25rem; text-transform: uppercase; letter-spacing: 0.08em;">
+        <div style="font-family: var(--font-mono); font-size: 0.76rem; color: #06B5F9; font-weight: 700; margin-bottom: 1.25rem; text-transform: uppercase; letter-spacing: 0.08em;">
           HEAD OF UI/UX DESIGN &amp; BRAND ARCHITECTURE
         </div>
         <p style="font-size: 0.92rem; color: var(--color-text-muted); line-height: 1.65;">
@@ -397,5 +399,7 @@ require_once __DIR__ . '/includes/header.php';
     </div>
   </div>
 </section>
+
+</div><!-- /.about-page -->
 
 <?php require_once __DIR__ . '/includes/footer.php'; ?>

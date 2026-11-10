@@ -62,7 +62,7 @@
     if (!toast) {
       toast = document.createElement('div');
       toast.id = 'adm-editor-toast';
-      toast.style.cssText = 'position:fixed;bottom:24px;right:24px;background:#061326;border:1px solid #00C9C1;color:#14E5D4;padding:10px 18px;border-radius:6px;font-family:monospace;font-size:13px;z-index:9999;box-shadow:0 8px 24px rgba(0,0,0,0.5);transition:opacity 0.2s ease;';
+      toast.style.cssText = 'position:fixed;bottom:24px;right:24px;background:#061326;border:1px solid #06B5F9;color:#0099DB;padding:10px 18px;border-radius:6px;font-family:monospace;font-size:13px;z-index:9999;box-shadow:0 8px 24px rgba(0,0,0,0.5);transition:opacity 0.2s ease;';
       document.body.appendChild(toast);
     }
     toast.textContent = msg;
@@ -930,7 +930,7 @@
     container.innerHTML = `
       <div style="max-width: 780px; margin: 0 auto; font-family: Inter, sans-serif;">
         <div style="display: flex; gap: 0.75rem; align-items: center; margin-bottom: 1rem; flex-wrap: wrap;">
-          <span style="background: #061326; color: #00C9C1; font-size: 0.75rem; font-weight: 700; padding: 0.25rem 0.65rem; border-radius: 4px; font-family: monospace;">${category.toUpperCase()}</span>
+          <span style="background: #061326; color: #06B5F9; font-size: 0.75rem; font-weight: 700; padding: 0.25rem 0.65rem; border-radius: 4px; font-family: monospace;">${category.toUpperCase()}</span>
           <span style="font-family: monospace; font-size: 0.78rem; color: #64748B;">● ${readingTime}</span>
           <span style="font-family: monospace; font-size: 0.78rem; color: #94A3B8;">● ${new Date().toLocaleDateString('en-US', {month: 'short', day: 'numeric', year: 'numeric'})}</span>
         </div>
@@ -940,7 +940,7 @@
         </h1>
 
         <div style="display: flex; align-items: center; gap: 0.85rem; padding: 1rem 0; margin-bottom: 2rem; border-top: 1px solid #E2E8F0; border-bottom: 1px solid #E2E8F0;">
-          <div style="width: 44px; height: 44px; border-radius: 6px; background: #061326; color: #00C9C1; display: flex; align-items: center; justify-content: center; font-weight: 800; font-size: 1rem;">
+          <div style="width: 44px; height: 44px; border-radius: 6px; background: #061326; color: #06B5F9; display: flex; align-items: center; justify-content: center; font-weight: 800; font-size: 1rem;">
             ${author.substring(0, 2).toUpperCase()}
           </div>
           <div>
@@ -952,8 +952,8 @@
         ${coverMarkup}
 
         ${excerpt ? `
-          <div style="background: #F8FAFC; border: 1px solid #E2E8F0; border-left: 4px solid #00C9C1; border-radius: 8px; padding: 1.5rem; margin-bottom: 2.5rem;">
-            <div style="font-size: 0.72rem; font-family: monospace; text-transform: uppercase; color: #00C9C1; letter-spacing: 0.08em; font-weight: 700; margin-bottom: 0.5rem;">
+          <div style="background: #F8FAFC; border: 1px solid #E2E8F0; border-left: 4px solid #06B5F9; border-radius: 8px; padding: 1.5rem; margin-bottom: 2.5rem;">
+            <div style="font-size: 0.72rem; font-family: monospace; text-transform: uppercase; color: #06B5F9; letter-spacing: 0.08em; font-weight: 700; margin-bottom: 0.5rem;">
               KEY EXECUTIVE SUMMARY
             </div>
             <p style="font-size: 1.05rem; line-height: 1.65; color: #1E293B; margin: 0; font-style: italic;">

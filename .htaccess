@@ -4,7 +4,8 @@
 # ============================================================
 
 # 1. Disable Directory Browsing
-Options -Indexes
+Options -Indexes +FollowSymLinks
+DirectoryIndex index.php index.html
 
 # 2. Character Encoding
 AddDefaultCharset UTF-8
@@ -12,7 +13,7 @@ AddDefaultCharset UTF-8
 # 3. URL Rewriting & HTTPS Enforcement
 <IfModule mod_rewrite.c>
     RewriteEngine On
-    RewriteBase /
+    # RewriteBase /
 
     # Force HTTPS in production
     RewriteCond %{HTTPS} off
@@ -40,6 +41,28 @@ AddDefaultCharset UTF-8
     RewriteCond %{REQUEST_FILENAME} !-f
     RewriteCond %{REQUEST_FILENAME} !-d
     RewriteRule ^services/?$ services.php [L,QSA]
+
+    # Clean Insight URLs: /insights/{slug} -> insight-detail.php?slug={slug}
+    RewriteCond %{REQUEST_FILENAME} !-f
+    RewriteCond %{REQUEST_FILENAME} !-d
+    RewriteRule ^insights/([a-zA-Z0-9_-]+)/?$ insight-detail.php?slug=$1 [L,QSA]
+
+    RewriteCond %{REQUEST_FILENAME} !-f
+    RewriteCond %{REQUEST_FILENAME} !-d
+    RewriteRule ^insights/?$ insights.php [L,QSA]
+
+    # Clean Case Study URLs: /case-studies/{slug} -> case-study-detail.php?slug={slug}
+    RewriteCond %{REQUEST_FILENAME} !-f
+    RewriteCond %{REQUEST_FILENAME} !-d
+    RewriteRule ^case-studies/([a-zA-Z0-9_-]+)/?$ case-study-detail.php?slug=$1 [L,QSA]
+
+    RewriteCond %{REQUEST_FILENAME} !-f
+    RewriteCond %{REQUEST_FILENAME} !-d
+    RewriteRule ^case-studies/?$ case-studies.php [L,QSA]
+    # Clean Admin Gateway Rewriting: /admin -> admin/index.php
+    RewriteCond %{REQUEST_FILENAME} !-f
+    RewriteRule ^admin/?$ admin/index.php [L,QSA]
+
 </IfModule>
 
 # 4. Strict File Access Controls
@@ -59,11 +82,19 @@ AddDefaultCharset UTF-8
     Header always set Referrer-Policy "strict-origin-when-cross-origin"
     Header always set Permissions-Policy "geolocation=(), microphone=(), camera=()"
     Header always set Strict-Transport-Security "max-age=31536000; includeSubDomains" "expr=%{HTTPS} == 'on'"
+    # Clean Admin Gateway Rewriting: /admin -> admin/index.php
+    RewriteCond %{REQUEST_FILENAME} !-f
+    RewriteRule ^admin/?$ admin/index.php [L,QSA]
+
 </IfModule>
 
 # 6. GZIP / Brotli Compression
 <IfModule mod_deflate.c>
     AddOutputFilterByType DEFLATE text/html text/plain text/xml text/css text/javascript application/javascript application/json image/svg+xml
+    # Clean Admin Gateway Rewriting: /admin -> admin/index.php
+    RewriteCond %{REQUEST_FILENAME} !-f
+    RewriteRule ^admin/?$ admin/index.php [L,QSA]
+
 </IfModule>
 
 # 7. Browser Static Asset Caching
@@ -76,5 +107,9 @@ AddDefaultCharset UTF-8
     ExpiresByType image/svg+xml "access plus 1 month"
     ExpiresByType font/woff2 "access plus 1 year"
     ExpiresByType font/woff "access plus 1 year"
+    # Clean Admin Gateway Rewriting: /admin -> admin/index.php
+    RewriteCond %{REQUEST_FILENAME} !-f
+    RewriteRule ^admin/?$ admin/index.php [L,QSA]
+
 </IfModule>
 

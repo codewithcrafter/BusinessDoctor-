@@ -29,14 +29,19 @@ if (file_exists($envFile) && is_readable($envFile)) {
     }
 }
 
-// Determine Application Environment
+// Detect local development environment vs live production
+$currentHost = $_SERVER['HTTP_HOST'] ?? '';
+$isLocalHost = in_array($currentHost, ['127.0.0.1:8000', 'localhost:8000', 'localhost', '127.0.0.1'], true)
+               || str_starts_with($currentHost, 'localhost')
+               || str_starts_with($currentHost, '127.0.0.1')
+               || in_array(php_sapi_name(), ['cli-server', 'cli'], true);
+
+// Determine Application Environment: local runs as development, production stays production
 $env = getenv('APP_ENV');
-if (!$env) {
-    $currentHost = $_SERVER['HTTP_HOST'] ?? '';
-    $isLocal = in_array($currentHost, ['127.0.0.1:8000', 'localhost:8000', 'localhost', '127.0.0.1'], true) 
-               || (php_sapi_name() === 'cli-server')
-               || (php_sapi_name() === 'cli');
-    $env = $isLocal ? 'development' : 'production';
+if ($isLocalHost) {
+    $env = 'development';
+} elseif (!$env) {
+    $env = 'production';
 }
 define('APP_ENV', $env);
 
@@ -85,7 +90,8 @@ $envAppUrl = getenv('APP_URL');
 $currentHost = $_SERVER['HTTP_HOST'] ?? '';
 $isLocalHost = in_array($currentHost, ['127.0.0.1:8000', 'localhost:8000', 'localhost', '127.0.0.1'], true)
                || str_starts_with($currentHost, 'localhost')
-               || str_starts_with($currentHost, '127.0.0.1');
+               || str_starts_with($currentHost, '127.0.0.1')
+               || in_array(php_sapi_name(), ['cli-server', 'cli'], true);
 
 if (!empty($envAppUrl) && !($isLocalHost && str_contains($envAppUrl, 'demo.businessdoctor.com'))) {
     define('BASE_URL', rtrim($envAppUrl, '/'));
@@ -106,12 +112,22 @@ define('APP_URL', BASE_URL);
 define('ROOT_PATH', dirname(__DIR__));
 
 // Database Configuration - Explicit Driver Selection
-define('DB_DRIVER', strtolower(trim((string)(getenv('DB_DRIVER') ?: 'sqlite'))));
+// Local XAMPP/CLI environment uses local MariaDB (mysql)
+// Production environment (demo.businessdoctor.com) stays strictly on SQLite
+$defaultDriver = $isLocalHost ? 'mysql' : 'sqlite';
+$driver = getenv('DB_DRIVER');
+if ($isLocalHost && (!$driver || $driver === 'sqlite' || getenv('APP_ENV') === 'production')) {
+    $driver = 'mysql';
+}
+if (!$driver) {
+    $driver = $defaultDriver;
+}
+define('DB_DRIVER', strtolower(trim((string)$driver)));
 define('DB_HOST', getenv('DB_HOST') ?: '127.0.0.1');
 define('DB_PORT', getenv('DB_PORT') ?: '3306');
 define('DB_NAME', getenv('DB_NAME') ?: 'businessdoctor');
 define('DB_USER', getenv('DB_USER') ?: 'root');
-define('DB_PASS', getenv('DB_PASS') ?: '');
+define('DB_PASS', (getenv('DB_PASS') !== false && getenv('DB_PASS') !== null) ? getenv('DB_PASS') : '');
 define('DB_CHARSET', 'utf8mb4');
 
 $sqliteEnv = getenv('DB_SQLITE_PATH');

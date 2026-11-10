@@ -3,78 +3,91 @@
  * MIDNIGHT NAVY & ELECTRIC TEAL DESIGN SYSTEM:
  * Primary Background: #061326 (Midnight Navy)
  * Secondary Background: #0A1D35 (Deep Navy)
- * Deep Teal: #073B42 (Panel Surfaces & Dark Accents)
- * Electric Teal: #00C9C1 (Primary Accent & Highlights)
- * Aqua Highlight: #39E0D5 (Bright Aqua & Active Indicators)
+ * Deep Teal: #0A223B (Panel Surfaces & Dark Accents)
+ * Electric Teal: #06B5F9 (Primary Accent & Highlights)
+ * Aqua Highlight: #0099DB (Bright Aqua & Active Indicators)
  * Primary Text: #F4F8FC (Ice White)
  * Secondary Text: #AABBCB (Muted Blue-Grey)
  * Muted / Subtle Text: #8297AA (Micro-meta & Captions)
  * Elevated Surface: #0D223A (Service Cards & Elevated Panels)
  * Dark Surface: #071A2C (Navbar, HUD, Sidebars, Inputs, Footer)
- * Border: rgba(0, 201, 193, 0.20) (Electric Teal Border)
+ * Border: rgba(6, 181, 249, 0.20) (Electric Teal Border)
  */
 
 :root {
-  /* Official Brand Colour Palette */
+  /* Official Brand Colour Palette - Primary #06B5F9 */
   --color-primary: #061326;
   --color-secondary: #0A1D35;
-  --color-deep-teal: #073B42;
-  --color-accent: #00C9C1;
-  --color-highlight: #39E0D5;
+  --color-deep-teal: #08223D;
+  --color-accent: #06B5F9;
+  --color-highlight: #0099DB;
   --color-background: #061326;
-  --color-surface: #0D223A;
-  --color-surface-elevated: #0D223A;
+  --color-surface: #0D2036;
+  --color-surface-elevated: #0D2036;
   --color-dark-surface: #071A2C;
   --color-soft-surface: #0A1D35;
-  --color-text: #F4F8FC;
-  --color-muted: #AABBCB;
-  --color-subtle: #8297AA;
-  --color-border: rgba(0, 201, 193, 0.20);
+  --color-text: #F5F7FA;
+  --color-muted: #B8C7D9;
+  --color-subtle: #8FA3B8;
+  --color-border: rgba(6, 181, 249, 0.22);
+
+  /* Primary Brand Color System (Whole Website Requirement) */
+  --color-brand-primary: #06B5F9;
+  --color-brand-primary-hover: #0099DB;
+  --color-brand-accent-bg: #EAF8FF;
+  --color-brand-dark: #061326;
+  --color-brand-card: #0D2036;
+  --color-brand-card-hover: #122842;
+  --color-brand-border: rgba(6, 181, 249, 0.22);
+  --color-brand-border-hover: rgba(6, 181, 249, 0.55);
+  --color-brand-glow: rgba(6, 181, 249, 0.35);
+  --color-brand-soft: rgba(6, 181, 249, 0.12);
 
   /* Semantic Extended Variables */
   --color-primary-dark: #061326;
   --color-primary-light: #0A1D35;
   
-  --color-secondary-light: #073B42;
-  --color-secondary-soft: rgba(7, 59, 66, 0.45);
+  --color-secondary-light: #08223D;
+  --color-secondary-soft: rgba(6, 181, 249, 0.15);
   
-  --color-accent-hover: #39E0D5;
-  --color-accent-soft: rgba(0, 201, 193, 0.18);
-  --color-accent-border: rgba(0, 201, 193, 0.25);
+  --color-accent-hover: #0099DB;
+  --color-accent-soft: rgba(6, 181, 249, 0.15);
+  --color-accent-border: rgba(6, 181, 249, 0.25);
   
   --color-bg: #061326;
   --color-surface-muted: #071A2C;
   --color-surface-dark: #061326;
   
-  --color-text-muted: #AABBCB;
-  --color-text-light: #8297AA;
+  --color-text-muted: #B8C7D9;
+  --color-text-light: #8FA3B8;
   --color-text-inverse: #061326;
 
   /* Backward Compatibility Aliases for Full Dark Theme */
   --color-obsidian: #061326;
   --color-navy: #071A2C;
-  --color-slate-900: #F4F8FC;        /* High-contrast headings */
-  --color-slate-800: #F4F8FC;        /* High-contrast subheadings */
-  --color-slate-700: #AABBCB;        /* Readable paragraph text */
-  --color-slate-600: #AABBCB;        /* Secondary copy */
-  --color-slate-500: #8297AA;        /* Muted accents */
-  --color-slate-400: #00C9C1;        /* Electric Teal accent */
-  --color-slate-200: rgba(0, 201, 193, 0.20); /* Electric Teal Border */
+  --color-slate-900: #F5F7FA;        /* High-contrast headings */
+  --color-slate-800: #F5F7FA;        /* High-contrast subheadings */
+  --color-slate-700: #B8C7D9;        /* Readable paragraph text */
+  --color-slate-600: #B8C7D9;        /* Secondary copy */
+  --color-slate-500: #8FA3B8;        /* Muted accents */
+  --color-slate-400: #06B5F9;        /* Brand Primary accent */
+  --color-slate-300: #B8C7D9;        /* High-contrast form text & borders */
+  --color-slate-200: rgba(6, 181, 249, 0.22); /* Brand Primary Border */
   --color-slate-100: #071A2C;        /* Dark Inset */
   --color-slate-50: #061326;         /* Dark Page Canvas */
   --color-white: #FFFFFF;            /* Pure Crisp White Text */
 
-  --color-teal-600: #00C9C1;        /* Links in Electric Teal */
-  --color-teal-500: #39E0D5;        /* Hover in Aqua Highlight */
-  --color-teal-400: #00C9C1;        /* Highlights */
-  --color-teal-100: rgba(0, 201, 193, 0.18);
+  --color-teal-600: #06B5F9;        /* Links in Brand Primary */
+  --color-teal-500: #0099DB;        /* Hover in Brand Primary Hover */
+  --color-teal-400: #06B5F9;        /* Highlights */
+  --color-teal-100: rgba(6, 181, 249, 0.15);
   --color-teal-50: #071A2C;
 
   /* Status Badges */
-  --color-alert-amber: #f59e0b;
+  --color-alert-amber: #FBBF24;
   --color-alert-amber-soft: rgba(245, 158, 11, 0.18);
-  --color-success-green: #10b981;
-  --color-danger-crimson: #ef4444;
+  --color-success-green: #34D399;
+  --color-danger-crimson: #F87171;
 
   /* Typography Stack */
   --font-display: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
@@ -86,8 +99,8 @@
   --shadow-md: 0 4px 12px -1px rgba(0, 0, 0, 0.55), 0 2px 4px -2px rgba(0, 0, 0, 0.4);
   --shadow-lg: 0 12px 28px -4px rgba(0, 0, 0, 0.65), 0 4px 6px -4px rgba(0, 0, 0, 0.4);
   --shadow-xl: 0 24px 44px -6px rgba(0, 0, 0, 0.80), 0 12px 16px -6px rgba(0, 0, 0, 0.4);
-  --shadow-glow: 0 0 30px rgba(0, 201, 193, 0.30);
-  --shadow-teal-glow: 0 0 30px rgba(0, 201, 193, 0.35);
+  --shadow-glow: 0 0 30px rgba(6, 181, 249, 0.30);
+  --shadow-teal-glow: 0 0 30px rgba(6, 181, 249, 0.35);
   --shadow-dark: 0 20px 45px -10px rgba(0, 0, 0, 0.85);
 
   /* Layout Boundaries */

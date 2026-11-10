@@ -35,7 +35,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
                 if ($check->fetch()) {
                     $errors[] = 'This email address is already registered to another account.';
                 } else {
-                    $update = $pdo->prepare("UPDATE admin_users SET full_name = ?, email = ?, updated_at = datetime('now') WHERE id = ?");
+                    $update = $pdo->prepare("UPDATE admin_users SET full_name = ?, email = ?, updated_at = CURRENT_TIMESTAMP WHERE id = ?");
                     $update->execute([$fullName, $email, $adminUser['id']]);
 
                     $_SESSION['admin_user']['full_name'] = $fullName;
@@ -66,7 +66,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
                     $errors[] = 'Your current password was entered incorrectly.';
                 } else {
                     $newHash = password_hash($newPass, PASSWORD_BCRYPT);
-                    $update = $pdo->prepare("UPDATE admin_users SET password_hash = ?, updated_at = datetime('now') WHERE id = ?");
+                    $update = $pdo->prepare("UPDATE admin_users SET password_hash = ?, updated_at = CURRENT_TIMESTAMP WHERE id = ?");
                     $update->execute([$newHash, $adminUser['id']]);
 
                     setFlashMessage('success', 'Password updated successfully. Please use your new password next time you sign in.');

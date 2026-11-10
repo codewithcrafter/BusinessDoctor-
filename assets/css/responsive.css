@@ -40,7 +40,7 @@
 
   .menu-toggle:hover,
   .menu-toggle:focus {
-    color: #00C9C1 !important;
+    color: #06B5F9 !important;
   }
 
   .hero-scroll-track {
@@ -82,7 +82,7 @@
 
   .cap-card-sidebar {
     border-left: none;
-    border-top: 1px solid rgba(0, 201, 193, 0.2);
+    border-top: 1px solid rgba(6, 181, 249, 0.2);
   }
 
   .cases-editorial-grid {
@@ -126,7 +126,7 @@
 
   .vital-item:nth-child(1),
   .vital-item:nth-child(2) {
-    border-bottom: 1px solid rgba(0, 201, 193, 0.22);
+    border-bottom: 1px solid rgba(6, 181, 249, 0.22);
     padding-bottom: 1.25rem;
   }
 
@@ -183,7 +183,7 @@
 
   .menu-toggle:hover,
   .menu-toggle:focus {
-    color: #00C9C1 !important;
+    color: #06B5F9 !important;
   }
 
   .hero-scroll-track {
@@ -391,12 +391,12 @@
 
   .vital-item:nth-child(1),
   .vital-item:nth-child(2) {
-    border-bottom: 1px solid rgba(0, 201, 193, 0.22) !important;
+    border-bottom: 1px solid rgba(6, 181, 249, 0.22) !important;
     padding-bottom: 1rem !important;
   }
 
   .vital-item:nth-child(odd) {
-    border-right: 1px solid rgba(0, 201, 193, 0.22) !important;
+    border-right: 1px solid rgba(6, 181, 249, 0.22) !important;
   }
 
   .vital-number {
@@ -579,12 +579,12 @@
 
   .vital-item:nth-child(1),
   .vital-item:nth-child(2) {
-    border-bottom: 1px solid rgba(0, 201, 193, 0.22) !important;
+    border-bottom: 1px solid rgba(6, 181, 249, 0.22) !important;
     padding-bottom: 0.85rem;
   }
 
   .vital-item:nth-child(odd) {
-    border-right: 1px solid rgba(0, 201, 193, 0.22) !important;
+    border-right: 1px solid rgba(6, 181, 249, 0.22) !important;
   }
 
   .stage-card {

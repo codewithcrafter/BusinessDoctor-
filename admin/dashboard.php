@@ -339,7 +339,7 @@ require_once __DIR__ . '/includes/header.php';
                 <div style="font-size: 0.75rem; color: var(--adm-text-dim); font-family: var(--adm-font-mono);"><?= e($co['phone'] ?: 'No phone') ?></div>
               </td>
               <td>
-                <span class="status-pill status-published" style="background: rgba(0, 201, 193, 0.1); color: var(--adm-teal); border: 1px solid rgba(0,201,193,0.25);">
+                <span class="status-pill status-published" style="background: rgba(6, 181, 249, 0.1); color: var(--adm-teal); border: 1px solid rgba(6, 181, 249,0.25);">
                   <?= e($co['service_interest']) ?>
                 </span>
               </td>
