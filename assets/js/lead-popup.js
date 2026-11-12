@@ -24,11 +24,12 @@
   var POPUP_DELAY_MS = 5000; // Exactly 5 seconds after page ready
 
   // Persistence helpers: localStorage with first-party cookie fallback
-  function isPopupCompleted() {
+  // Dismissal is ONLY persisted after user closes, clicks backdrop, presses Escape, or submits
+  function isPopupDismissed() {
     try {
       if (typeof window.localStorage !== 'undefined') {
         var val = window.localStorage.getItem(STORAGE_KEY) || window.localStorage.getItem('bdr_lead_popup_dismissed');
-        if (val === 'dismissed' || val === 'submitted' || val === 'displayed' || val === '1' || val === 'true') {
+        if (val === 'dismissed' || val === 'submitted') {
           return true;
         }
       }
@@ -39,12 +40,12 @@
       var match = document.cookie.match(new RegExp('(?:^|; )' + STORAGE_KEY + '=([^;]*)'));
       if (match && match[1]) {
         var cVal = decodeURIComponent(match[1]);
-        if (cVal === 'dismissed' || cVal === 'submitted' || cVal === 'displayed' || cVal === '1' || cVal === 'true') {
+        if (cVal === 'dismissed' || cVal === 'submitted') {
           return true;
         }
       }
       var matchOld = document.cookie.match(/(?:^|; )bdr_lead_popup_dismissed=([^;]*)/);
-      if (matchOld && matchOld[1]) {
+      if (matchOld && (matchOld[1] === 'true' || matchOld[1] === 'dismissed' || matchOld[1] === 'submitted')) {
         return true;
       }
     } catch (e) {}
@@ -52,8 +53,8 @@
     return false;
   }
 
-  function setPopupCompleted(reason) {
-    reason = reason || '1';
+  function setPopupDismissed(reason) {
+    reason = reason || 'dismissed';
     try {
       if (typeof window.localStorage !== 'undefined') {
         window.localStorage.setItem(STORAGE_KEY, reason);
@@ -73,6 +74,11 @@
       if (typeof window.localStorage !== 'undefined') {
         window.localStorage.removeItem(STORAGE_KEY);
         window.localStorage.removeItem('bdr_lead_popup_dismissed');
+      }
+    } catch (e) {}
+    try {
+      if (typeof window.sessionStorage !== 'undefined') {
+        window.sessionStorage.removeItem('bdr_lead_popup_displayed');
       }
     } catch (e) {}
     try {
@@ -104,15 +110,17 @@
   }
 
   // Expose test utilities on window
-  window.bdrIsPopupCompleted = isPopupCompleted;
-  window.bdrSetPopupCompleted = setPopupCompleted;
+  window.bdrIsPopupDismissed = isPopupDismissed;
+  window.bdrIsPopupCompleted = isPopupDismissed;
+  window.bdrSetPopupDismissed = setPopupDismissed;
+  window.bdrSetPopupCompleted = setPopupDismissed;
   window.bdrResetPopupStorage = resetPopupStorage;
   window.bdrIsModalActuallyVisible = function () {
     return isModalActuallyVisible(document.getElementById('bdrLeadPopupModal'));
   };
 
-  // Immediate check: If visitor has already seen/dismissed/submitted, abort immediately
-  if (isPopupCompleted()) {
+  // Immediate check: If visitor has already dismissed or submitted, abort immediately
+  if (isPopupDismissed()) {
     return;
   }
 
@@ -121,7 +129,7 @@
 
   function initLeadPopup() {
     // Re-check in case another tab or script updated storage
-    if (isPopupCompleted()) {
+    if (isPopupDismissed()) {
       return;
     }
 
@@ -151,14 +159,14 @@
       sourceUrlInput.value = window.location.href;
     }
 
-    // Open Modal Function: Renders modal, confirms actual visibility, then records state
+    // Open Modal Function: Renders modal, confirms actual visibility
     function openPopup() {
       if (isOpen) return;
-      if (isPopupCompleted()) return;
+      if (isPopupDismissed()) return;
 
       var targetModal = modal || document.getElementById('bdrLeadPopupModal');
       if (!targetModal) {
-        // Modal DOM element missing: render failed, DO NOT mark visitor as completed
+        // Modal DOM element missing: render failed, DO NOT mark visitor as dismissed
         return;
       }
 
@@ -173,11 +181,10 @@
       document.body.classList.add('bdr-modal-open');
       isOpen = true;
 
-      // Step 3: Confirm popup is ACTUALLY visible before recording completed state
-      function confirmAndRecord() {
+      // Step 3: Confirm popup is ACTUALLY visible before focusing
+      function confirmVisibility() {
         if (isModalActuallyVisible(targetModal)) {
-          // Successfully rendered and visible: ONLY THEN record displayed state
-          setPopupCompleted('displayed');
+          // Successfully rendered and visible on screen
           if (nameInput) {
             nameInput.focus();
           }
@@ -193,10 +200,10 @@
       // Verify visibility after browser paint cycle
       if (typeof window.requestAnimationFrame === 'function') {
         window.requestAnimationFrame(function () {
-          setTimeout(confirmAndRecord, 50);
+          setTimeout(confirmVisibility, 50);
         });
       } else {
-        setTimeout(confirmAndRecord, 50);
+        setTimeout(confirmVisibility, 50);
       }
     }
 
@@ -205,8 +212,8 @@
       if (!isOpen && !modal.classList.contains('is-active')) return;
       isOpen = false;
 
-      // Persist dismissal
-      setPopupCompleted('dismissed');
+      // Persist dismissal only after close, backdrop, or Escape
+      setPopupDismissed('dismissed');
 
       modal.classList.remove('is-active');
       modal.setAttribute('aria-hidden', 'true');
@@ -447,7 +454,7 @@
 
     // Schedule 5-second timer
     function startTimer() {
-      if (timerId || isPopupCompleted()) return;
+      if (timerId || isPopupDismissed()) return;
       timerId = setTimeout(openPopup, POPUP_DELAY_MS);
     }
 
