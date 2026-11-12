@@ -362,8 +362,25 @@
         // Prepare Form Data
         var formData = new FormData(form);
 
-        // Determine API endpoint
-        var endpoint = form.getAttribute('action') || 'api/lead-popup-submit.php';
+        // Determine API endpoint safely (ensuring same-origin even if .env host differs)
+        var endpoint = 'api/lead-popup-submit.php';
+        var actionAttr = form.getAttribute('action');
+        if (actionAttr) {
+          if (actionAttr.startsWith('http://') || actionAttr.startsWith('https://')) {
+            try {
+              var parsedUrl = new URL(actionAttr);
+              if (parsedUrl.host !== window.location.host) {
+                endpoint = parsedUrl.pathname;
+              } else {
+                endpoint = actionAttr;
+              }
+            } catch (e) {
+              endpoint = actionAttr;
+            }
+          } else {
+            endpoint = actionAttr;
+          }
+        }
         if (!endpoint.startsWith('/') && !endpoint.startsWith('http')) {
           var basePath = window.location.pathname.indexOf('/businessdoctor') !== -1 ? '/businessdoctor/' : '/';
           endpoint = basePath + endpoint;

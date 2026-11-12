@@ -40,7 +40,13 @@ if (preg_match('#/admin(/|\.php|$)#i', $scriptName)) {
       </div>
 
       <!-- Form Section -->
-      <form id="bdrLeadPopupForm" class="bdr-popup-form" action="<?= appUrl('api/lead-popup-submit.php') ?>" method="POST" novalidate>
+      <?php
+      $popupActionUrl = appUrl('api/lead-popup-submit.php');
+      if (!empty($_SERVER['HTTP_HOST']) && !str_contains($popupActionUrl, $_SERVER['HTTP_HOST'])) {
+          $popupActionUrl = '/api/lead-popup-submit.php';
+      }
+      ?>
+      <form id="bdrLeadPopupForm" class="bdr-popup-form" action="<?= e($popupActionUrl) ?>" method="POST" novalidate>
         <!-- CSRF Token -->
         <input type="hidden" name="csrf_token" value="<?= getCsrfToken() ?>">
         <!-- Dynamic Source URL -->
