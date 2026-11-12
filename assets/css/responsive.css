@@ -192,11 +192,12 @@
 
   .hero-sticky-stage {
     position: relative !important;
+    top: 0 !important;
     height: auto !important;
     min-height: auto !important;
     max-height: none !important;
     overflow: visible !important;
-    padding-top: calc(var(--header-height, 72px) + 1.25rem) !important;
+    padding-top: 1.5rem !important;
     padding-bottom: 3rem !important;
   }
 
