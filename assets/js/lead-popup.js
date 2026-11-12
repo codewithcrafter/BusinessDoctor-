@@ -8,9 +8,19 @@
 (function () {
   'use strict';
 
-  // 1. Strict Admin Route Guard: Never run on admin / CMS / login pages
-  var currentPath = window.location.pathname || '';
-  if (/\/admin(\/|$|\.php)/i.test(currentPath)) {
+  // 1. Strict Homepage-Only Rule: Never run on internal pages or admin portal
+  var currentPath = (window.location.pathname || '').replace(/\/+$/, '') || '/';
+  
+  // Strip subfolder if running on local subpath /businessdoctor
+  var relativePath = currentPath;
+  if (relativePath.indexOf('/businessdoctor') === 0) {
+    relativePath = relativePath.substring(15) || '/';
+  }
+
+  var isHomepage = (relativePath === '/' || relativePath === '/index.php' || relativePath === '');
+
+  // Abort immediately if not on the public homepage or if on admin portal
+  if (!isHomepage || /\/admin(\/|$|\.php)/i.test(currentPath)) {
     return;
   }
 
