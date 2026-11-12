@@ -39,11 +39,11 @@ $flash = getFlashMessage();
   <!-- Sidebar -->
   <aside class="admin-sidebar" id="adminSidebar">
     <div class="admin-sidebar-header">
-      <a href="<?= appUrl('admin/dashboard.php') ?>" class="admin-logo" style="display: flex; align-items: center; gap: 0.65rem;">
-        <img src="<?= getAssetUrl('assets/img/bdr_logo_transparent.png') ?>" alt="BusinessDoctor Logo" style="height: 38px; width: auto; object-fit: contain; aspect-ratio: 1816 / 1131; display: inline-block;">
+      <a href="<?= appUrl('admin/dashboard.php') ?>" class="admin-logo" style="display: flex; align-items: center; gap: 0.45rem;">
+        <img src="<?= getAssetUrl('assets/img/bdr_logo_transparent.png') ?>" alt="BusinessDoctor Logo" style="height: 28px; width: auto; object-fit: contain; aspect-ratio: 1816 / 1131; display: inline-block;">
         <span>Business<span style="color: var(--adm-teal);">Doctor</span></span>
       </a>
-      <span class="status-pill status-published" style="font-size: 0.65rem;">CMS v2</span>
+      <span class="status-pill status-published" style="font-size: 0.65rem; padding: 2px 7px; white-space: nowrap; flex-shrink: 0;">CMS v2</span>
     </div>
 
     <ul class="admin-sidebar-menu">
