@@ -221,10 +221,10 @@ require_once __DIR__ . '/includes/header.php';
   <?php endif; ?>
 
   <!-- Two-Column Editorial Schema Workspace -->
-  <div class="adm-form-grid" style="grid-template-columns: 1.15fr 0.85fr; gap: 1.75rem; align-items: start;">
+  <div class="adm-schema-workspace-grid">
     
     <!-- LEFT PANEL: Configuration, Property Builder & JSON Code Editor -->
-    <div>
+    <div class="adm-schema-col-left">
       
       <!-- Schema Details Card -->
       <div class="admin-card" style="margin-bottom: 1.5rem;">
@@ -235,7 +235,7 @@ require_once __DIR__ . '/includes/header.php';
           <input type="text" id="schemaName" name="schema_name" value="<?= e($schemaName) ?>" required class="adm-input" placeholder="e.g. Primary Organization Knowledge Graph Schema">
         </div>
 
-        <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 1rem;">
+        <div class="adm-schema-fields-row">
           <div class="adm-form-group">
             <label class="adm-label" for="pageKeySelect">Target Page <span class="required">*</span></label>
             <select id="pageKeySelect" name="page_key" class="adm-select" onchange="onPageChange(this.value)">
@@ -297,7 +297,7 @@ require_once __DIR__ . '/includes/header.php';
           <span class="adm-md-quickchip" onclick="insertToken('{{FEATURED_IMAGE}}')">{{FEATURED_IMAGE}}</span>
         </div>
 
-        <textarea id="schemaJsonEditor" name="schema_json" class="adm-md-textarea" style="min-height: 440px; font-size: 0.88rem; line-height: 1.6; border-radius: var(--adm-radius);" spellcheck="false"><?= e($schemaJson) ?></textarea>
+        <textarea id="schemaJsonEditor" name="schema_json" class="adm-md-textarea" style="width: 100%; min-height: 440px; font-size: 0.88rem; line-height: 1.6; border-radius: var(--adm-radius); resize: vertical; box-sizing: border-box;" spellcheck="false"><?= e($schemaJson) ?></textarea>
       </div>
 
       <!-- Rich Text Internal Editorial Documentation -->
@@ -342,7 +342,7 @@ require_once __DIR__ . '/includes/header.php';
     </div>
 
     <!-- RIGHT PANEL: Live Preview, Validation Status & Diagnostic Checks -->
-    <div>
+    <div class="adm-schema-col-right">
       
       <!-- Live Validation & Quality Status Box -->
       <div class="admin-card" style="margin-bottom: 1.5rem;">
@@ -373,7 +373,7 @@ require_once __DIR__ . '/includes/header.php';
           </span>
         </div>
 
-        <pre id="liveJsonPreview" style="background: #040E1B; border: 1px solid var(--adm-border); border-radius: 6px; padding: 1.25rem; font-family: var(--adm-font-mono); font-size: 0.82rem; color: #0099DB; max-height: 480px; overflow: auto; white-space: pre; margin: 0;"></pre>
+        <pre id="liveJsonPreview" class="adm-schema-preview-pre"></pre>
       </div>
 
       <!-- Quick Template Presets Card -->

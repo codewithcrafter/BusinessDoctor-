@@ -96,7 +96,7 @@ $activeNav = 'schema-manager';
 require_once __DIR__ . '/includes/header.php';
 ?>
 
-<div class="admin-content-header" style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 1.5rem; flex-wrap: wrap; gap: 1rem;">
+<div class="admin-content-header" style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 1.5rem; flex-wrap: wrap; gap: 1rem; width: 100%; box-sizing: border-box;">
   <div>
     <h2 style="font-size: 1.5rem; font-weight: 700; color: #FFFFFF; margin: 0 0 0.35rem; font-family: var(--adm-font-display);">
       Structured Data &amp; SEO Schema CMS
@@ -115,7 +115,7 @@ require_once __DIR__ . '/includes/header.php';
 </div>
 
 <!-- Metrics Overview Cards -->
-<div class="admin-stats-grid" style="grid-template-columns: repeat(auto-fit, minmax(210px, 1fr)); margin-bottom: 1.75rem;">
+<div class="admin-stats-grid" style="grid-template-columns: repeat(auto-fit, minmax(210px, 1fr)); margin-bottom: 1.75rem; width: 100%; box-sizing: border-box;">
   <div class="admin-stat-box" style="padding: 1.15rem 1.35rem;">
     <div class="admin-stat-icon" style="background: rgba(6, 181, 249, 0.15); color: var(--adm-teal);">
       <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="16 18 22 12 16 6"/><polyline points="8 6 2 12 8 18"/></svg>
@@ -158,7 +158,7 @@ require_once __DIR__ . '/includes/header.php';
 </div>
 
 <!-- Automated SEO, Schema & LLM Discovery Panel -->
-<div class="admin-card" style="padding: 1.5rem; margin-bottom: 1.75rem; border-top: 3px solid var(--adm-teal); background: linear-gradient(180deg, rgba(14, 37, 63, 0.95) 0%, rgba(10, 25, 47, 0.98) 100%);">
+<div class="admin-card" style="padding: 1.5rem; margin-bottom: 1.75rem; border-top: 3px solid var(--adm-teal); background: linear-gradient(180deg, rgba(14, 37, 63, 0.95) 0%, rgba(10, 25, 47, 0.98) 100%); width: 100%; box-sizing: border-box;">
   <div style="display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 1.25rem; flex-wrap: wrap; gap: 1rem;">
     <div>
       <div style="display: flex; align-items: center; gap: 0.65rem; margin-bottom: 0.35rem;">
@@ -328,8 +328,8 @@ require_once __DIR__ . '/includes/header.php';
 </div>
 
 <!-- Schemas Data Table -->
-<div class="admin-card" style="padding: 0; overflow: hidden;">
-  <div class="admin-table-responsive">
+<div class="admin-card" style="padding: 0; overflow: hidden; width: 100%; box-sizing: border-box;">
+  <div class="admin-table-responsive" style="width: 100%; box-sizing: border-box;">
     <table class="admin-table">
       <thead>
         <tr>

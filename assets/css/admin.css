@@ -208,11 +208,15 @@ body.admin-body {
 .admin-main {
   flex: 1;
   margin-left: var(--adm-sidebar-w);
+  width: calc(100% - var(--adm-sidebar-w));
+  max-width: calc(100% - var(--adm-sidebar-w));
+  min-width: 0;
+  box-sizing: border-box;
   display: flex;
   flex-direction: column;
   min-height: 100vh;
-  min-width: 0;
   background-color: var(--adm-bg);
+  overflow-x: hidden;
 }
 
 /* Topbar */
@@ -260,11 +264,12 @@ body.admin-body {
 
 /* Content Container */
 .admin-content {
-  padding: 2rem 2rem 4rem;
+  padding: 1.75rem 2rem 4rem;
   flex: 1;
-  max-width: 1400px;
   width: 100%;
-  margin: 0 auto;
+  max-width: 100%;
+  box-sizing: border-box;
+  margin: 0;
 }
 
 /* Cards */
@@ -794,7 +799,9 @@ body.admin-body {
     display: block;
   }
   .admin-main {
-    margin-left: 0;
+    margin-left: 0 !important;
+    width: 100% !important;
+    max-width: 100% !important;
   }
   .admin-toggle-btn {
     display: inline-flex;
@@ -1735,4 +1742,120 @@ body.admin-body {
 
 .adm-meta-pill {
   color: #06B5F9 !important;
+}
+
+/* ============================================================
+   SCHEMA CMS COMPREHENSIVE WORKSPACE & RESPONSIVE GRID LAYOUT
+   ============================================================ */
+
+/* Responsive Table Wrapper */
+.admin-table-responsive {
+  width: 100%;
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+  box-sizing: border-box;
+}
+
+/* Main Workspace Grid (Edit & Create Pages) */
+.adm-schema-workspace-grid {
+  display: grid;
+  grid-template-columns: minmax(0, 4fr) minmax(0, 6fr);
+  gap: 1.75rem;
+  align-items: start;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+.adm-schema-col-left,
+.adm-schema-col-right {
+  min-width: 0;
+  width: 100%;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+}
+
+.adm-schema-col-left > .admin-card,
+.adm-schema-col-right > .admin-card {
+  width: 100%;
+  box-sizing: border-box;
+  margin-bottom: 1.5rem;
+}
+
+@media (max-width: 1024px) {
+  .adm-schema-workspace-grid {
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+  }
+}
+
+.adm-schema-fields-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1rem;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+@media (max-width: 640px) {
+  .adm-schema-fields-row {
+    grid-template-columns: 1fr;
+  }
+}
+
+#schemaJsonEditor.adm-md-textarea {
+  width: 100%;
+  max-width: 100%;
+  box-sizing: border-box;
+  min-height: 440px;
+  font-family: var(--adm-font-mono);
+  font-size: 0.88rem;
+  line-height: 1.6;
+  padding: 1rem 1.15rem;
+  border-radius: var(--adm-radius);
+  background: #040E1B;
+  color: #E2E8F0;
+  border: 1px solid var(--adm-border);
+  resize: vertical;
+}
+
+.adm-schema-preview-pre,
+#liveJsonPreview {
+  background: #040E1B;
+  border: 1px solid var(--adm-border);
+  border-radius: 6px;
+  padding: 1.25rem;
+  font-family: var(--adm-font-mono);
+  font-size: 0.82rem;
+  line-height: 1.55;
+  color: #0099DB;
+  max-height: 520px;
+  overflow: auto;
+  white-space: pre-wrap;
+  word-break: break-word;
+  width: 100%;
+  max-width: 100%;
+  box-sizing: border-box;
+  margin: 0;
+}
+
+.adm-workspace-header {
+  width: 100%;
+  box-sizing: border-box;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 1rem;
+}
+
+@media (max-width: 640px) {
+  .adm-workspace-header {
+    flex-direction: column;
+    align-items: stretch;
+  }
+  .adm-workspace-header > div {
+    width: 100%;
+    justify-content: space-between;
+  }
 }
