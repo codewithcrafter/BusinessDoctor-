@@ -431,7 +431,7 @@ function renderPageSchemas(?string $pageKey = null, array $contextData = []): st
         $pageDescription = $GLOBALS['pageDescription'] ?? '';
 
         $articleTitle = $contextData['title'] ?? $pageTitle;
-        $articleExcerpt = $contextData['excerpt'] ?? $contextData['summary'] ?? $pageDescription;
+        $articleExcerpt = $contextData['excerpt'] ?? $contextData['summary'] ?? $contextData['project_summary'] ?? $contextData['challenge'] ?? $pageDescription;
         $authorName = $contextData['author'] ?? $contextData['author_name'] ?? 'BusinessDoctor';
 
         $rawPubDate = $contextData['published_at'] ?? $contextData['created_at'] ?? 'now';
@@ -440,7 +440,7 @@ function renderPageSchemas(?string $pageKey = null, array $contextData = []): st
         $pubDateIso = date('c', strtotime((string)$rawPubDate));
         $modDateIso = date('c', strtotime((string)$rawModDate));
 
-        $featuredImg = $contextData['featured_image'] ?? '';
+        $featuredImg = $contextData['featured_image'] ?? $contextData['hero_image'] ?? $contextData['thumbnail_url'] ?? '';
         if (!empty($featuredImg)) {
             if (!preg_match('/^https?:\/\//i', $featuredImg)) {
                 $featuredImg = $baseUrl . '/' . ltrim($featuredImg, '/');
