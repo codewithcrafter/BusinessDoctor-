@@ -281,7 +281,7 @@ require_once __DIR__ . '/includes/header.php';
             <div class="cap-card-body">
               <div>
                 <div class="cap-card-eyebrow">
-                  <span>DISCIPLINE // <?= e($p['number']) ?></span>
+                  <span>DISCIPLINE <?= e($p['number']) ?></span>
                   <span>•</span>
                   <span><?= e($p['tagline']) ?></span>
                 </div>
