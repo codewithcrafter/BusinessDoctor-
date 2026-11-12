@@ -28,16 +28,25 @@
     try {
       if (typeof window.localStorage !== 'undefined') {
         var val = window.localStorage.getItem(STORAGE_KEY) || window.localStorage.getItem('bdr_lead_popup_dismissed');
-        if (val) return true;
+        if (val === 'dismissed' || val === 'submitted' || val === 'displayed' || val === '1' || val === 'true') {
+          return true;
+        }
       }
     } catch (e) {}
 
     // Cookie fallback check
     try {
       var match = document.cookie.match(new RegExp('(?:^|; )' + STORAGE_KEY + '=([^;]*)'));
-      if (match) return true;
+      if (match && match[1]) {
+        var cVal = decodeURIComponent(match[1]);
+        if (cVal === 'dismissed' || cVal === 'submitted' || cVal === 'displayed' || cVal === '1' || cVal === 'true') {
+          return true;
+        }
+      }
       var matchOld = document.cookie.match(/(?:^|; )bdr_lead_popup_dismissed=([^;]*)/);
-      if (matchOld) return true;
+      if (matchOld && matchOld[1]) {
+        return true;
+      }
     } catch (e) {}
 
     return false;
@@ -72,10 +81,35 @@
     } catch (e) {}
   }
 
+  // Verification helper: Confirm popup is physically rendered and visible in DOM
+  function isModalActuallyVisible(element) {
+    if (!element) return false;
+    if (!element.classList.contains('is-active')) return false;
+
+    try {
+      var style = window.getComputedStyle ? window.getComputedStyle(element) : element.currentStyle;
+      if (style) {
+        if (style.display === 'none' || style.visibility === 'hidden') {
+          return false;
+        }
+      }
+      var rect = element.getBoundingClientRect ? element.getBoundingClientRect() : null;
+      if (rect && (rect.width > 0 && rect.height > 0)) {
+        return true;
+      }
+      return (element.offsetWidth > 0 || element.offsetHeight > 0);
+    } catch (e) {
+      return element.classList.contains('is-active');
+    }
+  }
+
   // Expose test utilities on window
   window.bdrIsPopupCompleted = isPopupCompleted;
   window.bdrSetPopupCompleted = setPopupCompleted;
   window.bdrResetPopupStorage = resetPopupStorage;
+  window.bdrIsModalActuallyVisible = function () {
+    return isModalActuallyVisible(document.getElementById('bdrLeadPopupModal'));
+  };
 
   // Immediate check: If visitor has already seen/dismissed/submitted, abort immediately
   if (isPopupCompleted()) {
@@ -117,37 +151,58 @@
       sourceUrlInput.value = window.location.href;
     }
 
-    // Open Modal Function
+    // Open Modal Function: Renders modal, confirms actual visibility, then records state
     function openPopup() {
       if (isOpen) return;
-      if (isPopupCompleted() && !isOpen) {
+      if (isPopupCompleted()) return;
+
+      var targetModal = modal || document.getElementById('bdrLeadPopupModal');
+      if (!targetModal) {
+        // Modal DOM element missing: render failed, DO NOT mark visitor as completed
         return;
       }
-      isOpen = true;
 
-      // Immediately record that the popup has been displayed so it cannot appear on another page
-      setPopupCompleted('displayed');
-
-      // Ensure form & header visible, success hidden
+      // Step 1: Ensure form & header visible, success hidden
       if (headerElem) headerElem.style.display = 'block';
       if (form) form.style.display = 'flex';
       if (successView) successView.style.display = 'none';
 
-      modal.classList.add('is-active');
-      modal.setAttribute('aria-hidden', 'false');
+      // Step 2: Render popup by toggling active classes and attributes
+      targetModal.classList.add('is-active');
+      targetModal.setAttribute('aria-hidden', 'false');
       document.body.classList.add('bdr-modal-open');
+      isOpen = true;
 
-      // Autofocus first input field smoothly
-      setTimeout(function () {
-        if (nameInput) {
-          nameInput.focus();
+      // Step 3: Confirm popup is ACTUALLY visible before recording completed state
+      function confirmAndRecord() {
+        if (isModalActuallyVisible(targetModal)) {
+          // Successfully rendered and visible: ONLY THEN record displayed state
+          setPopupCompleted('displayed');
+          if (nameInput) {
+            nameInput.focus();
+          }
+        } else {
+          // Failed render: revert state and NEVER suppress the visitor
+          isOpen = false;
+          targetModal.classList.remove('is-active');
+          targetModal.setAttribute('aria-hidden', 'true');
+          document.body.classList.remove('bdr-modal-open');
         }
-      }, 350);
+      }
+
+      // Verify visibility after browser paint cycle
+      if (typeof window.requestAnimationFrame === 'function') {
+        window.requestAnimationFrame(function () {
+          setTimeout(confirmAndRecord, 50);
+        });
+      } else {
+        setTimeout(confirmAndRecord, 50);
+      }
     }
 
     // Close Modal Function (Permanently dismisses popup across the website)
     function closePopup() {
-      if (!isOpen) return;
+      if (!isOpen && !modal.classList.contains('is-active')) return;
       isOpen = false;
 
       // Persist dismissal
