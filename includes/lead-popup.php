@@ -6,28 +6,11 @@
 
 declare(strict_types=1);
 
-// Strict Display Rule: Popup must appear ONLY on the public homepage
+// Never render on admin pages or API routes
 $scriptName = str_replace('\\', '/', $_SERVER['SCRIPT_NAME'] ?? '');
 $requestUri = parse_url($_SERVER['REQUEST_URI'] ?? '', PHP_URL_PATH) ?? '/';
 
-// 1. Exclude admin portal
-if (preg_match('#/admin(/|\.php|$)#i', $scriptName) || preg_match('#/admin(/|\.php|$)#i', $requestUri)) {
-    return;
-}
-
-// 2. Exclude all internal pages (About, Services, Contact, Blog/Insights, Case Studies, Audit, API, etc.)
-if (preg_match('#^/(services|about|contact|insights?|case-stud|audit|api)(/|\.php|$)#i', $requestUri)
-    || str_contains($requestUri, 'service-detail')
-    || str_contains($requestUri, 'case-study-detail')
-    || str_contains($requestUri, 'insight-detail')) {
-    return;
-}
-
-// 3. Must match public homepage root or index.php only
-$cleanPath = rtrim($requestUri, '/');
-$isHome = ($cleanPath === '' || $cleanPath === '/index.php' || $cleanPath === '/businessdoctor' || $cleanPath === '/businessdoctor/index.php');
-
-if (!$isHome) {
+if (preg_match('#/admin(/|\.php|$)#i', $scriptName) || preg_match('#/admin(/|\.php|$)#i', $requestUri) || preg_match('#^/api(/|$)#i', $requestUri)) {
     return;
 }
 ?>

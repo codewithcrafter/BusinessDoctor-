@@ -1,101 +1,40 @@
 /**
  * BusinessDoctor - Global Lead Generation Popup Controller
- * Appears automatically after 5 seconds on eligible public pages.
- * Displays ONLY ONCE across the entire website per visitor.
- * Dismissal (X button, backdrop, Escape) or successful submission permanently prevents future display.
+ * Appears 5 seconds after page load on EVERY public page.
+ * Appears ONLY ONCE per page view (never repeats every 5s while on same page).
+ * If user refreshes the page or navigates to another page, popup appears again after 5 seconds.
  */
 
 (function () {
   'use strict';
 
-  // 1. Strict Homepage-Only Rule: Never run on internal pages or admin portal
-  var currentPath = (window.location.pathname || '').replace(/\/+$/, '') || '/';
-  
-  // Strip subfolder if running on local subpath /businessdoctor
-  var relativePath = currentPath;
-  if (relativePath.indexOf('/businessdoctor') === 0) {
-    relativePath = relativePath.substring(15) || '/';
-  }
-
-  var isHomepage = (relativePath === '/' || relativePath === '/index.php' || relativePath === '');
-
-  // Abort immediately if not on the public homepage or if on admin portal
-  if (!isHomepage || /\/admin(\/|$|\.php)/i.test(currentPath)) {
+  // 1. Strict Admin Route Guard: Never run on admin / CMS / login pages
+  var currentPath = window.location.pathname || '';
+  if (/\/admin(\/|$|\.php)/i.test(currentPath)) {
     return;
   }
 
-  // 2. Prevent duplicate script initializations
+  // 2. Prevent duplicate script initializations on same page
   if (window.__bdrLeadPopupInitialized) {
     return;
   }
   window.__bdrLeadPopupInitialized = true;
 
-  var STORAGE_KEY = 'bdr_lead_popup_completed';
+  // Clear legacy permanent lockout flags so page refresh or revisit triggers 5s popup cleanly
+  try {
+    localStorage.removeItem('bdr_lead_popup_completed');
+    localStorage.removeItem('bdr_lead_popup_dismissed');
+    sessionStorage.removeItem('bdr_lead_popup_completed');
+    sessionStorage.removeItem('bdr_lead_popup_dismissed');
+    document.cookie = 'bdr_lead_popup_completed=;expires=Thu, 01 Jan 1970 00:00:00 GMT;path=/;SameSite=Lax';
+    document.cookie = 'bdr_lead_popup_dismissed=;expires=Thu, 01 Jan 1970 00:00:00 GMT;path=/;SameSite=Lax';
+  } catch (e) {}
+
   var POPUP_DELAY_MS = 5000; // Exactly 5 seconds after page ready
-
-  // Persistence helpers: localStorage with first-party cookie fallback
-  // Dismissal is ONLY persisted after user closes, clicks backdrop, presses Escape, or submits
-  function isPopupDismissed() {
-    try {
-      if (typeof window.localStorage !== 'undefined') {
-        var val = window.localStorage.getItem(STORAGE_KEY) || window.localStorage.getItem('bdr_lead_popup_dismissed');
-        if (val === 'dismissed' || val === 'submitted') {
-          return true;
-        }
-      }
-    } catch (e) {}
-
-    // Cookie fallback check
-    try {
-      var match = document.cookie.match(new RegExp('(?:^|; )' + STORAGE_KEY + '=([^;]*)'));
-      if (match && match[1]) {
-        var cVal = decodeURIComponent(match[1]);
-        if (cVal === 'dismissed' || cVal === 'submitted') {
-          return true;
-        }
-      }
-      var matchOld = document.cookie.match(/(?:^|; )bdr_lead_popup_dismissed=([^;]*)/);
-      if (matchOld && (matchOld[1] === 'true' || matchOld[1] === 'dismissed' || matchOld[1] === 'submitted')) {
-        return true;
-      }
-    } catch (e) {}
-
-    return false;
-  }
-
-  function setPopupDismissed(reason) {
-    reason = reason || 'dismissed';
-    try {
-      if (typeof window.localStorage !== 'undefined') {
-        window.localStorage.setItem(STORAGE_KEY, reason);
-      }
-    } catch (e) {}
-
-    // Cookie fallback: 365 days, path=/, SameSite=Lax
-    try {
-      var d = new Date();
-      d.setTime(d.getTime() + 365 * 24 * 60 * 60 * 1000);
-      document.cookie = STORAGE_KEY + '=' + encodeURIComponent(reason) + ';expires=' + d.toUTCString() + ';path=/;SameSite=Lax';
-    } catch (e) {}
-  }
-
-  function resetPopupStorage() {
-    try {
-      if (typeof window.localStorage !== 'undefined') {
-        window.localStorage.removeItem(STORAGE_KEY);
-        window.localStorage.removeItem('bdr_lead_popup_dismissed');
-      }
-    } catch (e) {}
-    try {
-      if (typeof window.sessionStorage !== 'undefined') {
-        window.sessionStorage.removeItem('bdr_lead_popup_displayed');
-      }
-    } catch (e) {}
-    try {
-      document.cookie = STORAGE_KEY + '=;expires=Thu, 01 Jan 1970 00:00:00 GMT;path=/;SameSite=Lax';
-      document.cookie = 'bdr_lead_popup_dismissed=;expires=Thu, 01 Jan 1970 00:00:00 GMT;path=/;SameSite=Lax';
-    } catch (e) {}
-  }
+  var hasAppearedOnThisPage = false; // Appears ONLY ONE TIME per page view, never loops
+  var isPageDismissed = false; // Dismissed ONLY for the current page view
+  var isOpen = false;
+  var timerId = null;
 
   // Verification helper: Confirm popup is physically rendered and visible in DOM
   function isModalActuallyVisible(element) {
@@ -120,29 +59,17 @@
   }
 
   // Expose test utilities on window
-  window.bdrIsPopupDismissed = isPopupDismissed;
-  window.bdrIsPopupCompleted = isPopupDismissed;
-  window.bdrSetPopupDismissed = setPopupDismissed;
-  window.bdrSetPopupCompleted = setPopupDismissed;
-  window.bdrResetPopupStorage = resetPopupStorage;
+  window.bdrIsPageDismissed = function () {
+    return isPageDismissed;
+  };
+  window.bdrHasAppeared = function () {
+    return hasAppearedOnThisPage;
+  };
   window.bdrIsModalActuallyVisible = function () {
     return isModalActuallyVisible(document.getElementById('bdrLeadPopupModal'));
   };
 
-  // Immediate check: If visitor has already dismissed or submitted, abort immediately
-  if (isPopupDismissed()) {
-    return;
-  }
-
-  var isOpen = false;
-  var timerId = null;
-
   function initLeadPopup() {
-    // Re-check in case another tab or script updated storage
-    if (isPopupDismissed()) {
-      return;
-    }
-
     var modal = document.getElementById('bdrLeadPopupModal');
     if (!modal) return;
 
@@ -169,16 +96,21 @@
       sourceUrlInput.value = window.location.href;
     }
 
-    // Open Modal Function: Renders modal, confirms actual visibility
+    // Open Modal Function: Renders modal once per page view
     function openPopup() {
-      if (isOpen) return;
-      if (isPopupDismissed()) return;
+      // Remember: only ONE TIME pop up appears, not every 5 seconds
+      if (isOpen || hasAppearedOnThisPage || isPageDismissed) return;
+      hasAppearedOnThisPage = true;
+      isOpen = true;
+
+      // Clear any pending timer so it never repeats on this page
+      if (timerId) {
+        clearTimeout(timerId);
+        timerId = null;
+      }
 
       var targetModal = modal || document.getElementById('bdrLeadPopupModal');
-      if (!targetModal) {
-        // Modal DOM element missing: render failed, DO NOT mark visitor as dismissed
-        return;
-      }
+      if (!targetModal) return;
 
       // Step 1: Ensure form & header visible, success hidden
       if (headerElem) headerElem.style.display = 'block';
@@ -189,25 +121,23 @@
       targetModal.classList.add('is-active');
       targetModal.setAttribute('aria-hidden', 'false');
       document.body.classList.add('bdr-modal-open');
-      isOpen = true;
 
-      // Step 3: Confirm popup is ACTUALLY visible before focusing
+      // Step 3: Confirm popup is visible before focusing
       function confirmVisibility() {
         if (isModalActuallyVisible(targetModal)) {
-          // Successfully rendered and visible on screen
           if (nameInput) {
             nameInput.focus();
           }
         } else {
-          // Failed render: revert state and NEVER suppress the visitor
+          // Failed render: revert state
           isOpen = false;
+          hasAppearedOnThisPage = false;
           targetModal.classList.remove('is-active');
           targetModal.setAttribute('aria-hidden', 'true');
           document.body.classList.remove('bdr-modal-open');
         }
       }
 
-      // Verify visibility after browser paint cycle
       if (typeof window.requestAnimationFrame === 'function') {
         window.requestAnimationFrame(function () {
           setTimeout(confirmVisibility, 50);
@@ -217,19 +147,17 @@
       }
     }
 
-    // Close Modal Function (Permanently dismisses popup across the website)
+    // Close Modal Function: Dismisses for the rest of this page view
     function closePopup() {
       if (!isOpen && !modal.classList.contains('is-active')) return;
       isOpen = false;
-
-      // Persist dismissal only after close, backdrop, or Escape
-      setPopupDismissed('dismissed');
+      isPageDismissed = true; // Dismissed on this page view (will reappear only if user refreshes)
 
       modal.classList.remove('is-active');
       modal.setAttribute('aria-hidden', 'true');
       document.body.classList.remove('bdr-modal-open');
 
-      // Clean up in-flight timer if any
+      // Clear any timer so it never pops up again on this page
       if (timerId) {
         clearTimeout(timerId);
         timerId = null;
@@ -410,8 +338,7 @@
           })
           .then(function (res) {
             if (res.ok && res.body.success) {
-              // Permanently persist successful submission
-              setPopupCompleted('submitted');
+              isPageDismissed = true;
 
               // Hide header & form, show success view
               if (headerElem) headerElem.style.display = 'none';
@@ -479,9 +406,9 @@
       });
     }
 
-    // Schedule 5-second timer
+    // Schedule 5-second timer (fires ONLY ONCE per page load)
     function startTimer() {
-      if (timerId || isPopupDismissed()) return;
+      if (timerId || hasAppearedOnThisPage || isPageDismissed) return;
       timerId = setTimeout(openPopup, POPUP_DELAY_MS);
     }
 
@@ -509,3 +436,4 @@
     initLeadPopup();
   }
 })();
+
