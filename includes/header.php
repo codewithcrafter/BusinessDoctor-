@@ -70,6 +70,7 @@ $canonicalUrl = $canonicalUrl ?? (BASE_URL . $cleanPath . $canonicalParams);
   <link rel="stylesheet" href="<?= getAssetUrl('assets/css/components.css') ?>">
   <link rel="stylesheet" href="<?= getAssetUrl('assets/css/responsive.css') ?>">
   <link rel="stylesheet" href="<?= getAssetUrl('assets/css/services-redesign.css') ?>">
+  <link rel="stylesheet" href="<?= getAssetUrl('assets/css/lead-popup.css') ?>?v=<?= filemtime(__DIR__ . '/../assets/css/lead-popup.css') ?>">
 
   <!-- Favicon SVG (Code brackets / IT tech icon) -->
   <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%230d9488' stroke-width='2.5'><polyline points='16 18 22 12 16 6'/><polyline points='8 6 2 12 8 18'/></svg>">

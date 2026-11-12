@@ -90,6 +90,10 @@ $practices = getPracticeAreas();
   </div>
 </footer>
 
+<!-- Lead Generation Popup Modal -->
+<?php require_once __DIR__ . '/lead-popup.php'; ?>
+<script src="<?= getAssetUrl('assets/js/lead-popup.js') ?>?v=<?= filemtime(__DIR__ . '/../assets/js/lead-popup.js') ?>"></script>
+
 <!-- Core Vanilla JavaScript -->
 <script src="<?= getAssetUrl('assets/js/main.js') ?>?v=<?= filemtime(__DIR__ . '/../assets/js/main.js') ?>"></script>
 <script src="<?= getAssetUrl('assets/js/diagnostic-calculator.js') ?>" ></script>

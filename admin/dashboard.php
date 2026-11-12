@@ -317,18 +317,30 @@ require_once __DIR__ . '/includes/header.php';
       <table class="admin-table">
         <thead>
           <tr>
-            <th>Date</th>
+            <th>Date / Time</th>
+            <th>Lead Source</th>
             <th>Name &amp; Organization</th>
             <th>Email &amp; Phone</th>
-            <th>Service Interest</th>
-            <th>Message</th>
+            <th>Interest</th>
+            <th>Message / Source Page</th>
           </tr>
         </thead>
         <tbody>
           <?php foreach ($contacts as $co): ?>
             <tr>
               <td style="white-space: nowrap; font-family: var(--adm-font-mono); font-size: 0.76rem; color: var(--adm-text-dim);">
-                <?= e(date('M d, Y', strtotime($co['created_at']))) ?>
+                <?= e(date('M d, Y H:i', strtotime($co['created_at']))) ?>
+              </td>
+              <td>
+                <?php if (($co['lead_source'] ?? '') === 'Website Popup'): ?>
+                  <span class="status-pill" style="background: rgba(6, 181, 249, 0.15); color: #06B5F9; border: 1px solid rgba(6, 181, 249, 0.45); font-weight: 700; font-size: 0.72rem;">
+                    ⚡ Website Popup
+                  </span>
+                <?php else: ?>
+                  <span class="status-pill" style="background: rgba(148, 163, 184, 0.1); color: #94A3B8; border: 1px solid rgba(148, 163, 184, 0.25); font-size: 0.72rem;">
+                    <?= e($co['lead_source'] ?? 'Contact Form') ?>
+                  </span>
+                <?php endif; ?>
               </td>
               <td>
                 <div style="font-weight: 600; color: #ffffff;"><?= e($co['full_name']) ?></div>
@@ -344,7 +356,12 @@ require_once __DIR__ . '/includes/header.php';
                 </span>
               </td>
               <td style="max-width: 280px; font-size: 0.82rem; color: var(--adm-text-muted);">
-                <?= e(mb_strimwidth($co['message'], 0, 80, '...')) ?>
+                <div><?= e(mb_strimwidth($co['message'], 0, 90, '...')) ?></div>
+                <?php if (!empty($co['source_url'])): ?>
+                  <div style="font-size: 0.72rem; color: var(--adm-text-dim); margin-top: 0.25rem;">
+                    <span style="color: #64748B;">Page:</span> <a href="<?= e($co['source_url']) ?>" target="_blank" style="color: var(--adm-teal); text-decoration: underline;"><?= e(parse_url($co['source_url'], PHP_URL_PATH) ?: $co['source_url']) ?></a>
+                  </div>
+                <?php endif; ?>
               </td>
             </tr>
           <?php endforeach; ?>
