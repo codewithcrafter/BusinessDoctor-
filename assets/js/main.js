@@ -856,8 +856,8 @@ function initHeroScrollAnimation() {
   const sticky = document.getElementById('heroStickyStage');
   if (!track || !sticky) return;
 
-  // Check prefers-reduced-motion or mobile viewport (below 768px uses natural responsive flow)
-  if (window.matchMedia('(prefers-reduced-motion: reduce)').matches || window.innerWidth <= 768) {
+  // Check prefers-reduced-motion
+  if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
     const editorialLayer = document.getElementById('heroEditorialLayer');
     const visualLayer = document.getElementById('heroVisualLayer');
     const hudCard = document.getElementById('heroHudCard');
@@ -1001,51 +1001,51 @@ function initHeroScrollAnimation() {
         }
       }
     } else {
-      // MOBILE & TABLET SEQUENTIAL FLOW (Zero overlap)
-      // Phase A (p: 0 -> 0.30): Editorial Content in clear view
+      // MOBILE & TABLET SEQUENTIAL CINEMATIC FLOW
+      // Stage 1 (p: 0 -> 0.28): Initial Editorial Content (moves up and fades out)
       if (editorialLayer) {
-        const t1 = clamp(p / 0.25, 0, 1);
+        const t1 = clamp(p / 0.24, 0, 1);
         const editY = -t1 * 30;
+        const editOpacity = Math.max(0, 1 - t1 * 1.25);
         editorialLayer.style.transform = `translateY(${editY}px) scale(${1 - t1 * 0.04})`;
-        editorialLayer.style.opacity = String(Math.max(0, 1 - t1 * 1.2));
-        editorialLayer.style.pointerEvents = t1 > 0.5 ? 'none' : 'auto';
+        editorialLayer.style.opacity = String(editOpacity);
+        editorialLayer.style.pointerEvents = editOpacity < 0.1 ? 'none' : 'auto';
       }
 
-      // Phase B (p: 0.22 -> 0.64): HUD Visual Board appears centered, then exits cleanly
+      // Stage 2 (p: 0.25 -> 0.65): Revealed Transformation Narrative (Next Content)
+      if (revealedLayer) {
+        const enter = clamp((p - 0.24) / 0.12, 0, 1);
+        const exit = clamp((p - 0.54) / 0.11, 0, 1);
+        const revOpacity = enter * (1 - exit);
+        const revY = (1 - enter) * 25 - exit * 25;
+        revealedLayer.style.transform = `translateY(${revY}px)`;
+        revealedLayer.style.opacity = String(revOpacity);
+        revealedLayer.style.pointerEvents = revOpacity > 0.4 ? 'auto' : 'none';
+      }
+
+      // Stage 3 (p: 0.58 -> 0.96): Enterprise Operating Standards HUD Card
       if (visualLayer && hudCard) {
-        const tVisEnter = clamp((p - 0.22) / 0.18, 0, 1);
-        const tVisExit = clamp((p - 0.52) / 0.14, 0, 1);
+        const tVisEnter = clamp((p - 0.58) / 0.14, 0, 1);
+        const tVisExit = clamp((p - 0.92) / 0.08, 0, 1);
         const visOpacity = tVisEnter * (1 - tVisExit);
-        const visY = -tVisExit * 30;
+        const visY = (1 - tVisEnter) * 25 - tVisExit * 20;
         visualLayer.style.opacity = String(visOpacity);
         visualLayer.style.transform = `translateY(${visY}px)`;
-        visualLayer.style.pointerEvents = visOpacity > 0.5 ? 'auto' : 'none';
-        hudCard.style.transform = `scale(${0.94 + tVisEnter * 0.06})`;
+        visualLayer.style.pointerEvents = visOpacity > 0.4 ? 'auto' : 'none';
+        hudCard.style.transform = `scale(${0.96 + tVisEnter * 0.04})`;
 
         if (kpiBoxes.length >= 4) {
           const tBox = tVisEnter;
-          kpiBoxes[0].style.transform = `translate3d(${-tBox * 6}px, ${-tBox * 4}px, 0)`;
-          kpiBoxes[1].style.transform = `translate3d(${tBox * 6}px, ${-tBox * 4}px, 0)`;
-          kpiBoxes[2].style.transform = `translate3d(${-tBox * 4}px, ${tBox * 4}px, 0)`;
-          kpiBoxes[3].style.transform = `translate3d(${tBox * 4}px, ${tBox * 4}px, 0)`;
+          kpiBoxes[0].style.transform = `translate3d(${-tBox * 4}px, ${-tBox * 3}px, 0)`;
+          kpiBoxes[1].style.transform = `translate3d(${tBox * 4}px, ${-tBox * 3}px, 0)`;
+          kpiBoxes[2].style.transform = `translate3d(${-tBox * 3}px, ${tBox * 3}px, 0)`;
+          kpiBoxes[3].style.transform = `translate3d(${tBox * 3}px, ${tBox * 3}px, 0)`;
         }
       }
 
-      // Revealed layer hidden on mobile to avoid overcrowding
-      if (revealedLayer) {
-        revealedLayer.style.opacity = '0';
-        revealedLayer.style.pointerEvents = 'none';
-      }
-
-      // Phase C (p: 0.64 -> 0.95): Vital Metrics Dock appears completely unobstructed
-      if (vitalDock) {
-        const tDock = clamp((p - 0.64) / 0.22, 0, 1);
-        vitalDock.style.transform = `translateY(${(1 - tDock) * 20}px)`;
-        vitalDock.style.opacity = String(tDock);
-        vitalDock.style.pointerEvents = tDock > 0.5 ? 'auto' : 'none';
-        if (tDock > 0.05 && typeof window.triggerKpiDataStrip === 'function') {
-          window.triggerKpiDataStrip();
-        }
+      // Final Transition Trigger for KPI Strip (p >= 0.70)
+      if (typeof window.triggerKpiDataStrip === 'function' && p > 0.7) {
+        window.triggerKpiDataStrip();
       }
     }
 

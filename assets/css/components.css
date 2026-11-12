@@ -841,6 +841,7 @@ body.mobile-nav-lock .site-header {
    ============================================================ */
 .hero-scroll-track {
   position: relative;
+  height: 250vh;
   background: #0D223A;
 }
 
