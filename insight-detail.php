@@ -253,27 +253,7 @@ require_once __DIR__ . '/includes/header.php';
 
     <!-- Article Content Stream -->
     <div class="article-editorial-body" style="font-size: 1.12rem; line-height: 1.85; color: var(--color-text);">
-      <?php 
-        $text = e($insight['content']);
-        // Convert ## Header to h2
-        $text = preg_replace('/^##\s+(.+)$/m', '<h2 style="font-size: 1.75rem; font-weight: 800; color: var(--color-text); margin-top: 2.75rem; margin-bottom: 1.25rem; line-height: 1.3;">$1</h2>', $text);
-        // Convert ### Header to h3
-        $text = preg_replace('/^###\s+(.+)$/m', '<h3 style="font-size: 1.35rem; font-weight: 700; color: var(--color-text); margin-top: 2rem; margin-bottom: 1rem;">$1</h3>', $text);
-        // Convert **bold**
-        $text = preg_replace('/\*\*(.+?)\*\*/', '<strong>$1</strong>', $text);
-        // Convert - Bullet lists
-        $text = preg_replace('/^-\s+(.+)$/m', '<li style="margin-bottom: 0.5rem;">$1</li>', $text);
-        // Wrap adjacent li in ul
-        $text = preg_replace('/(<li.*?>.*?<\/li>\s*)+/s', '<ul style="padding-left: 1.5rem; margin: 1.25rem 0;">$0</ul>', $text);
-        // Support images intentionally inserted by admin inside article content via markdown ![alt](src)
-        $text = preg_replace_callback('/!\[([^\]]*)\]\(([^)]+)\)/', function($m) {
-            $alt = htmlspecialchars($m[1]);
-            $src = getAssetUrl($m[2]);
-            return '<figure style="margin: 2.5rem 0; width: 100%;"><div style="border-radius: var(--radius-lg); overflow: hidden; border: 1px solid var(--color-slate-200); box-shadow: var(--shadow-md); background: #071224; aspect-ratio: 16 / 9;"><img src="' . $src . '" alt="' . $alt . '" style="width: 100%; height: 100%; object-fit: cover; display: block;" loading="lazy"></div>' . (!empty($alt) ? '<figcaption style="margin-top: 0.85rem; font-family: var(--font-mono); font-size: 0.78rem; color: var(--color-text-muted);">' . $alt . '</figcaption>' : '') . '</figure>';
-        }, $text);
-
-        echo nl2br($text);
-      ?>
+      <?= renderBlogContent($insight['content'] ?? '') ?>
     </div>
 
     <!-- Author Profile Card -->

@@ -4,3 +4,4 @@
 *.sqlite-journal
 scratch/
 database/backups/
+backups/

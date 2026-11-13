@@ -41,6 +41,285 @@ function sanitizeArticleHtml(?string $html): string
 }
 
 /**
+ * Helper to resolve relevant local professional blog asset URL with proper encoding
+ */
+if (!function_exists('getBlogAssetUrl')) {
+    function getBlogAssetUrl(string $path): string
+    {
+        $cleanPath = ltrim($path, '/');
+        $segments = explode('/', $cleanPath);
+        $encoded = array_map('rawurlencode', $segments);
+        return appUrl(implode('/', $encoded));
+    }
+}
+
+/**
+ * Render blog article content safely, semantically, and cleanly for public display.
+ * Detects whether content is HTML or Markdown, resolves any accidentally encoded entities,
+ * parses Markdown to semantic HTML if needed, applies strict allowlist sanitization (XSS prevention),
+ * secures external links with rel="noopener noreferrer", and renders proper HTML elements without printing raw tags.
+ */
+function renderBlogContent(?string $content): string
+{
+    if ($content === null || trim($content) === '') {
+        return '';
+    }
+
+    $text = trim($content);
+
+    // 1. Safe Entity Check: Check if HTML tags were accidentally entity-encoded
+    // Only decode if there are NO raw HTML tags but there ARE encoded block tags like &lt;p&gt; or &lt;h1&gt;
+    if (!preg_match('/<(?:p|h[1-6]|ul|ol|li|blockquote|table|div|span|strong|b|em|i|a|figure)\b/i', $text)
+        && preg_match('/&lt;(?:p|h[1-6]|ul|ol|li|blockquote|table|div|span|strong|b|em|i|a|figure)\b/i', $text)) {
+        $text = htmlspecialchars_decode($text, ENT_QUOTES);
+    }
+
+    // 2. Format Detection: Determine if content is HTML or Markdown
+    $isHtml = (bool)preg_match('/<(?:p|h[1-6]|ul|ol|li|blockquote|table|div|figure|pre|section|article)\b/i', $text);
+
+    if (!$isHtml) {
+        // Content is Markdown -> convert to clean semantic HTML
+        $text = markdownToSemanticHtml($text);
+    }
+
+    // 3. Allowlist HTML Sanitization & Link/Image Security
+    $text = sanitizeBlogHtmlAllowlist($text);
+
+    return trim($text);
+}
+
+/**
+ * Convert Markdown body to clean, semantic HTML
+ */
+function markdownToSemanticHtml(string $md): string
+{
+    $text = str_replace(["\r\n", "\r"], "\n", $md);
+
+    // A. Stash Fenced Code Blocks (Use tokens with no _ or * or HTML brackets)
+    $codeBlocks = [];
+    $text = preg_replace_callback('/```([a-zA-Z0-9_-]+)?\n(.*?)\n```/s', function ($m) use (&$codeBlocks) {
+        $idx = count($codeBlocks);
+        $lang = !empty($m[1]) ? ' class="language-' . htmlspecialchars($m[1], ENT_QUOTES, 'UTF-8') . '"' : '';
+        $code = htmlspecialchars($m[2], ENT_QUOTES, 'UTF-8');
+        $codeBlocks[$idx] = "<pre><code{$lang}>{$code}</code></pre>";
+        return "\n\nTOKENCODEBLOCK{$idx}END\n\n";
+    }, $text);
+
+    // B. Stash Markdown Tables
+    $tables = [];
+    $text = preg_replace_callback('/((?:^\|.+?\|\s*$\n?){2,})/m', function ($m) use (&$tables) {
+        $rawLines = explode("\n", trim($m[1]));
+        $lines = [];
+        foreach ($rawLines as $rl) {
+            $trimmed = trim($rl);
+            if ($trimmed !== '') $lines[] = $trimmed;
+        }
+        if (count($lines) < 2) return $m[1];
+
+        $headerLine = array_shift($lines);
+        $sepLine = array_shift($lines);
+
+        if (!str_contains($sepLine, '-')) return $m[1];
+
+        $parseRow = function(string $row): array {
+            $trimmed = trim($row, '|');
+            return array_map('trim', explode('|', $trimmed));
+        };
+
+        $headers = $parseRow($headerLine);
+        $tableHtml = '<table class="article-table"><thead><tr>';
+        foreach ($headers as $h) {
+            $tableHtml .= '<th>' . htmlspecialchars($h, ENT_QUOTES, 'UTF-8') . '</th>';
+        }
+        $tableHtml .= '</tr></thead><tbody>';
+
+        foreach ($lines as $line) {
+            $cells = $parseRow($line);
+            $tableHtml .= '<tr>';
+            foreach ($cells as $c) {
+                $tableHtml .= '<td>' . htmlspecialchars($c, ENT_QUOTES, 'UTF-8') . '</td>';
+            }
+            $tableHtml .= '</tr>';
+        }
+        $tableHtml .= '</tbody></table>';
+
+        $idx = count($tables);
+        $tables[$idx] = $tableHtml;
+        return "\n\nTOKENTABLEBLOCK{$idx}END\n\n";
+    }, $text);
+
+    // C. Blockquotes
+    $text = preg_replace_callback('/((?:^>\s*.*$\n?)+)/m', function ($m) {
+        $lines = explode("\n", trim($m[1]));
+        $cleanLines = [];
+        foreach ($lines as $l) {
+            $cleanLines[] = trim(preg_replace('/^>\s*/', '', trim($l)));
+        }
+        return "\n\n<blockquote><p>" . implode(' ', $cleanLines) . "</p></blockquote>\n\n";
+    }, $text);
+
+    // D. Headings (# H1 to ###### H6)
+    $text = preg_replace_callback('/^(#{1,6})\s+(.+)$/m', function ($m) {
+        $lvl = strlen($m[1]);
+        $title = trim($m[2]);
+        return "\n\n<h{$lvl}>{$title}</h{$lvl}>\n\n";
+    }, $text);
+
+    // E. Horizontal Rules
+    $text = preg_replace('/^(?:---|\*\*\*|___)\s*$/m', "\n\n<hr>\n\n", $text);
+
+    // F. Unordered Lists
+    $text = preg_replace_callback('/((?:^[-*+]\s+.+$\n?)+)/m', function ($m) {
+        $lines = explode("\n", trim($m[1]));
+        $items = '';
+        foreach ($lines as $l) {
+            $l = trim($l);
+            if (preg_match('/^[-*+]\s+(.+)$/', $l, $im)) {
+                $items .= '<li>' . trim($im[1]) . '</li>';
+            }
+        }
+        return "\n\n<ul>" . $items . "</ul>\n\n";
+    }, $text);
+
+    // G. Ordered Lists
+    $text = preg_replace_callback('/((?:^\d+\.\s+.+$\n?)+)/m', function ($m) {
+        $lines = explode("\n", trim($m[1]));
+        $items = '';
+        foreach ($lines as $l) {
+            $l = trim($l);
+            if (preg_match('/^\d+\.\s+(.+)$/', $l, $im)) {
+                $items .= '<li>' . trim($im[1]) . '</li>';
+            }
+        }
+        return "\n\n<ol>" . $items . "</ol>\n\n";
+    }, $text);
+
+    // H. Markdown Images: ![alt](src)
+    $text = preg_replace_callback('/!\[([^\]]*)\]\(([^)]+)\)/', function ($m) {
+        $alt = htmlspecialchars($m[1], ENT_QUOTES, 'UTF-8');
+        $rawSrc = trim($m[2]);
+        $src = (str_starts_with($rawSrc, 'http://') || str_starts_with($rawSrc, 'https://') || str_starts_with($rawSrc, '//'))
+            ? htmlspecialchars($rawSrc, ENT_QUOTES, 'UTF-8')
+            : htmlspecialchars(getBlogAssetUrl($rawSrc), ENT_QUOTES, 'UTF-8');
+        $caption = !empty($alt) ? "<figcaption>{$alt}</figcaption>" : '';
+        return "\n\n<figure class=\"article-body-figure\"><div class=\"media-frame\"><img src=\"{$src}\" alt=\"{$alt}\" loading=\"lazy\"></div>{$caption}</figure>\n\n";
+    }, $text);
+
+    // I. Markdown Links: [text](href)
+    $text = preg_replace_callback('/\[([^\]]+)\]\(([^)]+)\)/', function ($m) {
+        $label = $m[1];
+        $href = htmlspecialchars(trim($m[2]), ENT_QUOTES, 'UTF-8');
+        return "<a href=\"{$href}\">{$label}</a>";
+    }, $text);
+
+    // J. Inline Typography
+    // Bold: **text** or __text__
+    $text = preg_replace('/(\*\*|__)(.*?)\1/', '<strong>$2</strong>', $text);
+    // Italic: *text* or _text_
+    $text = preg_replace('/(?<!\w)(\*|_)(.*?)\1(?!\w)/', '<em>$2</em>', $text);
+    // Strikethrough: ~~text~~
+    $text = preg_replace('/~~(.*?)~~/', '<s>$1</s>', $text);
+    // Inline code: `code`
+    $text = preg_replace('/`([^`]+)`/', '<code>$1</code>', $text);
+
+    // K. Paragraphs: split by double newlines and wrap non-block elements in <p>
+    $blocks = preg_split('/\n{2,}/', $text);
+    $finalBlocks = [];
+    $blockTagPattern = '/^\s*<(?:h[1-6]|ul|ol|blockquote|table|figure|pre|hr|div|p)\b/i';
+    $tokenPattern = '/^\s*TOKEN(?:CODE|TABLE)BLOCK\d+END\s*$/';
+
+    foreach ($blocks as $block) {
+        $block = trim($block);
+        if ($block === '') continue;
+
+        if (preg_match($tokenPattern, $block) || preg_match($blockTagPattern, $block)) {
+            $finalBlocks[] = $block;
+        } else {
+            $pContent = nl2br($block);
+            $finalBlocks[] = "<p>{$pContent}</p>";
+        }
+    }
+    $text = implode("\n\n", $finalBlocks);
+
+    // L. Restore Code and Table Blocks
+    foreach ($codeBlocks as $idx => $blockHtml) {
+        $text = str_replace("TOKENCODEBLOCK{$idx}END", $blockHtml, $text);
+    }
+    foreach ($tables as $idx => $tableHtml) {
+        $text = str_replace("TOKENTABLEBLOCK{$idx}END", $tableHtml, $text);
+    }
+
+    return $text;
+}
+
+/**
+ * Strict allowlist HTML sanitizer for published blog articles
+ */
+function sanitizeBlogHtmlAllowlist(string $html): string
+{
+    static $allowedTags = [
+        'h1', 'h2', 'h3', 'h4', 'h5', 'h6',
+        'p', 'div', 'span',
+        'strong', 'b', 'em', 'i', 'u', 's', 'del',
+        'ul', 'ol', 'li',
+        'a',
+        'img', 'figure', 'figcaption',
+        'blockquote',
+        'table', 'thead', 'tbody', 'tfoot', 'tr', 'th', 'td',
+        'br', 'hr',
+        'pre', 'code',
+        'small', 'sub', 'sup'
+    ];
+
+    // 1. Remove dangerous executable containers and their contents completely
+    $dangerousTags = 'script|style|iframe|object|embed|applet|form|input|button|select|textarea|frameset|frame|meta|link|base';
+    $clean = preg_replace('#<(' . $dangerousTags . ')[^>]*>.*?</\1>#is', '', $html);
+    $clean = preg_replace('#<(' . $dangerousTags . ')[^>]*>#is', '', $clean);
+
+    // 2. Remove all inline event handlers (on*)
+    $clean = preg_replace('/\son\w+\s*=\s*("[^"]*"|\'[^\']*\'|[^\s>]+)/i', '', $clean);
+
+    // 3. Remove dangerous URL schemes
+    $clean = preg_replace('/href\s*=\s*["\']\s*(?:javascript|vbscript):[^"\']*["\']/i', 'href="#"', $clean);
+    $clean = preg_replace('/src\s*=\s*["\']\s*(?:javascript|vbscript):[^"\']*["\']/i', 'src=""', $clean);
+
+    // 4. Strip tags outside allowlist
+    $tagAllowlistString = '<' . implode('><', $allowedTags) . '>';
+    $clean = strip_tags($clean, $tagAllowlistString);
+
+    // 5. Secure external links: add rel="noopener noreferrer" and target="_blank"
+    $clean = preg_replace_callback('/<a\b([^>]*)>/i', function ($m) {
+        $attrs = $m[1];
+        if (preg_match('/href=["\']([^"\']+)["\']/i', $attrs, $hm)) {
+            $href = trim($hm[1]);
+            $isExternal = (bool)preg_match('/^https?:\/\//i', $href)
+                && !str_contains($href, 'businesdoctor.com')
+                && !str_contains($href, 'businessdoctor.com')
+                && !str_contains($href, '127.0.0.1')
+                && !str_contains($href, 'localhost');
+
+            if ($isExternal) {
+                if (!preg_match('/rel=["\']/i', $attrs)) {
+                    $attrs .= ' rel="noopener noreferrer"';
+                } else {
+                    $attrs = preg_replace('/rel=["\'](.*?)["\']/i', 'rel="$1 noopener noreferrer"', $attrs);
+                }
+                if (!preg_match('/target=["\']/i', $attrs)) {
+                    $attrs .= ' target="_blank"';
+                }
+            }
+        }
+        return "<a{$attrs}>";
+    }, $clean);
+
+    // 6. Clean up redundant empty tags
+    $clean = preg_replace('#<p>\s*</p>#i', '', $clean);
+    $clean = preg_replace('#<p>\s*<br\s*/?>\s*</p>#i', '', $clean);
+
+    return $clean;
+}
+
+/**
  * Sanitize external URL to prevent javascript: and data: XSS injections
  */
 function safeUrl(?string $url): string
