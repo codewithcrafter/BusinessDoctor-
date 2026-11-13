@@ -153,7 +153,10 @@ $availableTypes = [
     'ProfessionalService' => 'Consulting & IT Practice Portfolio',
     'Article' => 'Technical Article / Case Study',
     'BlogPosting' => 'Blog Perspective Entry',
-    'BreadcrumbList' => 'Hierarchical Navigation Trail'
+    'Blog' => 'Blog Publication & Insights Collection',
+    'BreadcrumbList' => 'Hierarchical Navigation Trail',
+    'FAQPage' => 'Frequently Asked Questions (Q&A Accordion)',
+    'Review' => 'Verified Customer Review / Star Rating'
 ];
 
 $pageTitle = $isEditing ? 'Edit Schema — ' . $schemaName : 'Create New Schema';
@@ -546,6 +549,51 @@ const starterTemplates = {
     "publisher": {
       "@id": "{{BASE_URL}}/#organization"
     }
+  },
+  'Blog': {
+    "@context": "https://schema.org",
+    "@type": "Blog",
+    "@id": "{{BASE_URL}}/insights.php#blog",
+    "name": "Perspectives & Technical Insights — BusinessDoctor",
+    "description": "Enterprise engineering insights, digital transformation architectures, and strategic advisory perspectives.",
+    "url": "{{BASE_URL}}/insights.php",
+    "publisher": {
+      "@type": "Organization",
+      "@id": "{{BASE_URL}}/#organization",
+      "name": "{{ORGANIZATION_NAME}}"
+    }
+  },
+  'FAQPage': {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "What is the typical timeframe for a full digital audit?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Comprehensive architectural and telemetry audits are typically delivered within 24 to 48 business hours."
+        }
+      }
+    ]
+  },
+  'Review': {
+    "@context": "https://schema.org",
+    "@type": "Review",
+    "itemReviewed": {
+      "@type": "Service",
+      "name": "{{PAGE_TITLE}}"
+    },
+    "author": {
+      "@type": "Person",
+      "name": "Client Name"
+    },
+    "reviewRating": {
+      "@type": "Rating",
+      "ratingValue": "5",
+      "bestRating": "5"
+    },
+    "reviewBody": "Exceptional software engineering and scalable architecture delivery."
   },
   'BreadcrumbList': {
     "@context": "https://schema.org",

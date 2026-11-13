@@ -144,25 +144,45 @@ $requiredMatrix = [
     ],
     'diagnostic' => [
         'name' => 'Digital Audit',
-        'url' => '/diagnostic.php',
+        'url' => '/audit.php',
         'required' => ['Organization', 'BreadcrumbList'],
         'notes' => []
     ]
 ];
 
-// Build audit map of configured types per page_key
+// Build audit map of configured types per page_key (Strict exact matching, no cross-type aliasing)
 $allDbSchemas = $pdo->query("SELECT id, page_key, schema_type, status FROM page_schemas")->fetchAll(PDO::FETCH_ASSOC);
 $configuredByType = [];
 foreach ($allDbSchemas as $ds) {
     $configuredByType[$ds['page_key']][$ds['schema_type']] = $ds;
-    // Map compatible aliases
-    if ($ds['schema_type'] === 'BlogPosting') {
-        $configuredByType[$ds['page_key']]['Blog'] = $ds;
-    }
-    if ($ds['schema_type'] === 'ContactPage' || $ds['schema_type'] === 'AboutPage') {
-        $configuredByType[$ds['page_key']]['WebPage'] = $ds;
+}
+
+// Calculate exact 8 required metric counters
+$totalRequiredCombinations = 0;
+$renderedRequiredCount = 0;
+$draftRequiredCount = 0;
+$missingRequiredCount = 0;
+$contentBlockedCount = 0;
+
+foreach ($requiredMatrix as $pk => $mItem) {
+    foreach ($mItem['required'] as $rt) {
+        $totalRequiredCombinations++;
+        $cfg = $configuredByType[$pk][$rt] ?? null;
+        if ($cfg) {
+            if ($cfg['status'] === 'active') {
+                $renderedRequiredCount++;
+            } elseif ($cfg['status'] === 'draft') {
+                $draftRequiredCount++;
+                if (!empty($mItem['notes'][$rt])) {
+                    $contentBlockedCount++;
+                }
+            }
+        } else {
+            $missingRequiredCount++;
+        }
     }
 }
+$totalInactive = (int)$pdo->query("SELECT COUNT(*) FROM page_schemas WHERE status = 'inactive'")->fetchColumn();
 
 $seoSyncStatus = SeoSyncEngine::getSyncStatus();
 $pageTitle = 'Schema Management CMS';
@@ -188,29 +208,39 @@ require_once __DIR__ . '/includes/header.php';
   </div>
 </div>
 
-<!-- Metrics Overview Cards -->
-<div class="admin-stats-grid" style="grid-template-columns: repeat(auto-fit, minmax(210px, 1fr)); margin-bottom: 1.75rem; width: 100%; box-sizing: border-box;">
-  <div class="admin-stat-box" style="padding: 1.15rem 1.35rem;">
+<!-- Metrics Overview Cards (8 Distinct Counters per Final Audit Specification) -->
+<div class="admin-stats-grid" style="grid-template-columns: repeat(auto-fit, minmax(170px, 1fr)); gap: 1rem; margin-bottom: 1.75rem; width: 100%; box-sizing: border-box;">
+  <div class="admin-stat-box" style="padding: 1rem 1.15rem;">
     <div class="admin-stat-icon" style="background: rgba(6, 181, 249, 0.15); color: var(--adm-teal);">
-      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="16 18 22 12 16 6"/><polyline points="8 6 2 12 8 18"/></svg>
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="18" height="18" rx="2" ry="2"/><line x1="3" y1="9" x2="21" y2="9"/><line x1="9" y1="21" x2="9" y2="9"/></svg>
     </div>
     <div>
-      <div class="admin-stat-val" style="color: var(--adm-teal);"><?= $totalSchemas ?></div>
-      <div class="admin-stat-lbl">Configured Schemas</div>
+      <div class="admin-stat-val" style="color: var(--adm-teal);"><?= $totalRequiredCombinations ?></div>
+      <div class="admin-stat-lbl">Required Schemas</div>
     </div>
   </div>
 
-  <div class="admin-stat-box" style="padding: 1.15rem 1.35rem;">
+  <div class="admin-stat-box" style="padding: 1rem 1.15rem;">
+    <div class="admin-stat-icon" style="background: rgba(147, 51, 234, 0.15); color: #C084FC;">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="16 18 22 12 16 6"/><polyline points="8 6 2 12 8 18"/></svg>
+    </div>
+    <div>
+      <div class="admin-stat-val" style="color: #C084FC;"><?= $totalSchemas ?></div>
+      <div class="admin-stat-lbl">Configured in DB</div>
+    </div>
+  </div>
+
+  <div class="admin-stat-box" style="padding: 1rem 1.15rem;">
     <div class="admin-stat-icon" style="background: rgba(16, 185, 129, 0.15); color: #34D399;">
       <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg>
     </div>
     <div>
       <div class="admin-stat-val" style="color: #34D399;"><?= $totalActive ?></div>
-      <div class="admin-stat-lbl">Live on Website</div>
+      <div class="admin-stat-lbl">Active Schemas</div>
     </div>
   </div>
 
-  <div class="admin-stat-box" style="padding: 1.15rem 1.35rem;">
+  <div class="admin-stat-box" style="padding: 1rem 1.15rem;">
     <div class="admin-stat-icon" style="background: rgba(245, 158, 11, 0.15); color: #FBBF24;">
       <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 14 14"/></svg>
     </div>
@@ -220,13 +250,43 @@ require_once __DIR__ . '/includes/header.php';
     </div>
   </div>
 
-  <div class="admin-stat-box" style="padding: 1.15rem 1.35rem;">
-    <div class="admin-stat-icon" style="background: rgba(59, 130, 246, 0.15); color: #60A5FA;">
-      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"/><path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"/></svg>
+  <div class="admin-stat-box" style="padding: 1rem 1.15rem;">
+    <div class="admin-stat-icon" style="background: rgba(100, 116, 139, 0.15); color: #94A3B8;">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><line x1="4.93" y1="4.93" x2="19.07" y2="19.07"/></svg>
     </div>
     <div>
-      <div class="admin-stat-val"><?= $totalSupportedPages ?></div>
-      <div class="admin-stat-lbl">Supported Templates</div>
+      <div class="admin-stat-val" style="color: #94A3B8;"><?= $totalInactive ?></div>
+      <div class="admin-stat-lbl">Inactive Schemas</div>
+    </div>
+  </div>
+
+  <div class="admin-stat-box" style="padding: 1rem 1.15rem;">
+    <div class="admin-stat-icon" style="background: rgba(6, 181, 249, 0.15); color: #38BDF8;">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+    </div>
+    <div>
+      <div class="admin-stat-val" style="color: #38BDF8;"><?= $renderedRequiredCount ?> <span style="font-size: 0.85rem; color: var(--adm-text-muted);">/ <?= $totalRequiredCombinations ?></span></div>
+      <div class="admin-stat-lbl">Rendered Required</div>
+    </div>
+  </div>
+
+  <div class="admin-stat-box" style="padding: 1rem 1.15rem;">
+    <div class="admin-stat-icon" style="background: rgba(239, 68, 68, 0.15); color: #F87171;">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><line x1="15" y1="9" x2="9" y2="15"/><line x1="9" y1="9" x2="15" y2="15"/></svg>
+    </div>
+    <div>
+      <div class="admin-stat-val" style="color: <?= $missingRequiredCount === 0 ? '#34D399' : '#F87171' ?>;"><?= $missingRequiredCount ?></div>
+      <div class="admin-stat-lbl">Missing Schemas</div>
+    </div>
+  </div>
+
+  <div class="admin-stat-box" style="padding: 1rem 1.15rem;">
+    <div class="admin-stat-icon" style="background: rgba(245, 158, 11, 0.15); color: #FBBF24;">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M10.29 3.86L1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L13.71 3.86a2 2 0 0 0-3.42 0z"/><line x1="12" y1="9" x2="12" y2="13"/><line x1="12" y1="17" x2="12.01" y2="17"/></svg>
+    </div>
+    <div>
+      <div class="admin-stat-val" style="color: #FBBF24;"><?= $contentBlockedCount ?></div>
+      <div class="admin-stat-lbl">Content-Blocked</div>
     </div>
   </div>
 </div>

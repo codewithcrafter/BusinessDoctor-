@@ -42,8 +42,8 @@ function getSupportedSchemaPages(): array
         ],
         'diagnostic' => [
             'name' => 'Digital Architecture Audit',
-            'url' => '/diagnostic.php',
-            'recommended_types' => ['WebPage'],
+            'url' => '/audit.php',
+            'recommended_types' => ['WebPage', 'BreadcrumbList'],
             'is_dynamic' => false
         ],
         'case-studies' => [
@@ -227,10 +227,10 @@ function generateArticleSchemaGraph(array $article, string $baseUrl = ''): array
         '@type' => 'BlogPosting',
         '@id' => $articleUrl . '#article',
         'isPartOf' => [
-            '@type' => 'WebSite',
-            '@id' => $baseUrl . '/#website',
-            'name' => $appName,
-            'url' => $baseUrl . '/'
+            '@type' => 'Blog',
+            '@id' => $baseUrl . '/insights.php#blog',
+            'name' => 'Perspectives & Technical Insights — ' . $appName,
+            'url' => $baseUrl . '/insights.php'
         ],
         'headline' => $title,
         'description' => $description,
@@ -328,7 +328,30 @@ function generateArticleSchemaGraph(array $article, string $baseUrl = ''): array
         $person['description'] = $authorBio;
     }
 
+    // 0. Parent Publication Blog Schema
+    $blog = [
+        '@context' => 'https://schema.org',
+        '@type' => 'Blog',
+        '@id' => $baseUrl . '/insights.php#blog',
+        'name' => 'Perspectives & Technical Insights — ' . $appName,
+        'description' => 'Enterprise engineering insights, digital transformation architectures, and strategic advisory perspectives.',
+        'url' => $baseUrl . '/insights.php',
+        'publisher' => [
+            '@type' => 'Organization',
+            '@id' => $baseUrl . '/#organization',
+            'name' => $appName,
+            'url' => $baseUrl . '/'
+        ],
+        'blogPost' => [
+            '@type' => 'BlogPosting',
+            '@id' => $articleUrl . '#article',
+            'headline' => $title,
+            'url' => $articleUrl
+        ]
+    ];
+
     $schemas = [
+        'Blog' => $blog,
         'BlogPosting' => $blogPosting,
         'BreadcrumbList' => $breadcrumbs,
         'Organization' => $organization,
