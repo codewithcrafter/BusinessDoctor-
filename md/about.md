@@ -1,8 +1,8 @@
 # About BusinessDoctor — Firm Profile & Leadership
 > BusinessDoctor IT Solutions & Digital Services Private Limited combines software engineering, performance marketing, and conversion architecture.
 
-- **Primary URL**: [https://demo.businessdoctor.com/about.php](https://demo.businessdoctor.com/about.php)
-- **Markdown Resource**: [https://demo.businessdoctor.com/md/about.md](https://demo.businessdoctor.com/md/about.md)
+- **Primary URL**: [https://demo.businesdoctor.com/about.php](https://demo.businesdoctor.com/about.php)
+- **Markdown Resource**: [https://demo.businesdoctor.com/md/about.md](https://demo.businesdoctor.com/md/about.md)
 - **Headquarters**: Floor 42, Executive Tech Park, Innovation District
 
 ---

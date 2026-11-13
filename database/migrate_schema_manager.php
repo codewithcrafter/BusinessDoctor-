@@ -36,7 +36,7 @@ try {
     $count = (int)$pdo->query("SELECT COUNT(*) FROM page_schemas")->fetchColumn();
     if ($count === 0) {
         $now = date('Y-m-d H:i:s');
-        $baseUrl = defined('BASE_URL') ? BASE_URL : 'https://demo.businessdoctor.com';
+        $baseUrl = defined('BASE_URL') ? BASE_URL : 'https://demo.businesdoctor.com';
         $appName = defined('APP_NAME') ? APP_NAME : 'BusinessDoctor';
         $legalName = defined('APP_LEGAL_NAME') ? APP_LEGAL_NAME : 'BusinessDoctor Enterprise Solutions Pvt. Ltd.';
         $phone = defined('APP_PHONE') ? APP_PHONE : '+91 98765 43210';

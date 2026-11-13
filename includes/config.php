@@ -93,11 +93,11 @@ $isLocalHost = in_array($currentHost, ['127.0.0.1:8000', 'localhost:8000', 'loca
                || str_starts_with($currentHost, '127.0.0.1')
                || in_array(php_sapi_name(), ['cli-server', 'cli'], true);
 
-if (!empty($envAppUrl) && !($isLocalHost && str_contains($envAppUrl, 'demo.businessdoctor.com'))) {
+if (!empty($envAppUrl) && !($isLocalHost && str_contains($envAppUrl, 'demo.businesdoctor.com'))) {
     define('BASE_URL', rtrim($envAppUrl, '/'));
 } else {
     $protocol = (!empty($_SERVER['HTTPS']) && $_SERVER['HTTPS'] !== 'off' || (isset($_SERVER['SERVER_PORT']) && (int)$_SERVER['SERVER_PORT'] === 443)) ? "https://" : "http://";
-    $host = $_SERVER['HTTP_HOST'] ?? 'demo.businessdoctor.com';
+    $host = $_SERVER['HTTP_HOST'] ?? 'demo.businesdoctor.com';
     $scriptDir = dirname($_SERVER['SCRIPT_NAME'] ?? '');
     $scriptDir = rtrim(str_replace('\\', '/', $scriptDir), '/');
 
@@ -113,7 +113,7 @@ define('ROOT_PATH', dirname(__DIR__));
 
 // Database Configuration - Explicit Driver Selection
 // Local XAMPP/CLI environment uses local MariaDB (mysql)
-// Production environment (demo.businessdoctor.com) stays strictly on SQLite
+// Production environment (demo.businesdoctor.com) stays strictly on SQLite
 $defaultDriver = $isLocalHost ? 'mysql' : 'sqlite';
 $driver = getenv('DB_DRIVER');
 if ($isLocalHost && (!$driver || $driver === 'sqlite' || getenv('APP_ENV') === 'production')) {

@@ -3,9 +3,9 @@
 > Cloud Infrastructure, DevOps, Cybersecurity & Systems Maintenance
 
 ## Discipline Information
-- **Canonical Web URL**: [https://demo.businessdoctor.com/services/cloud-it-consulting](https://demo.businessdoctor.com/services/cloud-it-consulting)
-- **Clean Markdown URL**: [https://demo.businessdoctor.com/services/cloud-it-consulting.md](https://demo.businessdoctor.com/services/cloud-it-consulting.md)
-- **Central Markdown URL**: [https://demo.businessdoctor.com/md/services/cloud-it-consulting.md](https://demo.businessdoctor.com/md/services/cloud-it-consulting.md)
+- **Canonical Web URL**: [https://demo.businesdoctor.com/services/cloud-it-consulting](https://demo.businesdoctor.com/services/cloud-it-consulting)
+- **Clean Markdown URL**: [https://demo.businesdoctor.com/services/cloud-it-consulting.md](https://demo.businesdoctor.com/services/cloud-it-consulting.md)
+- **Central Markdown URL**: [https://demo.businesdoctor.com/md/services/cloud-it-consulting.md](https://demo.businesdoctor.com/md/services/cloud-it-consulting.md)
 
 ---
 
@@ -25,4 +25,4 @@ Ensure your digital assets remain fast, secure, and always accessible. We provid
 - Zero Security Breaches
 
 ---
-*Delivered by [BusinessDoctor](https://demo.businessdoctor.com) Technology Practice.*
+*Delivered by [BusinessDoctor](https://demo.businesdoctor.com) Technology Practice.*

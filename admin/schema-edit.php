@@ -760,7 +760,7 @@ function updateLiveValidator() {
 
   // Update external link
   const pageUrl = document.getElementById('pageUrl').value || '/';
-  document.getElementById('externalRichResultsLink').href = 'https://search.google.com/test/rich-results?url=' + encodeURIComponent('https://demo.businessdoctor.com' + pageUrl);
+  document.getElementById('externalRichResultsLink').href = 'https://search.google.com/test/rich-results?url=' + encodeURIComponent('https://demo.businesdoctor.com' + pageUrl);
 }
 
 // Sync visual description canvas with hidden input before form submission

@@ -204,7 +204,7 @@ function extractFaqsFromContent(string $html): array
  */
 function generateArticleSchemaGraph(array $article, string $baseUrl = ''): array
 {
-    $baseUrl = rtrim($baseUrl ?: (defined('BASE_URL') ? BASE_URL : 'https://demo.businessdoctor.com'), '/');
+    $baseUrl = rtrim($baseUrl ?: (defined('BASE_URL') ? BASE_URL : 'https://demo.businesdoctor.com'), '/');
     $appName = defined('APP_NAME') ? APP_NAME : 'BusinessDoctor';
     $legalName = defined('APP_LEGAL_NAME') ? APP_LEGAL_NAME : 'BusinessDoctor IT Solutions & Digital Services Private Limited';
 
@@ -279,7 +279,7 @@ function generateArticleSchemaGraph(array $article, string $baseUrl = ''): array
             [
                 '@type' => 'ListItem',
                 'position' => 2,
-                'name' => 'Insights & Perspectives',
+                'name' => 'Blog',
                 'item' => $baseUrl . '/insights.php'
             ],
             [
@@ -295,8 +295,8 @@ function generateArticleSchemaGraph(array $article, string $baseUrl = ''): array
     $blog = [
         '@context' => 'https://schema.org',
         '@type' => 'Blog',
-        'name' => 'Perspectives & Technical Insights — ' . $appName,
-        'description' => 'Enterprise engineering insights, digital transformation architectures, and strategic advisory perspectives.',
+        'name' => 'Technical Blog & Strategic Frameworks — ' . $appName,
+        'description' => 'Practical engineering blueprints, Core Web Vitals breakdowns, and conversion optimization strategies from our senior architects and digital strategists.',
         'url' => $baseUrl . '/insights.php',
         'publisher' => [
             '@type' => 'Organization',
@@ -386,7 +386,7 @@ function renderPageSchemas(?string $pageKey = null, array $contextData = []): st
     }
 
     try {
-        $baseUrl = rtrim(defined('BASE_URL') ? BASE_URL : 'https://demo.businessdoctor.com', '/');
+        $baseUrl = rtrim(defined('BASE_URL') ? BASE_URL : 'https://demo.businesdoctor.com', '/');
         $appName = defined('APP_NAME') ? APP_NAME : 'BusinessDoctor';
         $output = '';
 
@@ -564,7 +564,7 @@ function renderPageSchemas(?string $pageKey = null, array $contextData = []): st
                 $breadcrumbItems[] = [
                     '@type' => 'ListItem',
                     'position' => 2,
-                    'name' => 'Insights & Perspectives',
+                    'name' => 'Blog',
                     'item' => $baseUrl . '/insights.php'
                 ];
             } elseif ($pageKey === 'about') {

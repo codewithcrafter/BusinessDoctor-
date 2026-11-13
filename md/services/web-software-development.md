@@ -3,9 +3,9 @@
 > High-Performance Web Platforms & Enterprise Applications
 
 ## Discipline Information
-- **Canonical Web URL**: [https://demo.businessdoctor.com/services/web-software-development](https://demo.businessdoctor.com/services/web-software-development)
-- **Clean Markdown URL**: [https://demo.businessdoctor.com/services/web-software-development.md](https://demo.businessdoctor.com/services/web-software-development.md)
-- **Central Markdown URL**: [https://demo.businessdoctor.com/md/services/web-software-development.md](https://demo.businessdoctor.com/md/services/web-software-development.md)
+- **Canonical Web URL**: [https://demo.businesdoctor.com/services/web-software-development](https://demo.businesdoctor.com/services/web-software-development)
+- **Clean Markdown URL**: [https://demo.businesdoctor.com/services/web-software-development.md](https://demo.businesdoctor.com/services/web-software-development.md)
+- **Central Markdown URL**: [https://demo.businesdoctor.com/md/services/web-software-development.md](https://demo.businesdoctor.com/md/services/web-software-development.md)
 
 ---
 
@@ -25,4 +25,4 @@ We engineer robust, lightning-fast web and software applications tailored to you
 - Zero Framework Bloat
 
 ---
-*Delivered by [BusinessDoctor](https://demo.businessdoctor.com) Technology Practice.*
+*Delivered by [BusinessDoctor](https://demo.businesdoctor.com) Technology Practice.*

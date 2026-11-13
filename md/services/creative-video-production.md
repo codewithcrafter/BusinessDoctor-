@@ -3,9 +3,9 @@
 > Studio Product Photography, Video Production & Social Creatives
 
 ## Discipline Information
-- **Canonical Web URL**: [https://demo.businessdoctor.com/services/creative-video-production](https://demo.businessdoctor.com/services/creative-video-production)
-- **Clean Markdown URL**: [https://demo.businessdoctor.com/services/creative-video-production.md](https://demo.businessdoctor.com/services/creative-video-production.md)
-- **Central Markdown URL**: [https://demo.businessdoctor.com/md/services/creative-video-production.md](https://demo.businessdoctor.com/md/services/creative-video-production.md)
+- **Canonical Web URL**: [https://demo.businesdoctor.com/services/creative-video-production](https://demo.businesdoctor.com/services/creative-video-production)
+- **Clean Markdown URL**: [https://demo.businesdoctor.com/services/creative-video-production.md](https://demo.businesdoctor.com/services/creative-video-production.md)
+- **Central Markdown URL**: [https://demo.businesdoctor.com/md/services/creative-video-production.md](https://demo.businesdoctor.com/md/services/creative-video-production.md)
 
 ---
 
@@ -25,4 +25,4 @@ High-quality visuals are essential for digital conversions. Our creative team pr
 - High-Converting Creatives
 
 ---
-*Delivered by [BusinessDoctor](https://demo.businessdoctor.com) Technology Practice.*
+*Delivered by [BusinessDoctor](https://demo.businesdoctor.com) Technology Practice.*

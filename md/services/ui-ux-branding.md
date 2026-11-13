@@ -3,9 +3,9 @@
 > Human-Centered Digital Interfaces & Distinct Visual Branding
 
 ## Discipline Information
-- **Canonical Web URL**: [https://demo.businessdoctor.com/services/ui-ux-branding](https://demo.businessdoctor.com/services/ui-ux-branding)
-- **Clean Markdown URL**: [https://demo.businessdoctor.com/services/ui-ux-branding.md](https://demo.businessdoctor.com/services/ui-ux-branding.md)
-- **Central Markdown URL**: [https://demo.businessdoctor.com/md/services/ui-ux-branding.md](https://demo.businessdoctor.com/md/services/ui-ux-branding.md)
+- **Canonical Web URL**: [https://demo.businesdoctor.com/services/ui-ux-branding](https://demo.businesdoctor.com/services/ui-ux-branding)
+- **Clean Markdown URL**: [https://demo.businesdoctor.com/services/ui-ux-branding.md](https://demo.businesdoctor.com/services/ui-ux-branding.md)
+- **Central Markdown URL**: [https://demo.businesdoctor.com/md/services/ui-ux-branding.md](https://demo.businesdoctor.com/md/services/ui-ux-branding.md)
 
 ---
 
@@ -25,4 +25,4 @@ First impressions define customer trust. Our design division crafts intuitive us
 - High Trust & Engagement
 
 ---
-*Delivered by [BusinessDoctor](https://demo.businessdoctor.com) Technology Practice.*
+*Delivered by [BusinessDoctor](https://demo.businesdoctor.com) Technology Practice.*

@@ -32,7 +32,7 @@ class SeoSyncEngine
         if (defined('BASE_URL') && !empty(BASE_URL)) {
             return rtrim(BASE_URL, '/');
         }
-        return 'https://demo.businessdoctor.com';
+        return 'https://demo.businesdoctor.com';
     }
 
     /**
@@ -78,8 +78,8 @@ class SeoSyncEngine
                 'file' => 'insights.php',
                 'priority' => '0.8',
                 'changefreq' => 'weekly',
-                'title' => 'Perspectives, Engineering Insights & Blog',
-                'description' => 'Technical teardowns, digital transformation playbooks, and strategic analysis from BusinessDoctor engineers.'
+                'title' => 'Technical Blog. Strategic Frameworks.',
+                'description' => 'Practical engineering blueprints, Core Web Vitals breakdowns, and conversion optimization strategies from our senior architects and digital strategists.'
             ],
             [
                 'loc' => '/about.php',
@@ -239,7 +239,7 @@ class SeoSyncEngine
         }
         $lines[] = "";
 
-        $lines[] = "## Published Editorial & Insights";
+        $lines[] = "## Published Blog Articles";
         if (empty($insights)) {
             $lines[] = "- No editorial articles currently published.";
         } else {
@@ -408,8 +408,8 @@ class SeoSyncEngine
             }
         }
 
-        // Editorial Insights
-        $lines[] = "## 4. Editorial Perspectives & Technical Insights";
+        // Editorial Insights & Blog
+        $lines[] = "## 4. Technical Blog & Editorial Perspectives";
         $lines[] = "";
         if (empty($insights)) {
             $lines[] = "No technical articles are currently published in the knowledge base.";
@@ -827,8 +827,8 @@ MD;
             case 'insights':
                 $insights = self::getPublishedInsights();
                 $iLines = [];
-                $iLines[] = "# {$appName} — Perspectives & Technical Insights";
-                $iLines[] = "> Technical teardowns, digital transformation playbooks, and strategic analysis from BusinessDoctor engineers.";
+                $iLines[] = "# {$appName} — Technical Blog & Strategic Frameworks";
+                $iLines[] = "> Practical engineering blueprints, Core Web Vitals breakdowns, and conversion optimization strategies from our senior architects and digital strategists.";
                 $iLines[] = "";
                 $iLines[] = "- **Canonical URL**: [{$baseUrl}/insights.php]({$baseUrl}/insights.php)";
                 $iLines[] = "- **Markdown Resource**: [{$baseUrl}/md/insights.md]({$baseUrl}/md/insights.md)";
@@ -836,7 +836,7 @@ MD;
                 $iLines[] = "";
                 $iLines[] = "---";
                 $iLines[] = "";
-                $iLines[] = "## Published Editorial & Technical Articles";
+                $iLines[] = "## Published Blog Articles";
                 $iLines[] = "";
                 if (empty($insights)) {
                     $iLines[] = "No editorial articles currently published.";
@@ -991,8 +991,8 @@ MD;
         }
         $lines[] = "";
 
-        // 3. Insights
-        $lines[] = "## 3. Editorial Perspectives & Technical Insights";
+        // 3. Blog Articles
+        $lines[] = "## 3. Technical Blog & Articles";
         $lines[] = "";
         if (empty($insights)) {
             $lines[] = "- No editorial articles are currently published.";

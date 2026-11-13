@@ -7,9 +7,9 @@
 - **Industry**: Industrial Equipment & B2B Retail
 - **Practice Area**: E-Commerce & Marketplace Management
 - **Quantifiable Metric Shift**: `1.8x ROAS / 34% Buy Box Loss` → `4.6x ROAS / 94% Buy Box Control` (Marketplace Revenue Scale)
-- **Canonical Web URL**: [https://demo.businessdoctor.com/case-study-detail.php?slug=multichannel-retail-marketplace-dominance](https://demo.businessdoctor.com/case-study-detail.php?slug=multichannel-retail-marketplace-dominance)
-- **Clean Markdown URL**: [https://demo.businessdoctor.com/case-studies/multichannel-retail-marketplace-dominance.md](https://demo.businessdoctor.com/case-studies/multichannel-retail-marketplace-dominance.md)
-- **Central Markdown URL**: [https://demo.businessdoctor.com/md/case-studies/multichannel-retail-marketplace-dominance.md](https://demo.businessdoctor.com/md/case-studies/multichannel-retail-marketplace-dominance.md)
+- **Canonical Web URL**: [https://demo.businesdoctor.com/case-study-detail.php?slug=multichannel-retail-marketplace-dominance](https://demo.businesdoctor.com/case-study-detail.php?slug=multichannel-retail-marketplace-dominance)
+- **Clean Markdown URL**: [https://demo.businesdoctor.com/case-studies/multichannel-retail-marketplace-dominance.md](https://demo.businesdoctor.com/case-studies/multichannel-retail-marketplace-dominance.md)
+- **Central Markdown URL**: [https://demo.businesdoctor.com/md/case-studies/multichannel-retail-marketplace-dominance.md](https://demo.businesdoctor.com/md/case-studies/multichannel-retail-marketplace-dominance.md)
 
 ---
 
@@ -23,4 +23,4 @@ BusinessDoctor implemented Brand Registry brand gating, redesigned catalog listi
 Buy Box possession stabilized at 94%. Blended advertising return climbed from 1.8x to 4.6x while net marketplace operating profit margin expanded by 11.2 percentage points.
 
 ---
-*Documented by [BusinessDoctor](https://demo.businessdoctor.com) Client Turnaround Practice.*
+*Documented by [BusinessDoctor](https://demo.businesdoctor.com) Client Turnaround Practice.*

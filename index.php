@@ -1818,7 +1818,7 @@ require_once __DIR__ . '/includes/header.php';
     <div class="section-header text-center">
       <div class="eyebrow-badge">
         <span class="pill-dot"></span>
-        <span>PERSPECTIVES &amp; INSIGHTS</span>
+        <span>ENGINEERING PERSPECTIVES &amp; BLOG</span>
       </div>
       <h2 class="section-title" style="font-size: clamp(2rem, 3.5vw, 3rem);">Engineering Architecture &amp; Digital
         Growth Analysis</h2>
@@ -1852,7 +1852,7 @@ require_once __DIR__ . '/includes/header.php';
                 <div class="insight-author-title"><?= e($leadPost['author_title']) ?></div>
               </div>
               <a href="insight-detail.php?slug=<?= urlencode($leadPost['slug']) ?>" class="btn btn-primary btn-sm">
-                <span>Read Analysis</span>
+                <span>Read Blog</span>
                 <svg class="btn-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
                   <line x1="5" y1="12" x2="19" y2="12" />
                   <polyline points="12 5 19 12 12 19" />
@@ -1875,15 +1875,23 @@ require_once __DIR__ . '/includes/header.php';
               <p class="insight-compact-summary"><?= e($post['summary']) ?></p>
               <div class="insight-read-perspective"
                 style="margin-top: 1.25rem; font-family: var(--font-display); font-size: 0.88rem; font-weight: 700; color: #06B5F9; display: flex; align-items: center; gap: 0.35rem;">
-                <span>Read Perspective</span>
+                <span>Read Blog</span>
                 <span>&rarr;</span>
               </div>
             </a>
           <?php endforeach; ?>
         </div>
       <?php else: ?>
-        <p class="text-muted text-center" style="grid-column: 1 / -1;">No published insights currently available.</p>
+        <p class="text-muted text-center" style="grid-column: 1 / -1;">No published blog articles currently available.</p>
       <?php endif; ?>
+    </div>
+
+    <!-- View All Blogs CTA -->
+    <div style="text-align: center; margin-top: 2.75rem;">
+      <a href="<?= appUrl('insights.php') ?>" class="btn btn-secondary btn-md" style="display: inline-flex; align-items: center; gap: 0.5rem;">
+        <span>View All Blogs</span>
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" width="16" height="16" stroke-width="2"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+      </a>
     </div>
   </div>
 </section>

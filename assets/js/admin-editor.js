@@ -985,7 +985,7 @@
     const serpDesc = document.getElementById('serpDescPreview');
 
     if (serpTitle) serpTitle.textContent = title + ' — Perspectives | BusinessDoctor';
-    if (serpUrl) serpUrl.textContent = 'https://demo.businessdoctor.com/insight-detail.php?slug=' + slug;
+    if (serpUrl) serpUrl.textContent = 'https://demo.businesdoctor.com/insight-detail.php?slug=' + slug;
     if (serpDesc) serpDesc.textContent = desc.substring(0, 160);
 
     const titleCount = document.getElementById('seoTitleCount');

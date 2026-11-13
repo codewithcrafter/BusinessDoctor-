@@ -9,8 +9,8 @@ require_once __DIR__ . '/includes/config.php';
 require_once __DIR__ . '/includes/db.php';
 require_once __DIR__ . '/includes/functions.php';
 
-$pageTitle = 'Perspectives & Technical Insights — BusinessDoctor Enterprise IT';
-$pageDescription = 'In-depth engineering analyses, Core Web Vitals breakdowns, performance ad strategies, and digital architecture frameworks authored by senior technical architects.';
+$pageTitle = 'Technical Blog. Strategic Frameworks. — BusinessDoctor Enterprise IT';
+$pageDescription = 'Practical engineering blueprints, Core Web Vitals breakdowns, and conversion optimization strategies from our senior architects and digital strategists.';
 $canonicalUrl = appUrl('insights.php');
 
 $selectedCategory = trim($_GET['category'] ?? '');
@@ -108,7 +108,7 @@ if (!function_exists('getBlogImageFallback')) {
         }
 
         if (empty($alt)) {
-            $alt = $item['title'] ?? 'BusinessDoctor Technical Insight';
+            $alt = $item['title'] ?? 'BusinessDoctor Technical Blog';
         }
 
         return [$img, $alt];
@@ -190,13 +190,13 @@ require_once __DIR__ . '/includes/header.php';
   <div class="container text-center" style="max-width: 900px; margin: 0 auto;">
     <div class="eyebrow-badge">
       <span class="pill-dot"></span>
-      <span>ENGINEERING PERSPECTIVES &amp; ANALYSIS</span>
+      <span>ENGINEERING PERSPECTIVES &amp; BLOG</span>
     </div>
     <h1 class="hero-headline-oversized" style="font-size: clamp(2.3rem, 4.5vw, 3.8rem); margin-top: 1rem; margin-bottom: 1.25rem;">
-      Technical Insights. <br><span style="color: #06B5F9;">Strategic Frameworks.</span>
+      Technical Blog. <br><span style="color: #06B5F9;">Strategic Frameworks.</span>
     </h1>
     <p class="hero-lead-text" style="max-width: 780px; margin: 0 auto 2rem;">
-      Practical engineering blueprints, Core Web Vitals breakdowns, and conversion optimization frameworks authored by our senior architects and digital strategists.
+      Practical engineering blueprints, Core Web Vitals breakdowns, and conversion optimization strategies from our senior architects and digital strategists.
     </p>
 
     <!-- Category Filters & Search -->
@@ -232,7 +232,7 @@ require_once __DIR__ . '/includes/header.php';
             </a>
             <div style="position: absolute; top: 1rem; left: 1rem; pointer-events: none;">
               <span class="eyebrow-badge" style="background: rgba(6, 19, 38, 0.92); backdrop-filter: blur(8px); border-color: rgba(6, 181, 249, 0.45); font-size: 0.7rem; margin: 0;">
-                SPOTLIGHT ANALYSIS
+                FEATURED BLOG
               </span>
             </div>
             <div style="position: absolute; bottom: 0.75rem; right: 0.75rem; pointer-events: none;">
@@ -347,7 +347,7 @@ require_once __DIR__ . '/includes/header.php';
         <span>EXECUTIVE DIGITAL DISPATCH</span>
       </div>
       <h3 style="font-size: 1.85rem; color: #FFFFFF; font-weight: 800; margin-bottom: 0.75rem;">
-        Bi-Weekly Engineering Insights
+        Bi-Weekly Engineering Blog
       </h3>
       <p style="color: var(--color-text-light); font-size: 0.95rem; line-height: 1.6; margin-bottom: 1.75rem;">
         Join technical executives receiving our private breakdowns on infrastructure scalability, Core Web Vitals, and conversion architecture.

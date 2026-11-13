@@ -3,9 +3,9 @@
 > Search Engine Dominance, Google Ads & Paid Media Scaling
 
 ## Discipline Information
-- **Canonical Web URL**: [https://demo.businessdoctor.com/services/digital-marketing-seo](https://demo.businessdoctor.com/services/digital-marketing-seo)
-- **Clean Markdown URL**: [https://demo.businessdoctor.com/services/digital-marketing-seo.md](https://demo.businessdoctor.com/services/digital-marketing-seo.md)
-- **Central Markdown URL**: [https://demo.businessdoctor.com/md/services/digital-marketing-seo.md](https://demo.businessdoctor.com/md/services/digital-marketing-seo.md)
+- **Canonical Web URL**: [https://demo.businesdoctor.com/services/digital-marketing-seo](https://demo.businesdoctor.com/services/digital-marketing-seo)
+- **Clean Markdown URL**: [https://demo.businesdoctor.com/services/digital-marketing-seo.md](https://demo.businesdoctor.com/services/digital-marketing-seo.md)
+- **Central Markdown URL**: [https://demo.businesdoctor.com/md/services/digital-marketing-seo.md](https://demo.businesdoctor.com/md/services/digital-marketing-seo.md)
 
 ---
 
@@ -25,4 +25,4 @@ Accelerate your revenue with targeted digital marketing. We develop data-driven 
 - Audited Zero Ad Waste
 
 ---
-*Delivered by [BusinessDoctor](https://demo.businessdoctor.com) Technology Practice.*
+*Delivered by [BusinessDoctor](https://demo.businesdoctor.com) Technology Practice.*

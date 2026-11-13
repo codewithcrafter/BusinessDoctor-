@@ -1,8 +1,8 @@
 # Contact BusinessDoctor & Executive Advisory
 > Direct communication channels for enterprise scoping, technical audits, and partnership inquiries.
 
-- **Primary URL**: [https://demo.businessdoctor.com/contact.php](https://demo.businessdoctor.com/contact.php)
-- **Markdown Resource**: [https://demo.businessdoctor.com/md/contact.md](https://demo.businessdoctor.com/md/contact.md)
+- **Primary URL**: [https://demo.businesdoctor.com/contact.php](https://demo.businesdoctor.com/contact.php)
+- **Markdown Resource**: [https://demo.businesdoctor.com/md/contact.md](https://demo.businesdoctor.com/md/contact.md)
 - **Direct Phone**: +1 (800) 492-3628
 - **Advisory Email**: [solutions@businessdoctor.com](mailto:solutions@businessdoctor.com)
 - **Headquarters**: Floor 42, Executive Tech Park, Innovation District

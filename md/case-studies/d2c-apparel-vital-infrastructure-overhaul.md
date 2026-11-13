@@ -7,9 +7,9 @@
 - **Industry**: Luxury D2C & Apparel
 - **Practice Area**: Web Development & UI/UX Design
 - **Quantifiable Metric Shift**: `4.8s Page Load / 1.4% Conv` → `0.68s Page Load / 3.9% Conv` (Net Conversion Surge)
-- **Canonical Web URL**: [https://demo.businessdoctor.com/case-study-detail.php?slug=d2c-apparel-vital-infrastructure-overhaul](https://demo.businessdoctor.com/case-study-detail.php?slug=d2c-apparel-vital-infrastructure-overhaul)
-- **Clean Markdown URL**: [https://demo.businessdoctor.com/case-studies/d2c-apparel-vital-infrastructure-overhaul.md](https://demo.businessdoctor.com/case-studies/d2c-apparel-vital-infrastructure-overhaul.md)
-- **Central Markdown URL**: [https://demo.businessdoctor.com/md/case-studies/d2c-apparel-vital-infrastructure-overhaul.md](https://demo.businessdoctor.com/md/case-studies/d2c-apparel-vital-infrastructure-overhaul.md)
+- **Canonical Web URL**: [https://demo.businesdoctor.com/case-study-detail.php?slug=d2c-apparel-vital-infrastructure-overhaul](https://demo.businesdoctor.com/case-study-detail.php?slug=d2c-apparel-vital-infrastructure-overhaul)
+- **Clean Markdown URL**: [https://demo.businesdoctor.com/case-studies/d2c-apparel-vital-infrastructure-overhaul.md](https://demo.businesdoctor.com/case-studies/d2c-apparel-vital-infrastructure-overhaul.md)
+- **Central Markdown URL**: [https://demo.businesdoctor.com/md/case-studies/d2c-apparel-vital-infrastructure-overhaul.md](https://demo.businesdoctor.com/md/case-studies/d2c-apparel-vital-infrastructure-overhaul.md)
 
 ---
 
@@ -23,4 +23,4 @@ We engineered a bespoke, lightweight PHP/HTML5 storefront with dynamic image com
 Mobile page load dropped to 680 milliseconds. Mobile checkout abandonment declined by 52%, resulting in an immediate $1.85M revenue lift within 60 days of launch.
 
 ---
-*Documented by [BusinessDoctor](https://demo.businessdoctor.com) Client Turnaround Practice.*
+*Documented by [BusinessDoctor](https://demo.businesdoctor.com) Client Turnaround Practice.*

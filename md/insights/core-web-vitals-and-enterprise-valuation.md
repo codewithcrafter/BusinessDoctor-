@@ -8,9 +8,9 @@
 - **Published Date**: 2026-11-02
 - **Last Modified**: 2026-11-13
 - **Reading Time**: 5 min read
-- **Canonical Web URL**: [https://demo.businessdoctor.com/insight-detail.php?slug=core-web-vitals-and-enterprise-valuation](https://demo.businessdoctor.com/insight-detail.php?slug=core-web-vitals-and-enterprise-valuation)
-- **Clean Markdown URL**: [https://demo.businessdoctor.com/insights/core-web-vitals-and-enterprise-valuation.md](https://demo.businessdoctor.com/insights/core-web-vitals-and-enterprise-valuation.md)
-- **Central Markdown URL**: [https://demo.businessdoctor.com/md/insights/core-web-vitals-and-enterprise-valuation.md](https://demo.businessdoctor.com/md/insights/core-web-vitals-and-enterprise-valuation.md)
+- **Canonical Web URL**: [https://demo.businesdoctor.com/insight-detail.php?slug=core-web-vitals-and-enterprise-valuation](https://demo.businesdoctor.com/insight-detail.php?slug=core-web-vitals-and-enterprise-valuation)
+- **Clean Markdown URL**: [https://demo.businesdoctor.com/insights/core-web-vitals-and-enterprise-valuation.md](https://demo.businesdoctor.com/insights/core-web-vitals-and-enterprise-valuation.md)
+- **Central Markdown URL**: [https://demo.businesdoctor.com/md/insights/core-web-vitals-and-enterprise-valuation.md](https://demo.businesdoctor.com/md/insights/core-web-vitals-and-enterprise-valuation.md)
 
 ---
 
@@ -54,4 +54,4 @@ Every 100-millisecond reduction in load latency improves retail conversion rates
 Implementing full-page server-level edge caching, compiling critical path CSS, optimizing database indexes, and converting heavy JavaScript frameworks to lightweight vanilla PHP or Alpine.js consistently slash Time to First Byte (TTFB).
 
 ---
-*Published by [BusinessDoctor](https://demo.businessdoctor.com) — Engineering Technology. Accelerating Digital Growth.*
+*Published by [BusinessDoctor](https://demo.businesdoctor.com) — Engineering Technology. Accelerating Digital Growth.*

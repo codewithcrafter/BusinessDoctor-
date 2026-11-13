@@ -1,8 +1,8 @@
 # Free Digital Architecture Audit & Project Scope
 > Diagnostic framework benchmarking infrastructure, ad performance, conversion funnels, and brand positioning.
 
-- **Primary URL**: [https://demo.businessdoctor.com/audit.php](https://demo.businessdoctor.com/audit.php)
-- **Markdown Resource**: [https://demo.businessdoctor.com/md/audit.md](https://demo.businessdoctor.com/md/audit.md)
+- **Primary URL**: [https://demo.businesdoctor.com/audit.php](https://demo.businesdoctor.com/audit.php)
+- **Markdown Resource**: [https://demo.businesdoctor.com/md/audit.md](https://demo.businesdoctor.com/md/audit.md)
 
 ---
 

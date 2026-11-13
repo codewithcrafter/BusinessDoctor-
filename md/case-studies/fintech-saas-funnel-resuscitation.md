@@ -7,9 +7,9 @@
 - **Industry**: Enterprise FinTech SaaS
 - **Practice Area**: Web Development & Performance Marketing
 - **Quantifiable Metric Shift**: `$840 CAC / 1.1% Demo Conv` → `$290 CAC / 4.6% Demo Conv` (Qualified Pipeline Growth)
-- **Canonical Web URL**: [https://demo.businessdoctor.com/case-study-detail.php?slug=fintech-saas-funnel-resuscitation](https://demo.businessdoctor.com/case-study-detail.php?slug=fintech-saas-funnel-resuscitation)
-- **Clean Markdown URL**: [https://demo.businessdoctor.com/case-studies/fintech-saas-funnel-resuscitation.md](https://demo.businessdoctor.com/case-studies/fintech-saas-funnel-resuscitation.md)
-- **Central Markdown URL**: [https://demo.businessdoctor.com/md/case-studies/fintech-saas-funnel-resuscitation.md](https://demo.businessdoctor.com/md/case-studies/fintech-saas-funnel-resuscitation.md)
+- **Canonical Web URL**: [https://demo.businesdoctor.com/case-study-detail.php?slug=fintech-saas-funnel-resuscitation](https://demo.businesdoctor.com/case-study-detail.php?slug=fintech-saas-funnel-resuscitation)
+- **Clean Markdown URL**: [https://demo.businesdoctor.com/case-studies/fintech-saas-funnel-resuscitation.md](https://demo.businesdoctor.com/case-studies/fintech-saas-funnel-resuscitation.md)
+- **Central Markdown URL**: [https://demo.businesdoctor.com/md/case-studies/fintech-saas-funnel-resuscitation.md](https://demo.businesdoctor.com/md/case-studies/fintech-saas-funnel-resuscitation.md)
 
 ---
 
@@ -23,4 +23,4 @@ BusinessDoctor redesigned and rebuilt the core web application using custom PHP/
 Within 90 days, demo booking conversions climbed by 318% while customer acquisition costs fell by 65%. Annual Recurring Revenue (ARR) grew by $3.4M in two quarters.
 
 ---
-*Documented by [BusinessDoctor](https://demo.businessdoctor.com) Client Turnaround Practice.*
+*Documented by [BusinessDoctor](https://demo.businesdoctor.com) Client Turnaround Practice.*

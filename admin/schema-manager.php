@@ -889,7 +889,7 @@ function validateSchema(id) {
   });
 
   // Setup Google Rich Results URL
-  const testUrl = 'https://search.google.com/test/rich-results?url=' + encodeURIComponent('https://demo.businessdoctor.com' + schema.page_url);
+  const testUrl = 'https://search.google.com/test/rich-results?url=' + encodeURIComponent('https://demo.businesdoctor.com' + schema.page_url);
   document.getElementById('googleRichResultsBtn').href = testUrl;
 
   openModal('validateSchemaModal');

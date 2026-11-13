@@ -3,9 +3,9 @@
 > Amazon, Flipkart & Multi-Channel Storefront Growth
 
 ## Discipline Information
-- **Canonical Web URL**: [https://demo.businessdoctor.com/services/ecommerce-marketplaces](https://demo.businessdoctor.com/services/ecommerce-marketplaces)
-- **Clean Markdown URL**: [https://demo.businessdoctor.com/services/ecommerce-marketplaces.md](https://demo.businessdoctor.com/services/ecommerce-marketplaces.md)
-- **Central Markdown URL**: [https://demo.businessdoctor.com/md/services/ecommerce-marketplaces.md](https://demo.businessdoctor.com/md/services/ecommerce-marketplaces.md)
+- **Canonical Web URL**: [https://demo.businesdoctor.com/services/ecommerce-marketplaces](https://demo.businesdoctor.com/services/ecommerce-marketplaces)
+- **Clean Markdown URL**: [https://demo.businesdoctor.com/services/ecommerce-marketplaces.md](https://demo.businesdoctor.com/services/ecommerce-marketplaces.md)
+- **Central Markdown URL**: [https://demo.businesdoctor.com/md/services/ecommerce-marketplaces.md](https://demo.businesdoctor.com/md/services/ecommerce-marketplaces.md)
 
 ---
 
@@ -25,4 +25,4 @@ Maximize your sales on the world’s biggest online marketplaces. We manage comp
 - Top Search Visibility
 
 ---
-*Delivered by [BusinessDoctor](https://demo.businessdoctor.com) Technology Practice.*
+*Delivered by [BusinessDoctor](https://demo.businesdoctor.com) Technology Practice.*

@@ -1,10 +1,10 @@
 # BusinessDoctor — Enterprise Technology & IT Solutions
 > Engineering Technology. Accelerating Digital Growth.
 
-- **Canonical URL**: [https://demo.businessdoctor.com/](https://demo.businessdoctor.com/)
-- **Markdown Resource**: [https://demo.businessdoctor.com/md/home.md](https://demo.businessdoctor.com/md/home.md)
-- **AI Discovery**: [https://demo.businessdoctor.com/llms.txt](https://demo.businessdoctor.com/llms.txt) | [https://demo.businessdoctor.com/llms.md](https://demo.businessdoctor.com/llms.md)
-- **Public Markdown Index**: [https://demo.businessdoctor.com/md](https://demo.businessdoctor.com/md)
+- **Canonical URL**: [https://demo.businesdoctor.com/](https://demo.businesdoctor.com/)
+- **Markdown Resource**: [https://demo.businesdoctor.com/md/home.md](https://demo.businesdoctor.com/md/home.md)
+- **AI Discovery**: [https://demo.businesdoctor.com/llms.txt](https://demo.businesdoctor.com/llms.txt) | [https://demo.businesdoctor.com/llms.md](https://demo.businesdoctor.com/llms.md)
+- **Public Markdown Index**: [https://demo.businesdoctor.com/md](https://demo.businesdoctor.com/md)
 
 ---
 

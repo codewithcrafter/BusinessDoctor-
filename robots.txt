@@ -7,8 +7,9 @@ Disallow: /includes/
 Disallow: /scratch/
 
 # Sitemap
-Sitemap: https://demo.businessdoctor.com/sitemap.xml
+Sitemap: https://demo.businesdoctor.com/sitemap.xml
 
 # LLM & AI Discovery Files
-# LLMs: https://demo.businessdoctor.com/llms.txt
-# LLMs-Full: https://demo.businessdoctor.com/llms.md
+# LLMs: https://demo.businesdoctor.com/llms.txt
+# LLM Full: https://demo.businesdoctor.com/llms.md
+# Markdown Index: https://demo.businesdoctor.com/md

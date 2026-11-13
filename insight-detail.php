@@ -31,7 +31,7 @@ if (!$insight) {
     exit;
 }
 
-$pageTitle = (!empty($insight['seo_title']) ? $insight['seo_title'] : $insight['title']) . ' — BusinessDoctor Perspectives';
+$pageTitle = (!empty($insight['seo_title']) ? $insight['seo_title'] : $insight['title']) . ' — BusinessDoctor Blog';
 $pageDescription = !empty($insight['seo_description']) ? $insight['seo_description'] : (!empty($insight['excerpt']) ? $insight['excerpt'] : $insight['summary']);
 $canonicalUrl = getInsightUrl($insight['slug']);
 
@@ -89,7 +89,7 @@ if (!function_exists('getBlogImageFallback')) {
         }
 
         if (empty($alt)) {
-            $alt = $item['title'] ?? 'BusinessDoctor Technical Insight';
+            $alt = $item['title'] ?? 'BusinessDoctor Technical Blog';
         }
 
         return [$img, $alt];
@@ -175,15 +175,16 @@ require_once __DIR__ . '/includes/header.php';
 <section class="section hero-enterprise" style="padding-top: 5rem; padding-bottom: 3.5rem;">
   <div class="container" style="max-width: 940px;">
     <!-- Breadcrumb & Badges -->
-    <div style="display: flex; align-items: center; gap: 0.75rem; flex-wrap: wrap; margin-bottom: 1.25rem;">
-      <a href="<?= appUrl('insights.php') ?>" class="text-link" style="color: #06B5F9; font-family: var(--font-mono); font-size: 0.8rem;">
-        &larr; ALL ARTICLES
-      </a>
-      <span style="color: rgba(255,255,255,0.3);">/</span>
-      <span class="eyebrow-badge" style="margin-bottom: 0; font-size: 0.72rem;"><?= e($insight['category']) ?></span>
+    <nav aria-label="Breadcrumb" style="display: flex; align-items: center; gap: 0.6rem; flex-wrap: wrap; margin-bottom: 1.25rem; font-family: var(--font-mono); font-size: 0.82rem;">
+      <a href="<?= appUrl('') ?>" class="text-link" style="color: var(--color-text-muted); text-decoration: none;">Home</a>
+      <span style="color: rgba(255,255,255,0.3);">&gt;</span>
+      <a href="<?= appUrl('insights.php') ?>" class="text-link" style="color: #06B5F9; text-decoration: none; font-weight: 600;">Blog</a>
+      <span style="color: rgba(255,255,255,0.3);">&gt;</span>
+      <span style="color: var(--color-text-light); max-width: 320px; overflow: hidden; text-overflow: ellipsis; white-space: nowrap;"><?= e($insight['title']) ?></span>
+      <span style="margin-left: 0.5rem;" class="eyebrow-badge"><?= e($insight['category']) ?></span>
       <span style="font-family: var(--font-mono); font-size: 0.8rem; color: #06B5F9; font-weight: 700;"><?= e($insight['reading_time']) ?></span>
       <span style="font-family: var(--font-mono); font-size: 0.8rem; color: var(--color-text-light);">● <?= formatExecutiveDate($insight['published_at'] ?? 'now') ?></span>
-    </div>
+    </nav>
 
     <!-- Title & Subtitle -->
     <h1 class="hero-headline-oversized" style="font-size: clamp(2.2rem, 4vw, 3.4rem); margin-bottom: 1.25rem; line-height: 1.25;">
@@ -289,11 +290,11 @@ require_once __DIR__ . '/includes/header.php';
       </div>
     </div>
 
-    <!-- Related Articles Grid (Recommended Perspectives) -->
+    <!-- Related Articles Grid (Related Blogs) -->
     <?php if (!empty($relatedInsights)): ?>
       <div style="border-top: 1px solid var(--color-slate-200); padding-top: 3.5rem; margin-top: 3.5rem;">
         <h3 style="font-size: 1.45rem; font-weight: 800; color: var(--color-text); margin-bottom: 1.75rem;">
-          Recommended Perspectives
+          Related Blogs
         </h3>
         <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 1.75rem; width: 100%;">
           <?php foreach ($relatedInsights as $ri): 
@@ -318,7 +319,7 @@ require_once __DIR__ . '/includes/header.php';
                   <?= e(mb_strimwidth($ri['summary'], 0, 120, '...')) ?>
                 </p>
                 <a href="<?= getInsightUrl($ri['slug']) ?>" class="btn btn-secondary btn-sm" style="align-self: flex-start; display: inline-flex; align-items: center; gap: 0.35rem;">
-                  <span>Read Article</span>
+                  <span>Read Blog</span>
                   <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" width="13" height="13" stroke-width="2"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
                 </a>
               </div>
