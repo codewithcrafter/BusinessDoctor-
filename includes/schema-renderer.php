@@ -379,7 +379,7 @@ function generateArticleSchemaGraph(array $article, string $baseUrl = ''): array
 
 function renderPageSchemas(?string $pageKey = null, array $contextData = []): string
 {
-    static $renderedSchemas = [];
+    $renderedSchemas = [];
 
     if ($pageKey === null || $pageKey === '') {
         $pageKey = detectCurrentPageKey();
