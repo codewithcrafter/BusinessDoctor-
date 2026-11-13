@@ -9,7 +9,7 @@ DirectoryIndex index.php index.html
 
 # 2. Character Encoding
 AddDefaultCharset UTF-8
-AddType text/markdown; charset=UTF-8 .md
+AddType text/markdown .md
 
 # 3. URL Rewriting & HTTPS Enforcement
 <IfModule mod_rewrite.c>
