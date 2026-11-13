@@ -98,7 +98,7 @@ $requiredMatrix = [
         'name' => 'Homepage',
         'url' => '/',
         'required' => ['Organization', 'WebPage', 'Service', 'FAQPage'],
-        'notes' => ['FAQPage' => 'Draft: Pending genuine visible FAQ content on index.php']
+        'notes' => []
     ],
     'about' => [
         'name' => 'About Us',
@@ -109,7 +109,7 @@ $requiredMatrix = [
     'contact' => [
         'name' => 'Contact Us',
         'url' => '/contact.php',
-        'required' => ['Organization', 'WebPage', 'BreadcrumbList'],
+        'required' => ['Organization', 'WebPage', 'BreadcrumbList', 'ContactPage'],
         'notes' => []
     ],
     'insights' => [
@@ -140,7 +140,7 @@ $requiredMatrix = [
         'name' => 'Individual Service',
         'url' => '/services/{slug}',
         'required' => ['Organization', 'BreadcrumbList', 'Review', 'Service'],
-        'notes' => ['Review' => 'Draft: Pending collection & verification of authentic client reviews']
+        'notes' => ['Review' => 'DRAFT — CONTENT REQUIRED: Pending collection & verification of authentic client reviews']
     ],
     'diagnostic' => [
         'name' => 'Digital Audit',

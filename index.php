@@ -1889,6 +1889,72 @@ require_once __DIR__ . '/includes/header.php';
 </section>
 
 <!-- ============================================================
+     7.5. FREQUENTLY ASKED QUESTIONS (HOMEPAGE FAQ ACCORDION)
+     ============================================================ -->
+<section id="faq" class="section" style="background: var(--color-surface); border-top: 1px solid var(--color-border);">
+  <div class="container">
+    <div class="section-header text-center" style="max-width: 840px; margin: 0 auto 3rem;">
+      <div class="eyebrow-badge">
+        <span class="pill-dot"></span>
+        <span>FREQUENTLY ASKED QUESTIONS</span>
+      </div>
+      <h2 class="section-title" style="font-size: clamp(2rem, 3.5vw, 2.75rem);">
+        Frequently Asked Questions About BusinessDoctor Advisory &amp; Engineering
+      </h2>
+      <p class="lead" style="font-size: 1.05rem; color: var(--color-text-muted);">
+        Clear answers on our enterprise technology consulting, digital architecture audits, global service delivery, and turnaround methodology.
+      </p>
+    </div>
+
+    <div class="faq-accordion-grid" style="max-width: 900px; margin: 0 auto; display: flex; flex-direction: column; gap: 1.25rem;">
+      <!-- FAQ Item 1 -->
+      <div class="card faq-card" style="padding: 1.75rem 2rem; border-radius: var(--radius-md); border: 1px solid var(--color-border); background: var(--color-card-bg, #0A192F);">
+        <h3 class="faq-question" style="font-size: 1.2rem; font-weight: 700; color: #FFFFFF; margin-bottom: 0.65rem; display: flex; align-items: center; gap: 0.75rem;">
+          <span style="display: inline-flex; width: 28px; height: 28px; border-radius: 50%; background: rgba(6, 181, 249, 0.15); color: #06B5F9; font-size: 0.85rem; font-family: var(--font-mono); align-items: center; justify-content: center; flex-shrink: 0;">01</span>
+          <span>What services does BusinessDoctor provide?</span>
+        </h3>
+        <p class="faq-answer" style="font-size: 0.95rem; color: var(--color-text-muted); line-height: 1.65; margin: 0; padding-left: 2.5rem;">
+          BusinessDoctor provides enterprise digital transformation, custom software and web application development, cloud architecture, performance marketing and SEO, UI/UX design, and e-commerce marketplace scaling.
+        </p>
+      </div>
+
+      <!-- FAQ Item 2 -->
+      <div class="card faq-card" style="padding: 1.75rem 2rem; border-radius: var(--radius-md); border: 1px solid var(--color-border); background: var(--color-card-bg, #0A192F);">
+        <h3 class="faq-question" style="font-size: 1.2rem; font-weight: 700; color: #FFFFFF; margin-bottom: 0.65rem; display: flex; align-items: center; gap: 0.75rem;">
+          <span style="display: inline-flex; width: 28px; height: 28px; border-radius: 50%; background: rgba(6, 181, 249, 0.15); color: #06B5F9; font-size: 0.85rem; font-family: var(--font-mono); align-items: center; justify-content: center; flex-shrink: 0;">02</span>
+          <span>How does BusinessDoctor approach digital architecture audits?</span>
+        </h3>
+        <p class="faq-answer" style="font-size: 0.95rem; color: var(--color-text-muted); line-height: 1.65; margin: 0; padding-left: 2.5rem;">
+          We conduct comprehensive technical audits evaluating Time to First Byte (TTFB), Core Web Vitals (LCP, FID/INP, CLS), database query latency, mobile conversion funnels, and tracking telemetry before proposing strategic code refactoring and infrastructure upgrades.
+        </p>
+      </div>
+
+      <!-- FAQ Item 3 -->
+      <div class="card faq-card" style="padding: 1.75rem 2rem; border-radius: var(--radius-md); border: 1px solid var(--color-border); background: var(--color-card-bg, #0A192F);">
+        <h3 class="faq-question" style="font-size: 1.2rem; font-weight: 700; color: #FFFFFF; margin-bottom: 0.65rem; display: flex; align-items: center; gap: 0.75rem;">
+          <span style="display: inline-flex; width: 28px; height: 28px; border-radius: 50%; background: rgba(6, 181, 249, 0.15); color: #06B5F9; font-size: 0.85rem; font-family: var(--font-mono); align-items: center; justify-content: center; flex-shrink: 0;">03</span>
+          <span>Where is BusinessDoctor headquartered and what is your service coverage?</span>
+        </h3>
+        <p class="faq-answer" style="font-size: 0.95rem; color: var(--color-text-muted); line-height: 1.65; margin: 0; padding-left: 2.5rem;">
+          BusinessDoctor operates an enterprise delivery centre located at Sector 62, Innovation Corridor, Noida, UP 201301, India, providing executive technology advisory and full-stack software development services globally to enterprise clients across North America, Europe, and Asia-Pacific.
+        </p>
+      </div>
+
+      <!-- FAQ Item 4 -->
+      <div class="card faq-card" style="padding: 1.75rem 2rem; border-radius: var(--radius-md); border: 1px solid var(--color-border); background: var(--color-card-bg, #0A192F);">
+        <h3 class="faq-question" style="font-size: 1.2rem; font-weight: 700; color: #FFFFFF; margin-bottom: 0.65rem; display: flex; align-items: center; gap: 0.75rem;">
+          <span style="display: inline-flex; width: 28px; height: 28px; border-radius: 50%; background: rgba(6, 181, 249, 0.15); color: #06B5F9; font-size: 0.85rem; font-family: var(--font-mono); align-items: center; justify-content: center; flex-shrink: 0;">04</span>
+          <span>How do I engage BusinessDoctor for an enterprise IT project?</span>
+        </h3>
+        <p class="faq-answer" style="font-size: 0.95rem; color: var(--color-text-muted); line-height: 1.65; margin: 0; padding-left: 2.5rem;">
+          You can request a complimentary digital architecture audit via our audit portal, initiate a consultation through our contact page, or call our direct enterprise advisory line at +1 (800) 492-3628 to connect with our practice directors.
+        </p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============================================================
      8. FINAL CLOSING ENTERPRISE CTA
      ============================================================ -->
 <section class="section" style="background: var(--color-bg); padding-top: 2rem;">

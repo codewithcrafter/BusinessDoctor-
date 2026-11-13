@@ -1,8 +1,10 @@
 <?php
 /**
- * BusinessDoctor: Redirect / Alias to Free Digital Audit & Project Scope Portal
+ * BusinessDoctor: 301 Permanent Canonical Redirect to Free Digital Audit & Project Scope Portal
  */
 
 declare(strict_types=1);
 
-require_once __DIR__ . '/audit.php';
+$query = !empty($_SERVER['QUERY_STRING']) ? ('?' . $_SERVER['QUERY_STRING']) : '';
+header("Location: /audit.php" . $query, true, 301);
+exit;
