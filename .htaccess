@@ -4,7 +4,7 @@
 # ============================================================
 
 # 1. Disable Directory Browsing
-Options -Indexes +FollowSymLinks
+Options -Indexes -MultiViews +FollowSymLinks
 DirectoryIndex index.php index.html
 
 # 2. Character Encoding
@@ -32,6 +32,30 @@ AddType text/markdown .md
     # 301 Redirect legacy /service-detail.php without slug to /services.php
     RewriteCond %{THE_REQUEST} \s/+service-detail(?:\.php)?(\s|\?) [NC]
     RewriteRule ^ /services.php? [R=301,L]
+
+    # ============================================================
+    # Clean Markdown Document Routes (*.md)
+    # Handled BEFORE HTML/PHP rewrites and custom 404 handlers
+    # ============================================================
+
+    # 1. Clean Markdown Gateway: /md or /md/
+    RewriteRule ^md/?$ md/index.php [L,QSA]
+
+    # 2. Clean Service Markdown URLs: /services/{slug}.md -> md/index.php?file=services/$1.md
+    RewriteRule ^services/([a-zA-Z0-9_-]+)\.md$ md/index.php?file=services/$1.md [L,QSA]
+
+    # 3. Clean Insight Markdown URLs: /insights/{slug}.md -> md/index.php?file=insights/$1.md
+    RewriteRule ^insights/([a-zA-Z0-9_-]+)\.md$ md/index.php?file=insights/$1.md [L,QSA]
+
+    # 4. Clean Case Study Markdown URLs: /case-studies/{slug}.md -> md/index.php?file=case-studies/$1.md
+    RewriteRule ^case-studies/([a-zA-Z0-9_-]+)\.md$ md/index.php?file=case-studies/$1.md [L,QSA]
+
+    # 5. Direct central Markdown files under /md/...
+    RewriteRule ^md/(.+\.md)$ md/index.php?file=$1 [L,QSA]
+
+    # 6. Clean root-level Markdown files: /about.md, /contact.md, /services.md, etc.
+    RewriteCond %{REQUEST_FILENAME} !-f
+    RewriteRule ^([a-zA-Z0-9_-]+)\.md$ md/index.php?file=$1.md [L,QSA]
 
     # Clean Service URL Rewriting: /services/{slug} -> /service-detail.php?slug={slug}
     RewriteCond %{REQUEST_FILENAME} !-f
@@ -61,12 +85,11 @@ AddType text/markdown .md
     RewriteCond %{REQUEST_FILENAME} !-d
     RewriteRule ^case-studies/?$ case-studies.php [L,QSA]
 
-    # Clean Markdown Index Gateway: /md -> md/index.php
-    RewriteCond %{REQUEST_FILENAME} !-f
-    RewriteRule ^md/?$ md/index.php [L,QSA]
     # Clean Admin Gateway Rewriting: /admin -> admin/index.php
     RewriteCond %{REQUEST_FILENAME} !-f
     RewriteRule ^admin/?$ admin/index.php [L,QSA]
+
+
 
 </IfModule>
 
@@ -81,24 +104,23 @@ AddType text/markdown .md
 
 # 5. Security Response Headers
 <IfModule mod_headers.c>
+    <FilesMatch "\.md$">
+        Header set Content-Type "text/markdown; charset=UTF-8"
+        Header set Access-Control-Allow-Origin "*"
+        Header set X-Robots-Tag "index, follow"
+    </FilesMatch>
     Header always set X-Content-Type-Options "nosniff"
     Header always set X-Frame-Options "SAMEORIGIN"
     Header always set X-XSS-Protection "1; mode=block"
     Header always set Referrer-Policy "strict-origin-when-cross-origin"
     Header always set Permissions-Policy "geolocation=(), microphone=(), camera=()"
     Header always set Strict-Transport-Security "max-age=31536000; includeSubDomains" "expr=%{HTTPS} == 'on'"
-    # Clean Admin Gateway Rewriting: /admin -> admin/index.php
-    RewriteCond %{REQUEST_FILENAME} !-f
-    RewriteRule ^admin/?$ admin/index.php [L,QSA]
 
 </IfModule>
 
 # 6. GZIP / Brotli Compression
 <IfModule mod_deflate.c>
     AddOutputFilterByType DEFLATE text/html text/plain text/xml text/css text/javascript application/javascript application/json image/svg+xml
-    # Clean Admin Gateway Rewriting: /admin -> admin/index.php
-    RewriteCond %{REQUEST_FILENAME} !-f
-    RewriteRule ^admin/?$ admin/index.php [L,QSA]
 
 </IfModule>
 
@@ -112,9 +134,6 @@ AddType text/markdown .md
     ExpiresByType image/svg+xml "access plus 1 month"
     ExpiresByType font/woff2 "access plus 1 year"
     ExpiresByType font/woff "access plus 1 year"
-    # Clean Admin Gateway Rewriting: /admin -> admin/index.php
-    RewriteCond %{REQUEST_FILENAME} !-f
-    RewriteRule ^admin/?$ admin/index.php [L,QSA]
 
 </IfModule>
 

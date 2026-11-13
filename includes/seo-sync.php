@@ -787,6 +787,117 @@ MD;
 *Maintained by {$appName} Diagnostic Practice.*
 MD;
 
+            case 'services':
+                $services = self::getActiveServices();
+                $sLines = [];
+                $sLines[] = "# {$appName} — IT Services & Practice Areas";
+                $sLines[] = "> Overview of our multidisciplinary digital disciplines, technical deliverables, and performance KPIs.";
+                $sLines[] = "";
+                $sLines[] = "- **Canonical URL**: [{$baseUrl}/services.php]({$baseUrl}/services.php)";
+                $sLines[] = "- **Markdown Resource**: [{$baseUrl}/md/services.md]({$baseUrl}/md/services.md)";
+                $sLines[] = "- **Master Markdown Index**: [{$baseUrl}/md]({$baseUrl}/md)";
+                $sLines[] = "";
+                $sLines[] = "---";
+                $sLines[] = "";
+                $sLines[] = "## Core Practice Disciplines";
+                $sLines[] = "";
+                foreach ($services as $slug => $s) {
+                    $name = $s['name'] ?? '';
+                    $tagline = $s['tagline'] ?? '';
+                    $summary = $s['summary'] ?? '';
+                    $mdUrl = "{$baseUrl}/md/services/{$slug}.md";
+                    $cleanMdUrl = "{$baseUrl}/services/{$slug}.md";
+                    $webUrl = "{$baseUrl}/services/{$slug}";
+                    $sLines[] = "### " . ($s['number'] ?? '') . " {$name}";
+                    $sLines[] = "- **Tagline**: {$tagline}";
+                    $sLines[] = "- **Markdown File**: [{$slug}.md]({$cleanMdUrl}) ([Mirror]({$mdUrl})) | [Web Page]({$webUrl})";
+                    $sLines[] = "- **Summary**: {$summary}";
+                    $sLines[] = "";
+                }
+                $sLines[] = "---";
+                $sLines[] = "*Maintained by {$appName} Practice Operations.*";
+                return implode("\n", $sLines);
+
+            case 'insights':
+                $insights = self::getPublishedInsights();
+                $iLines = [];
+                $iLines[] = "# {$appName} — Perspectives & Technical Insights";
+                $iLines[] = "> Technical teardowns, digital transformation playbooks, and strategic analysis from BusinessDoctor engineers.";
+                $iLines[] = "";
+                $iLines[] = "- **Canonical URL**: [{$baseUrl}/insights.php]({$baseUrl}/insights.php)";
+                $iLines[] = "- **Markdown Resource**: [{$baseUrl}/md/insights.md]({$baseUrl}/md/insights.md)";
+                $iLines[] = "- **Master Markdown Index**: [{$baseUrl}/md]({$baseUrl}/md)";
+                $iLines[] = "";
+                $iLines[] = "---";
+                $iLines[] = "";
+                $iLines[] = "## Published Editorial & Technical Articles";
+                $iLines[] = "";
+                if (empty($insights)) {
+                    $iLines[] = "No editorial articles currently published.";
+                } else {
+                    foreach ($insights as $art) {
+                        $title = trim($art['title']);
+                        $slug = $art['slug'];
+                        $author = $art['author_name'] ?: ($art['author'] ?: 'BusinessDoctor Engineering');
+                        $readTime = $art['reading_time'] ?? '5 min read';
+                        $pubDate = !empty($art['published_at']) ? date('M j, Y', strtotime($art['published_at'])) : '';
+                        $summary = trim(preg_replace('/\s+/', ' ', strip_tags($art['summary'] ?: ($art['excerpt'] ?: ''))));
+                        $mdUrl = "{$baseUrl}/md/insights/{$slug}.md";
+                        $cleanMdUrl = "{$baseUrl}/insights/{$slug}.md";
+                        $webUrl = "{$baseUrl}/insight-detail.php?slug={$slug}";
+
+                        $iLines[] = "### {$title}";
+                        $iLines[] = "- **Author**: {$author} | **Date**: {$pubDate} | **Read Time**: {$readTime}";
+                        $iLines[] = "- **Markdown File**: [{$slug}.md]({$cleanMdUrl}) ([Mirror]({$mdUrl})) | [Web Page]({$webUrl})";
+                        $iLines[] = "- **Summary**: {$summary}";
+                        $iLines[] = "";
+                    }
+                }
+                $iLines[] = "---";
+                $iLines[] = "*Maintained by {$appName} Editorial Staff.*";
+                return implode("\n", $iLines);
+
+            case 'case-studies':
+                $cases = self::getPublishedCaseStudies();
+                $cLines = [];
+                $cLines[] = "# {$appName} — Client Case Studies & Proven Results";
+                $cLines[] = "> Measurable outcomes, revenue acceleration, and architectural turnarounds for enterprise clients.";
+                $cLines[] = "";
+                $cLines[] = "- **Canonical URL**: [{$baseUrl}/case-studies.php]({$baseUrl}/case-studies.php)";
+                $cLines[] = "- **Markdown Resource**: [{$baseUrl}/md/case-studies.md]({$baseUrl}/md/case-studies.md)";
+                $cLines[] = "- **Master Markdown Index**: [{$baseUrl}/md]({$baseUrl}/md)";
+                $cLines[] = "";
+                $cLines[] = "---";
+                $cLines[] = "";
+                $cLines[] = "## Enterprise Client Turnarounds";
+                $cLines[] = "";
+                if (empty($cases)) {
+                    $cLines[] = "No client case studies currently published.";
+                } else {
+                    foreach ($cases as $c) {
+                        $title = trim($c['title']);
+                        $slug = $c['slug'];
+                        $industry = $c['industry'] ?: ($c['client_industry'] ?: 'Enterprise');
+                        $baseline = $c['baseline_metric'] ?? '';
+                        $outcome = $c['outcome_metric'] ?? '';
+                        $metricShift = ($baseline && $outcome) ? "{$baseline} → {$outcome}" : ($outcome ?: '');
+                        $mdUrl = "{$baseUrl}/md/case-studies/{$slug}.md";
+                        $cleanMdUrl = "{$baseUrl}/case-studies/{$slug}.md";
+                        $webUrl = "{$baseUrl}/case-study-detail.php?slug={$slug}";
+
+                        $cLines[] = "### {$title}";
+                        $cLines[] = "- **Industry**: {$industry}" . ($metricShift ? " | **Metric Shift**: `{$metricShift}`" : "");
+                        $cLines[] = "- **Markdown File**: [{$slug}.md]({$cleanMdUrl}) ([Mirror]({$mdUrl})) | [Web Page]({$webUrl})";
+                        if (!empty($c['project_summary'])) {
+                            $cLines[] = "- **Summary**: " . trim(preg_replace('/\s+/', ' ', strip_tags($c['project_summary'])));
+                        }
+                        $cLines[] = "";
+                    }
+                }
+                $cLines[] = "---";
+                $cLines[] = "*Maintained by {$appName} Client Turnaround Practice.*";
+                return implode("\n", $cLines);
+
             case 'home':
             default:
                 return <<<MD
@@ -938,8 +1049,8 @@ MD;
             $written[] = 'md/index.md';
         }
 
-        // 2. Static Pages
-        $staticDocs = ['about', 'contact', 'audit', 'home'];
+        // 2. Static Pages & Section Catalogs
+        $staticDocs = ['about', 'contact', 'audit', 'home', 'services', 'insights', 'case-studies'];
         foreach ($staticDocs as $doc) {
             $path = $mdBaseDir . "/{$doc}.md";
             $content = self::generateStaticPageMarkdown($doc);

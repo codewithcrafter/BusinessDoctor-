@@ -3,21 +3,59 @@
 $uri = parse_url($_SERVER['REQUEST_URI'], PHP_URL_PATH);
 $file = __DIR__ . $uri;
 
-// 1. Static files or physical scripts
-if (str_ends_with($uri, '.md') && file_exists($file) && !is_dir($file)) {
-    header('Content-Type: text/markdown; charset=UTF-8');
-    header('Access-Control-Allow-Origin: *');
-    header('X-Robots-Tag: index, follow');
-    readfile($file);
-    return true;
-}
-
+// 1. Static physical files (excluding directories)
 if ($uri !== '/' && file_exists($file) && !is_dir($file)) {
+    if (str_ends_with($uri, '.md')) {
+        header('Content-Type: text/markdown; charset=UTF-8');
+        header('Access-Control-Allow-Origin: *');
+        header('X-Robots-Tag: index, follow');
+        readfile($file);
+        return true;
+    }
     return false; // serve directly
 }
 
+// ============================================================
+// Markdown Routes (/services/{slug}.md, /md/..., etc.)
+// ============================================================
+
 // Clean Markdown Index: /md or /md/
 if ($uri === '/md' || $uri === '/md/') {
+    require __DIR__ . '/md/index.php';
+    return true;
+}
+
+// Clean Service Markdown URLs: /services/{slug}.md -> md/services/{slug}.md
+if (preg_match('#^/services/([a-zA-Z0-9_-]+)\.md$#', $uri, $matches)) {
+    $_GET['file'] = 'services/' . $matches[1] . '.md';
+    require __DIR__ . '/md/index.php';
+    return true;
+}
+
+// Clean Insight Markdown URLs: /insights/{slug}.md -> md/insights/{slug}.md
+if (preg_match('#^/insights/([a-zA-Z0-9_-]+)\.md$#', $uri, $matches)) {
+    $_GET['file'] = 'insights/' . $matches[1] . '.md';
+    require __DIR__ . '/md/index.php';
+    return true;
+}
+
+// Clean Case Study Markdown URLs: /case-studies/{slug}.md -> md/case-studies/{slug}.md
+if (preg_match('#^/case-studies/([a-zA-Z0-9_-]+)\.md$#', $uri, $matches)) {
+    $_GET['file'] = 'case-studies/' . $matches[1] . '.md';
+    require __DIR__ . '/md/index.php';
+    return true;
+}
+
+// Central /md/... path routing
+if (str_starts_with($uri, '/md/')) {
+    $_GET['file'] = substr($uri, 4);
+    require __DIR__ . '/md/index.php';
+    return true;
+}
+
+// Clean root-level Markdown URLs: /about.md, /contact.md, /services.md, etc.
+if (preg_match('#^/([a-zA-Z0-9_-]+)\.md$#', $uri, $matches)) {
+    $_GET['file'] = $matches[1] . '.md';
     require __DIR__ . '/md/index.php';
     return true;
 }
