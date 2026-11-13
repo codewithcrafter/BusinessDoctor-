@@ -8,7 +8,8 @@
 - **Practice Area**: E-Commerce & Marketplace Management
 - **Quantifiable Metric Shift**: `1.8x ROAS / 34% Buy Box Loss` → `4.6x ROAS / 94% Buy Box Control` (Marketplace Revenue Scale)
 - **Canonical Web URL**: [https://demo.businessdoctor.com/case-study-detail.php?slug=multichannel-retail-marketplace-dominance](https://demo.businessdoctor.com/case-study-detail.php?slug=multichannel-retail-marketplace-dominance)
-- **Markdown Resource**: [https://demo.businessdoctor.com/md/case-studies/multichannel-retail-marketplace-dominance.md](https://demo.businessdoctor.com/md/case-studies/multichannel-retail-marketplace-dominance.md)
+- **Clean Markdown URL**: [https://demo.businessdoctor.com/case-studies/multichannel-retail-marketplace-dominance.md](https://demo.businessdoctor.com/case-studies/multichannel-retail-marketplace-dominance.md)
+- **Central Markdown URL**: [https://demo.businessdoctor.com/md/case-studies/multichannel-retail-marketplace-dominance.md](https://demo.businessdoctor.com/md/case-studies/multichannel-retail-marketplace-dominance.md)
 
 ---
 

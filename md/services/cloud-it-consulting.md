@@ -4,7 +4,8 @@
 
 ## Discipline Information
 - **Canonical Web URL**: [https://demo.businessdoctor.com/services/cloud-it-consulting](https://demo.businessdoctor.com/services/cloud-it-consulting)
-- **Markdown Resource**: [https://demo.businessdoctor.com/md/services/cloud-it-consulting.md](https://demo.businessdoctor.com/md/services/cloud-it-consulting.md)
+- **Clean Markdown URL**: [https://demo.businessdoctor.com/services/cloud-it-consulting.md](https://demo.businessdoctor.com/services/cloud-it-consulting.md)
+- **Central Markdown URL**: [https://demo.businessdoctor.com/md/services/cloud-it-consulting.md](https://demo.businessdoctor.com/md/services/cloud-it-consulting.md)
 
 ---
 

@@ -555,6 +555,7 @@ class SeoSyncEngine
         $pubDate = !empty($blog['published_at']) ? date('Y-m-d', strtotime($blog['published_at'])) : date('Y-m-d');
         $updatedDate = !empty($blog['updated_at']) ? date('Y-m-d', strtotime($blog['updated_at'])) : $pubDate;
         $canonicalUrl = $baseUrl . '/insight-detail.php?slug=' . urlencode($slug);
+        $cleanMdUrl = $baseUrl . '/insights/' . urlencode($slug) . '.md';
         $mdUrl = $baseUrl . '/md/insights/' . urlencode($slug) . '.md';
 
         $summary = trim($blog['summary'] ?: ($blog['excerpt'] ?: ''));
@@ -574,7 +575,8 @@ class SeoSyncEngine
         $lines[] = "- **Last Modified**: {$updatedDate}";
         $lines[] = "- **Reading Time**: {$readTime}";
         $lines[] = "- **Canonical Web URL**: [{$canonicalUrl}]({$canonicalUrl})";
-        $lines[] = "- **Markdown Resource**: [{$mdUrl}]({$mdUrl})";
+        $lines[] = "- **Clean Markdown URL**: [{$cleanMdUrl}]({$cleanMdUrl})";
+        $lines[] = "- **Central Markdown URL**: [{$mdUrl}]({$mdUrl})";
         $lines[] = "";
         $lines[] = "---";
         $lines[] = "";
@@ -599,6 +601,7 @@ class SeoSyncEngine
         $industry = trim($case['industry'] ?: ($case['client_industry'] ?: 'Enterprise'));
         $practice = trim($case['service_category'] ?: ($case['practice_area'] ?: 'Digital Practice'));
         $canonicalUrl = $baseUrl . '/case-study-detail.php?slug=' . urlencode($slug);
+        $cleanMdUrl = $baseUrl . '/case-studies/' . urlencode($slug) . '.md';
         $mdUrl = $baseUrl . '/md/case-studies/' . urlencode($slug) . '.md';
         $summary = trim($case['project_summary'] ?? '');
         $baseline = trim($case['baseline_metric'] ?? '');
@@ -620,7 +623,8 @@ class SeoSyncEngine
             $lines[] = "- **Quantifiable Metric Shift**: `{$baseline}` → `{$outcome}`" . ($metricLabel ? " ({$metricLabel})" : "");
         }
         $lines[] = "- **Canonical Web URL**: [{$canonicalUrl}]({$canonicalUrl})";
-        $lines[] = "- **Markdown Resource**: [{$mdUrl}]({$mdUrl})";
+        $lines[] = "- **Clean Markdown URL**: [{$cleanMdUrl}]({$cleanMdUrl})";
+        $lines[] = "- **Central Markdown URL**: [{$mdUrl}]({$mdUrl})";
         $lines[] = "";
         $lines[] = "---";
         $lines[] = "";
@@ -667,6 +671,7 @@ class SeoSyncEngine
         $summary = trim($service['summary'] ?? '');
         $description = trim($service['description'] ?? '');
         $canonicalUrl = $baseUrl . '/services/' . urlencode($slug);
+        $cleanMdUrl = $baseUrl . '/services/' . urlencode($slug) . '.md';
         $mdUrl = $baseUrl . '/md/services/' . urlencode($slug) . '.md';
 
         $lines = [];
@@ -678,7 +683,8 @@ class SeoSyncEngine
         }
         $lines[] = "## Discipline Information";
         $lines[] = "- **Canonical Web URL**: [{$canonicalUrl}]({$canonicalUrl})";
-        $lines[] = "- **Markdown Resource**: [{$mdUrl}]({$mdUrl})";
+        $lines[] = "- **Clean Markdown URL**: [{$cleanMdUrl}]({$cleanMdUrl})";
+        $lines[] = "- **Central Markdown URL**: [{$mdUrl}]({$mdUrl})";
         $lines[] = "";
         $lines[] = "---";
         $lines[] = "";

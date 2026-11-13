@@ -4,7 +4,8 @@
 
 ## Discipline Information
 - **Canonical Web URL**: [https://demo.businessdoctor.com/services/creative-video-production](https://demo.businessdoctor.com/services/creative-video-production)
-- **Markdown Resource**: [https://demo.businessdoctor.com/md/services/creative-video-production.md](https://demo.businessdoctor.com/md/services/creative-video-production.md)
+- **Clean Markdown URL**: [https://demo.businessdoctor.com/services/creative-video-production.md](https://demo.businessdoctor.com/services/creative-video-production.md)
+- **Central Markdown URL**: [https://demo.businessdoctor.com/md/services/creative-video-production.md](https://demo.businessdoctor.com/md/services/creative-video-production.md)
 
 ---
 

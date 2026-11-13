@@ -4,7 +4,8 @@
 
 ## Discipline Information
 - **Canonical Web URL**: [https://demo.businessdoctor.com/services/digital-marketing-seo](https://demo.businessdoctor.com/services/digital-marketing-seo)
-- **Markdown Resource**: [https://demo.businessdoctor.com/md/services/digital-marketing-seo.md](https://demo.businessdoctor.com/md/services/digital-marketing-seo.md)
+- **Clean Markdown URL**: [https://demo.businessdoctor.com/services/digital-marketing-seo.md](https://demo.businessdoctor.com/services/digital-marketing-seo.md)
+- **Central Markdown URL**: [https://demo.businessdoctor.com/md/services/digital-marketing-seo.md](https://demo.businessdoctor.com/md/services/digital-marketing-seo.md)
 
 ---
 

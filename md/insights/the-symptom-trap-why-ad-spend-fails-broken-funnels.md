@@ -9,7 +9,8 @@
 - **Last Modified**: 2026-11-13
 - **Reading Time**: 7 min read
 - **Canonical Web URL**: [https://demo.businessdoctor.com/insight-detail.php?slug=the-symptom-trap-why-ad-spend-fails-broken-funnels](https://demo.businessdoctor.com/insight-detail.php?slug=the-symptom-trap-why-ad-spend-fails-broken-funnels)
-- **Markdown Resource**: [https://demo.businessdoctor.com/md/insights/the-symptom-trap-why-ad-spend-fails-broken-funnels.md](https://demo.businessdoctor.com/md/insights/the-symptom-trap-why-ad-spend-fails-broken-funnels.md)
+- **Clean Markdown URL**: [https://demo.businessdoctor.com/insights/the-symptom-trap-why-ad-spend-fails-broken-funnels.md](https://demo.businessdoctor.com/insights/the-symptom-trap-why-ad-spend-fails-broken-funnels.md)
+- **Central Markdown URL**: [https://demo.businessdoctor.com/md/insights/the-symptom-trap-why-ad-spend-fails-broken-funnels.md](https://demo.businessdoctor.com/md/insights/the-symptom-trap-why-ad-spend-fails-broken-funnels.md)
 
 ---
 

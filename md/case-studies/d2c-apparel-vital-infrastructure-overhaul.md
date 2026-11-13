@@ -8,7 +8,8 @@
 - **Practice Area**: Web Development & UI/UX Design
 - **Quantifiable Metric Shift**: `4.8s Page Load / 1.4% Conv` → `0.68s Page Load / 3.9% Conv` (Net Conversion Surge)
 - **Canonical Web URL**: [https://demo.businessdoctor.com/case-study-detail.php?slug=d2c-apparel-vital-infrastructure-overhaul](https://demo.businessdoctor.com/case-study-detail.php?slug=d2c-apparel-vital-infrastructure-overhaul)
-- **Markdown Resource**: [https://demo.businessdoctor.com/md/case-studies/d2c-apparel-vital-infrastructure-overhaul.md](https://demo.businessdoctor.com/md/case-studies/d2c-apparel-vital-infrastructure-overhaul.md)
+- **Clean Markdown URL**: [https://demo.businessdoctor.com/case-studies/d2c-apparel-vital-infrastructure-overhaul.md](https://demo.businessdoctor.com/case-studies/d2c-apparel-vital-infrastructure-overhaul.md)
+- **Central Markdown URL**: [https://demo.businessdoctor.com/md/case-studies/d2c-apparel-vital-infrastructure-overhaul.md](https://demo.businessdoctor.com/md/case-studies/d2c-apparel-vital-infrastructure-overhaul.md)
 
 ---
 

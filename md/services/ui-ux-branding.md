@@ -4,7 +4,8 @@
 
 ## Discipline Information
 - **Canonical Web URL**: [https://demo.businessdoctor.com/services/ui-ux-branding](https://demo.businessdoctor.com/services/ui-ux-branding)
-- **Markdown Resource**: [https://demo.businessdoctor.com/md/services/ui-ux-branding.md](https://demo.businessdoctor.com/md/services/ui-ux-branding.md)
+- **Clean Markdown URL**: [https://demo.businessdoctor.com/services/ui-ux-branding.md](https://demo.businessdoctor.com/services/ui-ux-branding.md)
+- **Central Markdown URL**: [https://demo.businessdoctor.com/md/services/ui-ux-branding.md](https://demo.businessdoctor.com/md/services/ui-ux-branding.md)
 
 ---
 

@@ -4,7 +4,8 @@
 
 ## Discipline Information
 - **Canonical Web URL**: [https://demo.businessdoctor.com/services/ecommerce-marketplaces](https://demo.businessdoctor.com/services/ecommerce-marketplaces)
-- **Markdown Resource**: [https://demo.businessdoctor.com/md/services/ecommerce-marketplaces.md](https://demo.businessdoctor.com/md/services/ecommerce-marketplaces.md)
+- **Clean Markdown URL**: [https://demo.businessdoctor.com/services/ecommerce-marketplaces.md](https://demo.businessdoctor.com/services/ecommerce-marketplaces.md)
+- **Central Markdown URL**: [https://demo.businessdoctor.com/md/services/ecommerce-marketplaces.md](https://demo.businessdoctor.com/md/services/ecommerce-marketplaces.md)
 
 ---
 

@@ -9,7 +9,8 @@
 - **Last Modified**: 2026-11-13
 - **Reading Time**: 5 min read
 - **Canonical Web URL**: [https://demo.businessdoctor.com/insight-detail.php?slug=core-web-vitals-and-enterprise-valuation](https://demo.businessdoctor.com/insight-detail.php?slug=core-web-vitals-and-enterprise-valuation)
-- **Markdown Resource**: [https://demo.businessdoctor.com/md/insights/core-web-vitals-and-enterprise-valuation.md](https://demo.businessdoctor.com/md/insights/core-web-vitals-and-enterprise-valuation.md)
+- **Clean Markdown URL**: [https://demo.businessdoctor.com/insights/core-web-vitals-and-enterprise-valuation.md](https://demo.businessdoctor.com/insights/core-web-vitals-and-enterprise-valuation.md)
+- **Central Markdown URL**: [https://demo.businessdoctor.com/md/insights/core-web-vitals-and-enterprise-valuation.md](https://demo.businessdoctor.com/md/insights/core-web-vitals-and-enterprise-valuation.md)
 
 ---
 

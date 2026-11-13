@@ -9,7 +9,8 @@
 - **Last Modified**: 2026-11-13
 - **Reading Time**: 8 min read
 - **Canonical Web URL**: [https://demo.businessdoctor.com/insight-detail.php?slug=brand-architecture-as-risk-mitigation](https://demo.businessdoctor.com/insight-detail.php?slug=brand-architecture-as-risk-mitigation)
-- **Markdown Resource**: [https://demo.businessdoctor.com/md/insights/brand-architecture-as-risk-mitigation.md](https://demo.businessdoctor.com/md/insights/brand-architecture-as-risk-mitigation.md)
+- **Clean Markdown URL**: [https://demo.businessdoctor.com/insights/brand-architecture-as-risk-mitigation.md](https://demo.businessdoctor.com/insights/brand-architecture-as-risk-mitigation.md)
+- **Central Markdown URL**: [https://demo.businessdoctor.com/md/insights/brand-architecture-as-risk-mitigation.md](https://demo.businessdoctor.com/md/insights/brand-architecture-as-risk-mitigation.md)
 
 ---
 

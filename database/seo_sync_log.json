@@ -1,9 +1,9 @@
 {
-    "last_sync_timestamp": "2026-11-13 07:17:15",
-    "last_sync_iso": "2026-11-13T07:17:15+00:00",
-    "trigger_reason": "Markdown Catalog Extensions & Route Fixes",
+    "last_sync_timestamp": "2026-11-13 07:20:57",
+    "last_sync_iso": "2026-11-13T07:20:57+00:00",
+    "trigger_reason": "Update Markdown internal canonical references",
     "status": "success",
-    "duration_ms": 134.15,
+    "duration_ms": 122.07,
     "errors": [],
     "metrics": {
         "static_pages": 7,

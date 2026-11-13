@@ -4,7 +4,8 @@
 
 ## Discipline Information
 - **Canonical Web URL**: [https://demo.businessdoctor.com/services/web-software-development](https://demo.businessdoctor.com/services/web-software-development)
-- **Markdown Resource**: [https://demo.businessdoctor.com/md/services/web-software-development.md](https://demo.businessdoctor.com/md/services/web-software-development.md)
+- **Clean Markdown URL**: [https://demo.businessdoctor.com/services/web-software-development.md](https://demo.businessdoctor.com/services/web-software-development.md)
+- **Central Markdown URL**: [https://demo.businessdoctor.com/md/services/web-software-development.md](https://demo.businessdoctor.com/md/services/web-software-development.md)
 
 ---
 

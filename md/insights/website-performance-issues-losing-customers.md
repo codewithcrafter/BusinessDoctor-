@@ -9,7 +9,8 @@
 - **Last Modified**: 2026-11-10
 - **Reading Time**: 6 min read
 - **Canonical Web URL**: [https://demo.businessdoctor.com/insight-detail.php?slug=website-performance-issues-losing-customers](https://demo.businessdoctor.com/insight-detail.php?slug=website-performance-issues-losing-customers)
-- **Markdown Resource**: [https://demo.businessdoctor.com/md/insights/website-performance-issues-losing-customers.md](https://demo.businessdoctor.com/md/insights/website-performance-issues-losing-customers.md)
+- **Clean Markdown URL**: [https://demo.businessdoctor.com/insights/website-performance-issues-losing-customers.md](https://demo.businessdoctor.com/insights/website-performance-issues-losing-customers.md)
+- **Central Markdown URL**: [https://demo.businessdoctor.com/md/insights/website-performance-issues-losing-customers.md](https://demo.businessdoctor.com/md/insights/website-performance-issues-losing-customers.md)
 
 ---
 

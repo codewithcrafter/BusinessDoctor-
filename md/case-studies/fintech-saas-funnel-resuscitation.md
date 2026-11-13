@@ -8,7 +8,8 @@
 - **Practice Area**: Web Development & Performance Marketing
 - **Quantifiable Metric Shift**: `$840 CAC / 1.1% Demo Conv` → `$290 CAC / 4.6% Demo Conv` (Qualified Pipeline Growth)
 - **Canonical Web URL**: [https://demo.businessdoctor.com/case-study-detail.php?slug=fintech-saas-funnel-resuscitation](https://demo.businessdoctor.com/case-study-detail.php?slug=fintech-saas-funnel-resuscitation)
-- **Markdown Resource**: [https://demo.businessdoctor.com/md/case-studies/fintech-saas-funnel-resuscitation.md](https://demo.businessdoctor.com/md/case-studies/fintech-saas-funnel-resuscitation.md)
+- **Clean Markdown URL**: [https://demo.businessdoctor.com/case-studies/fintech-saas-funnel-resuscitation.md](https://demo.businessdoctor.com/case-studies/fintech-saas-funnel-resuscitation.md)
+- **Central Markdown URL**: [https://demo.businessdoctor.com/md/case-studies/fintech-saas-funnel-resuscitation.md](https://demo.businessdoctor.com/md/case-studies/fintech-saas-funnel-resuscitation.md)
 
 ---
 
