@@ -11,6 +11,8 @@
 - **Clean Markdown URL**: [https://demo.businesdoctor.com/case-studies/fintech-saas-funnel-resuscitation.md](https://demo.businesdoctor.com/case-studies/fintech-saas-funnel-resuscitation.md)
 - **Central Markdown URL**: [https://demo.businesdoctor.com/md/case-studies/fintech-saas-funnel-resuscitation.md](https://demo.businesdoctor.com/md/case-studies/fintech-saas-funnel-resuscitation.md)
 
+![FinTech payment pipeline and conversion telemetry architectural schematic (Placeholder)](https://demo.businesdoctor.com/uploads/cases/fintech-saas-funnel-architecture-cover.svg)
+
 ---
 
 ## 1. Challenge & Operational Bottlenecks

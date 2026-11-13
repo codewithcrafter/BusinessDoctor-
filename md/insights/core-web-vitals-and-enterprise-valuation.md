@@ -12,6 +12,8 @@
 - **Clean Markdown URL**: [https://demo.businesdoctor.com/insights/core-web-vitals-and-enterprise-valuation.md](https://demo.businesdoctor.com/insights/core-web-vitals-and-enterprise-valuation.md)
 - **Central Markdown URL**: [https://demo.businesdoctor.com/md/insights/core-web-vitals-and-enterprise-valuation.md](https://demo.businesdoctor.com/md/insights/core-web-vitals-and-enterprise-valuation.md)
 
+![Stalled marketing dashboard showing website performance issues and declining conversions](https://demo.businesdoctor.com/assets/img/blog/Stalled Marketing Dashboard Crisis.png)
+
 ---
 
 Page speed is no longer merely a cosmetic feature or user experience preference; it is the foundational benchmark of modern web engineering and digital enterprise valuation.

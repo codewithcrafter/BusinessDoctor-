@@ -12,6 +12,8 @@
 - **Clean Markdown URL**: [https://demo.businesdoctor.com/insights/website-performance-issues-losing-customers.md](https://demo.businesdoctor.com/insights/website-performance-issues-losing-customers.md)
 - **Central Markdown URL**: [https://demo.businesdoctor.com/md/insights/website-performance-issues-losing-customers.md](https://demo.businesdoctor.com/md/insights/website-performance-issues-losing-customers.md)
 
+![Why Your Website Is Losing Customers: 7 Performance Issues You Should Fix](https://demo.businesdoctor.com/assets/uploads/blog_ad7de11abea106463765.png)
+
 ---
 
 # Why Your Website Is Losing Customers: 7 Performance Issues You Should Fix

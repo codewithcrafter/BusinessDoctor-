@@ -578,6 +578,13 @@ class SeoSyncEngine
         $lines[] = "- **Clean Markdown URL**: [{$cleanMdUrl}]({$cleanMdUrl})";
         $lines[] = "- **Central Markdown URL**: [{$mdUrl}]({$mdUrl})";
         $lines[] = "";
+        if (!empty($blog['featured_image'])) {
+            $imgSrc = $blog['featured_image'];
+            $imgUrl = str_starts_with($imgSrc, 'http') ? $imgSrc : ($baseUrl . '/' . ltrim($imgSrc, '/'));
+            $alt = !empty($blog['cover_image_alt']) ? $blog['cover_image_alt'] : $title;
+            $lines[] = "![{$alt}]({$imgUrl})";
+            $lines[] = "";
+        }
         $lines[] = "---";
         $lines[] = "";
         $lines[] = $content;
@@ -626,6 +633,13 @@ class SeoSyncEngine
         $lines[] = "- **Clean Markdown URL**: [{$cleanMdUrl}]({$cleanMdUrl})";
         $lines[] = "- **Central Markdown URL**: [{$mdUrl}]({$mdUrl})";
         $lines[] = "";
+        if (!empty($case['featured_image'])) {
+            $imgSrc = $case['featured_image'];
+            $imgUrl = str_starts_with($imgSrc, 'http') ? $imgSrc : ($baseUrl . '/' . ltrim($imgSrc, '/'));
+            $alt = !empty($case['cover_image_alt']) ? $case['cover_image_alt'] : $title;
+            $lines[] = "![{$alt}]({$imgUrl})";
+            $lines[] = "";
+        }
         $lines[] = "---";
         $lines[] = "";
 
@@ -918,12 +932,28 @@ MD;
 ---
 
 ## Practice Disciplines
-- **Web & Custom Software Development**: Full-stack engineering, custom applications, and sub-second web architecture.
-- **Digital Marketing & Performance Ads**: Search marketing, paid acquisition, and conversion rate optimization.
-- **UI/UX Design & Brand Identity**: Premium interface design, interactive prototypes, and design systems.
-- **E-Commerce & Marketplaces**: Amazon/Flipkart management, Buy Box protection, and D2C scaling.
-- **Creative Production & Video Marketing**: Commercial photography, brand narrative video, and motion graphics.
-- **Cloud Solutions & IT Consulting**: Infrastructure setup, security monitoring, and automated devops.
+- **[Web & Custom Software Development]({$baseUrl}/services/web-software-development)**: Full-stack engineering, custom applications, and sub-second web architecture.
+- **[Digital Marketing & Performance Ads]({$baseUrl}/services/digital-marketing-seo)**: Search marketing, paid acquisition, and conversion rate optimization.
+- **[UI/UX Design & Brand Identity]({$baseUrl}/services/ui-ux-branding)**: Premium interface design, interactive prototypes, and design systems.
+- **[E-Commerce & Marketplaces]({$baseUrl}/services/ecommerce-marketplaces)**: Amazon/Flipkart management, Buy Box protection, and D2C scaling.
+- **[Creative Production & Video Marketing]({$baseUrl}/services/creative-video-production)**: Commercial photography, brand narrative video, and motion graphics.
+- **[Cloud Solutions & IT Consulting]({$baseUrl}/services/cloud-it-consulting)**: Infrastructure setup, security monitoring, and automated devops.
+
+---
+
+## Frequently Asked Questions
+
+### What core services does BusinessDoctor provide?
+BusinessDoctor delivers enterprise full-stack software development, performance digital marketing and SEO, UI/UX architecture, e-commerce marketplace scaling, commercial creative video production, and cloud IT infrastructure consulting.
+
+### How does BusinessDoctor conduct digital architecture audits?
+Our senior technical architects perform deep diagnostic audits across four critical vectors: software engineering latency, digital ad spend ROI and CAC leakage, enterprise systems resilience, and brand identity conversion trust.
+
+### Can BusinessDoctor resuscitate failing enterprise web projects?
+Yes. We specialize in turn-around engineering for distressed codebases, slow legacy web applications, broken checkout funnels, and high-traffic transactional platforms facing scalability bottlenecks.
+
+### Where does BusinessDoctor operate?
+BusinessDoctor operates globally with distributed engineering leadership and principal consultants headquartered in our Noida, India innovation corridor.
 
 ---
 *Maintained by {$appName}.*

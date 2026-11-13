@@ -34,28 +34,18 @@ AddType text/markdown .md
     RewriteRule ^ /services.php? [R=301,L]
 
     # ============================================================
-    # Clean Markdown Document Routes (*.md)
+    # Universal Markdown Document Routes (*.md & /md gateway)
     # Handled BEFORE HTML/PHP rewrites and custom 404 handlers
     # ============================================================
 
     # 1. Clean Markdown Gateway: /md or /md/
-    RewriteRule ^md/?$ md/index.php [L,QSA]
+    RewriteRule ^md/?$ markdown-router.php [L,QSA]
 
-    # 2. Clean Service Markdown URLs: /services/{slug}.md -> md/index.php?file=services/$1.md
-    RewriteRule ^services/([a-zA-Z0-9_-]+)\.md$ md/index.php?file=services/$1.md [L,QSA]
-
-    # 3. Clean Insight Markdown URLs: /insights/{slug}.md -> md/index.php?file=insights/$1.md
-    RewriteRule ^insights/([a-zA-Z0-9_-]+)\.md$ md/index.php?file=insights/$1.md [L,QSA]
-
-    # 4. Clean Case Study Markdown URLs: /case-studies/{slug}.md -> md/index.php?file=case-studies/$1.md
-    RewriteRule ^case-studies/([a-zA-Z0-9_-]+)\.md$ md/index.php?file=case-studies/$1.md [L,QSA]
-
-    # 5. Direct central Markdown files under /md/...
-    RewriteRule ^md/(.+\.md)$ md/index.php?file=$1 [L,QSA]
-
-    # 6. Clean root-level Markdown files: /about.md, /contact.md, /services.md, etc.
-    RewriteCond %{REQUEST_FILENAME} !-f
-    RewriteRule ^([a-zA-Z0-9_-]+)\.md$ md/index.php?file=$1.md [L,QSA]
+    # 2. Universal Markdown Routing:
+    # Matches any request ending in .md (e.g. /.md, /about.php.md, /services/foo.md, /insight-detail.php.md)
+    # or targeting the central /md/... repository
+    RewriteCond %{REQUEST_URI} !^/markdown-router\.php
+    RewriteRule (\.md$|^md/) markdown-router.php [L,QSA]
 
     # Clean Service URL Rewriting: /services/{slug} -> /service-detail.php?slug={slug}
     RewriteCond %{REQUEST_FILENAME} !-f

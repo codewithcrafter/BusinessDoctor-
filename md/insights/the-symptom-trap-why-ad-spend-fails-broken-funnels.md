@@ -12,6 +12,8 @@
 - **Clean Markdown URL**: [https://demo.businesdoctor.com/insights/the-symptom-trap-why-ad-spend-fails-broken-funnels.md](https://demo.businesdoctor.com/insights/the-symptom-trap-why-ad-spend-fails-broken-funnels.md)
 - **Central Markdown URL**: [https://demo.businesdoctor.com/md/insights/the-symptom-trap-why-ad-spend-fails-broken-funnels.md](https://demo.businesdoctor.com/md/insights/the-symptom-trap-why-ad-spend-fails-broken-funnels.md)
 
+![Digital marketing budget, website performance and conversion optimization analytics](https://demo.businesdoctor.com/assets/img/blog/Marketing Budget Meets Website Performance.png)
+
 ---
 
 In digital commerce, pouring paid media budgets into a slow, unoptimized website is the commercial equivalent of pouring water into a bucket riddled with holes.

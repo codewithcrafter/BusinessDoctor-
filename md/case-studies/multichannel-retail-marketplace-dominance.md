@@ -11,6 +11,8 @@
 - **Clean Markdown URL**: [https://demo.businesdoctor.com/case-studies/multichannel-retail-marketplace-dominance.md](https://demo.businesdoctor.com/case-studies/multichannel-retail-marketplace-dominance.md)
 - **Central Markdown URL**: [https://demo.businesdoctor.com/md/case-studies/multichannel-retail-marketplace-dominance.md](https://demo.businesdoctor.com/md/case-studies/multichannel-retail-marketplace-dominance.md)
 
+![Omnichannel marketplace catalog synchronization and automated repricing engine schematic (Placeholder)](https://demo.businesdoctor.com/uploads/cases/multichannel-marketplace-hub-cover.svg)
+
 ---
 
 ## 1. Challenge & Operational Bottlenecks

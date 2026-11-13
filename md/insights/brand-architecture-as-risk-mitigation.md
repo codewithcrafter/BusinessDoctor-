@@ -12,6 +12,8 @@
 - **Clean Markdown URL**: [https://demo.businesdoctor.com/insights/brand-architecture-as-risk-mitigation.md](https://demo.businesdoctor.com/insights/brand-architecture-as-risk-mitigation.md)
 - **Central Markdown URL**: [https://demo.businesdoctor.com/md/insights/brand-architecture-as-risk-mitigation.md](https://demo.businesdoctor.com/md/insights/brand-architecture-as-risk-mitigation.md)
 
+![Slow website loading and increasing digital advertising costs](https://demo.businesdoctor.com/assets/img/blog/Slow Loading, Rising Costs.png)
+
 ---
 
 In crowded B2B and consumer markets, commoditized businesses are forced to compete on price, leading to margin compression, high customer churn, and fragile market defensibility.

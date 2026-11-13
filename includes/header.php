@@ -26,7 +26,7 @@ if (!empty($parsedUri['query'])) {
         }
     }
 }
-$canonicalUrl = $canonicalUrl ?? (BASE_URL . $cleanPath . $canonicalParams);
+$canonicalUrl = $canonicalUrl ?? (rtrim(BASE_URL, '/') . '/' . ltrim($cleanPath, '/') . $canonicalParams);
 ?>
 <!DOCTYPE html>
 <html lang="en">

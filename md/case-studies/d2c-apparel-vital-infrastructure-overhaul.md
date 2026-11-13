@@ -11,6 +11,8 @@
 - **Clean Markdown URL**: [https://demo.businesdoctor.com/case-studies/d2c-apparel-vital-infrastructure-overhaul.md](https://demo.businesdoctor.com/case-studies/d2c-apparel-vital-infrastructure-overhaul.md)
 - **Central Markdown URL**: [https://demo.businesdoctor.com/md/case-studies/d2c-apparel-vital-infrastructure-overhaul.md](https://demo.businesdoctor.com/md/case-studies/d2c-apparel-vital-infrastructure-overhaul.md)
 
+![High-volume D2C e-commerce edge infrastructure and flash-sale concurrency diagram (Placeholder)](https://demo.businesdoctor.com/uploads/cases/d2c-ecommerce-edge-infrastructure-cover.svg)
+
 ---
 
 ## 1. Challenge & Operational Bottlenecks
