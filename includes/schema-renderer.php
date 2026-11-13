@@ -182,6 +182,19 @@ function extractFaqsFromContent(string $html): array
         }
     }
 
+    // Pattern 5: Markdown headings (## or ### ending in '?' followed by paragraph text)
+    if (empty($faqs)) {
+        if (preg_match_all('/(?:^|\r?\n)#{2,4}\s*([^\r\n#]+\?)\s*(?:\r?\n)+([^#\r\n][^\r\n]*(?:\r?\n(?!#{1,6}\s|\r?\n)[^\r\n]*)*)/', $html, $matches, PREG_SET_ORDER)) {
+            foreach ($matches as $m) {
+                $q = trim(strip_tags($m[1]));
+                $a = trim(strip_tags($m[2]));
+                if (!empty($q) && !empty($a) && mb_strlen($q) > 8 && mb_strlen($a) > 15) {
+                    $faqs[] = ['question' => $q, 'answer' => $a];
+                }
+            }
+        }
+    }
+
     return $faqs;
 }
 
@@ -193,6 +206,7 @@ function generateArticleSchemaGraph(array $article, string $baseUrl = ''): array
 {
     $baseUrl = rtrim($baseUrl ?: (defined('BASE_URL') ? BASE_URL : 'https://demo.businessdoctor.com'), '/');
     $appName = defined('APP_NAME') ? APP_NAME : 'BusinessDoctor';
+    $legalName = defined('APP_LEGAL_NAME') ? APP_LEGAL_NAME : 'BusinessDoctor IT Solutions & Digital Services Private Limited';
 
     $slug = $article['slug'] ?? '';
     $articleUrl = !empty($article['canonical_url']) ? $article['canonical_url'] : ($baseUrl . '/insight-detail.php?slug=' . urlencode($slug));
@@ -221,57 +235,37 @@ function generateArticleSchemaGraph(array $article, string $baseUrl = ''): array
     $tagsArr = array_filter(array_map('trim', explode(',', (string)$rawTags)));
     $keywords = !empty($tagsArr) ? implode(', ', $tagsArr) : 'IT Strategy, Software Engineering, Enterprise Consulting';
 
-    // 1. BlogPosting Schema
-    $blogPosting = [
+    // 1. Organization Schema (Required: Primary Verified Authority Entity)
+    $organization = [
         '@context' => 'https://schema.org',
-        '@type' => 'BlogPosting',
-        '@id' => $articleUrl . '#article',
-        'isPartOf' => [
-            '@type' => 'Blog',
-            '@id' => $baseUrl . '/insights.php#blog',
-            'name' => 'Perspectives & Technical Insights — ' . $appName,
-            'url' => $baseUrl . '/insights.php'
-        ],
-        'headline' => $title,
-        'description' => $description,
-        'inLanguage' => 'en-US',
-        'mainEntityOfPage' => [
-            '@type' => 'WebPage',
-            '@id' => $articleUrl
-        ],
-        'url' => $articleUrl,
-        'datePublished' => $datePublished,
-        'dateModified' => $dateModified,
-        'articleSection' => $article['category'] ?? 'Enterprise Insights',
-        'keywords' => $keywords,
-        'wordCount' => str_word_count(strip_tags($article['content'] ?? '')),
-        'image' => [
+        '@type' => 'Organization',
+        'name' => $appName,
+        'legalName' => $legalName,
+        'url' => $baseUrl . '/',
+        'logo' => [
             '@type' => 'ImageObject',
-            'url' => $featuredImg,
-            'caption' => !empty($article['cover_image_alt']) ? $article['cover_image_alt'] : $title
+            'url' => $baseUrl . '/assets/img/logo.svg'
         ],
-        'author' => [
-            '@type' => 'Person',
-            '@id' => $baseUrl . '/#author-' . preg_replace('/[^a-z0-9]+/i', '-', strtolower($authorName)),
-            'name' => $authorName,
-            'jobTitle' => $authorTitle
+        'description' => 'BusinessDoctor is an enterprise digital transformation, cloud architecture, and full-stack software development consulting firm.',
+        'telephone' => '+1 (800) 492-3628',
+        'email' => 'solutions@businessdoctor.com',
+        'address' => [
+            '@type' => 'PostalAddress',
+            'streetAddress' => 'Sector 62, Innovation Corridor',
+            'addressLocality' => 'Noida',
+            'addressRegion' => 'UP',
+            'postalCode' => '201301',
+            'addressCountry' => 'IN'
         ],
-        'publisher' => [
-            '@type' => 'Organization',
-            '@id' => $baseUrl . '/#organization',
-            'name' => $appName,
-            'url' => $baseUrl . '/',
-            'logo' => [
-                '@type' => 'ImageObject',
-                'url' => $baseUrl . '/assets/img/og-preview.svg'
-            ]
-        ]
+        'sameAs' => [
+            'https://www.linkedin.com/company/businessdoctor',
+            'https://twitter.com/businessdoctor',
+            'https://github.com/businessdoctor'
+        ],
+        'mainEntityOfPage' => $articleUrl
     ];
-    if (!empty($authorBio)) {
-        $blogPosting['author']['description'] = $authorBio;
-    }
 
-    // 2. BreadcrumbList Schema
+    // 2. BreadcrumbList Schema (Required: Navigation Trail)
     $breadcrumbs = [
         '@context' => 'https://schema.org',
         '@type' => 'BreadcrumbList',
@@ -297,68 +291,69 @@ function generateArticleSchemaGraph(array $article, string $baseUrl = ''): array
         ]
     ];
 
-    // 3. Organization Authority Schema
-    $organization = [
-        '@context' => 'https://schema.org',
-        '@type' => 'Organization',
-        '@id' => $baseUrl . '/#organization',
-        'name' => $appName,
-        'url' => $baseUrl . '/',
-        'logo' => [
-            '@type' => 'ImageObject',
-            'url' => $baseUrl . '/assets/img/og-preview.svg'
-        ]
-    ];
-
-    // 4. Person (Author) Schema
-    $person = [
-        '@context' => 'https://schema.org',
-        '@type' => 'Person',
-        '@id' => $baseUrl . '/#author-' . preg_replace('/[^a-z0-9]+/i', '-', strtolower($authorName)),
-        'name' => $authorName,
-        'jobTitle' => $authorTitle,
-        'worksFor' => [
-            '@type' => 'Organization',
-            '@id' => $baseUrl . '/#organization',
-            'name' => $appName,
-            'url' => $baseUrl . '/'
-        ]
-    ];
-    if (!empty($authorBio)) {
-        $person['description'] = $authorBio;
-    }
-
-    // 0. Parent Publication Blog Schema
+    // 3. Blog Schema (Required: Parent Publication Series)
     $blog = [
         '@context' => 'https://schema.org',
         '@type' => 'Blog',
-        '@id' => $baseUrl . '/insights.php#blog',
         'name' => 'Perspectives & Technical Insights — ' . $appName,
         'description' => 'Enterprise engineering insights, digital transformation architectures, and strategic advisory perspectives.',
         'url' => $baseUrl . '/insights.php',
         'publisher' => [
             '@type' => 'Organization',
-            '@id' => $baseUrl . '/#organization',
             'name' => $appName,
             'url' => $baseUrl . '/'
-        ],
-        'blogPost' => [
-            '@type' => 'BlogPosting',
-            '@id' => $articleUrl . '#article',
-            'headline' => $title,
-            'url' => $articleUrl
         ]
     ];
 
+    // 4. BlogPosting Schema (Additional Valid Structured Data)
+    $blogPosting = [
+        '@context' => 'https://schema.org',
+        '@type' => 'BlogPosting',
+        'headline' => $title,
+        'description' => $description,
+        'inLanguage' => 'en-US',
+        'mainEntityOfPage' => [
+            '@type' => 'WebPage',
+            '@id' => $articleUrl
+        ],
+        'url' => $articleUrl,
+        'datePublished' => $datePublished,
+        'dateModified' => $dateModified,
+        'articleSection' => $article['category'] ?? 'Enterprise Insights',
+        'keywords' => $keywords,
+        'wordCount' => str_word_count(strip_tags($article['content'] ?? '')),
+        'image' => [
+            '@type' => 'ImageObject',
+            'url' => $featuredImg,
+            'caption' => !empty($article['cover_image_alt']) ? $article['cover_image_alt'] : $title
+        ],
+        'author' => [
+            '@type' => 'Person',
+            'name' => $authorName,
+            'jobTitle' => $authorTitle
+        ],
+        'publisher' => [
+            '@type' => 'Organization',
+            'name' => $appName,
+            'url' => $baseUrl . '/',
+            'logo' => [
+                '@type' => 'ImageObject',
+                'url' => $baseUrl . '/assets/img/logo.svg'
+            ]
+        ]
+    ];
+    if (!empty($authorBio)) {
+        $blogPosting['author']['description'] = $authorBio;
+    }
+
     $schemas = [
-        'Blog' => $blog,
-        'BlogPosting' => $blogPosting,
-        'BreadcrumbList' => $breadcrumbs,
         'Organization' => $organization,
-        'Person' => $person
+        'BreadcrumbList' => $breadcrumbs,
+        'Blog' => $blog,
+        'BlogPosting' => $blogPosting
     ];
 
-    // 4. FAQPage Schema — ONLY IF FAQs EXIST IN CONTENT!
+    // 5. FAQPage Schema (Required: Generated when visible FAQs exist)
     $faqs = extractFaqsFromContent($article['content'] ?? '');
     if (!empty($faqs)) {
         $faqItems = [];
@@ -382,10 +377,6 @@ function generateArticleSchemaGraph(array $article, string $baseUrl = ''): array
     return $schemas;
 }
 
-/**
- * Centralized Schema Renderer:
- * Queries active schemas for the page, replaces dynamic tokens, validates JSON, and outputs <script type="application/ld+json">
- */
 function renderPageSchemas(?string $pageKey = null, array $contextData = []): string
 {
     static $renderedSchemas = [];
