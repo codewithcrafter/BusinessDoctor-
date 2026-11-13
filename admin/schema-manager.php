@@ -468,6 +468,26 @@ require_once __DIR__ . '/includes/header.php';
         </a>
       </div>
     </div>
+
+    <!-- Output 5: Markdown Repository (/md) -->
+    <div style="background: rgba(14, 37, 63, 0.6); border: 1px solid rgba(6, 181, 249, 0.2); border-radius: 6px; padding: 1rem;">
+      <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 0.5rem;">
+        <span style="font-family: var(--adm-font-mono); font-size: 0.9rem; font-weight: 700; color: #FFFFFF;">/md Index</span>
+        <span class="status-pill status-pill-active" style="font-size: 0.68rem;">Markdown</span>
+      </div>
+      <div style="font-size: 0.78rem; color: var(--adm-text-muted); margin-bottom: 0.65rem;">
+        Public Markdown mirrors &amp; catalog for LLMs, AI agents, and crawlers.
+      </div>
+      <div style="display: flex; justify-content: space-between; align-items: center; font-size: 0.76rem; border-top: 1px solid rgba(255,255,255,0.06); padding-top: 0.5rem;">
+        <span style="color: var(--adm-teal); font-family: var(--adm-font-mono); font-weight: 600;">
+          <?= $seoSyncStatus['metrics']['total_md_files'] ?? 18 ?> Docs (<?= round(($seoSyncStatus['files']['md_index']['size'] ?? 0) / 1024, 1) ?> KB)
+        </span>
+        <a href="../md" target="_blank" rel="noopener" style="color: #60A5FA; text-decoration: none; display: inline-flex; align-items: center; gap: 0.2rem; font-weight: 600;">
+          <span>View</span>
+          <svg viewBox="0 0 24 24" width="11" height="11" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
+        </a>
+      </div>
+    </div>
   </div>
 
   <!-- Operational Sync Audit Details -->

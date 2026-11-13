@@ -24,5 +24,6 @@ BusinessDoctor is an enterprise digital services practice delivering full-stack 
 
 ## Public Tools & Resources
 - [Free Digital Architecture Audit](https://demo.businessdoctor.com/audit.php): Proprietary diagnostic benchmarking technical bottlenecks, security vulnerabilities, conversion leaks, and scale readiness.
+- [Public Markdown Index](https://demo.businessdoctor.com/md): Complete catalog of pure Markdown mirrors for all published articles, case studies, and practice disciplines.
 - [Comprehensive AI Documentation Index](https://demo.businessdoctor.com/llms.md): Complete machine-readable markdown reference containing full practice details, technical capabilities, and comprehensive catalog.
 - [Executive Advisory & Project Inquiries](https://demo.businessdoctor.com/contact.php): Direct communication portal for engineering scoping, proposals, and consultative advisory.

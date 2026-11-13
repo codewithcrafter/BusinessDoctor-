@@ -2,7 +2,7 @@
 > Engineering Technology. Accelerating Digital Growth.
 
 Canonical Source: https://demo.businessdoctor.com
-Last Updated: 2026-11-12 09:52:57 UTC
+Last Updated: 2026-11-13 06:59:48 UTC
 
 ## 1. Executive Overview & Firm Profile
 
@@ -231,6 +231,7 @@ BusinessDoctor operates an interactive diagnostic assessment portal at [https://
 - **Email Advisory**: [solutions@businessdoctor.com](mailto:solutions@businessdoctor.com)
 - **Direct Phone Line**: +1 (800) 492-3628
 - **Headquarters**: Floor 42, Executive Tech Park, Innovation District
+- **Public Markdown Index**: [https://demo.businessdoctor.com/md](https://demo.businessdoctor.com/md)
 
 ---
 *This document is maintained dynamically by the BusinessDoctor Centralized SEO & LLM Synchronization Engine. All rights reserved.*

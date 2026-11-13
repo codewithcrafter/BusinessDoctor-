@@ -55,6 +55,8 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             ]);
 
             setFlashMessage('success', "Service '{$name}' updated successfully in SQLite database.");
+            require_once __DIR__ . '/../includes/seo-sync.php';
+            SeoSyncEngine::syncAll("Service updated: {$name}");
             header("Location: services.php");
             exit;
         }

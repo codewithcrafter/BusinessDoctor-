@@ -4,8 +4,22 @@ $uri = parse_url($_SERVER['REQUEST_URI'], PHP_URL_PATH);
 $file = __DIR__ . $uri;
 
 // 1. Static files or physical scripts
+if (str_ends_with($uri, '.md') && file_exists($file) && !is_dir($file)) {
+    header('Content-Type: text/markdown; charset=UTF-8');
+    header('Access-Control-Allow-Origin: *');
+    header('X-Robots-Tag: index, follow');
+    readfile($file);
+    return true;
+}
+
 if ($uri !== '/' && file_exists($file) && !is_dir($file)) {
     return false; // serve directly
+}
+
+// Clean Markdown Index: /md or /md/
+if ($uri === '/md' || $uri === '/md/') {
+    require __DIR__ . '/md/index.php';
+    return true;
 }
 
 // 2. Admin clean URL handling

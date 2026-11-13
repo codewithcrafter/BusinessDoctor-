@@ -278,6 +278,7 @@ class SeoSyncEngine
 
         $lines[] = "## Public Tools & Resources";
         $lines[] = "- [Free Digital Architecture Audit]({$baseUrl}/audit.php): Proprietary diagnostic benchmarking technical bottlenecks, security vulnerabilities, conversion leaks, and scale readiness.";
+        $lines[] = "- [Public Markdown Index]({$baseUrl}/md): Complete catalog of pure Markdown mirrors for all published articles, case studies, and practice disciplines.";
         $lines[] = "- [Comprehensive AI Documentation Index]({$baseUrl}/llms.md): Complete machine-readable markdown reference containing full practice details, technical capabilities, and comprehensive catalog.";
         $lines[] = "- [Executive Advisory & Project Inquiries]({$baseUrl}/contact.php): Direct communication portal for engineering scoping, proposals, and consultative advisory.";
         $lines[] = "";
@@ -468,12 +469,551 @@ class SeoSyncEngine
         $lines[] = "- **Email Advisory**: [{$email}](mailto:{$email})";
         $lines[] = "- **Direct Phone Line**: {$phone}";
         $lines[] = "- **Headquarters**: {$hq}";
+        $lines[] = "- **Public Markdown Index**: [{$baseUrl}/md]({$baseUrl}/md)";
         $lines[] = "";
         $lines[] = "---";
         $lines[] = "*This document is maintained dynamically by the BusinessDoctor Centralized SEO & LLM Synchronization Engine. All rights reserved.*";
         $lines[] = "";
 
         return implode("\n", $lines);
+    }
+
+    /**
+     * Convert rich HTML body to clean, standard GitHub Flavored Markdown
+     */
+    public static function htmlToMarkdown(string $html): string
+    {
+        if (trim($html) === '') {
+            return '';
+        }
+        $md = str_replace(["\r\n", "\r"], "\n", $html);
+
+        // Code blocks
+        $md = preg_replace_callback('#<pre><code(?:\s+class="language-([a-zA-Z0-9_-]+)")?>(.*?)</code></pre>#is', function($m) {
+            $lang = $m[1] ?? '';
+            $code = html_entity_decode($m[2], ENT_QUOTES | ENT_HTML5, 'UTF-8');
+            return "\n```{$lang}\n" . trim($code) . "\n```\n";
+        }, $md);
+
+        // Blockquotes
+        $md = preg_replace_callback('#<blockquote.*?>(.*?)</blockquote>#is', function($m) {
+            $text = trim(strip_tags($m[1]));
+            $lines = explode("\n", $text);
+            return "\n" . implode("\n", array_map(fn($l) => "> " . trim($l), $lines)) . "\n";
+        }, $md);
+
+        // Headings
+        for ($i = 6; $i >= 1; $i--) {
+            $prefix = str_repeat('#', $i);
+            $md = preg_replace('#<h' . $i . '[^>]*>(.*?)</h' . $i . '>#is', "\n\n{$prefix} $1\n\n", $md);
+        }
+
+        // Links
+        $md = preg_replace('#<a\s+[^>]*href=["\']([^"\']+)["\'][^>]*>(.*?)</a>#is', '[$2]($1)', $md);
+
+        // Strong / Bold
+        $md = preg_replace('#<(strong|b)[^>]*>(.*?)</\1>#is', '**$2**', $md);
+
+        // Emphasis / Italic
+        $md = preg_replace('#<(em|i)[^>]*>(.*?)</\1>#is', '*$2*', $md);
+
+        // Inline code
+        $md = preg_replace('#<code[^>]*>(.*?)</code>#is', '`$1`', $md);
+
+        // Lists
+        $md = preg_replace('#<li[^>]*>(.*?)</li>#is', "- $1\n", $md);
+        $md = preg_replace('#</?(ul|ol)[^>]*>#is', "\n", $md);
+
+        // Paragraphs and breaks
+        $md = preg_replace('#<p[^>]*>(.*?)</p>#is', "\n\n$1\n\n", $md);
+        $md = preg_replace('#<br\s*/?>#is', "\n", $md);
+        $md = preg_replace('#<hr\s*/?>#is', "\n\n---\n\n", $md);
+
+        // Strip remaining tags
+        $md = strip_tags($md);
+        $md = html_entity_decode($md, ENT_QUOTES | ENT_HTML5, 'UTF-8');
+
+        // Clean extra whitespace and blank lines
+        $md = preg_replace('/[ \t]+$/m', '', $md);
+        $md = preg_replace('/\n{3,}/', "\n\n", $md);
+
+        return trim($md);
+    }
+
+    /**
+     * Generate individual Markdown document for a published blog/insight
+     */
+    public static function generateBlogMarkdown(array $blog): string
+    {
+        $baseUrl = self::getBaseUrl();
+        $slug = $blog['slug'];
+        $title = trim($blog['title'] ?? 'Perspectives & Engineering Insight');
+        $category = trim($blog['category'] ?? 'Enterprise Strategy');
+        $author = trim($blog['author_name'] ?: ($blog['author'] ?: 'BusinessDoctor Engineering'));
+        $authorTitle = trim($blog['author_title'] ?? 'Senior Engineering Consultant');
+        $readTime = trim($blog['reading_time'] ?? '5 min read');
+        $pubDate = !empty($blog['published_at']) ? date('Y-m-d', strtotime($blog['published_at'])) : date('Y-m-d');
+        $updatedDate = !empty($blog['updated_at']) ? date('Y-m-d', strtotime($blog['updated_at'])) : $pubDate;
+        $canonicalUrl = $baseUrl . '/insight-detail.php?slug=' . urlencode($slug);
+        $mdUrl = $baseUrl . '/md/insights/' . urlencode($slug) . '.md';
+
+        $summary = trim($blog['summary'] ?: ($blog['excerpt'] ?: ''));
+        $content = self::htmlToMarkdown($blog['content'] ?? '');
+
+        $lines = [];
+        $lines[] = "# {$title}";
+        $lines[] = "";
+        if (!empty($summary)) {
+            $lines[] = "> " . trim(preg_replace('/\s+/', ' ', strip_tags($summary)));
+            $lines[] = "";
+        }
+        $lines[] = "## Article Metadata";
+        $lines[] = "- **Category**: {$category}";
+        $lines[] = "- **Author**: {$author} ({$authorTitle})";
+        $lines[] = "- **Published Date**: {$pubDate}";
+        $lines[] = "- **Last Modified**: {$updatedDate}";
+        $lines[] = "- **Reading Time**: {$readTime}";
+        $lines[] = "- **Canonical Web URL**: [{$canonicalUrl}]({$canonicalUrl})";
+        $lines[] = "- **Markdown Resource**: [{$mdUrl}]({$mdUrl})";
+        $lines[] = "";
+        $lines[] = "---";
+        $lines[] = "";
+        $lines[] = $content;
+        $lines[] = "";
+        $lines[] = "---";
+        $lines[] = "*Published by [BusinessDoctor]({$baseUrl}) — Engineering Technology. Accelerating Digital Growth.*";
+        $lines[] = "";
+
+        return implode("\n", $lines);
+    }
+
+    /**
+     * Generate individual Markdown document for a published case study
+     */
+    public static function generateCaseStudyMarkdown(array $case): string
+    {
+        $baseUrl = self::getBaseUrl();
+        $slug = $case['slug'];
+        $title = trim($case['title'] ?? 'Enterprise Client Turnaround');
+        $client = trim($case['client_name'] ?? 'Confidential Enterprise Client');
+        $industry = trim($case['industry'] ?: ($case['client_industry'] ?: 'Enterprise'));
+        $practice = trim($case['service_category'] ?: ($case['practice_area'] ?: 'Digital Practice'));
+        $canonicalUrl = $baseUrl . '/case-study-detail.php?slug=' . urlencode($slug);
+        $mdUrl = $baseUrl . '/md/case-studies/' . urlencode($slug) . '.md';
+        $summary = trim($case['project_summary'] ?? '');
+        $baseline = trim($case['baseline_metric'] ?? '');
+        $outcome = trim($case['outcome_metric'] ?? '');
+        $metricLabel = trim($case['metric_label'] ?? '');
+
+        $lines = [];
+        $lines[] = "# {$title}";
+        $lines[] = "";
+        if (!empty($summary)) {
+            $lines[] = "> " . trim(preg_replace('/\s+/', ' ', strip_tags($summary)));
+            $lines[] = "";
+        }
+        $lines[] = "## Case Study Overview";
+        $lines[] = "- **Client**: {$client}";
+        $lines[] = "- **Industry**: {$industry}";
+        $lines[] = "- **Practice Area**: {$practice}";
+        if ($baseline || $outcome) {
+            $lines[] = "- **Quantifiable Metric Shift**: `{$baseline}` → `{$outcome}`" . ($metricLabel ? " ({$metricLabel})" : "");
+        }
+        $lines[] = "- **Canonical Web URL**: [{$canonicalUrl}]({$canonicalUrl})";
+        $lines[] = "- **Markdown Resource**: [{$mdUrl}]({$mdUrl})";
+        $lines[] = "";
+        $lines[] = "---";
+        $lines[] = "";
+
+        if (!empty($case['challenge'])) {
+            $lines[] = "## 1. Challenge & Operational Bottlenecks";
+            $lines[] = self::htmlToMarkdown($case['challenge']);
+            $lines[] = "";
+        }
+
+        if (!empty($case['solution']) || !empty($case['prescription'])) {
+            $lines[] = "## 2. Prescribed Technical Solution";
+            $lines[] = self::htmlToMarkdown($case['solution'] ?: $case['prescription']);
+            $lines[] = "";
+        }
+
+        if (!empty($case['implementation'])) {
+            $lines[] = "## 3. Implementation Architecture";
+            $lines[] = self::htmlToMarkdown($case['implementation']);
+            $lines[] = "";
+        }
+
+        if (!empty($case['results']) || !empty($case['result_description'])) {
+            $lines[] = "## 4. Quantifiable Business Outcomes";
+            $lines[] = self::htmlToMarkdown($case['results'] ?: $case['result_description']);
+            $lines[] = "";
+        }
+
+        $lines[] = "---";
+        $lines[] = "*Documented by [BusinessDoctor]({$baseUrl}) Client Turnaround Practice.*";
+        $lines[] = "";
+
+        return implode("\n", $lines);
+    }
+
+    /**
+     * Generate individual Markdown document for a service practice area
+     */
+    public static function generateServiceMarkdown(string $slug, array $service): string
+    {
+        $baseUrl = self::getBaseUrl();
+        $name = trim($service['name'] ?? 'Practice Area');
+        $tagline = trim($service['tagline'] ?? '');
+        $summary = trim($service['summary'] ?? '');
+        $description = trim($service['description'] ?? '');
+        $canonicalUrl = $baseUrl . '/services/' . urlencode($slug);
+        $mdUrl = $baseUrl . '/md/services/' . urlencode($slug) . '.md';
+
+        $lines = [];
+        $lines[] = "# {$name}";
+        $lines[] = "";
+        if (!empty($tagline)) {
+            $lines[] = "> {$tagline}";
+            $lines[] = "";
+        }
+        $lines[] = "## Discipline Information";
+        $lines[] = "- **Canonical Web URL**: [{$canonicalUrl}]({$canonicalUrl})";
+        $lines[] = "- **Markdown Resource**: [{$mdUrl}]({$mdUrl})";
+        $lines[] = "";
+        $lines[] = "---";
+        $lines[] = "";
+        $lines[] = "## Practice Overview";
+        $lines[] = !empty($description) ? self::htmlToMarkdown($description) : $summary;
+        $lines[] = "";
+
+        if (!empty($service['deliverables']) && is_array($service['deliverables'])) {
+            $lines[] = "## Key Deliverables";
+            foreach ($service['deliverables'] as $del) {
+                $lines[] = "- " . trim($del);
+            }
+            $lines[] = "";
+        }
+
+        if (!empty($service['kpis']) && is_array($service['kpis'])) {
+            $lines[] = "## Target Performance KPIs";
+            foreach ($service['kpis'] as $kpi) {
+                $lines[] = "- " . trim($kpi);
+            }
+            $lines[] = "";
+        }
+
+        $lines[] = "---";
+        $lines[] = "*Delivered by [BusinessDoctor]({$baseUrl}) Technology Practice.*";
+        $lines[] = "";
+
+        return implode("\n", $lines);
+    }
+
+    /**
+     * Generate institutional and resource Markdown documents
+     */
+    public static function generateStaticPageMarkdown(string $pageKey): string
+    {
+        $baseUrl = self::getBaseUrl();
+        $appName = defined('APP_NAME') ? APP_NAME : 'BusinessDoctor';
+        $legalName = defined('APP_LEGAL_NAME') ? APP_LEGAL_NAME : 'BusinessDoctor IT Solutions & Digital Services Private Limited';
+        $phone = defined('APP_PHONE') ? APP_PHONE : '+1 (800) 492-3628';
+        $email = defined('APP_EMAIL') ? APP_EMAIL : 'solutions@businessdoctor.com';
+        $hq = defined('APP_HEADQUARTERS') ? APP_HEADQUARTERS : 'Executive Tech Park, Innovation District';
+
+        switch ($pageKey) {
+            case 'about':
+                return <<<MD
+# About {$appName} — Firm Profile & Leadership
+> {$legalName} combines software engineering, performance marketing, and conversion architecture.
+
+- **Primary URL**: [{$baseUrl}/about.php]({$baseUrl}/about.php)
+- **Markdown Resource**: [{$baseUrl}/md/about.md]({$baseUrl}/md/about.md)
+- **Headquarters**: {$hq}
+
+---
+
+## 1. Executive Summary & Mission
+BusinessDoctor operates as a technical turn-around and digital scaling practice. We eliminate digital bottlenecks, replace slow legacy code with lean modern architectures, optimize multi-channel conversion funnels, and scale high-volume transactional platforms.
+
+## 2. Engineering Principles
+- **Sub-Second Performance**: Elimination of monolithic bloat, optimizing database indices, native caching, and clean execution paths.
+- **Conversion-Centered Architecture**: Engineering every UX pathway around measurable transaction completion and lead capture.
+- **Data Integrity & Security**: Dual-layer database persistence, strict CSRF/XSS sanitization, and automated schema synchronization.
+
+---
+*Maintained by {$appName} Corporate Communications.*
+MD;
+
+            case 'contact':
+                return <<<MD
+# Contact {$appName} & Executive Advisory
+> Direct communication channels for enterprise scoping, technical audits, and partnership inquiries.
+
+- **Primary URL**: [{$baseUrl}/contact.php]({$baseUrl}/contact.php)
+- **Markdown Resource**: [{$baseUrl}/md/contact.md]({$baseUrl}/md/contact.md)
+- **Direct Phone**: {$phone}
+- **Advisory Email**: [{$email}](mailto:{$email})
+- **Headquarters**: {$hq}
+
+---
+
+## Engagement Process
+1. **Initial Diagnostic Briefing**: Benchmarking project parameters, timeline, and architectural requirements.
+2. **Technical Feasibility & Scope**: Detailed blueprint covering software engineering, marketing ROI, and infrastructure.
+3. **Execution & Delivery**: Agile sprints with daily builds, staging verification, and automated regression testing.
+
+---
+*Maintained by {$appName} Executive Advisory.*
+MD;
+
+            case 'audit':
+                return <<<MD
+# Free Digital Architecture Audit & Project Scope
+> Diagnostic framework benchmarking infrastructure, ad performance, conversion funnels, and brand positioning.
+
+- **Primary URL**: [{$baseUrl}/audit.php]({$baseUrl}/audit.php)
+- **Markdown Resource**: [{$baseUrl}/md/audit.md]({$baseUrl}/md/audit.md)
+
+---
+
+## Audit Evaluation Vectors
+1. **Engineering & Architecture**: Server response latency, Core Web Vitals, database queries, and mobile accessibility.
+2. **Traffic & Acquisition**: Ad spend leakage, paid search ROAS, CAC escalation, and technical SEO crawlability.
+3. **Systems & Security Posture**: SSL/TLS hygiene, backup resilience, error logging, and API authentication.
+4. **Brand Positioning & Trust**: Brand architecture, UI design consistency, and marketplace Buy Box protection.
+
+---
+*Maintained by {$appName} Diagnostic Practice.*
+MD;
+
+            case 'home':
+            default:
+                return <<<MD
+# {$appName} — Enterprise Technology & IT Solutions
+> Engineering Technology. Accelerating Digital Growth.
+
+- **Canonical URL**: [{$baseUrl}/]({$baseUrl}/)
+- **Markdown Resource**: [{$baseUrl}/md/home.md]({$baseUrl}/md/home.md)
+- **AI Discovery**: [{$baseUrl}/llms.txt]({$baseUrl}/llms.txt) | [{$baseUrl}/llms.md]({$baseUrl}/llms.md)
+- **Public Markdown Index**: [{$baseUrl}/md]({$baseUrl}/md)
+
+---
+
+## Practice Disciplines
+- **Web & Custom Software Development**: Full-stack engineering, custom applications, and sub-second web architecture.
+- **Digital Marketing & Performance Ads**: Search marketing, paid acquisition, and conversion rate optimization.
+- **UI/UX Design & Brand Identity**: Premium interface design, interactive prototypes, and design systems.
+- **E-Commerce & Marketplaces**: Amazon/Flipkart management, Buy Box protection, and D2C scaling.
+- **Creative Production & Video Marketing**: Commercial photography, brand narrative video, and motion graphics.
+- **Cloud Solutions & IT Consulting**: Infrastructure setup, security monitoring, and automated devops.
+
+---
+*Maintained by {$appName}.*
+MD;
+        }
+    }
+
+    /**
+     * Generate master Markdown catalog index (/md and md/index.md)
+     */
+    public static function generateMdMasterIndex(): string
+    {
+        $baseUrl = self::getBaseUrl();
+        $appName = defined('APP_NAME') ? APP_NAME : 'BusinessDoctor';
+        $tagline = defined('APP_TAGLINE') ? APP_TAGLINE : 'Engineering Technology. Accelerating Digital Growth.';
+
+        $services = self::getActiveServices();
+        $cases = self::getPublishedCaseStudies();
+        $insights = self::getPublishedInsights();
+
+        $lines = [];
+        $lines[] = "# {$appName} — Public Markdown Document Index";
+        $lines[] = "> {$tagline}";
+        $lines[] = "";
+        $lines[] = "High-performance machine-readable Markdown repository for generative AI models, LLM crawlers, search engines, and automated knowledge pipelines.";
+        $lines[] = "";
+        $lines[] = "- **Canonical Website**: [{$baseUrl}]({$baseUrl})";
+        $lines[] = "- **AI Discovery Manifest**: [{$baseUrl}/llms.txt]({$baseUrl}/llms.txt)";
+        $lines[] = "- **Comprehensive LLM Context**: [{$baseUrl}/llms.md]({$baseUrl}/llms.md)";
+        $lines[] = "- **XML Sitemap**: [{$baseUrl}/sitemap.xml]({$baseUrl}/sitemap.xml)";
+        $lines[] = "- **Last Synchronized**: " . date('Y-m-d H:i:s T');
+        $lines[] = "";
+        $lines[] = "---";
+        $lines[] = "";
+
+        // 1. Services
+        $lines[] = "## 1. Core Practice Disciplines & Services";
+        $lines[] = "";
+        foreach ($services as $slug => $s) {
+            $name = $s['name'];
+            $tag = rtrim(strip_tags($s['tagline'] ?? $s['summary']), '.');
+            $url = "{$baseUrl}/md/services/{$slug}.md";
+            $webUrl = "{$baseUrl}/services/{$slug}";
+            $lines[] = "- [{$name}]({$url}) ([Web Page]({$webUrl})): {$tag}.";
+        }
+        $lines[] = "";
+
+        // 2. Case Studies
+        $lines[] = "## 2. Client Case Studies & Proven Results";
+        $lines[] = "";
+        if (empty($cases)) {
+            $lines[] = "- No client case studies are currently published.";
+        } else {
+            foreach ($cases as $c) {
+                $title = trim($c['title']);
+                $slug = $c['slug'];
+                $url = "{$baseUrl}/md/case-studies/{$slug}.md";
+                $webUrl = "{$baseUrl}/case-study-detail.php?slug={$slug}";
+                $industry = $c['industry'] ?: ($c['client_industry'] ?: 'Enterprise');
+                $baseline = $c['baseline_metric'] ?? '';
+                $outcome = $c['outcome_metric'] ?? '';
+                $metricText = ($baseline && $outcome) ? " ({$baseline} → {$outcome})" : ($outcome ? " ({$outcome})" : "");
+                $lines[] = "- [{$title}]({$url}) ([Web Page]({$webUrl})): [{$industry}]{$metricText}";
+            }
+        }
+        $lines[] = "";
+
+        // 3. Insights
+        $lines[] = "## 3. Editorial Perspectives & Technical Insights";
+        $lines[] = "";
+        if (empty($insights)) {
+            $lines[] = "- No editorial articles are currently published.";
+        } else {
+            foreach ($insights as $art) {
+                $title = trim($art['title']);
+                $slug = $art['slug'];
+                $url = "{$baseUrl}/md/insights/{$slug}.md";
+                $webUrl = "{$baseUrl}/insight-detail.php?slug={$slug}";
+                $readTime = $art['reading_time'] ?? '5 min read';
+                $summary = !empty($art['summary']) ? $art['summary'] : (!empty($art['excerpt']) ? $art['excerpt'] : '');
+                $summary = trim(preg_replace('/\s+/', ' ', strip_tags($summary)));
+                if (mb_strlen($summary) > 130) {
+                    $summary = mb_substr($summary, 0, 127) . '...';
+                }
+                $lines[] = "- [{$title}]({$url}) ([Web Page]({$webUrl})): {$summary} ({$readTime})";
+            }
+        }
+        $lines[] = "";
+
+        // 4. Institutional
+        $lines[] = "## 4. Institutional & Diagnostic Documents";
+        $lines[] = "";
+        $lines[] = "- [Firm Profile & Leadership]({$baseUrl}/md/about.md) ([Web Page]({$baseUrl}/about.php)): Engineering ethos and leadership profile.";
+        $lines[] = "- [Executive Advisory & Inquiries]({$baseUrl}/md/contact.md) ([Web Page]({$baseUrl}/contact.php)): Direct engagement and consulting channels.";
+        $lines[] = "- [Digital Diagnostic Audit Framework]({$baseUrl}/md/audit.md) ([Web Page]({$baseUrl}/audit.php)): Benchmarking performance, security, and CAC.";
+        $lines[] = "- [Homepage Overview]({$baseUrl}/md/home.md) ([Web Page]({$baseUrl}/)): Enterprise digital practice overview.";
+        $lines[] = "";
+        $lines[] = "---";
+        $lines[] = "*BusinessDoctor Centralized Markdown Distribution Network.*";
+        $lines[] = "";
+
+        return implode("\n", $lines);
+    }
+
+    /**
+     * Synchronize and atomicaly write all published Markdown files into /md
+     * Automatically purges unlisted/unpublished/draft files.
+     */
+    public static function syncMarkdownFiles(): array
+    {
+        $mdBaseDir = ROOT_PATH . '/md';
+        $insightsDir = $mdBaseDir . '/insights';
+        $casesDir = $mdBaseDir . '/case-studies';
+        $servicesDir = $mdBaseDir . '/services';
+
+        foreach ([$mdBaseDir, $insightsDir, $casesDir, $servicesDir] as $dir) {
+            if (!is_dir($dir)) {
+                @mkdir($dir, 0755, true);
+            }
+        }
+
+        $written = [];
+        $purged = [];
+
+        // 1. Master Index
+        $masterIndexContent = self::generateMdMasterIndex();
+        $masterIndexPath = $mdBaseDir . '/index.md';
+        if (self::writeFileAtomic($masterIndexPath, $masterIndexContent)) {
+            $written[] = 'md/index.md';
+        }
+
+        // 2. Static Pages
+        $staticDocs = ['about', 'contact', 'audit', 'home'];
+        foreach ($staticDocs as $doc) {
+            $path = $mdBaseDir . "/{$doc}.md";
+            $content = self::generateStaticPageMarkdown($doc);
+            if (self::writeFileAtomic($path, $content)) {
+                $written[] = "md/{$doc}.md";
+            }
+        }
+
+        // 3. Services
+        $services = self::getActiveServices();
+        $validServiceSlugs = [];
+        foreach ($services as $slug => $s) {
+            $validServiceSlugs[] = $slug;
+            $path = $servicesDir . "/{$slug}.md";
+            $content = self::generateServiceMarkdown($slug, $s);
+            if (self::writeFileAtomic($path, $content)) {
+                $written[] = "md/services/{$slug}.md";
+            }
+        }
+        // Purge inactive/deleted services
+        foreach (glob($servicesDir . '/*.md') ?: [] as $file) {
+            $fileSlug = basename($file, '.md');
+            if (!in_array($fileSlug, $validServiceSlugs, true)) {
+                @unlink($file);
+                $purged[] = "md/services/{$fileSlug}.md";
+            }
+        }
+
+        // 4. Published Case Studies
+        $cases = self::getPublishedCaseStudies();
+        $validCaseSlugs = [];
+        foreach ($cases as $c) {
+            $slug = $c['slug'];
+            $validCaseSlugs[] = $slug;
+            $path = $casesDir . "/{$slug}.md";
+            $content = self::generateCaseStudyMarkdown($c);
+            if (self::writeFileAtomic($path, $content)) {
+                $written[] = "md/case-studies/{$slug}.md";
+            }
+        }
+        // Purge unpublished, draft, or deleted case studies
+        foreach (glob($casesDir . '/*.md') ?: [] as $file) {
+            $fileSlug = basename($file, '.md');
+            if (!in_array($fileSlug, $validCaseSlugs, true)) {
+                @unlink($file);
+                $purged[] = "md/case-studies/{$fileSlug}.md";
+            }
+        }
+
+        // 5. Published Insights / Blogs
+        $insights = self::getPublishedInsights();
+        $validInsightSlugs = [];
+        foreach ($insights as $art) {
+            $slug = $art['slug'];
+            $validInsightSlugs[] = $slug;
+            $path = $insightsDir . "/{$slug}.md";
+            $content = self::generateBlogMarkdown($art);
+            if (self::writeFileAtomic($path, $content)) {
+                $written[] = "md/insights/{$slug}.md";
+            }
+        }
+        // Purge unpublished, draft, or deleted insights
+        foreach (glob($insightsDir . '/*.md') ?: [] as $file) {
+            $fileSlug = basename($file, '.md');
+            if (!in_array($fileSlug, $validInsightSlugs, true)) {
+                @unlink($file);
+                $purged[] = "md/insights/{$fileSlug}.md";
+            }
+        }
+
+        return [
+            'written' => $written,
+            'purged' => $purged
+        ];
     }
 
     /**
@@ -577,6 +1117,25 @@ class SeoSyncEngine
             $errors[] = 'llms.md generation error: ' . $e->getMessage();
         }
 
+        // 4. Generate & Synchronize Markdown Files (/md and /md/*.md)
+        $mdSyncResult = ['written' => [], 'purged' => []];
+        try {
+            $mdSyncResult = self::syncMarkdownFiles();
+            $masterIndexPath = ROOT_PATH . '/md/index.md';
+            $filesWritten['md_index'] = [
+                'path' => 'md/index.md',
+                'size_bytes' => file_exists($masterIndexPath) ? filesize($masterIndexPath) : 0,
+                'status' => 'written'
+            ];
+            $filesWritten['md_files'] = [
+                'count_written' => count($mdSyncResult['written']),
+                'count_purged' => count($mdSyncResult['purged']),
+                'status' => 'synchronized'
+            ];
+        } catch (Throwable $e) {
+            $errors[] = 'Markdown files generation error: ' . $e->getMessage();
+        }
+
         $durationMs = round((microtime(true) - $startTime) * 1000, 2);
         $status = empty($errors) ? 'success' : (count($filesWritten) > 0 ? 'partial' : 'error');
 
@@ -586,6 +1145,7 @@ class SeoSyncEngine
         $casesCount = count(self::getPublishedCaseStudies());
         $insightsCount = count(self::getPublishedInsights());
         $totalSitemapUrls = $staticCount + $servicesCount + $casesCount + $insightsCount;
+        $totalMdFiles = count($mdSyncResult['written']);
 
         $syncRecord = [
             'last_sync_timestamp' => date('Y-m-d H:i:s'),
@@ -599,7 +1159,8 @@ class SeoSyncEngine
                 'services' => $servicesCount,
                 'case_studies' => $casesCount,
                 'insights' => $insightsCount,
-                'total_urls_in_sitemap' => $totalSitemapUrls
+                'total_urls_in_sitemap' => $totalSitemapUrls,
+                'total_md_files' => $totalMdFiles
             ],
             'files' => $filesWritten
         ];
@@ -625,12 +1186,14 @@ class SeoSyncEngine
         $sitemapPath = ROOT_PATH . '/sitemap.xml';
         $llmsTxtPath = ROOT_PATH . '/llms.txt';
         $llmsMdPath = ROOT_PATH . '/llms.md';
+        $mdIndexPath = ROOT_PATH . '/md/index.md';
 
         $staticCount = count(self::getStaticPages());
         $servicesCount = count(self::getActiveServices());
         $casesCount = count(self::getPublishedCaseStudies());
         $insightsCount = count(self::getPublishedInsights());
         $totalSitemapUrls = $staticCount + $servicesCount + $casesCount + $insightsCount;
+        $totalMdFiles = $logData['metrics']['total_md_files'] ?? ($staticCount + $servicesCount + $casesCount + $insightsCount + 1);
 
         return [
             'last_sync_timestamp' => $logData['last_sync_timestamp'] ?? 'Never',
@@ -644,7 +1207,8 @@ class SeoSyncEngine
                 'services' => $servicesCount,
                 'case_studies' => $casesCount,
                 'insights' => $insightsCount,
-                'total_urls_in_sitemap' => $totalSitemapUrls
+                'total_urls_in_sitemap' => $totalSitemapUrls,
+                'total_md_files' => $totalMdFiles
             ],
             'files' => [
                 'sitemap_xml' => [
@@ -661,6 +1225,11 @@ class SeoSyncEngine
                     'exists' => file_exists($llmsMdPath),
                     'size' => file_exists($llmsMdPath) ? filesize($llmsMdPath) : 0,
                     'mtime' => file_exists($llmsMdPath) ? date('Y-m-d H:i:s', filemtime($llmsMdPath)) : null
+                ],
+                'md_index' => [
+                    'exists' => file_exists($mdIndexPath),
+                    'size' => file_exists($mdIndexPath) ? filesize($mdIndexPath) : 0,
+                    'mtime' => file_exists($mdIndexPath) ? date('Y-m-d H:i:s', filemtime($mdIndexPath)) : null
                 ]
             ]
         ];

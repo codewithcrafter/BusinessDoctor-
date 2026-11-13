@@ -9,6 +9,7 @@ DirectoryIndex index.php index.html
 
 # 2. Character Encoding
 AddDefaultCharset UTF-8
+AddType text/markdown; charset=UTF-8 .md
 
 # 3. URL Rewriting & HTTPS Enforcement
 <IfModule mod_rewrite.c>
@@ -59,6 +60,10 @@ AddDefaultCharset UTF-8
     RewriteCond %{REQUEST_FILENAME} !-f
     RewriteCond %{REQUEST_FILENAME} !-d
     RewriteRule ^case-studies/?$ case-studies.php [L,QSA]
+
+    # Clean Markdown Index Gateway: /md -> md/index.php
+    RewriteCond %{REQUEST_FILENAME} !-f
+    RewriteRule ^md/?$ md/index.php [L,QSA]
     # Clean Admin Gateway Rewriting: /admin -> admin/index.php
     RewriteCond %{REQUEST_FILENAME} !-f
     RewriteRule ^admin/?$ admin/index.php [L,QSA]
