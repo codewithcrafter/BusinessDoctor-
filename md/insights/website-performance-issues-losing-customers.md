@@ -8,8 +8,8 @@
 - **Published Date**: 2026-11-10
 - **Last Modified**: 2026-11-10
 - **Reading Time**: 6 min read
-- **Canonical Web URL**: [https://demo.businesdoctor.com/insight-detail.php?slug=website-performance-issues-losing-customers](https://demo.businesdoctor.com/insight-detail.php?slug=website-performance-issues-losing-customers)
-- **Clean Markdown URL**: [https://demo.businesdoctor.com/insights/website-performance-issues-losing-customers.md](https://demo.businesdoctor.com/insights/website-performance-issues-losing-customers.md)
+- **Canonical Web URL**: [https://demo.businesdoctor.com/blog/website-performance-issues-losing-customers](https://demo.businesdoctor.com/blog/website-performance-issues-losing-customers)
+- **Clean Markdown URL**: [https://demo.businesdoctor.com/blog/website-performance-issues-losing-customers.md](https://demo.businesdoctor.com/blog/website-performance-issues-losing-customers.md)
 - **Central Markdown URL**: [https://demo.businesdoctor.com/md/insights/website-performance-issues-losing-customers.md](https://demo.businesdoctor.com/md/insights/website-performance-issues-losing-customers.md)
 
 ![Why Your Website Is Losing Customers: 7 Performance Issues You Should Fix](https://demo.businesdoctor.com/assets/uploads/blog_ad7de11abea106463765.png)

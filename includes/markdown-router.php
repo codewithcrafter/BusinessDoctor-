@@ -128,24 +128,25 @@ class MarkdownRouter
         }
 
         // ----------------------------------------------------
-        // 6. Services Listing: /services.php.md, /services.md
+        // 6. Services Overview: /company-in-delhi.md, /services.php.md, /services.md, /company.md
         // ----------------------------------------------------
-        if ($cleanRoute === '/services.php' || $cleanRoute === '/services') {
+        if ($cleanRoute === '/company-in-delhi' || $cleanRoute === '/services.php' || $cleanRoute === '/services' || $cleanRoute === '/company') {
             self::sendResponse(SeoSyncEngine::generateStaticPageMarkdown('services'));
         }
 
         // ----------------------------------------------------
         // 7. Individual Service Detail Pages:
-        //    A: /company/{slug}.md
-        //    B: /services/{slug}.md (301 redirect to /company/{slug}.md)
-        //    C: /service-detail.php.md?slug={slug}
+        //    A: /{slug}-company-in-delhi.md (Canonical)
+        //    B: /company/{slug}.md (301 redirect to /{slug}-company-in-delhi.md)
+        //    C: /services/{slug}.md (301 redirect to /{slug}-company-in-delhi.md)
+        //    D: /service-detail.php.md?slug={slug}
         // ----------------------------------------------------
-        if (preg_match('#^/company/([a-zA-Z0-9_-]+)$#', $cleanRoute, $m)) {
+        if (preg_match('#^/([a-zA-Z0-9_-]+)-company-in-delhi$#', $cleanRoute, $m)) {
             self::renderServiceMarkdown($m[1]);
         }
-        if (preg_match('#^/services/([a-zA-Z0-9_-]+)$#', $cleanRoute, $m)) {
+        if (preg_match('#^/(?:services|company)/([a-zA-Z0-9_-]+)$#', $cleanRoute, $m)) {
             $targetSlug = $m[1];
-            header("Location: " . SeoSyncEngine::getBaseUrl() . "/company/" . $targetSlug . ".md", true, 301);
+            header("Location: " . SeoSyncEngine::getBaseUrl() . "/" . $targetSlug . "-company-in-delhi.md", true, 301);
             exit;
         }
         if ($cleanRoute === '/service-detail.php' || $cleanRoute === '/service-detail') {
@@ -157,26 +158,32 @@ class MarkdownRouter
         }
 
         // ----------------------------------------------------
-        // 8. Blog Listing: /insights.php.md, /insights.md, /blog.php.md
+        // 8. Blog Listing: /blog.md, /blog.php.md, /insights.php.md, /insights.md
         // ----------------------------------------------------
-        if ($cleanRoute === '/insights.php' || $cleanRoute === '/insights' || $cleanRoute === '/blog.php' || $cleanRoute === '/blog') {
+        if ($cleanRoute === '/blog' || $cleanRoute === '/blog.php' || $cleanRoute === '/insights.php' || $cleanRoute === '/insights') {
             self::sendResponse(SeoSyncEngine::generateStaticPageMarkdown('insights'));
         }
 
         // ----------------------------------------------------
         // 9. Individual Blog Detail:
-        //    A: /insight-detail.php.md?slug={slug}
-        //    B: /insights/{slug}.md or /blog/{slug}.md
+        //    A: /blog/{slug}.md (Canonical)
+        //    B: /insights/{slug}.md (301 redirect to /blog/{slug}.md)
+        //    C: /insight-detail.php.md?slug={slug}
         // ----------------------------------------------------
+        if (preg_match('#^/blog/([a-zA-Z0-9_-]+)$#', $cleanRoute, $m)) {
+            self::renderBlogMarkdown($m[1]);
+        }
+        if (preg_match('#^/insights/([a-zA-Z0-9_-]+)$#', $cleanRoute, $m)) {
+            $targetSlug = $m[1];
+            header("Location: " . SeoSyncEngine::getBaseUrl() . "/blog/" . $targetSlug . ".md", true, 301);
+            exit;
+        }
         if ($cleanRoute === '/insight-detail.php' || $cleanRoute === '/insight-detail' || $cleanRoute === '/blog-detail.php' || $cleanRoute === '/blog-detail') {
             $slug = $params['slug'] ?? '';
             if (empty($slug)) {
                 self::sendNotFound("No blog article slug was specified in query parameters.");
             }
             self::renderBlogMarkdown((string)$slug);
-        }
-        if (preg_match('#^/(?:insights|blog)/([a-zA-Z0-9_-]+)$#', $cleanRoute, $m)) {
-            self::renderBlogMarkdown($m[1]);
         }
 
         // ----------------------------------------------------
@@ -228,6 +235,11 @@ class MarkdownRouter
      */
     private static function renderServiceMarkdown(string $slug): void
     {
+        $cleanSlug = strtolower(trim($slug));
+        if (str_ends_with($cleanSlug, '-company-in-delhi')) {
+            $cleanSlug = substr($cleanSlug, 0, -17);
+        }
+
         $legacyRedirects = [
             'seo-services' => 'seo',
             'smo-services' => 'smo',
@@ -246,16 +258,16 @@ class MarkdownRouter
             'cloud-it-consulting' => 'web-development',
         ];
 
-        if (isset($legacyRedirects[$slug])) {
-            header("Location: " . SeoSyncEngine::getBaseUrl() . "/company/" . $legacyRedirects[$slug] . ".md", true, 301);
+        if (isset($legacyRedirects[$cleanSlug])) {
+            header("Location: " . SeoSyncEngine::getBaseUrl() . "/" . $legacyRedirects[$cleanSlug] . "-company-in-delhi.md", true, 301);
             exit;
         }
 
         $services = SeoSyncEngine::getActiveServices();
-        if (!isset($services[$slug])) {
-            self::sendNotFound("Practice discipline '{$slug}' does not exist or is not active.");
+        if (!isset($services[$cleanSlug])) {
+            self::sendNotFound("Practice discipline '{$cleanSlug}' does not exist or is not active.");
         }
-        self::sendResponse(SeoSyncEngine::generateServiceMarkdown($slug, $services[$slug]));
+        self::sendResponse(SeoSyncEngine::generateServiceMarkdown($cleanSlug, $services[$cleanSlug]));
     }
 
     /**

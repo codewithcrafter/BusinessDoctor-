@@ -4,8 +4,8 @@
 
 ## Discipline Information
 - **Practice Area**: 07 Social Media Marketing
-- **Canonical Web URL**: [https://demo.businesdoctor.com/company/social-media-marketing](https://demo.businesdoctor.com/company/social-media-marketing)
-- **Clean Markdown URL**: [https://demo.businesdoctor.com/company/social-media-marketing.md](https://demo.businesdoctor.com/company/social-media-marketing.md)
+- **Canonical Web URL**: [https://demo.businesdoctor.com/social-media-marketing-company-in-delhi](https://demo.businesdoctor.com/social-media-marketing-company-in-delhi)
+- **Clean Markdown URL**: [https://demo.businesdoctor.com/social-media-marketing-company-in-delhi.md](https://demo.businesdoctor.com/social-media-marketing-company-in-delhi.md)
 - **Central Markdown URL**: [https://demo.businesdoctor.com/md/services/social-media-marketing.md](https://demo.businesdoctor.com/md/services/social-media-marketing.md)
 - **Direct Consultation**: [Schedule Practice Scope](http://demo.businesdoctor.com/scratch/contact.php?service=Social+Media+Marketing)
 

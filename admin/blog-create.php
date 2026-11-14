@@ -616,7 +616,7 @@ require_once __DIR__ . '/includes/header.php';
 
         <div class="adm-form-group">
           <label class="adm-label" for="canonicalUrl">Canonical URL</label>
-          <input type="url" id="canonicalUrl" name="canonical_url" value="<?= e($canonicalUrl) ?>" class="adm-input" placeholder="https://demo.businesdoctor.com/insight-detail.php?slug=...">
+          <input type="url" id="canonicalUrl" name="canonical_url" value="<?= e($canonicalUrl) ?>" class="adm-input" placeholder="https://demo.businesdoctor.com/blog/article-slug">
           <div class="adm-hint">Overrides default self-referencing canonical URL if syndicating or cross-posting.</div>
         </div>
 
@@ -630,7 +630,7 @@ require_once __DIR__ . '/includes/header.php';
           <div style="font-size: 0.78rem; font-weight: 600; color: var(--adm-text-dim); margin-bottom: 0.4rem;">Google Search Preview:</div>
           <div class="adm-serp-preview">
             <div class="adm-serp-title" id="serpTitlePreview">BusinessDoctor Tech Perspective</div>
-            <div class="adm-serp-url" id="serpUrlPreview">https://demo.businesdoctor.com/insight-detail.php?slug=article-slug</div>
+            <div class="adm-serp-url" id="serpUrlPreview">https://demo.businesdoctor.com/blog/article-slug</div>
             <div class="adm-serp-desc" id="serpDescPreview">Engineering architecture and digital growth frameworks authored by BusinessDoctor.</div>
           </div>
         </div>
@@ -1294,7 +1294,7 @@ function updateLiveRecommendedSchema() {
   const title = (document.getElementById('blogTitle') ? document.getElementById('blogTitle').value.trim() : '') || 'Insight Article Title';
   const slug = (document.getElementById('blogSlug') ? document.getElementById('blogSlug').value.trim() : '') || 'article-slug';
   const canonicalField = document.getElementById('canonicalUrl') ? document.getElementById('canonicalUrl').value.trim() : '';
-  const pageUrl = canonicalField || (baseUrl + '/insight-detail.php?slug=' + encodeURIComponent(slug));
+  const pageUrl = canonicalField || (baseUrl + '/blog/' + encodeURIComponent(slug));
   
   const coverImage = (document.getElementById('featuredImagePath') ? document.getElementById('featuredImagePath').value.trim() : '') || 'assets/images/insight-ai-strategy.webp';
   const coverAlt = (document.getElementById('coverImageAlt') ? document.getElementById('coverImageAlt').value.trim() : '') || title;
@@ -1398,7 +1398,7 @@ function updateLiveRecommendedSchema() {
           "@type": "ListItem",
           "position": 2,
           "name": "Insights & Perspectives",
-          "item": baseUrl + "/insights.php"
+          "item": baseUrl + "/blog"
         },
         {
           "@type": "ListItem",

@@ -4,8 +4,8 @@
 
 ## Discipline Information
 - **Practice Area**: 03 PPC / Paid Ads
-- **Canonical Web URL**: [https://demo.businesdoctor.com/company/ppc-paid-ads](https://demo.businesdoctor.com/company/ppc-paid-ads)
-- **Clean Markdown URL**: [https://demo.businesdoctor.com/company/ppc-paid-ads.md](https://demo.businesdoctor.com/company/ppc-paid-ads.md)
+- **Canonical Web URL**: [https://demo.businesdoctor.com/ppc-paid-ads-company-in-delhi](https://demo.businesdoctor.com/ppc-paid-ads-company-in-delhi)
+- **Clean Markdown URL**: [https://demo.businesdoctor.com/ppc-paid-ads-company-in-delhi.md](https://demo.businesdoctor.com/ppc-paid-ads-company-in-delhi.md)
 - **Central Markdown URL**: [https://demo.businesdoctor.com/md/services/ppc-paid-ads.md](https://demo.businesdoctor.com/md/services/ppc-paid-ads.md)
 - **Direct Consultation**: [Schedule Practice Scope](http://demo.businesdoctor.com/scratch/contact.php?service=PPC+%2F+Paid+Ads)
 

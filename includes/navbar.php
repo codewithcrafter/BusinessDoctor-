@@ -23,7 +23,7 @@ $practiceAreas = getPracticeAreas();
 
       <!-- Services Mega Menu Parent -->
       <div class="nav-item has-mega-menu">
-        <a href="<?= appUrl('services.php') ?>"
+        <a href="<?= getServicesOverviewUrl() ?>"
           class="nav-link nav-link-dropdown <?= isActivePage('services.php', 'service-detail.php') ?>"
           aria-haspopup="true" aria-expanded="false">
           <span>IT Services</span>
@@ -77,7 +77,7 @@ $practiceAreas = getPracticeAreas();
                     </svg>
                   </a>
                   <div class="mega-highlight-footer">
-                    <a href="<?= appUrl('services.php') ?>" class="text-link">Explore All Services &rarr;</a>
+                    <a href="<?= getServicesOverviewUrl() ?>" class="text-link">Explore All Services &rarr;</a>
                   </div>
                 </div>
               </div>
@@ -90,7 +90,7 @@ $practiceAreas = getPracticeAreas();
         Audit</a>
       <a href="<?= appUrl('case-studies.php') ?>" class="nav-link <?= isActivePage('case-studies.php') ?>">Case
         Studies</a>
-      <a href="<?= appUrl('insights.php') ?>"
+      <a href="<?= getBlogListingUrl() ?>"
         class="nav-link <?= isActivePage('insights.php', 'insight-detail.php', 'blog.php', 'blog-detail.php') ?>">Blog</a>
       <a href="<?= appUrl('contact.php') ?>" class="nav-link <?= isActivePage('contact.php') ?>">Contact</a>
     </nav>
@@ -150,7 +150,7 @@ $practiceAreas = getPracticeAreas();
       <!-- 3. IT Services (Expandable Accordion) -->
       <div class="mobile-nav-accordion" id="mobileServicesAccordion">
         <div class="mobile-accordion-row">
-          <a href="<?= appUrl('services.php') ?>"
+          <a href="<?= getServicesOverviewUrl() ?>"
             class="mobile-nav-link mobile-accordion-link <?= isActivePage('services.php', 'service-detail.php') ?>">
             <span>IT Services</span>
           </a>
@@ -169,7 +169,7 @@ $practiceAreas = getPracticeAreas();
           aria-labelledby="mobileServicesToggle">
           <div class="mobile-submenu-inner">
             <div class="mobile-submenu-eyebrow">DIGITAL &amp; TECHNOLOGY SERVICES</div>
-            <a href="<?= appUrl('services.php') ?>"
+            <a href="<?= getServicesOverviewUrl() ?>"
               class="mobile-submenu-link mobile-submenu-overview <?= isActivePage('services.php') ?>">
               <span class="mobile-sublink-num">&rarr;</span>
               <span class="mobile-sublink-name">Overview &ndash; All 10 Services</span>
@@ -178,7 +178,7 @@ $practiceAreas = getPracticeAreas();
             $currentNavSlug = $_GET['slug'] ?? '';
             if ($currentNavSlug === '') {
               $currPath = parse_url($_SERVER['REQUEST_URI'] ?? '', PHP_URL_PATH);
-              if ($currPath && preg_match('#^/(?:services|company)/([a-zA-Z0-9_-]+)#', $currPath, $m)) {
+              if ($currPath && preg_match('#^/(?:services/|company/|)([a-zA-Z0-9_-]+)-company-in-delhi#', $currPath, $m)) {
                 $currentNavSlug = $m[1];
               }
             }
@@ -203,7 +203,7 @@ $practiceAreas = getPracticeAreas();
         Studies</a>
 
       <!-- 6. Blog -->
-      <a href="<?= appUrl('insights.php') ?>"
+      <a href="<?= getBlogListingUrl() ?>"
         class="mobile-nav-link <?= isActivePage('insights.php', 'insight-detail.php', 'blog.php', 'blog-detail.php') ?>">Blog</a>
 
       <!-- 7. Contact -->

@@ -1,6 +1,6 @@
 <?php
 /**
- * BusinessDoctor Perspectives & Insights Directory - Enterprise IT & Digital Services
+ * BusinessDoctor Perspectives & Blog Directory - Enterprise IT & Digital Services
  */
 
 declare(strict_types=1);
@@ -9,9 +9,18 @@ require_once __DIR__ . '/includes/config.php';
 require_once __DIR__ . '/includes/db.php';
 require_once __DIR__ . '/includes/functions.php';
 
-$pageTitle = 'Technical Blog. Strategic Frameworks. — BusinessDoctor Enterprise IT';
+// 301 Permanent Redirect legacy URLs (/insights.php, /insights) to canonical /blog
+$reqPath = parse_url($_SERVER['REQUEST_URI'] ?? '', PHP_URL_PATH) ?? '';
+if ($reqPath === '/insights.php' || $reqPath === '/insights' || $reqPath === '/insights/') {
+    $qs = !empty($_SERVER['QUERY_STRING']) ? '?' . $_SERVER['QUERY_STRING'] : '';
+    header("Location: " . getBlogListingUrl() . $qs, true, 301);
+    exit;
+}
+
+$pageTitle = 'Blog & Technical Perspectives — BusinessDoctor Enterprise IT';
 $pageDescription = 'Practical engineering blueprints, Core Web Vitals breakdowns, and conversion optimization strategies from our senior architects and digital strategists.';
-$canonicalUrl = appUrl('insights.php');
+$canonicalUrl = getBlogListingUrl();
+$schemaPageKey = 'insights';
 
 $selectedCategory = trim($_GET['category'] ?? '');
 $searchQuery = trim($_GET['search'] ?? '');
@@ -203,7 +212,7 @@ require_once __DIR__ . '/includes/header.php';
     <div style="display: flex; gap: 0.75rem; justify-content: center; align-items: center; flex-wrap: wrap; margin-top: 2rem;">
       <?php foreach ($categories as $catLabel => $catVal): 
         $isActive = ($selectedCategory === $catVal);
-        $url = empty($catVal) ? appUrl('insights.php') : appUrl('insights.php?category=' . urlencode($catVal));
+        $url = empty($catVal) ? getBlogListingUrl() : getBlogListingUrl() . '?category=' . urlencode($catVal);
       ?>
         <a href="<?= $url ?>" class="btn <?= $isActive ? 'btn-primary' : 'btn-secondary' ?> btn-sm" style="font-size: 0.82rem;">
           <?= htmlspecialchars($catLabel) ?>

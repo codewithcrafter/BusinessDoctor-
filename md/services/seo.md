@@ -4,8 +4,8 @@
 
 ## Discipline Information
 - **Practice Area**: 06 SEO — Search Engine Optimization
-- **Canonical Web URL**: [https://demo.businesdoctor.com/company/seo](https://demo.businesdoctor.com/company/seo)
-- **Clean Markdown URL**: [https://demo.businesdoctor.com/company/seo.md](https://demo.businesdoctor.com/company/seo.md)
+- **Canonical Web URL**: [https://demo.businesdoctor.com/seo-company-in-delhi](https://demo.businesdoctor.com/seo-company-in-delhi)
+- **Clean Markdown URL**: [https://demo.businesdoctor.com/seo-company-in-delhi.md](https://demo.businesdoctor.com/seo-company-in-delhi.md)
 - **Central Markdown URL**: [https://demo.businesdoctor.com/md/services/seo.md](https://demo.businesdoctor.com/md/services/seo.md)
 - **Direct Consultation**: [Schedule Practice Scope](http://demo.businesdoctor.com/scratch/contact.php?service=SEO+%E2%80%94+Search+Engine+Optimization)
 

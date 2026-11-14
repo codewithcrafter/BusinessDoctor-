@@ -300,7 +300,7 @@ require_once __DIR__ . '/includes/header.php';
                   
                   <?php if (!$viewTrash): ?>
                     <!-- Live Preview Link -->
-                    <a href="../insight-detail.php?slug=<?= urlencode($b['slug']) ?>" target="_blank" rel="noopener" class="btn-adm btn-adm-secondary btn-adm-sm" title="Preview on live site">
+                    <a href="<?= getBlogUrl($b['slug']) ?>" target="_blank" rel="noopener" class="btn-adm btn-adm-secondary btn-adm-sm" title="Preview on live site">
                       View ↗
                     </a>
 

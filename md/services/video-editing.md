@@ -4,8 +4,8 @@
 
 ## Discipline Information
 - **Practice Area**: 09 Video Editing
-- **Canonical Web URL**: [https://demo.businesdoctor.com/company/video-editing](https://demo.businesdoctor.com/company/video-editing)
-- **Clean Markdown URL**: [https://demo.businesdoctor.com/company/video-editing.md](https://demo.businesdoctor.com/company/video-editing.md)
+- **Canonical Web URL**: [https://demo.businesdoctor.com/video-editing-company-in-delhi](https://demo.businesdoctor.com/video-editing-company-in-delhi)
+- **Clean Markdown URL**: [https://demo.businesdoctor.com/video-editing-company-in-delhi.md](https://demo.businesdoctor.com/video-editing-company-in-delhi.md)
 - **Central Markdown URL**: [https://demo.businesdoctor.com/md/services/video-editing.md](https://demo.businesdoctor.com/md/services/video-editing.md)
 - **Direct Consultation**: [Schedule Practice Scope](http://demo.businesdoctor.com/scratch/contact.php?service=Video+Editing)
 

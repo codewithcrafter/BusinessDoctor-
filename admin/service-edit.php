@@ -274,7 +274,7 @@ require_once __DIR__ . '/includes/header.php';
         <div style="font-size: 0.82rem; color: var(--adm-text-muted); display: flex; flex-direction: column; gap: 0.5rem; font-family: var(--adm-font-mono);">
           <div>ID: <?= (int)$service['id'] ?></div>
           <div>DISCIPLINE: <?= e($service['number']) ?></div>
-          <div>SLUG: /company/<?= e($service['slug']) ?></div>
+          <div>URL: <?= getServiceUrl($service['slug']) ?></div>
           <div>CREATED: <?= e($service['created_at']) ?></div>
           <div>UPDATED: <?= e($service['updated_at'] ?: 'N/A') ?></div>
         </div>

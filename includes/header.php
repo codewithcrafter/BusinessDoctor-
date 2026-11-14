@@ -20,13 +20,31 @@ if (!empty($parsedUri['query'])) {
     parse_str($parsedUri['query'], $qp);
     if (!empty($qp['slug'])) {
         if (str_contains($cleanPath, 'service-detail')) {
-            $cleanPath = '/company/' . rawurlencode($qp['slug']);
+            $cleanPath = '/' . rawurlencode($qp['slug']) . '-company-in-delhi';
+        } elseif (str_contains($cleanPath, 'insight-detail')) {
+            $cleanPath = '/blog/' . rawurlencode($qp['slug']);
         } else {
             $canonicalParams = '?slug=' . urlencode($qp['slug']);
         }
     }
 }
-$canonicalUrl = $canonicalUrl ?? (rtrim(BASE_URL, '/') . '/' . ltrim($cleanPath, '/') . $canonicalParams);
+if ($cleanPath === '/services.php' || $cleanPath === '/services' || $cleanPath === '/company') {
+    $cleanPath = '/company-in-delhi';
+}
+if ($cleanPath === '/insights.php' || $cleanPath === '/insights') {
+    $cleanPath = '/blog';
+}
+$canonicalBase = defined('CANONICAL_BASE_URL') ? rtrim(CANONICAL_BASE_URL, '/') : 'https://demo.businesdoctor.com';
+if (!empty($canonicalUrl)) {
+    $currentBase = defined('BASE_URL') ? rtrim(BASE_URL, '/') : '';
+    if ($currentBase !== '' && str_starts_with($canonicalUrl, $currentBase)) {
+        $canonicalUrl = $canonicalBase . substr($canonicalUrl, strlen($currentBase));
+    } elseif (!str_starts_with($canonicalUrl, 'http://') && !str_starts_with($canonicalUrl, 'https://')) {
+        $canonicalUrl = $canonicalBase . '/' . ltrim($canonicalUrl, '/');
+    }
+} else {
+    $canonicalUrl = $canonicalBase . '/' . ltrim($cleanPath, '/') . $canonicalParams;
+}
 ?>
 <!DOCTYPE html>
 <html lang="en">

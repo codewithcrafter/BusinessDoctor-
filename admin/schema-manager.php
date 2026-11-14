@@ -114,13 +114,13 @@ $requiredMatrix = [
     ],
     'insights' => [
         'name' => 'Blog Listing',
-        'url' => '/insights.php',
+        'url' => '/blog',
         'required' => ['Organization', 'BreadcrumbList', 'Blog'],
         'notes' => []
     ],
     'insight-detail' => [
         'name' => 'Individual Blog',
-        'url' => '/insight-detail.php?slug={slug}',
+        'url' => '/blog/{slug}',
         'required' => ['Organization', 'BreadcrumbList', 'Blog', 'FAQPage'],
         'notes' => ['FAQPage' => 'Draft: Auto-activates when question-and-answer pairs exist in article body']
     ],
@@ -138,7 +138,7 @@ $requiredMatrix = [
     ],
     'service-detail' => [
         'name' => 'Individual Service',
-        'url' => '/company/{slug}',
+        'url' => '/{slug}-company-in-delhi',
         'required' => ['Organization', 'BreadcrumbList', 'Review', 'Service'],
         'notes' => ['Review' => 'DRAFT — CONTENT REQUIRED: Pending collection & verification of authentic client reviews']
     ],

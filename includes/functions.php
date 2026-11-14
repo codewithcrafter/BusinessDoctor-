@@ -374,9 +374,18 @@ function isActivePage(string ...$pages): string
         return $isHome ? 'active' : '';
     }
 
-    // Clean routes for /services, /services.php, or /company/{slug}
-    if (str_contains($reqUri, '/services') || str_contains($reqUri, '/company')) {
+    // Clean routes for services overview or individual service detail
+    if (str_contains($reqUri, 'company-in-delhi') || str_contains($reqUri, '/services') || str_contains($reqUri, '/company')) {
         if (in_array('services.php', $pages, true) || in_array('service-detail.php', $pages, true)) {
+            return 'active';
+        }
+        return '';
+    }
+
+    // Clean routes for blog listing or blog detail
+    if (str_contains($reqUri, '/blog') || str_contains($reqUri, '/insights')) {
+        if (in_array('insights.php', $pages, true) || in_array('insight-detail.php', $pages, true)
+            || in_array('blog.php', $pages, true) || in_array('blog-detail.php', $pages, true)) {
             return 'active';
         }
         return '';
@@ -410,19 +419,74 @@ function getAssetUrl(string $path): string
 }
 
 /**
- * Return clean SEO-friendly URL for a service
+ * Return clean SEO-friendly URL for main services overview
  */
-function getServiceUrl(string $slug): string
+function getServicesOverviewUrl(): string
 {
-    return appUrl('company/' . rawurlencode($slug));
+    return appUrl('company-in-delhi');
 }
 
 /**
- * Return clean SEO-friendly URL for a technical insight article
+ * Return clean SEO-friendly URL for an individual service
+ * Pattern: https://demo.businesdoctor.com/{service-slug}-company-in-delhi
+ */
+function getServiceUrl(string $slug): string
+{
+    $clean = strtolower(trim($slug));
+    if (str_ends_with($clean, '-company-in-delhi')) {
+        $base = substr($clean, 0, -17);
+    } else {
+        $base = $clean;
+    }
+
+    $legacyMap = [
+        'seo-services' => 'seo',
+        'smo-services' => 'smo',
+        'digital-marketing' => 'seo',
+        'strategic-consulting' => 'web-development',
+        'digital-engineering' => 'web-development',
+        'performance-marketing' => 'seo',
+        'brand-architecture' => 'graphic-design',
+        'ecommerce-acceleration' => 'ecommerce-management',
+        'creative-production' => 'video-editing',
+        'web-software-development' => 'web-development',
+        'digital-marketing-seo' => 'seo',
+        'ui-ux-branding' => 'graphic-design',
+        'ecommerce-marketplaces' => 'ecommerce-management',
+        'creative-video-production' => 'video-editing',
+        'cloud-it-consulting' => 'web-development',
+    ];
+
+    if (isset($legacyMap[$base])) {
+        $base = $legacyMap[$base];
+    }
+
+    return appUrl(rawurlencode($base) . '-company-in-delhi');
+}
+
+/**
+ * Return clean SEO-friendly URL for blog listing
+ */
+function getBlogListingUrl(): string
+{
+    return appUrl('blog');
+}
+
+/**
+ * Return clean SEO-friendly URL for a blog article
+ * Pattern: https://demo.businesdoctor.com/blog/{article-slug}
+ */
+function getBlogUrl(string $slug): string
+{
+    return appUrl('blog/' . rawurlencode($slug));
+}
+
+/**
+ * Backward compatibility alias for technical insight articles
  */
 function getInsightUrl(string $slug): string
 {
-    return appUrl('insights/' . rawurlencode($slug));
+    return getBlogUrl($slug);
 }
 
 /**
@@ -1054,9 +1118,14 @@ function getPracticeAreas(): array
  */
 function getPracticeBySlug(string $slug): ?array
 {
+    $clean = strtolower(trim($slug));
+    if (str_ends_with($clean, '-company-in-delhi')) {
+        $clean = substr($clean, 0, -17);
+    }
+
     $practices = getPracticeAreas();
-    if (isset($practices[$slug])) {
-        return $practices[$slug];
+    if (isset($practices[$clean])) {
+        return $practices[$clean];
     }
 
     $legacyMap = [
@@ -1077,8 +1146,8 @@ function getPracticeBySlug(string $slug): ?array
         'cloud-it-consulting' => 'web-development',
     ];
 
-    if (isset($legacyMap[$slug]) && isset($practices[$legacyMap[$slug]])) {
-        return $practices[$legacyMap[$slug]];
+    if (isset($legacyMap[$clean]) && isset($practices[$legacyMap[$clean]])) {
+        return $practices[$legacyMap[$clean]];
     }
 
     return null;

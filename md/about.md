@@ -94,7 +94,7 @@ Championing conversion-centered interface design, design systems, and cohesive e
 Schedule an introductory discovery call with our tech leads to discuss your web development, digital marketing, or branding requirements.
 - **Direct Consultation**: [Schedule a Project Consultation](https://demo.businesdoctor.com/contact.php)
 - **Complimentary Diagnostic**: [Request Free Digital Audit](https://demo.businesdoctor.com/audit.php)
-- **Practice Hub**: [Explore IT Services & Practice Areas](https://demo.businesdoctor.com/services.php)
+- **Practice Hub**: [Explore IT Services & Practice Areas](https://demo.businesdoctor.com/company-in-delhi)
 
 ---
 *Maintained by BusinessDoctor Corporate Communications.*

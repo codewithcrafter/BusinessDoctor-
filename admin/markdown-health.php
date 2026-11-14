@@ -53,8 +53,8 @@ $pagesInventory = [
     [
         'section' => 'Institutional',
         'title' => 'Services Hub & Disciplines',
-        'web_url' => '/services.php',
-        'clean_md' => '/services.php.md',
+        'web_url' => '/company-in-delhi',
+        'clean_md' => '/company-in-delhi.md',
         'repo_file' => 'md/services.md',
     ],
     [
@@ -74,8 +74,8 @@ $pagesInventory = [
     [
         'section' => 'Institutional',
         'title' => 'Technical Perspectives & Blog Hub',
-        'web_url' => '/insights.php',
-        'clean_md' => '/insights.php.md',
+        'web_url' => '/blog',
+        'clean_md' => '/blog.md',
         'repo_file' => 'md/insights.md',
     ],
     [
@@ -93,8 +93,8 @@ foreach ($services as $slug => $s) {
     $pagesInventory[] = [
         'section' => 'Practice Discipline',
         'title' => ($s['number'] ?? '') . ' ' . ($s['name'] ?? $slug),
-        'web_url' => '/company/' . $slug,
-        'clean_md' => '/company/' . $slug . '.md',
+        'web_url' => '/' . $slug . '-company-in-delhi',
+        'clean_md' => '/' . $slug . '-company-in-delhi.md',
         'repo_file' => 'md/services/' . $slug . '.md',
     ];
 }
@@ -117,8 +117,8 @@ foreach ($blogs as $b) {
     $pagesInventory[] = [
         'section' => 'Technical Blog',
         'title' => $b['title'] ?? $b['slug'],
-        'web_url' => '/insight-detail.php?slug=' . $b['slug'],
-        'clean_md' => '/insights/' . $b['slug'] . '.md',
+        'web_url' => '/blog/' . $b['slug'],
+        'clean_md' => '/blog/' . $b['slug'] . '.md',
         'repo_file' => 'md/insights/' . $b['slug'] . '.md',
     ];
 }

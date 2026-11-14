@@ -8,8 +8,8 @@
 - **Published Date**: 2026-11-02
 - **Last Modified**: 2026-11-13
 - **Reading Time**: 5 min read
-- **Canonical Web URL**: [https://demo.businesdoctor.com/insight-detail.php?slug=core-web-vitals-and-enterprise-valuation](https://demo.businesdoctor.com/insight-detail.php?slug=core-web-vitals-and-enterprise-valuation)
-- **Clean Markdown URL**: [https://demo.businesdoctor.com/insights/core-web-vitals-and-enterprise-valuation.md](https://demo.businesdoctor.com/insights/core-web-vitals-and-enterprise-valuation.md)
+- **Canonical Web URL**: [https://demo.businesdoctor.com/blog/core-web-vitals-and-enterprise-valuation](https://demo.businesdoctor.com/blog/core-web-vitals-and-enterprise-valuation)
+- **Clean Markdown URL**: [https://demo.businesdoctor.com/blog/core-web-vitals-and-enterprise-valuation.md](https://demo.businesdoctor.com/blog/core-web-vitals-and-enterprise-valuation.md)
 - **Central Markdown URL**: [https://demo.businesdoctor.com/md/insights/core-web-vitals-and-enterprise-valuation.md](https://demo.businesdoctor.com/md/insights/core-web-vitals-and-enterprise-valuation.md)
 
 ![Stalled marketing dashboard showing website performance issues and declining conversions](https://demo.businesdoctor.com/assets/img/blog/Stalled Marketing Dashboard Crisis.png)

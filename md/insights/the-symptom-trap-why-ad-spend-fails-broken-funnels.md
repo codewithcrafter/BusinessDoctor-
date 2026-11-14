@@ -8,8 +8,8 @@
 - **Published Date**: 2026-11-02
 - **Last Modified**: 2026-11-13
 - **Reading Time**: 7 min read
-- **Canonical Web URL**: [https://demo.businesdoctor.com/insight-detail.php?slug=the-symptom-trap-why-ad-spend-fails-broken-funnels](https://demo.businesdoctor.com/insight-detail.php?slug=the-symptom-trap-why-ad-spend-fails-broken-funnels)
-- **Clean Markdown URL**: [https://demo.businesdoctor.com/insights/the-symptom-trap-why-ad-spend-fails-broken-funnels.md](https://demo.businesdoctor.com/insights/the-symptom-trap-why-ad-spend-fails-broken-funnels.md)
+- **Canonical Web URL**: [https://demo.businesdoctor.com/blog/the-symptom-trap-why-ad-spend-fails-broken-funnels](https://demo.businesdoctor.com/blog/the-symptom-trap-why-ad-spend-fails-broken-funnels)
+- **Clean Markdown URL**: [https://demo.businesdoctor.com/blog/the-symptom-trap-why-ad-spend-fails-broken-funnels.md](https://demo.businesdoctor.com/blog/the-symptom-trap-why-ad-spend-fails-broken-funnels.md)
 - **Central Markdown URL**: [https://demo.businesdoctor.com/md/insights/the-symptom-trap-why-ad-spend-fails-broken-funnels.md](https://demo.businesdoctor.com/md/insights/the-symptom-trap-why-ad-spend-fails-broken-funnels.md)
 
 ![Digital marketing budget, website performance and conversion optimization analytics](https://demo.businesdoctor.com/assets/img/blog/Marketing Budget Meets Website Performance.png)

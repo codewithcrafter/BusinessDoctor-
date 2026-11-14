@@ -4,8 +4,8 @@
 
 ## Discipline Information
 - **Practice Area**: 05 Graphic Design
-- **Canonical Web URL**: [https://demo.businesdoctor.com/company/graphic-design](https://demo.businesdoctor.com/company/graphic-design)
-- **Clean Markdown URL**: [https://demo.businesdoctor.com/company/graphic-design.md](https://demo.businesdoctor.com/company/graphic-design.md)
+- **Canonical Web URL**: [https://demo.businesdoctor.com/graphic-design-company-in-delhi](https://demo.businesdoctor.com/graphic-design-company-in-delhi)
+- **Clean Markdown URL**: [https://demo.businesdoctor.com/graphic-design-company-in-delhi.md](https://demo.businesdoctor.com/graphic-design-company-in-delhi.md)
 - **Central Markdown URL**: [https://demo.businesdoctor.com/md/services/graphic-design.md](https://demo.businesdoctor.com/md/services/graphic-design.md)
 - **Direct Consultation**: [Schedule Practice Scope](http://demo.businesdoctor.com/scratch/contact.php?service=Graphic+Design)
 

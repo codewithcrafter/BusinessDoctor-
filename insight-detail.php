@@ -11,6 +11,18 @@ require_once __DIR__ . '/includes/functions.php';
 
 $slug = trim($_GET['slug'] ?? '');
 
+// 301 Permanent Redirect legacy URLs (/insights/{slug}, /insight-detail.php?slug=...) to canonical /blog/{slug}
+$reqPath = parse_url($_SERVER['REQUEST_URI'] ?? '', PHP_URL_PATH) ?? '';
+if (str_starts_with($reqPath, '/insights/') || str_contains($reqPath, 'insight-detail.php')) {
+    if ($slug !== '') {
+        header("Location: " . getBlogUrl($slug), true, 301);
+        exit;
+    } else {
+        header("Location: " . getBlogListingUrl(), true, 301);
+        exit;
+    }
+}
+
 $insight = null;
 $relatedInsights = [];
 try {
@@ -27,13 +39,13 @@ try {
 } catch (Exception $e) {}
 
 if (!$insight) {
-    header("Location: " . appUrl('insights.php'));
+    header("Location: " . getBlogListingUrl(), true, 301);
     exit;
 }
 
 $pageTitle = (!empty($insight['seo_title']) ? $insight['seo_title'] : $insight['title']) . ' — BusinessDoctor Blog';
 $pageDescription = !empty($insight['seo_description']) ? $insight['seo_description'] : (!empty($insight['excerpt']) ? $insight['excerpt'] : $insight['summary']);
-$canonicalUrl = getInsightUrl($insight['slug']);
+$canonicalUrl = getBlogUrl($insight['slug']);
 
 $schemaPageKey = 'insight-detail';
 $schemaContextData = $insight;
@@ -178,7 +190,7 @@ require_once __DIR__ . '/includes/header.php';
     <nav aria-label="Breadcrumb" style="display: flex; align-items: center; gap: 0.6rem; flex-wrap: wrap; margin-bottom: 1.25rem; font-family: var(--font-mono); font-size: 0.82rem;">
       <a href="<?= appUrl('') ?>" class="text-link" style="color: var(--color-text-muted); text-decoration: none;">Home</a>
       <span style="color: rgba(255,255,255,0.3);">&gt;</span>
-      <a href="<?= appUrl('insights.php') ?>" class="text-link" style="color: #06B5F9; text-decoration: none; font-weight: 600;">Blog</a>
+      <a href="<?= getBlogListingUrl() ?>" class="text-link" style="color: #06B5F9; text-decoration: none; font-weight: 600;">Blog</a>
       <span style="color: rgba(255,255,255,0.3);">&gt;</span>
       <span style="color: var(--color-text-light); max-width: 320px; overflow: hidden; text-overflow: ellipsis; white-space: nowrap;"><?= e($insight['title']) ?></span>
       <span style="margin-left: 0.5rem;" class="eyebrow-badge"><?= e($insight['category']) ?></span>

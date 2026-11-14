@@ -8,8 +8,8 @@
 - **Published Date**: 2026-11-02
 - **Last Modified**: 2026-11-13
 - **Reading Time**: 8 min read
-- **Canonical Web URL**: [https://demo.businesdoctor.com/insight-detail.php?slug=brand-architecture-as-risk-mitigation](https://demo.businesdoctor.com/insight-detail.php?slug=brand-architecture-as-risk-mitigation)
-- **Clean Markdown URL**: [https://demo.businesdoctor.com/insights/brand-architecture-as-risk-mitigation.md](https://demo.businesdoctor.com/insights/brand-architecture-as-risk-mitigation.md)
+- **Canonical Web URL**: [https://demo.businesdoctor.com/blog/brand-architecture-as-risk-mitigation](https://demo.businesdoctor.com/blog/brand-architecture-as-risk-mitigation)
+- **Clean Markdown URL**: [https://demo.businesdoctor.com/blog/brand-architecture-as-risk-mitigation.md](https://demo.businesdoctor.com/blog/brand-architecture-as-risk-mitigation.md)
 - **Central Markdown URL**: [https://demo.businesdoctor.com/md/insights/brand-architecture-as-risk-mitigation.md](https://demo.businesdoctor.com/md/insights/brand-architecture-as-risk-mitigation.md)
 
 ![Slow website loading and increasing digital advertising costs](https://demo.businesdoctor.com/assets/img/blog/Slow Loading, Rising Costs.png)

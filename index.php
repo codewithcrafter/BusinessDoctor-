@@ -10,18 +10,43 @@ require_once __DIR__ . '/includes/config.php';
 require_once __DIR__ . '/includes/db.php';
 require_once __DIR__ . '/includes/functions.php';
 
-// Local development / built-in server fallback routing for clean /company/ URLs
+// Local development / built-in server fallback routing
 $reqPath = parse_url($_SERVER['REQUEST_URI'] ?? '', PHP_URL_PATH);
-if ($reqPath !== null && preg_match('#^/company/([a-zA-Z0-9_-]+)/?$#', $reqPath, $sm)) {
-  $_GET['slug'] = $sm[1];
-  require __DIR__ . '/service-detail.php';
-  exit;
-} elseif ($reqPath !== null && preg_match('#^/services/([a-zA-Z0-9_-]+)/?$#', $reqPath, $sm)) {
-  header("Location: /company/" . $sm[1], true, 301);
-  exit;
-} elseif ($reqPath === '/services' || $reqPath === '/services/') {
-  require __DIR__ . '/services.php';
-  exit;
+if ($reqPath !== null) {
+  if ($reqPath === '/company-in-delhi' || $reqPath === '/company-in-delhi/') {
+    require __DIR__ . '/services.php';
+    exit;
+  }
+  if (preg_match('#^/([a-zA-Z0-9_-]+)-company-in-delhi/?$#', $reqPath, $sm)) {
+    $_GET['slug'] = $sm[1];
+    require __DIR__ . '/service-detail.php';
+    exit;
+  }
+  if ($reqPath === '/blog' || $reqPath === '/blog/') {
+    require __DIR__ . '/insights.php';
+    exit;
+  }
+  if (preg_match('#^/blog/([a-zA-Z0-9_-]+)/?$#', $reqPath, $sm)) {
+    $_GET['slug'] = $sm[1];
+    require __DIR__ . '/insight-detail.php';
+    exit;
+  }
+  if (preg_match('#^/company/([a-zA-Z0-9_-]+)/?$#', $reqPath, $sm)) {
+    header("Location: " . getServiceUrl($sm[1]), true, 301);
+    exit;
+  }
+  if (preg_match('#^/services/([a-zA-Z0-9_-]+)/?$#', $reqPath, $sm)) {
+    header("Location: " . getServiceUrl($sm[1]), true, 301);
+    exit;
+  }
+  if ($reqPath === '/services' || $reqPath === '/services/' || $reqPath === '/company' || $reqPath === '/company/') {
+    header("Location: " . getServicesOverviewUrl(), true, 301);
+    exit;
+  }
+  if ($reqPath === '/insights' || $reqPath === '/insights/' || $reqPath === '/insights.php') {
+    header("Location: " . getBlogListingUrl(), true, 301);
+    exit;
+  }
 }
 
 $pageTitle = 'BusinessDoctor — Enterprise IT Solutions & Digital Growth Firm';
@@ -1854,7 +1879,7 @@ require_once __DIR__ . '/includes/header.php';
                 <div class="insight-author-name"><?= e($leadPost['author_name']) ?></div>
                 <div class="insight-author-title"><?= e($leadPost['author_title']) ?></div>
               </div>
-              <a href="insight-detail.php?slug=<?= urlencode($leadPost['slug']) ?>" class="btn btn-primary btn-sm">
+              <a href="<?= getBlogUrl($leadPost['slug']) ?>" class="btn btn-primary btn-sm">
                 <span>Read Blog</span>
                 <svg class="btn-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
                   <line x1="5" y1="12" x2="19" y2="12" />
@@ -1868,7 +1893,7 @@ require_once __DIR__ . '/includes/header.php';
         <!-- Companion Articles Column -->
         <div class="insights-list-col">
           <?php foreach ($subPosts as $post): ?>
-            <a href="insight-detail.php?slug=<?= urlencode($post['slug']) ?>" class="insight-compact-card">
+            <a href="<?= getBlogUrl($post['slug']) ?>" class="insight-compact-card">
               <div class="insight-meta-strip">
                 <span class="insight-category-badge"><?= e($post['category']) ?></span>
                 <span>•</span>
@@ -1891,7 +1916,7 @@ require_once __DIR__ . '/includes/header.php';
 
     <!-- View All Blogs CTA -->
     <div style="text-align: center; margin-top: 2.75rem;">
-      <a href="<?= appUrl('insights.php') ?>" class="btn btn-secondary btn-md" style="display: inline-flex; align-items: center; gap: 0.5rem;">
+      <a href="<?= getBlogListingUrl() ?>" class="btn btn-secondary btn-md" style="display: inline-flex; align-items: center; gap: 0.5rem;">
         <span>View All Blogs</span>
         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" width="16" height="16" stroke-width="2"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
       </a>

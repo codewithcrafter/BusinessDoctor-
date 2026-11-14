@@ -1,10 +1,10 @@
 # Full-Stack Technology & Digital Growth Disciplines
 
-> We engineer high-performance web software, manage profitable paid acquisition portfolios, and build distinctive brand architectures. Six specialized disciplines operating under one accountable standard.
+> We engineer high-performance web software, manage profitable paid acquisition portfolios, and build distinctive brand architectures. Ten specialized disciplines operating under one accountable standard.
 
 ## Hub Information & Digital Resources
-- **Canonical Web URL**: [https://demo.businesdoctor.com/services.php](https://demo.businesdoctor.com/services.php)
-- **Clean Markdown URL**: [https://demo.businesdoctor.com/services.php.md](https://demo.businesdoctor.com/services.php.md)
+- **Canonical Web URL**: [https://demo.businesdoctor.com/company-in-delhi](https://demo.businesdoctor.com/company-in-delhi)
+- **Clean Markdown URL**: [https://demo.businesdoctor.com/company-in-delhi.md](https://demo.businesdoctor.com/company-in-delhi.md)
 - **Central Markdown URL**: [https://demo.businesdoctor.com/md/services.md](https://demo.businesdoctor.com/md/services.md)
 - **Master Markdown Index**: [https://demo.businesdoctor.com/md](https://demo.businesdoctor.com/md)
 - **Total Integrated Disciplines**: 10 specialized practices
@@ -16,8 +16,8 @@
 ### Discipline // 01: SMO — Social Media Optimization
 > *Social Profile Architecture, Content Velocity & Organic Reach*
 
-- **Canonical Web URL**: [https://demo.businesdoctor.com/company/smo](https://demo.businesdoctor.com/company/smo)
-- **Clean Markdown URL**: [https://demo.businesdoctor.com/company/smo.md](https://demo.businesdoctor.com/company/smo.md)
+- **Canonical Web URL**: [https://demo.businesdoctor.com/smo-company-in-delhi](https://demo.businesdoctor.com/smo-company-in-delhi)
+- **Clean Markdown URL**: [https://demo.businesdoctor.com/smo-company-in-delhi.md](https://demo.businesdoctor.com/smo-company-in-delhi.md)
 - **Central Markdown URL**: [https://demo.businesdoctor.com/md/services/smo.md](https://demo.businesdoctor.com/md/services/smo.md)
 - **Scope Consultation**: [Request Scope for SMO — Social Media Optimization](https://demo.businesdoctor.com/contact.php?service=SMO+%E2%80%94+Social+Media+Optimization)
 
@@ -44,8 +44,8 @@ We transform static social media profiles into high-converting organic acquisiti
 ### Discipline // 02: Google Business Profile Management
 > *Local 3-Pack Dominance, Verification & High-Intent Local Leads*
 
-- **Canonical Web URL**: [https://demo.businesdoctor.com/company/google-business-profile](https://demo.businesdoctor.com/company/google-business-profile)
-- **Clean Markdown URL**: [https://demo.businesdoctor.com/company/google-business-profile.md](https://demo.businesdoctor.com/company/google-business-profile.md)
+- **Canonical Web URL**: [https://demo.businesdoctor.com/google-business-profile-company-in-delhi](https://demo.businesdoctor.com/google-business-profile-company-in-delhi)
+- **Clean Markdown URL**: [https://demo.businesdoctor.com/google-business-profile-company-in-delhi.md](https://demo.businesdoctor.com/google-business-profile-company-in-delhi.md)
 - **Central Markdown URL**: [https://demo.businesdoctor.com/md/services/google-business-profile.md](https://demo.businesdoctor.com/md/services/google-business-profile.md)
 - **Scope Consultation**: [Request Scope for Google Business Profile Management](https://demo.businesdoctor.com/contact.php?service=Google+Business+Profile+Management)
 
@@ -72,8 +72,8 @@ Dominate local commercial search results where buying decisions are made. We cla
 ### Discipline // 03: PPC / Paid Ads
 > *Precision Performance Advertising, Search Ads & ROAS Maximization*
 
-- **Canonical Web URL**: [https://demo.businesdoctor.com/company/ppc-paid-ads](https://demo.businesdoctor.com/company/ppc-paid-ads)
-- **Clean Markdown URL**: [https://demo.businesdoctor.com/company/ppc-paid-ads.md](https://demo.businesdoctor.com/company/ppc-paid-ads.md)
+- **Canonical Web URL**: [https://demo.businesdoctor.com/ppc-paid-ads-company-in-delhi](https://demo.businesdoctor.com/ppc-paid-ads-company-in-delhi)
+- **Clean Markdown URL**: [https://demo.businesdoctor.com/ppc-paid-ads-company-in-delhi.md](https://demo.businesdoctor.com/ppc-paid-ads-company-in-delhi.md)
 - **Central Markdown URL**: [https://demo.businesdoctor.com/md/services/ppc-paid-ads.md](https://demo.businesdoctor.com/md/services/ppc-paid-ads.md)
 - **Scope Consultation**: [Request Scope for PPC / Paid Ads](https://demo.businesdoctor.com/contact.php?service=PPC+%2F+Paid+Ads)
 
@@ -100,8 +100,8 @@ Eliminate wasted ad spend with surgical performance marketing. Our certified adv
 ### Discipline // 04: Ecommerce Management
 > *Amazon, Flipkart & Multi-Channel Storefront Scaling*
 
-- **Canonical Web URL**: [https://demo.businesdoctor.com/company/ecommerce-management](https://demo.businesdoctor.com/company/ecommerce-management)
-- **Clean Markdown URL**: [https://demo.businesdoctor.com/company/ecommerce-management.md](https://demo.businesdoctor.com/company/ecommerce-management.md)
+- **Canonical Web URL**: [https://demo.businesdoctor.com/ecommerce-management-company-in-delhi](https://demo.businesdoctor.com/ecommerce-management-company-in-delhi)
+- **Clean Markdown URL**: [https://demo.businesdoctor.com/ecommerce-management-company-in-delhi.md](https://demo.businesdoctor.com/ecommerce-management-company-in-delhi.md)
 - **Central Markdown URL**: [https://demo.businesdoctor.com/md/services/ecommerce-management.md](https://demo.businesdoctor.com/md/services/ecommerce-management.md)
 - **Scope Consultation**: [Request Scope for Ecommerce Management](https://demo.businesdoctor.com/contact.php?service=Ecommerce+Management)
 
@@ -128,8 +128,8 @@ Scale your product catalog across the world’s most competitive marketplaces. W
 ### Discipline // 05: Graphic Design
 > *Brand Identity Systems, Commercial Collateral & Visual Direction*
 
-- **Canonical Web URL**: [https://demo.businesdoctor.com/company/graphic-design](https://demo.businesdoctor.com/company/graphic-design)
-- **Clean Markdown URL**: [https://demo.businesdoctor.com/company/graphic-design.md](https://demo.businesdoctor.com/company/graphic-design.md)
+- **Canonical Web URL**: [https://demo.businesdoctor.com/graphic-design-company-in-delhi](https://demo.businesdoctor.com/graphic-design-company-in-delhi)
+- **Clean Markdown URL**: [https://demo.businesdoctor.com/graphic-design-company-in-delhi.md](https://demo.businesdoctor.com/graphic-design-company-in-delhi.md)
 - **Central Markdown URL**: [https://demo.businesdoctor.com/md/services/graphic-design.md](https://demo.businesdoctor.com/md/services/graphic-design.md)
 - **Scope Consultation**: [Request Scope for Graphic Design](https://demo.businesdoctor.com/contact.php?service=Graphic+Design)
 
@@ -156,8 +156,8 @@ Elevate your market presence with disciplined, conversion-centered visual design
 ### Discipline // 06: SEO — Search Engine Optimization
 > *Organic Search Dominance, Technical Hygiene & Keyword Authority*
 
-- **Canonical Web URL**: [https://demo.businesdoctor.com/company/seo](https://demo.businesdoctor.com/company/seo)
-- **Clean Markdown URL**: [https://demo.businesdoctor.com/company/seo.md](https://demo.businesdoctor.com/company/seo.md)
+- **Canonical Web URL**: [https://demo.businesdoctor.com/seo-company-in-delhi](https://demo.businesdoctor.com/seo-company-in-delhi)
+- **Clean Markdown URL**: [https://demo.businesdoctor.com/seo-company-in-delhi.md](https://demo.businesdoctor.com/seo-company-in-delhi.md)
 - **Central Markdown URL**: [https://demo.businesdoctor.com/md/services/seo.md](https://demo.businesdoctor.com/md/services/seo.md)
 - **Scope Consultation**: [Request Scope for SEO — Search Engine Optimization](https://demo.businesdoctor.com/contact.php?service=SEO+%E2%80%94+Search+Engine+Optimization)
 
@@ -184,8 +184,8 @@ Capture sustainable, high-intent customer acquisition through deep technical sea
 ### Discipline // 07: Social Media Marketing
 > *Community Building, Targeted Paid Sprints & Conversational Growth*
 
-- **Canonical Web URL**: [https://demo.businesdoctor.com/company/social-media-marketing](https://demo.businesdoctor.com/company/social-media-marketing)
-- **Clean Markdown URL**: [https://demo.businesdoctor.com/company/social-media-marketing.md](https://demo.businesdoctor.com/company/social-media-marketing.md)
+- **Canonical Web URL**: [https://demo.businesdoctor.com/social-media-marketing-company-in-delhi](https://demo.businesdoctor.com/social-media-marketing-company-in-delhi)
+- **Clean Markdown URL**: [https://demo.businesdoctor.com/social-media-marketing-company-in-delhi.md](https://demo.businesdoctor.com/social-media-marketing-company-in-delhi.md)
 - **Central Markdown URL**: [https://demo.businesdoctor.com/md/services/social-media-marketing.md](https://demo.businesdoctor.com/md/services/social-media-marketing.md)
 - **Scope Consultation**: [Request Scope for Social Media Marketing](https://demo.businesdoctor.com/contact.php?service=Social+Media+Marketing)
 
@@ -212,8 +212,8 @@ Build an engaged, loyal community that advocates for your brand. Our social medi
 ### Discipline // 08: Product Photography
 > *Studio Commercial Imaging, 360° Views & E-Commerce Visuals*
 
-- **Canonical Web URL**: [https://demo.businesdoctor.com/company/product-photography](https://demo.businesdoctor.com/company/product-photography)
-- **Clean Markdown URL**: [https://demo.businesdoctor.com/company/product-photography.md](https://demo.businesdoctor.com/company/product-photography.md)
+- **Canonical Web URL**: [https://demo.businesdoctor.com/product-photography-company-in-delhi](https://demo.businesdoctor.com/product-photography-company-in-delhi)
+- **Clean Markdown URL**: [https://demo.businesdoctor.com/product-photography-company-in-delhi.md](https://demo.businesdoctor.com/product-photography-company-in-delhi.md)
 - **Central Markdown URL**: [https://demo.businesdoctor.com/md/services/product-photography.md](https://demo.businesdoctor.com/md/services/product-photography.md)
 - **Scope Consultation**: [Request Scope for Product Photography](https://demo.businesdoctor.com/contact.php?service=Product+Photography)
 
@@ -240,8 +240,8 @@ Turn browsers into buyers with pristine commercial imagery. In our calibrated ph
 ### Discipline // 09: Video Editing
 > *Short-Form Reels, Commercial Brand Films & Motion Graphics*
 
-- **Canonical Web URL**: [https://demo.businesdoctor.com/company/video-editing](https://demo.businesdoctor.com/company/video-editing)
-- **Clean Markdown URL**: [https://demo.businesdoctor.com/company/video-editing.md](https://demo.businesdoctor.com/company/video-editing.md)
+- **Canonical Web URL**: [https://demo.businesdoctor.com/video-editing-company-in-delhi](https://demo.businesdoctor.com/video-editing-company-in-delhi)
+- **Clean Markdown URL**: [https://demo.businesdoctor.com/video-editing-company-in-delhi.md](https://demo.businesdoctor.com/video-editing-company-in-delhi.md)
 - **Central Markdown URL**: [https://demo.businesdoctor.com/md/services/video-editing.md](https://demo.businesdoctor.com/md/services/video-editing.md)
 - **Scope Consultation**: [Request Scope for Video Editing](https://demo.businesdoctor.com/contact.php?service=Video+Editing)
 
@@ -268,8 +268,8 @@ Capture and hold viewer attention in the first three seconds. Our post-productio
 ### Discipline // 10: Web Development
 > *High-Performance Platforms, Custom Web Apps & Scalable Portals*
 
-- **Canonical Web URL**: [https://demo.businesdoctor.com/company/web-development](https://demo.businesdoctor.com/company/web-development)
-- **Clean Markdown URL**: [https://demo.businesdoctor.com/company/web-development.md](https://demo.businesdoctor.com/company/web-development.md)
+- **Canonical Web URL**: [https://demo.businesdoctor.com/web-development-company-in-delhi](https://demo.businesdoctor.com/web-development-company-in-delhi)
+- **Clean Markdown URL**: [https://demo.businesdoctor.com/web-development-company-in-delhi.md](https://demo.businesdoctor.com/web-development-company-in-delhi.md)
 - **Central Markdown URL**: [https://demo.businesdoctor.com/md/services/web-development.md](https://demo.businesdoctor.com/md/services/web-development.md)
 - **Scope Consultation**: [Request Scope for Web Development](https://demo.businesdoctor.com/contact.php?service=Web+Development)
 

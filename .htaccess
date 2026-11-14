@@ -25,13 +25,28 @@ AddType text/markdown .md
     # Block direct web access to sensitive internal directories
     RewriteRule ^(database|scratch|includes)/ - [F,L,NC]
 
-    # 301 Redirect legacy /service-detail.php?slug={slug} to clean /company/{slug}
+    # 301 Redirect legacy /service-detail.php?slug={slug} to clean /{slug}-company-in-delhi
     RewriteCond %{THE_REQUEST} \s/+service-detail(?:\.php)?\?slug=([a-zA-Z0-9_-]+) [NC]
-    RewriteRule ^ /company/%1? [R=301,L]
+    RewriteRule ^ /%1-company-in-delhi? [R=301,L]
 
-    # 301 Redirect legacy /service-detail.php without slug to /services.php
+    # 301 Redirect legacy /service-detail.php without slug to /company-in-delhi
     RewriteCond %{THE_REQUEST} \s/+service-detail(?:\.php)?(\s|\?) [NC]
-    RewriteRule ^ /services.php? [R=301,L]
+    RewriteRule ^ /company-in-delhi? [R=301,L]
+
+    # 301 Redirect legacy /insight-detail.php?slug={slug} to clean /blog/{slug}
+    RewriteCond %{THE_REQUEST} \s/+insight-detail(?:\.php)?\?slug=([a-zA-Z0-9_-]+) [NC]
+    RewriteRule ^ /blog/%1? [R=301,L]
+
+    # 301 Redirect legacy /insight-detail.php without slug to /blog
+    RewriteCond %{THE_REQUEST} \s/+insight-detail(?:\.php)?(\s|\?) [NC]
+    RewriteRule ^ /blog? [R=301,L]
+
+    # 301 Redirect legacy /services.php and /insights.php
+    RewriteCond %{THE_REQUEST} \s/+services\.php(\s|\?) [NC]
+    RewriteRule ^ /company-in-delhi? [R=301,L]
+
+    RewriteCond %{THE_REQUEST} \s/+insights\.php(\s|\?) [NC]
+    RewriteRule ^ /blog? [R=301,L]
 
     # ============================================================
     # Universal Markdown Document Routes (*.md & /md gateway)
@@ -51,38 +66,50 @@ AddType text/markdown .md
     RewriteCond %{REQUEST_URI} !^/markdown-router\.php
     RewriteRule (\.md$|^md/) markdown-router.php [L,QSA]
 
-    # 301 Redirect legacy service slugs to new service slugs under /company/
-    RewriteRule ^(?:services|company)/web-software-development/?$ /company/web-development [R=301,L]
-    RewriteRule ^(?:services|company)/digital-marketing-seo/?$ /company/seo [R=301,L]
-    RewriteRule ^(?:services|company)/ui-ux-branding/?$ /company/graphic-design [R=301,L]
-    RewriteRule ^(?:services|company)/ecommerce-marketplaces/?$ /company/ecommerce-management [R=301,L]
-    RewriteRule ^(?:services|company)/creative-video-production/?$ /company/video-editing [R=301,L]
-    RewriteRule ^(?:services|company)/cloud-it-consulting/?$ /company/web-development [R=301,L]
+    # 301 Redirect legacy service aliases to canonical -company-in-delhi
+    RewriteRule ^(?:services|company)/web-software-development/?$ /web-development-company-in-delhi [R=301,L]
+    RewriteRule ^(?:services|company)/ai-automation-workflows/?$ /web-development-company-in-delhi [R=301,L]
+    RewriteRule ^(?:services|company)/brand-creative-direction/?$ /graphic-design-company-in-delhi [R=301,L]
+    RewriteRule ^(?:services|company)/digital-marketing-seo/?$ /seo-company-in-delhi [R=301,L]
+    RewriteRule ^(?:services|company)/ui-ux-branding/?$ /graphic-design-company-in-delhi [R=301,L]
+    RewriteRule ^(?:services|company)/ecommerce-marketplaces/?$ /ecommerce-management-company-in-delhi [R=301,L]
+    RewriteRule ^(?:services|company)/creative-video-production/?$ /video-editing-company-in-delhi [R=301,L]
+    RewriteRule ^(?:services|company)/cloud-it-consulting/?$ /web-development-company-in-delhi [R=301,L]
+    RewriteRule ^(?:services|company)/seo-services/?$ /seo-company-in-delhi [R=301,L]
+    RewriteRule ^(?:services|company)/smo-services/?$ /smo-company-in-delhi [R=301,L]
+    RewriteRule ^(?:services|company)/digital-marketing/?$ /social-media-marketing-company-in-delhi [R=301,L]
 
-    # 301 Redirect all old /services/{slug} to new /company/{slug} structure
-    RewriteRule ^services/([a-zA-Z0-9_-]+)/?$ /company/$1 [R=301,L]
+    # 301 Redirect old /services/{slug} and /company/{slug} to new /{slug}-company-in-delhi structure
+    RewriteRule ^(?:services|company)/([a-zA-Z0-9_-]+)/?$ /$1-company-in-delhi [R=301,L]
 
-    # 301 Redirect all old /services/{slug}.md to new /company/{slug}.md
-    RewriteRule ^services/([a-zA-Z0-9_-]+)\.md$ /company/$1.md [R=301,L]
+    # 301 Redirect old services overview paths to /company-in-delhi
+    RewriteRule ^(?:services|company)/?$ /company-in-delhi [R=301,L]
 
-    # Clean Service URL Rewriting: /company/{slug} -> service-detail.php?slug={slug}
+    # 301 Redirect old /insights/{slug} to /blog/{slug}
+    RewriteRule ^insights/([a-zA-Z0-9_-]+)/?$ /blog/$1 [R=301,L]
+
+    # 301 Redirect old /insights to /blog
+    RewriteRule ^insights/?$ /blog [R=301,L]
+
+    # Clean Services Overview Rewriting: /company-in-delhi -> services.php
     RewriteCond %{REQUEST_FILENAME} !-f
     RewriteCond %{REQUEST_FILENAME} !-d
-    RewriteRule ^company/([a-zA-Z0-9_-]+)/?$ service-detail.php?slug=$1 [L,QSA]
+    RewriteRule ^company-in-delhi/?$ services.php [L,QSA]
 
-    # Clean Services Index Rewriting: /services -> /services.php
+    # Clean Service URL Rewriting: /{slug}-company-in-delhi -> service-detail.php?slug={slug}
     RewriteCond %{REQUEST_FILENAME} !-f
     RewriteCond %{REQUEST_FILENAME} !-d
-    RewriteRule ^services/?$ services.php [L,QSA]
+    RewriteRule ^([a-zA-Z0-9_-]+)-company-in-delhi/?$ service-detail.php?slug=$1 [L,QSA]
 
-    # Clean Insight URLs: /insights/{slug} -> insight-detail.php?slug={slug}
+    # Clean Blog Listing Rewriting: /blog -> insights.php
     RewriteCond %{REQUEST_FILENAME} !-f
     RewriteCond %{REQUEST_FILENAME} !-d
-    RewriteRule ^insights/([a-zA-Z0-9_-]+)/?$ insight-detail.php?slug=$1 [L,QSA]
+    RewriteRule ^blog/?$ insights.php [L,QSA]
 
+    # Clean Blog Detail Rewriting: /blog/{slug} -> insight-detail.php?slug={slug}
     RewriteCond %{REQUEST_FILENAME} !-f
     RewriteCond %{REQUEST_FILENAME} !-d
-    RewriteRule ^insights/?$ insights.php [L,QSA]
+    RewriteRule ^blog/([a-zA-Z0-9_-]+)/?$ insight-detail.php?slug=$1 [L,QSA]
 
     # Clean Case Study URLs: /case-studies/{slug} -> case-study-detail.php?slug={slug}
     RewriteCond %{REQUEST_FILENAME} !-f

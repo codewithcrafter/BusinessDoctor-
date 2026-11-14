@@ -10,8 +10,17 @@ require_once __DIR__ . '/includes/config.php';
 require_once __DIR__ . '/includes/db.php';
 require_once __DIR__ . '/includes/functions.php';
 
+// 301 Permanent Redirect legacy URLs (/services.php, /services, /company) to canonical /company-in-delhi
+$reqPath = parse_url($_SERVER['REQUEST_URI'] ?? '', PHP_URL_PATH) ?? '';
+if ($reqPath === '/services.php' || $reqPath === '/services' || $reqPath === '/services/' || $reqPath === '/company' || $reqPath === '/company/') {
+    header("Location: " . getServicesOverviewUrl(), true, 301);
+    exit;
+}
+
 $pageTitle = 'IT & Digital Services — BusinessDoctor Enterprise Technology';
 $pageDescription = 'Explore BusinessDoctor\'s 10 integrated digital & technology disciplines: SMO, Google Business Profile Management, PPC / Paid Ads, Ecommerce Management, Graphic Design, SEO, Social Media Marketing, Product Photography, Video Editing, and Web Development.';
+$canonicalUrl = getServicesOverviewUrl();
+$schemaPageKey = 'services';
 
 $practices = getPracticeAreas();
 

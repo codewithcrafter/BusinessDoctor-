@@ -102,6 +102,9 @@ if (!empty($envAppUrl) && !($isLocalHost && str_contains($envAppUrl, 'demo.busin
     $scriptDir = rtrim(str_replace('\\', '/', $scriptDir), '/');
 
     $parts = explode('/', trim($scriptDir, '/'));
+    if ($parts === ['.']) {
+        $parts = [];
+    }
     if (end($parts) === 'admin' || end($parts) === 'api') {
         array_pop($parts);
     }
@@ -109,6 +112,8 @@ if (!empty($envAppUrl) && !($isLocalHost && str_contains($envAppUrl, 'demo.busin
     define('BASE_URL', $protocol . $host . $basePath);
 }
 define('APP_URL', BASE_URL);
+define('CANONICAL_DOMAIN', 'https://demo.businesdoctor.com');
+define('CANONICAL_BASE_URL', 'https://demo.businesdoctor.com');
 define('ROOT_PATH', dirname(__DIR__));
 
 // Database Configuration - Explicit Driver Selection

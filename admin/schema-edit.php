@@ -443,7 +443,7 @@ const starterTemplates = {
       "@type": "SearchAction",
       "target": {
         "@type": "EntryPoint",
-        "urlTemplate": "{{BASE_URL}}/insights.php?q={search_term_string}"
+        "urlTemplate": "{{BASE_URL}}/blog?q={search_term_string}"
       },
       "query-input": "required name=search_term_string"
     }
@@ -499,7 +499,7 @@ const starterTemplates = {
     "@context": "https://schema.org",
     "@type": "ProfessionalService",
     "name": "BusinessDoctor IT Services",
-    "url": "{{BASE_URL}}/services.php",
+    "url": "{{BASE_URL}}/company-in-delhi",
     "priceRange": "$$$",
     "hasOfferCatalog": {
       "@type": "OfferCatalog",
@@ -553,10 +553,10 @@ const starterTemplates = {
   'Blog': {
     "@context": "https://schema.org",
     "@type": "Blog",
-    "@id": "{{BASE_URL}}/insights.php#blog",
+    "@id": "{{BASE_URL}}/blog#blog",
     "name": "Perspectives & Technical Insights — BusinessDoctor",
     "description": "Enterprise engineering insights, digital transformation architectures, and strategic advisory perspectives.",
-    "url": "{{BASE_URL}}/insights.php",
+    "url": "{{BASE_URL}}/blog",
     "publisher": {
       "@type": "Organization",
       "@id": "{{BASE_URL}}/#organization",

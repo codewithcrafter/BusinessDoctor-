@@ -10,7 +10,7 @@ require_once __DIR__ . '/includes/db.php';
 require_once __DIR__ . '/includes/functions.php';
 
 // 1. Legacy URL 301 Permanent Redirect
-// All service detail pages follow the mandatory URL structure: /company/{service-slug}
+// All service detail pages follow the mandatory URL structure: /{service-slug}-company-in-delhi
 $reqUri = $_SERVER['REQUEST_URI'] ?? '';
 $reqPath = parse_url($reqUri, PHP_URL_PATH) ?? '';
 $rawSlug = trim($_GET['slug'] ?? '');
@@ -33,20 +33,26 @@ $legacySlugMap = [
     'cloud-it-consulting' => 'web-development',
 ];
 
-// Redirect legacy slug aliases immediately to new /company/{canonical_slug}
-if ($rawSlug !== '' && isset($legacySlugMap[$rawSlug])) {
-    header("Location: /company/" . $legacySlugMap[$rawSlug], true, 301);
+// Clean base slug if -company-in-delhi was already present
+$baseRawSlug = $rawSlug;
+if (str_ends_with($baseRawSlug, '-company-in-delhi')) {
+    $baseRawSlug = substr($baseRawSlug, 0, -17);
+}
+
+// Redirect legacy slug aliases immediately to new /{canonical_slug}-company-in-delhi
+if ($baseRawSlug !== '' && isset($legacySlugMap[$baseRawSlug])) {
+    header("Location: " . getServiceUrl($legacySlugMap[$baseRawSlug]), true, 301);
     exit;
 }
 
-// If client requested /services/{slug} or /service-detail.php?slug=..., 301 redirect to /company/{slug}
-if (str_starts_with($reqPath, '/services/') || str_contains($reqUri, 'service-detail.php')) {
-    if ($rawSlug !== '') {
-        $p = getPracticeBySlug($rawSlug);
-        $redirectSlug = $p ? $p['slug'] : rawurlencode($rawSlug);
-        $targetUrl = '/company/' . $redirectSlug;
+// If client requested /services/{slug}, /company/{slug}, or /service-detail.php?slug=..., 301 redirect to /{slug}-company-in-delhi
+if (str_starts_with($reqPath, '/services/') || str_starts_with($reqPath, '/company/') || str_contains($reqUri, 'service-detail.php')) {
+    if ($baseRawSlug !== '') {
+        $p = getPracticeBySlug($baseRawSlug);
+        $redirectSlug = $p ? $p['slug'] : $baseRawSlug;
+        $targetUrl = getServiceUrl($redirectSlug);
     } else {
-        $targetUrl = '/services.php';
+        $targetUrl = getServicesOverviewUrl();
     }
     header("Location: " . $targetUrl, true, 301);
     exit;
@@ -55,7 +61,7 @@ if (str_starts_with($reqPath, '/services/') || str_contains($reqUri, 'service-de
 // 2. Validate Service Slug
 $slug = trim($_GET['slug'] ?? '');
 if ($slug === '') {
-    header("Location: /services.php", true, 301);
+    header("Location: " . getServicesOverviewUrl(), true, 301);
     exit;
 }
 
@@ -65,7 +71,7 @@ if (!$practice) {
     http_response_code(404);
     $pageTitle = 'Service Not Found — BusinessDoctor';
     $pageDescription = 'The requested practice area could not be found. Explore our enterprise IT and digital capabilities.';
-    $canonicalUrl = BASE_URL . '/services.php';
+    $canonicalUrl = getServicesOverviewUrl();
     require_once __DIR__ . '/includes/header.php';
     ?>
     <section class="section hero-enterprise" style="padding-top: 6rem; padding-bottom: 6rem; text-align: center;">
@@ -81,14 +87,14 @@ if (!$practice) {
           The service discipline <code><?= e($slug) ?></code> is not part of our enterprise roadmap, or the URL has changed.
         </p>
         <div style="display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap;">
-          <a href="<?= BASE_URL ?>/services.php" class="btn btn-primary btn-lg">
+          <a href="<?= getServicesOverviewUrl() ?>" class="btn btn-primary btn-lg">
             <span>Explore All Capabilities</span>
             <svg class="btn-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
               <line x1="5" y1="12" x2="19" y2="12"/>
               <polyline points="12 5 19 12 12 19"/>
             </svg>
           </a>
-          <a href="<?= BASE_URL ?>/contact.php" class="btn btn-secondary btn-lg">
+          <a href="<?= appUrl('contact.php') ?>" class="btn btn-secondary btn-lg">
             <span>Inquire About Custom Engineering</span>
           </a>
         </div>
@@ -99,7 +105,7 @@ if (!$practice) {
     exit;
 }
 
-$canonicalUrl = BASE_URL . '/company/' . $practice['slug'];
+$canonicalUrl = getServiceUrl($practice['slug']);
 $pageTitle = $practice['name'] . ' — BusinessDoctor Enterprise Capabilities';
 $pageDescription = $practice['summary'];
 

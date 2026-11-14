@@ -48,8 +48,8 @@ $practices = getPracticeAreas();
           <a href="<?= appUrl('about.php') ?>" class="footer-link">About BusinessDoctor</a>
           <a href="<?= appUrl('audit.php') ?>" class="footer-link">Free Technical Digital Audit</a>
           <a href="<?= appUrl('case-studies.php') ?>" class="footer-link">Client Case Studies</a>
-          <a href="<?= appUrl('insights.php') ?>" class="footer-link">Blogs & Resources</a>
-          <a href="<?= appUrl('contact.php') ?>" class="footer-link">Consultation & Contact</a>
+          <a href="<?= getBlogListingUrl() ?>" class="footer-link">Blogs &amp; Resources</a>
+          <a href="<?= appUrl('contact.php') ?>" class="footer-link">Consultation &amp; Contact</a>
           <a href="<?= appUrl('admin/login.php') ?>" class="footer-link" style="color: #8FA3B8;">Project Console (Admin)</a>
         </div>
       </div>

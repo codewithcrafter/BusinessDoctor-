@@ -30,13 +30,13 @@ function getSupportedSchemaPages(): array
         ],
         'services' => [
             'name' => 'IT Services Portfolio',
-            'url' => '/services.php',
+            'url' => '/company-in-delhi',
             'recommended_types' => ['ProfessionalService', 'BreadcrumbList'],
             'is_dynamic' => false
         ],
         'service-detail' => [
             'name' => 'Individual Service Pages',
-            'url' => '/company/{slug}',
+            'url' => '/{slug}-company-in-delhi',
             'recommended_types' => ['Service', 'BreadcrumbList'],
             'is_dynamic' => true
         ],
@@ -60,13 +60,13 @@ function getSupportedSchemaPages(): array
         ],
         'insights' => [
             'name' => 'Perspectives & Blog Listing',
-            'url' => '/insights.php',
+            'url' => '/blog',
             'recommended_types' => ['WebPage', 'BreadcrumbList'],
             'is_dynamic' => false
         ],
         'insight-detail' => [
             'name' => 'Individual Blog Articles',
-            'url' => '/insight-detail.php',
+            'url' => '/blog/{slug}',
             'recommended_types' => ['BlogPosting', 'BreadcrumbList'],
             'is_dynamic' => true
         ],
@@ -86,8 +86,19 @@ function detectCurrentPageKey(): string
 {
     // Check clean route paths first
     $reqPath = parse_url($_SERVER['REQUEST_URI'] ?? '', PHP_URL_PATH);
-    if ($reqPath !== null && preg_match('#^/(?:services|company)/([a-zA-Z0-9_-]+)#', $reqPath)) {
-        return 'service-detail';
+    if ($reqPath !== null) {
+        if ($reqPath === '/company-in-delhi' || $reqPath === '/company-in-delhi/') {
+            return 'services';
+        }
+        if (preg_match('#^/([a-zA-Z0-9_-]+)-company-in-delhi#', $reqPath) || preg_match('#^/(?:services|company)/([a-zA-Z0-9_-]+)#', $reqPath)) {
+            return 'service-detail';
+        }
+        if ($reqPath === '/blog' || $reqPath === '/blog/') {
+            return 'insights';
+        }
+        if (preg_match('#^/blog/([a-zA-Z0-9_-]+)#', $reqPath)) {
+            return 'insight-detail';
+        }
     }
 
     $script = basename($_SERVER['SCRIPT_NAME'] ?? '');
@@ -204,12 +215,12 @@ function extractFaqsFromContent(string $html): array
  */
 function generateArticleSchemaGraph(array $article, string $baseUrl = ''): array
 {
-    $baseUrl = rtrim($baseUrl ?: (defined('BASE_URL') ? BASE_URL : 'https://demo.businesdoctor.com'), '/');
+    $baseUrl = rtrim($baseUrl ?: (defined('CANONICAL_BASE_URL') ? CANONICAL_BASE_URL : (defined('BASE_URL') ? BASE_URL : 'https://demo.businesdoctor.com')), '/');
     $appName = defined('APP_NAME') ? APP_NAME : 'BusinessDoctor';
     $legalName = defined('APP_LEGAL_NAME') ? APP_LEGAL_NAME : 'BusinessDoctor IT Solutions & Digital Services Private Limited';
 
     $slug = $article['slug'] ?? '';
-    $articleUrl = !empty($article['canonical_url']) ? $article['canonical_url'] : ($baseUrl . '/insight-detail.php?slug=' . urlencode($slug));
+    $articleUrl = !empty($article['canonical_url']) ? $article['canonical_url'] : ($baseUrl . '/blog/' . urlencode($slug));
 
     $title = !empty($article['seo_title']) ? $article['seo_title'] : ($article['title'] ?? 'Insight Article');
     $description = !empty($article['seo_description']) ? $article['seo_description'] : (!empty($article['excerpt']) ? $article['excerpt'] : ($article['summary'] ?? ''));
@@ -280,7 +291,7 @@ function generateArticleSchemaGraph(array $article, string $baseUrl = ''): array
                 '@type' => 'ListItem',
                 'position' => 2,
                 'name' => 'Blog',
-                'item' => $baseUrl . '/insights.php'
+                'item' => $baseUrl . '/blog'
             ],
             [
                 '@type' => 'ListItem',
@@ -297,7 +308,7 @@ function generateArticleSchemaGraph(array $article, string $baseUrl = ''): array
         '@type' => 'Blog',
         'name' => 'Technical Blog & Strategic Frameworks — ' . $appName,
         'description' => 'Practical engineering blueprints, Core Web Vitals breakdowns, and conversion optimization strategies from our senior architects and digital strategists.',
-        'url' => $baseUrl . '/insights.php',
+        'url' => $baseUrl . '/blog',
         'publisher' => [
             '@type' => 'Organization',
             'name' => $appName,
@@ -386,7 +397,7 @@ function renderPageSchemas(?string $pageKey = null, array $contextData = []): st
     }
 
     try {
-        $baseUrl = rtrim(defined('BASE_URL') ? BASE_URL : 'https://demo.businesdoctor.com', '/');
+        $baseUrl = rtrim(defined('CANONICAL_BASE_URL') ? CANONICAL_BASE_URL : (defined('BASE_URL') ? BASE_URL : 'https://demo.businesdoctor.com'), '/');
         $appName = defined('APP_NAME') ? APP_NAME : 'BusinessDoctor';
         $output = '';
 
@@ -477,7 +488,13 @@ function renderPageSchemas(?string $pageKey = null, array $contextData = []): st
             '{{DATE_PUBLISHED}}' => $pubDateIso,
             '{{DATE_MODIFIED}}' => $modDateIso,
             '{{FEATURED_IMAGE}}' => $featuredImg,
-            '{{CATEGORY}}' => addslashes($category)
+            '{{CATEGORY}}' => addslashes($category),
+            '{{SERVICES_URL}}' => $baseUrl . '/company-in-delhi',
+            '{{BLOG_URL}}' => $baseUrl . '/blog',
+            '/services.php' => '/company-in-delhi',
+            '/insights.php' => '/blog',
+            'services.php' => 'company-in-delhi',
+            'insights.php' => 'blog'
         ];
 
         $hasBreadcrumbs = false;
@@ -525,7 +542,7 @@ function renderPageSchemas(?string $pageKey = null, array $contextData = []): st
                     '@type' => 'ListItem',
                     'position' => 2,
                     'name' => 'Services Portfolio',
-                    'item' => $baseUrl . '/services.php'
+                    'item' => $baseUrl . '/company-in-delhi'
                 ];
                 $breadcrumbItems[] = [
                     '@type' => 'ListItem',
@@ -551,7 +568,7 @@ function renderPageSchemas(?string $pageKey = null, array $contextData = []): st
                     '@type' => 'ListItem',
                     'position' => 2,
                     'name' => 'Services Portfolio',
-                    'item' => $baseUrl . '/services.php'
+                    'item' => $baseUrl . '/company-in-delhi'
                 ];
             } elseif ($pageKey === 'case-studies') {
                 $breadcrumbItems[] = [
@@ -565,7 +582,7 @@ function renderPageSchemas(?string $pageKey = null, array $contextData = []): st
                     '@type' => 'ListItem',
                     'position' => 2,
                     'name' => 'Blog',
-                    'item' => $baseUrl . '/insights.php'
+                    'item' => $baseUrl . '/blog'
                 ];
             } elseif ($pageKey === 'about') {
                 $breadcrumbItems[] = [

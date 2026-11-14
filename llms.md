@@ -2,7 +2,7 @@
 > Engineering Technology. Accelerating Digital Growth.
 
 Canonical Source: https://demo.businesdoctor.com
-Last Updated: 2026-11-14 06:39:09 UTC
+Last Updated: 2026-11-14 07:29:46 UTC
 
 ## 1. Executive Overview & Firm Profile
 
@@ -18,7 +18,7 @@ BusinessDoctor (BusinessDoctor IT Solutions & Digital Services Private Limited) 
 
 ### 2.01 SMO — Social Media Optimization
 **Tagline**: Social Profile Architecture, Content Velocity & Organic Reach
-**Canonical URL**: [https://demo.businesdoctor.com/company/smo](https://demo.businesdoctor.com/company/smo)
+**Canonical URL**: [https://demo.businesdoctor.com/smo-company-in-delhi](https://demo.businesdoctor.com/smo-company-in-delhi)
 
 We transform static social media profiles into high-converting organic acquisition channels. Our social media optimization practice refines your visual branding, optimizes bio information architecture, deploys strategic keyword taxonomies, and establishes consistent content cadences to maximize organic discoverability, follower retention, and referral traffic without relying exclusively on paid ad spend.
 
@@ -36,7 +36,7 @@ We transform static social media profiles into high-converting organic acquisiti
 
 ### 2.02 Google Business Profile Management
 **Tagline**: Local 3-Pack Dominance, Verification & High-Intent Local Leads
-**Canonical URL**: [https://demo.businesdoctor.com/company/google-business-profile](https://demo.businesdoctor.com/company/google-business-profile)
+**Canonical URL**: [https://demo.businesdoctor.com/google-business-profile-company-in-delhi](https://demo.businesdoctor.com/google-business-profile-company-in-delhi)
 
 Dominate local commercial search results where buying decisions are made. We claim, verify, optimize, and manage your Google Business Profile (formerly Google My Business) to ensure maximum visibility in Google Maps and the Local 3-Pack. From review acquisition workflows and geotagged asset uploads to weekly product updates and competitor spam removal, we ensure nearby clients choose your business first.
 
@@ -54,7 +54,7 @@ Dominate local commercial search results where buying decisions are made. We cla
 
 ### 2.03 PPC / Paid Ads
 **Tagline**: Precision Performance Advertising, Search Ads & ROAS Maximization
-**Canonical URL**: [https://demo.businesdoctor.com/company/ppc-paid-ads](https://demo.businesdoctor.com/company/ppc-paid-ads)
+**Canonical URL**: [https://demo.businesdoctor.com/ppc-paid-ads-company-in-delhi](https://demo.businesdoctor.com/ppc-paid-ads-company-in-delhi)
 
 Eliminate wasted ad spend with surgical performance marketing. Our certified advertising strategists architect and manage high-ROI campaigns across Google Search, YouTube, Meta (Facebook & Instagram), and LinkedIn B2B. We engineer custom landing pages, deploy server-side conversion tracking APIs, and continuously optimize bidding algorithms to deliver lower CAC and maximum commercial return on ad spend.
 
@@ -72,7 +72,7 @@ Eliminate wasted ad spend with surgical performance marketing. Our certified adv
 
 ### 2.04 Ecommerce Management
 **Tagline**: Amazon, Flipkart & Multi-Channel Storefront Scaling
-**Canonical URL**: [https://demo.businesdoctor.com/company/ecommerce-management](https://demo.businesdoctor.com/company/ecommerce-management)
+**Canonical URL**: [https://demo.businesdoctor.com/ecommerce-management-company-in-delhi](https://demo.businesdoctor.com/ecommerce-management-company-in-delhi)
 
 Scale your product catalog across the world’s most competitive marketplaces. We provide full-lifecycle e-commerce management covering Amazon Seller Central, Flipkart, and independent Shopify stores. Our operations specialists optimize keyword rankings, design high-converting A+ lifestyle modules, manage sponsored brand campaigns, and defend your Buy Box placement against unauthorized third-party sellers.
 
@@ -90,7 +90,7 @@ Scale your product catalog across the world’s most competitive marketplaces. W
 
 ### 2.05 Graphic Design
 **Tagline**: Brand Identity Systems, Commercial Collateral & Visual Direction
-**Canonical URL**: [https://demo.businesdoctor.com/company/graphic-design](https://demo.businesdoctor.com/company/graphic-design)
+**Canonical URL**: [https://demo.businesdoctor.com/graphic-design-company-in-delhi](https://demo.businesdoctor.com/graphic-design-company-in-delhi)
 
 Elevate your market presence with disciplined, conversion-centered visual design. We establish cohesive brand systems that build immediate trust with enterprise buyers. From vector identity marks and color palettes to investor pitch decks, corporate brochures, and digital ad creative suites, our designs ensure your brand stands out with crisp aesthetic authority across every physical and digital touchpoint.
 
@@ -108,7 +108,7 @@ Elevate your market presence with disciplined, conversion-centered visual design
 
 ### 2.06 SEO — Search Engine Optimization
 **Tagline**: Organic Search Dominance, Technical Hygiene & Keyword Authority
-**Canonical URL**: [https://demo.businesdoctor.com/company/seo](https://demo.businesdoctor.com/company/seo)
+**Canonical URL**: [https://demo.businesdoctor.com/seo-company-in-delhi](https://demo.businesdoctor.com/seo-company-in-delhi)
 
 Capture sustainable, high-intent customer acquisition through deep technical search engine optimization. We eliminate crawl budget bottlenecks, optimize relational URL structures, compress critical rendering paths for Core Web Vitals compliance, deploy structured Schema.org JSON-LD architectures, and build authoritative editorial links that compound organic organic traffic and revenue month after month.
 
@@ -126,7 +126,7 @@ Capture sustainable, high-intent customer acquisition through deep technical sea
 
 ### 2.07 Social Media Marketing
 **Tagline**: Community Building, Targeted Paid Sprints & Conversational Growth
-**Canonical URL**: [https://demo.businesdoctor.com/company/social-media-marketing](https://demo.businesdoctor.com/company/social-media-marketing)
+**Canonical URL**: [https://demo.businesdoctor.com/social-media-marketing-company-in-delhi](https://demo.businesdoctor.com/social-media-marketing-company-in-delhi)
 
 Build an engaged, loyal community that advocates for your brand. Our social media marketing team develops strategic editorial calendars, manages day-to-day community interactions, coordinates high-impact micro-influencer collaborations, and executes paid amplification sprints across Instagram, LinkedIn, YouTube, and Facebook to turn casual social scrollers into verified commercial inquiries.
 
@@ -144,7 +144,7 @@ Build an engaged, loyal community that advocates for your brand. Our social medi
 
 ### 2.08 Product Photography
 **Tagline**: Studio Commercial Imaging, 360° Views & E-Commerce Visuals
-**Canonical URL**: [https://demo.businesdoctor.com/company/product-photography](https://demo.businesdoctor.com/company/product-photography)
+**Canonical URL**: [https://demo.businesdoctor.com/product-photography-company-in-delhi](https://demo.businesdoctor.com/product-photography-company-in-delhi)
 
 Turn browsers into buyers with pristine commercial imagery. In our calibrated photo studio, we capture crisp high-resolution product photography adhering to Amazon, Flipkart, and international retailer guidelines. From pure white-background hero shots and macro detail captures to lifestyle staging and 360-degree interactive product spins, our visuals showcase your craftsmanship and drive higher conversion rates.
 
@@ -162,7 +162,7 @@ Turn browsers into buyers with pristine commercial imagery. In our calibrated ph
 
 ### 2.09 Video Editing
 **Tagline**: Short-Form Reels, Commercial Brand Films & Motion Graphics
-**Canonical URL**: [https://demo.businesdoctor.com/company/video-editing](https://demo.businesdoctor.com/company/video-editing)
+**Canonical URL**: [https://demo.businesdoctor.com/video-editing-company-in-delhi](https://demo.businesdoctor.com/video-editing-company-in-delhi)
 
 Capture and hold viewer attention in the first three seconds. Our post-production video editing suite delivers high-retention social videos (Instagram Reels, YouTube Shorts, TikTok), broadcast-quality commercial ads, executive brand documentaries, and kinetic motion graphics. We combine rhythm-based cuts, color grading, foley sound design, and animated subtitles engineered specifically to maximize watch time and conversion.
 
@@ -180,7 +180,7 @@ Capture and hold viewer attention in the first three seconds. Our post-productio
 
 ### 2.10 Web Development
 **Tagline**: High-Performance Platforms, Custom Web Apps & Scalable Portals
-**Canonical URL**: [https://demo.businesdoctor.com/company/web-development](https://demo.businesdoctor.com/company/web-development)
+**Canonical URL**: [https://demo.businesdoctor.com/web-development-company-in-delhi](https://demo.businesdoctor.com/web-development-company-in-delhi)
 
 We engineer bespoke, lightning-fast web applications and corporate websites built to power mission-critical operations. Using modern PHP 8+, clean procedural and modular architectures, relational databases, and edge caching, we eliminate bloated frameworks and heavy plugins to deliver sub-second response times, ironclad security, and frictionless digital transaction flows.
 
@@ -246,7 +246,7 @@ Buy Box possession stabilized at 94%. Blended advertising return climbed from 1.
 ## 4. Technical Blog & Editorial Perspectives
 
 ### 4.1 Why Your Website Is Losing Customers: 7 Performance Issues You Should Fix
-- **Canonical URL**: [https://demo.businesdoctor.com/insight-detail.php?slug=website-performance-issues-losing-customers](https://demo.businesdoctor.com/insight-detail.php?slug=website-performance-issues-losing-customers)
+- **Canonical URL**: [https://demo.businesdoctor.com/blog/website-performance-issues-losing-customers](https://demo.businesdoctor.com/blog/website-performance-issues-losing-customers)
 - **Category**: Web & Digital Strategy | **Read Time**: 6 min read
 - **Author**: BusinessDoctor Editorial Team | **Published**: November 10, 2026
 
@@ -257,7 +257,7 @@ Why Your Website Is Losing Customers: 7 Performance Issues You Should Fix Your w
 Why Your Website Is Losing Customers: 7 Performance Issues You Should Fix Your website is often the first interaction a potential customer has with your business. Before contacting your team, requesting a quote, or purchasing a product, visitors evaluate your website. But what happens when your website is slow, difficult to navigate, or poorly optimized for mobile devices? You lose opportunities. 1. Slow Website Loading Speed Visitors expect websites to load quickly. If your pages take too lo...
 
 ### 4.2 Modern UI/UX Design as a Revenue Multiplier: Why Premium Design Eliminates Price Resistance
-- **Canonical URL**: [https://demo.businesdoctor.com/insight-detail.php?slug=brand-architecture-as-risk-mitigation](https://demo.businesdoctor.com/insight-detail.php?slug=brand-architecture-as-risk-mitigation)
+- **Canonical URL**: [https://demo.businesdoctor.com/blog/brand-architecture-as-risk-mitigation](https://demo.businesdoctor.com/blog/brand-architecture-as-risk-mitigation)
 - **Category**: UI/UX & Branding | **Read Time**: 8 min read
 - **Author**: Julian Montgomery | **Published**: November 2, 2026
 
@@ -268,7 +268,7 @@ Commoditized businesses compete on price and face low margins. How professional 
 In crowded B2B and consumer markets, commoditized businesses are forced to compete on price, leading to margin compression, high customer churn, and fragile market defensibility. When prospective clients land on a generic, poorly styled digital interface, their immediate unconscious bias is that your underlying services are similarly undifferentiated. Professional UI/UX design is not merely decoration—it is a powerful commercial lever that eliminates price resistance and establishes enterpris...
 
 ### 4.3 The Speed Advantage: How Sub-Second Load Times Drive Search Rankings and Sales
-- **Canonical URL**: [https://demo.businesdoctor.com/insight-detail.php?slug=core-web-vitals-and-enterprise-valuation](https://demo.businesdoctor.com/insight-detail.php?slug=core-web-vitals-and-enterprise-valuation)
+- **Canonical URL**: [https://demo.businesdoctor.com/blog/core-web-vitals-and-enterprise-valuation](https://demo.businesdoctor.com/blog/core-web-vitals-and-enterprise-valuation)
 - **Category**: Web Development | **Read Time**: 5 min read
 - **Author**: Kirsten Chen | **Published**: November 2, 2026
 
@@ -279,7 +279,7 @@ Page speed is a major ranking factor for Google and a critical driver of user co
 Page speed is no longer merely a cosmetic feature or user experience preference; it is the foundational benchmark of modern web engineering and digital enterprise valuation. Search engines, most notably Google, have codified user experience into core ranking algorithms through the Core Web Vitals framework. Websites that fail Largest Contentful Paint (LCP), Interaction to Next Paint (INP), and Cumulative Layout Shift (CLS) thresholds suffer systematic ranking suppression across competitive or...
 
 ### 4.4 Why Increasing Ad Spend on a Slow, Broken Website Drains Your Marketing Budget
-- **Canonical URL**: [https://demo.businesdoctor.com/insight-detail.php?slug=the-symptom-trap-why-ad-spend-fails-broken-funnels](https://demo.businesdoctor.com/insight-detail.php?slug=the-symptom-trap-why-ad-spend-fails-broken-funnels)
+- **Canonical URL**: [https://demo.businesdoctor.com/blog/the-symptom-trap-why-ad-spend-fails-broken-funnels](https://demo.businesdoctor.com/blog/the-symptom-trap-why-ad-spend-fails-broken-funnels)
 - **Category**: Web & Digital Strategy | **Read Time**: 7 min read
 - **Author**: Dr. Harrison Croft | **Published**: November 2, 2026
 
