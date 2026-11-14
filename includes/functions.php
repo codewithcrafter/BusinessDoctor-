@@ -651,7 +651,7 @@ function probeHttpEndpoint(string $targetUrl): array
         curl_setopt($ch, CURLOPT_PROTOCOLS, CURLPROTO_HTTP | CURLPROTO_HTTPS);
         curl_setopt($ch, CURLOPT_REDIR_PROTOCOLS, CURLPROTO_HTTP | CURLPROTO_HTTPS);
     }
-    curl_setopt($ch, CURLOPT_USERAGENT, 'BusinessDoctor-Audit/1.0 (+https://businessdoctor.com)');
+    curl_setopt($ch, CURLOPT_USERAGENT, 'BusinessDoctor-Audit/1.0 (+https://demo.businesdoctor.com)');
 
     $start = microtime(true);
     $headerOutput = curl_exec($ch);

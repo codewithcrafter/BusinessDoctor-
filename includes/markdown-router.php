@@ -40,6 +40,32 @@ class MarkdownRouter
             self::sendNotFound("Access denied: Administrative and internal endpoints cannot be rendered as Markdown.");
         }
 
+                // Handle direct discovery files: llms.txt, llms.md, sitemap.xml
+        if ($path === '/llms.txt') {
+            $content = SeoSyncEngine::generateLlmsTxt();
+            header("Content-Type: text/plain; charset=UTF-8");
+            header("Cache-Control: no-cache, no-store, must-revalidate, max-age=0");
+            header("Pragma: no-cache");
+            header("Expires: 0");
+            header("Access-Control-Allow-Origin: *");
+            echo $content;
+            exit;
+        }
+
+        if ($path === '/llms.md') {
+            $content = SeoSyncEngine::generateLlmsMd();
+            self::sendResponse($content);
+        }
+
+        if ($path === '/sitemap.xml') {
+            $content = SeoSyncEngine::generateSitemapXml();
+            header("Content-Type: application/xml; charset=UTF-8");
+            header("Cache-Control: no-cache, no-store, must-revalidate, max-age=0");
+            header("Pragma: no-cache");
+            header("Expires: 0");
+            echo $content;
+            exit;
+        }
         // Determine if this is a Markdown request
         $isMarkdownRequest = false;
         $cleanRoute = $path;

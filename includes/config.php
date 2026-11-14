@@ -86,6 +86,10 @@ define('APP_HEADQUARTERS', 'Floor 42, Executive Tech Park, Innovation District')
 
 // Base URL calculation (safe fallback for CLI & varied web servers)
 $envAppUrl = getenv('APP_URL');
+if (!empty($envAppUrl)) {
+    // Correct any misspelled hostname with double 's' in APP_URL environment setting
+    $envAppUrl = str_replace('demo.businessdoctor.com', 'demo.businesdoctor.com', $envAppUrl);
+}
 // If running on local XAMPP Apache or localhost without custom host domain, dynamically derive base URL
 $currentHost = $_SERVER['HTTP_HOST'] ?? '';
 $isLocalHost = in_array($currentHost, ['127.0.0.1:8000', 'localhost:8000', 'localhost', '127.0.0.1'], true)
@@ -98,6 +102,9 @@ if (!empty($envAppUrl) && !($isLocalHost && str_contains($envAppUrl, 'demo.busin
 } else {
     $protocol = (!empty($_SERVER['HTTPS']) && $_SERVER['HTTPS'] !== 'off' || (isset($_SERVER['SERVER_PORT']) && (int)$_SERVER['SERVER_PORT'] === 443)) ? "https://" : "http://";
     $host = $_SERVER['HTTP_HOST'] ?? 'demo.businesdoctor.com';
+    if ($host === 'demo.businessdoctor.com') {
+        $host = 'demo.businesdoctor.com';
+    }
     $scriptDir = dirname($_SERVER['SCRIPT_NAME'] ?? '');
     $scriptDir = rtrim(str_replace('\\', '/', $scriptDir), '/');
 

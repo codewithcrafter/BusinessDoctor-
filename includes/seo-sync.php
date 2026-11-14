@@ -22,18 +22,22 @@ class SeoSyncEngine
      */
     public static function getBaseUrl(): string
     {
-        $envUrl = getenv('APP_URL');
-        if (!empty($envUrl)) {
-            return rtrim($envUrl, '/');
+        // Enforce canonical production domain
+        if (defined('CANONICAL_DOMAIN') && !empty(CANONICAL_DOMAIN)) {
+            $base = rtrim(CANONICAL_DOMAIN, '/');
+        } elseif (defined('CANONICAL_BASE_URL') && !empty(CANONICAL_BASE_URL)) {
+            $base = rtrim(CANONICAL_BASE_URL, '/');
+        } elseif (defined('APP_URL') && !empty(APP_URL)) {
+            $base = rtrim(APP_URL, '/');
+        } elseif (defined('BASE_URL') && !empty(BASE_URL)) {
+            $base = rtrim(BASE_URL, '/');
+        } else {
+            $base = 'https://demo.businesdoctor.com';
         }
-        if (defined('APP_URL') && !empty(APP_URL)) {
-            return rtrim(APP_URL, '/');
-        }
-        if (defined('BASE_URL') && !empty(BASE_URL)) {
-            return rtrim(BASE_URL, '/');
-        }
-        return 'https://demo.businesdoctor.com';
+        // Strict safety normalization: Never allow demo.businessdoctor.com with extra 's'
+        return str_replace('demo.businessdoctor.com', 'demo.businesdoctor.com', $base);
     }
+
 
     /**
      * Core static pages configuration

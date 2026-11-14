@@ -64,7 +64,7 @@ AddType text/markdown .md
     # Matches any request ending in .md (e.g. /.md, /about.php.md, /services/foo.md, /insight-detail.php.md)
     # or targeting the central /md/... repository
     RewriteCond %{REQUEST_URI} !^/markdown-router\.php
-    RewriteRule (\.md$|^md/) markdown-router.php [L,QSA]
+    RewriteRule (\.md$|^md/|^llms\.txt$|^sitemap\.xml$) markdown-router.php [L,QSA]
 
     # 301 Redirect legacy service aliases to canonical -company-in-delhi
     RewriteRule ^(?:services|company)/web-software-development/?$ /web-development-company-in-delhi [R=301,L]
