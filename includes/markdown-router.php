@@ -162,17 +162,20 @@ class MarkdownRouter
 
         // ----------------------------------------------------
         // 7. Individual Service Detail Pages:
-        //    A: /{slug}-company-in-delhi.md (Canonical)
-        //    B: /company/{slug}.md (301 redirect to /{slug}-company-in-delhi.md)
-        //    C: /services/{slug}.md (301 redirect to /{slug}-company-in-delhi.md)
-        //    D: /service-detail.php.md?slug={slug}
+        //    A: /company/{slug}.md (Canonical)
+        //    B: /{slug}-company-in-delhi.md (301 redirect to /company/{slug}.md)
+        //    C: /services/{slug}.md (301 redirect to /company/{slug}.md)
+        //    D: /service-detail.php.md?slug={slug} (301 redirect)
         // ----------------------------------------------------
-        if (preg_match('#^/([a-zA-Z0-9_-]+)-company-in-delhi$#', $cleanRoute, $m)) {
+        if (preg_match('#^/company/([a-zA-Z0-9_-]+)$#', $cleanRoute, $m)) {
             self::renderServiceMarkdown($m[1]);
         }
-        if (preg_match('#^/(?:services|company)/([a-zA-Z0-9_-]+)$#', $cleanRoute, $m)) {
-            $targetSlug = $m[1];
-            header("Location: " . SeoSyncEngine::getBaseUrl() . "/" . $targetSlug . "-company-in-delhi.md", true, 301);
+        if (preg_match('#^/([a-zA-Z0-9_-]+)-company-in-delhi$#', $cleanRoute, $m)) {
+            header("Location: " . getMarkdownUrl(getServiceUrl($m[1])), true, 301);
+            exit;
+        }
+        if (preg_match('#^/services/([a-zA-Z0-9_-]+)$#', $cleanRoute, $m)) {
+            header("Location: " . getMarkdownUrl(getServiceUrl($m[1])), true, 301);
             exit;
         }
         if ($cleanRoute === '/service-detail.php' || $cleanRoute === '/service-detail') {
@@ -180,7 +183,8 @@ class MarkdownRouter
             if (empty($slug)) {
                 self::sendNotFound("No practice discipline slug was specified.");
             }
-            self::renderServiceMarkdown((string)$slug);
+            header("Location: " . getMarkdownUrl(getServiceUrl((string)$slug)), true, 301);
+            exit;
         }
 
         // ----------------------------------------------------
@@ -262,30 +266,22 @@ class MarkdownRouter
     private static function renderServiceMarkdown(string $slug): void
     {
         $cleanSlug = strtolower(trim($slug));
+        if (str_starts_with($cleanSlug, 'company/')) {
+            $cleanSlug = substr($cleanSlug, 8);
+        } elseif (str_starts_with($cleanSlug, 'services/')) {
+            $cleanSlug = substr($cleanSlug, 9);
+        }
         if (str_ends_with($cleanSlug, '-company-in-delhi')) {
             $cleanSlug = substr($cleanSlug, 0, -17);
         }
+        $cleanSlug = trim($cleanSlug, '/');
 
-        $legacyRedirects = [
-            'seo-services' => 'seo',
-            'smo-services' => 'smo',
-            'digital-marketing' => 'seo',
-            'strategic-consulting' => 'web-development',
-            'digital-engineering' => 'web-development',
-            'performance-marketing' => 'seo',
-            'brand-architecture' => 'graphic-design',
-            'ecommerce-acceleration' => 'ecommerce-management',
-            'creative-production' => 'video-editing',
-            'web-software-development' => 'web-development',
-            'digital-marketing-seo' => 'seo',
-            'ui-ux-branding' => 'graphic-design',
-            'ecommerce-marketplaces' => 'ecommerce-management',
-            'creative-video-production' => 'video-editing',
-            'cloud-it-consulting' => 'web-development',
-        ];
+        $canonicalUrl = getServiceUrl($cleanSlug);
+        $canonicalPath = parse_url($canonicalUrl, PHP_URL_PATH);
+        $canonicalSlug = basename($canonicalPath);
 
-        if (isset($legacyRedirects[$cleanSlug])) {
-            header("Location: " . SeoSyncEngine::getBaseUrl() . "/" . $legacyRedirects[$cleanSlug] . "-company-in-delhi.md", true, 301);
+        if ($cleanSlug !== $canonicalSlug) {
+            header("Location: " . getMarkdownUrl($canonicalUrl), true, 301);
             exit;
         }
 

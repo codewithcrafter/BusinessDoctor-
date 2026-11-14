@@ -7,7 +7,7 @@
 - **Industry**: Enterprise FinTech SaaS
 - **Practice Area**: Web Development & Performance Marketing
 - **Quantifiable Metric Shift**: `$840 CAC / 1.1% Demo Conv` → `$290 CAC / 4.6% Demo Conv` (Qualified Pipeline Growth)
-- **Canonical Web URL**: [https://demo.businesdoctor.com/case-study-detail.php?slug=fintech-saas-funnel-resuscitation](https://demo.businesdoctor.com/case-study-detail.php?slug=fintech-saas-funnel-resuscitation)
+- **Canonical Web URL**: [https://demo.businesdoctor.com/case-studies/fintech-saas-funnel-resuscitation](https://demo.businesdoctor.com/case-studies/fintech-saas-funnel-resuscitation)
 - **Clean Markdown URL**: [https://demo.businesdoctor.com/case-studies/fintech-saas-funnel-resuscitation.md](https://demo.businesdoctor.com/case-studies/fintech-saas-funnel-resuscitation.md)
 - **Central Markdown URL**: [https://demo.businesdoctor.com/md/case-studies/fintech-saas-funnel-resuscitation.md](https://demo.businesdoctor.com/md/case-studies/fintech-saas-funnel-resuscitation.md)
 

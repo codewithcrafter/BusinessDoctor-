@@ -63,7 +63,7 @@ To initiate an automated live telemetry scan and detailed manual engineering rev
 ## 04 // Next Steps
 - **Submit Audit Request**: [Request Free Digital Audit Online](https://demo.businesdoctor.com/audit.php)
 - **Schedule Live Discovery Call**: [Contact Tech Leads](https://demo.businesdoctor.com/contact.php)
-- **Explore All IT Disciplines**: [Services Overview](https://demo.businesdoctor.com/company-in-delhi)
+- **Explore All IT Disciplines**: [Services Overview](https://demo.businesdoctor.com/company)
 
 ---
 *Maintained by BusinessDoctor Diagnostic Practice.*

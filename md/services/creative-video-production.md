@@ -1,13 +1,13 @@
-# Video Editing
+# Creative Production & Video Marketing
 
-> Short-Form Reels, Commercial Brand Films & Motion Graphics
+> Studio Product Photography, Video Production & Social Creatives
 
 ## Discipline Information
-- **Practice Area**: 09 Video Editing
-- **Canonical Web URL**: [https://demo.businesdoctor.com/video-editing-company-in-delhi](https://demo.businesdoctor.com/video-editing-company-in-delhi)
-- **Clean Markdown URL**: [https://demo.businesdoctor.com/video-editing-company-in-delhi.md](https://demo.businesdoctor.com/video-editing-company-in-delhi.md)
-- **Central Markdown URL**: [https://demo.businesdoctor.com/md/services/video-editing.md](https://demo.businesdoctor.com/md/services/video-editing.md)
-- **Direct Consultation**: [Schedule Practice Scope](http://demo.businesdoctor.com/scratch/contact.php?service=Video+Editing)
+- **Practice Area**: 05 Creative Production & Video Marketing
+- **Canonical Web URL**: [https://demo.businesdoctor.com/company/creative-video-production](https://demo.businesdoctor.com/company/creative-video-production)
+- **Clean Markdown URL**: [https://demo.businesdoctor.com/company/creative-video-production.md](https://demo.businesdoctor.com/company/creative-video-production.md)
+- **Central Markdown URL**: [https://demo.businesdoctor.com/md/services/creative-video-production.md](https://demo.businesdoctor.com/md/services/creative-video-production.md)
+- **Direct Consultation**: [Schedule Practice Scope](http://demo.businesdoctor.com/contact.php?service=Creative+Production+%26+Video+Marketing)
 
 ---
 
@@ -20,7 +20,7 @@ COMMERCIAL CINEMATOGRAPHY & VIDEO MARKETING
           [
             Get a Free Consultation
 
-          ](http://demo.businesdoctor.com/scratch/contact.php?service=Video+Editing)
+          ](http://demo.businesdoctor.com/contact.php?service=Creative+Production+%26+Video+Marketing)
           [
             Explore Our Services
 
@@ -89,7 +89,7 @@ Verified benchmark engineered across production client deployments.
           [
             Schedule Diagnostic Call
 
-          ](http://demo.businesdoctor.com/scratch/contact.php?service=Video+Editing)
+          ](http://demo.businesdoctor.com/contact.php?service=Creative+Production+%26+Video+Marketing)
 
             CREATIVE STUDIO TELEMETRY
 
@@ -140,7 +140,7 @@ High-converting short-form video ads scripted, filmed, and edited specifically t
           [
             Inquire About This Service
 
-          ](http://demo.businesdoctor.com/scratch/contact.php?service=Video+Editing&capability=Direct-Response+Performance+Video+Ads)
+          ](http://demo.businesdoctor.com/contact.php?service=Creative+Production+%26+Video+Marketing&capability=Direct-Response+Performance+Video+Ads)
 
 ### Commercial Product Cinematography & Photography
 
@@ -160,7 +160,7 @@ Studio and on-location commercial photography capturing your physical products w
           [
             Inquire About This Service
 
-          ](http://demo.businesdoctor.com/scratch/contact.php?service=Video+Editing&capability=Commercial+Product+Cinematography+%26+Photography)
+          ](http://demo.businesdoctor.com/contact.php?service=Creative+Production+%26+Video+Marketing&capability=Commercial+Product+Cinematography+%26+Photography)
 
 ### 3D Product Modeling & Motion Design
 
@@ -180,7 +180,7 @@ Photorealistic 3D product animation built in Blender and Cinema 4D, showcasing i
           [
             Inquire About This Service
 
-          ](http://demo.businesdoctor.com/scratch/contact.php?service=Video+Editing&capability=3D+Product+Modeling+%26+Motion+Design)
+          ](http://demo.businesdoctor.com/contact.php?service=Creative+Production+%26+Video+Marketing&capability=3D+Product+Modeling+%26+Motion+Design)
 
 ### Corporate Brand Films & Executive Documentaries
 
@@ -200,7 +200,7 @@ Cinematic narrative films showcasing your founders, engineering facilities, comp
           [
             Inquire About This Service
 
-          ](http://demo.businesdoctor.com/scratch/contact.php?service=Video+Editing&capability=Corporate+Brand+Films+%26+Executive+Documentaries)
+          ](http://demo.businesdoctor.com/contact.php?service=Creative+Production+%26+Video+Marketing&capability=Corporate+Brand+Films+%26+Executive+Documentaries)
 
 ### Video Case Studies & Client Testimonials
 
@@ -220,7 +220,7 @@ Documentary-style client video testimonials that capture authentic emotional tra
           [
             Inquire About This Service
 
-          ](http://demo.businesdoctor.com/scratch/contact.php?service=Video+Editing&capability=Video+Case+Studies+%26+Client+Testimonials)
+          ](http://demo.businesdoctor.com/contact.php?service=Creative+Production+%26+Video+Marketing&capability=Video+Case+Studies+%26+Client+Testimonials)
 
 ### Social-First Video Packages (Reels, TikTok & Shorts)
 
@@ -240,7 +240,7 @@ High-velocity monthly video production delivering batch packages of educational,
           [
             Inquire About This Service
 
-          ](http://demo.businesdoctor.com/scratch/contact.php?service=Video+Editing&capability=Social-First+Video+Packages+%28Reels%2C+TikTok+%26+Shorts%29)
+          ](http://demo.businesdoctor.com/contact.php?service=Creative+Production+%26+Video+Marketing&capability=Social-First+Video+Packages+%28Reels%2C+TikTok+%26+Shorts%29)
 
         STRUCTURED EXECUTION TIMELINE
 
@@ -567,11 +567,11 @@ We structure scripts using proven direct-response marketing principles: immediat
               [
                 Get a Free Consultation
 
-              ](http://demo.businesdoctor.com/scratch/contact.php?service=Video+Editing)
+              ](http://demo.businesdoctor.com/contact.php?service=Creative+Production+%26+Video+Marketing)
               [
                 Request Digital Audit
 
-              ](http://demo.businesdoctor.com/scratch/audit.php)
+              ](http://demo.businesdoctor.com/audit.php)
 
                 +1 (800) 492-3628
 

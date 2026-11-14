@@ -54,7 +54,7 @@ class SeoSyncEngine
                 'description' => 'BusinessDoctor delivers enterprise IT solutions, web & custom software development, digital marketing, UI/UX architecture, e-commerce, and cloud consulting.'
             ],
             [
-                'loc' => '/company-in-delhi',
+                'loc' => '/company',
                 'file' => 'services.php',
                 'priority' => '0.9',
                 'changefreq' => 'weekly',
@@ -107,9 +107,9 @@ class SeoSyncEngine
     /**
      * Fetch active published services
      */
-    public static function getActiveServices(): array
+    public static function getActiveServices(bool $refresh = false): array
     {
-        return getPracticeAreas();
+        return getPracticeAreas($refresh);
     }
 
     /**
@@ -176,34 +176,47 @@ class SeoSyncEngine
             $xml[] = '  </url>';
         }
 
-        // 2. Services (Clean URLs: /{slug}-company-in-delhi)
+        // 2. Services (Canonical URLs: /company/{slug})
         foreach (self::getActiveServices() as $slug => $service) {
+            $loc = getServiceUrl($slug);
+            // Guarantee canonical domain
+            if (!str_starts_with($loc, $baseUrl)) {
+                $loc = $baseUrl . parse_url($loc, PHP_URL_PATH);
+            }
             $xml[] = '  <url>';
-            $xml[] = '    <loc>' . htmlspecialchars($baseUrl . '/' . $slug . '-company-in-delhi') . '</loc>';
+            $xml[] = '    <loc>' . htmlspecialchars($loc) . '</loc>';
             $xml[] = '    <lastmod>' . $today . '</lastmod>';
             $xml[] = '    <changefreq>weekly</changefreq>';
             $xml[] = '    <priority>0.8</priority>';
             $xml[] = '  </url>';
         }
 
-        // 3. Case Studies (/case-study-detail.php?slug={slug})
+        // 3. Case Studies (Canonical URLs: /case-studies/{slug})
         foreach (self::getPublishedCaseStudies() as $case) {
             $caseSlug = $case['slug'];
+            $loc = getCaseStudyUrl($caseSlug);
+            if (!str_starts_with($loc, $baseUrl)) {
+                $loc = $baseUrl . parse_url($loc, PHP_URL_PATH);
+            }
             $lastmod = !empty($case['updated_at']) ? date('Y-m-d', strtotime((string)$case['updated_at'])) : (!empty($case['created_at']) ? date('Y-m-d', strtotime((string)$case['created_at'])) : $today);
             $xml[] = '  <url>';
-            $xml[] = '    <loc>' . htmlspecialchars($baseUrl . '/case-study-detail.php?slug=' . urlencode($caseSlug)) . '</loc>';
+            $xml[] = '    <loc>' . htmlspecialchars($loc) . '</loc>';
             $xml[] = '    <lastmod>' . $lastmod . '</lastmod>';
             $xml[] = '    <changefreq>monthly</changefreq>';
             $xml[] = '    <priority>0.7</priority>';
             $xml[] = '  </url>';
         }
 
-        // 4. Insights / Blogs (/blog/{slug})
+        // 4. Insights / Blogs (Canonical URLs: /blog/{slug})
         foreach (self::getPublishedInsights() as $insight) {
             $insightSlug = $insight['slug'];
+            $loc = getBlogUrl($insightSlug);
+            if (!str_starts_with($loc, $baseUrl)) {
+                $loc = $baseUrl . parse_url($loc, PHP_URL_PATH);
+            }
             $lastmod = !empty($insight['updated_at']) ? date('Y-m-d', strtotime((string)$insight['updated_at'])) : (!empty($insight['published_at']) ? date('Y-m-d', strtotime((string)$insight['published_at'])) : $today);
             $xml[] = '  <url>';
-            $xml[] = '    <loc>' . htmlspecialchars($baseUrl . '/blog/' . urlencode($insightSlug)) . '</loc>';
+            $xml[] = '    <loc>' . htmlspecialchars($loc) . '</loc>';
             $xml[] = '    <lastmod>' . $lastmod . '</lastmod>';
             $xml[] = '    <changefreq>monthly</changefreq>';
             $xml[] = '    <priority>0.7</priority>';
@@ -239,7 +252,8 @@ class SeoSyncEngine
         foreach ($services as $slug => $s) {
             $name = $s['name'];
             $summary = rtrim(strip_tags($s['summary'] ?? $s['tagline']), '.');
-            $lines[] = "- [{$name}]({$baseUrl}/{$slug}-company-in-delhi): {$summary}.";
+            $url = $baseUrl . '/company/' . rawurlencode($slug);
+            $lines[] = "- [{$name}]({$url}): {$summary}.";
         }
         $lines[] = "";
 
@@ -275,7 +289,7 @@ class SeoSyncEngine
                 if (mb_strlen($desc) > 140) {
                     $desc = mb_substr($desc, 0, 137) . '...';
                 }
-                $lines[] = "- [{$title}]({$baseUrl}/case-study-detail.php?slug={$slug}): [{$industry}]{$metricText} {$desc}";
+                $lines[] = "- [{$title}]({$baseUrl}/case-studies/{$slug}): [{$industry}]{$metricText} {$desc}";
             }
         }
         $lines[] = "";
@@ -335,7 +349,7 @@ class SeoSyncEngine
             $name = $s['name'] ?? '';
             $sTagline = $s['tagline'] ?? '';
             $desc = $s['description'] ?? $s['summary'] ?? '';
-            $url = "{$baseUrl}/{$slug}-company-in-delhi";
+            $url = "{$baseUrl}/company/{$slug}";
 
             $lines[] = "### 2.{$num} {$name}";
             $lines[] = "**Tagline**: {$sTagline}";
@@ -372,7 +386,7 @@ class SeoSyncEngine
                 $num = $idx + 1;
                 $title = $c['title'];
                 $slug = $c['slug'];
-                $url = "{$baseUrl}/case-study-detail.php?slug={$slug}";
+                $url = "{$baseUrl}/case-studies/{$slug}";
                 $industry = $c['industry'] ?: ($c['client_industry'] ?: 'Enterprise');
                 $practice = $c['service_category'] ?: ($c['practice_area'] ?: 'Digital Practice');
                 $client = !empty($c['client_name']) ? $c['client_name'] : 'Confidential Enterprise Client';
@@ -669,7 +683,7 @@ class SeoSyncEngine
         $client = trim($case['client_name'] ?? 'Confidential Enterprise Client');
         $industry = trim($case['industry'] ?: ($case['client_industry'] ?: 'Enterprise'));
         $practice = trim($case['service_category'] ?: ($case['practice_area'] ?: 'Digital Practice'));
-        $canonicalUrl = $baseUrl . '/case-study-detail.php?slug=' . urlencode($slug);
+        $canonicalUrl = $baseUrl . '/case-studies/' . urlencode($slug);
         $cleanMdUrl = $baseUrl . '/case-studies/' . urlencode($slug) . '.md';
         $mdUrl = $baseUrl . '/md/case-studies/' . urlencode($slug) . '.md';
         $summary = trim($case['project_summary'] ?? '');
@@ -791,9 +805,9 @@ class SeoSyncEngine
         
         $serviceName = $service['name'] ?? 'Practice Area';
         $serviceSlug = $slug;
-        $consultationUrl = appUrl('contact.php?service=' . urlencode($serviceName));
-        $canonicalUrl = $baseUrl . '/' . urlencode($slug) . '-company-in-delhi';
-        $cleanMdUrl = $baseUrl . '/' . urlencode($slug) . '-company-in-delhi.md';
+        $consultationUrl = $baseUrl . '/contact.php?service=' . urlencode($serviceName);
+        $canonicalUrl = $baseUrl . '/company/' . urlencode($slug);
+        $cleanMdUrl = $baseUrl . '/company/' . urlencode($slug) . '.md';
         $mdUrl = $baseUrl . '/md/services/' . urlencode($slug) . '.md';
 
         $bodyMd = '';
@@ -961,7 +975,7 @@ Championing conversion-centered interface design, design systems, and cohesive e
 Schedule an introductory discovery call with our tech leads to discuss your web development, digital marketing, or branding requirements.
 - **Direct Consultation**: [Schedule a Project Consultation]({$baseUrl}/contact.php)
 - **Complimentary Diagnostic**: [Request Free Digital Audit]({$baseUrl}/audit.php)
-- **Practice Hub**: [Explore IT Services & Practice Areas]({$baseUrl}/company-in-delhi)
+- **Practice Hub**: [Explore IT Services & Practice Areas]({$baseUrl}/company)
 
 ---
 *Maintained by {$appName} Corporate Communications.*
@@ -1102,7 +1116,7 @@ To initiate an automated live telemetry scan and detailed manual engineering rev
 ## 04 // Next Steps
 - **Submit Audit Request**: [Request Free Digital Audit Online]({$baseUrl}/audit.php)
 - **Schedule Live Discovery Call**: [Contact Tech Leads]({$baseUrl}/contact.php)
-- **Explore All IT Disciplines**: [Services Overview]({$baseUrl}/company-in-delhi)
+- **Explore All IT Disciplines**: [Services Overview]({$baseUrl}/company)
 
 ---
 *Maintained by {$appName} Diagnostic Practice.*
@@ -1116,8 +1130,8 @@ MD;
                 $sLines[] = "> We engineer high-performance web software, manage profitable paid acquisition portfolios, and build distinctive brand architectures. Ten specialized disciplines operating under one accountable standard.";
                 $sLines[] = "";
                 $sLines[] = "## Hub Information & Digital Resources";
-                $sLines[] = "- **Canonical Web URL**: [{$baseUrl}/company-in-delhi]({$baseUrl}/company-in-delhi)";
-                $sLines[] = "- **Clean Markdown URL**: [{$baseUrl}/company-in-delhi.md]({$baseUrl}/company-in-delhi.md)";
+                $sLines[] = "- **Canonical Web URL**: [{$baseUrl}/company]({$baseUrl}/company)";
+                $sLines[] = "- **Clean Markdown URL**: [{$baseUrl}/company.md]({$baseUrl}/company.md)";
                 $sLines[] = "- **Central Markdown URL**: [{$baseUrl}/md/services.md]({$baseUrl}/md/services.md)";
                 $sLines[] = "- **Master Markdown Index**: [{$baseUrl}/md]({$baseUrl}/md)";
                 $sLines[] = "- **Total Integrated Disciplines**: " . count($services) . " specialized practices";
@@ -1133,8 +1147,8 @@ MD;
                     $tagline = $s['tagline'] ?? '';
                     $summary = $s['summary'] ?? '';
                     $description = $s['description'] ?? '';
-                    $webUrl = "{$baseUrl}/{$slug}-company-in-delhi";
-                    $cleanMdUrl = "{$baseUrl}/{$slug}-company-in-delhi.md";
+                    $webUrl = "{$baseUrl}/company/{$slug}";
+                    $cleanMdUrl = "{$baseUrl}/company/{$slug}.md";
                     $centralMdUrl = "{$baseUrl}/md/services/{$slug}.md";
                     $consultUrl = "{$baseUrl}/contact.php?service=" . urlencode($name);
 
@@ -1269,7 +1283,7 @@ MD;
                         $baseline = $c['baseline_metric'] ?? '';
                         $outcome = $c['outcome_metric'] ?? '';
                         $metricLabel = $c['metric_label'] ?? '';
-                        $webUrl = "{$baseUrl}/case-study-detail.php?slug={$slug}";
+                        $webUrl = "{$baseUrl}/case-studies/{$slug}";
                         $cleanMdUrl = "{$baseUrl}/case-studies/{$slug}.md";
                         $centralMdUrl = "{$baseUrl}/md/case-studies/{$slug}.md";
 
@@ -1332,17 +1346,13 @@ We engineer digital solutions across four primary pillars to ensure scalable, fr
 ---
 
 ## 03 // Engineered Capabilities Built for Enterprise Scale
-We provide 10 specialized disciplines operating under one accountable standard:
-1. **[SMO — Social Media Optimization]({$baseUrl}/smo-company-in-delhi)**: Profile architecture, bio conversion funnels, and organic social discovery.
-2. **[Google Business Profile Management]({$baseUrl}/google-business-profile-company-in-delhi)**: Local 3-pack dominance, Google Maps optimization, and automated review acceleration.
-3. **[PPC / Paid Ads]({$baseUrl}/ppc-paid-ads-company-in-delhi)**: High-ROAS campaigns across Google Search, Performance Max, Meta, and LinkedIn with server-side CAPI.
-4. **[Ecommerce Management]({$baseUrl}/ecommerce-management-company-in-delhi)**: Amazon, Flipkart, and multi-channel storefront operations, A+ content, and Buy Box defense.
-5. **[Graphic Design]({$baseUrl}/graphic-design-company-in-delhi)**: Distinctive brand identity, logo design, marketing collateral, pitch decks, and visual systems.
-6. **[SEO — Search Engine Optimization]({$baseUrl}/seo-company-in-delhi)**: Technical audits, Core Web Vitals engineering, semantic topic silos, and authority backlinking.
-7. **[Social Media Marketing]({$baseUrl}/social-media-marketing-company-in-delhi)**: Content calendars, short-form reels, community management, and paid social amplification.
-8. **[Product Photography]({$baseUrl}/product-photography-company-in-delhi)**: Pure white background catalog photography, 360-degree spins, and stylized lifestyle staging.
-9. **[Video Editing]({$baseUrl}/video-editing-company-in-delhi)**: Viral-engineered vertical reels, commercial ads, kinetic motion graphics, and sound design.
-10. **[Web Development]({$baseUrl}/web-development-company-in-delhi)**: Custom PHP 8+, enterprise web applications, client portals, and sub-second performance.
+We provide 6 core integrated practice disciplines operating under one accountable standard:
+1. **[Web & Custom Software Development]({$baseUrl}/company/web-software-development)**: High-performance enterprise web applications, custom portals, and fast PHP 8+ engineering.
+2. **[Digital Marketing & Performance Ads]({$baseUrl}/company/digital-marketing-seo)**: Data-driven customer acquisition across Google Search, Performance Max, Meta, and SEO authority.
+3. **[UI/UX Design & Brand Identity]({$baseUrl}/company/ui-ux-branding)**: Conversion-centered interface design, brand identity systems, and enterprise design architecture.
+4. **[E-Commerce & Marketplace Management]({$baseUrl}/company/ecommerce-marketplaces)**: Full-funnel marketplace scaling, Amazon & multi-channel operations, and catalog conversion optimization.
+5. **[Creative Production & Video Marketing]({$baseUrl}/company/creative-video-production)**: High-impact video creative, motion design, and commercial visual production.
+6. **[Cloud Solutions & IT Consulting]({$baseUrl}/company/cloud-it-consulting)**: Enterprise cloud infrastructure, DevOps, cybersecurity audits, and uptime maintenance.
 
 ---
 
@@ -1439,7 +1449,7 @@ BusinessDoctor operates globally with distributed engineering leadership and pri
 ## 12 // Ready to Move Your Business Beyond Limitations?
 - **Schedule Discovery Consultation**: [Contact Practice Leads]({$baseUrl}/contact.php)
 - **Complimentary Diagnostic**: [Request Free Digital Audit]({$baseUrl}/audit.php)
-- **Review Service Disciplines**: [Explore All Practices]({$baseUrl}/company-in-delhi)
+- **Review Service Disciplines**: [Explore All Practices]({$baseUrl}/company)
 
 ---
 *Maintained by {$appName} Enterprise Engineering.*
@@ -1480,7 +1490,7 @@ MD;
         $lines[] = "";
         $lines[] = "- [Homepage Overview]({$baseUrl}/md/home.md) ([Clean URL]({$baseUrl}/.md) | [Web Page]({$baseUrl}/)): Enterprise digital practice overview.";
         $lines[] = "- [Firm Profile & Leadership]({$baseUrl}/md/about.md) ([Clean URL]({$baseUrl}/about.php.md) | [Web Page]({$baseUrl}/about.php)): Engineering ethos and leadership profile.";
-        $lines[] = "- [Services Overview Hub]({$baseUrl}/md/services.md) ([Clean URL]({$baseUrl}/company-in-delhi.md) | [Web Page]({$baseUrl}/company-in-delhi)): Multi-disciplinary capability catalog.";
+        $lines[] = "- [Services Overview Hub]({$baseUrl}/md/services.md) ([Clean URL]({$baseUrl}/company.md) | [Web Page]({$baseUrl}/company)): Multi-disciplinary capability catalog.";
         $lines[] = "- [Executive Advisory & Inquiries]({$baseUrl}/md/contact.md) ([Clean URL]({$baseUrl}/contact.php.md) | [Web Page]({$baseUrl}/contact.php)): Direct engagement and consulting channels.";
         $lines[] = "- [Digital Diagnostic Audit Framework]({$baseUrl}/md/audit.md) ([Clean URL]({$baseUrl}/audit.php.md) | [Web Page]({$baseUrl}/audit.php)): Benchmarking performance, security, and CAC.";
         $lines[] = "- [Technical Blog & Perspectives Catalog]({$baseUrl}/md/insights.md) ([Clean URL]({$baseUrl}/blog.md) | [Web Page]({$baseUrl}/blog)): Index of published technical essays.";
@@ -1493,9 +1503,9 @@ MD;
         foreach ($services as $slug => $s) {
             $name = $s['name'];
             $tag = rtrim(strip_tags($s['tagline'] ?? $s['summary']), '.');
-            $cleanUrl = "{$baseUrl}/{$slug}-company-in-delhi.md";
+            $cleanUrl = "{$baseUrl}/company/{$slug}.md";
             $repoUrl = "{$baseUrl}/md/services/{$slug}.md";
-            $webUrl = "{$baseUrl}/{$slug}-company-in-delhi";
+            $webUrl = "{$baseUrl}/company/{$slug}";
             $lines[] = "- [{$name}]({$repoUrl}) ([Clean URL]({$cleanUrl}) | [Web Page]({$webUrl})): {$tag}.";
         }
         $lines[] = "";
@@ -1511,7 +1521,7 @@ MD;
                 $slug = $c['slug'];
                 $cleanUrl = "{$baseUrl}/case-studies/{$slug}.md";
                 $repoUrl = "{$baseUrl}/md/case-studies/{$slug}.md";
-                $webUrl = "{$baseUrl}/case-study-detail.php?slug={$slug}";
+                $webUrl = "{$baseUrl}/case-studies/{$slug}";
                 $industry = $c['industry'] ?: ($c['client_industry'] ?: 'Enterprise');
                 $baseline = $c['baseline_metric'] ?? '';
                 $outcome = $c['outcome_metric'] ?? '';
@@ -1653,10 +1663,148 @@ MD;
     }
 
     /**
-     * Atomically and safely write content to a destination file
+     * Return comprehensive dependency map showing:
+     * Source Data -> Generator -> Output Files -> Public URLs -> Schemas
      */
-    public static function writeFileAtomic(string $filePath, string $content): bool
+    public static function getDependencyMap(): array
     {
+        $baseUrl = self::getBaseUrl();
+        $services = self::getActiveServices();
+        $insights = self::getPublishedInsights();
+        $cases = self::getPublishedCaseStudies();
+
+        $map = [
+            'services' => [],
+            'blogs' => [],
+            'case_studies' => [],
+            'static_pages' => []
+        ];
+
+        foreach ($services as $slug => $s) {
+            $webUrl = getServiceUrl($slug);
+            $cleanMd = getMarkdownUrl($webUrl);
+            $map['services'][$slug] = [
+                'source_type' => 'database',
+                'source_table' => 'services',
+                'source_id' => $s['id'] ?? null,
+                'name' => $s['name'],
+                'public_web_url' => $webUrl,
+                'clean_md_url' => $cleanMd,
+                'repo_md_path' => "md/services/{$slug}.md",
+                'generator' => 'SeoSyncEngine::generateServiceMarkdown',
+                'manifests' => ['sitemap.xml', 'llms.txt', 'llms.md', 'md/index.md', 'md/services.md'],
+                'schemas' => ['Service', 'BreadcrumbList', 'Organization'],
+            ];
+        }
+
+        foreach ($insights as $b) {
+            $slug = $b['slug'];
+            $webUrl = getBlogUrl($slug);
+            $cleanMd = getMarkdownUrl($webUrl);
+            $map['blogs'][$slug] = [
+                'source_type' => 'database',
+                'source_table' => 'insights',
+                'source_id' => $b['id'] ?? null,
+                'name' => $b['title'],
+                'public_web_url' => $webUrl,
+                'clean_md_url' => $cleanMd,
+                'repo_md_path' => "md/insights/{$slug}.md",
+                'generator' => 'SeoSyncEngine::generateBlogMarkdown',
+                'manifests' => ['sitemap.xml', 'llms.txt', 'llms.md', 'md/index.md', 'md/insights.md'],
+                'schemas' => ['Article', 'BreadcrumbList'],
+            ];
+        }
+
+        foreach ($cases as $c) {
+            $slug = $c['slug'];
+            $webUrl = getCaseStudyUrl($slug);
+            $cleanMd = getMarkdownUrl($webUrl);
+            $map['case_studies'][$slug] = [
+                'source_type' => 'database',
+                'source_table' => 'case_studies',
+                'source_id' => $c['id'] ?? null,
+                'name' => $c['title'],
+                'public_web_url' => $webUrl,
+                'clean_md_url' => $cleanMd,
+                'repo_md_path' => "md/case-studies/{$slug}.md",
+                'generator' => 'SeoSyncEngine::generateCaseStudyMarkdown',
+                'manifests' => ['sitemap.xml', 'llms.txt', 'llms.md', 'md/index.md', 'md/case-studies.md'],
+                'schemas' => ['CaseStudy', 'BreadcrumbList'],
+            ];
+        }
+
+        foreach (self::getStaticPages() as $sp) {
+            $key = $sp['file'] === 'index.php' ? 'home' : basename($sp['file'], '.php');
+            $webUrl = $baseUrl . $sp['loc'];
+            $cleanMd = getMarkdownUrl($webUrl);
+            $map['static_pages'][$key] = [
+                'source_type' => 'filesystem',
+                'source_file' => $sp['file'],
+                'name' => $sp['title'],
+                'public_web_url' => $webUrl,
+                'clean_md_url' => $cleanMd,
+                'repo_md_path' => "md/{$key}.md",
+                'generator' => 'SeoSyncEngine::generateStaticPageMarkdown',
+                'manifests' => ['sitemap.xml', 'llms.txt', 'llms.md', 'md/index.md'],
+                'schemas' => ['WebPage', 'BreadcrumbList'],
+            ];
+        }
+
+        return $map;
+    }
+
+    /**
+     * Re-synchronize dependencies when a specific entity is updated
+     */
+    public static function syncDependenciesFor(string $entityType, string $identifier): array
+    {
+        return self::syncAll("Targeted sync for {$entityType}: {$identifier}");
+    }
+
+    /**
+     * Pre-write validation to guarantee integrity, minimum content length,
+     * valid syntax, and strictly prevent stale URL leakage.
+     */
+    public static function validateContent(string $filePath, string $content): array
+    {
+        $errors = [];
+        $len = strlen(trim($content));
+        if ($len < 20) {
+            $errors[] = "Content is empty or too short ({$len} bytes).";
+        }
+
+        // XML validation
+        if (str_ends_with($filePath, '.xml')) {
+            if (!str_contains($content, '<?xml') || !str_contains($content, '</urlset>')) {
+                $errors[] = "Invalid XML format: missing xml declaration or </urlset>.";
+            }
+        }
+
+        // Stale URL pattern check: block /services/{slug} (not /md/services/) or -company-in-delhi
+        if (str_ends_with($filePath, '.xml') || str_ends_with($filePath, '.txt') || str_ends_with($filePath, '.md')) {
+            if (preg_match('#(?<!/md)/services/[a-zA-Z0-9_-]+(?!\.md)#', $content, $m)) {
+                $errors[] = "Stale URL pattern detected: {$m[0]}";
+            }
+            if (preg_match('#[a-zA-Z0-9_-]+-company-in-delhi#', $content, $m)) {
+                $errors[] = "Stale URL pattern detected: {$m[0]}";
+            }
+        }
+
+        return $errors;
+    }
+
+    /**
+     * Atomically and safely write content to a destination file with validation
+     */
+    public static function writeFileAtomic(string $filePath, string $content, bool $validate = true): bool
+    {
+        if ($validate) {
+            $valErrors = self::validateContent($filePath, $content);
+            if (!empty($valErrors)) {
+                error_log("Pre-write validation failed for {$filePath}: " . implode('; ', $valErrors));
+                return false;
+            }
+        }
         $dir = dirname($filePath);
         if (!is_dir($dir)) {
             @mkdir($dir, 0755, true);
@@ -1670,16 +1818,18 @@ MD;
             return file_put_contents($filePath, $content, LOCK_EX) !== false;
         }
 
-        // Windows atomic replacement handling
-        if (file_exists($filePath)) {
-            if (@unlink($filePath) === false) {
-                // If unlink was blocked by a transient lock, direct copy/overwrite
-                $ok = @file_put_contents($filePath, $content, LOCK_EX) !== false;
-                @unlink($tempFile);
-                return $ok;
+        // On Windows, direct copy overwrites safely without requiring risky unlink
+        if (DIRECTORY_SEPARATOR === '\\') {
+            $ok = @copy($tempFile, $filePath);
+            @unlink($tempFile);
+            if (!$ok) {
+                // Exclusive lock direct write fallback
+                return file_put_contents($filePath, $content, LOCK_EX) !== false;
             }
+            return true;
         }
 
+        // Linux/POSIX atomic rename
         $renamed = @rename($tempFile, $filePath);
         if (!$renamed) {
             @copy($tempFile, $filePath);
@@ -1697,6 +1847,7 @@ MD;
     public static function syncAll(string $triggerReason = 'System Auto-Sync'): array
     {
         $startTime = microtime(true);
+        self::getActiveServices(true);
         $sitemapPath = ROOT_PATH . '/sitemap.xml';
         $llmsTxtPath = ROOT_PATH . '/llms.txt';
         $llmsMdPath = ROOT_PATH . '/llms.md';

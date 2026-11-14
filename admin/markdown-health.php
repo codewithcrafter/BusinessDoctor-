@@ -42,6 +42,8 @@ $pagesInventory = [
         'web_url' => '/',
         'clean_md' => '/.md',
         'repo_file' => 'md/home.md',
+        'source' => 'filesystem: index.php',
+        'deps' => 'sitemap.xml, llms.txt, llms.md, md/index.md',
     ],
     [
         'section' => 'Institutional',
@@ -49,12 +51,16 @@ $pagesInventory = [
         'web_url' => '/about.php',
         'clean_md' => '/about.php.md',
         'repo_file' => 'md/about.md',
+        'source' => 'filesystem: about.php',
+        'deps' => 'sitemap.xml, llms.txt, llms.md, md/index.md',
     ],
     [
         'section' => 'Institutional',
         'title' => 'Services Hub & Disciplines',
-        'web_url' => '/company-in-delhi',
-        'clean_md' => '/company-in-delhi.md',
+        'web_url' => '/company',
+        'clean_md' => '/company.md',
+        'source' => 'filesystem: services.php',
+        'deps' => 'sitemap.xml, llms.txt, llms.md, md/index.md',
         'repo_file' => 'md/services.md',
     ],
     [
@@ -63,6 +69,8 @@ $pagesInventory = [
         'web_url' => '/contact.php',
         'clean_md' => '/contact.php.md',
         'repo_file' => 'md/contact.md',
+        'source' => 'filesystem: contact.php',
+        'deps' => 'sitemap.xml, llms.txt, llms.md, md/index.md',
     ],
     [
         'section' => 'Institutional',
@@ -70,6 +78,8 @@ $pagesInventory = [
         'web_url' => '/audit.php',
         'clean_md' => '/audit.php.md',
         'repo_file' => 'md/audit.md',
+        'source' => 'filesystem: audit.php',
+        'deps' => 'sitemap.xml, llms.txt, llms.md, md/index.md',
     ],
     [
         'section' => 'Institutional',
@@ -77,6 +87,8 @@ $pagesInventory = [
         'web_url' => '/blog',
         'clean_md' => '/blog.md',
         'repo_file' => 'md/insights.md',
+        'source' => 'filesystem: insights.php',
+        'deps' => 'sitemap.xml, llms.txt, llms.md, md/index.md',
     ],
     [
         'section' => 'Institutional',
@@ -84,6 +96,8 @@ $pagesInventory = [
         'web_url' => '/case-studies.php',
         'clean_md' => '/case-studies.php.md',
         'repo_file' => 'md/case-studies.md',
+        'source' => 'filesystem: case-studies.php',
+        'deps' => 'sitemap.xml, llms.txt, llms.md, md/index.md',
     ],
 ];
 
@@ -93,9 +107,11 @@ foreach ($services as $slug => $s) {
     $pagesInventory[] = [
         'section' => 'Practice Discipline',
         'title' => ($s['number'] ?? '') . ' ' . ($s['name'] ?? $slug),
-        'web_url' => '/' . $slug . '-company-in-delhi',
-        'clean_md' => '/' . $slug . '-company-in-delhi.md',
+        'web_url' => '/company/' . $slug,
+        'clean_md' => '/company/' . $slug . '.md',
         'repo_file' => 'md/services/' . $slug . '.md',
+        'source' => 'services table (id: ' . ($s['id'] ?? $slug) . ')',
+        'deps' => 'sitemap.xml, llms.txt, llms.md, md/index.md, Schema',
     ];
 }
 
@@ -105,9 +121,11 @@ foreach ($cases as $c) {
     $pagesInventory[] = [
         'section' => 'Case Study',
         'title' => $c['title'] ?? $c['slug'],
-        'web_url' => '/case-study-detail.php?slug=' . $c['slug'],
+        'web_url' => '/case-studies/' . $c['slug'],
         'clean_md' => '/case-studies/' . $c['slug'] . '.md',
         'repo_file' => 'md/case-studies/' . $c['slug'] . '.md',
+        'source' => 'case_studies table (id: ' . ($c['id'] ?? $c['slug']) . ')',
+        'deps' => 'sitemap.xml, llms.txt, llms.md, md/index.md',
     ];
 }
 
@@ -120,6 +138,8 @@ foreach ($blogs as $b) {
         'web_url' => '/blog/' . $b['slug'],
         'clean_md' => '/blog/' . $b['slug'] . '.md',
         'repo_file' => 'md/insights/' . $b['slug'] . '.md',
+        'source' => 'insights table (id: ' . ($b['id'] ?? $b['slug']) . ')',
+        'deps' => 'sitemap.xml, llms.txt, llms.md, md/index.md, Schema',
     ];
 }
 
@@ -130,6 +150,8 @@ $masterIndexMeta = [
     'web_url' => '/md',
     'clean_md' => '/md',
     'repo_file' => 'md/index.md',
+    'source' => 'Generator: SeoSyncEngine',
+    'deps' => 'All Public Pages & Disciplines',
 ];
 array_unshift($pagesInventory, $masterIndexMeta);
 
@@ -147,12 +169,23 @@ foreach ($pagesInventory as $item) {
     $lines = 0;
     $headings = 0;
 
+    $contentHash = '';
+    $lastMod = '';
+    $hasStaleUrl = false;
+
     if ($exists) {
         $verifiedFiles++;
         $content = file_get_contents($filePath);
         $lines = substr_count($content, "\n") + 1;
         preg_match_all('/^#+\s+(.+)$/m', $content, $hMatches);
         $headings = count($hMatches[1]);
+        $contentHash = substr(hash('sha256', $content), 0, 10);
+        $lastMod = date('M d, H:i', filemtime($filePath));
+
+        // Stale URL detector: flags old /services/{slug} or -company-in-delhi
+        if (preg_match('#(?<!/md)/services/[a-zA-Z0-9_-]+(?!\.md)|[a-zA-Z0-9_-]+-company-in-delhi#', $content)) {
+            $hasStaleUrl = true;
+        }
     }
 
     $pageDetails[] = array_merge($item, [
@@ -160,6 +193,9 @@ foreach ($pagesInventory as $item) {
         'size' => $size,
         'lines' => $lines,
         'headings' => $headings,
+        'hash' => $contentHash,
+        'last_mod' => $lastMod,
+        'has_stale' => $hasStaleUrl,
     ]);
 }
 ?>
@@ -175,9 +211,9 @@ foreach ($pagesInventory as $item) {
       <form method="POST" style="margin: 0;">
         <?= csrfField() ?>
         <input type="hidden" name="action" value="regenerate">
-        <button type="submit" class="admin-btn admin-btn-primary" onclick="return confirm('Regenerate all 21 Markdown files, llms.txt, llms.md and sitemap.xml now?');">
+        <button type="submit" class="admin-btn admin-btn-primary" onclick="return confirm('Audit and re-synchronize all 21 Markdown files, llms.txt, llms.md and sitemap.xml now?');">
           <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="width: 16px; height: 16px; margin-right: 6px;"><polyline points="23 4 23 10 17 10"/><polyline points="1 20 1 14 7 14"/><path d="M3.51 9a9 9 0 0 1 14.85-3.36L23 10M1 14l4.64 4.36A9 9 0 0 0 20.49 15"/></svg>
-          Regenerate All Markdown
+          Audit &amp; Re-synchronize All Dependencies
         </button>
       </form>
       <a href="../md" target="_blank" class="admin-btn admin-btn-secondary" style="margin-left: 0.5rem;">
@@ -260,12 +296,12 @@ foreach ($pagesInventory as $item) {
           <tr style="background: rgba(15, 23, 42, 0.6); border-bottom: 1px solid var(--adm-border); color: var(--adm-muted); font-family: var(--adm-font-mono); font-size: 0.75rem; text-transform: uppercase;">
             <th style="padding: 0.75rem 1rem;">Section</th>
             <th style="padding: 0.75rem 1rem;">Page &amp; Title</th>
+            <th style="padding: 0.75rem 1rem;">Source of Truth</th>
+            <th style="padding: 0.75rem 1rem;">Dependencies</th>
             <th style="padding: 0.75rem 1rem;">Clean Markdown Endpoint</th>
-            <th style="padding: 0.75rem 1rem;">Repository Path</th>
+            <th style="padding: 0.75rem 1rem;">Hash</th>
             <th style="padding: 0.75rem 1rem; text-align: right;">Size</th>
-            <th style="padding: 0.75rem 1rem; text-align: center;">Headings</th>
-            <th style="padding: 0.75rem 1rem; text-align: center;">Lines</th>
-            <th style="padding: 0.75rem 1rem; text-align: center;">Health Status</th>
+            <th style="padding: 0.75rem 1rem; text-align: center;">Status</th>
           </tr>
         </thead>
         <tbody>
@@ -284,30 +320,34 @@ foreach ($pagesInventory as $item) {
                   </a>
                 </div>
               </td>
+              <td style="padding: 0.85rem 1rem; font-family: var(--adm-font-mono); font-size: 0.78rem; color: #94A3B8;">
+                <?= e($row['source'] ?? 'Database/FS') ?>
+              </td>
+              <td style="padding: 0.85rem 1rem; font-size: 0.75rem; color: #CBD5E1;">
+                <?= e($row['deps'] ?? 'sitemap.xml, llms.txt') ?>
+              </td>
               <td style="padding: 0.85rem 1rem; font-family: var(--adm-font-mono); font-size: 0.8rem;">
                 <a href="..<?= $row['clean_md'] ?>" target="_blank" style="color: var(--adm-teal); text-decoration: none;">
                   <?= e($row['clean_md']) ?> ↗
                 </a>
               </td>
-              <td style="padding: 0.85rem 1rem; font-family: var(--adm-font-mono); font-size: 0.8rem; color: #CBD5E1;">
-                <?= e($row['repo_file']) ?>
+              <td style="padding: 0.85rem 1rem; font-family: var(--adm-font-mono); font-size: 0.75rem; color: #A7F3D0;">
+                <code><?= e($row['hash'] ?: '—') ?></code>
               </td>
               <td style="padding: 0.85rem 1rem; text-align: right; font-family: var(--adm-font-mono); font-size: 0.82rem; color: #FFFFFF;">
                 <?= round($row['size'] / 1024, 1) ?> KB
               </td>
-              <td style="padding: 0.85rem 1rem; text-align: center; font-family: var(--adm-font-mono); font-size: 0.82rem; color: var(--adm-teal);">
-                <?= $row['headings'] ?>
-              </td>
-              <td style="padding: 0.85rem 1rem; text-align: center; font-family: var(--adm-font-mono); font-size: 0.82rem; color: #94A3B8;">
-                <?= $row['lines'] ?>
-              </td>
               <td style="padding: 0.85rem 1rem; text-align: center;">
-                <?php if ($row['exists'] && $row['size'] > 1000): ?>
-                  <span style="color: #10B981; background: rgba(16, 185, 129, 0.12); padding: 0.25rem 0.6rem; border-radius: 4px; font-size: 0.75rem; font-weight: 700; border: 1px solid rgba(16, 185, 129, 0.3);">
+                <?php if ($row['has_stale']): ?>
+                  <span style="color: #F59E0B; background: rgba(245, 158, 11, 0.12); padding: 0.25rem 0.6rem; border-radius: 4px; font-size: 0.72rem; font-weight: 700; border: 1px solid rgba(245, 158, 11, 0.3);">
+                    ⚠ STALE URL
+                  </span>
+                <?php elseif ($row['exists'] && $row['size'] > 500): ?>
+                  <span style="color: #10B981; background: rgba(16, 185, 129, 0.12); padding: 0.25rem 0.6rem; border-radius: 4px; font-size: 0.72rem; font-weight: 700; border: 1px solid rgba(16, 185, 129, 0.3);">
                     ✓ SYNCHRONIZED
                   </span>
                 <?php else: ?>
-                  <span style="color: #EF4444; background: rgba(239, 68, 68, 0.12); padding: 0.25rem 0.6rem; border-radius: 4px; font-size: 0.75rem; font-weight: 700; border: 1px solid rgba(239, 68, 68, 0.3);">
+                  <span style="color: #EF4444; background: rgba(239, 68, 68, 0.12); padding: 0.25rem 0.6rem; border-radius: 4px; font-size: 0.72rem; font-weight: 700; border: 1px solid rgba(239, 68, 68, 0.3);">
                     ✗ INCOMPLETE
                   </span>
                 <?php endif; ?>

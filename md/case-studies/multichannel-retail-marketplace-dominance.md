@@ -7,7 +7,7 @@
 - **Industry**: Industrial Equipment & B2B Retail
 - **Practice Area**: E-Commerce & Marketplace Management
 - **Quantifiable Metric Shift**: `1.8x ROAS / 34% Buy Box Loss` → `4.6x ROAS / 94% Buy Box Control` (Marketplace Revenue Scale)
-- **Canonical Web URL**: [https://demo.businesdoctor.com/case-study-detail.php?slug=multichannel-retail-marketplace-dominance](https://demo.businesdoctor.com/case-study-detail.php?slug=multichannel-retail-marketplace-dominance)
+- **Canonical Web URL**: [https://demo.businesdoctor.com/case-studies/multichannel-retail-marketplace-dominance](https://demo.businesdoctor.com/case-studies/multichannel-retail-marketplace-dominance)
 - **Clean Markdown URL**: [https://demo.businesdoctor.com/case-studies/multichannel-retail-marketplace-dominance.md](https://demo.businesdoctor.com/case-studies/multichannel-retail-marketplace-dominance.md)
 - **Central Markdown URL**: [https://demo.businesdoctor.com/md/case-studies/multichannel-retail-marketplace-dominance.md](https://demo.businesdoctor.com/md/case-studies/multichannel-retail-marketplace-dominance.md)
 

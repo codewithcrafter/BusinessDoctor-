@@ -55,7 +55,7 @@ require_once __DIR__ . '/includes/header.php';
               <div style="font-size: 0.78rem; color: var(--adm-text-muted); margin-top: 0.25rem;"><?= e($s['tagline']) ?></div>
             </td>
             <td style="padding: 1rem; font-family: var(--adm-font-mono); font-size: 0.8rem; color: var(--adm-teal);">
-              <?= '/' . e($s['slug']) ?>-company-in-delhi
+              /company/<?= e($s['slug']) ?>
             </td>
             <td style="padding: 1rem;">
               <span class="status-pill <?= $s['is_active'] ? 'status-published' : 'status-draft' ?>">

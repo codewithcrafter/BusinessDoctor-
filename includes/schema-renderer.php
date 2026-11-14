@@ -30,13 +30,13 @@ function getSupportedSchemaPages(): array
         ],
         'services' => [
             'name' => 'IT Services Portfolio',
-            'url' => '/company-in-delhi',
+            'url' => '/company',
             'recommended_types' => ['ProfessionalService', 'BreadcrumbList'],
             'is_dynamic' => false
         ],
         'service-detail' => [
             'name' => 'Individual Service Pages',
-            'url' => '/{slug}-company-in-delhi',
+            'url' => '/company/{slug}',
             'recommended_types' => ['Service', 'BreadcrumbList'],
             'is_dynamic' => true
         ],
@@ -87,10 +87,10 @@ function detectCurrentPageKey(): string
     // Check clean route paths first
     $reqPath = parse_url($_SERVER['REQUEST_URI'] ?? '', PHP_URL_PATH);
     if ($reqPath !== null) {
-        if ($reqPath === '/company-in-delhi' || $reqPath === '/company-in-delhi/') {
+        if ($reqPath === '/company' || $reqPath === '/company/' || $reqPath === '/company-in-delhi' || $reqPath === '/company-in-delhi/') {
             return 'services';
         }
-        if (preg_match('#^/([a-zA-Z0-9_-]+)-company-in-delhi#', $reqPath) || preg_match('#^/(?:services|company)/([a-zA-Z0-9_-]+)#', $reqPath)) {
+        if (preg_match('#^/company/([a-zA-Z0-9_-]+)#', $reqPath) || preg_match('#^/([a-zA-Z0-9_-]+)-company-in-delhi#', $reqPath) || preg_match('#^/services/([a-zA-Z0-9_-]+)#', $reqPath)) {
             return 'service-detail';
         }
         if ($reqPath === '/blog' || $reqPath === '/blog/') {
@@ -540,11 +540,13 @@ function renderPageSchemas(?string $pageKey = null, array $contextData = []): st
             '{{DATE_MODIFIED}}' => $modDateIso,
             '{{FEATURED_IMAGE}}' => $featuredImg,
             '{{CATEGORY}}' => addslashes($category),
-            '{{SERVICES_URL}}' => $baseUrl . '/company-in-delhi',
+            '{{SERVICES_URL}}' => $baseUrl . '/company',
             '{{BLOG_URL}}' => $baseUrl . '/blog',
-            '/services.php' => '/company-in-delhi',
+            '/services.php' => '/company',
+            '/company-in-delhi' => '/company',
             '/insights.php' => '/blog',
-            'services.php' => 'company-in-delhi',
+            'services.php' => 'company',
+            'company-in-delhi' => 'company',
             'insights.php' => 'blog'
         ];
 
@@ -606,7 +608,7 @@ function renderPageSchemas(?string $pageKey = null, array $contextData = []): st
                     '@type' => 'ListItem',
                     'position' => 2,
                     'name' => 'Services Portfolio',
-                    'item' => $baseUrl . '/company-in-delhi'
+                    'item' => $baseUrl . '/company'
                 ];
                 $breadcrumbItems[] = [
                     '@type' => 'ListItem',
@@ -619,7 +621,7 @@ function renderPageSchemas(?string $pageKey = null, array $contextData = []): st
                     '@type' => 'ListItem',
                     'position' => 2,
                     'name' => 'Case Studies',
-                    'item' => $baseUrl . '/case-studies.php'
+                    'item' => $baseUrl . '/case-studies'
                 ];
                 $breadcrumbItems[] = [
                     '@type' => 'ListItem',
@@ -632,14 +634,14 @@ function renderPageSchemas(?string $pageKey = null, array $contextData = []): st
                     '@type' => 'ListItem',
                     'position' => 2,
                     'name' => 'Services Portfolio',
-                    'item' => $baseUrl . '/company-in-delhi'
+                    'item' => $baseUrl . '/company'
                 ];
             } elseif ($pageKey === 'case-studies') {
                 $breadcrumbItems[] = [
                     '@type' => 'ListItem',
                     'position' => 2,
                     'name' => 'Case Studies',
-                    'item' => $baseUrl . '/case-studies.php'
+                    'item' => $baseUrl . '/case-studies'
                 ];
             } elseif ($pageKey === 'insights') {
                 $breadcrumbItems[] = [

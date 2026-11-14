@@ -360,6 +360,14 @@ function verifyCsrfToken(?string $token): bool
 }
 
 /**
+ * Render hidden CSRF form input field
+ */
+function csrfField(): string
+{
+    return '<input type="hidden" name="csrf_token" value="' . htmlspecialchars(getCsrfToken(), ENT_QUOTES, 'UTF-8') . '">';
+}
+
+/**
  * Check if the current request script matches the given page name for navigation styling
  */
 function isActivePage(string ...$pages): string
@@ -419,49 +427,81 @@ function getAssetUrl(string $path): string
 }
 
 /**
- * Return clean SEO-friendly URL for main services overview
+ * Return absolute canonical base URL without trailing slash
  */
-function getServicesOverviewUrl(): string
+function getBaseUrl(): string
 {
-    return appUrl('company-in-delhi');
+    if (defined('BASE_URL')) {
+        return rtrim(BASE_URL, '/');
+    }
+    return 'https://demo.businesdoctor.com';
 }
 
 /**
- * Return clean SEO-friendly URL for an individual service
- * Pattern: https://demo.businesdoctor.com/{service-slug}-company-in-delhi
+ * Return clean SEO-friendly URL for main services overview
+ * Canonical: https://demo.businesdoctor.com/company
+ */
+function getServicesOverviewUrl(): string
+{
+    return appUrl('company');
+}
+
+/**
+ * Return clean SEO-friendly canonical URL for an individual service
+ * Pattern: https://demo.businesdoctor.com/company/{service-slug}
  */
 function getServiceUrl(string $slug): string
 {
     $clean = strtolower(trim($slug));
-    if (str_ends_with($clean, '-company-in-delhi')) {
-        $base = substr($clean, 0, -17);
-    } else {
-        $base = $clean;
+    if (str_starts_with($clean, 'company/')) {
+        $clean = substr($clean, 8);
+    } elseif (str_starts_with($clean, 'services/')) {
+        $clean = substr($clean, 9);
     }
+    if (str_ends_with($clean, '-company-in-delhi')) {
+        $clean = substr($clean, 0, -17);
+    }
+    $clean = trim($clean, '/');
 
-    $legacyMap = [
-        'seo-services' => 'seo',
-        'smo-services' => 'smo',
-        'digital-marketing' => 'seo',
-        'strategic-consulting' => 'web-development',
-        'digital-engineering' => 'web-development',
-        'performance-marketing' => 'seo',
-        'brand-architecture' => 'graphic-design',
-        'ecommerce-acceleration' => 'ecommerce-management',
-        'creative-production' => 'video-editing',
-        'web-software-development' => 'web-development',
-        'digital-marketing-seo' => 'seo',
-        'ui-ux-branding' => 'graphic-design',
-        'ecommerce-marketplaces' => 'ecommerce-management',
-        'creative-video-production' => 'video-editing',
-        'cloud-it-consulting' => 'web-development',
+    // Canonical slug mappings for any legacy or alias slugs
+    $canonicalMap = [
+        'web-software-development' => 'web-software-development',
+        'digital-marketing-seo' => 'digital-marketing-seo',
+        'ui-ux-branding' => 'ui-ux-branding',
+        'ecommerce-marketplaces' => 'ecommerce-marketplaces',
+        'creative-video-production' => 'creative-video-production',
+        'cloud-it-consulting' => 'cloud-it-consulting',
+
+        // Alias & legacy mappings to canonical 6 core services
+        'web-development' => 'web-software-development',
+        'strategic-consulting' => 'web-software-development',
+        'digital-engineering' => 'web-software-development',
+        'ai-automation-workflows' => 'web-software-development',
+
+        'seo' => 'digital-marketing-seo',
+        'seo-services' => 'digital-marketing-seo',
+        'smo' => 'digital-marketing-seo',
+        'smo-services' => 'digital-marketing-seo',
+        'digital-marketing' => 'digital-marketing-seo',
+        'ppc-paid-ads' => 'digital-marketing-seo',
+        'performance-marketing' => 'digital-marketing-seo',
+        'google-business-profile' => 'digital-marketing-seo',
+        'social-media-marketing' => 'digital-marketing-seo',
+
+        'graphic-design' => 'ui-ux-branding',
+        'brand-architecture' => 'ui-ux-branding',
+        'brand-creative-direction' => 'ui-ux-branding',
+
+        'ecommerce-management' => 'ecommerce-marketplaces',
+        'ecommerce-acceleration' => 'ecommerce-marketplaces',
+
+        'video-editing' => 'creative-video-production',
+        'product-photography' => 'creative-video-production',
+        'creative-production' => 'creative-video-production',
     ];
 
-    if (isset($legacyMap[$base])) {
-        $base = $legacyMap[$base];
-    }
-
-    return appUrl(rawurlencode($base) . '-company-in-delhi');
+    $canonicalSlug = $canonicalMap[$clean] ?? $clean;
+    return appUrl('company/' . rawurlencode($canonicalSlug));
 }
 
 /**
@@ -478,7 +518,7 @@ function getBlogListingUrl(): string
  */
 function getBlogUrl(string $slug): string
 {
-    return appUrl('blog/' . rawurlencode($slug));
+    return appUrl('blog/' . rawurlencode(trim($slug, '/')));
 }
 
 /**
@@ -490,11 +530,49 @@ function getInsightUrl(string $slug): string
 }
 
 /**
+ * Return clean SEO-friendly URL for case study listing
+ */
+function getCaseStudyListingUrl(): string
+{
+    return appUrl('case-studies');
+}
+
+/**
  * Return clean SEO-friendly URL for a client case study
  */
 function getCaseStudyUrl(string $slug): string
 {
-    return appUrl('case-studies/' . rawurlencode($slug));
+    return appUrl('case-studies/' . rawurlencode(trim($slug, '/')));
+}
+
+/**
+ * Return corresponding Markdown URL for any public HTML or route URL
+ * Examples:
+ *   /about.php -> https://demo.businesdoctor.com/about.php.md
+ *   /company/web-software-development -> https://demo.businesdoctor.com/company/web-software-development.md
+ *   /company -> https://demo.businesdoctor.com/company.md
+ *   /blog/slug -> https://demo.businesdoctor.com/blog/slug.md
+ *   / -> https://demo.businesdoctor.com/index.md
+ */
+function getMarkdownUrl(string $urlOrPath): string
+{
+    $parsed = parse_url($urlOrPath, PHP_URL_PATH) ?? $urlOrPath;
+    $path = trim($parsed, '/');
+    if ($path === '' || $path === 'index.php') {
+        return appUrl('index.md');
+    }
+    if (str_ends_with($path, '.md')) {
+        return appUrl($path);
+    }
+    return appUrl($path . '.md');
+}
+
+/**
+ * Return canonical URL for any relative or absolute path
+ */
+function getCanonicalUrl(string $path = ''): string
+{
+    return appUrl($path);
 }
 
 /**
@@ -966,11 +1044,14 @@ function computePreliminaryHealth(string $bottleneck, string $revenue, string $m
 /**
  * BusinessDoctor Six Core IT & Digital Practice Areas
  */
-function getPracticeAreas(): array
+function getPracticeAreas(bool $refresh = false): array
 {
     static $cached = null;
-    if ($cached !== null) {
+    if ($cached !== null && !$refresh) {
         return $cached;
+    }
+    if ($refresh) {
+        $cached = null;
     }
 
     try {
@@ -1119,35 +1200,51 @@ function getPracticeAreas(): array
 function getPracticeBySlug(string $slug): ?array
 {
     $clean = strtolower(trim($slug));
+    if (str_starts_with($clean, 'company/')) {
+        $clean = substr($clean, 8);
+    } elseif (str_starts_with($clean, 'services/')) {
+        $clean = substr($clean, 9);
+    }
     if (str_ends_with($clean, '-company-in-delhi')) {
         $clean = substr($clean, 0, -17);
     }
+    $clean = trim($clean, '/');
 
     $practices = getPracticeAreas();
     if (isset($practices[$clean])) {
         return $practices[$clean];
     }
 
-    $legacyMap = [
-        'seo-services' => 'seo',
-        'smo-services' => 'smo',
-        'digital-marketing' => 'seo',
-        'strategic-consulting' => 'web-development',
-        'digital-engineering' => 'web-development',
-        'performance-marketing' => 'seo',
-        'brand-architecture' => 'graphic-design',
-        'ecommerce-acceleration' => 'ecommerce-management',
-        'creative-production' => 'video-editing',
-        'web-software-development' => 'web-development',
-        'digital-marketing-seo' => 'seo',
-        'ui-ux-branding' => 'graphic-design',
-        'ecommerce-marketplaces' => 'ecommerce-management',
-        'creative-video-production' => 'video-editing',
-        'cloud-it-consulting' => 'web-development',
+    $canonicalMap = [
+        'web-development' => 'web-software-development',
+        'strategic-consulting' => 'web-software-development',
+        'digital-engineering' => 'web-software-development',
+        'ai-automation-workflows' => 'web-software-development',
+
+        'seo' => 'digital-marketing-seo',
+        'seo-services' => 'digital-marketing-seo',
+        'smo' => 'digital-marketing-seo',
+        'smo-services' => 'digital-marketing-seo',
+        'digital-marketing' => 'digital-marketing-seo',
+        'ppc-paid-ads' => 'digital-marketing-seo',
+        'performance-marketing' => 'digital-marketing-seo',
+        'google-business-profile' => 'digital-marketing-seo',
+        'social-media-marketing' => 'digital-marketing-seo',
+
+        'graphic-design' => 'ui-ux-branding',
+        'brand-architecture' => 'ui-ux-branding',
+        'brand-creative-direction' => 'ui-ux-branding',
+
+        'ecommerce-management' => 'ecommerce-marketplaces',
+        'ecommerce-acceleration' => 'ecommerce-marketplaces',
+
+        'video-editing' => 'creative-video-production',
+        'product-photography' => 'creative-video-production',
+        'creative-production' => 'creative-video-production',
     ];
 
-    if (isset($legacyMap[$clean]) && isset($practices[$legacyMap[$clean]])) {
-        return $practices[$legacyMap[$clean]];
+    if (isset($canonicalMap[$clean]) && isset($practices[$canonicalMap[$clean]])) {
+        return $practices[$canonicalMap[$clean]];
     }
 
     return null;
@@ -1216,4 +1313,21 @@ function getFlashMessage(): ?array
         return $msg;
     }
     return null;
+}
+
+/**
+ * Render flash message HTML if present
+ */
+function renderFlashMessage(): string
+{
+    $flash = getFlashMessage();
+    if (!$flash) {
+        return '';
+    }
+    $type = htmlspecialchars($flash['type'], ENT_QUOTES, 'UTF-8');
+    $msg = htmlspecialchars($flash['message'], ENT_QUOTES, 'UTF-8');
+    $isErr = ($type === 'error');
+    $label = $isErr ? 'Notice:' : 'Success:';
+    $errClass = $isErr ? 'error' : '';
+    return '<div style="padding: 1rem 0;"><div class="adm-toast ' . $errClass . '" style="max-width: 100%;"><div><strong>' . $label . '</strong> ' . $msg . '</div></div></div>';
 }

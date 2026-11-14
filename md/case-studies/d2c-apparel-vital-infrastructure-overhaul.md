@@ -7,7 +7,7 @@
 - **Industry**: Luxury D2C & Apparel
 - **Practice Area**: Web Development & UI/UX Design
 - **Quantifiable Metric Shift**: `4.8s Page Load / 1.4% Conv` → `0.68s Page Load / 3.9% Conv` (Net Conversion Surge)
-- **Canonical Web URL**: [https://demo.businesdoctor.com/case-study-detail.php?slug=d2c-apparel-vital-infrastructure-overhaul](https://demo.businesdoctor.com/case-study-detail.php?slug=d2c-apparel-vital-infrastructure-overhaul)
+- **Canonical Web URL**: [https://demo.businesdoctor.com/case-studies/d2c-apparel-vital-infrastructure-overhaul](https://demo.businesdoctor.com/case-studies/d2c-apparel-vital-infrastructure-overhaul)
 - **Clean Markdown URL**: [https://demo.businesdoctor.com/case-studies/d2c-apparel-vital-infrastructure-overhaul.md](https://demo.businesdoctor.com/case-studies/d2c-apparel-vital-infrastructure-overhaul.md)
 - **Central Markdown URL**: [https://demo.businesdoctor.com/md/case-studies/d2c-apparel-vital-infrastructure-overhaul.md](https://demo.businesdoctor.com/md/case-studies/d2c-apparel-vital-infrastructure-overhaul.md)
 

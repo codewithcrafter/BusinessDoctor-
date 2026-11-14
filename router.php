@@ -3,25 +3,18 @@
 $uri = parse_url($_SERVER['REQUEST_URI'], PHP_URL_PATH);
 $file = __DIR__ . $uri;
 
-// 1. Static physical files (excluding directories)
-if ($uri !== '/' && file_exists($file) && !is_dir($file)) {
-    if (str_ends_with($uri, '.md')) {
-        header('Content-Type: text/markdown; charset=UTF-8');
-        header('Access-Control-Allow-Origin: *');
-        header('X-Robots-Tag: index, follow');
-        readfile($file);
-        return true;
-    }
-    return false; // serve directly
-}
-
 // ============================================================
-// Universal Markdown Request Interception (*.md, /.md, /md)
+// Universal Discovery & Markdown Request Interception (*.md, /llms.txt, /llms.md, /sitemap.xml)
 // ============================================================
-if (str_ends_with($uri, '.md') || $uri === '/.md' || $uri === '/md' || $uri === '/md/' || str_starts_with($uri, '/md/')) {
+if (str_ends_with($uri, '.md') || in_array($uri, ['/.md', '/md', '/md/', '/llms.txt', '/llms.md', '/sitemap.xml'], true) || str_starts_with($uri, '/md/')) {
     require_once __DIR__ . '/includes/markdown-router.php';
     MarkdownRouter::handleRequest($_SERVER['REQUEST_URI']);
     return true;
+}
+
+// 1. Static physical files (excluding directories)
+if ($uri !== '/' && file_exists($file) && !is_dir($file)) {
+    return false; // serve directly
 }
 
 // 2. Admin clean URL handling
@@ -38,14 +31,14 @@ if (str_starts_with($uri, '/admin/')) {
     }
 }
 
-// 3. Clean Services Overview: /company-in-delhi -> services.php
-if (preg_match('#^/company-in-delhi/?$#', $uri)) {
+// 3. Clean Services Overview: /company -> services.php
+if (preg_match('#^/company/?$#', $uri)) {
     require __DIR__ . '/services.php';
     return true;
 }
 
-// 4. Clean Individual Service URLs: /{slug}-company-in-delhi -> service-detail.php?slug={slug}
-if (preg_match('#^/([a-zA-Z0-9_-]+)-company-in-delhi/?$#', $uri, $matches)) {
+// 4. Clean Individual Service URLs: /company/{slug} -> service-detail.php?slug={slug}
+if (preg_match('#^/company/([a-zA-Z0-9_-]+)/?$#', $uri, $matches)) {
     $_GET['slug'] = $matches[1];
     require __DIR__ . '/service-detail.php';
     return true;
@@ -65,33 +58,25 @@ if (preg_match('#^/blog/([a-zA-Z0-9_-]+)/?$#', $uri, $matches)) {
 }
 
 // 7. Legacy Service 301 Permanent Redirects
-if (preg_match('#^/(?:services|company)/([a-zA-Z0-9_-]+)/?$#', $uri, $matches)) {
-    $s = strtolower($matches[1]);
-    $legacyMap = [
-        'seo-services' => 'seo',
-        'smo-services' => 'smo',
-        'digital-marketing' => 'social-media-marketing',
-        'strategic-consulting' => 'web-development',
-        'digital-engineering' => 'web-development',
-        'performance-marketing' => 'seo',
-        'brand-architecture' => 'graphic-design',
-        'brand-creative-direction' => 'graphic-design',
-        'ecommerce-acceleration' => 'ecommerce-management',
-        'creative-production' => 'video-editing',
-        'web-software-development' => 'web-development',
-        'ai-automation-workflows' => 'web-development',
-        'digital-marketing-seo' => 'seo',
-        'ui-ux-branding' => 'graphic-design',
-        'ecommerce-marketplaces' => 'ecommerce-management',
-        'creative-video-production' => 'video-editing',
-        'cloud-it-consulting' => 'web-development',
-    ];
-    $targetSlug = $legacyMap[$s] ?? $s;
-    header("Location: /" . $targetSlug . "-company-in-delhi", true, 301);
+// Redirect /{slug}-company-in-delhi -> /company/{slug}
+if (preg_match('#^/([a-zA-Z0-9_-]+)-company-in-delhi/?$#', $uri, $matches)) {
+    require_once __DIR__ . '/includes/functions.php';
+    $targetUrl = getServiceUrl($matches[1]);
+    $targetPath = parse_url($targetUrl, PHP_URL_PATH);
+    header("Location: " . $targetPath, true, 301);
     return true;
 }
-if (preg_match('#^/(?:services|company)/?$#', $uri) || $uri === '/services.php') {
-    header("Location: /company-in-delhi", true, 301);
+// Redirect /services/{slug} -> /company/{slug}
+if (preg_match('#^/services/([a-zA-Z0-9_-]+)/?$#', $uri, $matches)) {
+    require_once __DIR__ . '/includes/functions.php';
+    $targetUrl = getServiceUrl($matches[1]);
+    $targetPath = parse_url($targetUrl, PHP_URL_PATH);
+    header("Location: " . $targetPath, true, 301);
+    return true;
+}
+// Redirect /company-in-delhi, /services, /services.php -> /company
+if (preg_match('#^/(?:company-in-delhi|services)/?$#', $uri) || $uri === '/services.php') {
+    header("Location: /company", true, 301);
     return true;
 }
 

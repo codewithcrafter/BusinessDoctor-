@@ -32,17 +32,13 @@ We engineer digital solutions across four primary pillars to ensure scalable, fr
 ---
 
 ## 03 // Engineered Capabilities Built for Enterprise Scale
-We provide 10 specialized disciplines operating under one accountable standard:
-1. **[SMO — Social Media Optimization](https://demo.businesdoctor.com/smo-company-in-delhi)**: Profile architecture, bio conversion funnels, and organic social discovery.
-2. **[Google Business Profile Management](https://demo.businesdoctor.com/google-business-profile-company-in-delhi)**: Local 3-pack dominance, Google Maps optimization, and automated review acceleration.
-3. **[PPC / Paid Ads](https://demo.businesdoctor.com/ppc-paid-ads-company-in-delhi)**: High-ROAS campaigns across Google Search, Performance Max, Meta, and LinkedIn with server-side CAPI.
-4. **[Ecommerce Management](https://demo.businesdoctor.com/ecommerce-management-company-in-delhi)**: Amazon, Flipkart, and multi-channel storefront operations, A+ content, and Buy Box defense.
-5. **[Graphic Design](https://demo.businesdoctor.com/graphic-design-company-in-delhi)**: Distinctive brand identity, logo design, marketing collateral, pitch decks, and visual systems.
-6. **[SEO — Search Engine Optimization](https://demo.businesdoctor.com/seo-company-in-delhi)**: Technical audits, Core Web Vitals engineering, semantic topic silos, and authority backlinking.
-7. **[Social Media Marketing](https://demo.businesdoctor.com/social-media-marketing-company-in-delhi)**: Content calendars, short-form reels, community management, and paid social amplification.
-8. **[Product Photography](https://demo.businesdoctor.com/product-photography-company-in-delhi)**: Pure white background catalog photography, 360-degree spins, and stylized lifestyle staging.
-9. **[Video Editing](https://demo.businesdoctor.com/video-editing-company-in-delhi)**: Viral-engineered vertical reels, commercial ads, kinetic motion graphics, and sound design.
-10. **[Web Development](https://demo.businesdoctor.com/web-development-company-in-delhi)**: Custom PHP 8+, enterprise web applications, client portals, and sub-second performance.
+We provide 6 core integrated practice disciplines operating under one accountable standard:
+1. **[Web & Custom Software Development](https://demo.businesdoctor.com/company/web-software-development)**: High-performance enterprise web applications, custom portals, and fast PHP 8+ engineering.
+2. **[Digital Marketing & Performance Ads](https://demo.businesdoctor.com/company/digital-marketing-seo)**: Data-driven customer acquisition across Google Search, Performance Max, Meta, and SEO authority.
+3. **[UI/UX Design & Brand Identity](https://demo.businesdoctor.com/company/ui-ux-branding)**: Conversion-centered interface design, brand identity systems, and enterprise design architecture.
+4. **[E-Commerce & Marketplace Management](https://demo.businesdoctor.com/company/ecommerce-marketplaces)**: Full-funnel marketplace scaling, Amazon & multi-channel operations, and catalog conversion optimization.
+5. **[Creative Production & Video Marketing](https://demo.businesdoctor.com/company/creative-video-production)**: High-impact video creative, motion design, and commercial visual production.
+6. **[Cloud Solutions & IT Consulting](https://demo.businesdoctor.com/company/cloud-it-consulting)**: Enterprise cloud infrastructure, DevOps, cybersecurity audits, and uptime maintenance.
 
 ---
 
@@ -139,7 +135,7 @@ BusinessDoctor operates globally with distributed engineering leadership and pri
 ## 12 // Ready to Move Your Business Beyond Limitations?
 - **Schedule Discovery Consultation**: [Contact Practice Leads](https://demo.businesdoctor.com/contact.php)
 - **Complimentary Diagnostic**: [Request Free Digital Audit](https://demo.businesdoctor.com/audit.php)
-- **Review Service Disciplines**: [Explore All Practices](https://demo.businesdoctor.com/company-in-delhi)
+- **Review Service Disciplines**: [Explore All Practices](https://demo.businesdoctor.com/company)
 
 ---
 *Maintained by BusinessDoctor Enterprise Engineering.*

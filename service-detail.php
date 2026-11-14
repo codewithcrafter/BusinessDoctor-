@@ -9,61 +9,43 @@ require_once __DIR__ . '/includes/config.php';
 require_once __DIR__ . '/includes/db.php';
 require_once __DIR__ . '/includes/functions.php';
 
-// 1. Legacy URL 301 Permanent Redirect
-// All service detail pages follow the mandatory URL structure: /{service-slug}-company-in-delhi
+// 1. Permanent Redirects from non-canonical URL formats
+// All service detail pages follow the canonical URL structure: /company/{service-slug}
 $reqUri = $_SERVER['REQUEST_URI'] ?? '';
 $reqPath = parse_url($reqUri, PHP_URL_PATH) ?? '';
 $rawSlug = trim($_GET['slug'] ?? '');
 
-$legacySlugMap = [
-    'seo-services' => 'seo',
-    'smo-services' => 'smo',
-    'digital-marketing' => 'seo',
-    'strategic-consulting' => 'web-development',
-    'digital-engineering' => 'web-development',
-    'performance-marketing' => 'seo',
-    'brand-architecture' => 'graphic-design',
-    'ecommerce-acceleration' => 'ecommerce-management',
-    'creative-production' => 'video-editing',
-    'web-software-development' => 'web-development',
-    'digital-marketing-seo' => 'seo',
-    'ui-ux-branding' => 'graphic-design',
-    'ecommerce-marketplaces' => 'ecommerce-management',
-    'creative-video-production' => 'video-editing',
-    'cloud-it-consulting' => 'web-development',
-];
-
-// Clean base slug if -company-in-delhi was already present
+// Clean base slug
 $baseRawSlug = $rawSlug;
 if (str_ends_with($baseRawSlug, '-company-in-delhi')) {
     $baseRawSlug = substr($baseRawSlug, 0, -17);
 }
-
-// Redirect legacy slug aliases immediately to new /{canonical_slug}-company-in-delhi
-if ($baseRawSlug !== '' && isset($legacySlugMap[$baseRawSlug])) {
-    header("Location: " . getServiceUrl($legacySlugMap[$baseRawSlug]), true, 301);
-    exit;
+if (str_starts_with($baseRawSlug, 'company/')) {
+    $baseRawSlug = substr($baseRawSlug, 8);
+} elseif (str_starts_with($baseRawSlug, 'services/')) {
+    $baseRawSlug = substr($baseRawSlug, 9);
 }
+$baseRawSlug = trim($baseRawSlug, '/');
 
-// If client requested /services/{slug}, /company/{slug}, or /service-detail.php?slug=..., 301 redirect to /{slug}-company-in-delhi
-if (str_starts_with($reqPath, '/services/') || str_starts_with($reqPath, '/company/') || str_contains($reqUri, 'service-detail.php')) {
-    if ($baseRawSlug !== '') {
-        $p = getPracticeBySlug($baseRawSlug);
-        $redirectSlug = $p ? $p['slug'] : $baseRawSlug;
-        $targetUrl = getServiceUrl($redirectSlug);
-    } else {
-        $targetUrl = getServicesOverviewUrl();
-    }
-    header("Location: " . $targetUrl, true, 301);
-    exit;
-}
-
-// 2. Validate Service Slug
-$slug = trim($_GET['slug'] ?? '');
-if ($slug === '') {
+// Validate and fetch practice
+if ($baseRawSlug === '') {
     header("Location: " . getServicesOverviewUrl(), true, 301);
     exit;
 }
+
+$practice = getPracticeBySlug($baseRawSlug);
+
+// If client requested via legacy patterns or query param or alias, 301 redirect to canonical /company/{canonicalSlug}
+if ($practice) {
+    $canonicalUrl = getServiceUrl($practice['slug']);
+    $canonicalPath = parse_url($canonicalUrl, PHP_URL_PATH);
+    if ($reqPath !== $canonicalPath && $reqPath !== '/company/' . $practice['slug']) {
+        header("Location: " . $canonicalUrl, true, 301);
+        exit;
+    }
+}
+
+$slug = $baseRawSlug;
 
 $practice = getPracticeBySlug($slug);
 

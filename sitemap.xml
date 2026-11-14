@@ -7,7 +7,7 @@
     <priority>1.0</priority>
   </url>
   <url>
-    <loc>https://demo.businesdoctor.com/company-in-delhi</loc>
+    <loc>https://demo.businesdoctor.com/company</loc>
     <lastmod>2026-11-14</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
@@ -43,80 +43,62 @@
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://demo.businesdoctor.com/smo-company-in-delhi</loc>
+    <loc>https://demo.businesdoctor.com/company/web-software-development</loc>
     <lastmod>2026-11-14</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://demo.businesdoctor.com/google-business-profile-company-in-delhi</loc>
+    <loc>https://demo.businesdoctor.com/company/digital-marketing-seo</loc>
     <lastmod>2026-11-14</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://demo.businesdoctor.com/ppc-paid-ads-company-in-delhi</loc>
+    <loc>https://demo.businesdoctor.com/company/ui-ux-branding</loc>
     <lastmod>2026-11-14</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://demo.businesdoctor.com/ecommerce-management-company-in-delhi</loc>
+    <loc>https://demo.businesdoctor.com/company/ecommerce-marketplaces</loc>
     <lastmod>2026-11-14</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://demo.businesdoctor.com/graphic-design-company-in-delhi</loc>
+    <loc>https://demo.businesdoctor.com/company/creative-video-production</loc>
     <lastmod>2026-11-14</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://demo.businesdoctor.com/seo-company-in-delhi</loc>
+    <loc>https://demo.businesdoctor.com/company/cloud-it-consulting</loc>
     <lastmod>2026-11-14</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://demo.businesdoctor.com/social-media-marketing-company-in-delhi</loc>
-    <lastmod>2026-11-14</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://demo.businesdoctor.com/product-photography-company-in-delhi</loc>
-    <lastmod>2026-11-14</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://demo.businesdoctor.com/video-editing-company-in-delhi</loc>
-    <lastmod>2026-11-14</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://demo.businesdoctor.com/web-development-company-in-delhi</loc>
-    <lastmod>2026-11-14</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://demo.businesdoctor.com/case-study-detail.php?slug=fintech-saas-funnel-resuscitation</loc>
+    <loc>https://demo.businesdoctor.com/case-studies/fintech-saas-funnel-resuscitation</loc>
     <lastmod>2026-11-02</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://demo.businesdoctor.com/case-study-detail.php?slug=d2c-apparel-vital-infrastructure-overhaul</loc>
+    <loc>https://demo.businesdoctor.com/case-studies/d2c-apparel-vital-infrastructure-overhaul</loc>
     <lastmod>2026-11-02</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://demo.businesdoctor.com/case-study-detail.php?slug=multichannel-retail-marketplace-dominance</loc>
+    <loc>https://demo.businesdoctor.com/case-studies/multichannel-retail-marketplace-dominance</loc>
     <lastmod>2026-11-02</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://demo.businesdoctor.com/blog/automated-test-blog-1794647339</loc>
+    <lastmod>2026-11-14</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>

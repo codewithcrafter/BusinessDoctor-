@@ -112,7 +112,7 @@ if (!empty($envAppUrl) && !($isLocalHost && str_contains($envAppUrl, 'demo.busin
     if ($parts === ['.']) {
         $parts = [];
     }
-    if (end($parts) === 'admin' || end($parts) === 'api') {
+    if (!empty($parts) && in_array(end($parts), ['admin', 'api', 'scratch', 'tests'], true)) {
         array_pop($parts);
     }
     $basePath = empty($parts) ? '' : '/' . implode('/', $parts);

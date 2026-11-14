@@ -7,11 +7,21 @@
 - **Clean Markdown URL**: [https://demo.businesdoctor.com/blog.md](https://demo.businesdoctor.com/blog.md)
 - **Central Markdown URL**: [https://demo.businesdoctor.com/md/insights.md](https://demo.businesdoctor.com/md/insights.md)
 - **Master Markdown Index**: [https://demo.businesdoctor.com/md](https://demo.businesdoctor.com/md)
-- **Published Articles**: 4 technical perspectives
+- **Published Articles**: 5 technical perspectives
 
 ---
 
 ## Published Blog Articles
+
+### Automated Test Blog Post for SEO Sync
+- **Category**: Technology | **Read Time**: 6 min read
+- **Author**: BusinessDoctor Engineering (Senior Consultant) | **Published**: November 14, 2026
+- **Canonical Web URL**: [https://demo.businesdoctor.com/blog/automated-test-blog-1794647339](https://demo.businesdoctor.com/blog/automated-test-blog-1794647339)
+- **Clean Markdown URL**: [https://demo.businesdoctor.com/blog/automated-test-blog-1794647339.md](https://demo.businesdoctor.com/blog/automated-test-blog-1794647339.md)
+- **Central Markdown URL**: [https://demo.businesdoctor.com/md/insights/automated-test-blog-1794647339.md](https://demo.businesdoctor.com/md/insights/automated-test-blog-1794647339.md)
+
+**Executive Summary:**
+Test summary for automated sync verification.
 
 ### Why Your Website Is Losing Customers: 7 Performance Issues You Should Fix
 - **Category**: Web & Digital Strategy | **Read Time**: 6 min read

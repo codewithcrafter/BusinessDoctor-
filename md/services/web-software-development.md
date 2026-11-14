@@ -1,13 +1,13 @@
-# Web Development
+# Web & Custom Software Development
 
-> High-Performance Platforms, Custom Web Apps & Scalable Portals
+> High-Performance Web Platforms & Enterprise Applications
 
 ## Discipline Information
-- **Practice Area**: 10 Web Development
-- **Canonical Web URL**: [https://demo.businesdoctor.com/web-development-company-in-delhi](https://demo.businesdoctor.com/web-development-company-in-delhi)
-- **Clean Markdown URL**: [https://demo.businesdoctor.com/web-development-company-in-delhi.md](https://demo.businesdoctor.com/web-development-company-in-delhi.md)
-- **Central Markdown URL**: [https://demo.businesdoctor.com/md/services/web-development.md](https://demo.businesdoctor.com/md/services/web-development.md)
-- **Direct Consultation**: [Schedule Practice Scope](http://demo.businesdoctor.com/scratch/contact.php?service=Web+Development)
+- **Practice Area**: 01 Web & Custom Software Development
+- **Canonical Web URL**: [https://demo.businesdoctor.com/company/web-software-development](https://demo.businesdoctor.com/company/web-software-development)
+- **Clean Markdown URL**: [https://demo.businesdoctor.com/company/web-software-development.md](https://demo.businesdoctor.com/company/web-software-development.md)
+- **Central Markdown URL**: [https://demo.businesdoctor.com/md/services/web-software-development.md](https://demo.businesdoctor.com/md/services/web-software-development.md)
+- **Direct Consultation**: [Schedule Practice Scope](http://demo.businesdoctor.com/contact.php?service=Web+%26+Custom+Software+Development)
 
 ---
 
@@ -20,7 +20,7 @@ HIGH-PERFORMANCE WEB & SOFTWARE ENGINEERING
           [
             Get a Free Consultation
 
-          ](http://demo.businesdoctor.com/scratch/contact.php?service=Web+Development)
+          ](http://demo.businesdoctor.com/contact.php?service=Web+%26+Custom+Software+Development)
           [
             Explore Our Services
 
@@ -89,7 +89,7 @@ Verified benchmark engineered across production client deployments.
           [
             Schedule Diagnostic Call
 
-          ](http://demo.businesdoctor.com/scratch/contact.php?service=Web+Development)
+          ](http://demo.businesdoctor.com/contact.php?service=Web+%26+Custom+Software+Development)
 
             TELEMETRY BENCHMARK CONSOLE
 
@@ -141,7 +141,7 @@ Bespoke web applications built from scratch with modern PHP 8+, clean MVC archit
           [
             Inquire About This Service
 
-          ](http://demo.businesdoctor.com/scratch/contact.php?service=Web+Development&capability=Custom+Web+Application+Engineering)
+          ](http://demo.businesdoctor.com/contact.php?service=Web+%26+Custom+Software+Development&capability=Custom+Web+Application+Engineering)
 
 ### Enterprise Corporate & Service Websites
 
@@ -161,7 +161,7 @@ Authoritative corporate websites engineered for lightning-fast speeds, flawless 
           [
             Inquire About This Service
 
-          ](http://demo.businesdoctor.com/scratch/contact.php?service=Web+Development&capability=Enterprise+Corporate+%26+Service+Websites)
+          ](http://demo.businesdoctor.com/contact.php?service=Web+%26+Custom+Software+Development&capability=Enterprise+Corporate+%26+Service+Websites)
 
 ### Client Portals & B2B Dashboards
 
@@ -181,7 +181,7 @@ Secure, authenticated client web portals and administrative dashboards for docum
           [
             Inquire About This Service
 
-          ](http://demo.businesdoctor.com/scratch/contact.php?service=Web+Development&capability=Client+Portals+%26+B2B+Dashboards)
+          ](http://demo.businesdoctor.com/contact.php?service=Web+%26+Custom+Software+Development&capability=Client+Portals+%26+B2B+Dashboards)
 
 ### High-Speed REST API Architecture
 
@@ -201,7 +201,7 @@ Robust, documented RESTful APIs that connect your web systems to mobile apps, CR
           [
             Inquire About This Service
 
-          ](http://demo.businesdoctor.com/scratch/contact.php?service=Web+Development&capability=High-Speed+REST+API+Architecture)
+          ](http://demo.businesdoctor.com/contact.php?service=Web+%26+Custom+Software+Development&capability=High-Speed+REST+API+Architecture)
 
 ### Database Architecture & Query Optimization
 
@@ -221,7 +221,7 @@ Deep schema design, query indexing, and performance tuning for MySQL, MariaDB, a
           [
             Inquire About This Service
 
-          ](http://demo.businesdoctor.com/scratch/contact.php?service=Web+Development&capability=Database+Architecture+%26+Query+Optimization)
+          ](http://demo.businesdoctor.com/contact.php?service=Web+%26+Custom+Software+Development&capability=Database+Architecture+%26+Query+Optimization)
 
 ### Legacy Modernization & Code Refactoring
 
@@ -241,7 +241,7 @@ Revitalizing slow, outdated PHP and legacy systems, upgrading to modern runtimes
           [
             Inquire About This Service
 
-          ](http://demo.businesdoctor.com/scratch/contact.php?service=Web+Development&capability=Legacy+Modernization+%26+Code+Refactoring)
+          ](http://demo.businesdoctor.com/contact.php?service=Web+%26+Custom+Software+Development&capability=Legacy+Modernization+%26+Code+Refactoring)
 
         STRUCTURED EXECUTION TIMELINE
 
@@ -568,11 +568,11 @@ Yes. We offer structured Service Level Agreement (SLA) retainer plans that inclu
               [
                 Get a Free Consultation
 
-              ](http://demo.businesdoctor.com/scratch/contact.php?service=Web+Development)
+              ](http://demo.businesdoctor.com/contact.php?service=Web+%26+Custom+Software+Development)
               [
                 Request Digital Audit
 
-              ](http://demo.businesdoctor.com/scratch/audit.php)
+              ](http://demo.businesdoctor.com/audit.php)
 
                 +1 (800) 492-3628
 
