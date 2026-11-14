@@ -41,6 +41,10 @@ AddType text/markdown .md
     # 1. Clean Markdown Gateway: /md or /md/
     RewriteRule ^md/?$ markdown-router.php [L,QSA]
 
+    # Direct static serving for static .php.md endpoints when physical file exists in /md/
+    RewriteCond %{DOCUMENT_ROOT}/md/$1.md -f
+    RewriteRule ^([a-zA-Z0-9_-]+)\.php\.md$ md/$1.md [L]
+
     # 2. Universal Markdown Routing:
     # Matches any request ending in .md (e.g. /.md, /about.php.md, /services/foo.md, /insight-detail.php.md)
     # or targeting the central /md/... repository
