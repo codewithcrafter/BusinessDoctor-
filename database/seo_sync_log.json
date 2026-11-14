@@ -1,42 +1,42 @@
 {
-    "last_sync_timestamp": "2026-11-14 05:05:59",
-    "last_sync_iso": "2026-11-14T05:05:59+00:00",
-    "trigger_reason": "Lifecycle Test Completed & Cleaned",
+    "last_sync_timestamp": "2026-11-14 06:13:54",
+    "last_sync_iso": "2026-11-14T06:13:54+00:00",
+    "trigger_reason": "10 Services Architecture Expansion",
     "status": "success",
-    "duration_ms": 126.68,
+    "duration_ms": 170.91,
     "errors": [],
     "metrics": {
         "static_pages": 7,
-        "services": 6,
+        "services": 10,
         "case_studies": 3,
         "insights": 4,
-        "total_urls_in_sitemap": 20,
-        "total_md_files": 21
+        "total_urls_in_sitemap": 24,
+        "total_md_files": 25
     },
     "files": {
         "sitemap_xml": {
             "path": "sitemap.xml",
-            "size_bytes": 4088,
+            "size_bytes": 4795,
             "status": "written"
         },
         "llms_txt": {
             "path": "llms.txt",
-            "size_bytes": 5324,
+            "size_bytes": 6304,
             "status": "written"
         },
         "llms_md": {
             "path": "llms.md",
-            "size_bytes": 16507,
+            "size_bytes": 21485,
             "status": "written"
         },
         "md_index": {
             "path": "md/index.md",
-            "size_bytes": 8118,
+            "size_bytes": 9133,
             "status": "written"
         },
         "md_files": {
-            "count_written": 21,
-            "count_purged": 1,
+            "count_written": 25,
+            "count_purged": 6,
             "status": "synchronized"
         }
     }

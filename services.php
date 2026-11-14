@@ -11,7 +11,7 @@ require_once __DIR__ . '/includes/db.php';
 require_once __DIR__ . '/includes/functions.php';
 
 $pageTitle = 'IT & Digital Services — BusinessDoctor Enterprise Technology';
-$pageDescription = 'Explore BusinessDoctor\'s six integrated enterprise disciplines: Web & Software Development, Digital Marketing, UI/UX Design, E-Commerce, Video Production, and Cloud IT Consulting.';
+$pageDescription = 'Explore BusinessDoctor\'s 10 integrated digital & technology disciplines: SMO, Google Business Profile Management, PPC / Paid Ads, Ecommerce Management, Graphic Design, SEO, Social Media Marketing, Product Photography, Video Editing, and Web Development.';
 
 $practices = getPracticeAreas();
 
@@ -23,13 +23,13 @@ require_once __DIR__ . '/includes/header.php';
   <div class="container text-center" style="max-width: 900px; margin: 0 auto;">
     <div class="eyebrow-badge">
       <span class="pill-dot"></span>
-      <span>ENTERPRISE CAPABILITIES</span>
+      <span>DIGITAL &amp; TECHNOLOGY SERVICES</span>
     </div>
     <h1 class="hero-headline-oversized" style="font-size: clamp(2.4rem, 4.5vw, 3.8rem); margin-top: 1rem; margin-bottom: 1.5rem;">
       Full-Stack Technology &amp; <br><span class="text-brand">Digital Growth Disciplines</span>
     </h1>
     <p class="hero-lead-text" style="max-width: 780px; margin: 0 auto 2rem;">
-      We engineer high-performance web software, manage profitable paid acquisition portfolios, and build distinctive brand architectures. Six specialized disciplines operating under one accountable standard.
+      We engineer high-performance web software, manage profitable paid acquisition portfolios, and build distinctive brand architectures. Ten specialized disciplines operating under one accountable standard.
     </p>
   </div>
 </section>

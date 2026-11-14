@@ -51,6 +51,14 @@ AddType text/markdown .md
     RewriteCond %{REQUEST_URI} !^/markdown-router\.php
     RewriteRule (\.md$|^md/) markdown-router.php [L,QSA]
 
+    # 301 Redirect legacy service slugs to new service slugs
+    RewriteRule ^services/web-software-development/?$ /services/web-development [R=301,L]
+    RewriteRule ^services/digital-marketing-seo/?$ /services/seo [R=301,L]
+    RewriteRule ^services/ui-ux-branding/?$ /services/graphic-design [R=301,L]
+    RewriteRule ^services/ecommerce-marketplaces/?$ /services/ecommerce-management [R=301,L]
+    RewriteRule ^services/creative-video-production/?$ /services/video-editing [R=301,L]
+    RewriteRule ^services/cloud-it-consulting/?$ /services/web-development [R=301,L]
+
     # Clean Service URL Rewriting: /services/{slug} -> /service-detail.php?slug={slug}
     RewriteCond %{REQUEST_FILENAME} !-f
     RewriteCond %{REQUEST_FILENAME} !-d

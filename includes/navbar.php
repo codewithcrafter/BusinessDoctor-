@@ -38,9 +38,8 @@ $practiceAreas = getPracticeAreas();
         <div class="mega-menu" role="region" aria-label="Services Mega Menu">
           <div class="mega-menu-inner container">
             <div class="mega-menu-header">
-              <span class="mega-eyebrow">ENTERPRISE CAPABILITIES</span>
-              <p class="mega-subhead">Engineered technology and full-funnel digital capabilities designed for enterprise
-                growth.</p>
+              <span class="mega-eyebrow">DIGITAL &amp; TECHNOLOGY SERVICES</span>
+              <p class="mega-subhead">Explore our specialized digital capabilities engineered to scale modern businesses.</p>
             </div>
 
             <div class="mega-menu-grid">
@@ -78,7 +77,7 @@ $practiceAreas = getPracticeAreas();
                     </svg>
                   </a>
                   <div class="mega-highlight-footer">
-                    <a href="<?= appUrl('services.php') ?>" class="text-link">Explore All Capabilities &rarr;</a>
+                    <a href="<?= appUrl('services.php') ?>" class="text-link">Explore All Services &rarr;</a>
                   </div>
                 </div>
               </div>
@@ -169,11 +168,11 @@ $practiceAreas = getPracticeAreas();
         <div class="mobile-submenu-panel" id="mobileServicesSubmenu" role="region"
           aria-labelledby="mobileServicesToggle">
           <div class="mobile-submenu-inner">
-            <div class="mobile-submenu-eyebrow">ENTERPRISE CAPABILITIES</div>
+            <div class="mobile-submenu-eyebrow">DIGITAL &amp; TECHNOLOGY SERVICES</div>
             <a href="<?= appUrl('services.php') ?>"
               class="mobile-submenu-link mobile-submenu-overview <?= isActivePage('services.php') ?>">
               <span class="mobile-sublink-num">&rarr;</span>
-              <span class="mobile-sublink-name">Overview &ndash; All IT Services</span>
+              <span class="mobile-sublink-name">Overview &ndash; All 10 Services</span>
             </a>
             <?php
             $currentNavSlug = $_GET['slug'] ?? '';

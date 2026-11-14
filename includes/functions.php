@@ -1060,12 +1060,18 @@ function getPracticeBySlug(string $slug): ?array
     }
 
     $legacyMap = [
-        'strategic-consulting' => 'cloud-it-consulting',
-        'digital-engineering' => 'web-software-development',
-        'performance-marketing' => 'digital-marketing-seo',
-        'brand-architecture' => 'ui-ux-branding',
-        'ecommerce-acceleration' => 'ecommerce-marketplaces',
-        'creative-production' => 'creative-video-production'
+        'strategic-consulting' => 'web-development',
+        'digital-engineering' => 'web-development',
+        'performance-marketing' => 'seo',
+        'brand-architecture' => 'graphic-design',
+        'ecommerce-acceleration' => 'ecommerce-management',
+        'creative-production' => 'video-editing',
+        'web-software-development' => 'web-development',
+        'digital-marketing-seo' => 'seo',
+        'ui-ux-branding' => 'graphic-design',
+        'ecommerce-marketplaces' => 'ecommerce-management',
+        'creative-video-production' => 'video-editing',
+        'cloud-it-consulting' => 'web-development',
     ];
 
     if (isset($legacyMap[$slug]) && isset($practices[$legacyMap[$slug]])) {

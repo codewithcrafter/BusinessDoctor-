@@ -1,0 +1,268 @@
+<?php
+/**
+ * BusinessDoctor Executive Admin — Create New Service Discipline
+ */
+declare(strict_types=1);
+
+require_once __DIR__ . '/includes/auth.php';
+
+$pdo = Database::getConnection();
+$errors = [];
+
+if ($_SERVER['REQUEST_METHOD'] === 'POST') {
+    if (!verifyCsrfToken($_POST['csrf_token'] ?? '')) {
+        $errors[] = 'Security token expired. Please reload and try again.';
+    } else {
+        $name = trim($_POST['name'] ?? '');
+        $shortTitle = trim($_POST['short_title'] ?? '');
+        $number = trim($_POST['number'] ?? '');
+        $slug = trim($_POST['slug'] ?? '');
+        $sortOrder = (int)($_POST['sort_order'] ?? 0);
+        $tagline = trim($_POST['tagline'] ?? '');
+        $summary = trim($_POST['summary'] ?? '');
+        $description = trim($_POST['description'] ?? '');
+        $seoTitle = trim($_POST['seo_title'] ?? '');
+        $seoDescription = trim($_POST['seo_description'] ?? '');
+        $featuredImage = trim($_POST['featured_image'] ?? '');
+        $icon = trim($_POST['icon'] ?? '');
+        $isActive = isset($_POST['is_active']) ? 1 : 0;
+
+        if ($slug === '' && $name !== '') {
+            $slug = strtolower(preg_replace('/[^a-zA-Z0-9]+/', '-', $name));
+            $slug = trim($slug, '-');
+        }
+
+        $rawDeliverables = trim($_POST['deliverables'] ?? '');
+        $deliverablesArray = array_values(array_filter(array_map('trim', explode("\n", $rawDeliverables))));
+
+        $rawKpis = trim($_POST['kpis'] ?? '');
+        $kpisArray = array_values(array_filter(array_map('trim', explode("\n", $rawKpis))));
+
+        $rawFaqs = trim($_POST['faqs'] ?? '');
+        $faqsArray = [];
+        if ($rawFaqs !== '') {
+            $lines = explode("\n", $rawFaqs);
+            foreach ($lines as $line) {
+                $line = trim($line);
+                if (str_contains($line, '|')) {
+                    [$q, $a] = explode('|', $line, 2);
+                    $faqsArray[] = ['q' => trim($q), 'a' => trim($a)];
+                } elseif ($line !== '') {
+                    $faqsArray[] = ['q' => $line, 'a' => ''];
+                }
+            }
+        }
+
+        if ($name === '') $errors[] = 'Service name cannot be empty.';
+        if ($summary === '') $errors[] = 'Service summary cannot be empty.';
+        if ($slug === '') $errors[] = 'Service slug cannot be empty.';
+
+        // Check uniqueness
+        $chk = $pdo->prepare("SELECT id FROM services WHERE slug = ? LIMIT 1");
+        $chk->execute([$slug]);
+        if ($chk->fetch()) {
+            $errors[] = "A service with slug '{$slug}' already exists.";
+        }
+
+        if (empty($errors)) {
+            $ins = $pdo->prepare("
+                INSERT INTO services (
+                    number, name, short_title, slug, tagline, summary, description,
+                    deliverables, kpis, icon, seo_title, seo_description, faqs,
+                    featured_image, sort_order, is_active, created_at, updated_at
+                ) VALUES (
+                    ?, ?, ?, ?, ?, ?, ?,
+                    ?, ?, ?, ?, ?, ?,
+                    ?, ?, ?, CURRENT_TIMESTAMP, CURRENT_TIMESTAMP
+                )
+            ");
+            $ins->execute([
+                $number,
+                $name,
+                $shortTitle,
+                $slug,
+                $tagline,
+                $summary,
+                $description,
+                json_encode($deliverablesArray),
+                json_encode($kpisArray),
+                $icon,
+                $seoTitle,
+                $seoDescription,
+                json_encode($faqsArray),
+                $featuredImage,
+                $sortOrder,
+                $isActive
+            ]);
+
+            // Synchronize SQLite
+            try {
+                $sqlitePath = ROOT_PATH . '/database/businessdoctor.sqlite';
+                if (file_exists($sqlitePath)) {
+                    $sqlitePdo = new PDO('sqlite:' . $sqlitePath);
+                    $sqlitePdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+                    $sqliteIns = $sqlitePdo->prepare("
+                        INSERT INTO services (
+                            number, name, short_title, slug, tagline, summary, description,
+                            deliverables, kpis, icon, seo_title, seo_description, faqs,
+                            featured_image, sort_order, is_active, created_at, updated_at
+                        ) VALUES (
+                            ?, ?, ?, ?, ?, ?, ?,
+                            ?, ?, ?, ?, ?, ?,
+                            ?, ?, ?, CURRENT_TIMESTAMP, CURRENT_TIMESTAMP
+                        )
+                    ");
+                    $sqliteIns->execute([
+                        $number, $name, $shortTitle, $slug, $tagline, $summary, $description,
+                        json_encode($deliverablesArray), json_encode($kpisArray), $icon,
+                        $seoTitle, $seoDescription, json_encode($faqsArray), $featuredImage,
+                        $sortOrder, $isActive
+                    ]);
+                }
+            } catch (Throwable $t) {}
+
+            setFlashMessage('success', "Service '{$name}' created successfully.");
+            require_once __DIR__ . '/../includes/seo-sync.php';
+            SeoSyncEngine::syncAll("Service created: {$name}");
+            header("Location: services.php");
+            exit;
+        }
+    }
+}
+
+require_once __DIR__ . '/includes/header.php';
+?>
+
+<div class="adm-header">
+  <div class="adm-header-title">
+    <div class="adm-badge">CMS // CREATE SERVICE</div>
+    <h1>Add New Service Discipline</h1>
+    <p class="adm-subtitle">Create a new specialized practice area. Automatically updates navigation menus, sitemaps, and Markdown repositories.</p>
+  </div>
+  <div>
+    <a href="services.php" class="btn-adm btn-adm-secondary">Back to Services</a>
+  </div>
+</div>
+
+<?php if (!empty($errors)): ?>
+  <div class="alert alert-error" style="margin-bottom: 1.5rem; padding: 1rem 1.25rem; border-radius: 8px; background: rgba(239, 68, 68, 0.15); border: 1px solid #ef4444; color: #fff;">
+    <?php foreach ($errors as $err): ?>
+      <div>● <?= e($err) ?></div>
+    <?php endforeach; ?>
+  </div>
+<?php endif; ?>
+
+<form method="POST" action="service-create.php">
+  <input type="hidden" name="csrf_token" value="<?= getCsrfToken() ?>">
+
+  <div class="adm-editor-grid">
+    <div style="display: flex; flex-direction: column; gap: 1.5rem;">
+      <div class="adm-card">
+        <h3 class="adm-card-title">Core Service Information</h3>
+        
+        <div class="form-group" style="margin-bottom: 1.25rem;">
+          <label class="form-label" for="name">Service Full Name</label>
+          <input type="text" id="name" name="name" class="form-control" value="<?= e($_POST['name'] ?? '') ?>" placeholder="e.g. Conversion Rate Optimization" required>
+        </div>
+
+        <div style="display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 1rem; margin-bottom: 1.25rem;">
+          <div class="form-group">
+            <label class="form-label" for="short_title">Short Title (Nav &amp; Badges)</label>
+            <input type="text" id="short_title" name="short_title" class="form-control" value="<?= e($_POST['short_title'] ?? '') ?>" placeholder="e.g. CRO" required>
+          </div>
+          <div class="form-group">
+            <label class="form-label" for="number">Discipline Number</label>
+            <input type="text" id="number" name="number" class="form-control" value="<?= e($_POST['number'] ?? '11') ?>" placeholder="e.g. 11" required>
+          </div>
+          <div class="form-group">
+            <label class="form-label" for="slug">Clean URL Slug</label>
+            <input type="text" id="slug" name="slug" class="form-control" value="<?= e($_POST['slug'] ?? '') ?>" placeholder="e.g. conversion-rate-optimization" required>
+          </div>
+        </div>
+
+        <div class="form-group" style="margin-bottom: 1.25rem;">
+          <label class="form-label" for="tagline">Service Tagline / Subtitle</label>
+          <input type="text" id="tagline" name="tagline" class="form-control" value="<?= e($_POST['tagline'] ?? '') ?>" placeholder="e.g. Data-Driven Funnel Experiments &amp; Revenue Lift">
+        </div>
+
+        <div class="form-group" style="margin-bottom: 1.25rem;">
+          <label class="form-label" for="summary">Executive Summary (Cards &amp; Mega Menu)</label>
+          <textarea id="summary" name="summary" class="form-control" rows="3" placeholder="Brief 1-2 sentence description for navigation cards..." required><?= e($_POST['summary'] ?? '') ?></textarea>
+        </div>
+
+        <div class="form-group">
+          <label class="form-label" for="description">Full Service Description (Hero Section)</label>
+          <textarea id="description" name="description" class="form-control" rows="5" placeholder="Detailed architectural description for the service landing page..."><?= e($_POST['description'] ?? '') ?></textarea>
+        </div>
+      </div>
+
+      <div class="adm-card">
+        <h3 class="adm-card-title">Deliverables &amp; Performance Benchmarks</h3>
+        <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 1.25rem;">
+          <div class="form-group">
+            <label class="form-label" for="deliverables">Deliverables (One item per line)</label>
+            <textarea id="deliverables" name="deliverables" class="form-control" rows="6" placeholder="Deliverable 1&#10;Deliverable 2&#10;Deliverable 3"><?= e($_POST['deliverables'] ?? '') ?></textarea>
+          </div>
+          <div class="form-group">
+            <label class="form-label" for="kpis">Target KPIs (One item per line)</label>
+            <textarea id="kpis" name="kpis" class="form-control" rows="6" placeholder="+35% Conversion Lift&#10;Zero Guesswork Protocols"><?= e($_POST['kpis'] ?? '') ?></textarea>
+          </div>
+        </div>
+      </div>
+
+      <div class="adm-card">
+        <h3 class="adm-card-title">SEO &amp; Search Optimization</h3>
+        <div class="form-group" style="margin-bottom: 1.25rem;">
+          <label class="form-label" for="seo_title">Custom SEO Meta Title</label>
+          <input type="text" id="seo_title" name="seo_title" class="form-control" value="<?= e($_POST['seo_title'] ?? '') ?>" placeholder="Service Name — BusinessDoctor">
+        </div>
+        <div class="form-group">
+          <label class="form-label" for="seo_description">Custom SEO Meta Description</label>
+          <textarea id="seo_description" name="seo_description" class="form-control" rows="3" placeholder="SEO meta description..."><?= e($_POST['seo_description'] ?? '') ?></textarea>
+        </div>
+      </div>
+
+      <div class="adm-card">
+        <h3 class="adm-card-title">Frequently Asked Questions (FAQs)</h3>
+        <p style="font-size: 0.85rem; color: var(--adm-text-muted); margin-bottom: 1rem;">
+          Enter each FAQ on a new line using format: <code>Question | Answer</code>
+        </p>
+        <textarea id="faqs" name="faqs" class="form-control" rows="6" placeholder="How long does an audit take? | Typically 5 business days."><?= e($_POST['faqs'] ?? '') ?></textarea>
+      </div>
+    </div>
+
+    <!-- Sidebar Settings -->
+    <div style="display: flex; flex-direction: column; gap: 1.5rem;">
+      <div class="adm-card">
+        <h3 class="adm-card-title">Publication Status</h3>
+        <label style="display: flex; align-items: center; gap: 0.65rem; cursor: pointer; margin-bottom: 1.25rem;">
+          <input type="checkbox" name="is_active" value="1" checked style="width: 18px; height: 18px;">
+          <span style="font-size: 0.95rem; color: #fff;">Service Active &amp; Discoverable</span>
+        </label>
+
+        <div class="form-group" style="margin-bottom: 1.25rem;">
+          <label class="form-label" for="sort_order">Sort Order Priority</label>
+          <input type="number" id="sort_order" name="sort_order" class="form-control" value="11">
+        </div>
+
+        <button type="submit" class="btn-adm btn-adm-primary" style="width: 100%; justify-content: center; padding: 0.75rem;">
+          <span>Publish New Service</span>
+        </button>
+      </div>
+
+      <div class="adm-card">
+        <h3 class="adm-card-title">Visual Branding &amp; Icon</h3>
+        <div class="form-group" style="margin-bottom: 1rem;">
+          <label class="form-label" for="featured_image">Featured Image URL</label>
+          <input type="text" id="featured_image" name="featured_image" class="form-control" placeholder="assets/img/services/...">
+        </div>
+        <div class="form-group">
+          <label class="form-label" for="icon">Lucide SVG Code</label>
+          <textarea id="icon" name="icon" class="form-control" rows="4" style="font-family: var(--adm-font-mono); font-size: 0.75rem;" placeholder='<svg viewBox="0 0 24 24" ...>...</svg>'></textarea>
+        </div>
+      </div>
+    </div>
+  </div>
+</form>
+
+<?php require_once __DIR__ . '/includes/footer.php'; ?>

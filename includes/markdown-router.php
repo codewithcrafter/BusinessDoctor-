@@ -222,6 +222,26 @@ class MarkdownRouter
      */
     private static function renderServiceMarkdown(string $slug): void
     {
+        $legacyRedirects = [
+            'strategic-consulting' => 'web-development',
+            'digital-engineering' => 'web-development',
+            'performance-marketing' => 'seo',
+            'brand-architecture' => 'graphic-design',
+            'ecommerce-acceleration' => 'ecommerce-management',
+            'creative-production' => 'video-editing',
+            'web-software-development' => 'web-development',
+            'digital-marketing-seo' => 'seo',
+            'ui-ux-branding' => 'graphic-design',
+            'ecommerce-marketplaces' => 'ecommerce-management',
+            'creative-video-production' => 'video-editing',
+            'cloud-it-consulting' => 'web-development',
+        ];
+
+        if (isset($legacyRedirects[$slug])) {
+            header("Location: " . SeoSyncEngine::getBaseUrl() . "/services/" . $legacyRedirects[$slug] . ".md", true, 301);
+            exit;
+        }
+
         $services = SeoSyncEngine::getActiveServices();
         if (!isset($services[$slug])) {
             self::sendNotFound("Practice discipline '{$slug}' does not exist or is not active.");

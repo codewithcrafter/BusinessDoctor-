@@ -7,7 +7,7 @@ declare(strict_types=1);
 require_once __DIR__ . '/includes/auth.php';
 
 $pdo = Database::getConnection();
-$services = $pdo->query("SELECT * FROM services ORDER BY sort_order ASC, id ASC")->fetchAll(PDO::FETCH_ASSOC);
+$services = $pdo->query("SELECT * FROM services ORDER BY is_active DESC, sort_order ASC, id ASC")->fetchAll(PDO::FETCH_ASSOC);
 
 require_once __DIR__ . '/includes/header.php';
 ?>
@@ -16,7 +16,12 @@ require_once __DIR__ . '/includes/header.php';
   <div class="adm-header-title">
     <div class="adm-badge">CMS // PRACTICE AREAS</div>
     <h1>IT &amp; Digital Services Manager</h1>
-    <p class="adm-subtitle">Manage practice areas, capabilities, descriptions, and deliverables stored in persistent SQLite storage.</p>
+    <p class="adm-subtitle">Manage all 10 practice areas, capabilities, descriptions, and deliverables across MySQL and SQLite storage.</p>
+  </div>
+  <div>
+    <a href="service-create.php" class="btn-adm btn-adm-primary">
+      <span>+ Add New Service</span>
+    </a>
   </div>
 </div>
 
@@ -53,7 +58,7 @@ require_once __DIR__ . '/includes/header.php';
               /services/<?= e($s['slug']) ?>
             </td>
             <td style="padding: 1rem;">
-              <span class="status-pill status-published">
+              <span class="status-pill <?= $s['is_active'] ? 'status-published' : 'status-draft' ?>">
                 <?= $s['is_active'] ? 'Active' : 'Disabled' ?>
               </span>
             </td>

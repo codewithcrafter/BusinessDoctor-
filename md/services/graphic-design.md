@@ -1,13 +1,13 @@
-# UI/UX Design & Brand Identity
+# Graphic Design
 
-> Human-Centered Digital Interfaces & Distinct Visual Branding
+> Brand Identity Systems, Commercial Collateral & Visual Direction
 
 ## Discipline Information
-- **Practice Area**: 03 UI/UX Design & Brand Identity
-- **Canonical Web URL**: [https://demo.businesdoctor.com/services/ui-ux-branding](https://demo.businesdoctor.com/services/ui-ux-branding)
-- **Clean Markdown URL**: [https://demo.businesdoctor.com/services/ui-ux-branding.md](https://demo.businesdoctor.com/services/ui-ux-branding.md)
-- **Central Markdown URL**: [https://demo.businesdoctor.com/md/services/ui-ux-branding.md](https://demo.businesdoctor.com/md/services/ui-ux-branding.md)
-- **Direct Consultation**: [Schedule Practice Scope](http://demo.businesdoctor.com/scratch/contact.php?service=UI%2FUX+Design+%26+Brand+Identity)
+- **Practice Area**: 05 Graphic Design
+- **Canonical Web URL**: [https://demo.businesdoctor.com/services/graphic-design](https://demo.businesdoctor.com/services/graphic-design)
+- **Clean Markdown URL**: [https://demo.businesdoctor.com/services/graphic-design.md](https://demo.businesdoctor.com/services/graphic-design.md)
+- **Central Markdown URL**: [https://demo.businesdoctor.com/md/services/graphic-design.md](https://demo.businesdoctor.com/md/services/graphic-design.md)
+- **Direct Consultation**: [Schedule Practice Scope](http://demo.businesdoctor.com/scratch/contact.php?service=Graphic+Design)
 
 ---
 
@@ -20,7 +20,7 @@ HUMAN-CENTERED DESIGN & BRAND SYSTEMS
           [
             Get a Free Consultation
 
-          ](http://demo.businesdoctor.com/scratch/contact.php?service=UI%2FUX+Design+%26+Brand+Identity)
+          ](http://demo.businesdoctor.com/scratch/contact.php?service=Graphic+Design)
           [
             Explore Our Services
 
@@ -89,7 +89,7 @@ Verified benchmark engineered across production client deployments.
           [
             Schedule Diagnostic Call
 
-          ](http://demo.businesdoctor.com/scratch/contact.php?service=UI%2FUX+Design+%26+Brand+Identity)
+          ](http://demo.businesdoctor.com/scratch/contact.php?service=Graphic+Design)
 
             DESIGN TELEMETRY MATRIX
 
@@ -140,7 +140,7 @@ Scalable design systems built in Figma with reusable components, responsive auto
           [
             Inquire About This Service
 
-          ](http://demo.businesdoctor.com/scratch/contact.php?service=UI%2FUX+Design+%26+Brand+Identity&capability=Enterprise+UI%2FUX+Design+Systems)
+          ](http://demo.businesdoctor.com/scratch/contact.php?service=Graphic+Design&capability=Enterprise+UI%2FUX+Design+Systems)
 
 ### Corporate Brand Identity & Visual Language
 
@@ -160,7 +160,7 @@ Distilling your company values into an unmistakable corporate identity: logo sui
           [
             Inquire About This Service
 
-          ](http://demo.businesdoctor.com/scratch/contact.php?service=UI%2FUX+Design+%26+Brand+Identity&capability=Corporate+Brand+Identity+%26+Visual+Language)
+          ](http://demo.businesdoctor.com/scratch/contact.php?service=Graphic+Design&capability=Corporate+Brand+Identity+%26+Visual+Language)
 
 ### Web & Mobile App Product Design
 
@@ -180,7 +180,7 @@ End-to-end UX/UI architecture for SaaS platforms, client portals, mobile applica
           [
             Inquire About This Service
 
-          ](http://demo.businesdoctor.com/scratch/contact.php?service=UI%2FUX+Design+%26+Brand+Identity&capability=Web+%26+Mobile+App+Product+Design)
+          ](http://demo.businesdoctor.com/scratch/contact.php?service=Graphic+Design&capability=Web+%26+Mobile+App+Product+Design)
 
 ### Conversion-Focused Landing Page UX
 
@@ -200,7 +200,7 @@ High-impact landing pages structured with psychological visual hierarchy, strate
           [
             Inquire About This Service
 
-          ](http://demo.businesdoctor.com/scratch/contact.php?service=UI%2FUX+Design+%26+Brand+Identity&capability=Conversion-Focused+Landing+Page+UX)
+          ](http://demo.businesdoctor.com/scratch/contact.php?service=Graphic+Design&capability=Conversion-Focused+Landing+Page+UX)
 
 ### WCAG 2.2 AA Accessibility Audits & Remediation
 
@@ -220,7 +220,7 @@ Rigorous accessibility testing ensuring color contrast ratios, focus states, and
           [
             Inquire About This Service
 
-          ](http://demo.businesdoctor.com/scratch/contact.php?service=UI%2FUX+Design+%26+Brand+Identity&capability=WCAG+2.2+AA+Accessibility+Audits+%26+Remediation)
+          ](http://demo.businesdoctor.com/scratch/contact.php?service=Graphic+Design&capability=WCAG+2.2+AA+Accessibility+Audits+%26+Remediation)
 
 ### Interactive Prototyping & User Testing
 
@@ -240,7 +240,7 @@ Full-featured clickable prototypes that simulate realistic data inputs, page tra
           [
             Inquire About This Service
 
-          ](http://demo.businesdoctor.com/scratch/contact.php?service=UI%2FUX+Design+%26+Brand+Identity&capability=Interactive+Prototyping+%26+User+Testing)
+          ](http://demo.businesdoctor.com/scratch/contact.php?service=Graphic+Design&capability=Interactive+Prototyping+%26+User+Testing)
 
         STRUCTURED EXECUTION TIMELINE
 
@@ -567,7 +567,7 @@ Absolutely. We conduct live walkthrough sessions with your engineering leads, pr
               [
                 Get a Free Consultation
 
-              ](http://demo.businesdoctor.com/scratch/contact.php?service=UI%2FUX+Design+%26+Brand+Identity)
+              ](http://demo.businesdoctor.com/scratch/contact.php?service=Graphic+Design)
               [
                 Request Digital Audit
 

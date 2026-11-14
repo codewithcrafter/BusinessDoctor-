@@ -10,10 +10,32 @@ require_once __DIR__ . '/includes/db.php';
 require_once __DIR__ . '/includes/functions.php';
 
 // 1. Legacy URL 301 Permanent Redirect
-// If client requested /service-detail.php?slug=... directly, 301 redirect to /services/{slug}
+// Check for legacy slug alias first and redirect immediately
 $reqUri = $_SERVER['REQUEST_URI'] ?? '';
+$rawSlug = trim($_GET['slug'] ?? '');
+
+$legacySlugMap = [
+    'strategic-consulting' => 'web-development',
+    'digital-engineering' => 'web-development',
+    'performance-marketing' => 'seo',
+    'brand-architecture' => 'graphic-design',
+    'ecommerce-acceleration' => 'ecommerce-management',
+    'creative-production' => 'video-editing',
+    'web-software-development' => 'web-development',
+    'digital-marketing-seo' => 'seo',
+    'ui-ux-branding' => 'graphic-design',
+    'ecommerce-marketplaces' => 'ecommerce-management',
+    'creative-video-production' => 'video-editing',
+    'cloud-it-consulting' => 'web-development',
+];
+
+if ($rawSlug !== '' && isset($legacySlugMap[$rawSlug])) {
+    header("Location: /services/" . $legacySlugMap[$rawSlug], true, 301);
+    exit;
+}
+
+// If client requested /service-detail.php?slug=... directly, 301 redirect to /services/{slug}
 if (str_contains($reqUri, 'service-detail.php')) {
-    $rawSlug = trim($_GET['slug'] ?? '');
     if ($rawSlug !== '') {
         $p = getPracticeBySlug($rawSlug);
         $redirectSlug = $p ? $p['slug'] : rawurlencode($rawSlug);
