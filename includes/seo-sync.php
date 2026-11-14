@@ -502,10 +502,15 @@ class SeoSyncEngine
             return "\n" . implode("\n", array_map(fn($l) => "> " . trim($l), $lines)) . "\n";
         }, $md);
 
-        // Headings
+        // Clean Headings (h1 to h6)
         for ($i = 6; $i >= 1; $i--) {
             $prefix = str_repeat('#', $i);
-            $md = preg_replace('#<h' . $i . '[^>]*>(.*?)</h' . $i . '>#is', "\n\n{$prefix} $1\n\n", $md);
+            $md = preg_replace_callback('#<h' . $i . '[^>]*>(.*?)</h' . $i . '>#is', function($m) use ($prefix) {
+                $hText = preg_replace('#<br\s*/?>#i', ' ', $m[1]);
+                $hText = trim(preg_replace('/\s+/', ' ', strip_tags($hText)));
+                if ($hText === '') return '';
+                return "\n\n{$prefix} {$hText}\n\n";
+            }, $md);
         }
 
         // Links
@@ -521,7 +526,10 @@ class SeoSyncEngine
         $md = preg_replace('#<code[^>]*>(.*?)</code>#is', '`$1`', $md);
 
         // Lists
-        $md = preg_replace('#<li[^>]*>(.*?)</li>#is', "- $1\n", $md);
+        $md = preg_replace_callback('#<li[^>]*>(.*?)</li>#is', function($m) {
+            $item = trim(preg_replace('/\s+/', ' ', strip_tags($m[1])));
+            return "- {$item}\n";
+        }, $md);
         $md = preg_replace('#</?(ul|ol)[^>]*>#is', "\n", $md);
 
         // Paragraphs and breaks
@@ -538,6 +546,56 @@ class SeoSyncEngine
         $md = preg_replace('/\n{3,}/', "\n\n", $md);
 
         return trim($md);
+    }
+
+    /**
+     * Case study specific diagrams and tech stack metadata
+     */
+    public static function getCaseSpecifics(string $slug): array
+    {
+        static $caseSpecifics = [
+            'fintech-saas-funnel-resuscitation' => [
+                'supp_src' => 'uploads/cases/fintech-payment-pipeline-diagram.svg',
+                'supp_alt' => 'Automated FinTech Onboarding & Payment Architecture (Illustrative Schematic)',
+                'supp_caption' => 'Exhibit B — Zero-friction client provisioning flow replacing legacy manual verification gates.',
+                'supp_badge' => 'INTEGRATION TOPOLOGY',
+                'tech_stack' => ['Next.js 14 App Router', 'Stripe Issuing & Vault API', 'Redis Enterprise Idempotency', 'Cloudflare Edge SSR', 'PostgreSQL Timescale', 'Tailwind CSS Design System', 'Plaid KYC Webhooks'],
+                'workflow' => [
+                    ['step' => '01', 'title' => 'Diagnostic Funnel Telemetry', 'desc' => 'Instrumented full session recordings and micro-latency timers to identify exact user drop-off during payment collection.'],
+                    ['step' => '02', 'title' => 'Decoupled Micro-Auth Engine', 'desc' => 'Architected asynchronous KYC bureau checks and tokenized Stripe vaulting to reduce user friction from 7 screens to 1.'],
+                    ['step' => '03', 'title' => 'Edge Canary Deployment', 'desc' => 'Deployed new conversion funnel on Cloudflare Workers edge nodes with automated rollback thresholds and continuous health checks.'],
+                    ['step' => '04', 'title' => 'Outcome Verification', 'desc' => 'Validated +312% pipeline lift and $908 customer acquisition cost reduction across 90 days of live production traffic.']
+                ]
+            ],
+            'd2c-apparel-vital-infrastructure-overhaul' => [
+                'supp_src' => 'uploads/cases/d2c-inventory-routing-topology.svg',
+                'supp_alt' => 'D2C Edge Distribution & Multi-Warehouse Routing Topology (Illustrative Schematic)',
+                'supp_caption' => 'Exhibit B — Decoupled edge caching and asynchronous inventory routing across regional fulfillment hubs.',
+                'supp_badge' => 'EDGE TOPOLOGY',
+                'tech_stack' => ['Headless Hydrogen React PWA', 'Shopify Storefront API', 'Cloudflare Workers & KV', 'Redis Order Queue', 'Fastly Image Transcoding', 'Kaviyo Event Webhooks', 'ERP Real-Time Inventory Sync'],
+                'workflow' => [
+                    ['step' => '01', 'title' => 'Stress-Testing & Concurrency Audit', 'desc' => 'Simulated 50,000 concurrent checkout sessions to isolate database locks and slow liquid template compilation.'],
+                    ['step' => '02', 'title' => 'Headless Composable Re-Platforming', 'desc' => 'Built ultra-fast React PWA with optimistic cart state and sub-second catalog hydration on global CDN edge.'],
+                    ['step' => '03', 'title' => 'Real-Time Inventory Lock Engine', 'desc' => 'Engineered distributed Redis queuing to synchronize warehouse inventory levels with zero race conditions.'],
+                    ['step' => '04', 'title' => 'Peak Flash Sale Delivery', 'desc' => 'Achieved 99.98% uptime and processed 18,500 transactions per minute during peak BFCM event without a single dropped cart.']
+                ]
+            ],
+            'multichannel-retail-marketplace-dominance' => [
+                'supp_src' => 'uploads/cases/omnichannel-catalog-sync-architecture.svg',
+                'supp_alt' => 'Omnichannel Feed Pipeline & Rate-Limiting Architecture (Illustrative Schematic)',
+                'supp_caption' => 'Exhibit B — Asynchronous data processing pipeline ensuring continuous catalog integrity across merchant APIs.',
+                'supp_badge' => 'PIPELINE SCHEMATIC',
+                'tech_stack' => ['Amazon SP-API v2', 'Walmart Marketplace REST', 'eBay Trading API', 'Node.js Event Bus', 'RabbitMQ Distributed Queue', 'Elasticsearch Master Catalog', 'Automated Margin Repricer'],
+                'workflow' => [
+                    ['step' => '01', 'title' => 'Catalog Synchronization Audit', 'desc' => 'Audited multi-platform SKU drift, out-of-sync inventory feeds, and algorithmic pricing margin discrepancies.'],
+                    ['step' => '02', 'title' => 'Central Master PIM Bus', 'desc' => 'Unified 48,000 SKUs into a canonical master database with automated channel-specific taxonomy formatting.'],
+                    ['step' => '03', 'title' => 'Dynamic Margin Repricing Engine', 'desc' => 'Built algorithmic repricing bot with margin safety floors to continuously win Buy Box placement against third-party sellers.'],
+                    ['step' => '04', 'title' => 'Continuous Automation', 'desc' => 'Reduced catalog sync latency from 4 hours to 8 seconds, capturing 84% Buy Box share across top revenue categories.']
+                ]
+            ]
+        ];
+
+        return $caseSpecifics[$slug] ?? [];
     }
 
     /**
@@ -615,6 +673,8 @@ class SeoSyncEngine
         $outcome = trim($case['outcome_metric'] ?? '');
         $metricLabel = trim($case['metric_label'] ?? '');
 
+        $spec = self::getCaseSpecifics($slug);
+
         $lines = [];
         $lines[] = "# {$title}";
         $lines[] = "";
@@ -633,6 +693,7 @@ class SeoSyncEngine
         $lines[] = "- **Clean Markdown URL**: [{$cleanMdUrl}]({$cleanMdUrl})";
         $lines[] = "- **Central Markdown URL**: [{$mdUrl}]({$mdUrl})";
         $lines[] = "";
+
         if (!empty($case['featured_image'])) {
             $imgSrc = $case['featured_image'];
             $imgUrl = str_starts_with($imgSrc, 'http') ? $imgSrc : ($baseUrl . '/' . ltrim($imgSrc, '/'));
@@ -644,26 +705,68 @@ class SeoSyncEngine
         $lines[] = "";
 
         if (!empty($case['challenge'])) {
-            $lines[] = "## 1. Challenge & Operational Bottlenecks";
+            $lines[] = "## 01 // Challenge & Operational Bottlenecks";
+            $lines[] = "### Critical Operational & Revenue Roadblocks";
             $lines[] = self::htmlToMarkdown($case['challenge']);
             $lines[] = "";
         }
 
         if (!empty($case['solution']) || !empty($case['prescription'])) {
-            $lines[] = "## 2. Prescribed Technical Solution";
+            $lines[] = "## 02 // Strategic Solution & Engineering Execution";
+            $lines[] = "### Prescribed Engineering Architecture";
             $lines[] = self::htmlToMarkdown($case['solution'] ?: $case['prescription']);
             $lines[] = "";
         }
 
+        if (!empty($spec['supp_src'])) {
+            $lines[] = "## 03 // Supporting Architectural Blueprint";
+            $lines[] = "### Deployed System Topology";
+            $diagUrl = str_starts_with($spec['supp_src'], 'http') ? $spec['supp_src'] : ($baseUrl . '/' . ltrim($spec['supp_src'], '/'));
+            $lines[] = "![{$spec['supp_alt']}]({$diagUrl})";
+            $lines[] = "";
+            $lines[] = "*{$spec['supp_caption']}* `[Badge: {$spec['supp_badge']}]`";
+            $lines[] = "";
+        }
+
+        if (!empty($spec['tech_stack'])) {
+            $lines[] = "## 04 // Technical Stack Deployed";
+            $lines[] = "### Tools & Technologies Deployed";
+            foreach ($spec['tech_stack'] as $t) {
+                $lines[] = "- `{$t}`";
+            }
+            $lines[] = "";
+        }
+
+        if (!empty($spec['workflow'])) {
+            $lines[] = "## 05 // Project Delivery Workflow";
+            $lines[] = "### Execution & Delivery Methodology";
+            foreach ($spec['workflow'] as $wf) {
+                $lines[] = "#### Stage {$wf['step']}: {$wf['title']}";
+                $lines[] = $wf['desc'];
+                $lines[] = "";
+            }
+        }
+
         if (!empty($case['implementation'])) {
-            $lines[] = "## 3. Implementation Architecture";
+            $lines[] = "## 06 // Implementation & Hardening Notes";
             $lines[] = self::htmlToMarkdown($case['implementation']);
             $lines[] = "";
         }
 
         if (!empty($case['results']) || !empty($case['result_description'])) {
-            $lines[] = "## 4. Quantifiable Business Outcomes";
+            $lines[] = "## 07 // Quantifiable Business Outcomes";
+            $lines[] = "### Long-Term Business & Technical Impact";
             $lines[] = self::htmlToMarkdown($case['results'] ?: $case['result_description']);
+            $lines[] = "";
+        }
+
+        if (!empty($case['quote_text'])) {
+            $quoteAuthor = $case['quote_author'] ?? 'Executive Sponsor';
+            $quoteTitle = !empty($case['quote_title']) ? ', ' . $case['quote_title'] : '';
+            $lines[] = "## Executive Client Verification";
+            $lines[] = "> \"{$case['quote_text']}\"";
+            $lines[] = "> ";
+            $lines[] = "> — **{$quoteAuthor}**{$quoteTitle}";
             $lines[] = "";
         }
 
@@ -680,48 +783,62 @@ class SeoSyncEngine
     public static function generateServiceMarkdown(string $slug, array $service): string
     {
         $baseUrl = self::getBaseUrl();
-        $name = trim($service['name'] ?? 'Practice Area');
-        $tagline = trim($service['tagline'] ?? '');
-        $summary = trim($service['summary'] ?? '');
-        $description = trim($service['description'] ?? '');
+        $file = ROOT_PATH . '/includes/services/' . $slug . '.php';
+        
+        $serviceName = $service['name'] ?? 'Practice Area';
+        $serviceSlug = $slug;
+        $consultationUrl = appUrl('contact.php?service=' . urlencode($serviceName));
         $canonicalUrl = $baseUrl . '/services/' . urlencode($slug);
         $cleanMdUrl = $baseUrl . '/services/' . urlencode($slug) . '.md';
         $mdUrl = $baseUrl . '/md/services/' . urlencode($slug) . '.md';
 
+        $bodyMd = '';
+        if (file_exists($file)) {
+            ob_start();
+            include $file;
+            $rawHtml = ob_get_clean();
+
+            // Strip raw SVGs and purely decorative elements
+            $cleanHtml = preg_replace('#<svg\b[^>]*>.*?</svg>#is', '', $rawHtml);
+            $cleanHtml = preg_replace('#<span class="srv-eyebrow-dot"[^>]*></span>#is', '', $cleanHtml);
+            $cleanHtml = preg_replace('#<div class="srv-process-num"[^>]*>.*?</div>#is', '', $cleanHtml);
+
+            $bodyMd = self::htmlToMarkdown($cleanHtml);
+        } else {
+            $desc = !empty($service['description']) ? self::htmlToMarkdown($service['description']) : ($service['summary'] ?? '');
+            $bodyMd = "## Practice Overview\n\n" . $desc;
+            if (!empty($service['deliverables']) && is_array($service['deliverables'])) {
+                $bodyMd .= "\n\n## Key Deliverables\n";
+                foreach ($service['deliverables'] as $del) {
+                    $bodyMd .= "- " . trim($del) . "\n";
+                }
+            }
+            if (!empty($service['kpis']) && is_array($service['kpis'])) {
+                $bodyMd .= "\n\n## Target Performance KPIs\n";
+                foreach ($service['kpis'] as $kpi) {
+                    $bodyMd .= "- " . trim($kpi) . "\n";
+                }
+            }
+        }
+
         $lines = [];
-        $lines[] = "# {$name}";
+        $lines[] = "# {$serviceName}";
         $lines[] = "";
-        if (!empty($tagline)) {
-            $lines[] = "> {$tagline}";
+        if (!empty($service['tagline'])) {
+            $lines[] = "> " . trim($service['tagline']);
             $lines[] = "";
         }
         $lines[] = "## Discipline Information";
+        $lines[] = "- **Practice Area**: " . ($service['number'] ?? '') . " {$serviceName}";
         $lines[] = "- **Canonical Web URL**: [{$canonicalUrl}]({$canonicalUrl})";
         $lines[] = "- **Clean Markdown URL**: [{$cleanMdUrl}]({$cleanMdUrl})";
         $lines[] = "- **Central Markdown URL**: [{$mdUrl}]({$mdUrl})";
+        $lines[] = "- **Direct Consultation**: [Schedule Practice Scope]({$consultationUrl})";
         $lines[] = "";
         $lines[] = "---";
         $lines[] = "";
-        $lines[] = "## Practice Overview";
-        $lines[] = !empty($description) ? self::htmlToMarkdown($description) : $summary;
+        $lines[] = $bodyMd;
         $lines[] = "";
-
-        if (!empty($service['deliverables']) && is_array($service['deliverables'])) {
-            $lines[] = "## Key Deliverables";
-            foreach ($service['deliverables'] as $del) {
-                $lines[] = "- " . trim($del);
-            }
-            $lines[] = "";
-        }
-
-        if (!empty($service['kpis']) && is_array($service['kpis'])) {
-            $lines[] = "## Target Performance KPIs";
-            foreach ($service['kpis'] as $kpi) {
-                $lines[] = "- " . trim($kpi);
-            }
-            $lines[] = "";
-        }
-
         $lines[] = "---";
         $lines[] = "*Delivered by [BusinessDoctor]({$baseUrl}) Technology Practice.*";
         $lines[] = "";
@@ -739,27 +856,108 @@ class SeoSyncEngine
         $legalName = defined('APP_LEGAL_NAME') ? APP_LEGAL_NAME : 'BusinessDoctor IT Solutions & Digital Services Private Limited';
         $phone = defined('APP_PHONE') ? APP_PHONE : '+1 (800) 492-3628';
         $email = defined('APP_EMAIL') ? APP_EMAIL : 'solutions@businessdoctor.com';
-        $hq = defined('APP_HEADQUARTERS') ? APP_HEADQUARTERS : 'Executive Tech Park, Innovation District';
+        $hq = defined('APP_HEADQUARTERS') ? APP_HEADQUARTERS : 'Executive Tech Park, Innovation District, Sector 62, Noida, Uttar Pradesh 201309, India';
 
         switch ($pageKey) {
             case 'about':
                 return <<<MD
-# About {$appName} — Firm Profile & Leadership
-> {$legalName} combines software engineering, performance marketing, and conversion architecture.
+# Engineering Technology. Accelerating Scalable Growth.
 
-- **Primary URL**: [{$baseUrl}/about.php]({$baseUrl}/about.php)
-- **Markdown Resource**: [{$baseUrl}/md/about.md]({$baseUrl}/md/about.md)
+> We founded BusinessDoctor to provide modern businesses with a reliable, all-in-one IT and digital growth partner. We eliminate the friction of managing disconnected developers, ad agencies, and designers by bringing them together under one disciplined engineering practice.
+
+## Firm Information & Digital Resources
+- **Canonical Web URL**: [{$baseUrl}/about.php]({$baseUrl}/about.php)
+- **Clean Markdown URL**: [{$baseUrl}/about.php.md]({$baseUrl}/about.php.md)
+- **Central Markdown URL**: [{$baseUrl}/md/about.md]({$baseUrl}/md/about.md)
+- **Master Markdown Index**: [{$baseUrl}/md]({$baseUrl}/md)
+- **Corporate Legal Entity**: {$legalName}
 - **Headquarters**: {$hq}
+- **Advisory Contact**: [{$email}](mailto:{$email}) | Phone: {$phone}
 
 ---
 
-## 1. Executive Summary & Mission
-BusinessDoctor operates as a technical turn-around and digital scaling practice. We eliminate digital bottlenecks, replace slow legacy code with lean modern architectures, optimize multi-channel conversion funnels, and scale high-volume transactional platforms.
+## 01 // The BusinessDoctor Philosophy: Why We Call Ourselves BusinessDoctor
+A clinical engineering approach to diagnosing digital friction, eliminating architecture bottlenecks, and prescribing sustainable enterprise growth.
 
-## 2. Engineering Principles
-- **Sub-Second Performance**: Elimination of monolithic bloat, optimizing database indices, native caching, and clean execution paths.
-- **Conversion-Centered Architecture**: Engineering every UX pathway around measurable transaction completion and lead capture.
-- **Data Integrity & Security**: Dual-layer database persistence, strict CSRF/XSS sanitization, and automated schema synchronization.
+### 01.1 The Symptoms of Digital Friction (Diagnostic Identification)
+Every growing enterprise encounters digital friction: an outdated website that repels prospective clients, slow server response times that kill search engine rankings, paid advertising campaigns that fail to convert, or marketplace listings that lose sales to competitors.
+- **Conversion Drop-off**: Fragmented checkout flows, unintuitive information architecture, and unoptimized landing pages that drain marketing budgets.
+- **Latency Bottlenecks**: Monolithic bloat, uncompressed media assets, unindexed databases, and poor Time to First Byte (TTFB).
+- **Ad Spend Waste**: High Customer Acquisition Cost (CAC) driven by disconnected messaging, untracked conversion APIs, and broken sales funnels.
+
+### 01.2 End-to-End Technical Care (The Clinical Diagnosis)
+Just as any complex system needs expert trouble-shooters to diagnose root technical failures and prescribe robust engineering solutions, **BusinessDoctor provides end-to-end technical care for your digital presence**.
+- **Root-Cause Diagnosis**: We don't mask symptoms with superficial redesigns. We inspect database queries, server logs, ad account configurations, and UX funnels.
+- **Systemic Prescription**: Custom software development, targeted search engine optimization, high-converting UI/UX design, and multi-channel marketplace scaling.
+
+### 01.3 Precision Engineering & Scale (Measurable Execution)
+We don't sell superficial fixes or bloated templates. Our software engineers, performance marketers, and UI/UX designers analyze your technical infrastructure, rebuild broken user journeys, build lightning-fast web applications, and scale customer acquisition with data-backed precision.
+- **Custom PHP 8+ Architecture**: Zero bloated frameworks or unmaintained third-party plugins. Clean, modular procedural and object-oriented architectures.
+- **Sub-Second Load Times**: Edge caching via Cloudflare CDN, WebP/AVIF asset optimization, and lean relational database queries.
+- **Data-Led Acquisition**: Full-funnel tracking with Google Analytics 4, Meta Conversions API (CAPI), and granular server-side attribution.
+
+---
+
+## 02 // Operating Standards: Four Commitments We Stand By
+Non-negotiable architectural benchmarks and accountability standards engineered into every client partnership.
+
+### Commitment 1: Clean, Framework-Free Code
+- Sub-second server response times (TTFB < 200ms) with lightweight PHP and vanilla JavaScript.
+- Zero bloated frameworks, fragile CMS plugins, or unnecessary dependencies that introduce security vulnerabilities.
+- Maintainable, well-documented codebases built for enterprise longevity and multi-developer handoff.
+
+### Commitment 2: Measurable Commercial ROI
+- Every engineering sprint and marketing campaign is directly tied to measurable commercial outcomes.
+- We report transparently on conversion rates, revenue pipeline lift, customer acquisition cost (CAC), and Core Web Vitals.
+- No vanity metrics. No opaque agency reporting.
+
+### Commitment 3: Integrated End-to-End Delivery
+- Complete harmony between software engineering, brand design, paid advertising, and marketplace management.
+- Eliminate inter-agency finger-pointing: one senior team owns full responsibility from architecture to conversion.
+- Cross-functional agile delivery teams led by dedicated principal technical directors.
+
+### Commitment 4: Long-Term Partnership & Support
+- Continuous post-launch monitoring, security patching, and proactive performance tuning.
+- 99.9% uptime architecture with automated database backups and edge CDN failover.
+- Guaranteed 2-hour response Service Level Agreement (SLA) for enterprise-critical support requests.
+
+---
+
+## 03 // Mission & Strategic Vision: Driven by Purpose. Defined by Results.
+
+### Our Mission
+To dismantle digital inefficiency and engineer high-velocity digital architectures that deliver undeniable commercial results.
+- **Precision Diagnostics**: Uncompromising technical audits that uncover root-cause bottlenecks before prescribing code or marketing solutions.
+- **Disciplined Execution**: Senior-led agile sprints adhering to zero-defect standards, clean code principles, and rigorous load testing.
+- **Compounding Value**: Building durable digital assets that lower customer acquisition costs and drive multi-year enterprise value.
+
+### Our Strategic Vision
+To be the definitive technology partner for organizations that refuse to accept mediocrity in their digital infrastructure.
+- **Global Standards**: Deploying tier-one enterprise engineering, security, and design methodologies to high-growth organizations worldwide.
+- **Autonomous Scaling**: Building robust, self-healing platforms capable of handling 100x traffic surges without performance degradation.
+- **Sustainable Tech**: Lean software design that minimizes compute overhead, eliminates technical debt, and maximizes operational margins.
+
+---
+
+## 04 // Leadership & Technology Directors
+Our practice is directed by senior technology architects and growth strategists with extensive enterprise experience:
+
+### Dr. Alistair Croft — Chief Technology Officer & Principal Architect
+Specializing in distributed systems architecture, database optimization, sub-second web performance, and enterprise security posture. Over 15 years leading engineering teams across FinTech, SaaS, and high-concurrency transactional systems.
+
+### Sarah Chen — VP of Growth Marketing & Conversion Science
+Pioneering full-funnel customer acquisition models, algorithmic search optimization, and multi-channel attribution frameworks. Oversees multi-million dollar annual ad spend across Google Ads, Meta Ads Manager, and programmatic networks.
+
+### David Montgomery — Director of Brand Architecture & Experience Design
+Championing conversion-centered interface design, design systems, and cohesive enterprise visual narratives. Over a decade engineering interactive web experiences and marketplace storefront transformations.
+
+---
+
+## 05 // Elevate Your Digital Capabilities
+Schedule an introductory discovery call with our tech leads to discuss your web development, digital marketing, or branding requirements.
+- **Direct Consultation**: [Schedule a Project Consultation]({$baseUrl}/contact.php)
+- **Complimentary Diagnostic**: [Request Free Digital Audit]({$baseUrl}/audit.php)
+- **Practice Hub**: [Explore IT Services & Practice Areas]({$baseUrl}/services.php)
 
 ---
 *Maintained by {$appName} Corporate Communications.*
@@ -767,41 +965,140 @@ MD;
 
             case 'contact':
                 return <<<MD
-# Contact {$appName} & Executive Advisory
-> Direct communication channels for enterprise scoping, technical audits, and partnership inquiries.
+# Let’s Build Something Exceptional Together
 
-- **Primary URL**: [{$baseUrl}/contact.php]({$baseUrl}/contact.php)
-- **Markdown Resource**: [{$baseUrl}/md/contact.md]({$baseUrl}/md/contact.md)
-- **Direct Phone**: {$phone}
-- **Advisory Email**: [{$email}](mailto:{$email})
+> Whether you need a custom high-performance web application, a full-funnel digital marketing campaign, an Amazon storefront overhaul, or ongoing cloud infrastructure support, our senior technical teams are ready to collaborate.
+
+## Engagement Information & Digital Resources
+- **Canonical Web URL**: [{$baseUrl}/contact.php]({$baseUrl}/contact.php)
+- **Clean Markdown URL**: [{$baseUrl}/contact.php.md]({$baseUrl}/contact.php.md)
+- **Central Markdown URL**: [{$baseUrl}/md/contact.md]({$baseUrl}/md/contact.md)
+- **Master Markdown Index**: [{$baseUrl}/md]({$baseUrl}/md)
+- **Direct Advisory Phone**: {$phone}
+- **Advisory & Scoping Email**: [{$email}](mailto:{$email})
+- **Corporate Headquarters**: {$hq}
+- **Guaranteed Response SLA**: Initial technical review and response within 2 business hours.
+
+---
+
+## 01 // Request a Project Proposal
+Tell us about your project requirements. Our solutions team reviews incoming requests and responds with preliminary architectural insights within 2 business hours.
+
+### Intake Parameters & Requirements Checklist
+When submitting a project scope or proposal request, please prepare the following details:
+1. **Primary Contact**: Full name, official corporate email, and direct telephone/WhatsApp number.
+2. **Company / Organization**: Corporate legal name and primary website domain.
+3. **Practice Area / Discipline**:
+   - Web & Custom Software Development
+   - Digital Marketing, Paid Ads & SEO
+   - UI/UX Design & Brand Identity
+   - E-Commerce & Marketplace Management
+   - Creative Production & Video Marketing
+   - Cloud Solutions & IT Consulting
+   - Comprehensive Website & Digital Audit
+4. **Estimated Budget Allocation**:
+   - \$5,000 – \$10,000 (Targeted diagnostic or single-discipline project)
+   - \$10,000 – \$25,000 (Complete web platform build or multi-channel growth sprint)
+   - \$25,000 – \$50,000 (Enterprise software overhaul or comprehensive re-platforming)
+   - \$50,000+ (Full digital transformation, bespoke SaaS engineering, or annual retainer)
+5. **Project Overview & Objectives**: Key commercial targets, current operational bottlenecks, desired deliverables, and target launch timeline.
+
+---
+
+## 02 // Direct Access to Technical Leads
+When you engage BusinessDoctor, you speak directly with experienced software engineers, conversion rate optimization specialists, and digital strategists — never junior account managers or sales intermediaries.
+- **Collaborative Problem-Solving**: We analyze your current architecture, ad account configurations, and conversion funnels during the initial consultation.
+- **No Vanity Metrics**: We align our engagement scope with bottom-line business objectives, from lower customer acquisition cost (CAC) to higher Average Order Value (AOV).
+- **Rapid Prototyping & Scoping**: Within 48 hours of initial intake, we deliver a concrete technical blueprint detailing milestones, deliverables, tech stacks, and investment.
+
+---
+
+## 03 // Physical Headquarters & Global Operational Coordinates
 - **Headquarters**: {$hq}
+- **Advisory Direct Line**: {$phone}
+- **General & Scoping Inquiries**: [{$email}](mailto:{$email})
+- **Technical Support Desk**: [support@businessdoctor.com](mailto:support@businessdoctor.com)
+- **Operating Hours**: Monday through Friday, 09:00 – 19:00 IST / 24/7/365 Emergency Monitoring for Enterprise Clients with Active SLAs.
 
 ---
 
-## Engagement Process
-1. **Initial Diagnostic Briefing**: Benchmarking project parameters, timeline, and architectural requirements.
-2. **Technical Feasibility & Scope**: Detailed blueprint covering software engineering, marketing ROI, and infrastructure.
-3. **Execution & Delivery**: Agile sprints with daily builds, staging verification, and automated regression testing.
+## 04 // Engagement Roadmap
+1. **Initial Diagnostic Briefing (Day 1)**: 30-minute introductory call to benchmark current digital friction, revenue goals, and technical requirements.
+2. **Technical Scope & Commercial Proposal (Days 2–3)**: Comprehensive specification document outlining architecture, sprint schedule, KPIs, and fixed pricing.
+3. **Sprint Kickoff & Dedicated Lead Assignment (Week 1)**: Immediate deployment of dedicated technical lead, shared communication channels, and Git milestone tracking.
 
 ---
-*Maintained by {$appName} Executive Advisory.*
+*Maintained by {$appName} Executive Advisory Practice.*
 MD;
 
             case 'audit':
                 return <<<MD
-# Free Digital Architecture Audit & Project Scope
-> Diagnostic framework benchmarking infrastructure, ad performance, conversion funnels, and brand positioning.
+# Technical Architecture & Digital Growth Audit
 
-- **Primary URL**: [{$baseUrl}/audit.php]({$baseUrl}/audit.php)
-- **Markdown Resource**: [{$baseUrl}/md/audit.md]({$baseUrl}/md/audit.md)
+> Discover technical bottlenecks, page speed issues, and SEO gaps holding back your online business. Submit your domain to receive real live telemetry analysis and a customized project proposal within 24 hours.
+
+## Diagnostic Resource Information
+- **Canonical Web URL**: [{$baseUrl}/audit.php]({$baseUrl}/audit.php)
+- **Clean Markdown URL**: [{$baseUrl}/audit.php.md]({$baseUrl}/audit.php.md)
+- **Central Markdown URL**: [{$baseUrl}/md/audit.md]({$baseUrl}/md/audit.md)
+- **Master Markdown Index**: [{$baseUrl}/md]({$baseUrl}/md)
+- **Audit Turnaround SLA**: Guaranteed delivery of full report to corporate email within 24 hours.
+- **Confidentiality Standard**: Enterprise non-disclosure protection across all collected telemetry and audit findings.
 
 ---
 
-## Audit Evaluation Vectors
-1. **Engineering & Architecture**: Server response latency, Core Web Vitals, database queries, and mobile accessibility.
-2. **Traffic & Acquisition**: Ad spend leakage, paid search ROAS, CAC escalation, and technical SEO crawlability.
-3. **Systems & Security Posture**: SSL/TLS hygiene, backup resilience, error logging, and API authentication.
-4. **Brand Positioning & Trust**: Brand architecture, UI design consistency, and marketplace Buy Box protection.
+## 01 // Multi-Vector Diagnostic Scope
+Our senior engineering and performance marketing leads conduct a clinical diagnostic evaluation across four critical digital vectors:
+
+### Vector 1: Engineering Architecture & Server Latency
+- **Time to First Byte (TTFB)**: Server-side processing overhead, database query performance, and web server configuration.
+- **Google Core Web Vitals**: Real-world LCP (Largest Contentful Paint), INP (Interaction to Next Paint), and CLS (Cumulative Layout Shift) measurements.
+- **Asset Weight & Compression**: Evaluation of CSS/JS minification, edge caching headers, and modern image formats (WebP/AVIF).
+- **Mobile Usability & Responsiveness**: Viewport configuration, DOM depth, layout stability, and tap target spacing.
+
+### Vector 2: Digital Marketing, SEO & Funnel Acquisition
+- **Technical SEO Crawlability**: Indexing hygiene, robots.txt, XML sitemaps, canonical tags, and schema.org structured data.
+- **Ad Spend Efficiency & CAC Leakage**: Evaluation of landing page relevance, headline alignment, tracking tags (GA4 / Meta CAPI), and conversion drop-offs.
+- **Keyword & Competitive Gap Analysis**: Ranking positions for commercial-intent keywords vs primary sector competitors.
+
+### Vector 3: Security, Resilience & Compliance Posture
+- **SSL/TLS Encryption Hygiene**: Certificate validity, cipher suite security, and HTTPS enforcement.
+- **Security Headers Evaluation**: HSTS, Content-Security-Policy (CSP), X-Frame-Options, and X-Content-Type-Options posture.
+- **Data Protection & Compliance**: Form input sanitization, CSRF token validation, and cookie consent mechanisms.
+
+### Vector 4: Conversion Rate Optimization (CRO) & User Journey
+- **Friction Points & Cognitive Load**: Cluttered page layouts, excessive form fields, confusing navigation, and unclear calls-to-action.
+- **Trust Architecture**: Placement of social proof, client logos, case studies, security badges, and clear pricing disclosures.
+
+---
+
+## 02 // Diagnostic Intake Parameters
+To initiate an automated live telemetry scan and detailed manual engineering review, submit the following property parameters:
+1. **Website Domain / URL**: (e.g., `https://yourcompany.com`)
+2. **Primary Area of Concern**:
+   - Slow Website Loading & Poor Core Web Vitals
+   - High Ad Spend & Low Conversion Rates / Escalating CAC
+   - Low Organic Search Rankings & Technical SEO Deficits
+   - Outdated Brand Identity & Sub-Optimal UI/UX Design
+   - Marketplace / E-Commerce Operations & Amazon Buy Box Losses
+   - Unstable Server Infrastructure & Frequent Downtime
+3. **Monthly Traffic & Transaction Volume**: Benchmarking platform scale.
+4. **Corporate Email**: Required for secure delivery of the complete audit report.
+
+---
+
+## 03 // What You Receive in the Comprehensive Digital Audit Report
+- **Executive Scorecard**: A-to-F ratings across Architecture, SEO, Conversion, and Security.
+- **Telemetry Waterfall Chart**: Exact resource loading sequence identifying slow third-party scripts and database queries.
+- **Prioritized Action Plan**: Ranked checklist of high-impact fixes categorized by engineering effort vs revenue impact.
+- **Fixed-Price Scoping Proposal**: Transparent implementation scope detailing timeline, sprint milestones, and investment required for BusinessDoctor to execute the fixes.
+
+---
+
+## 04 // Next Steps
+- **Submit Audit Request**: [Request Free Digital Audit Online]({$baseUrl}/audit.php)
+- **Schedule Live Discovery Call**: [Contact Tech Leads]({$baseUrl}/contact.php)
+- **Explore All IT Disciplines**: [Services Overview]({$baseUrl}/services.php)
 
 ---
 *Maintained by {$appName} Diagnostic Practice.*
@@ -810,138 +1107,309 @@ MD;
             case 'services':
                 $services = self::getActiveServices();
                 $sLines = [];
-                $sLines[] = "# {$appName} — IT Services & Practice Areas";
-                $sLines[] = "> Overview of our multidisciplinary digital disciplines, technical deliverables, and performance KPIs.";
+                $sLines[] = "# Full-Stack Technology & Digital Growth Disciplines";
                 $sLines[] = "";
-                $sLines[] = "- **Canonical URL**: [{$baseUrl}/services.php]({$baseUrl}/services.php)";
-                $sLines[] = "- **Markdown Resource**: [{$baseUrl}/md/services.md]({$baseUrl}/md/services.md)";
+                $sLines[] = "> We engineer high-performance web software, manage profitable paid acquisition portfolios, and build distinctive brand architectures. Six specialized disciplines operating under one accountable standard.";
+                $sLines[] = "";
+                $sLines[] = "## Hub Information & Digital Resources";
+                $sLines[] = "- **Canonical Web URL**: [{$baseUrl}/services.php]({$baseUrl}/services.php)";
+                $sLines[] = "- **Clean Markdown URL**: [{$baseUrl}/services.php.md]({$baseUrl}/services.php.md)";
+                $sLines[] = "- **Central Markdown URL**: [{$baseUrl}/md/services.md]({$baseUrl}/md/services.md)";
                 $sLines[] = "- **Master Markdown Index**: [{$baseUrl}/md]({$baseUrl}/md)";
+                $sLines[] = "- **Total Integrated Disciplines**: " . count($services) . " specialized practices";
                 $sLines[] = "";
                 $sLines[] = "---";
                 $sLines[] = "";
                 $sLines[] = "## Core Practice Disciplines";
                 $sLines[] = "";
+
                 foreach ($services as $slug => $s) {
-                    $name = $s['name'] ?? '';
+                    $num = $s['number'] ?? '';
+                    $name = $s['name'] ?? 'Practice Area';
                     $tagline = $s['tagline'] ?? '';
                     $summary = $s['summary'] ?? '';
-                    $mdUrl = "{$baseUrl}/md/services/{$slug}.md";
-                    $cleanMdUrl = "{$baseUrl}/services/{$slug}.md";
+                    $description = $s['description'] ?? '';
                     $webUrl = "{$baseUrl}/services/{$slug}";
-                    $sLines[] = "### " . ($s['number'] ?? '') . " {$name}";
-                    $sLines[] = "- **Tagline**: {$tagline}";
-                    $sLines[] = "- **Markdown File**: [{$slug}.md]({$cleanMdUrl}) ([Mirror]({$mdUrl})) | [Web Page]({$webUrl})";
-                    $sLines[] = "- **Summary**: {$summary}";
+                    $cleanMdUrl = "{$baseUrl}/services/{$slug}.md";
+                    $centralMdUrl = "{$baseUrl}/md/services/{$slug}.md";
+                    $consultUrl = "{$baseUrl}/contact.php?service=" . urlencode($name);
+
+                    $sLines[] = "### Discipline // {$num}: {$name}";
+                    $sLines[] = "> *{$tagline}*";
+                    $sLines[] = "";
+                    $sLines[] = "- **Canonical Web URL**: [{$webUrl}]({$webUrl})";
+                    $sLines[] = "- **Clean Markdown URL**: [{$cleanMdUrl}]({$cleanMdUrl})";
+                    $sLines[] = "- **Central Markdown URL**: [{$centralMdUrl}]({$centralMdUrl})";
+                    $sLines[] = "- **Scope Consultation**: [Request Scope for {$name}]({$consultUrl})";
+                    $sLines[] = "";
+                    $sLines[] = "**Practice Summary:**";
+                    $sLines[] = $summary;
+                    $sLines[] = "";
+                    if (!empty($description) && $description !== $summary) {
+                        $sLines[] = "**Discipline Scope & Execution:**";
+                        $sLines[] = $description;
+                        $sLines[] = "";
+                    }
+
+                    if (!empty($s['deliverables']) && is_array($s['deliverables'])) {
+                        $sLines[] = "**Key Technical Deliverables:**";
+                        foreach ($s['deliverables'] as $del) {
+                            $sLines[] = "- " . trim($del);
+                        }
+                        $sLines[] = "";
+                    }
+
+                    if (!empty($s['kpis']) && is_array($s['kpis'])) {
+                        $sLines[] = "**Key Performance Commitment (KPIs):**";
+                        foreach ($s['kpis'] as $kpi) {
+                            $sLines[] = "- `{$kpi}`";
+                        }
+                        $sLines[] = "";
+                    }
+                    $sLines[] = "---";
                     $sLines[] = "";
                 }
+
+                $sLines[] = "## Need a Custom IT or Marketing Solution?";
+                $sLines[] = "Every enterprise challenge is unique. We configure bespoke multi-disciplinary teams tailored to your specific technical architecture, growth bottlenecks, and commercial objectives.";
+                $sLines[] = "- [Schedule Project Consultation]({$baseUrl}/contact.php)";
+                $sLines[] = "- [Request Free Digital Audit]({$baseUrl}/audit.php)";
+                $sLines[] = "";
                 $sLines[] = "---";
-                $sLines[] = "*Maintained by {$appName} Practice Operations.*";
+                $sLines[] = "*Delivered by [BusinessDoctor]({$baseUrl}) Technology Practice.*";
+
                 return implode("\n", $sLines);
 
             case 'insights':
                 $insights = self::getPublishedInsights();
                 $iLines = [];
-                $iLines[] = "# {$appName} — Technical Blog & Strategic Frameworks";
+                $iLines[] = "# Technical Blog & Strategic Frameworks";
+                $iLines[] = "";
                 $iLines[] = "> Practical engineering blueprints, Core Web Vitals breakdowns, and conversion optimization strategies from our senior architects and digital strategists.";
                 $iLines[] = "";
-                $iLines[] = "- **Canonical URL**: [{$baseUrl}/insights.php]({$baseUrl}/insights.php)";
-                $iLines[] = "- **Markdown Resource**: [{$baseUrl}/md/insights.md]({$baseUrl}/md/insights.md)";
+                $iLines[] = "## Editorial Information & Digital Resources";
+                $iLines[] = "- **Canonical Web URL**: [{$baseUrl}/insights.php]({$baseUrl}/insights.php)";
+                $iLines[] = "- **Clean Markdown URL**: [{$baseUrl}/insights.php.md]({$baseUrl}/insights.php.md)";
+                $iLines[] = "- **Central Markdown URL**: [{$baseUrl}/md/insights.md]({$baseUrl}/md/insights.md)";
                 $iLines[] = "- **Master Markdown Index**: [{$baseUrl}/md]({$baseUrl}/md)";
+                $iLines[] = "- **Published Articles**: " . count($insights) . " technical perspectives";
                 $iLines[] = "";
                 $iLines[] = "---";
                 $iLines[] = "";
                 $iLines[] = "## Published Blog Articles";
                 $iLines[] = "";
+
                 if (empty($insights)) {
-                    $iLines[] = "No editorial articles currently published.";
+                    $iLines[] = "No technical articles are currently published in the knowledge base.";
                 } else {
                     foreach ($insights as $art) {
                         $title = trim($art['title']);
                         $slug = $art['slug'];
                         $author = $art['author_name'] ?: ($art['author'] ?: 'BusinessDoctor Engineering');
+                        $authorTitle = $art['author_title'] ?? 'Senior Engineering Consultant';
                         $readTime = $art['reading_time'] ?? '5 min read';
-                        $pubDate = !empty($art['published_at']) ? date('M j, Y', strtotime($art['published_at'])) : '';
+                        $category = $art['category'] ?? 'Enterprise Strategy';
+                        $pubDate = !empty($art['published_at']) ? date('F j, Y', strtotime($art['published_at'])) : 'Published';
                         $summary = trim(preg_replace('/\s+/', ' ', strip_tags($art['summary'] ?: ($art['excerpt'] ?: ''))));
-                        $mdUrl = "{$baseUrl}/md/insights/{$slug}.md";
-                        $cleanMdUrl = "{$baseUrl}/insights/{$slug}.md";
                         $webUrl = "{$baseUrl}/insight-detail.php?slug={$slug}";
+                        $cleanMdUrl = "{$baseUrl}/insights/{$slug}.md";
+                        $centralMdUrl = "{$baseUrl}/md/insights/{$slug}.md";
 
                         $iLines[] = "### {$title}";
-                        $iLines[] = "- **Author**: {$author} | **Date**: {$pubDate} | **Read Time**: {$readTime}";
-                        $iLines[] = "- **Markdown File**: [{$slug}.md]({$cleanMdUrl}) ([Mirror]({$mdUrl})) | [Web Page]({$webUrl})";
-                        $iLines[] = "- **Summary**: {$summary}";
+                        $iLines[] = "- **Category**: {$category} | **Read Time**: {$readTime}";
+                        $iLines[] = "- **Author**: {$author} ({$authorTitle}) | **Published**: {$pubDate}";
+                        $iLines[] = "- **Canonical Web URL**: [{$webUrl}]({$webUrl})";
+                        $iLines[] = "- **Clean Markdown URL**: [{$cleanMdUrl}]({$cleanMdUrl})";
+                        $iLines[] = "- **Central Markdown URL**: [{$centralMdUrl}]({$centralMdUrl})";
+                        if (!empty($summary)) {
+                            $iLines[] = "";
+                            $iLines[] = "**Executive Summary:**";
+                            $iLines[] = $summary;
+                        }
                         $iLines[] = "";
                     }
                 }
+
                 $iLines[] = "---";
-                $iLines[] = "*Maintained by {$appName} Editorial Staff.*";
+                $iLines[] = "*Published by [BusinessDoctor]({$baseUrl}) Editorial & Engineering Staff.*";
                 return implode("\n", $iLines);
 
             case 'case-studies':
                 $cases = self::getPublishedCaseStudies();
                 $cLines = [];
-                $cLines[] = "# {$appName} — Client Case Studies & Proven Results";
-                $cLines[] = "> Measurable outcomes, revenue acceleration, and architectural turnarounds for enterprise clients.";
+                $cLines[] = "# Client Case Studies & Proven Results";
                 $cLines[] = "";
-                $cLines[] = "- **Canonical URL**: [{$baseUrl}/case-studies.php]({$baseUrl}/case-studies.php)";
-                $cLines[] = "- **Markdown Resource**: [{$baseUrl}/md/case-studies.md]({$baseUrl}/md/case-studies.md)";
+                $cLines[] = "> Measurable outcomes, revenue acceleration, and architectural turnarounds for enterprise clients across FinTech, D2C Apparel, and Multichannel Retail.";
+                $cLines[] = "";
+                $cLines[] = "## Case Studies Index & Digital Resources";
+                $cLines[] = "- **Canonical Web URL**: [{$baseUrl}/case-studies.php]({$baseUrl}/case-studies.php)";
+                $cLines[] = "- **Clean Markdown URL**: [{$baseUrl}/case-studies.php.md]({$baseUrl}/case-studies.php.md)";
+                $cLines[] = "- **Central Markdown URL**: [{$baseUrl}/md/case-studies.md]({$baseUrl}/md/case-studies.md)";
                 $cLines[] = "- **Master Markdown Index**: [{$baseUrl}/md]({$baseUrl}/md)";
+                $cLines[] = "- **Published Case Studies**: " . count($cases) . " documented client turnarounds";
                 $cLines[] = "";
                 $cLines[] = "---";
                 $cLines[] = "";
-                $cLines[] = "## Enterprise Client Turnarounds";
+                $cLines[] = "## Documented Enterprise Transformations";
                 $cLines[] = "";
+
                 if (empty($cases)) {
-                    $cLines[] = "No client case studies currently published.";
+                    $cLines[] = "No client case studies are currently published.";
                 } else {
                     foreach ($cases as $c) {
                         $title = trim($c['title']);
                         $slug = $c['slug'];
+                        $client = $c['client_name'] ?? 'Confidential Enterprise Client';
                         $industry = $c['industry'] ?: ($c['client_industry'] ?: 'Enterprise');
+                        $practice = $c['service_category'] ?: ($c['practice_area'] ?: 'Digital Practice');
                         $baseline = $c['baseline_metric'] ?? '';
                         $outcome = $c['outcome_metric'] ?? '';
-                        $metricShift = ($baseline && $outcome) ? "{$baseline} → {$outcome}" : ($outcome ?: '');
-                        $mdUrl = "{$baseUrl}/md/case-studies/{$slug}.md";
-                        $cleanMdUrl = "{$baseUrl}/case-studies/{$slug}.md";
+                        $metricLabel = $c['metric_label'] ?? '';
                         $webUrl = "{$baseUrl}/case-study-detail.php?slug={$slug}";
+                        $cleanMdUrl = "{$baseUrl}/case-studies/{$slug}.md";
+                        $centralMdUrl = "{$baseUrl}/md/case-studies/{$slug}.md";
 
                         $cLines[] = "### {$title}";
-                        $cLines[] = "- **Industry**: {$industry}" . ($metricShift ? " | **Metric Shift**: `{$metricShift}`" : "");
-                        $cLines[] = "- **Markdown File**: [{$slug}.md]({$cleanMdUrl}) ([Mirror]({$mdUrl})) | [Web Page]({$webUrl})";
+                        $cLines[] = "- **Client**: {$client}";
+                        $cLines[] = "- **Industry**: {$industry} | **Discipline**: {$practice}";
+                        if ($baseline || $outcome) {
+                            $cLines[] = "- **Quantifiable Metric Shift**: `{$baseline}` → `{$outcome}`" . ($metricLabel ? " ({$metricLabel})" : "");
+                        }
+                        $cLines[] = "- **Canonical Web URL**: [{$webUrl}]({$webUrl})";
+                        $cLines[] = "- **Clean Markdown URL**: [{$cleanMdUrl}]({$cleanMdUrl})";
+                        $cLines[] = "- **Central Markdown URL**: [{$centralMdUrl}]({$centralMdUrl})";
                         if (!empty($c['project_summary'])) {
-                            $cLines[] = "- **Summary**: " . trim(preg_replace('/\s+/', ' ', strip_tags($c['project_summary'])));
+                            $cLines[] = "";
+                            $cLines[] = "**Project Executive Summary:**";
+                            $cLines[] = trim(preg_replace('/\s+/', ' ', strip_tags($c['project_summary'])));
                         }
                         $cLines[] = "";
                     }
                 }
+
                 $cLines[] = "---";
-                $cLines[] = "*Maintained by {$appName} Client Turnaround Practice.*";
+                $cLines[] = "*Documented by [BusinessDoctor]({$baseUrl}) Client Turnaround Practice.*";
                 return implode("\n", $cLines);
 
             case 'home':
             default:
                 return <<<MD
-# {$appName} — Enterprise Technology & IT Solutions
-> Engineering Technology. Accelerating Digital Growth.
+# Technology That Moves Business Forward. Engineered for Scalable Growth.
 
-- **Canonical URL**: [{$baseUrl}/]({$baseUrl}/)
-- **Markdown Resource**: [{$baseUrl}/md/home.md]({$baseUrl}/md/home.md)
-- **AI Discovery**: [{$baseUrl}/llms.txt]({$baseUrl}/llms.txt) | [{$baseUrl}/llms.md]({$baseUrl}/llms.md)
-- **Public Markdown Index**: [{$baseUrl}/md]({$baseUrl}/md)
+> From intelligent software to digital growth, we engineer solutions that help businesses move beyond limitations. We unify custom engineering, performance marketing, and marketplace operations under one disciplined standard.
 
----
-
-## Practice Disciplines
-- **[Web & Custom Software Development]({$baseUrl}/services/web-software-development)**: Full-stack engineering, custom applications, and sub-second web architecture.
-- **[Digital Marketing & Performance Ads]({$baseUrl}/services/digital-marketing-seo)**: Search marketing, paid acquisition, and conversion rate optimization.
-- **[UI/UX Design & Brand Identity]({$baseUrl}/services/ui-ux-branding)**: Premium interface design, interactive prototypes, and design systems.
-- **[E-Commerce & Marketplaces]({$baseUrl}/services/ecommerce-marketplaces)**: Amazon/Flipkart management, Buy Box protection, and D2C scaling.
-- **[Creative Production & Video Marketing]({$baseUrl}/services/creative-video-production)**: Commercial photography, brand narrative video, and motion graphics.
-- **[Cloud Solutions & IT Consulting]({$baseUrl}/services/cloud-it-consulting)**: Infrastructure setup, security monitoring, and automated devops.
+## Platform Information & Digital Resources
+- **Canonical Web URL**: [{$baseUrl}/]({$baseUrl}/)
+- **Clean Markdown URL**: [{$baseUrl}/.md]({$baseUrl}/.md)
+- **Central Markdown URL**: [{$baseUrl}/md/home.md]({$baseUrl}/md/home.md)
+- **Master Markdown Index**: [{$baseUrl}/md]({$baseUrl}/md)
+- **AI Agent Discovery**: [{$baseUrl}/llms.txt]({$baseUrl}/llms.txt) | [{$baseUrl}/llms.md]({$baseUrl}/llms.md)
+- **XML Sitemap**: [{$baseUrl}/sitemap.xml]({$baseUrl}/sitemap.xml)
+- **Primary Contact**: [{$email}](mailto:{$email}) | Phone: {$phone}
+- **Headquarters**: {$hq}
 
 ---
 
-## Frequently Asked Questions
+## 01 // Core Architectural Pillars
+We engineer digital solutions across four primary pillars to ensure scalable, friction-free business execution:
+- **01 Custom Web & Software Engineering**: Sub-second load times, modular architecture, enterprise security standards, clean PHP 8+ and vanilla JS.
+- **02 Performance Marketing & SEO**: Conversion-focused paid campaigns across Google Ads & Meta, lower Customer Acquisition Cost (CAC), and sustainable organic rankings.
+- **03 E-Commerce & Marketplaces**: Amazon, Flipkart, and Shopify scale with Buy Box dominance, multi-channel feed automation, and review velocity.
+- **04 Cloud Infrastructure & IT**: High availability, proactive server monitoring, automated daily backups, and secure DevOps automation.
+
+---
+
+## 02 // Performance Metric HUD
+- **99.9% Uptime SLA**: Fault-tolerant server configurations with automated edge failover and continuous health monitoring.
+- **< 1.2s Core Web Vitals**: Optimized Largest Contentful Paint (LCP) and zero Cumulative Layout Shift (CLS) on mobile devices.
+- **3.8x Average ROAS Uplift**: Full-funnel tracking with GA4, Meta Conversions API (CAPI), and high-converting landing pages.
+- **2-Hour Enterprise Response SLA**: Direct access to senior technology leads for rapid diagnostic troubleshooting and support.
+
+---
+
+## 03 // Engineered Capabilities Built for Enterprise Scale
+We provide six specialized disciplines operating under one accountable standard:
+1. **[Web & Custom Software Development]({$baseUrl}/services/web-software-development)**: High-performance business websites, custom web applications, client portals, and secure database solutions.
+2. **[Digital Marketing & Performance Ads]({$baseUrl}/services/digital-marketing-seo)**: Full-funnel digital marketing, Google Ads, Meta Ads Manager, technical SEO, and conversion rate optimization (CRO).
+3. **[UI/UX Design & Brand Identity]({$baseUrl}/services/ui-ux-branding)**: Conversion-centered interface design, complete brand style systems, wireframes, and design systems.
+4. **[E-Commerce & Marketplaces]({$baseUrl}/services/ecommerce-marketplaces)**: Amazon & Flipkart store management, Buy Box defense, A+ content, and automated inventory feeds.
+5. **[Creative Production & Video Marketing]({$baseUrl}/services/creative-video-production)**: Commercial product photography, brand narrative films, 3D motion graphics, and social video ads.
+6. **[Cloud Solutions & IT Consulting]({$baseUrl}/services/cloud-it-consulting)**: Cloud migration, AWS/Cloudflare setup, server security hardening, and ongoing maintenance.
+
+---
+
+## 04 // The Transformation: Why Managing Multiple Freelancers & Vendors Slows Down Your Growth
+
+### The Problem: Disconnected Work, Technical Debt & Wasted Ad Budgets
+- **Finger-Pointing Between Vendors**: Developers blame designers; ad agencies blame developers for slow landing pages; marketplace managers operate in total isolation.
+- **Compounding Technical Debt**: Patchwork codebases with unmaintained plugins, security vulnerabilities, and slow database queries.
+- **Ad Spend Bleeding**: Traffic is sent to slow, unoptimized landing pages that fail to convert, driving up CAC.
+- **Administrative Fatigue**: Founders and executives spend hours coordinating disconnected contractors instead of scaling operations.
+
+### The Solution: Integrated Engineering & High-Velocity Digital Execution
+- **One Accountable Partner**: Software engineering, brand design, paid acquisition, and operations united under one technical leadership.
+- **Clean, Maintainable Architectures**: Clean procedural and object-oriented code built for long-term scalability without framework bloat.
+- **Conversion-Aligned Systems**: Every line of code and marketing funnel is engineered specifically to maximize commercial transaction completion.
+- **Direct Lead Access**: Weekly sprint reviews with senior technical directors.
+
+---
+
+## 05 // Why Businesses Choose BusinessDoctor
+Six decisive advantages engineered into every client partnership:
+1. **Direct Access to Technical Leads**: Direct communication with senior software architects and digital strategists — never junior account managers.
+2. **Sub-Second Performance Standards**: We mandate TTFB under 200ms and total page load under 1.2s to maximize search rankings and ad conversion rates.
+3. **Conversion-Centered Architecture**: Every interface, navigation path, and button is engineered to guide users toward measurable transactions.
+4. **Full IP Ownership & Transparency**: You own 100% of your source code, design assets, and ad accounts. Zero vendor lock-in.
+5. **Data-Driven Growth Marketing**: Precision attribution modeling combining GA4, Meta CAPI, and server-side tracking.
+6. **Dedicated Post-Launch Support & SLA**: 24/7 infrastructure monitoring, rapid-response bug fixes, and continuous performance tuning.
+
+---
+
+## 06 // A Disciplined Engineering & Growth Methodology
+Our 5-phase delivery lifecycle ensures predictable, high-impact results:
+- **Phase 01 // Clinical Diagnostic & Audit**: In-depth telemetry scan analyzing TTFB, Core Web Vitals, ad account ROAS, and user journey drop-offs.
+- **Phase 02 // Architecture & Strategic Blueprint**: Technical specifications, system architecture diagrams, database schemas, and sprint milestones.
+- **Phase 03 // Agile Engineering & Iteration**: Two-week development sprints with continuous integration, daily staging builds, and code review.
+- **Phase 04 // Rigorous Quality Assurance & Load Testing**: Cross-browser validation, mobile responsiveness testing, security audits, and concurrency load tests.
+- **Phase 05 // Scaled Deployment & Continuous Optimization**: Zero-downtime production launch, edge CDN configuration, and real-time conversion monitoring.
+
+---
+
+## 07 // Built on Engineering Integrity & Measurable Accountability
+We hold our practice to rigorous operational commitments:
+- Guaranteed code quality and security standards (OWASP compliance).
+- Complete data privacy with strict confidentiality agreements (NDA).
+- Transparent fixed pricing with zero hidden surcharges or surprise billing.
+
+---
+
+## 08 // Real Results: Documented Enterprise Case Studies
+- **[FinTech SaaS Funnel Resuscitation]({$baseUrl}/case-study-detail.php?slug=fintech-saas-funnel-resuscitation)**: Replaced a broken 7-step onboarding process with asynchronous micro-auth and Stripe vaulting.
+  - *Metric Shift*: `1.2% Conversion` → `4.8% Conversion (+312% pipeline lift)`
+- **[D2C Apparel Vital Infrastructure Overhaul]({$baseUrl}/case-study-detail.php?slug=d2c-apparel-vital-infrastructure-overhaul)**: Re-platformed a slow Shopify store into a headless React PWA with Redis inventory locking.
+  - *Metric Shift*: `4.6s Page Load` → `0.78s Page Load (18,500 peak transactions/min)`
+- **[Multichannel Retail Marketplace Dominance]({$baseUrl}/case-study-detail.php?slug=multichannel-retail-marketplace-dominance)**: Unified 48,000 SKUs across Amazon, Walmart, and eBay with an algorithmic dynamic repricing bot.
+  - *Metric Shift*: `22% Buy Box Share` → `84% Buy Box Share (+$2.1M monthly GMV)`
+
+---
+
+## 09 // Tools & Technologies That Power Our Work
+We deploy battle-tested enterprise technologies:
+- **Languages & Frameworks**: PHP 8+, JavaScript (ES6+), React, Next.js, Node.js, Python, Tailwind CSS.
+- **Databases & Caching**: PostgreSQL, MySQL, Redis Enterprise, SQLite.
+- **Infrastructure & Cloud**: Cloudflare Workers & CDN, AWS, Linux Ubuntu, Docker, Nginx, Apache.
+- **Growth & Marketing Tooling**: Google Ads, Meta Ads Manager, Google Analytics 4, Google Tag Manager, Semrush, Hotjar, Klaviyo.
+- **Design & Prototyping**: Figma, Adobe Creative Cloud, Blender.
+
+---
+
+## 10 // Engineering Architecture & Digital Growth Analysis
+Unsure why your website is slow, or why your ad spend isn't producing adequate ROAS? Submit your domain for a complimentary 24-hour diagnostic audit covering server latency, Core Web Vitals, and conversion funnel friction.
+- [Request Free Digital Audit]({$baseUrl}/audit.php)
+
+---
+
+## 11 // Frequently Asked Questions About BusinessDoctor Advisory & Engineering
 
 ### What core services does BusinessDoctor provide?
 BusinessDoctor delivers enterprise full-stack software development, performance digital marketing and SEO, UI/UX architecture, e-commerce marketplace scaling, commercial creative video production, and cloud IT infrastructure consulting.
@@ -952,11 +1420,21 @@ Our senior technical architects perform deep diagnostic audits across four criti
 ### Can BusinessDoctor resuscitate failing enterprise web projects?
 Yes. We specialize in turn-around engineering for distressed codebases, slow legacy web applications, broken checkout funnels, and high-traffic transactional platforms facing scalability bottlenecks.
 
+### How do your engagement models and pricing work?
+We offer flexible engagement models tailored to client needs: fixed-scope sprint deliverables with defined milestones and pricing, ongoing dedicated engineering/marketing retainers, and specialized technical diagnostic audits.
+
 ### Where does BusinessDoctor operate?
 BusinessDoctor operates globally with distributed engineering leadership and principal consultants headquartered in our Noida, India innovation corridor.
 
 ---
-*Maintained by {$appName}.*
+
+## 12 // Ready to Move Your Business Beyond Limitations?
+- **Schedule Discovery Consultation**: [Contact Practice Leads]({$baseUrl}/contact.php)
+- **Complimentary Diagnostic**: [Request Free Digital Audit]({$baseUrl}/audit.php)
+- **Review Service Disciplines**: [Explore All Practices]({$baseUrl}/services.php)
+
+---
+*Maintained by {$appName} Enterprise Engineering.*
 MD;
         }
     }
@@ -989,20 +1467,33 @@ MD;
         $lines[] = "---";
         $lines[] = "";
 
-        // 1. Services
-        $lines[] = "## 1. Core Practice Disciplines & Services";
+        // 1. Institutional
+        $lines[] = "## 1. Institutional & Diagnostic Documents";
+        $lines[] = "";
+        $lines[] = "- [Homepage Overview]({$baseUrl}/md/home.md) ([Clean URL]({$baseUrl}/.md) | [Web Page]({$baseUrl}/)): Enterprise digital practice overview.";
+        $lines[] = "- [Firm Profile & Leadership]({$baseUrl}/md/about.md) ([Clean URL]({$baseUrl}/about.php.md) | [Web Page]({$baseUrl}/about.php)): Engineering ethos and leadership profile.";
+        $lines[] = "- [Services Overview Hub]({$baseUrl}/md/services.md) ([Clean URL]({$baseUrl}/services.php.md) | [Web Page]({$baseUrl}/services.php)): Multi-disciplinary capability catalog.";
+        $lines[] = "- [Executive Advisory & Inquiries]({$baseUrl}/md/contact.md) ([Clean URL]({$baseUrl}/contact.php.md) | [Web Page]({$baseUrl}/contact.php)): Direct engagement and consulting channels.";
+        $lines[] = "- [Digital Diagnostic Audit Framework]({$baseUrl}/md/audit.md) ([Clean URL]({$baseUrl}/audit.php.md) | [Web Page]({$baseUrl}/audit.php)): Benchmarking performance, security, and CAC.";
+        $lines[] = "- [Technical Blog & Perspectives Catalog]({$baseUrl}/md/insights.md) ([Clean URL]({$baseUrl}/insights.php.md) | [Web Page]({$baseUrl}/insights.php)): Index of published technical essays.";
+        $lines[] = "- [Enterprise Case Studies Catalog]({$baseUrl}/md/case-studies.md) ([Clean URL]({$baseUrl}/case-studies.php.md) | [Web Page]({$baseUrl}/case-studies.php)): Index of verified client turnarounds.";
+        $lines[] = "";
+
+        // 2. Services
+        $lines[] = "## 2. Core Practice Disciplines & Services";
         $lines[] = "";
         foreach ($services as $slug => $s) {
             $name = $s['name'];
             $tag = rtrim(strip_tags($s['tagline'] ?? $s['summary']), '.');
-            $url = "{$baseUrl}/md/services/{$slug}.md";
+            $cleanUrl = "{$baseUrl}/services/{$slug}.md";
+            $repoUrl = "{$baseUrl}/md/services/{$slug}.md";
             $webUrl = "{$baseUrl}/services/{$slug}";
-            $lines[] = "- [{$name}]({$url}) ([Web Page]({$webUrl})): {$tag}.";
+            $lines[] = "- [{$name}]({$repoUrl}) ([Clean URL]({$cleanUrl}) | [Web Page]({$webUrl})): {$tag}.";
         }
         $lines[] = "";
 
-        // 2. Case Studies
-        $lines[] = "## 2. Client Case Studies & Proven Results";
+        // 3. Case Studies
+        $lines[] = "## 3. Client Case Studies & Proven Results";
         $lines[] = "";
         if (empty($cases)) {
             $lines[] = "- No client case studies are currently published.";
@@ -1010,19 +1501,20 @@ MD;
             foreach ($cases as $c) {
                 $title = trim($c['title']);
                 $slug = $c['slug'];
-                $url = "{$baseUrl}/md/case-studies/{$slug}.md";
+                $cleanUrl = "{$baseUrl}/case-studies/{$slug}.md";
+                $repoUrl = "{$baseUrl}/md/case-studies/{$slug}.md";
                 $webUrl = "{$baseUrl}/case-study-detail.php?slug={$slug}";
                 $industry = $c['industry'] ?: ($c['client_industry'] ?: 'Enterprise');
                 $baseline = $c['baseline_metric'] ?? '';
                 $outcome = $c['outcome_metric'] ?? '';
                 $metricText = ($baseline && $outcome) ? " ({$baseline} → {$outcome})" : ($outcome ? " ({$outcome})" : "");
-                $lines[] = "- [{$title}]({$url}) ([Web Page]({$webUrl})): [{$industry}]{$metricText}";
+                $lines[] = "- [{$title}]({$repoUrl}) ([Clean URL]({$cleanUrl}) | [Web Page]({$webUrl})): [{$industry}]{$metricText}";
             }
         }
         $lines[] = "";
 
-        // 3. Blog Articles
-        $lines[] = "## 3. Technical Blog & Articles";
+        // 4. Blog Articles
+        $lines[] = "## 4. Technical Blog & Articles";
         $lines[] = "";
         if (empty($insights)) {
             $lines[] = "- No editorial articles are currently published.";
@@ -1030,7 +1522,8 @@ MD;
             foreach ($insights as $art) {
                 $title = trim($art['title']);
                 $slug = $art['slug'];
-                $url = "{$baseUrl}/md/insights/{$slug}.md";
+                $cleanUrl = "{$baseUrl}/insights/{$slug}.md";
+                $repoUrl = "{$baseUrl}/md/insights/{$slug}.md";
                 $webUrl = "{$baseUrl}/insight-detail.php?slug={$slug}";
                 $readTime = $art['reading_time'] ?? '5 min read';
                 $summary = !empty($art['summary']) ? $art['summary'] : (!empty($art['excerpt']) ? $art['excerpt'] : '');
@@ -1038,19 +1531,11 @@ MD;
                 if (mb_strlen($summary) > 130) {
                     $summary = mb_substr($summary, 0, 127) . '...';
                 }
-                $lines[] = "- [{$title}]({$url}) ([Web Page]({$webUrl})): {$summary} ({$readTime})";
+                $lines[] = "- [{$title}]({$repoUrl}) ([Clean URL]({$cleanUrl}) | [Web Page]({$webUrl})): {$summary} ({$readTime})";
             }
         }
         $lines[] = "";
 
-        // 4. Institutional
-        $lines[] = "## 4. Institutional & Diagnostic Documents";
-        $lines[] = "";
-        $lines[] = "- [Firm Profile & Leadership]({$baseUrl}/md/about.md) ([Web Page]({$baseUrl}/about.php)): Engineering ethos and leadership profile.";
-        $lines[] = "- [Executive Advisory & Inquiries]({$baseUrl}/md/contact.md) ([Web Page]({$baseUrl}/contact.php)): Direct engagement and consulting channels.";
-        $lines[] = "- [Digital Diagnostic Audit Framework]({$baseUrl}/md/audit.md) ([Web Page]({$baseUrl}/audit.php)): Benchmarking performance, security, and CAC.";
-        $lines[] = "- [Homepage Overview]({$baseUrl}/md/home.md) ([Web Page]({$baseUrl}/)): Enterprise digital practice overview.";
-        $lines[] = "";
         $lines[] = "---";
         $lines[] = "*BusinessDoctor Centralized Markdown Distribution Network.*";
         $lines[] = "";
@@ -1058,10 +1543,6 @@ MD;
         return implode("\n", $lines);
     }
 
-    /**
-     * Synchronize and atomicaly write all published Markdown files into /md
-     * Automatically purges unlisted/unpublished/draft files.
-     */
     public static function syncMarkdownFiles(): array
     {
         $mdBaseDir = ROOT_PATH . '/md';

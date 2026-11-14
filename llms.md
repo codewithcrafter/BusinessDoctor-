@@ -2,7 +2,7 @@
 > Engineering Technology. Accelerating Digital Growth.
 
 Canonical Source: https://demo.businesdoctor.com
-Last Updated: 2026-11-13 08:56:01 UTC
+Last Updated: 2026-11-14 05:05:59 UTC
 
 ## 1. Executive Overview & Firm Profile
 
