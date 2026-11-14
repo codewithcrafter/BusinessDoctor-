@@ -1972,7 +1972,7 @@ require_once __DIR__ . '/includes/header.php';
           <span>Where is BusinessDoctor headquartered and what is your service coverage?</span>
         </h3>
         <p class="faq-answer" style="font-size: 0.95rem; color: var(--color-text-muted); line-height: 1.65; margin: 0; padding-left: 2.5rem;">
-          BusinessDoctor operates an enterprise delivery centre located at Sector 62, Innovation Corridor, Noida, UP 201301, India, providing executive technology advisory and full-stack software development services globally to enterprise clients across North America, Europe, and Asia-Pacific.
+          BusinessDoctor operates an enterprise delivery centre located at First Floor, Ram Dutt Enclave, B-16, Block D, Uttam Nagar East, Uttam Nagar, New Delhi, Delhi, 110059, India, providing executive technology advisory and full-stack software development services globally to enterprise clients across North America, Europe, and Asia-Pacific.
         </p>
       </div>
 

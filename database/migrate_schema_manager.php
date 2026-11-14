@@ -64,10 +64,10 @@ try {
                     'email' => $email,
                     'address' => [
                         '@type' => 'PostalAddress',
-                        'streetAddress' => 'Sector 62, Innovation Corridor',
-                        'addressLocality' => 'Noida',
-                        'addressRegion' => 'UP',
-                        'postalCode' => '201301',
+                        'streetAddress' => 'First Floor, Ram Dutt Enclave, B-16, Block D, Uttam Nagar East',
+                        'addressLocality' => 'Uttam Nagar, New Delhi',
+                        'addressRegion' => 'Delhi',
+                        'postalCode' => '110059',
                         'addressCountry' => 'IN'
                     ],
                     'sameAs' => [

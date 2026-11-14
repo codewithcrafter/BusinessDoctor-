@@ -77,12 +77,12 @@ if (session_status() === PHP_SESSION_NONE && !headers_sent()) {
 define('APP_NAME', 'BusinessDoctor');
 define('APP_LEGAL_NAME', 'BusinessDoctor IT Solutions & Digital Services Private Limited');
 define('APP_TAGLINE', 'Engineering Technology. Accelerating Digital Growth.');
-define('APP_EMAIL', 'solutions@businessdoctor.com');
+define('APP_EMAIL', 'sales@businesdoctor.com');
 define('APP_PHONE', '+1 (800) 492-3628');
 define('APP_CALL_NUMBER', getenv('APP_CALL_NUMBER') ?: '+18004923628');
 define('APP_WHATSAPP_NUMBER', getenv('APP_WHATSAPP_NUMBER') ?: '18004923628');
 define('APP_WHATSAPP_MESSAGE', getenv('APP_WHATSAPP_MESSAGE') ?: 'Hello BusinessDoctor, I would like to inquire about your enterprise IT and digital services.');
-define('APP_HEADQUARTERS', 'Floor 42, Executive Tech Park, Innovation District');
+define('APP_HEADQUARTERS', 'First Floor, Ram Dutt Enclave, B-16, Block D, Uttam Nagar East, Uttam Nagar, New Delhi, Delhi, 110059');
 
 // Base URL calculation (safe fallback for CLI & varied web servers)
 $envAppUrl = getenv('APP_URL');

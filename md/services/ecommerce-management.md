@@ -575,7 +575,7 @@ You do—100%. We operate directly within your existing seller accounts and Shop
 
                 +1 (800) 492-3628
 
-                solutions@businessdoctor.com
+                sales@businesdoctor.com
 
                 Response Time: Under 2 Hours
 

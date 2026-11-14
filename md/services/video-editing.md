@@ -575,7 +575,7 @@ We structure scripts using proven direct-response marketing principles: immediat
 
                 +1 (800) 492-3628
 
-                solutions@businessdoctor.com
+                sales@businesdoctor.com
 
                 Response Time: Under 2 Hours
 

@@ -210,6 +210,82 @@ function extractFaqsFromContent(string $html): array
 }
 
 /**
+ * Retrieve the single authoritative active Organization Schema entity.
+ * Priority: 1) Active DB Record (Home / Primary), 2) Verified Authoritative Defaults.
+ */
+function getPrimaryOrganizationSchema(string $baseUrl = ''): array
+{
+    static $cached = null;
+    if ($cached !== null) {
+        return $cached;
+    }
+
+    $baseUrl = rtrim($baseUrl ?: (defined('CANONICAL_BASE_URL') ? CANONICAL_BASE_URL : (defined('BASE_URL') ? BASE_URL : 'https://demo.businesdoctor.com')), '/');
+    $appName = defined('APP_NAME') ? APP_NAME : 'BusinessDoctor';
+    $legalName = defined('APP_LEGAL_NAME') ? APP_LEGAL_NAME : 'BusinessDoctor IT Solutions & Digital Services Private Limited';
+    $email = defined('APP_EMAIL') ? APP_EMAIL : 'sales@businesdoctor.com';
+    $phone = defined('APP_PHONE') ? APP_PHONE : '+1 (800) 492-3628';
+
+    try {
+        $pdo = Database::getConnection();
+        // Priority 1: Primary Enterprise Organization Schema (Home)
+        $stmt = $pdo->prepare("SELECT schema_json FROM page_schemas WHERE schema_type = 'Organization' AND status = 'active' ORDER BY (page_key = 'home') DESC, id ASC LIMIT 1");
+        $stmt->execute();
+        $row = $stmt->fetch(PDO::FETCH_ASSOC);
+        if ($row && !empty($row['schema_json'])) {
+            $rawJson = $row['schema_json'];
+            $replacements = [
+                '{{BASE_URL}}' => $baseUrl,
+                '{{CANONICAL_URL}}' => $baseUrl . '/',
+                '{{ORGANIZATION_NAME}}' => $appName,
+                '{{ORGANIZATION_EMAIL}}' => $email
+            ];
+            $bound = str_replace(array_keys($replacements), array_values($replacements), $rawJson);
+            $decoded = json_decode($bound, true);
+            if (is_array($decoded) && ($decoded['@type'] ?? '') === 'Organization') {
+                if (empty($decoded['@id'])) {
+                    $decoded['@id'] = $baseUrl . '/#organization';
+                }
+                $cached = $decoded;
+                return $cached;
+            }
+        }
+    } catch (Throwable $e) {
+        // Fallback to verified default
+    }
+
+    $cached = [
+        '@context' => 'https://schema.org',
+        '@type' => 'Organization',
+        '@id' => $baseUrl . '/#organization',
+        'name' => $appName,
+        'legalName' => $legalName,
+        'url' => $baseUrl . '/',
+        'logo' => [
+            '@type' => 'ImageObject',
+            'url' => $baseUrl . '/assets/img/logo.svg'
+        ],
+        'description' => 'BusinessDoctor is an enterprise digital transformation, cloud architecture, and full-stack software development consulting firm.',
+        'telephone' => $phone,
+        'email' => $email,
+        'address' => [
+            '@type' => 'PostalAddress',
+            'streetAddress' => 'First Floor, Ram Dutt Enclave, B-16, Block D, Uttam Nagar East',
+            'addressLocality' => 'Uttam Nagar, New Delhi',
+            'addressRegion' => 'Delhi',
+            'postalCode' => '110059',
+            'addressCountry' => 'IN'
+        ],
+        'sameAs' => [
+            'https://www.linkedin.com/company/businessdoctor',
+            'https://twitter.com/businessdoctor',
+            'https://github.com/businessdoctor'
+        ]
+    ];
+    return $cached;
+}
+
+/**
  * Generate complete Schema.org JSON-LD Graph for Insight Articles
  * Generates BlogPosting, BreadcrumbList, Organization, and FAQPage (if FAQs exist)
  */
@@ -246,35 +322,9 @@ function generateArticleSchemaGraph(array $article, string $baseUrl = ''): array
     $tagsArr = array_filter(array_map('trim', explode(',', (string)$rawTags)));
     $keywords = !empty($tagsArr) ? implode(', ', $tagsArr) : 'IT Strategy, Software Engineering, Enterprise Consulting';
 
-    // 1. Organization Schema (Required: Primary Verified Authority Entity)
-    $organization = [
-        '@context' => 'https://schema.org',
-        '@type' => 'Organization',
-        'name' => $appName,
-        'legalName' => $legalName,
-        'url' => $baseUrl . '/',
-        'logo' => [
-            '@type' => 'ImageObject',
-            'url' => $baseUrl . '/assets/img/logo.svg'
-        ],
-        'description' => 'BusinessDoctor is an enterprise digital transformation, cloud architecture, and full-stack software development consulting firm.',
-        'telephone' => '+1 (800) 492-3628',
-        'email' => 'solutions@businessdoctor.com',
-        'address' => [
-            '@type' => 'PostalAddress',
-            'streetAddress' => 'Sector 62, Innovation Corridor',
-            'addressLocality' => 'Noida',
-            'addressRegion' => 'UP',
-            'postalCode' => '201301',
-            'addressCountry' => 'IN'
-        ],
-        'sameAs' => [
-            'https://www.linkedin.com/company/businessdoctor',
-            'https://twitter.com/businessdoctor',
-            'https://github.com/businessdoctor'
-        ],
-        'mainEntityOfPage' => $articleUrl
-    ];
+    // 1. Organization Schema (Required: Primary Verified Authority Entity from Source of Truth)
+    $organization = getPrimaryOrganizationSchema($baseUrl);
+    $organization['mainEntityOfPage'] = $articleUrl;
 
     // 2. BreadcrumbList Schema (Required: Navigation Trail)
     $breadcrumbs = [
@@ -479,6 +529,7 @@ function renderPageSchemas(?string $pageKey = null, array $contextData = []): st
         $replacements = [
             '{{BASE_URL}}' => $baseUrl,
             '{{ORGANIZATION_NAME}}' => $appName,
+            '{{ORGANIZATION_EMAIL}}' => defined('APP_EMAIL') ? APP_EMAIL : 'sales@businesdoctor.com',
             '{{PAGE_TITLE}}' => addslashes($pageTitle),
             '{{PAGE_DESCRIPTION}}' => addslashes($pageDescription),
             '{{CANONICAL_URL}}' => $canonicalUrl,
@@ -498,6 +549,7 @@ function renderPageSchemas(?string $pageKey = null, array $contextData = []): st
         ];
 
         $hasBreadcrumbs = false;
+        $hasOrganization = false;
         foreach ($schemas as $row) {
             if (($row['schema_type'] ?? '') === 'BreadcrumbList') {
                 $hasBreadcrumbs = true;
@@ -511,6 +563,18 @@ function renderPageSchemas(?string $pageKey = null, array $contextData = []): st
             $decoded = json_decode($boundJson, true);
             if (!is_array($decoded) || json_last_error() !== JSON_ERROR_NONE) {
                 continue;
+            }
+
+            // Enforce unified single Organization entity with canonical @id per page
+            if (($row['schema_type'] ?? '') === 'Organization' || ($decoded['@type'] ?? '') === 'Organization') {
+                if ($hasOrganization) {
+                    // Prevent duplicate Organization blocks on the same page
+                    continue;
+                }
+                $hasOrganization = true;
+                if (empty($decoded['@id'])) {
+                    $decoded['@id'] = $baseUrl . '/#organization';
+                }
             }
 
             // Deduplicate by signature

@@ -8,8 +8,8 @@
 - **Central Markdown URL**: [https://demo.businesdoctor.com/md/about.md](https://demo.businesdoctor.com/md/about.md)
 - **Master Markdown Index**: [https://demo.businesdoctor.com/md](https://demo.businesdoctor.com/md)
 - **Corporate Legal Entity**: BusinessDoctor IT Solutions & Digital Services Private Limited
-- **Headquarters**: Floor 42, Executive Tech Park, Innovation District
-- **Advisory Contact**: [solutions@businessdoctor.com](mailto:solutions@businessdoctor.com) | Phone: +1 (800) 492-3628
+- **Headquarters**: First Floor, Ram Dutt Enclave, B-16, Block D, Uttam Nagar East, Uttam Nagar, New Delhi, Delhi, 110059
+- **Advisory Contact**: [sales@businesdoctor.com](mailto:sales@businesdoctor.com) | Phone: +1 (800) 492-3628
 
 ---
 

@@ -82,61 +82,130 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             $newStatus = ($submitAction === 'publish') ? 'active' : (($submitAction === 'unpublish') ? 'inactive' : 'draft');
             $now = date('Y-m-d H:i:s');
 
-            if ($isEditing) {
-                $update = $pdo->prepare("
-                    UPDATE page_schemas SET
-                        page_key = ?,
-                        page_url = ?,
-                        schema_name = ?,
-                        schema_type = ?,
-                        schema_description = ?,
-                        schema_json = ?,
-                        status = ?,
-                        updated_at = ?
-                    WHERE id = ?
-                ");
-                $update->execute([
-                    $pageKey,
-                    $pageUrl,
-                    $schemaName,
-                    $schemaType,
-                    $schemaDescription,
-                    $schemaJson,
-                    $newStatus,
-                    $now,
-                    $id
-                ]);
+            try {
+                if ($isEditing) {
+                    $update = $pdo->prepare("
+                        UPDATE page_schemas SET
+                            page_key = ?,
+                            page_url = ?,
+                            schema_name = ?,
+                            schema_type = ?,
+                            schema_description = ?,
+                            schema_json = ?,
+                            status = ?,
+                            updated_at = ?
+                        WHERE id = ?
+                    ");
+                    $update->execute([
+                        $pageKey,
+                        $pageUrl,
+                        $schemaName,
+                        $schemaType,
+                        $schemaDescription,
+                        $schemaJson,
+                        $newStatus,
+                        $now,
+                        $id
+                    ]);
 
-                require_once __DIR__ . '/../includes/seo-sync.php';
-                SeoSyncEngine::syncAll("Schema updated: {$schemaName} ({$pageKey})");
-                setFlashMessage('success', "Schema '{$schemaName}' updated successfully as " . strtoupper($newStatus) . ".");
-                header('Location: schema-manager.php');
-                exit;
-            } else {
-                $insert = $pdo->prepare("
-                    INSERT INTO page_schemas (
-                        page_key, page_url, schema_name, schema_type,
-                        schema_description, schema_json, status, created_at, updated_at
-                    ) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)
-                ");
-                $insert->execute([
-                    $pageKey,
-                    $pageUrl,
-                    $schemaName,
-                    $schemaType,
-                    $schemaDescription,
-                    $schemaJson,
-                    $newStatus,
-                    $now,
-                    $now
-                ]);
+                    // If editing an Organization entity, synchronize all Organization schemas across all pages
+                    if ($schemaType === 'Organization') {
+                        $syncOrg = $pdo->prepare("
+                            UPDATE page_schemas SET
+                                schema_json = ?,
+                                status = ?,
+                                updated_at = ?
+                            WHERE schema_type = 'Organization'
+                        ");
+                        $syncOrg->execute([$schemaJson, $newStatus, $now]);
+                    }
 
-                $newId = (int)$pdo->lastInsertId();
-                require_once __DIR__ . '/../includes/seo-sync.php';
-                SeoSyncEngine::syncAll("New Schema created: {$schemaName} ({$pageKey})");
-                setFlashMessage('success', "New Schema '{$schemaName}' created successfully as " . strtoupper($newStatus) . ".");
-                header('Location: schema-manager.php');
-                exit;
+                    // Keep SQLite database file in sync with MySQL if running on MySQL
+                    $sqlitePath = dirname(__DIR__) . '/database/businessdoctor.sqlite';
+                    if (file_exists($sqlitePath) && DB_DRIVER !== 'sqlite') {
+                        try {
+                            $sqlite = new PDO('sqlite:' . $sqlitePath);
+                            $sqlite->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+                            $sqUpdate = $sqlite->prepare("
+                                UPDATE page_schemas SET
+                                    page_key = ?,
+                                    page_url = ?,
+                                    schema_name = ?,
+                                    schema_type = ?,
+                                    schema_description = ?,
+                                    schema_json = ?,
+                                    status = ?,
+                                    updated_at = ?
+                                WHERE id = ?
+                            ");
+                            $sqUpdate->execute([$pageKey, $pageUrl, $schemaName, $schemaType, $schemaDescription, $schemaJson, $newStatus, $now, $id]);
+                            if ($schemaType === 'Organization') {
+                                $sqSync = $sqlite->prepare("
+                                    UPDATE page_schemas SET
+                                        schema_json = ?,
+                                        status = ?,
+                                        updated_at = ?
+                                    WHERE schema_type = 'Organization'
+                                ");
+                                $sqSync->execute([$schemaJson, $newStatus, $now]);
+                            }
+                        } catch (Throwable $eSqlite) {
+                            error_log('[SQLITE SYNC NOTICE] ' . $eSqlite->getMessage());
+                        }
+                    }
+
+                    require_once __DIR__ . '/../includes/seo-sync.php';
+                    SeoSyncEngine::syncAll("Schema updated: {$schemaName} ({$pageKey})");
+                    setFlashMessage('success', "Schema '{$schemaName}' updated successfully as " . strtoupper($newStatus) . ".");
+                    header('Location: schema-manager.php');
+                    exit;
+                } else {
+                    $insert = $pdo->prepare("
+                        INSERT INTO page_schemas (
+                            page_key, page_url, schema_name, schema_type,
+                            schema_description, schema_json, status, created_at, updated_at
+                        ) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)
+                    ");
+                    $insert->execute([
+                        $pageKey,
+                        $pageUrl,
+                        $schemaName,
+                        $schemaType,
+                        $schemaDescription,
+                        $schemaJson,
+                        $newStatus,
+                        $now,
+                        $now
+                    ]);
+
+                    $newId = (int)$pdo->lastInsertId();
+
+                    // Keep SQLite database file in sync with MySQL if running on MySQL
+                    $sqlitePath = dirname(__DIR__) . '/database/businessdoctor.sqlite';
+                    if (file_exists($sqlitePath) && DB_DRIVER !== 'sqlite') {
+                        try {
+                            $sqlite = new PDO('sqlite:' . $sqlitePath);
+                            $sqlite->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+                            $sqInsert = $sqlite->prepare("
+                                INSERT INTO page_schemas (
+                                    page_key, page_url, schema_name, schema_type,
+                                    schema_description, schema_json, status, created_at, updated_at
+                                ) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)
+                            ");
+                            $sqInsert->execute([$pageKey, $pageUrl, $schemaName, $schemaType, $schemaDescription, $schemaJson, $newStatus, $now, $now]);
+                        } catch (Throwable $eSqlite) {
+                            error_log('[SQLITE SYNC NOTICE] ' . $eSqlite->getMessage());
+                        }
+                    }
+
+                    require_once __DIR__ . '/../includes/seo-sync.php';
+                    SeoSyncEngine::syncAll("New Schema created: {$schemaName} ({$pageKey})");
+                    setFlashMessage('success', "New Schema '{$schemaName}' created successfully as " . strtoupper($newStatus) . ".");
+                    header('Location: schema-manager.php');
+                    exit;
+                }
+            } catch (PDOException $e) {
+                $errors[] = 'Database save failure: ' . $e->getMessage();
             }
         }
     }
@@ -167,6 +236,7 @@ require_once __DIR__ . '/includes/header.php';
 <form method="POST" action="schema-edit.php<?= $isEditing ? '?id=' . $id : '' ?>" id="schemaForm">
   <input type="hidden" name="csrf_token" value="<?= getCsrfToken() ?>">
   <input type="hidden" name="schema_description" id="schemaDescInput" value="<?= e($schemaDescription) ?>">
+  <input type="hidden" name="submit_action" id="submitActionInput" value="<?= $status === 'active' ? 'publish' : 'draft' ?>">
 
   <!-- Top Sticky Workspace Action Header -->
   <div class="adm-workspace-header">
@@ -193,17 +263,17 @@ require_once __DIR__ . '/includes/header.php';
       </button>
 
       <?php if ($isEditing && $status === 'active'): ?>
-        <button type="submit" name="submit_action" value="unpublish" class="btn-adm btn-adm-secondary" style="font-weight: 600; color: #FCA5A5;">
+        <button type="submit" name="submit_action" value="unpublish" class="btn-adm btn-adm-secondary" onclick="document.getElementById('submitActionInput').value='unpublish'" style="font-weight: 600; color: #FCA5A5;">
           Unpublish
         </button>
       <?php endif; ?>
 
-      <button type="submit" name="submit_action" value="draft" class="btn-adm btn-adm-secondary" style="font-weight: 600;">
+      <button type="submit" name="submit_action" value="draft" class="btn-adm btn-adm-secondary" onclick="document.getElementById('submitActionInput').value='draft'" style="font-weight: 600;">
         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" width="16" height="16" stroke-width="2"><path d="M19 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11l5 5v11a2 2 0 0 1-2 2z"/></svg>
         <span>Save Draft</span>
       </button>
 
-      <button type="submit" name="submit_action" value="publish" class="btn-adm btn-adm-primary" style="font-weight: 700; box-shadow: 0 4px 15px rgba(6, 181, 249, 0.35);">
+      <button type="submit" name="submit_action" value="publish" class="btn-adm btn-adm-primary" onclick="document.getElementById('submitActionInput').value='publish'" style="font-weight: 700; box-shadow: 0 4px 15px rgba(6, 181, 249, 0.35);">
         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" width="16" height="16" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg>
         <span>Save &amp; Publish</span>
       </button>
@@ -421,15 +491,27 @@ const starterTemplates = {
     "@type": "Organization",
     "@id": "{{BASE_URL}}/#organization",
     "name": "BusinessDoctor",
-    "legalName": "BusinessDoctor Enterprise Solutions Pvt. Ltd.",
+    "legalName": "BusinessDoctor IT Solutions & Digital Services Private Limited",
     "url": "{{BASE_URL}}/",
-    "logo": "{{BASE_URL}}/assets/img/logo.svg",
-    "description": "Enterprise digital transformation, cloud architecture, and full-stack software development consulting firm.",
-    "telephone": "+91 98765 43210",
-    "email": "leadership@businessdoctor.com",
+    "logo": {
+      "@type": "ImageObject",
+      "url": "{{BASE_URL}}/assets/img/logo.svg"
+    },
+    "description": "BusinessDoctor is an enterprise digital transformation, cloud architecture, and full-stack software development consulting firm.",
+    "telephone": "+1 (800) 492-3628",
+    "email": "sales@businesdoctor.com",
+    "address": {
+      "@type": "PostalAddress",
+      "streetAddress": "First Floor, Ram Dutt Enclave, B-16, Block D, Uttam Nagar East",
+      "addressLocality": "Uttam Nagar, New Delhi",
+      "addressRegion": "Delhi",
+      "postalCode": "110059",
+      "addressCountry": "IN"
+    },
     "sameAs": [
       "https://www.linkedin.com/company/businessdoctor",
-      "https://twitter.com/businessdoctor"
+      "https://twitter.com/businessdoctor",
+      "https://github.com/businessdoctor"
     ]
   },
   'WebSite': {
@@ -478,9 +560,9 @@ const starterTemplates = {
     "description": "Initiate a dialogue with BusinessDoctor solution architects and digital practice directors.",
     "mainEntity": {
       "@type": "ContactPoint",
-      "telephone": "+91 98765 43210",
+      "telephone": "+1 (800) 492-3628",
       "contactType": "customer service",
-      "email": "leadership@businessdoctor.com"
+      "email": "sales@businesdoctor.com"
     }
   },
   'Service': {

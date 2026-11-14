@@ -575,7 +575,7 @@ We implement automated honeypot spam filters, work email verification, and condi
 
                 +1 (800) 492-3628
 
-                solutions@businessdoctor.com
+                sales@businesdoctor.com
 
                 Response Time: Under 2 Hours
 

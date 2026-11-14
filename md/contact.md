@@ -8,8 +8,8 @@
 - **Central Markdown URL**: [https://demo.businesdoctor.com/md/contact.md](https://demo.businesdoctor.com/md/contact.md)
 - **Master Markdown Index**: [https://demo.businesdoctor.com/md](https://demo.businesdoctor.com/md)
 - **Direct Advisory Phone**: +1 (800) 492-3628
-- **Advisory & Scoping Email**: [solutions@businessdoctor.com](mailto:solutions@businessdoctor.com)
-- **Corporate Headquarters**: Floor 42, Executive Tech Park, Innovation District
+- **Advisory & Scoping Email**: [sales@businesdoctor.com](mailto:sales@businesdoctor.com)
+- **Corporate Headquarters**: First Floor, Ram Dutt Enclave, B-16, Block D, Uttam Nagar East, Uttam Nagar, New Delhi, Delhi, 110059
 - **Guaranteed Response SLA**: Initial technical review and response within 2 business hours.
 
 ---
@@ -47,9 +47,9 @@ When you engage BusinessDoctor, you speak directly with experienced software eng
 ---
 
 ## 03 // Physical Headquarters & Global Operational Coordinates
-- **Headquarters**: Floor 42, Executive Tech Park, Innovation District
+- **Headquarters**: First Floor, Ram Dutt Enclave, B-16, Block D, Uttam Nagar East, Uttam Nagar, New Delhi, Delhi, 110059
 - **Advisory Direct Line**: +1 (800) 492-3628
-- **General & Scoping Inquiries**: [solutions@businessdoctor.com](mailto:solutions@businessdoctor.com)
+- **General & Scoping Inquiries**: [sales@businesdoctor.com](mailto:sales@businesdoctor.com)
 - **Technical Support Desk**: [support@businessdoctor.com](mailto:support@businessdoctor.com)
 - **Operating Hours**: Monday through Friday, 09:00 – 19:00 IST / 24/7/365 Emergency Monitoring for Enterprise Clients with Active SLAs.
 

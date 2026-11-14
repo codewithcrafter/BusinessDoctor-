@@ -325,7 +325,7 @@ You do. Upon final payment, you receive full commercial usage rights for web, so
 
                 +1 (800) 492-3628
 
-                solutions@businessdoctor.com
+                sales@businesdoctor.com
 
                 Response Time: Under 2 Hours
 

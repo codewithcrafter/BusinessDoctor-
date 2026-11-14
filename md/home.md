@@ -9,8 +9,8 @@
 - **Master Markdown Index**: [https://demo.businesdoctor.com/md](https://demo.businesdoctor.com/md)
 - **AI Agent Discovery**: [https://demo.businesdoctor.com/llms.txt](https://demo.businesdoctor.com/llms.txt) | [https://demo.businesdoctor.com/llms.md](https://demo.businesdoctor.com/llms.md)
 - **XML Sitemap**: [https://demo.businesdoctor.com/sitemap.xml](https://demo.businesdoctor.com/sitemap.xml)
-- **Primary Contact**: [solutions@businessdoctor.com](mailto:solutions@businessdoctor.com) | Phone: +1 (800) 492-3628
-- **Headquarters**: Floor 42, Executive Tech Park, Innovation District
+- **Primary Contact**: [sales@businesdoctor.com](mailto:sales@businesdoctor.com) | Phone: +1 (800) 492-3628
+- **Headquarters**: First Floor, Ram Dutt Enclave, B-16, Block D, Uttam Nagar East, Uttam Nagar, New Delhi, Delhi, 110059
 
 ---
 

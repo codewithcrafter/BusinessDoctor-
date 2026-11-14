@@ -2,7 +2,7 @@
 > Engineering Technology. Accelerating Digital Growth.
 
 Canonical Source: https://demo.businesdoctor.com
-Last Updated: 2026-11-14 08:01:37 UTC
+Last Updated: 2026-11-14 08:24:44 UTC
 
 ## 1. Executive Overview & Firm Profile
 
@@ -10,8 +10,8 @@ BusinessDoctor (BusinessDoctor IT Solutions & Digital Services Private Limited) 
 
 - **Firm Legal Name**: BusinessDoctor IT Solutions & Digital Services Private Limited
 - **Primary URL**: https://demo.businesdoctor.com
-- **Inquiries**: solutions@businessdoctor.com | Telephone: +1 (800) 492-3628
-- **Global Operations**: Floor 42, Executive Tech Park, Innovation District
+- **Inquiries**: sales@businesdoctor.com | Telephone: +1 (800) 492-3628
+- **Global Operations**: First Floor, Ram Dutt Enclave, B-16, Block D, Uttam Nagar East, Uttam Nagar, New Delhi, Delhi, 110059
 - **Engineering Philosophy**: Sub-second server responses, zero framework bloat, semantic accessible HTML5, resilient SQLite / MariaDB data layers, and privacy-first analytics.
 
 ## 2. Core Practice Disciplines & Deliverables
@@ -300,9 +300,9 @@ BusinessDoctor operates an interactive diagnostic assessment portal at [https://
 ## 6. Enterprise Inquiries & Contact Channels
 
 - **Web Engagement Portal**: [https://demo.businesdoctor.com/contact.php](https://demo.businesdoctor.com/contact.php)
-- **Email Advisory**: [solutions@businessdoctor.com](mailto:solutions@businessdoctor.com)
+- **Email Advisory**: [sales@businesdoctor.com](mailto:sales@businesdoctor.com)
 - **Direct Phone Line**: +1 (800) 492-3628
-- **Headquarters**: Floor 42, Executive Tech Park, Innovation District
+- **Headquarters**: First Floor, Ram Dutt Enclave, B-16, Block D, Uttam Nagar East, Uttam Nagar, New Delhi, Delhi, 110059
 - **Public Markdown Index**: [https://demo.businesdoctor.com/md](https://demo.businesdoctor.com/md)
 
 ---
