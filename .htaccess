@@ -117,6 +117,10 @@ AddType text/markdown .md
         Header set Access-Control-Allow-Origin "*"
         Header set X-Robots-Tag "index, follow"
     </FilesMatch>
+    <FilesMatch "^(sitemap\.xml|llms\.txt|llms\.md|robots\.txt)$">
+        Header set Cache-Control "public, max-age=0, must-revalidate"
+        Header set Pragma "no-cache"
+    </FilesMatch>
     Header always set X-Content-Type-Options "nosniff"
     Header always set X-Frame-Options "SAMEORIGIN"
     Header always set X-XSS-Protection "1; mode=block"
@@ -137,6 +141,9 @@ AddType text/markdown .md
     ExpiresActive On
     ExpiresDefault "access plus 1 week"
 
+    ExpiresByType application/xml "access plus 0 seconds"
+    ExpiresByType text/xml "access plus 0 seconds"
+    ExpiresByType text/plain "access plus 0 seconds"
     ExpiresByType text/css "access plus 1 month"
     ExpiresByType application/javascript "access plus 1 month"
     ExpiresByType image/svg+xml "access plus 1 month"
