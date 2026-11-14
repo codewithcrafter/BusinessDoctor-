@@ -147,7 +147,7 @@ require_once __DIR__ . '/includes/header.php';
   </div>
   <div style="display: flex; gap: 0.75rem;">
     <a href="services.php" class="btn-adm btn-adm-secondary">Back to Services</a>
-    <a href="<?= appUrl('services/' . $service['slug']) ?>" target="_blank" class="btn-adm btn-adm-secondary">View Live Page ↗</a>
+    <a href="<?= appUrl('company/' . $service['slug']) ?>" target="_blank" class="btn-adm btn-adm-secondary">View Live Page ↗</a>
   </div>
 </div>
 
@@ -274,7 +274,7 @@ require_once __DIR__ . '/includes/header.php';
         <div style="font-size: 0.82rem; color: var(--adm-text-muted); display: flex; flex-direction: column; gap: 0.5rem; font-family: var(--adm-font-mono);">
           <div>ID: <?= (int)$service['id'] ?></div>
           <div>DISCIPLINE: <?= e($service['number']) ?></div>
-          <div>SLUG: /services/<?= e($service['slug']) ?></div>
+          <div>SLUG: /company/<?= e($service['slug']) ?></div>
           <div>CREATED: <?= e($service['created_at']) ?></div>
           <div>UPDATED: <?= e($service['updated_at'] ?: 'N/A') ?></div>
         </div>

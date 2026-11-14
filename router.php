@@ -38,10 +38,16 @@ if (str_starts_with($uri, '/admin/')) {
     }
 }
 
-// 3. Clean Service URLs: /services/{slug} -> service-detail.php?slug={slug}
-if (preg_match('#^/services/([a-zA-Z0-9_-]+)/?$#', $uri, $matches)) {
+// 3. Clean Service URLs: /company/{slug} -> service-detail.php?slug={slug}
+if (preg_match('#^/company/([a-zA-Z0-9_-]+)/?$#', $uri, $matches)) {
     $_GET['slug'] = $matches[1];
     require __DIR__ . '/service-detail.php';
+    return true;
+}
+
+// Legacy Service URLs: 301 Permanent Redirect /services/{slug} -> /company/{slug}
+if (preg_match('#^/services/([a-zA-Z0-9_-]+)/?$#', $uri, $matches)) {
+    header("Location: /company/" . $matches[1], true, 301);
     return true;
 }
 

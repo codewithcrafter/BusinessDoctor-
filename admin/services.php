@@ -55,7 +55,7 @@ require_once __DIR__ . '/includes/header.php';
               <div style="font-size: 0.78rem; color: var(--adm-text-muted); margin-top: 0.25rem;"><?= e($s['tagline']) ?></div>
             </td>
             <td style="padding: 1rem; font-family: var(--adm-font-mono); font-size: 0.8rem; color: var(--adm-teal);">
-              /services/<?= e($s['slug']) ?>
+              /company/<?= e($s['slug']) ?>
             </td>
             <td style="padding: 1rem;">
               <span class="status-pill <?= $s['is_active'] ? 'status-published' : 'status-draft' ?>">
@@ -67,7 +67,7 @@ require_once __DIR__ . '/includes/header.php';
             </td>
             <td style="padding: 1rem; text-align: right;">
               <div style="display: flex; gap: 0.5rem; justify-content: flex-end;">
-                <a href="<?= appUrl('services/' . $s['slug']) ?>" target="_blank" class="btn-adm btn-adm-secondary btn-adm-sm" title="View Public Page">
+                <a href="<?= appUrl('company/' . $s['slug']) ?>" target="_blank" class="btn-adm btn-adm-secondary btn-adm-sm" title="View Public Page">
                   <span>View ↗</span>
                 </a>
                 <a href="service-edit.php?id=<?= (int)$s['id'] ?>" class="btn-adm btn-adm-primary btn-adm-sm">

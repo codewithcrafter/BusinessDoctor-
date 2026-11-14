@@ -7,7 +7,7 @@ High-performance machine-readable Markdown repository for generative AI models, 
 - **AI Discovery Manifest**: [https://demo.businesdoctor.com/llms.txt](https://demo.businesdoctor.com/llms.txt)
 - **Comprehensive LLM Context**: [https://demo.businesdoctor.com/llms.md](https://demo.businesdoctor.com/llms.md)
 - **XML Sitemap**: [https://demo.businesdoctor.com/sitemap.xml](https://demo.businesdoctor.com/sitemap.xml)
-- **Last Synchronized**: 2026-11-14 06:13:54 UTC
+- **Last Synchronized**: 2026-11-14 06:39:10 UTC
 
 ---
 
@@ -23,16 +23,16 @@ High-performance machine-readable Markdown repository for generative AI models, 
 
 ## 2. Core Practice Disciplines & Services
 
-- [SMO — Social Media Optimization](https://demo.businesdoctor.com/md/services/smo.md) ([Clean URL](https://demo.businesdoctor.com/services/smo.md) | [Web Page](https://demo.businesdoctor.com/services/smo)): Social Profile Architecture, Content Velocity & Organic Reach.
-- [Google Business Profile Management](https://demo.businesdoctor.com/md/services/google-business-profile.md) ([Clean URL](https://demo.businesdoctor.com/services/google-business-profile.md) | [Web Page](https://demo.businesdoctor.com/services/google-business-profile)): Local 3-Pack Dominance, Verification & High-Intent Local Leads.
-- [PPC / Paid Ads](https://demo.businesdoctor.com/md/services/ppc-paid-ads.md) ([Clean URL](https://demo.businesdoctor.com/services/ppc-paid-ads.md) | [Web Page](https://demo.businesdoctor.com/services/ppc-paid-ads)): Precision Performance Advertising, Search Ads & ROAS Maximization.
-- [Ecommerce Management](https://demo.businesdoctor.com/md/services/ecommerce-management.md) ([Clean URL](https://demo.businesdoctor.com/services/ecommerce-management.md) | [Web Page](https://demo.businesdoctor.com/services/ecommerce-management)): Amazon, Flipkart & Multi-Channel Storefront Scaling.
-- [Graphic Design](https://demo.businesdoctor.com/md/services/graphic-design.md) ([Clean URL](https://demo.businesdoctor.com/services/graphic-design.md) | [Web Page](https://demo.businesdoctor.com/services/graphic-design)): Brand Identity Systems, Commercial Collateral & Visual Direction.
-- [SEO — Search Engine Optimization](https://demo.businesdoctor.com/md/services/seo.md) ([Clean URL](https://demo.businesdoctor.com/services/seo.md) | [Web Page](https://demo.businesdoctor.com/services/seo)): Organic Search Dominance, Technical Hygiene & Keyword Authority.
-- [Social Media Marketing](https://demo.businesdoctor.com/md/services/social-media-marketing.md) ([Clean URL](https://demo.businesdoctor.com/services/social-media-marketing.md) | [Web Page](https://demo.businesdoctor.com/services/social-media-marketing)): Community Building, Targeted Paid Sprints & Conversational Growth.
-- [Product Photography](https://demo.businesdoctor.com/md/services/product-photography.md) ([Clean URL](https://demo.businesdoctor.com/services/product-photography.md) | [Web Page](https://demo.businesdoctor.com/services/product-photography)): Studio Commercial Imaging, 360° Views & E-Commerce Visuals.
-- [Video Editing](https://demo.businesdoctor.com/md/services/video-editing.md) ([Clean URL](https://demo.businesdoctor.com/services/video-editing.md) | [Web Page](https://demo.businesdoctor.com/services/video-editing)): Short-Form Reels, Commercial Brand Films & Motion Graphics.
-- [Web Development](https://demo.businesdoctor.com/md/services/web-development.md) ([Clean URL](https://demo.businesdoctor.com/services/web-development.md) | [Web Page](https://demo.businesdoctor.com/services/web-development)): High-Performance Platforms, Custom Web Apps & Scalable Portals.
+- [SMO — Social Media Optimization](https://demo.businesdoctor.com/md/services/smo.md) ([Clean URL](https://demo.businesdoctor.com/company/smo.md) | [Web Page](https://demo.businesdoctor.com/company/smo)): Social Profile Architecture, Content Velocity & Organic Reach.
+- [Google Business Profile Management](https://demo.businesdoctor.com/md/services/google-business-profile.md) ([Clean URL](https://demo.businesdoctor.com/company/google-business-profile.md) | [Web Page](https://demo.businesdoctor.com/company/google-business-profile)): Local 3-Pack Dominance, Verification & High-Intent Local Leads.
+- [PPC / Paid Ads](https://demo.businesdoctor.com/md/services/ppc-paid-ads.md) ([Clean URL](https://demo.businesdoctor.com/company/ppc-paid-ads.md) | [Web Page](https://demo.businesdoctor.com/company/ppc-paid-ads)): Precision Performance Advertising, Search Ads & ROAS Maximization.
+- [Ecommerce Management](https://demo.businesdoctor.com/md/services/ecommerce-management.md) ([Clean URL](https://demo.businesdoctor.com/company/ecommerce-management.md) | [Web Page](https://demo.businesdoctor.com/company/ecommerce-management)): Amazon, Flipkart & Multi-Channel Storefront Scaling.
+- [Graphic Design](https://demo.businesdoctor.com/md/services/graphic-design.md) ([Clean URL](https://demo.businesdoctor.com/company/graphic-design.md) | [Web Page](https://demo.businesdoctor.com/company/graphic-design)): Brand Identity Systems, Commercial Collateral & Visual Direction.
+- [SEO — Search Engine Optimization](https://demo.businesdoctor.com/md/services/seo.md) ([Clean URL](https://demo.businesdoctor.com/company/seo.md) | [Web Page](https://demo.businesdoctor.com/company/seo)): Organic Search Dominance, Technical Hygiene & Keyword Authority.
+- [Social Media Marketing](https://demo.businesdoctor.com/md/services/social-media-marketing.md) ([Clean URL](https://demo.businesdoctor.com/company/social-media-marketing.md) | [Web Page](https://demo.businesdoctor.com/company/social-media-marketing)): Community Building, Targeted Paid Sprints & Conversational Growth.
+- [Product Photography](https://demo.businesdoctor.com/md/services/product-photography.md) ([Clean URL](https://demo.businesdoctor.com/company/product-photography.md) | [Web Page](https://demo.businesdoctor.com/company/product-photography)): Studio Commercial Imaging, 360° Views & E-Commerce Visuals.
+- [Video Editing](https://demo.businesdoctor.com/md/services/video-editing.md) ([Clean URL](https://demo.businesdoctor.com/company/video-editing.md) | [Web Page](https://demo.businesdoctor.com/company/video-editing)): Short-Form Reels, Commercial Brand Films & Motion Graphics.
+- [Web Development](https://demo.businesdoctor.com/md/services/web-development.md) ([Clean URL](https://demo.businesdoctor.com/company/web-development.md) | [Web Page](https://demo.businesdoctor.com/company/web-development)): High-Performance Platforms, Custom Web Apps & Scalable Portals.
 
 ## 3. Client Case Studies & Proven Results
 

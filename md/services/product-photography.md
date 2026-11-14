@@ -4,8 +4,8 @@
 
 ## Discipline Information
 - **Practice Area**: 08 Product Photography
-- **Canonical Web URL**: [https://demo.businesdoctor.com/services/product-photography](https://demo.businesdoctor.com/services/product-photography)
-- **Clean Markdown URL**: [https://demo.businesdoctor.com/services/product-photography.md](https://demo.businesdoctor.com/services/product-photography.md)
+- **Canonical Web URL**: [https://demo.businesdoctor.com/company/product-photography](https://demo.businesdoctor.com/company/product-photography)
+- **Clean Markdown URL**: [https://demo.businesdoctor.com/company/product-photography.md](https://demo.businesdoctor.com/company/product-photography.md)
 - **Central Markdown URL**: [https://demo.businesdoctor.com/md/services/product-photography.md](https://demo.businesdoctor.com/md/services/product-photography.md)
 - **Direct Consultation**: [Schedule Practice Scope](http://demo.businesdoctor.com/scratch/contact.php?service=Product+Photography)
 

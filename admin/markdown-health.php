@@ -93,8 +93,8 @@ foreach ($services as $slug => $s) {
     $pagesInventory[] = [
         'section' => 'Practice Discipline',
         'title' => ($s['number'] ?? '') . ' ' . ($s['name'] ?? $slug),
-        'web_url' => '/services/' . $slug,
-        'clean_md' => '/services/' . $slug . '.md',
+        'web_url' => '/company/' . $slug,
+        'clean_md' => '/company/' . $slug . '.md',
         'repo_file' => 'md/services/' . $slug . '.md',
     ];
 }

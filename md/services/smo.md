@@ -4,8 +4,8 @@
 
 ## Discipline Information
 - **Practice Area**: 01 SMO — Social Media Optimization
-- **Canonical Web URL**: [https://demo.businesdoctor.com/services/smo](https://demo.businesdoctor.com/services/smo)
-- **Clean Markdown URL**: [https://demo.businesdoctor.com/services/smo.md](https://demo.businesdoctor.com/services/smo.md)
+- **Canonical Web URL**: [https://demo.businesdoctor.com/company/smo](https://demo.businesdoctor.com/company/smo)
+- **Clean Markdown URL**: [https://demo.businesdoctor.com/company/smo.md](https://demo.businesdoctor.com/company/smo.md)
 - **Central Markdown URL**: [https://demo.businesdoctor.com/md/services/smo.md](https://demo.businesdoctor.com/md/services/smo.md)
 - **Direct Consultation**: [Schedule Practice Scope](http://demo.businesdoctor.com/scratch/contact.php?service=SMO+%E2%80%94+Social+Media+Optimization)
 

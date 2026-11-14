@@ -25,9 +25,9 @@ AddType text/markdown .md
     # Block direct web access to sensitive internal directories
     RewriteRule ^(database|scratch|includes)/ - [F,L,NC]
 
-    # 301 Redirect legacy /service-detail.php?slug={slug} to clean /services/{slug}
+    # 301 Redirect legacy /service-detail.php?slug={slug} to clean /company/{slug}
     RewriteCond %{THE_REQUEST} \s/+service-detail(?:\.php)?\?slug=([a-zA-Z0-9_-]+) [NC]
-    RewriteRule ^ /services/%1? [R=301,L]
+    RewriteRule ^ /company/%1? [R=301,L]
 
     # 301 Redirect legacy /service-detail.php without slug to /services.php
     RewriteCond %{THE_REQUEST} \s/+service-detail(?:\.php)?(\s|\?) [NC]
@@ -51,18 +51,24 @@ AddType text/markdown .md
     RewriteCond %{REQUEST_URI} !^/markdown-router\.php
     RewriteRule (\.md$|^md/) markdown-router.php [L,QSA]
 
-    # 301 Redirect legacy service slugs to new service slugs
-    RewriteRule ^services/web-software-development/?$ /services/web-development [R=301,L]
-    RewriteRule ^services/digital-marketing-seo/?$ /services/seo [R=301,L]
-    RewriteRule ^services/ui-ux-branding/?$ /services/graphic-design [R=301,L]
-    RewriteRule ^services/ecommerce-marketplaces/?$ /services/ecommerce-management [R=301,L]
-    RewriteRule ^services/creative-video-production/?$ /services/video-editing [R=301,L]
-    RewriteRule ^services/cloud-it-consulting/?$ /services/web-development [R=301,L]
+    # 301 Redirect legacy service slugs to new service slugs under /company/
+    RewriteRule ^(?:services|company)/web-software-development/?$ /company/web-development [R=301,L]
+    RewriteRule ^(?:services|company)/digital-marketing-seo/?$ /company/seo [R=301,L]
+    RewriteRule ^(?:services|company)/ui-ux-branding/?$ /company/graphic-design [R=301,L]
+    RewriteRule ^(?:services|company)/ecommerce-marketplaces/?$ /company/ecommerce-management [R=301,L]
+    RewriteRule ^(?:services|company)/creative-video-production/?$ /company/video-editing [R=301,L]
+    RewriteRule ^(?:services|company)/cloud-it-consulting/?$ /company/web-development [R=301,L]
 
-    # Clean Service URL Rewriting: /services/{slug} -> /service-detail.php?slug={slug}
+    # 301 Redirect all old /services/{slug} to new /company/{slug} structure
+    RewriteRule ^services/([a-zA-Z0-9_-]+)/?$ /company/$1 [R=301,L]
+
+    # 301 Redirect all old /services/{slug}.md to new /company/{slug}.md
+    RewriteRule ^services/([a-zA-Z0-9_-]+)\.md$ /company/$1.md [R=301,L]
+
+    # Clean Service URL Rewriting: /company/{slug} -> service-detail.php?slug={slug}
     RewriteCond %{REQUEST_FILENAME} !-f
     RewriteCond %{REQUEST_FILENAME} !-d
-    RewriteRule ^services/([a-zA-Z0-9_-]+)/?$ service-detail.php?slug=$1 [L,QSA]
+    RewriteRule ^company/([a-zA-Z0-9_-]+)/?$ service-detail.php?slug=$1 [L,QSA]
 
     # Clean Services Index Rewriting: /services -> /services.php
     RewriteCond %{REQUEST_FILENAME} !-f

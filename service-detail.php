@@ -10,11 +10,15 @@ require_once __DIR__ . '/includes/db.php';
 require_once __DIR__ . '/includes/functions.php';
 
 // 1. Legacy URL 301 Permanent Redirect
-// Check for legacy slug alias first and redirect immediately
+// All service detail pages follow the mandatory URL structure: /company/{service-slug}
 $reqUri = $_SERVER['REQUEST_URI'] ?? '';
+$reqPath = parse_url($reqUri, PHP_URL_PATH) ?? '';
 $rawSlug = trim($_GET['slug'] ?? '');
 
 $legacySlugMap = [
+    'seo-services' => 'seo',
+    'smo-services' => 'smo',
+    'digital-marketing' => 'seo',
     'strategic-consulting' => 'web-development',
     'digital-engineering' => 'web-development',
     'performance-marketing' => 'seo',
@@ -29,17 +33,18 @@ $legacySlugMap = [
     'cloud-it-consulting' => 'web-development',
 ];
 
+// Redirect legacy slug aliases immediately to new /company/{canonical_slug}
 if ($rawSlug !== '' && isset($legacySlugMap[$rawSlug])) {
-    header("Location: /services/" . $legacySlugMap[$rawSlug], true, 301);
+    header("Location: /company/" . $legacySlugMap[$rawSlug], true, 301);
     exit;
 }
 
-// If client requested /service-detail.php?slug=... directly, 301 redirect to /services/{slug}
-if (str_contains($reqUri, 'service-detail.php')) {
+// If client requested /services/{slug} or /service-detail.php?slug=..., 301 redirect to /company/{slug}
+if (str_starts_with($reqPath, '/services/') || str_contains($reqUri, 'service-detail.php')) {
     if ($rawSlug !== '') {
         $p = getPracticeBySlug($rawSlug);
         $redirectSlug = $p ? $p['slug'] : rawurlencode($rawSlug);
-        $targetUrl = '/services/' . $redirectSlug;
+        $targetUrl = '/company/' . $redirectSlug;
     } else {
         $targetUrl = '/services.php';
     }
@@ -94,7 +99,7 @@ if (!$practice) {
     exit;
 }
 
-$canonicalUrl = BASE_URL . '/services/' . $practice['slug'];
+$canonicalUrl = BASE_URL . '/company/' . $practice['slug'];
 $pageTitle = $practice['name'] . ' — BusinessDoctor Enterprise Capabilities';
 $pageDescription = $practice['summary'];
 

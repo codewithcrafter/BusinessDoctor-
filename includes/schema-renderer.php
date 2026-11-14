@@ -36,7 +36,7 @@ function getSupportedSchemaPages(): array
         ],
         'service-detail' => [
             'name' => 'Individual Service Pages',
-            'url' => '/services/{slug}',
+            'url' => '/company/{slug}',
             'recommended_types' => ['Service', 'BreadcrumbList'],
             'is_dynamic' => true
         ],
@@ -86,7 +86,7 @@ function detectCurrentPageKey(): string
 {
     // Check clean route paths first
     $reqPath = parse_url($_SERVER['REQUEST_URI'] ?? '', PHP_URL_PATH);
-    if ($reqPath !== null && preg_match('#^/services/([a-zA-Z0-9_-]+)#', $reqPath)) {
+    if ($reqPath !== null && preg_match('#^/(?:services|company)/([a-zA-Z0-9_-]+)#', $reqPath)) {
         return 'service-detail';
     }
 

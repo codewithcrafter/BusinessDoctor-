@@ -374,8 +374,8 @@ function isActivePage(string ...$pages): string
         return $isHome ? 'active' : '';
     }
 
-    // Clean routes for /services or /services/{slug}
-    if (str_contains($reqUri, '/services')) {
+    // Clean routes for /services, /services.php, or /company/{slug}
+    if (str_contains($reqUri, '/services') || str_contains($reqUri, '/company')) {
         if (in_array('services.php', $pages, true) || in_array('service-detail.php', $pages, true)) {
             return 'active';
         }
@@ -414,7 +414,7 @@ function getAssetUrl(string $path): string
  */
 function getServiceUrl(string $slug): string
 {
-    return appUrl('services/' . rawurlencode($slug));
+    return appUrl('company/' . rawurlencode($slug));
 }
 
 /**
@@ -1060,6 +1060,9 @@ function getPracticeBySlug(string $slug): ?array
     }
 
     $legacyMap = [
+        'seo-services' => 'seo',
+        'smo-services' => 'smo',
+        'digital-marketing' => 'seo',
         'strategic-consulting' => 'web-development',
         'digital-engineering' => 'web-development',
         'performance-marketing' => 'seo',

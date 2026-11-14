@@ -175,7 +175,7 @@ class SeoSyncEngine
         // 2. Services (Clean URLs: /services/{slug})
         foreach (self::getActiveServices() as $slug => $service) {
             $xml[] = '  <url>';
-            $xml[] = '    <loc>' . htmlspecialchars($baseUrl . '/services/' . $slug) . '</loc>';
+            $xml[] = '    <loc>' . htmlspecialchars($baseUrl . '/company/' . $slug) . '</loc>';
             $xml[] = '    <lastmod>' . $today . '</lastmod>';
             $xml[] = '    <changefreq>weekly</changefreq>';
             $xml[] = '    <priority>0.8</priority>';
@@ -235,7 +235,7 @@ class SeoSyncEngine
         foreach ($services as $slug => $s) {
             $name = $s['name'];
             $summary = rtrim(strip_tags($s['summary'] ?? $s['tagline']), '.');
-            $lines[] = "- [{$name}]({$baseUrl}/services/{$slug}): {$summary}.";
+            $lines[] = "- [{$name}]({$baseUrl}/company/{$slug}): {$summary}.";
         }
         $lines[] = "";
 
@@ -331,7 +331,7 @@ class SeoSyncEngine
             $name = $s['name'] ?? '';
             $sTagline = $s['tagline'] ?? '';
             $desc = $s['description'] ?? $s['summary'] ?? '';
-            $url = "{$baseUrl}/services/{$slug}";
+            $url = "{$baseUrl}/company/{$slug}";
 
             $lines[] = "### 2.{$num} {$name}";
             $lines[] = "**Tagline**: {$sTagline}";
@@ -788,8 +788,8 @@ class SeoSyncEngine
         $serviceName = $service['name'] ?? 'Practice Area';
         $serviceSlug = $slug;
         $consultationUrl = appUrl('contact.php?service=' . urlencode($serviceName));
-        $canonicalUrl = $baseUrl . '/services/' . urlencode($slug);
-        $cleanMdUrl = $baseUrl . '/services/' . urlencode($slug) . '.md';
+        $canonicalUrl = $baseUrl . '/company/' . urlencode($slug);
+        $cleanMdUrl = $baseUrl . '/company/' . urlencode($slug) . '.md';
         $mdUrl = $baseUrl . '/md/services/' . urlencode($slug) . '.md';
 
         $bodyMd = '';
@@ -1129,8 +1129,8 @@ MD;
                     $tagline = $s['tagline'] ?? '';
                     $summary = $s['summary'] ?? '';
                     $description = $s['description'] ?? '';
-                    $webUrl = "{$baseUrl}/services/{$slug}";
-                    $cleanMdUrl = "{$baseUrl}/services/{$slug}.md";
+                    $webUrl = "{$baseUrl}/company/{$slug}";
+                    $cleanMdUrl = "{$baseUrl}/company/{$slug}.md";
                     $centralMdUrl = "{$baseUrl}/md/services/{$slug}.md";
                     $consultUrl = "{$baseUrl}/contact.php?service=" . urlencode($name);
 
@@ -1328,13 +1328,17 @@ We engineer digital solutions across four primary pillars to ensure scalable, fr
 ---
 
 ## 03 // Engineered Capabilities Built for Enterprise Scale
-We provide six specialized disciplines operating under one accountable standard:
-1. **[Web & Custom Software Development]({$baseUrl}/services/web-software-development)**: High-performance business websites, custom web applications, client portals, and secure database solutions.
-2. **[Digital Marketing & Performance Ads]({$baseUrl}/services/digital-marketing-seo)**: Full-funnel digital marketing, Google Ads, Meta Ads Manager, technical SEO, and conversion rate optimization (CRO).
-3. **[UI/UX Design & Brand Identity]({$baseUrl}/services/ui-ux-branding)**: Conversion-centered interface design, complete brand style systems, wireframes, and design systems.
-4. **[E-Commerce & Marketplaces]({$baseUrl}/services/ecommerce-marketplaces)**: Amazon & Flipkart store management, Buy Box defense, A+ content, and automated inventory feeds.
-5. **[Creative Production & Video Marketing]({$baseUrl}/services/creative-video-production)**: Commercial product photography, brand narrative films, 3D motion graphics, and social video ads.
-6. **[Cloud Solutions & IT Consulting]({$baseUrl}/services/cloud-it-consulting)**: Cloud migration, AWS/Cloudflare setup, server security hardening, and ongoing maintenance.
+We provide 10 specialized disciplines operating under one accountable standard:
+1. **[SMO — Social Media Optimization]({$baseUrl}/company/smo)**: Profile architecture, bio conversion funnels, and organic social discovery.
+2. **[Google Business Profile Management]({$baseUrl}/company/google-business-profile)**: Local 3-pack dominance, Google Maps optimization, and automated review acceleration.
+3. **[PPC / Paid Ads]({$baseUrl}/company/ppc-paid-ads)**: High-ROAS campaigns across Google Search, Performance Max, Meta, and LinkedIn with server-side CAPI.
+4. **[Ecommerce Management]({$baseUrl}/company/ecommerce-management)**: Amazon, Flipkart, and multi-channel storefront operations, A+ content, and Buy Box defense.
+5. **[Graphic Design]({$baseUrl}/company/graphic-design)**: Distinctive brand identity, logo design, marketing collateral, pitch decks, and visual systems.
+6. **[SEO — Search Engine Optimization]({$baseUrl}/company/seo)**: Technical audits, Core Web Vitals engineering, semantic topic silos, and authority backlinking.
+7. **[Social Media Marketing]({$baseUrl}/company/social-media-marketing)**: Content calendars, short-form reels, community management, and paid social amplification.
+8. **[Product Photography]({$baseUrl}/company/product-photography)**: Pure white background catalog photography, 360-degree spins, and stylized lifestyle staging.
+9. **[Video Editing]({$baseUrl}/company/video-editing)**: Viral-engineered vertical reels, commercial ads, kinetic motion graphics, and sound design.
+10. **[Web Development]({$baseUrl}/company/web-development)**: Custom PHP 8+, enterprise web applications, client portals, and sub-second performance.
 
 ---
 
@@ -1485,9 +1489,9 @@ MD;
         foreach ($services as $slug => $s) {
             $name = $s['name'];
             $tag = rtrim(strip_tags($s['tagline'] ?? $s['summary']), '.');
-            $cleanUrl = "{$baseUrl}/services/{$slug}.md";
+            $cleanUrl = "{$baseUrl}/company/{$slug}.md";
             $repoUrl = "{$baseUrl}/md/services/{$slug}.md";
-            $webUrl = "{$baseUrl}/services/{$slug}";
+            $webUrl = "{$baseUrl}/company/{$slug}";
             $lines[] = "- [{$name}]({$repoUrl}) ([Clean URL]({$cleanUrl}) | [Web Page]({$webUrl})): {$tag}.";
         }
         $lines[] = "";

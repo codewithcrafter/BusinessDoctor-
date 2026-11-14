@@ -138,7 +138,7 @@ $requiredMatrix = [
     ],
     'service-detail' => [
         'name' => 'Individual Service',
-        'url' => '/services/{slug}',
+        'url' => '/company/{slug}',
         'required' => ['Organization', 'BreadcrumbList', 'Review', 'Service'],
         'notes' => ['Review' => 'DRAFT — CONTENT REQUIRED: Pending collection & verification of authentic client reviews']
     ],

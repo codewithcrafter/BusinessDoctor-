@@ -4,8 +4,8 @@
 
 ## Discipline Information
 - **Practice Area**: 10 Web Development
-- **Canonical Web URL**: [https://demo.businesdoctor.com/services/web-development](https://demo.businesdoctor.com/services/web-development)
-- **Clean Markdown URL**: [https://demo.businesdoctor.com/services/web-development.md](https://demo.businesdoctor.com/services/web-development.md)
+- **Canonical Web URL**: [https://demo.businesdoctor.com/company/web-development](https://demo.businesdoctor.com/company/web-development)
+- **Clean Markdown URL**: [https://demo.businesdoctor.com/company/web-development.md](https://demo.businesdoctor.com/company/web-development.md)
 - **Central Markdown URL**: [https://demo.businesdoctor.com/md/services/web-development.md](https://demo.businesdoctor.com/md/services/web-development.md)
 - **Direct Consultation**: [Schedule Practice Scope](http://demo.businesdoctor.com/scratch/contact.php?service=Web+Development)
 

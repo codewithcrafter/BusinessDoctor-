@@ -89,7 +89,7 @@ class MarkdownRouter
             if (in_array($subClean, ['about', 'contact', 'audit', 'services', 'insights', 'case-studies'], true)) {
                 self::sendResponse(SeoSyncEngine::generateStaticPageMarkdown($subClean));
             }
-            if (preg_match('#^services/([a-zA-Z0-9_-]+)$#', $subClean, $m)) {
+            if (preg_match('#^(?:services|company)/([a-zA-Z0-9_-]+)$#', $subClean, $m)) {
                 self::renderServiceMarkdown($m[1]);
             }
             if (preg_match('#^insights/([a-zA-Z0-9_-]+)$#', $subClean, $m)) {
@@ -136,11 +136,17 @@ class MarkdownRouter
 
         // ----------------------------------------------------
         // 7. Individual Service Detail Pages:
-        //    A: /services/{slug}.md
-        //    B: /service-detail.php.md?slug={slug}
+        //    A: /company/{slug}.md
+        //    B: /services/{slug}.md (301 redirect to /company/{slug}.md)
+        //    C: /service-detail.php.md?slug={slug}
         // ----------------------------------------------------
-        if (preg_match('#^/services/([a-zA-Z0-9_-]+)$#', $cleanRoute, $m)) {
+        if (preg_match('#^/company/([a-zA-Z0-9_-]+)$#', $cleanRoute, $m)) {
             self::renderServiceMarkdown($m[1]);
+        }
+        if (preg_match('#^/services/([a-zA-Z0-9_-]+)$#', $cleanRoute, $m)) {
+            $targetSlug = $m[1];
+            header("Location: " . SeoSyncEngine::getBaseUrl() . "/company/" . $targetSlug . ".md", true, 301);
+            exit;
         }
         if ($cleanRoute === '/service-detail.php' || $cleanRoute === '/service-detail') {
             $slug = $params['slug'] ?? '';
@@ -223,6 +229,9 @@ class MarkdownRouter
     private static function renderServiceMarkdown(string $slug): void
     {
         $legacyRedirects = [
+            'seo-services' => 'seo',
+            'smo-services' => 'smo',
+            'digital-marketing' => 'seo',
             'strategic-consulting' => 'web-development',
             'digital-engineering' => 'web-development',
             'performance-marketing' => 'seo',
@@ -238,7 +247,7 @@ class MarkdownRouter
         ];
 
         if (isset($legacyRedirects[$slug])) {
-            header("Location: " . SeoSyncEngine::getBaseUrl() . "/services/" . $legacyRedirects[$slug] . ".md", true, 301);
+            header("Location: " . SeoSyncEngine::getBaseUrl() . "/company/" . $legacyRedirects[$slug] . ".md", true, 301);
             exit;
         }
 

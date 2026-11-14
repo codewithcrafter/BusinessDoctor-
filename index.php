@@ -10,11 +10,14 @@ require_once __DIR__ . '/includes/config.php';
 require_once __DIR__ . '/includes/db.php';
 require_once __DIR__ . '/includes/functions.php';
 
-// Local development / built-in server fallback routing for clean /services/ URLs
+// Local development / built-in server fallback routing for clean /company/ URLs
 $reqPath = parse_url($_SERVER['REQUEST_URI'] ?? '', PHP_URL_PATH);
-if ($reqPath !== null && preg_match('#^/services/([a-zA-Z0-9_-]+)/?$#', $reqPath, $sm)) {
+if ($reqPath !== null && preg_match('#^/company/([a-zA-Z0-9_-]+)/?$#', $reqPath, $sm)) {
   $_GET['slug'] = $sm[1];
   require __DIR__ . '/service-detail.php';
+  exit;
+} elseif ($reqPath !== null && preg_match('#^/services/([a-zA-Z0-9_-]+)/?$#', $reqPath, $sm)) {
+  header("Location: /company/" . $sm[1], true, 301);
   exit;
 } elseif ($reqPath === '/services' || $reqPath === '/services/') {
   require __DIR__ . '/services.php';

@@ -4,8 +4,8 @@
 
 ## Discipline Information
 - **Practice Area**: 04 Ecommerce Management
-- **Canonical Web URL**: [https://demo.businesdoctor.com/services/ecommerce-management](https://demo.businesdoctor.com/services/ecommerce-management)
-- **Clean Markdown URL**: [https://demo.businesdoctor.com/services/ecommerce-management.md](https://demo.businesdoctor.com/services/ecommerce-management.md)
+- **Canonical Web URL**: [https://demo.businesdoctor.com/company/ecommerce-management](https://demo.businesdoctor.com/company/ecommerce-management)
+- **Clean Markdown URL**: [https://demo.businesdoctor.com/company/ecommerce-management.md](https://demo.businesdoctor.com/company/ecommerce-management.md)
 - **Central Markdown URL**: [https://demo.businesdoctor.com/md/services/ecommerce-management.md](https://demo.businesdoctor.com/md/services/ecommerce-management.md)
 - **Direct Consultation**: [Schedule Practice Scope](http://demo.businesdoctor.com/scratch/contact.php?service=Ecommerce+Management)
 

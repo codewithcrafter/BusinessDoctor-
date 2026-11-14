@@ -178,7 +178,7 @@ $practiceAreas = getPracticeAreas();
             $currentNavSlug = $_GET['slug'] ?? '';
             if ($currentNavSlug === '') {
               $currPath = parse_url($_SERVER['REQUEST_URI'] ?? '', PHP_URL_PATH);
-              if ($currPath && preg_match('#^/services/([a-zA-Z0-9_-]+)#', $currPath, $m)) {
+              if ($currPath && preg_match('#^/(?:services|company)/([a-zA-Z0-9_-]+)#', $currPath, $m)) {
                 $currentNavSlug = $m[1];
               }
             }

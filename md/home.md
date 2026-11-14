@@ -32,13 +32,17 @@ We engineer digital solutions across four primary pillars to ensure scalable, fr
 ---
 
 ## 03 // Engineered Capabilities Built for Enterprise Scale
-We provide six specialized disciplines operating under one accountable standard:
-1. **[Web & Custom Software Development](https://demo.businesdoctor.com/services/web-software-development)**: High-performance business websites, custom web applications, client portals, and secure database solutions.
-2. **[Digital Marketing & Performance Ads](https://demo.businesdoctor.com/services/digital-marketing-seo)**: Full-funnel digital marketing, Google Ads, Meta Ads Manager, technical SEO, and conversion rate optimization (CRO).
-3. **[UI/UX Design & Brand Identity](https://demo.businesdoctor.com/services/ui-ux-branding)**: Conversion-centered interface design, complete brand style systems, wireframes, and design systems.
-4. **[E-Commerce & Marketplaces](https://demo.businesdoctor.com/services/ecommerce-marketplaces)**: Amazon & Flipkart store management, Buy Box defense, A+ content, and automated inventory feeds.
-5. **[Creative Production & Video Marketing](https://demo.businesdoctor.com/services/creative-video-production)**: Commercial product photography, brand narrative films, 3D motion graphics, and social video ads.
-6. **[Cloud Solutions & IT Consulting](https://demo.businesdoctor.com/services/cloud-it-consulting)**: Cloud migration, AWS/Cloudflare setup, server security hardening, and ongoing maintenance.
+We provide 10 specialized disciplines operating under one accountable standard:
+1. **[SMO — Social Media Optimization](https://demo.businesdoctor.com/company/smo)**: Profile architecture, bio conversion funnels, and organic social discovery.
+2. **[Google Business Profile Management](https://demo.businesdoctor.com/company/google-business-profile)**: Local 3-pack dominance, Google Maps optimization, and automated review acceleration.
+3. **[PPC / Paid Ads](https://demo.businesdoctor.com/company/ppc-paid-ads)**: High-ROAS campaigns across Google Search, Performance Max, Meta, and LinkedIn with server-side CAPI.
+4. **[Ecommerce Management](https://demo.businesdoctor.com/company/ecommerce-management)**: Amazon, Flipkart, and multi-channel storefront operations, A+ content, and Buy Box defense.
+5. **[Graphic Design](https://demo.businesdoctor.com/company/graphic-design)**: Distinctive brand identity, logo design, marketing collateral, pitch decks, and visual systems.
+6. **[SEO — Search Engine Optimization](https://demo.businesdoctor.com/company/seo)**: Technical audits, Core Web Vitals engineering, semantic topic silos, and authority backlinking.
+7. **[Social Media Marketing](https://demo.businesdoctor.com/company/social-media-marketing)**: Content calendars, short-form reels, community management, and paid social amplification.
+8. **[Product Photography](https://demo.businesdoctor.com/company/product-photography)**: Pure white background catalog photography, 360-degree spins, and stylized lifestyle staging.
+9. **[Video Editing](https://demo.businesdoctor.com/company/video-editing)**: Viral-engineered vertical reels, commercial ads, kinetic motion graphics, and sound design.
+10. **[Web Development](https://demo.businesdoctor.com/company/web-development)**: Custom PHP 8+, enterprise web applications, client portals, and sub-second performance.
 
 ---
 

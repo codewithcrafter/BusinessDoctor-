@@ -20,7 +20,7 @@ if (!empty($parsedUri['query'])) {
     parse_str($parsedUri['query'], $qp);
     if (!empty($qp['slug'])) {
         if (str_contains($cleanPath, 'service-detail')) {
-            $cleanPath = '/services/' . rawurlencode($qp['slug']);
+            $cleanPath = '/company/' . rawurlencode($qp['slug']);
         } else {
             $canonicalParams = '?slug=' . urlencode($qp['slug']);
         }
