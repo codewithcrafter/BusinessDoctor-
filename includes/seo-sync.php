@@ -235,10 +235,9 @@ class SeoSyncEngine
     public static function generateLlmsTxt(): string
     {
         $baseUrl = self::getBaseUrl();
-        $appName = defined('APP_NAME') ? APP_NAME : 'BusinessDoctor';
+        $appName = 'BusinesDoctor';
         $tagline = defined('APP_TAGLINE') ? APP_TAGLINE : 'Engineering Technology. Accelerating Digital Growth.';
 
-        $services = self::getActiveServices();
         $insights = self::getPublishedInsights();
         $cases = self::getPublishedCaseStudies();
 
@@ -246,20 +245,29 @@ class SeoSyncEngine
         $lines[] = "# {$appName}";
         $lines[] = "> {$tagline}";
         $lines[] = "";
-        $lines[] = "BusinessDoctor is an enterprise digital services practice delivering full-stack software development, performance digital marketing, UI/UX architecture, e-commerce marketplace scaling, creative video production, and cloud IT infrastructure.";
+        $lines[] = "BusinesDoctor is an enterprise digital services practice delivering full-stack software development, performance digital marketing, UI/UX architecture, e-commerce marketplace scaling, creative video production, and cloud IT infrastructure.";
+        $lines[] = "";
+        $lines[] = "Website: {$baseUrl}/";
+        $lines[] = "";
+        $lines[] = "This index links to Markdown resources intended for AI/LLM consumption. All listed URLs must be verified canonical pages reflecting published website content.";
         $lines[] = "";
         $lines[] = "## Core Practice Disciplines";
-        foreach ($services as $slug => $s) {
-            $name = $s['name'];
-            $summary = rtrim(strip_tags($s['summary'] ?? $s['tagline']), '.');
-            $url = getServiceUrl($slug);
-            $lines[] = "- [{$name}]({$url}): {$summary}.";
-        }
+        $lines[] = "- [Web & Custom Software Development]({$baseUrl}/company/web-software-development): Resilient full-stack web applications, microservices, performance architecture, and bespoke enterprise software systems.";
+        $lines[] = "- [Digital Marketing & Performance Ads]({$baseUrl}/company/digital-marketing-seo): Data-driven growth campaigns, high-converting Google Search & Meta advertising, technical SEO, and conversion rate optimization.";
+        $lines[] = "- [UI/UX Design & Brand Identity]({$baseUrl}/company/ui-ux-branding): Human-centered user interface design, interactive design tokens, cohesive brand systems, and friction-free user journeys.";
+        $lines[] = "- [E-Commerce & Marketplace Management]({$baseUrl}/company/ecommerce-marketplaces): End-to-end retail marketplace management on Amazon and Flipkart, catalog optimization, A+ content, and marketplace growth.";
+        $lines[] = "- [Creative Production & Video Marketing]({$baseUrl}/company/creative-video-production): Documentary-style brand storytelling, video case studies, commercial video assets, and conversion-focused multimedia production.";
+        $lines[] = "- [Cloud Solutions & IT Consulting]({$baseUrl}/company/cloud-it-consulting): Enterprise cloud infrastructure management, DevSecOps automation, website maintenance, cybersecurity hardening, and IT modernization.";
         $lines[] = "";
-
-        $lines[] = "## Published Blog Articles";
+        $lines[] = "## Company";
+        $lines[] = "- [BusinesDoctor Homepage]({$baseUrl}/): Primary enterprise portal outlining technology capabilities, client transformations, and strategic consulting frameworks.";
+        $lines[] = "- [About BusinesDoctor]({$baseUrl}/about.php): Executive leadership, engineering principles, core consulting values, and practice methodology.";
+        $lines[] = "- [Contact Us]({$baseUrl}/contact.php): Direct communication channels, enterprise project scoping, consultation requests, and verified headquarters address.";
+        $lines[] = "- [Digital Architecture Audit]({$baseUrl}/audit.php): Complimentary diagnostic benchmarking technical bottlenecks, Core Web Vitals, conversion leaks, and infrastructure readiness.";
+        $lines[] = "";
+        $lines[] = "## Published Editorial & Insights";
         if (empty($insights)) {
-            $lines[] = "- No editorial articles currently published.";
+            $lines[] = "- No published articles available at this time.";
         } else {
             foreach ($insights as $art) {
                 $title = trim($art['title']);
@@ -273,10 +281,9 @@ class SeoSyncEngine
             }
         }
         $lines[] = "";
-
         $lines[] = "## Client Case Studies & Proven Results";
         if (empty($cases)) {
-            $lines[] = "- No public case studies currently published.";
+            $lines[] = "- No published case studies available at this time.";
         } else {
             foreach ($cases as $c) {
                 $title = trim($c['title']);
@@ -293,15 +300,11 @@ class SeoSyncEngine
             }
         }
         $lines[] = "";
-
         $lines[] = "## Public Tools & Resources";
-        $lines[] = "- [Free Digital Architecture Audit]({$baseUrl}/audit.php): Proprietary diagnostic benchmarking technical bottlenecks, security vulnerabilities, conversion leaks, and scale readiness.";
-        $lines[] = "- [Public Markdown Index]({$baseUrl}/md): Complete catalog of pure Markdown mirrors for all published articles, case studies, and practice disciplines.";
-        $lines[] = "- [Comprehensive AI Documentation Index]({$baseUrl}/llms.md): Complete machine-readable markdown reference containing full practice details, technical capabilities, and comprehensive catalog.";
-        $lines[] = "- [Executive Advisory & Project Inquiries]({$baseUrl}/contact.php): Direct communication portal for engineering scoping, proposals, and consultative advisory.";
-        $lines[] = "";
+        $lines[] = "- [XML Sitemap]({$baseUrl}/sitemap.xml): Complete search engine index containing verified canonical URLs for all public pages, services, articles, and case studies.";
+        $lines[] = "- [Public Markdown Index]({$baseUrl}/md): Directory of clean Markdown mirrors structured for AI agents, developers, and LLM context extraction.";
 
-        return implode("\n", $lines);
+        return implode("\n", $lines) . "\n";
     }
 
     /**

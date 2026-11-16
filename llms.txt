@@ -1,21 +1,27 @@
-# BusinessDoctor
+# BusinesDoctor
 > Engineering Technology. Accelerating Digital Growth.
 
-BusinessDoctor is an enterprise digital services practice delivering full-stack software development, performance digital marketing, UI/UX architecture, e-commerce marketplace scaling, creative video production, and cloud IT infrastructure.
+BusinesDoctor is an enterprise digital services practice delivering full-stack software development, performance digital marketing, UI/UX architecture, e-commerce marketplace scaling, creative video production, and cloud IT infrastructure.
+
+Website: https://demo.businesdoctor.com/
+
+This index links to Markdown resources intended for AI/LLM consumption. All listed URLs must be verified canonical pages reflecting published website content.
 
 ## Core Practice Disciplines
-- [SMO — Social Media Optimization](https://demo.businesdoctor.com/smo-company-in-delhi): Strategic profile optimization, bio conversion funnels, branded content templates, and improved social visibility.
-- [Google Business Profile Management](https://demo.businesdoctor.com/google-business-profile-company-in-delhi): Complete GBP setup, Google Maps optimization, local search visibility, profile management, and review strategy.
-- [PPC / Paid Ads](https://demo.businesdoctor.com/ppc-company-in-delhi): High-converting Google Search, Performance Max, Meta Ads, and LinkedIn B2B advertising campaigns.
-- [Ecommerce Management](https://demo.businesdoctor.com/ecommerce-management-company-in-delhi): Amazon and Flipkart marketplace management, product listings, inventory optimization, A+ content, and marketplace growth.
-- [Graphic Design](https://demo.businesdoctor.com/graphic-design-company-in-delhi): Corporate brand identity, creative graphics, marketing materials, social media creatives, and visual communication.
-- [SEO — Search Engine Optimization](https://demo.businesdoctor.com/seo-company-in-delhi): Technical SEO, on-page optimization, keyword strategy, search visibility, organic traffic, and performance monitoring.
-- [Social Media Marketing](https://demo.businesdoctor.com/social-media-marketing-company-in-delhi): Social media strategy, content planning, campaign management, audience engagement, and brand growth.
-- [Product Photography](https://demo.businesdoctor.com/product-photography-company-in-delhi): Professional product photography, ecommerce product visuals, creative compositions, and conversion-focused imagery.
-- [Video Editing](https://demo.businesdoctor.com/video-editing-company-in-delhi): Professional promotional videos, short-form content, Instagram Reels, YouTube Shorts, and brand videos.
-- [Web Development](https://demo.businesdoctor.com/web-development-company-in-delhi): Fast, responsive business websites, custom web applications, performance optimization, and conversion-focused development.
+- [Web & Custom Software Development](https://demo.businesdoctor.com/company/web-software-development): Resilient full-stack web applications, microservices, performance architecture, and bespoke enterprise software systems.
+- [Digital Marketing & Performance Ads](https://demo.businesdoctor.com/company/digital-marketing-seo): Data-driven growth campaigns, high-converting Google Search & Meta advertising, technical SEO, and conversion rate optimization.
+- [UI/UX Design & Brand Identity](https://demo.businesdoctor.com/company/ui-ux-branding): Human-centered user interface design, interactive design tokens, cohesive brand systems, and friction-free user journeys.
+- [E-Commerce & Marketplace Management](https://demo.businesdoctor.com/company/ecommerce-marketplaces): End-to-end retail marketplace management on Amazon and Flipkart, catalog optimization, A+ content, and marketplace growth.
+- [Creative Production & Video Marketing](https://demo.businesdoctor.com/company/creative-video-production): Documentary-style brand storytelling, video case studies, commercial video assets, and conversion-focused multimedia production.
+- [Cloud Solutions & IT Consulting](https://demo.businesdoctor.com/company/cloud-it-consulting): Enterprise cloud infrastructure management, DevSecOps automation, website maintenance, cybersecurity hardening, and IT modernization.
 
-## Published Blog Articles
+## Company
+- [BusinesDoctor Homepage](https://demo.businesdoctor.com/): Primary enterprise portal outlining technology capabilities, client transformations, and strategic consulting frameworks.
+- [About BusinesDoctor](https://demo.businesdoctor.com/about.php): Executive leadership, engineering principles, core consulting values, and practice methodology.
+- [Contact Us](https://demo.businesdoctor.com/contact.php): Direct communication channels, enterprise project scoping, consultation requests, and verified headquarters address.
+- [Digital Architecture Audit](https://demo.businesdoctor.com/audit.php): Complimentary diagnostic benchmarking technical bottlenecks, Core Web Vitals, conversion leaks, and infrastructure readiness.
+
+## Published Editorial & Insights
 - [Automated Test Blog Post for SEO Sync](https://demo.businesdoctor.com/blog/automated-test-blog-1794647339): Test summary for automated sync verification.
 - [Why Your Website Is Losing Customers: 7 Performance Issues You Should Fix](https://demo.businesdoctor.com/blog/website-performance-issues-losing-customers): Why Your Website Is Losing Customers: 7 Performance Issues You Should Fix Your website is often the first interaction a potential customer has with your busi...
 - [Modern UI/UX Design as a Revenue Multiplier: Why Premium Design Eliminates Price Resistance](https://demo.businesdoctor.com/blog/brand-architecture-as-risk-mitigation): Commoditized businesses compete on price and face low margins. How professional UI/UX design and consistent visual identity elevate your brand into an indust...
@@ -28,7 +34,5 @@ BusinessDoctor is an enterprise digital services practice delivering full-stack 
 - [Marketplace Management & ROAS Scaling: 4.6x Ad Return for Apex Industrial](https://demo.businesdoctor.com/case-studies/multichannel-retail-marketplace-dominance): [Industrial Equipment & B2B Retail] (1.8x ROAS / 34% Buy Box Loss → 4.6x ROAS / 94% Buy Box Control) Apex Industrial was losing Buy Box share on Amazon and Flipkart due to unauthorized resellers, poor product titles, and unoptimized ad ca...
 
 ## Public Tools & Resources
-- [Free Digital Architecture Audit](https://demo.businesdoctor.com/audit.php): Proprietary diagnostic benchmarking technical bottlenecks, security vulnerabilities, conversion leaks, and scale readiness.
-- [Public Markdown Index](https://demo.businesdoctor.com/md): Complete catalog of pure Markdown mirrors for all published articles, case studies, and practice disciplines.
-- [Comprehensive AI Documentation Index](https://demo.businesdoctor.com/llms.md): Complete machine-readable markdown reference containing full practice details, technical capabilities, and comprehensive catalog.
-- [Executive Advisory & Project Inquiries](https://demo.businesdoctor.com/contact.php): Direct communication portal for engineering scoping, proposals, and consultative advisory.
+- [XML Sitemap](https://demo.businesdoctor.com/sitemap.xml): Complete search engine index containing verified canonical URLs for all public pages, services, articles, and case studies.
+- [Public Markdown Index](https://demo.businesdoctor.com/md): Directory of clean Markdown mirrors structured for AI agents, developers, and LLM context extraction.
