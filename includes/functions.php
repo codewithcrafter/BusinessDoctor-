@@ -376,15 +376,15 @@ function isActivePage(string ...$pages): string
     $current = basename($_SERVER['SCRIPT_NAME'] ?? '');
 
     // Clean handling for Home page
-    if (in_array('index.php', $pages, true)) {
+    if (in_array('index.php', $pages, true) || in_array('', $pages, true)) {
         $isHome = ($reqUri === '/' || $reqUri === '' || $reqUri === '/index.php'
             || str_ends_with($reqUri, '/businessdoctor/') || str_ends_with($reqUri, '/businessdoctor/index.php'));
-        return $isHome ? 'active' : '';
+        if ($isHome) return 'active';
     }
 
     // Clean routes for services overview or individual service detail
-    if (str_contains($reqUri, 'company-in-delhi') || str_contains($reqUri, '/services') || str_contains($reqUri, '/company')) {
-        if (in_array('services.php', $pages, true) || in_array('service-detail.php', $pages, true)) {
+    if (str_contains($reqUri, '/service') || str_contains($reqUri, 'company-in-delhi') || str_contains($reqUri, '/services') || str_contains($reqUri, '/company')) {
+        if (in_array('services.php', $pages, true) || in_array('service-detail.php', $pages, true) || in_array('services', $pages, true) || in_array('service', $pages, true)) {
             return 'active';
         }
         return '';
@@ -393,14 +393,17 @@ function isActivePage(string ...$pages): string
     // Clean routes for blog listing or blog detail
     if (str_contains($reqUri, '/blog') || str_contains($reqUri, '/insights')) {
         if (in_array('insights.php', $pages, true) || in_array('insight-detail.php', $pages, true)
-            || in_array('blog.php', $pages, true) || in_array('blog-detail.php', $pages, true)) {
+            || in_array('blog.php', $pages, true) || in_array('blog-detail.php', $pages, true)
+            || in_array('blog', $pages, true) || in_array('insights', $pages, true)) {
             return 'active';
         }
         return '';
     }
 
     foreach ($pages as $p) {
-        if ($current === $p || str_ends_with($reqUri, '/' . $p) || str_ends_with($reqUri, $p)) {
+        $cleanP = preg_replace('/\.php$/', '', $p);
+        if ($current === $p || str_ends_with($reqUri, '/' . $p) || str_ends_with($reqUri, $p)
+            || $reqUri === '/' . $cleanP || str_starts_with($reqUri, '/' . $cleanP . '/')) {
             return 'active';
         }
     }
@@ -415,7 +418,29 @@ function appUrl(string $path = ''): string
 {
     $base = defined('BASE_URL') ? rtrim(BASE_URL, '/') : '';
     $path = ltrim($path, '/');
-    return $path !== '' ? $base . '/' . $path : $base . '/';
+    if ($path === '' || $path === 'index.php') {
+        return $base . '/';
+    }
+
+    // Map public .php pages to clean URLs
+    $publicPages = [
+        'about.php' => 'about',
+        'contact.php' => 'contact',
+        'audit.php' => 'audit',
+        'diagnostic.php' => 'audit',
+        'case-studies.php' => 'case-studies',
+        'services.php' => 'services',
+        'insights.php' => 'blog',
+        'blog.php' => 'blog',
+    ];
+
+    if (isset($publicPages[$path])) {
+        $path = $publicPages[$path];
+    } elseif (str_ends_with($path, '.php') && !str_starts_with($path, 'admin/') && !str_starts_with($path, 'api/')) {
+        $path = substr($path, 0, -4);
+    }
+
+    return $base . '/' . $path;
 }
 
 /**
@@ -439,21 +464,23 @@ function getBaseUrl(): string
 
 /**
  * Return clean SEO-friendly URL for main services overview
- * Canonical: https://demo.businesdoctor.com/digital-marketing-company-in-delhi
+ * Canonical: https://demo.businesdoctor.com/services
  */
 function getServicesOverviewUrl(): string
 {
-    return appUrl('digital-marketing-company-in-delhi');
+    return appUrl('services');
 }
 
 /**
  * Return clean SEO-friendly canonical URL for an individual service
- * Pattern: https://demo.businesdoctor.com/{service-slug}-company-in-delhi
+ * Pattern: https://demo.businesdoctor.com/service/{service-slug}
  */
 function getServiceUrl(string $slug): string
 {
     $clean = strtolower(trim($slug));
-    if (str_starts_with($clean, 'company/')) {
+    if (str_starts_with($clean, 'service/')) {
+        $clean = substr($clean, 8);
+    } elseif (str_starts_with($clean, 'company/')) {
         $clean = substr($clean, 8);
     } elseif (str_starts_with($clean, 'services/')) {
         $clean = substr($clean, 9);
@@ -466,46 +493,47 @@ function getServiceUrl(string $slug): string
     // Canonical slug mappings for any legacy or alias slugs
     $canonicalMap = [
         // 10 Core Services:
-        'smo' => 'smo-company-in-delhi',
-        'smo-services' => 'smo-company-in-delhi',
+        'smo' => 'smo',
+        'smo-services' => 'smo',
 
-        'google-business-profile' => 'google-business-profile-company-in-delhi',
+        'google-business-profile' => 'google-business-profile',
+        'google-business-profile-management' => 'google-business-profile',
 
-        'ppc' => 'ppc-company-in-delhi',
-        'ppc-paid-ads' => 'ppc-company-in-delhi',
-        'performance-marketing' => 'ppc-company-in-delhi',
+        'ppc' => 'ppc-paid-ads',
+        'ppc-paid-ads' => 'ppc-paid-ads',
+        'performance-marketing' => 'ppc-paid-ads',
 
-        'ecommerce-management' => 'ecommerce-management-company-in-delhi',
-        'ecommerce-marketplaces' => 'ecommerce-management-company-in-delhi',
-        'ecommerce-acceleration' => 'ecommerce-management-company-in-delhi',
+        'ecommerce-management' => 'ecommerce-management',
+        'ecommerce-marketplaces' => 'ecommerce-management',
+        'ecommerce-acceleration' => 'ecommerce-management',
 
-        'graphic-design' => 'graphic-design-company-in-delhi',
-        'ui-ux-branding' => 'graphic-design-company-in-delhi',
-        'brand-architecture' => 'graphic-design-company-in-delhi',
-        'brand-creative-direction' => 'graphic-design-company-in-delhi',
+        'graphic-design' => 'graphic-design',
+        'ui-ux-branding' => 'graphic-design',
+        'brand-architecture' => 'graphic-design',
+        'brand-creative-direction' => 'graphic-design',
 
-        'seo' => 'seo-company-in-delhi',
-        'seo-services' => 'seo-company-in-delhi',
-        'digital-marketing-seo' => 'seo-company-in-delhi',
+        'seo' => 'seo',
+        'seo-services' => 'seo',
+        'digital-marketing-seo' => 'seo',
 
-        'social-media-marketing' => 'social-media-marketing-company-in-delhi',
+        'social-media-marketing' => 'social-media-marketing',
 
-        'product-photography' => 'product-photography-company-in-delhi',
+        'product-photography' => 'product-photography',
 
-        'video-editing' => 'video-editing-company-in-delhi',
-        'creative-video-production' => 'video-editing-company-in-delhi',
-        'creative-production' => 'video-editing-company-in-delhi',
+        'video-editing' => 'video-editing',
+        'creative-video-production' => 'video-editing',
+        'creative-production' => 'video-editing',
 
-        'web-development' => 'web-development-company-in-delhi',
-        'web-software-development' => 'web-development-company-in-delhi',
-        'strategic-consulting' => 'web-development-company-in-delhi',
-        'digital-engineering' => 'web-development-company-in-delhi',
-        'ai-automation-workflows' => 'web-development-company-in-delhi',
-        'cloud-it-consulting' => 'web-development-company-in-delhi',
+        'web-development' => 'web-development',
+        'web-software-development' => 'web-development',
+        'strategic-consulting' => 'web-development',
+        'digital-engineering' => 'web-development',
+        'ai-automation-workflows' => 'web-development',
+        'cloud-it-consulting' => 'web-development',
     ];
 
-    $targetSlug = $canonicalMap[$clean] ?? ($clean . '-company-in-delhi');
-    return appUrl($targetSlug);
+    $targetSlug = $canonicalMap[$clean] ?? $clean;
+    return appUrl('service/' . $targetSlug);
 }
 
 /**
@@ -1204,7 +1232,9 @@ function getPracticeAreas(bool $refresh = false): array
 function getPracticeBySlug(string $slug): ?array
 {
     $clean = strtolower(trim($slug));
-    if (str_starts_with($clean, 'company/')) {
+    if (str_starts_with($clean, 'service/')) {
+        $clean = substr($clean, 8);
+    } elseif (str_starts_with($clean, 'company/')) {
         $clean = substr($clean, 8);
     } elseif (str_starts_with($clean, 'services/')) {
         $clean = substr($clean, 9);
@@ -1218,6 +1248,8 @@ function getPracticeBySlug(string $slug): ?array
     $canonicalMap = [
         'ppc' => 'ppc-paid-ads',
         'performance-marketing' => 'ppc-paid-ads',
+
+        'google-business-profile-management' => 'google-business-profile',
 
         'web-software-development' => 'web-development',
         'strategic-consulting' => 'web-development',

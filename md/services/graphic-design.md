@@ -4,8 +4,8 @@
 
 ## Discipline Information
 - **Practice Area**: 05 Graphic Design
-- **Canonical Web URL**: [https://demo.businesdoctor.com/graphic-design-company-in-delhi](https://demo.businesdoctor.com/graphic-design-company-in-delhi)
-- **Clean Markdown URL**: [https://demo.businesdoctor.com/graphic-design-company-in-delhi.md](https://demo.businesdoctor.com/graphic-design-company-in-delhi.md)
+- **Canonical Web URL**: [https://demo.businesdoctor.com/service/graphic-design](https://demo.businesdoctor.com/service/graphic-design)
+- **Clean Markdown URL**: [https://demo.businesdoctor.com/service/graphic-design.md](https://demo.businesdoctor.com/service/graphic-design.md)
 - **Central Markdown URL**: [https://demo.businesdoctor.com/md/services/graphic-design.md](https://demo.businesdoctor.com/md/services/graphic-design.md)
 - **Direct Consultation**: [Schedule Practice Scope](https://demo.businesdoctor.com/contact.php?service=Graphic+Design)
 
@@ -571,7 +571,7 @@ Absolutely. We conduct live walkthrough sessions with your engineering leads, pr
               [
                 Request Digital Audit
 
-              ](https://demo.businesdoctor.com/audit.php)
+              ](https://demo.businesdoctor.com/audit)
 
                 +1 (800) 492-3628
 

@@ -959,11 +959,11 @@ $consultationUrl = appUrl('contact.php?service=' . urlencode($serviceName));
 
     <div class="srv-faq-container">
       <div class="srv-faq-item">
-        <button type="button" class="srv-faq-btn" aria-expanded="true" aria-controls="faq-ans-0">
+        <button type="button" class="srv-faq-btn" aria-expanded="false" aria-controls="faq-ans-0">
           <span class="srv-faq-question">How quickly can we expect to see results from technical SEO versus paid advertising?</span>
           <span class="srv-faq-icon" aria-hidden="true">+</span>
         </button>
-        <div id="faq-ans-0" class="srv-faq-panel" style="max-height: 500px;">
+        <div id="faq-ans-0" class="srv-faq-panel">
           <div class="srv-faq-content">
             <p>Paid advertising campaigns (Google Search, Meta Ads) begin driving qualified traffic and conversion data within 48 to 72 hours of launch. Technical SEO and organic authority building typically demonstrate noticeable indexation and ranking velocity within 60 to 90 days, with exponential traffic and lead growth compounding over 6 to 12 months.</p>
           </div>

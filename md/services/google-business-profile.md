@@ -4,8 +4,8 @@
 
 ## Discipline Information
 - **Practice Area**: 02 Google Business Profile Management
-- **Canonical Web URL**: [https://demo.businesdoctor.com/google-business-profile-company-in-delhi](https://demo.businesdoctor.com/google-business-profile-company-in-delhi)
-- **Clean Markdown URL**: [https://demo.businesdoctor.com/google-business-profile-company-in-delhi.md](https://demo.businesdoctor.com/google-business-profile-company-in-delhi.md)
+- **Canonical Web URL**: [https://demo.businesdoctor.com/service/google-business-profile](https://demo.businesdoctor.com/service/google-business-profile)
+- **Clean Markdown URL**: [https://demo.businesdoctor.com/service/google-business-profile.md](https://demo.businesdoctor.com/service/google-business-profile.md)
 - **Central Markdown URL**: [https://demo.businesdoctor.com/md/services/google-business-profile.md](https://demo.businesdoctor.com/md/services/google-business-profile.md)
 - **Direct Consultation**: [Schedule Practice Scope](https://demo.businesdoctor.com/contact.php?service=Google+Business+Profile+Management)
 
@@ -321,7 +321,7 @@ We draft professional, empathetic, and de-escalating responses for your approval
               [
                 Request Digital Audit
 
-              ](https://demo.businesdoctor.com/audit.php)
+              ](https://demo.businesdoctor.com/audit)
 
                 +1 (800) 492-3628
 

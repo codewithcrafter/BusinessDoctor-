@@ -80,33 +80,45 @@ $consultationUrl = appUrl('contact.php?service=' . urlencode($serviceName));
   <text x="90" y="24" fill="#8FA3B8" font-family="monospace" font-size="11" font-weight="600">businessdoctor.growth :: paid-ads-organic-telemetry.v2</text>
   
   <!-- Metrics Cards -->
-  <rect x="40" y="65" width="245" height="85" rx="8" fill="#0D2644" stroke="#06B5F9" stroke-width="1.5" stroke-opacity="0.4"/>
-  <text x="55" y="90" fill="#06B5F9" font-family="monospace" font-size="11" font-weight="bold">// PAID MEDIA ROAS</text>
-  <text x="55" y="120" fill="#34D399" font-family="sans-serif" font-size="24" font-weight="900">4.82x</text>
-  <text x="135" y="120" fill="#B8C7D9" font-family="monospace" font-size="11">Target: &gt; 3.50x &bull; +42% YoY</text>
+  <rect x="40" y="65" width="245" height="100" rx="8" fill="#0D2644" stroke="#06B5F9" stroke-width="1.5" stroke-opacity="0.4"/>
+  <text x="56" y="90" fill="#06B5F9" font-family="monospace" font-size="11" font-weight="bold">// PAID MEDIA ROAS</text>
+  <text x="56" y="122" fill="#34D399" font-family="sans-serif" font-size="26" font-weight="900">4.82x</text>
+  <text x="56" y="146" fill="#B8C7D9" font-family="monospace" font-size="10">Target: &gt; 3.50x &bull; +42% YoY</text>
 
-  <rect x="315" y="65" width="245" height="85" rx="8" fill="#0D2644" stroke="#06B5F9" stroke-width="1.5" stroke-opacity="0.4"/>
+  <rect x="315" y="65" width="245" height="100" rx="8" fill="#0D2644" stroke="#06B5F9" stroke-width="1.5" stroke-opacity="0.4"/>
   <text x="330" y="90" fill="#06B5F9" font-family="monospace" font-size="11" font-weight="bold">// BLENDED CAC REDUCTION</text>
-  <text x="330" y="120" fill="#06B5F9" font-family="sans-serif" font-size="24" font-weight="900">-38.4%</text>
-  <text x="430" y="120" fill="#B8C7D9" font-family="monospace" font-size="11">CPL &bull; Qualified Intent</text>
+  <text x="330" y="122" fill="#06B5F9" font-family="sans-serif" font-size="26" font-weight="900">-38.4%</text>
+  <text x="330" y="146" fill="#B8C7D9" font-family="monospace" font-size="10">CPL &bull; Qualified Intent Volume</text>
 
   <!-- Interactive Chart Area -->
-  <rect x="40" y="170" width="520" height="235" rx="10" fill="#0A2038" stroke="#06B5F9" stroke-width="1" stroke-opacity="0.25"/>
-  <text x="60" y="200" fill="#F5F7FA" font-family="sans-serif" font-size="13" font-weight="bold">Conversion Funnel &amp; Revenue Velocity</text>
-  <text x="420" y="200" fill="#06B5F9" font-family="monospace" font-size="11">LIVE TELEMETRY</text>
+  <rect x="40" y="178" width="520" height="228" rx="10" fill="#0A2038" stroke="#06B5F9" stroke-width="1" stroke-opacity="0.25"/>
+  <text x="58" y="206" fill="#F5F7FA" font-family="sans-serif" font-size="12" font-weight="bold">Conversion Funnel &amp; Revenue Velocity</text>
   
-  <!-- Curve Trend -->
-  <path d="M60 340 C 140 320, 200 280, 280 250 C 360 220, 440 180, 520 150" stroke="#06B5F9" stroke-width="3.5" fill="none"/>
-  <path d="M60 340 C 140 320, 200 280, 280 250 C 360 220, 440 180, 520 150 L 520 370 L 60 370 Z" fill="url(#grad1)" opacity="0.25"/>
+  <!-- Live Telemetry Badge -->
+  <rect x="430" y="193" width="112" height="19" rx="4" fill="#061A2E" stroke="#06B5F9" stroke-width="0.8" stroke-opacity="0.5"/>
+  <circle cx="440" cy="202.5" r="3" fill="#34D399"/>
+  <text x="448" y="206" fill="#06B5F9" font-family="monospace" font-size="9" font-weight="bold" letter-spacing="0.5">LIVE TELEMETRY</text>
+  
+  <!-- Curve Trend Area Fill -->
+  <path d="M60 340 C 140 330, 220 285, 300 265 C 370 248, 440 238, 515 235 L 515 375 L 60 375 Z" fill="url(#grad1)" opacity="0.22"/>
+  
+  <!-- Curve Trend Stroke -->
+  <path d="M60 340 C 140 330, 220 285, 300 265 C 370 248, 440 238, 515 235" stroke="#06B5F9" stroke-width="3" fill="none" stroke-linecap="round"/>
   
   <!-- Secondary dashed baseline -->
-  <path d="M60 350 C 140 350, 280 340, 520 330" stroke="#8FA3B8" stroke-width="2" stroke-dasharray="4 4" fill="none"/>
-  <text x="360" y="325" fill="#8FA3B8" font-family="monospace" font-size="10">Legacy Baseline</text>
+  <path d="M60 355 C 160 355, 320 350, 515 345" stroke="#8FA3B8" stroke-width="1.8" stroke-dasharray="4 4" fill="none" stroke-opacity="0.6"/>
+  <text x="350" y="338" fill="#8FA3B8" font-family="monospace" font-size="9.5" font-weight="600">Legacy Baseline</text>
 
   <!-- Data Points -->
-  <circle cx="280" cy="250" r="5" fill="#06B5F9" stroke="#ffffff" stroke-width="2"/>
-  <circle cx="520" cy="150" r="6" fill="#34D399" stroke="#ffffff" stroke-width="2"/>
-  <text x="440" y="140" fill="#34D399" font-family="monospace" font-size="12" font-weight="bold">+148% REV</text>
+  <circle cx="300" cy="265" r="4.5" fill="#06B5F9" stroke="#ffffff" stroke-width="2"/>
+  <circle cx="515" cy="235" r="5.5" fill="#34D399" stroke="#ffffff" stroke-width="2"/>
+  
+  <!-- +148% REV Badge with clean dedicated spacing -->
+  <rect x="420" y="252" width="105" height="23" rx="4" fill="#0D2644" stroke="#34D399" stroke-width="1" stroke-opacity="0.7"/>
+  <text x="435" y="267.5" fill="#34D399" font-family="monospace" font-size="10.5" font-weight="bold">+148% REV</text>
+  
+  <!-- Bottom Audited Label with clear margins -->
+  <text x="58" y="390" fill="#8FA3B8" font-family="monospace" font-size="9.5">Audited Blended CAC &bull; Attribution Multi-Touch Model</text>
   
   <defs>
     <linearGradient id="grad1" x1="0" y1="0" x2="0" y2="1">
@@ -959,11 +971,11 @@ $consultationUrl = appUrl('contact.php?service=' . urlencode($serviceName));
 
     <div class="srv-faq-container">
       <div class="srv-faq-item">
-        <button type="button" class="srv-faq-btn" aria-expanded="true" aria-controls="faq-ans-0">
+        <button type="button" class="srv-faq-btn" aria-expanded="false" aria-controls="faq-ans-0">
           <span class="srv-faq-question">How quickly can we expect to see results from technical SEO versus paid advertising?</span>
           <span class="srv-faq-icon" aria-hidden="true">+</span>
         </button>
-        <div id="faq-ans-0" class="srv-faq-panel" style="max-height: 500px;">
+        <div id="faq-ans-0" class="srv-faq-panel">
           <div class="srv-faq-content">
             <p>Paid advertising campaigns (Google Search, Meta Ads) begin driving qualified traffic and conversion data within 48 to 72 hours of launch. Technical SEO and organic authority building typically demonstrate noticeable indexation and ranking velocity within 60 to 90 days, with exponential traffic and lead growth compounding over 6 to 12 months.</p>
           </div>

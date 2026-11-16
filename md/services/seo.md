@@ -4,8 +4,8 @@
 
 ## Discipline Information
 - **Practice Area**: 06 SEO — Search Engine Optimization
-- **Canonical Web URL**: [https://demo.businesdoctor.com/seo-company-in-delhi](https://demo.businesdoctor.com/seo-company-in-delhi)
-- **Clean Markdown URL**: [https://demo.businesdoctor.com/seo-company-in-delhi.md](https://demo.businesdoctor.com/seo-company-in-delhi.md)
+- **Canonical Web URL**: [https://demo.businesdoctor.com/service/seo](https://demo.businesdoctor.com/service/seo)
+- **Clean Markdown URL**: [https://demo.businesdoctor.com/service/seo.md](https://demo.businesdoctor.com/service/seo.md)
 - **Central Markdown URL**: [https://demo.businesdoctor.com/md/services/seo.md](https://demo.businesdoctor.com/md/services/seo.md)
 - **Direct Consultation**: [Schedule Practice Scope](https://demo.businesdoctor.com/contact.php?service=SEO+%E2%80%94+Search+Engine+Optimization)
 
@@ -571,7 +571,7 @@ We implement automated honeypot spam filters, work email verification, and condi
               [
                 Request Digital Audit
 
-              ](https://demo.businesdoctor.com/audit.php)
+              ](https://demo.businesdoctor.com/audit)
 
                 +1 (800) 492-3628
 

@@ -4,8 +4,8 @@
 
 ## Discipline Information
 - **Practice Area**: 08 Product Photography
-- **Canonical Web URL**: [https://demo.businesdoctor.com/product-photography-company-in-delhi](https://demo.businesdoctor.com/product-photography-company-in-delhi)
-- **Clean Markdown URL**: [https://demo.businesdoctor.com/product-photography-company-in-delhi.md](https://demo.businesdoctor.com/product-photography-company-in-delhi.md)
+- **Canonical Web URL**: [https://demo.businesdoctor.com/service/product-photography](https://demo.businesdoctor.com/service/product-photography)
+- **Clean Markdown URL**: [https://demo.businesdoctor.com/service/product-photography.md](https://demo.businesdoctor.com/service/product-photography.md)
 - **Central Markdown URL**: [https://demo.businesdoctor.com/md/services/product-photography.md](https://demo.businesdoctor.com/md/services/product-photography.md)
 - **Direct Consultation**: [Schedule Practice Scope](https://demo.businesdoctor.com/contact.php?service=Product+Photography)
 
@@ -321,7 +321,7 @@ You do. Upon final payment, you receive full commercial usage rights for web, so
               [
                 Request Digital Audit
 
-              ](https://demo.businesdoctor.com/audit.php)
+              ](https://demo.businesdoctor.com/audit)
 
                 +1 (800) 492-3628
 

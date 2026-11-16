@@ -27,6 +27,7 @@ $errors = [];
 $title = $case['title'];
 $slug = $case['slug'];
 $clientName = $case['client_name'] ?? '';
+$projectUrl = $case['project_url'] ?? '';
 $industry = $case['industry'] ?: $case['client_industry'];
 $serviceCategory = $case['service_category'] ?: $case['practice_area'];
 $baselineMetric = $case['baseline_metric'] ?? '';
@@ -55,6 +56,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         $title = trim($_POST['title'] ?? '');
         $requestedSlug = trim($_POST['slug'] ?? '');
         $clientName = trim($_POST['client_name'] ?? '');
+        $projectUrl = trim($_POST['project_url'] ?? '');
         $industry = trim($_POST['industry'] ?? 'Enterprise Software');
         $serviceCategory = trim($_POST['service_category'] ?? 'Custom Web Engineering');
         $baselineMetric = trim($_POST['baseline_metric'] ?? '');
@@ -79,6 +81,12 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         if ($title === '') $errors[] = 'Case Study Title is required.';
         if ($challenge === '') $errors[] = 'The Challenge description is required.';
         if ($solution === '') $errors[] = 'The Solution / Architecture description is required.';
+
+        if ($projectUrl !== '') {
+            if (!filter_var($projectUrl, FILTER_VALIDATE_URL) || !preg_match('#^https?://#i', $projectUrl)) {
+                $errors[] = 'Project / Case Study Link must be a valid HTTP or HTTPS URL (e.g. https://example.com).';
+            }
+        }
 
         // Handle Direct File Upload if submitted
         if (!empty($_FILES['image_file']['name']) && $_FILES['image_file']['error'] === UPLOAD_ERR_OK) {
@@ -124,6 +132,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
                     slug = ?,
                     title = ?,
                     client_name = ?,
+                    project_url = ?,
                     client_industry = ?,
                     industry = ?,
                     practice_area = ?,
@@ -157,6 +166,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
                 $finalSlug,
                 $title,
                 $clientName,
+                ($projectUrl !== '' ? $projectUrl : null),
                 $industry, // client_industry
                 $industry, // industry
                 $serviceCategory, // practice_area
@@ -269,6 +279,12 @@ require_once __DIR__ . '/includes/header.php';
             <label class="adm-label" for="caseIndustry">Industry</label>
             <input type="text" id="caseIndustry" name="industry" value="<?= e($industry) ?>" class="adm-input">
           </div>
+        </div>
+
+        <div class="adm-form-group">
+          <label class="adm-label" for="projectUrl">Project / Case Study Link (Optional)</label>
+          <input type="url" id="projectUrl" name="project_url" value="<?= e($projectUrl) ?>" placeholder="https://example.com" class="adm-input">
+          <div class="adm-hint">Add the client's website, live project, or relevant reference URL.</div>
         </div>
 
         <div class="adm-form-group">

@@ -3121,3 +3121,125 @@ body {
     grid-template-columns: 1fr !important;
   }
 }
+
+/* ============================================================
+   TARGETED UI CORRECTIONS — ACROSS ALL SERVICE PAGES
+   ============================================================ */
+
+/* 1. Statistics / Performance Data Section — Single Horizontal Row on Desktop */
+.srv-hero-stats {
+  display: grid !important;
+  grid-template-columns: repeat(4, minmax(0, 1fr)) !important;
+  gap: 1rem !important;
+  align-items: flex-start !important;
+  padding-top: 1.75rem !important;
+  border-top: 1px solid rgba(6, 181, 249, 0.15) !important;
+  width: 100% !important;
+}
+
+.srv-hero-stat-item {
+  display: flex !important;
+  flex-direction: column !important;
+  min-width: 0 !important;
+}
+
+.srv-hero-stat-val {
+  font-family: var(--font-mono, monospace) !important;
+  font-size: clamp(1.1rem, 1.6vw, 1.35rem) !important;
+  font-weight: 800 !important;
+  color: var(--srv-primary) !important;
+  line-height: 1.2 !important;
+  white-space: nowrap !important;
+}
+
+.srv-hero-stat-lbl {
+  font-size: 0.72rem !important;
+  color: var(--srv-text-muted) !important;
+  text-transform: uppercase !important;
+  letter-spacing: 0.04em !important;
+  margin-top: 0.25rem !important;
+  line-height: 1.35 !important;
+  word-break: break-word !important;
+}
+
+@media (max-width: 991px) {
+  .srv-hero-stats {
+    grid-template-columns: repeat(4, 1fr) !important;
+    gap: 0.75rem !important;
+  }
+}
+
+@media (max-width: 640px) {
+  .srv-hero-stats {
+    grid-template-columns: repeat(2, 1fr) !important;
+    gap: 1rem 0.75rem !important;
+  }
+}
+
+/* 2. Execution Framework Section — Balanced Horizontal Gap */
+.srv-process-grid {
+  display: grid !important;
+  grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
+  gap: 2rem !important;
+  width: 100% !important;
+  box-sizing: border-box !important;
+}
+
+@media (max-width: 768px) {
+  .srv-process-grid {
+    grid-template-columns: 1fr !important;
+    gap: 1.5rem !important;
+  }
+}
+
+/* 3. Card Icons & Wrappers — Strict Dimension Constraints */
+.srv-card-icon-wrap svg,
+.srv-card svg,
+.srv-icon-box svg {
+  max-width: 24px !important;
+  max-height: 24px !important;
+  width: 24px !important;
+  height: 24px !important;
+  stroke: currentColor !important;
+  flex-shrink: 0 !important;
+}
+
+.srv-icon-box {
+  width: 44px !important;
+  height: 44px !important;
+  min-width: 44px !important;
+  min-height: 44px !important;
+  max-width: 44px !important;
+  max-height: 44px !important;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  flex-shrink: 0 !important;
+  border-radius: 10px !important;
+  box-sizing: border-box !important;
+  overflow: hidden !important;
+}
+
+/* 4. FAQ Accordion — Clean Collapsed Initial State & Smooth Transitions */
+.srv-faq-item .srv-faq-panel {
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.3s cubic-bezier(0.16, 1, 0.3, 1), padding 0.3s ease;
+  padding: 0 1.5rem;
+}
+
+.srv-faq-item.is-active .srv-faq-panel {
+  padding-bottom: 1.5rem;
+}
+
+.srv-faq-item.is-active .srv-faq-icon,
+.srv-faq-btn[aria-expanded="true"] .srv-faq-icon {
+  transform: rotate(45deg);
+  color: var(--srv-primary) !important;
+}
+
+.srv-faq-item.is-active {
+  border-color: rgba(6, 181, 249, 0.4) !important;
+  background: rgba(13, 32, 54, 0.6) !important;
+}
+

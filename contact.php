@@ -65,7 +65,7 @@ require_once __DIR__ . '/includes/header.php';
           <div class="form-grid-2">
             <div class="form-group">
               <label class="form-label" for="contact_phone">Direct Phone / WhatsApp</label>
-              <input type="tel" id="contact_phone" name="phone" placeholder="+1 (555) 019-2834" class="form-control">
+              <input type="tel" id="contact_phone" name="phone" placeholder="000000000" class="form-control">
             </div>
             <div class="form-group">
               <label class="form-label" for="contact_org">Company / Organization *</label>

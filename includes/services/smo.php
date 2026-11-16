@@ -77,25 +77,29 @@ $consultationUrl = appUrl('contact.php?service=' . urlencode($serviceName));
               <circle cx="28" cy="20" r="5" fill="#F87171"/><circle cx="46" cy="20" r="5" fill="#FBBF24"/><circle cx="64" cy="20" r="5" fill="#34D399"/>
               <text x="90" y="24" fill="#8FA3B8" font-family="monospace" font-size="11" font-weight="600">businessdoctor.internal :: telemetry-engine.v2</text>
               
-              <rect x="50" y="70" width="230" height="90" rx="8" fill="#0D2644" stroke="#06B5F9" stroke-width="1.5" stroke-opacity="0.4"/>
-              <text x="70" y="95" fill="#06B5F9" font-family="monospace" font-size="11" font-weight="bold">// DISCIPLINE // 01</text>
-              <text x="70" y="122" fill="#F5F7FA" font-family="sans-serif" font-size="14" font-weight="bold">SMO — Social Media Optimization</text>
-              <text x="70" y="142" fill="#B8C7D9" font-family="monospace" font-size="11">Active Execution &bull; Calibrated</text>
+              <!-- Top Cards: Discipline & Audit Quality with clear separation -->
+              <rect x="40" y="65" width="245" height="98" rx="8" fill="#0D2644" stroke="#06B5F9" stroke-width="1.5" stroke-opacity="0.4"/>
+              <text x="56" y="90" fill="#06B5F9" font-family="monospace" font-size="11" font-weight="bold">// DISCIPLINE // 01</text>
+              <text x="56" y="112" fill="#F5F7FA" font-family="sans-serif" font-size="13" font-weight="bold">SMO Optimization</text>
+              <text x="56" y="130" fill="#06B5F9" font-family="sans-serif" font-size="11" font-weight="600">Social Media Engineering</text>
+              <text x="56" y="148" fill="#8FA3B8" font-family="monospace" font-size="10">Active Execution &bull; Calibrated</text>
 
-              <rect x="320" y="70" width="230" height="90" rx="8" fill="#0D2644" stroke="#06B5F9" stroke-width="1.5" stroke-opacity="0.4"/>
-              <text x="340" y="95" fill="#06B5F9" font-family="monospace" font-size="11" font-weight="bold">// AUDIT &amp; QUALITY</text>
-              <text x="340" y="122" fill="#F5F7FA" font-family="sans-serif" font-size="14" font-weight="bold">Enterprise SLA Standards</text>
-              <text x="340" y="142" fill="#B8C7D9" font-family="monospace" font-size="11">Continuous Accountability</text>
+              <line x1="285" y1="114" x2="315" y2="114" stroke="#06B5F9" stroke-width="2" stroke-dasharray="3 3"/>
 
-              <line x1="280" y1="115" x2="320" y2="115" stroke="#06B5F9" stroke-width="2" stroke-dasharray="3 3"/>
+              <rect x="315" y="65" width="245" height="98" rx="8" fill="#0D2644" stroke="#06B5F9" stroke-width="1.5" stroke-opacity="0.4"/>
+              <text x="330" y="90" fill="#06B5F9" font-family="monospace" font-size="11" font-weight="bold">// AUDIT &amp; QUALITY</text>
+              <text x="330" y="112" fill="#F5F7FA" font-family="sans-serif" font-size="13" font-weight="bold">Enterprise SLA Standards</text>
+              <text x="330" y="130" fill="#34D399" font-family="sans-serif" font-size="11" font-weight="600">Continuous Accountability</text>
+              <text x="330" y="148" fill="#8FA3B8" font-family="monospace" font-size="10">Audited Portfolio Benchmarks</text>
 
-              <rect x="50" y="180" width="500" height="225" rx="10" fill="#051424" stroke="#06B5F9" stroke-width="1" stroke-opacity="0.3"/>
-              <text x="70" y="210" fill="#34D399" font-family="monospace" font-size="12">$ execute --benchmark smo</text>
-              <text x="70" y="235" fill="#F5F7FA" font-family="monospace" font-size="11">&gt; 200 OK &bull; [Status: Calibrated] [Throughput: High]</text>
-              <text x="70" y="260" fill="#8FA3B8" font-family="monospace" font-size="11">&gt; Core Standard: Zero Fluff, Measurable Business ROI</text>
-              <text x="70" y="285" fill="#06B5F9" font-family="monospace" font-size="11">&gt; Verification Protocol: 100% Quality Assurance</text>
-              <text x="70" y="310" fill="#B8C7D9" font-family="monospace" font-size="11">&gt; Operational Readiness: Verified</text>
-              <text x="70" y="340" fill="#34D399" font-family="monospace" font-size="11">&gt; All Systems Active</text>
+              <!-- Terminal Panel: Balanced spacing and alignment -->
+              <rect x="40" y="180" width="520" height="225" rx="10" fill="#051424" stroke="#06B5F9" stroke-width="1" stroke-opacity="0.3"/>
+              <text x="65" y="215" fill="#34D399" font-family="monospace" font-size="12" font-weight="bold">$ execute --benchmark smo</text>
+              <text x="65" y="245" fill="#F5F7FA" font-family="monospace" font-size="11">&gt; 200 OK &bull; [Status: Calibrated] [Throughput: High]</text>
+              <text x="65" y="275" fill="#8FA3B8" font-family="monospace" font-size="11">&gt; Core Standard: Zero Fluff, Measurable Business ROI</text>
+              <text x="65" y="305" fill="#06B5F9" font-family="monospace" font-size="11">&gt; Verification Protocol: 100% Quality Assurance</text>
+              <text x="65" y="335" fill="#B8C7D9" font-family="monospace" font-size="11">&gt; Operational Readiness: Verified</text>
+              <text x="65" y="365" fill="#34D399" font-family="monospace" font-size="11">&gt; All Systems Active</text>
             </svg>
           </div>
         </div>
@@ -523,11 +527,11 @@ $consultationUrl = appUrl('contact.php?service=' . urlencode($serviceName));
 
     <div class="srv-faq-container">
             <div class="srv-faq-item">
-        <button type="button" class="srv-faq-btn" aria-expanded="true" aria-controls="faq-ans-0">
+        <button type="button" class="srv-faq-btn" aria-expanded="false" aria-controls="faq-ans-0">
           <span class="srv-faq-question">What is the difference between SMO and SMM?</span>
           <span class="srv-faq-icon" aria-hidden="true">+</span>
         </button>
-        <div id="faq-ans-0" class="srv-faq-panel" style="max-height: 500px;">
+        <div id="faq-ans-0" class="srv-faq-panel">
           <div class="srv-faq-content">
             <p>SMO (Social Media Optimization) focuses on the structural architecture, searchability, bio copywriting, and conversion funnels of your profiles. SMM (Social Media Marketing) focuses on ongoing content creation, publishing schedules, community engagement, and paid ad boosts.</p>
           </div>

@@ -163,7 +163,7 @@ require_once __DIR__ . '/includes/header.php';
         <div class="form-grid-2">
           <div class="form-group">
             <label class="form-label" for="phone">Phone / WhatsApp Number</label>
-            <input type="tel" id="phone" name="phone" placeholder="+1 (555) 019-2834" class="form-control">
+            <input type="tel" id="phone" name="phone" placeholder="000000000" class="form-control">
           </div>
           <div class="form-group">
             <label class="form-label" for="operating_model">Primary Business Model *</label>

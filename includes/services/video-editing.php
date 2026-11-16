@@ -78,42 +78,43 @@ $consultationUrl = appUrl('contact.php?service=' . urlencode($serviceName));
   <text x="90" y="24" fill="#8FA3B8" font-family="monospace" font-size="11" font-weight="600">businessdoctor.studio :: 4k-commercial-video-pipeline.v2</text>
 
   <!-- Video Viewport Monitor -->
-  <rect x="40" y="65" width="340" height="230" rx="10" fill="#030E1A" stroke="#06B5F9" stroke-width="1.5" stroke-opacity="0.4"/>
+  <rect x="40" y="65" width="345" height="230" rx="10" fill="#030E1A" stroke="#06B5F9" stroke-width="1.5" stroke-opacity="0.4"/>
   
   <!-- Camera Grid & Target -->
-  <circle cx="210" cy="180" r="45" stroke="#06B5F9" stroke-opacity="0.5" stroke-dasharray="4 4"/>
-  <circle cx="210" cy="180" r="4" fill="#06B5F9"/>
-  <line x1="150" y1="180" x2="270" y2="180" stroke="#06B5F9" stroke-opacity="0.3"/>
-  <line x1="210" y1="120" x2="210" y2="240" stroke="#06B5F9" stroke-opacity="0.3"/>
-  <rect x="55" y="80" width="70" height="22" rx="4" fill="#EF4444"/>
-  <text x="65" y="95" fill="#ffffff" font-family="monospace" font-size="11" font-weight="bold">&bull; REC 4K</text>
-  <text x="240" y="95" fill="#34D399" font-family="monospace" font-size="11">60 FPS &bull; ProRes RAW</text>
+  <circle cx="212" cy="180" r="45" stroke="#06B5F9" stroke-opacity="0.5" stroke-dasharray="4 4"/>
+  <circle cx="212" cy="180" r="4" fill="#06B5F9"/>
+  <line x1="152" y1="180" x2="272" y2="180" stroke="#06B5F9" stroke-opacity="0.3"/>
+  <line x1="212" y1="120" x2="212" y2="240" stroke="#06B5F9" stroke-opacity="0.3"/>
+  <rect x="55" y="80" width="76" height="24" rx="4" fill="#EF4444"/>
+  <text x="64" y="96" fill="#ffffff" font-family="monospace" font-size="10.5" font-weight="bold">&bull; REC 4K</text>
+  <text x="235" y="96" fill="#34D399" font-family="monospace" font-size="10.5">60 FPS &bull; ProRes RAW</text>
   
   <!-- Audio Waveform -->
-  <path d="M55 270 Q 75 250, 95 270 T 135 270 T 175 250 T 215 270 T 255 240 T 295 270 T 335 270 T 365 270" stroke="#06B5F9" stroke-width="2" fill="none"/>
-
-  <!-- Timeline Panel Below -->
-  <rect x="40" y="310" width="520" height="95" rx="8" fill="#0A2038" stroke="#06B5F9" stroke-opacity="0.3"/>
-  <text x="60" y="335" fill="#06B5F9" font-family="monospace" font-size="11" font-weight="bold">// MULTI-TRACK TIMELINE (DAVINCI RESOLVE / PREMIERE)</text>
-  <rect x="60" y="348" width="160" height="18" rx="4" fill="#06B5F9" fill-opacity="0.4"/>
-  <text x="70" y="361" fill="#ffffff" font-family="monospace" font-size="9">V1: Commercial 4K A-Roll</text>
-
-  <rect x="230" y="348" width="120" height="18" rx="4" fill="#34D399" fill-opacity="0.4"/>
-  <text x="240" y="361" fill="#ffffff" font-family="monospace" font-size="9">V2: 3D Product B-Roll</text>
-
-  <rect x="360" y="348" width="180" height="18" rx="4" fill="#06B5F9" fill-opacity="0.4"/>
-  <text x="370" y="361" fill="#ffffff" font-family="monospace" font-size="9">A1: Master Dolby Audio</text>
+  <path d="M 60 262 C 63.7 261, 74.5 255.3, 82 256 C 89.5 256.7, 97 267.3, 105 266 C 113 264.7, 121.7 247.2, 130 248 C 138.3 248.8, 146.3 271.7, 155 271 C 163.7 270.3, 172.8 244.5, 182 244 C 191.2 243.5, 200.7 267.8, 210 268 C 219.3 268.2, 228.8 244.3, 238 245 C 247.2 245.7, 256.3 271.2, 265 272 C 273.7 272.8, 281.7 250.8, 290 250 C 298.3 249.2, 306.7 266, 315 267 C 323.3 268, 331.7 256.8, 340 256 C 348.3 255.2, 360.8 261, 365 262" stroke="#06B5F9" stroke-width="2" fill="none"/>
 
   <!-- Side Metrics -->
   <rect x="400" y="65" width="160" height="110" rx="8" fill="#0D2644" stroke="#06B5F9" stroke-opacity="0.3"/>
   <text x="415" y="90" fill="#06B5F9" font-family="monospace" font-size="11" font-weight="bold">// AD RETENTION</text>
-  <text x="415" y="120" fill="#34D399" font-family="sans-serif" font-size="22" font-weight="900">72.4%</text>
-  <text x="415" y="145" fill="#B8C7D9" font-family="monospace" font-size="10">3s Hook Rate (+44%)</text>
+  <text x="415" y="122" fill="#34D399" font-family="sans-serif" font-size="24" font-weight="900">72.4%</text>
+  <text x="415" y="148" fill="#B8C7D9" font-family="monospace" font-size="10">3s Hook Rate (+44%)</text>
 
   <rect x="400" y="185" width="160" height="110" rx="8" fill="#0D2644" stroke="#06B5F9" stroke-opacity="0.3"/>
   <text x="415" y="210" fill="#06B5F9" font-family="monospace" font-size="11" font-weight="bold">// CONVERSION LIFT</text>
-  <text x="415" y="240" fill="#06B5F9" font-family="sans-serif" font-size="22" font-weight="900">+85%</text>
-  <text x="415" y="265" fill="#B8C7D9" font-family="monospace" font-size="10">Paid Video Ad ROAS</text>
+  <text x="415" y="242" fill="#06B5F9" font-family="sans-serif" font-size="24" font-weight="900">+85%</text>
+  <text x="415" y="268" fill="#B8C7D9" font-family="monospace" font-size="10">Paid Video Ad ROAS</text>
+
+  <!-- Timeline Panel Below -->
+  <rect x="40" y="310" width="520" height="95" rx="8" fill="#0A2038" stroke="#06B5F9" stroke-opacity="0.3"/>
+  <text x="56" y="333" fill="#06B5F9" font-family="monospace" font-size="11" font-weight="bold">// MULTI-TRACK TIMELINE (DAVINCI RESOLVE / PREMIERE)</text>
+  <rect x="56" y="348" width="155" height="22" rx="4" fill="#06B5F9" fill-opacity="0.25" stroke="#06B5F9" stroke-opacity="0.4"/>
+  <text x="66" y="363" fill="#ffffff" font-family="monospace" font-size="9.5" font-weight="600">V1: Commercial 4K</text>
+
+  <rect x="221" y="348" width="145" height="22" rx="4" fill="#34D399" fill-opacity="0.25" stroke="#34D399" stroke-opacity="0.4"/>
+  <text x="231" y="363" fill="#ffffff" font-family="monospace" font-size="9.5" font-weight="600">V2: 3D Product B-Roll</text>
+
+  <rect x="376" y="348" width="168" height="22" rx="4" fill="#06B5F9" fill-opacity="0.25" stroke="#06B5F9" stroke-opacity="0.4"/>
+  <text x="386" y="363" fill="#ffffff" font-family="monospace" font-size="9.5" font-weight="600">A1: Master Dolby 5.1</text>
+  <text x="56" y="392" fill="#8FA3B8" font-family="monospace" font-size="9.5">Timeline Resolution: 3840 x 2160 UHD &bull; Color Managed ACEScc</text>
 </svg>
           </div>
         </div>
@@ -959,11 +960,11 @@ $consultationUrl = appUrl('contact.php?service=' . urlencode($serviceName));
 
     <div class="srv-faq-container">
       <div class="srv-faq-item">
-        <button type="button" class="srv-faq-btn" aria-expanded="true" aria-controls="faq-ans-0">
+        <button type="button" class="srv-faq-btn" aria-expanded="false" aria-controls="faq-ans-0">
           <span class="srv-faq-question">What is included in a typical commercial video production package?</span>
           <span class="srv-faq-icon" aria-hidden="true">+</span>
         </button>
-        <div id="faq-ans-0" class="srv-faq-panel" style="max-height: 500px;">
+        <div id="faq-ans-0" class="srv-faq-panel">
           <div class="srv-faq-content">
             <p>Our full-service packages include end-to-end execution: creative concepting, scriptwriting, professional voiceover, location scouting, casting, 4K/6K cinema camera filming, professional lighting grids, audio capture, editorial cutting, DaVinci Resolve color grading, motion graphics, licensed commercial music, and export in all social and broadcast aspect ratios.</p>
           </div>

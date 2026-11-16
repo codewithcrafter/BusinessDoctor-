@@ -225,39 +225,27 @@ $consultationUrl = appUrl('contact.php?service=' . urlencode($serviceName));
 
     <div class="srv-grid srv-grid-3">
             <div class="srv-card">
-        <div class="srv-card-icon-wrap" style="color: #F87171; background: rgba(248, 113, 113, 0.12); border-color: rgba(248, 113, 113, 0.25);">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="12"/><line x1="12" y1="16" x2="12.01" y2="16"/></svg>
-        </div>
+        <div class="srv-card-icon-wrap"><div class="srv-icon-box" style="color: #F87171; background: rgba(248, 113, 113, 0.12); border-color: rgba(248, 113, 113, 0.25);"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="12"/><line x1="12" y1="16" x2="12.01" y2="16"/></svg></div><span class="srv-card-index">01</span></div>
         <h3 class="srv-card-title text-white">Inconsistent Posting Schedules</h3>
         <p class="srv-card-desc">Posting three times one week and disappearing for the next two destroys algorithmic standing and audience recall.</p>
       </div>      <div class="srv-card">
-        <div class="srv-card-icon-wrap" style="color: #F87171; background: rgba(248, 113, 113, 0.12); border-color: rgba(248, 113, 113, 0.25);">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="12"/><line x1="12" y1="16" x2="12.01" y2="16"/></svg>
-        </div>
+        <div class="srv-card-icon-wrap"><div class="srv-icon-box" style="color: #F87171; background: rgba(248, 113, 113, 0.12); border-color: rgba(248, 113, 113, 0.25);"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><line x1="18" y1="8" x2="23" y2="13"/><line x1="23" y1="8" x2="18" y2="13"/></svg></div><span class="srv-card-index">02</span></div>
         <h3 class="srv-card-title text-white">Boring, Corporate Stock Graphics</h3>
         <p class="srv-card-desc">Generic stock photos look like advertisements and cause users to scroll past without engaging.</p>
       </div>      <div class="srv-card">
-        <div class="srv-card-icon-wrap" style="color: #F87171; background: rgba(248, 113, 113, 0.12); border-color: rgba(248, 113, 113, 0.25);">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="12"/><line x1="12" y1="16" x2="12.01" y2="16"/></svg>
-        </div>
+        <div class="srv-card-icon-wrap"><div class="srv-icon-box" style="color: #F87171; background: rgba(248, 113, 113, 0.12); border-color: rgba(248, 113, 113, 0.25);"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg></div><span class="srv-card-index">03</span></div>
         <h3 class="srv-card-title text-white">Ignored Comments & Inbound DMs</h3>
         <p class="srv-card-desc">Failing to respond promptly to user comments and direct messages misses ready-to-buy customer inquiries.</p>
       </div>      <div class="srv-card">
-        <div class="srv-card-icon-wrap" style="color: #F87171; background: rgba(248, 113, 113, 0.12); border-color: rgba(248, 113, 113, 0.25);">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="12"/><line x1="12" y1="16" x2="12.01" y2="16"/></svg>
-        </div>
+        <div class="srv-card-icon-wrap"><div class="srv-icon-box" style="color: #F87171; background: rgba(248, 113, 113, 0.12); border-color: rgba(248, 113, 113, 0.25);"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21.21 15.89A10 10 0 1 1 8 2.83"/><path d="M22 12A10 10 0 0 0 12 2v10z"/></svg></div><span class="srv-card-index">04</span></div>
         <h3 class="srv-card-title text-white">Zero Revenue Attribution</h3>
         <p class="srv-card-desc">Struggling to track whether social media followers ever convert into website visitors, leads, or sales.</p>
       </div>      <div class="srv-card">
-        <div class="srv-card-icon-wrap" style="color: #F87171; background: rgba(248, 113, 113, 0.12); border-color: rgba(248, 113, 113, 0.25);">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="12"/><line x1="12" y1="16" x2="12.01" y2="16"/></svg>
-        </div>
+        <div class="srv-card-icon-wrap"><div class="srv-icon-box" style="color: #F87171; background: rgba(248, 113, 113, 0.12); border-color: rgba(248, 113, 113, 0.25);"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M10.29 3.86L1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L13.71 3.86a2 2 0 0 0-3.42 0z"/><line x1="12" y1="9" x2="12" y2="13"/><line x1="12" y1="17" x2="12.01" y2="17"/></svg></div><span class="srv-card-index">05</span></div>
         <h3 class="srv-card-title text-white">Lack of High-Impact Video Content</h3>
         <p class="srv-card-desc">Algorithms heavily favor Reels and Shorts; brands without a video pipeline suffer severe reach penalties.</p>
       </div>      <div class="srv-card">
-        <div class="srv-card-icon-wrap" style="color: #F87171; background: rgba(248, 113, 113, 0.12); border-color: rgba(248, 113, 113, 0.25);">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="12"/><line x1="12" y1="16" x2="12.01" y2="16"/></svg>
-        </div>
+        <div class="srv-card-icon-wrap"><div class="srv-icon-box" style="color: #F87171; background: rgba(248, 113, 113, 0.12); border-color: rgba(248, 113, 113, 0.25);"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><line x1="4.93" y1="4.93" x2="19.07" y2="19.07"/></svg></div><span class="srv-card-index">06</span></div>
         <h3 class="srv-card-title text-white">Disjointed Multi-Platform Messaging</h3>
         <p class="srv-card-desc">Using different voices, styles, and branding across platforms confuses prospects and weakens authority.</p>
       </div>
@@ -285,44 +273,32 @@ $consultationUrl = appUrl('contact.php?service=' . urlencode($serviceName));
 
     <div class="srv-grid srv-grid-3">
             <div class="srv-card">
-        <div class="srv-card-icon-wrap">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="3" width="20" height="14" rx="2"/><line x1="8" y1="21" x2="16" y2="21"/><line x1="12" y1="17" x2="12" y2="21"/></svg>
-        </div>
+        <div class="srv-card-icon-wrap"><div class="srv-icon-box"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M22 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg></div></div>
         <h3 class="srv-card-title text-white">Monthly Content Strategy & Calendars</h3>
         <p class="srv-card-desc">Comprehensive 30-day editorial roadmaps defining content pillars, formats, and commercial objectives.</p>
         <ul style="list-style: none; padding: 0; margin: 1rem 0 0; display: flex; flex-direction: column; gap: 0.5rem; font-size: 0.85rem; color: #B8C7D9;"><li style="display: flex; gap: 0.5rem; align-items: flex-start;"><span style="color: #06B5F9;">&bull;</span><span>Audience persona research</span></li><li style="display: flex; gap: 0.5rem; align-items: flex-start;"><span style="color: #06B5F9;">&bull;</span><span>Content pillar breakdown (Educate, Inspire, Convert)</span></li><li style="display: flex; gap: 0.5rem; align-items: flex-start;"><span style="color: #06B5F9;">&bull;</span><span>Advance client review & approval workflows</span></li></ul></div>
       <div class="srv-card">
-        <div class="srv-card-icon-wrap">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="3" width="20" height="14" rx="2"/><line x1="8" y1="21" x2="16" y2="21"/><line x1="12" y1="17" x2="12" y2="21"/></svg>
-        </div>
+        <div class="srv-card-icon-wrap"><div class="srv-icon-box"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg></div></div>
         <h3 class="srv-card-title text-white">Visual Asset & Carousel Design</h3>
         <p class="srv-card-desc">Custom graphic design, infographic development, and multi-slide carousel assets engineered for high saves.</p>
         <ul style="list-style: none; padding: 0; margin: 1rem 0 0; display: flex; flex-direction: column; gap: 0.5rem; font-size: 0.85rem; color: #B8C7D9;"><li style="display: flex; gap: 0.5rem; align-items: flex-start;"><span style="color: #06B5F9;">&bull;</span><span>Custom branded vector templates</span></li><li style="display: flex; gap: 0.5rem; align-items: flex-start;"><span style="color: #06B5F9;">&bull;</span><span>Data visualization & industry charts</span></li><li style="display: flex; gap: 0.5rem; align-items: flex-start;"><span style="color: #06B5F9;">&bull;</span><span>Multi-slide storytelling decks</span></li></ul></div>
       <div class="srv-card">
-        <div class="srv-card-icon-wrap">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="3" width="20" height="14" rx="2"/><line x1="8" y1="21" x2="16" y2="21"/><line x1="12" y1="17" x2="12" y2="21"/></svg>
-        </div>
+        <div class="srv-card-icon-wrap"><div class="srv-icon-box"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polygon points="11 5 6 9 2 9 2 15 6 15 11 19 11 5"/><path d="M19.07 4.93a10 10 0 0 1 0 14.14"/></svg></div></div>
         <h3 class="srv-card-title text-white">Short-Form Video Production & Reels</h3>
         <p class="srv-card-desc">Editing vertical video reels, shorts, and behind-the-scenes clips with kinetic captions and trending audio.</p>
         <ul style="list-style: none; padding: 0; margin: 1rem 0 0; display: flex; flex-direction: column; gap: 0.5rem; font-size: 0.85rem; color: #B8C7D9;"><li style="display: flex; gap: 0.5rem; align-items: flex-start;"><span style="color: #06B5F9;">&bull;</span><span>Hooks & retention pacing</span></li><li style="display: flex; gap: 0.5rem; align-items: flex-start;"><span style="color: #06B5F9;">&bull;</span><span>Animated on-screen subtitles</span></li><li style="display: flex; gap: 0.5rem; align-items: flex-start;"><span style="color: #06B5F9;">&bull;</span><span>Optimized for Reels, Shorts, and TikTok</span></li></ul></div>
       <div class="srv-card">
-        <div class="srv-card-icon-wrap">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="3" width="20" height="14" rx="2"/><line x1="8" y1="21" x2="16" y2="21"/><line x1="12" y1="17" x2="12" y2="21"/></svg>
-        </div>
+        <div class="srv-card-icon-wrap"><div class="srv-icon-box"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><circle cx="12" cy="12" r="6"/><circle cx="12" cy="12" r="2"/></svg></div></div>
         <h3 class="srv-card-title text-white">Persuasive Social Copywriting</h3>
         <p class="srv-card-desc">Platform-specific copywriting that hooks readers in the first sentence and drives meaningful comments.</p>
         <ul style="list-style: none; padding: 0; margin: 1rem 0 0; display: flex; flex-direction: column; gap: 0.5rem; font-size: 0.85rem; color: #B8C7D9;"><li style="display: flex; gap: 0.5rem; align-items: flex-start;"><span style="color: #06B5F9;">&bull;</span><span>Platform tone-of-voice alignment</span></li><li style="display: flex; gap: 0.5rem; align-items: flex-start;"><span style="color: #06B5F9;">&bull;</span><span>Clear conversion call-to-actions</span></li><li style="display: flex; gap: 0.5rem; align-items: flex-start;"><span style="color: #06B5F9;">&bull;</span><span>Curated search-optimized hashtags</span></li></ul></div>
       <div class="srv-card">
-        <div class="srv-card-icon-wrap">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="3" width="20" height="14" rx="2"/><line x1="8" y1="21" x2="16" y2="21"/><line x1="12" y1="17" x2="12" y2="21"/></svg>
-        </div>
+        <div class="srv-card-icon-wrap"><div class="srv-icon-box"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg></div></div>
         <h3 class="srv-card-title text-white">Community Management & DM Nurturing</h3>
         <p class="srv-card-desc">Daily moderation of post comments, active brand engagement, and routing sales inquiries to your team.</p>
         <ul style="list-style: none; padding: 0; margin: 1rem 0 0; display: flex; flex-direction: column; gap: 0.5rem; font-size: 0.85rem; color: #B8C7D9;"><li style="display: flex; gap: 0.5rem; align-items: flex-start;"><span style="color: #06B5F9;">&bull;</span><span>Prompt comment responses</span></li><li style="display: flex; gap: 0.5rem; align-items: flex-start;"><span style="color: #06B5F9;">&bull;</span><span>Inbound direct message triage</span></li><li style="display: flex; gap: 0.5rem; align-items: flex-start;"><span style="color: #06B5F9;">&bull;</span><span>Outbound community engagement</span></li></ul></div>
       <div class="srv-card">
-        <div class="srv-card-icon-wrap">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="3" width="20" height="14" rx="2"/><line x1="8" y1="21" x2="16" y2="21"/><line x1="12" y1="17" x2="12" y2="21"/></svg>
-        </div>
+        <div class="srv-card-icon-wrap"><div class="srv-icon-box"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="18" y1="20" x2="18" y2="10"/><line x1="12" y1="20" x2="12" y2="4"/><line x1="6" y1="20" x2="6" y2="14"/></svg></div></div>
         <h3 class="srv-card-title text-white">Paid Social Boost & Analytics</h3>
         <p class="srv-card-desc">Micro-boosting top-performing organic posts to lookalike audiences and delivering monthly executive reports.</p>
         <ul style="list-style: none; padding: 0; margin: 1rem 0 0; display: flex; flex-direction: column; gap: 0.5rem; font-size: 0.85rem; color: #B8C7D9;"><li style="display: flex; gap: 0.5rem; align-items: flex-start;"><span style="color: #06B5F9;">&bull;</span><span>High-performing post amplification</span></li><li style="display: flex; gap: 0.5rem; align-items: flex-start;"><span style="color: #06B5F9;">&bull;</span><span>Audience growth & engagement metrics</span></li><li style="display: flex; gap: 0.5rem; align-items: flex-start;"><span style="color: #06B5F9;">&bull;</span><span>Executive monthly review call</span></li></ul></div>
@@ -486,11 +462,11 @@ $consultationUrl = appUrl('contact.php?service=' . urlencode($serviceName));
 
     <div class="srv-faq-container">
             <div class="srv-faq-item">
-        <button type="button" class="srv-faq-btn" aria-expanded="true" aria-controls="faq-ans-0">
+        <button type="button" class="srv-faq-btn" aria-expanded="false" aria-controls="faq-ans-0">
           <span class="srv-faq-question">How many posts per week will you create and publish?</span>
           <span class="srv-faq-icon" aria-hidden="true">+</span>
         </button>
-        <div id="faq-ans-0" class="srv-faq-panel" style="max-height: 500px;">
+        <div id="faq-ans-0" class="srv-faq-panel">
           <div class="srv-faq-content">
             <p>Our standard enterprise packages range from 3 to 5 high-quality posts per week per platform, combining carousels, video reels, and single-image announcements.</p>
           </div>

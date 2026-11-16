@@ -963,11 +963,11 @@ $consultationUrl = appUrl('contact.php?service=' . urlencode($serviceName));
 
     <div class="srv-faq-container">
       <div class="srv-faq-item">
-        <button type="button" class="srv-faq-btn" aria-expanded="true" aria-controls="faq-ans-0">
+        <button type="button" class="srv-faq-btn" aria-expanded="false" aria-controls="faq-ans-0">
           <span class="srv-faq-question">Which cloud provider do you recommend: AWS, Google Cloud, or Microsoft Azure?</span>
           <span class="srv-faq-icon" aria-hidden="true">+</span>
         </button>
-        <div id="faq-ans-0" class="srv-faq-panel" style="max-height: 500px;">
+        <div id="faq-ans-0" class="srv-faq-panel">
           <div class="srv-faq-content">
             <p>The ideal provider depends on your existing technology stack, compliance requirements, and business goals. AWS offers the most mature ecosystem of managed services; Google Cloud excels in Kubernetes (GKE), containerization, and data analytics; Microsoft Azure is ideal for enterprise organizations with extensive Active Directory and Microsoft enterprise agreements. We architect with Infrastructure as Code to ensure you are never locked into a single vendor.</p>
           </div>

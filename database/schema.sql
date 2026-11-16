@@ -92,6 +92,7 @@ CREATE TABLE IF NOT EXISTS `case_studies` (
     `slug` VARCHAR(120) NOT NULL UNIQUE,
     `title` VARCHAR(200) NOT NULL,
     `client_name` VARCHAR(150) NULL,
+    `project_url` VARCHAR(500) NULL,
     `client_industry` VARCHAR(100) NOT NULL,
     `industry` VARCHAR(100) NULL,
     `practice_area` VARCHAR(100) NOT NULL,

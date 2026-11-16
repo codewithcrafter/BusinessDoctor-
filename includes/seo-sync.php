@@ -51,18 +51,18 @@ class SeoSyncEngine
                 'priority' => '1.0',
                 'changefreq' => 'daily',
                 'title' => 'Home — Enterprise Technology & IT Solutions',
-                'description' => 'BusinessDoctor delivers enterprise IT solutions, web & custom software development, digital marketing, UI/UX architecture, e-commerce, and cloud consulting.'
+                'description' => 'BusinesDoctor delivers enterprise IT solutions, web & custom software development, digital marketing, UI/UX architecture, e-commerce, and cloud consulting.'
             ],
             [
-                'loc' => '/digital-marketing-company-in-delhi',
+                'loc' => '/services',
                 'file' => 'services.php',
                 'priority' => '0.9',
                 'changefreq' => 'weekly',
-                'title' => 'Digital Marketing Services Delhi NCR — BusinessDoctor',
+                'title' => 'Digital Marketing & IT Services Delhi NCR — BusinesDoctor',
                 'description' => 'Targeted growth solutions for businesses in Delhi NCR: SMO, Google Business Profile Management, PPC / Paid Ads, Ecommerce Management, Graphic Design, SEO, Social Media Marketing, Product Photography, Video Editing, and Web Development.'
             ],
             [
-                'loc' => '/audit.php',
+                'loc' => '/audit',
                 'file' => 'audit.php',
                 'priority' => '0.9',
                 'changefreq' => 'weekly',
@@ -70,7 +70,7 @@ class SeoSyncEngine
                 'description' => 'Diagnostic assessment tool to benchmark technical infrastructure, security posture, conversion leaks, and growth bottlenecks.'
             ],
             [
-                'loc' => '/case-studies.php',
+                'loc' => '/case-studies',
                 'file' => 'case-studies.php',
                 'priority' => '0.8',
                 'changefreq' => 'weekly',
@@ -82,19 +82,19 @@ class SeoSyncEngine
                 'file' => 'insights.php',
                 'priority' => '0.8',
                 'changefreq' => 'weekly',
-                'title' => 'Blog & Technical Perspectives — BusinessDoctor Enterprise IT',
+                'title' => 'Blog & Technical Perspectives — BusinesDoctor Enterprise IT',
                 'description' => 'Practical engineering blueprints, Core Web Vitals breakdowns, and conversion optimization strategies from our senior architects and digital strategists.'
             ],
             [
-                'loc' => '/about.php',
+                'loc' => '/about',
                 'file' => 'about.php',
                 'priority' => '0.7',
                 'changefreq' => 'monthly',
-                'title' => 'About BusinessDoctor — Firm Profile & Leadership',
+                'title' => 'About BusinesDoctor — Firm Profile & Leadership',
                 'description' => 'Our history, engineering ethos, global delivery standards, and multidisciplinary leadership team.'
             ],
             [
-                'loc' => '/contact.php',
+                'loc' => '/contact',
                 'file' => 'contact.php',
                 'priority' => '0.8',
                 'changefreq' => 'monthly',
@@ -252,18 +252,22 @@ class SeoSyncEngine
         $lines[] = "This index links to Markdown resources intended for AI/LLM consumption. All listed URLs must be verified canonical pages reflecting published website content.";
         $lines[] = "";
         $lines[] = "## Core Practice Disciplines";
-        $lines[] = "- [Web & Custom Software Development]({$baseUrl}/company/web-software-development): Resilient full-stack web applications, microservices, performance architecture, and bespoke enterprise software systems.";
-        $lines[] = "- [Digital Marketing & Performance Ads]({$baseUrl}/company/digital-marketing-seo): Data-driven growth campaigns, high-converting Google Search & Meta advertising, technical SEO, and conversion rate optimization.";
-        $lines[] = "- [UI/UX Design & Brand Identity]({$baseUrl}/company/ui-ux-branding): Human-centered user interface design, interactive design tokens, cohesive brand systems, and friction-free user journeys.";
-        $lines[] = "- [E-Commerce & Marketplace Management]({$baseUrl}/company/ecommerce-marketplaces): End-to-end retail marketplace management on Amazon and Flipkart, catalog optimization, A+ content, and marketplace growth.";
-        $lines[] = "- [Creative Production & Video Marketing]({$baseUrl}/company/creative-video-production): Documentary-style brand storytelling, video case studies, commercial video assets, and conversion-focused multimedia production.";
-        $lines[] = "- [Cloud Solutions & IT Consulting]({$baseUrl}/company/cloud-it-consulting): Enterprise cloud infrastructure management, DevSecOps automation, website maintenance, cybersecurity hardening, and IT modernization.";
+        foreach (self::getActiveServices() as $slug => $service) {
+            $name = $service['name'] ?? $service['short_title'] ?? $slug;
+            $summary = !empty($service['summary']) ? $service['summary'] : (!empty($service['tagline']) ? $service['tagline'] : 'Enterprise digital service.');
+            $summary = trim(preg_replace('/\s+/', ' ', strip_tags($summary)));
+            $url = getServiceUrl($slug);
+            if (!str_starts_with($url, $baseUrl)) {
+                $url = $baseUrl . parse_url($url, PHP_URL_PATH);
+            }
+            $lines[] = "- [{$name}]({$url}): {$summary}";
+        }
         $lines[] = "";
         $lines[] = "## Company";
         $lines[] = "- [BusinesDoctor Homepage]({$baseUrl}/): Primary enterprise portal outlining technology capabilities, client transformations, and strategic consulting frameworks.";
-        $lines[] = "- [About BusinesDoctor]({$baseUrl}/about.php): Executive leadership, engineering principles, core consulting values, and practice methodology.";
-        $lines[] = "- [Contact Us]({$baseUrl}/contact.php): Direct communication channels, enterprise project scoping, consultation requests, and verified headquarters address.";
-        $lines[] = "- [Digital Architecture Audit]({$baseUrl}/audit.php): Complimentary diagnostic benchmarking technical bottlenecks, Core Web Vitals, conversion leaks, and infrastructure readiness.";
+        $lines[] = "- [About BusinesDoctor]({$baseUrl}/about): Executive leadership, engineering principles, core consulting values, and practice methodology.";
+        $lines[] = "- [Contact Us]({$baseUrl}/contact): Direct communication channels, enterprise project scoping, consultation requests, and verified headquarters address.";
+        $lines[] = "- [Digital Architecture Audit]({$baseUrl}/audit): Complimentary diagnostic benchmarking technical bottlenecks, Core Web Vitals, conversion leaks, and infrastructure readiness.";
         $lines[] = "";
         $lines[] = "## Published Editorial & Insights";
         if (empty($insights)) {

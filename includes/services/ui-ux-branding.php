@@ -963,11 +963,11 @@ $consultationUrl = appUrl('contact.php?service=' . urlencode($serviceName));
 
     <div class="srv-faq-container">
       <div class="srv-faq-item">
-        <button type="button" class="srv-faq-btn" aria-expanded="true" aria-controls="faq-ans-0">
+        <button type="button" class="srv-faq-btn" aria-expanded="false" aria-controls="faq-ans-0">
           <span class="srv-faq-question">What deliverables do we receive at the end of a UI/UX project?</span>
           <span class="srv-faq-icon" aria-hidden="true">+</span>
         </button>
-        <div id="faq-ans-0" class="srv-faq-panel" style="max-height: 500px;">
+        <div id="faq-ans-0" class="srv-faq-panel">
           <div class="srv-faq-content">
             <p>You receive a complete, production-ready Figma workspace containing the atomic design system (color tokens, typography, component library with interactive variants), all responsive screen layouts (desktop, tablet, mobile), an interactive click-through prototype, exportable SVGs, and developer documentation with CSS variable specifications.</p>
           </div>

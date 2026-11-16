@@ -77,25 +77,29 @@ $consultationUrl = appUrl('contact.php?service=' . urlencode($serviceName));
               <circle cx="28" cy="20" r="5" fill="#F87171"/><circle cx="46" cy="20" r="5" fill="#FBBF24"/><circle cx="64" cy="20" r="5" fill="#34D399"/>
               <text x="90" y="24" fill="#8FA3B8" font-family="monospace" font-size="11" font-weight="600">businessdoctor.internal :: telemetry-engine.v2</text>
               
-              <rect x="50" y="70" width="230" height="90" rx="8" fill="#0D2644" stroke="#06B5F9" stroke-width="1.5" stroke-opacity="0.4"/>
-              <text x="70" y="95" fill="#06B5F9" font-family="monospace" font-size="11" font-weight="bold">// DISCIPLINE // 02</text>
-              <text x="70" y="122" fill="#F5F7FA" font-family="sans-serif" font-size="14" font-weight="bold">Google Business Profile Management</text>
-              <text x="70" y="142" fill="#B8C7D9" font-family="monospace" font-size="11">Active Execution &bull; Calibrated</text>
+              <!-- Top Cards: Discipline & Audit Quality with clear separation -->
+              <rect x="40" y="65" width="245" height="98" rx="8" fill="#0D2644" stroke="#06B5F9" stroke-width="1.5" stroke-opacity="0.4"/>
+              <text x="56" y="90" fill="#06B5F9" font-family="monospace" font-size="11" font-weight="bold">// DISCIPLINE // 02</text>
+              <text x="56" y="112" fill="#F5F7FA" font-family="sans-serif" font-size="13" font-weight="bold">Google Business Profile</text>
+              <text x="56" y="130" fill="#06B5F9" font-family="sans-serif" font-size="11" font-weight="600">Local Search &amp; Map Pack</text>
+              <text x="56" y="148" fill="#8FA3B8" font-family="monospace" font-size="10">Active Execution &bull; Calibrated</text>
 
-              <rect x="320" y="70" width="230" height="90" rx="8" fill="#0D2644" stroke="#06B5F9" stroke-width="1.5" stroke-opacity="0.4"/>
-              <text x="340" y="95" fill="#06B5F9" font-family="monospace" font-size="11" font-weight="bold">// AUDIT &amp; QUALITY</text>
-              <text x="340" y="122" fill="#F5F7FA" font-family="sans-serif" font-size="14" font-weight="bold">Enterprise SLA Standards</text>
-              <text x="340" y="142" fill="#B8C7D9" font-family="monospace" font-size="11">Continuous Accountability</text>
+              <line x1="285" y1="114" x2="315" y2="114" stroke="#06B5F9" stroke-width="2" stroke-dasharray="3 3"/>
 
-              <line x1="280" y1="115" x2="320" y2="115" stroke="#06B5F9" stroke-width="2" stroke-dasharray="3 3"/>
+              <rect x="315" y="65" width="245" height="98" rx="8" fill="#0D2644" stroke="#06B5F9" stroke-width="1.5" stroke-opacity="0.4"/>
+              <text x="330" y="90" fill="#06B5F9" font-family="monospace" font-size="11" font-weight="bold">// AUDIT &amp; QUALITY</text>
+              <text x="330" y="112" fill="#F5F7FA" font-family="sans-serif" font-size="13" font-weight="bold">Enterprise SLA Standards</text>
+              <text x="330" y="130" fill="#34D399" font-family="sans-serif" font-size="11" font-weight="600">Review Velocity &bull; 100% NAP</text>
+              <text x="330" y="148" fill="#8FA3B8" font-family="monospace" font-size="10">Audited Map Pack Growth</text>
 
-              <rect x="50" y="180" width="500" height="225" rx="10" fill="#051424" stroke="#06B5F9" stroke-width="1" stroke-opacity="0.3"/>
-              <text x="70" y="210" fill="#34D399" font-family="monospace" font-size="12">$ execute --benchmark google-business-profile</text>
-              <text x="70" y="235" fill="#F5F7FA" font-family="monospace" font-size="11">&gt; 200 OK &bull; [Status: Calibrated] [Throughput: High]</text>
-              <text x="70" y="260" fill="#8FA3B8" font-family="monospace" font-size="11">&gt; Core Standard: Zero Fluff, Measurable Business ROI</text>
-              <text x="70" y="285" fill="#06B5F9" font-family="monospace" font-size="11">&gt; Verification Protocol: 100% Quality Assurance</text>
-              <text x="70" y="310" fill="#B8C7D9" font-family="monospace" font-size="11">&gt; Operational Readiness: Verified</text>
-              <text x="70" y="340" fill="#34D399" font-family="monospace" font-size="11">&gt; All Systems Active</text>
+              <!-- Terminal Panel: Balanced spacing and alignment -->
+              <rect x="40" y="180" width="520" height="225" rx="10" fill="#051424" stroke="#06B5F9" stroke-width="1" stroke-opacity="0.3"/>
+              <text x="65" y="215" fill="#34D399" font-family="monospace" font-size="12" font-weight="bold">$ execute --benchmark gbp-audit</text>
+              <text x="65" y="245" fill="#F5F7FA" font-family="monospace" font-size="11">&gt; 200 OK &bull; [Status: Calibrated] [Throughput: High]</text>
+              <text x="65" y="275" fill="#8FA3B8" font-family="monospace" font-size="11">&gt; Core Standard: Top 3 Map Pack Optimization</text>
+              <text x="65" y="305" fill="#06B5F9" font-family="monospace" font-size="11">&gt; Geotagged Media: 100% Scheduled Pipeline</text>
+              <text x="65" y="335" fill="#B8C7D9" font-family="monospace" font-size="11">&gt; Spam Defense: Active Monitoring</text>
+              <text x="65" y="365" fill="#34D399" font-family="monospace" font-size="11">&gt; All Systems Active</text>
             </svg>
           </div>
         </div>
@@ -225,39 +229,27 @@ $consultationUrl = appUrl('contact.php?service=' . urlencode($serviceName));
 
     <div class="srv-grid srv-grid-3">
             <div class="srv-card">
-        <div class="srv-card-icon-wrap" style="color: #F87171; background: rgba(248, 113, 113, 0.12); border-color: rgba(248, 113, 113, 0.25);">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="12"/><line x1="12" y1="16" x2="12.01" y2="16"/></svg>
-        </div>
+        <div class="srv-card-icon-wrap"><div class="srv-icon-box" style="color: #F87171; background: rgba(248, 113, 113, 0.12); border-color: rgba(248, 113, 113, 0.25);"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg></div><span class="srv-card-index">01</span></div>
         <h3 class="srv-card-title text-white">Invisible on Google Maps</h3>
         <p class="srv-card-desc">Falling outside the top 3 results means more than 80% of local customers never discover your location.</p>
       </div>      <div class="srv-card">
-        <div class="srv-card-icon-wrap" style="color: #F87171; background: rgba(248, 113, 113, 0.12); border-color: rgba(248, 113, 113, 0.25);">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="12"/><line x1="12" y1="16" x2="12.01" y2="16"/></svg>
-        </div>
+        <div class="srv-card-icon-wrap"><div class="srv-icon-box" style="color: #F87171; background: rgba(248, 113, 113, 0.12); border-color: rgba(248, 113, 113, 0.25);"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg></div><span class="srv-card-index">02</span></div>
         <h3 class="srv-card-title text-white">Stagnant or Low Review Count</h3>
         <p class="srv-card-desc">Profiles with fewer than 20 reviews or stagnant recent feedback lose credibility to aggressive competitors.</p>
       </div>      <div class="srv-card">
-        <div class="srv-card-icon-wrap" style="color: #F87171; background: rgba(248, 113, 113, 0.12); border-color: rgba(248, 113, 113, 0.25);">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="12"/><line x1="12" y1="16" x2="12.01" y2="16"/></svg>
-        </div>
+        <div class="srv-card-icon-wrap"><div class="srv-icon-box" style="color: #F87171; background: rgba(248, 113, 113, 0.12); border-color: rgba(248, 113, 113, 0.25);"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="12"/><line x1="12" y1="16" x2="12.01" y2="16"/></svg></div><span class="srv-card-index">03</span></div>
         <h3 class="srv-card-title text-white">Inconsistent NAP Citations</h3>
         <p class="srv-card-desc">Mismatched Name, Address, and Phone numbers across directories confuse Google's verification algorithms.</p>
       </div>      <div class="srv-card">
-        <div class="srv-card-icon-wrap" style="color: #F87171; background: rgba(248, 113, 113, 0.12); border-color: rgba(248, 113, 113, 0.25);">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="12"/><line x1="12" y1="16" x2="12.01" y2="16"/></svg>
-        </div>
+        <div class="srv-card-icon-wrap"><div class="srv-icon-box" style="color: #F87171; background: rgba(248, 113, 113, 0.12); border-color: rgba(248, 113, 113, 0.25);"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20.59 13.41l-7.17 7.17a2 2 0 0 1-2.83 0L2 12V2h10l8.59 8.59a2 2 0 0 1 0 2.82z"/><line x1="7" y1="7" x2="7.01" y2="7"/></svg></div><span class="srv-card-index">04</span></div>
         <h3 class="srv-card-title text-white">Incorrect Primary Category</h3>
         <p class="srv-card-desc">Choosing the wrong primary category immediately disqualifies your profile from ranking for core high-intent queries.</p>
       </div>      <div class="srv-card">
-        <div class="srv-card-icon-wrap" style="color: #F87171; background: rgba(248, 113, 113, 0.12); border-color: rgba(248, 113, 113, 0.25);">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="12"/><line x1="12" y1="16" x2="12.01" y2="16"/></svg>
-        </div>
+        <div class="srv-card-icon-wrap"><div class="srv-icon-box" style="color: #F87171; background: rgba(248, 113, 113, 0.12); border-color: rgba(248, 113, 113, 0.25);"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg></div><span class="srv-card-index">05</span></div>
         <h3 class="srv-card-title text-white">Zero Weekly Updates</h3>
         <p class="srv-card-desc">Google rewards active profiles; abandoned profiles with no recent posts suffer gradual ranking decay.</p>
       </div>      <div class="srv-card">
-        <div class="srv-card-icon-wrap" style="color: #F87171; background: rgba(248, 113, 113, 0.12); border-color: rgba(248, 113, 113, 0.25);">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="12"/><line x1="12" y1="16" x2="12.01" y2="16"/></svg>
-        </div>
+        <div class="srv-card-icon-wrap"><div class="srv-icon-box" style="color: #F87171; background: rgba(248, 113, 113, 0.12); border-color: rgba(248, 113, 113, 0.25);"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg></div><span class="srv-card-index">06</span></div>
         <h3 class="srv-card-title text-white">Unanswered Negative Reviews</h3>
         <p class="srv-card-desc">Leaving negative reviews unaddressed damages brand reputation and reduces prospective customer conversion.</p>
       </div>
@@ -285,44 +277,32 @@ $consultationUrl = appUrl('contact.php?service=' . urlencode($serviceName));
 
     <div class="srv-grid srv-grid-3">
             <div class="srv-card">
-        <div class="srv-card-icon-wrap">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="3" width="20" height="14" rx="2"/><line x1="8" y1="21" x2="16" y2="21"/><line x1="12" y1="17" x2="12" y2="21"/></svg>
-        </div>
+        <div class="srv-card-icon-wrap"><div class="srv-icon-box"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="4" y1="21" x2="4" y2="14"/><line x1="4" y1="10" x2="4" y2="3"/><line x1="12" y1="21" x2="12" y2="12"/><line x1="12" y1="8" x2="12" y2="3"/><line x1="20" y1="21" x2="20" y2="16"/><line x1="20" y1="12" x2="20" y2="3"/><line x1="1" y1="14" x2="7" y2="14"/><line x1="9" y1="8" x2="15" y2="8"/><line x1="17" y1="16" x2="23" y2="16"/></svg></div></div>
         <h3 class="srv-card-title text-white">Comprehensive Profile Optimization</h3>
         <p class="srv-card-desc">Audit and setup of primary and secondary categories, service areas, business hours, and keyword-rich descriptions.</p>
         <ul style="list-style: none; padding: 0; margin: 1rem 0 0; display: flex; flex-direction: column; gap: 0.5rem; font-size: 0.85rem; color: #B8C7D9;"><li style="display: flex; gap: 0.5rem; align-items: flex-start;"><span style="color: #06B5F9;">&bull;</span><span>Primary & secondary category mapping</span></li><li style="display: flex; gap: 0.5rem; align-items: flex-start;"><span style="color: #06B5F9;">&bull;</span><span>Complete service menu itemization</span></li><li style="display: flex; gap: 0.5rem; align-items: flex-start;"><span style="color: #06B5F9;">&bull;</span><span>Attributes & accessibility tags</span></li></ul></div>
       <div class="srv-card">
-        <div class="srv-card-icon-wrap">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="3" width="20" height="14" rx="2"/><line x1="8" y1="21" x2="16" y2="21"/><line x1="12" y1="17" x2="12" y2="21"/></svg>
-        </div>
+        <div class="srv-card-icon-wrap"><div class="srv-icon-box"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polygon points="11 5 6 9 2 9 2 15 6 15 11 19 11 5"/><path d="M19.07 4.93a10 10 0 0 1 0 14.14M15.54 8.46a5 5 0 0 1 0 7.07"/></svg></div></div>
         <h3 class="srv-card-title text-white">Weekly Google Posts & Offers</h3>
         <p class="srv-card-desc">Creation and publishing of high-converting Google updates featuring custom graphics and localized copy.</p>
         <ul style="list-style: none; padding: 0; margin: 1rem 0 0; display: flex; flex-direction: column; gap: 0.5rem; font-size: 0.85rem; color: #B8C7D9;"><li style="display: flex; gap: 0.5rem; align-items: flex-start;"><span style="color: #06B5F9;">&bull;</span><span>Call-to-action buttons (Call, Book)</span></li><li style="display: flex; gap: 0.5rem; align-items: flex-start;"><span style="color: #06B5F9;">&bull;</span><span>Special promotional offers & events</span></li><li style="display: flex; gap: 0.5rem; align-items: flex-start;"><span style="color: #06B5F9;">&bull;</span><span>Product showcase spotlighting</span></li></ul></div>
       <div class="srv-card">
-        <div class="srv-card-icon-wrap">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="3" width="20" height="14" rx="2"/><line x1="8" y1="21" x2="16" y2="21"/><line x1="12" y1="17" x2="12" y2="21"/></svg>
-        </div>
+        <div class="srv-card-icon-wrap"><div class="srv-icon-box"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M23 19a2 2 0 0 1-2 2H3a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h4l2-3h6l2 3h4a2 2 0 0 1 2 2z"/><circle cx="12" cy="13" r="4"/></svg></div></div>
         <h3 class="srv-card-title text-white">Geotagged Photo & Video Distribution</h3>
         <p class="srv-card-desc">Uploading optimized commercial photos with calibrated EXIF metadata, geotags, and descriptive alt text.</p>
         <ul style="list-style: none; padding: 0; margin: 1rem 0 0; display: flex; flex-direction: column; gap: 0.5rem; font-size: 0.85rem; color: #B8C7D9;"><li style="display: flex; gap: 0.5rem; align-items: flex-start;"><span style="color: #06B5F9;">&bull;</span><span>Exterior, interior, and team photos</span></li><li style="display: flex; gap: 0.5rem; align-items: flex-start;"><span style="color: #06B5F9;">&bull;</span><span>EXIF latitude/longitude embedding</span></li><li style="display: flex; gap: 0.5rem; align-items: flex-start;"><span style="color: #06B5F9;">&bull;</span><span>High-resolution webp/jpeg formats</span></li></ul></div>
       <div class="srv-card">
-        <div class="srv-card-icon-wrap">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="3" width="20" height="14" rx="2"/><line x1="8" y1="21" x2="16" y2="21"/><line x1="12" y1="17" x2="12" y2="21"/></svg>
-        </div>
+        <div class="srv-card-icon-wrap"><div class="srv-icon-box"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg></div></div>
         <h3 class="srv-card-title text-white">Review Acceleration & Management</h3>
         <p class="srv-card-desc">Implementing automated review request funnels and responding professionally to all customer reviews within 24 hours.</p>
         <ul style="list-style: none; padding: 0; margin: 1rem 0 0; display: flex; flex-direction: column; gap: 0.5rem; font-size: 0.85rem; color: #B8C7D9;"><li style="display: flex; gap: 0.5rem; align-items: flex-start;"><span style="color: #06B5F9;">&bull;</span><span>Custom review link QR codes & SMS</span></li><li style="display: flex; gap: 0.5rem; align-items: flex-start;"><span style="color: #06B5F9;">&bull;</span><span>Professional sentiment responses</span></li><li style="display: flex; gap: 0.5rem; align-items: flex-start;"><span style="color: #06B5F9;">&bull;</span><span>Negative feedback de-escalation</span></li></ul></div>
       <div class="srv-card">
-        <div class="srv-card-icon-wrap">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="3" width="20" height="14" rx="2"/><line x1="8" y1="21" x2="16" y2="21"/><line x1="12" y1="17" x2="12" y2="21"/></svg>
-        </div>
+        <div class="srv-card-icon-wrap"><div class="srv-icon-box"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="18" cy="5" r="3"/><circle cx="6" cy="12" r="3"/><circle cx="18" cy="19" r="3"/><line x1="8.59" y1="13.51" x2="15.42" y2="17.49"/><line x1="15.41" y1="6.51" x2="8.59" y2="10.49"/></svg></div></div>
         <h3 class="srv-card-title text-white">Local Citation Building & NAP Cleanup</h3>
         <p class="srv-card-desc">Building and maintaining accurate business citations across top local business directories and aggregators.</p>
         <ul style="list-style: none; padding: 0; margin: 1rem 0 0; display: flex; flex-direction: column; gap: 0.5rem; font-size: 0.85rem; color: #B8C7D9;"><li style="display: flex; gap: 0.5rem; align-items: flex-start;"><span style="color: #06B5F9;">&bull;</span><span>Top 50 local citation submissions</span></li><li style="display: flex; gap: 0.5rem; align-items: flex-start;"><span style="color: #06B5F9;">&bull;</span><span>Duplicate listing suppression</span></li><li style="display: flex; gap: 0.5rem; align-items: flex-start;"><span style="color: #06B5F9;">&bull;</span><span>Periodic citation health audits</span></li></ul></div>
       <div class="srv-card">
-        <div class="srv-card-icon-wrap">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="3" width="20" height="14" rx="2"/><line x1="8" y1="21" x2="16" y2="21"/><line x1="12" y1="17" x2="12" y2="21"/></svg>
-        </div>
+        <div class="srv-card-icon-wrap"><div class="srv-icon-box"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><polygon points="16.24 7.76 14.12 14.12 7.76 16.24 9.88 9.88 16.24 7.76"/></svg></div></div>
         <h3 class="srv-card-title text-white">Geo-Grid Heatmap Reporting</h3>
         <p class="srv-card-desc">Monthly ranking visualization across a 5x5 to 13x13 geographic grid showing exact map positions by neighborhood.</p>
         <ul style="list-style: none; padding: 0; margin: 1rem 0 0; display: flex; flex-direction: column; gap: 0.5rem; font-size: 0.85rem; color: #B8C7D9;"><li style="display: flex; gap: 0.5rem; align-items: flex-start;"><span style="color: #06B5F9;">&bull;</span><span>Visual geo-grid ranking maps</span></li><li style="display: flex; gap: 0.5rem; align-items: flex-start;"><span style="color: #06B5F9;">&bull;</span><span>Competitor rank movement tracking</span></li><li style="display: flex; gap: 0.5rem; align-items: flex-start;"><span style="color: #06B5F9;">&bull;</span><span>Calls and directions telemetry</span></li></ul></div>
@@ -486,11 +466,11 @@ $consultationUrl = appUrl('contact.php?service=' . urlencode($serviceName));
 
     <div class="srv-faq-container">
             <div class="srv-faq-item">
-        <button type="button" class="srv-faq-btn" aria-expanded="true" aria-controls="faq-ans-0">
+        <button type="button" class="srv-faq-btn" aria-expanded="false" aria-controls="faq-ans-0">
           <span class="srv-faq-question">How long does it take to rank in the Google 3-Pack?</span>
           <span class="srv-faq-icon" aria-hidden="true">+</span>
         </button>
-        <div id="faq-ans-0" class="srv-faq-panel" style="max-height: 500px;">
+        <div id="faq-ans-0" class="srv-faq-panel">
           <div class="srv-faq-content">
             <p>Most businesses see noticeable ranking improvements within 30 to 60 days. Highly competitive metropolitan categories typically take 90 days of consistent activity and citation building to achieve stable top 3 positions.</p>
           </div>

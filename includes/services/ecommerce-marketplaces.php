@@ -974,11 +974,11 @@ $consultationUrl = appUrl('contact.php?service=' . urlencode($serviceName));
 
     <div class="srv-faq-container">
       <div class="srv-faq-item">
-        <button type="button" class="srv-faq-btn" aria-expanded="true" aria-controls="faq-ans-0">
+        <button type="button" class="srv-faq-btn" aria-expanded="false" aria-controls="faq-ans-0">
           <span class="srv-faq-question">How do you prevent unauthorized sellers from hijacking our Amazon Buy Box?</span>
           <span class="srv-faq-icon" aria-hidden="true">+</span>
         </button>
-        <div id="faq-ans-0" class="srv-faq-panel" style="max-height: 500px;">
+        <div id="faq-ans-0" class="srv-faq-panel">
           <div class="srv-faq-content">
             <p>We deploy proactive 24/7 Buy Box monitoring software that alerts us within minutes of an unauthorized seller listing on your ASIN. We then execute Brand Registry copyright/trademark infringement notices, cease-and-desist documentation, and automated repricing defense rules.</p>
           </div>

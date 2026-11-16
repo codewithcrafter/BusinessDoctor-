@@ -949,11 +949,11 @@ $consultationUrl = appUrl('contact.php?service=' . urlencode($serviceName));
 
     <div class="srv-faq-container">
       <div class="srv-faq-item">
-        <button type="button" class="srv-faq-btn" aria-expanded="true" aria-controls="faq-ans-0">
+        <button type="button" class="srv-faq-btn" aria-expanded="false" aria-controls="faq-ans-0">
           <span class="srv-faq-question">Why do you engineer custom web applications using modern PHP 8+ instead of heavy frameworks?</span>
           <span class="srv-faq-icon" aria-hidden="true">+</span>
         </button>
-        <div id="faq-ans-0" class="srv-faq-panel" style="max-height: 500px;">
+        <div id="faq-ans-0" class="srv-faq-panel">
           <div class="srv-faq-content">
             <p>Modern PHP 8+ is strictly typed, extraordinarily fast, and powers over 75% of the web including Wikipedia and Slack. By avoiding heavy framework bloat, we deliver sub-second response times, virtually eliminate dependency security vulnerabilities, and ensure your software remains easy to maintain for a decade with zero technical debt.</p>
           </div>

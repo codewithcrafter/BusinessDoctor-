@@ -94,7 +94,7 @@ if (preg_match('#/admin(/|\.php|$)#i', $scriptName) || preg_match('#/admin(/|\.p
           <label for="bdrPopupPhone" class="bdr-form-label">Contact Number <span class="bdr-req">*</span> <span class="bdr-label-hint">(10-digit Indian Mobile)</span></label>
           <div class="bdr-input-wrapper">
             <span class="bdr-phone-prefix">+91</span>
-            <input type="tel" id="bdrPopupPhone" name="phone" class="bdr-form-input bdr-input-phone" placeholder="98765 43210" required autocomplete="tel" maxlength="15">
+            <input type="tel" id="bdrPopupPhone" name="phone" class="bdr-form-input bdr-input-phone" placeholder="000000000" required autocomplete="tel" maxlength="15">
           </div>
           <span class="bdr-field-error" id="bdrErrPhone"></span>
         </div>

@@ -4,8 +4,8 @@
 
 ## Discipline Information
 - **Practice Area**: 09 Video Editing
-- **Canonical Web URL**: [https://demo.businesdoctor.com/video-editing-company-in-delhi](https://demo.businesdoctor.com/video-editing-company-in-delhi)
-- **Clean Markdown URL**: [https://demo.businesdoctor.com/video-editing-company-in-delhi.md](https://demo.businesdoctor.com/video-editing-company-in-delhi.md)
+- **Canonical Web URL**: [https://demo.businesdoctor.com/service/video-editing](https://demo.businesdoctor.com/service/video-editing)
+- **Clean Markdown URL**: [https://demo.businesdoctor.com/service/video-editing.md](https://demo.businesdoctor.com/service/video-editing.md)
 - **Central Markdown URL**: [https://demo.businesdoctor.com/md/services/video-editing.md](https://demo.businesdoctor.com/md/services/video-editing.md)
 - **Direct Consultation**: [Schedule Practice Scope](https://demo.businesdoctor.com/contact.php?service=Video+Editing)
 
@@ -571,7 +571,7 @@ We structure scripts using proven direct-response marketing principles: immediat
               [
                 Request Digital Audit
 
-              ](https://demo.businesdoctor.com/audit.php)
+              ](https://demo.businesdoctor.com/audit)
 
                 +1 (800) 492-3628
 

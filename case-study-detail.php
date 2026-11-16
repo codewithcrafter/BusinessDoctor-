@@ -104,17 +104,29 @@ require_once __DIR__ . '/includes/header.php';
 <section class="section hero-enterprise" style="padding-top: 5rem; padding-bottom: 3.5rem;">
   <div class="container" style="max-width: 960px;">
     <!-- Breadcrumb & Badges -->
-    <div style="display: flex; align-items: center; gap: 0.75rem; flex-wrap: wrap; margin-bottom: 1.25rem;">
-      <a href="<?= appUrl('case-studies.php') ?>" class="text-link" style="color: #06B5F9; font-family: var(--font-mono); font-size: 0.8rem;">
-        &larr; ALL CASE STUDIES
-      </a>
-      <span style="color: rgba(255,255,255,0.3);">/</span>
-      <span class="eyebrow-badge" style="margin-bottom: 0; font-size: 0.72rem;">
-        <?= e($case['industry'] ?: $case['client_industry']) ?>
-      </span>
-      <span style="font-family: var(--font-mono); font-size: 0.8rem; color: #06B5F9; font-weight: 700;">
-        <?= e($case['service_category'] ?: $case['practice_area']) ?>
-      </span>
+    <div style="display: flex; align-items: center; justify-content: space-between; gap: 0.75rem; flex-wrap: wrap; margin-bottom: 1.25rem;">
+      <div style="display: flex; align-items: center; gap: 0.75rem; flex-wrap: wrap;">
+        <a href="<?= appUrl('case-studies.php') ?>" class="text-link" style="color: #06B5F9; font-family: var(--font-mono); font-size: 0.8rem;">
+          &larr; ALL CASE STUDIES
+        </a>
+        <span style="color: rgba(255,255,255,0.3);">/</span>
+        <span class="eyebrow-badge" style="margin-bottom: 0; font-size: 0.72rem;">
+          <?= e($case['industry'] ?: $case['client_industry']) ?>
+        </span>
+        <span style="font-family: var(--font-mono); font-size: 0.8rem; color: #06B5F9; font-weight: 700;">
+          <?= e($case['service_category'] ?: $case['practice_area']) ?>
+        </span>
+      </div>
+      <?php if (!empty($case['project_url'])): ?>
+        <a href="<?= e($case['project_url']) ?>" target="_blank" rel="noopener noreferrer" style="display: inline-flex; align-items: center; gap: 0.45rem; padding: 0.35rem 0.85rem; background: rgba(6, 181, 249, 0.12); border: 1px solid rgba(6, 181, 249, 0.35); border-radius: 9999px; color: #06B5F9; font-family: var(--font-mono); font-size: 0.75rem; font-weight: 700; text-decoration: none; transition: background 0.2s;">
+          <span>Visit Live Project</span>
+          <svg viewBox="0 0 24 24" width="12" height="12" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path>
+            <polyline points="15 3 21 3 21 9"></polyline>
+            <line x1="10" y1="14" x2="21" y2="3"></line>
+          </svg>
+        </a>
+      <?php endif; ?>
     </div>
 
     <h1 class="hero-headline-oversized" style="font-size: clamp(2.2rem, 4vw, 3.4rem); margin-bottom: 1.5rem; line-height: 1.25;">
@@ -198,6 +210,21 @@ require_once __DIR__ . '/includes/header.php';
             ● 100% Verified in Production
           </div>
         </div>
+        <?php if (!empty($case['project_url'])): ?>
+          <div>
+            <div style="font-family: var(--font-mono); font-size: 0.72rem; color: var(--color-text-muted); text-transform: uppercase;">LIVE REFERENCE</div>
+            <div style="margin-top: 0.25rem;">
+              <a href="<?= e($case['project_url']) ?>" target="_blank" rel="noopener noreferrer" style="color: #06B5F9; font-size: 0.95rem; font-weight: 700; text-decoration: none; display: inline-flex; align-items: center; gap: 0.35rem;">
+                <span>View Live Project</span>
+                <svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                  <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path>
+                  <polyline points="15 3 21 3 21 9"></polyline>
+                  <line x1="10" y1="14" x2="21" y2="3"></line>
+                </svg>
+              </a>
+            </div>
+          </div>
+        <?php endif; ?>
       </div>
     </div>
 

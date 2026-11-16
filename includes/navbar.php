@@ -19,7 +19,7 @@ $practiceAreas = getPracticeAreas();
     <!-- Desktop Navigation Menu -->
     <nav class="nav-menu" aria-label="Main Navigation">
       <a href="<?= appUrl() ?>" class="nav-link <?= isActivePage('index.php') ?>">Home</a>
-      <a href="<?= appUrl('about.php') ?>" class="nav-link <?= isActivePage('about.php') ?>">About Us</a>
+      <a href="<?= appUrl('about') ?>" class="nav-link <?= isActivePage('about.php', 'about') ?>">About Us</a>
 
       <!-- Services Mega Menu Parent -->
       <div class="nav-item has-mega-menu" id="servicesNavItem">
@@ -27,14 +27,14 @@ $practiceAreas = getPracticeAreas();
           class="nav-link nav-link-dropdown <?= isActivePage('services.php', 'service-detail.php') ?>"
           aria-haspopup="true" aria-expanded="false" id="servicesDropdownTrigger">
           <span>Services</span>
-          <svg class="dropdown-chevron" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
+          <svg class="dropdown-chevron" viewBox="0 0 20 20" width="16" height="16" fill="currentColor" aria-hidden="true" style="width: 16px !important; height: 16px !important; min-width: 16px !important; min-height: 16px !important; max-width: 16px !important; max-height: 16px !important; flex-shrink: 0 !important;">
             <path fill-rule="evenodd"
               d="M5.23 7.21a.75.75 0 011.06.02L10 11.168l3.71-3.938a.75.75 0 111.08 1.04l-4.25 4.5a.75.75 0 01-1.08 0l-4.25-4.5a.75.75 0 01.02-1.06z"
               clip-rule="evenodd" />
           </svg>
         </a>
 
-        <!-- Premium White Mega Menu Flyout Panel (BuzzSpire Inspired) -->
+        <!-- Mega Menu Flyout Panel (Clean Services Navigation) -->
         <div class="mega-menu" role="region" aria-label="Digital Marketing Services">
           <div class="mega-menu-inner">
             <!-- Header -->
@@ -45,7 +45,7 @@ $practiceAreas = getPracticeAreas();
               </div>
               <a href="<?= getServicesOverviewUrl() ?>" class="mega-menu-overview-btn" aria-label="Services Overview">
                 <span>Overview</span>
-                <svg viewBox="0 0 20 20" fill="currentColor" class="mega-overview-icon" aria-hidden="true">
+                <svg viewBox="0 0 20 20" width="15" height="15" fill="currentColor" class="mega-overview-icon" aria-hidden="true" style="width: 15px !important; height: 15px !important; min-width: 15px !important; min-height: 15px !important; max-width: 15px !important; max-height: 15px !important; flex-shrink: 0 !important; display: inline-block !important;">
                   <path fill-rule="evenodd" d="M7.21 14.77a.75.75 0 01.02-1.06L11.168 10 7.23 6.29a.75.75 0 111.04-1.08l4.5 4.25a.75.75 0 010 1.08l-4.5 4.25a.75.75 0 01-1.06-.02z" clip-rule="evenodd" />
                 </svg>
               </a>
@@ -55,10 +55,14 @@ $practiceAreas = getPracticeAreas();
             <div class="mega-services-grid" style="background: #071A2C !important;">
               <?php foreach ($practiceAreas as $slug => $p): 
                 $displayTitle = ($slug === 'smo') ? 'SMO' : $p['name'];
+                $iconSvg = $p['icon'];
+                // Ensure SVG strictly has width, height and cannot blow out layout
+                $iconSvg = preg_replace('/\s+(width|height)=["\'][^"\']*["\']/i', '', $iconSvg);
+                $iconSvg = preg_replace('/<svg\b/i', '<svg width="18" height="18" style="width: 18px !important; height: 18px !important; min-width: 18px !important; min-height: 18px !important; max-width: 18px !important; max-height: 18px !important; flex-shrink: 0 !important; display: block !important;"', $iconSvg);
               ?>
                 <a href="<?= getServiceUrl($slug) ?>" class="mega-service-card">
-                  <div class="mega-icon-circle">
-                    <?= $p['icon'] ?>
+                  <div class="mega-icon-circle" style="width: 38px !important; height: 38px !important; min-width: 38px !important; min-height: 38px !important; max-width: 38px !important; max-height: 38px !important; overflow: hidden !important; flex-shrink: 0 !important;">
+                    <?= $iconSvg ?>
                   </div>
                   <div class="mega-service-info">
                     <span class="mega-service-name" style="color: #FFFFFF !important;"><?= e($displayTitle) ?></span>
@@ -71,9 +75,9 @@ $practiceAreas = getPracticeAreas();
             <!-- Footer Strip -->
             <div class="mega-menu-bottom-bar">
               <span class="mega-footer-question">Not sure what you need?</span>
-              <a href="<?= appUrl('contact.php') ?>" class="mega-footer-action">
+              <a href="<?= appUrl('contact') ?>" class="mega-footer-action">
                 <span>Get a Free Consultation</span>
-                <svg viewBox="0 0 20 20" fill="currentColor" class="mega-footer-arrow" aria-hidden="true">
+                <svg viewBox="0 0 20 20" width="16" height="16" fill="currentColor" class="mega-footer-arrow" aria-hidden="true" style="width: 16px !important; height: 16px !important; min-width: 16px !important; min-height: 16px !important; max-width: 16px !important; max-height: 16px !important; flex-shrink: 0 !important; display: inline-block !important;">
                   <path fill-rule="evenodd" d="M7.21 14.77a.75.75 0 01.02-1.06L11.168 10 7.23 6.29a.75.75 0 111.04-1.08l4.5 4.25a.75.75 0 010 1.08l-4.5 4.25a.75.75 0 01-1.06-.02z" clip-rule="evenodd" />
                 </svg>
               </a>
@@ -82,18 +86,18 @@ $practiceAreas = getPracticeAreas();
         </div>
       </div>
 
-      <a href="<?= appUrl('audit.php') ?>" class="nav-link <?= isActivePage('audit.php', 'diagnostic.php') ?>">Digital
+      <a href="<?= appUrl('audit') ?>" class="nav-link <?= isActivePage('audit.php', 'diagnostic.php', 'audit') ?>">Digital
         Audit</a>
-      <a href="<?= appUrl('case-studies.php') ?>" class="nav-link <?= isActivePage('case-studies.php') ?>">Case
+      <a href="<?= appUrl('case-studies') ?>" class="nav-link <?= isActivePage('case-studies.php', 'case-studies') ?>">Case
         Studies</a>
       <a href="<?= getBlogListingUrl() ?>"
-        class="nav-link <?= isActivePage('insights.php', 'insight-detail.php', 'blog.php', 'blog-detail.php') ?>">Blog</a>
-      <a href="<?= appUrl('contact.php') ?>" class="nav-link <?= isActivePage('contact.php') ?>">Contact</a>
+        class="nav-link <?= isActivePage('insights.php', 'insight-detail.php', 'blog.php', 'blog-detail.php', 'blog', 'insights') ?>">Blog</a>
+      <a href="<?= appUrl('contact') ?>" class="nav-link <?= isActivePage('contact.php', 'contact') ?>">Contact</a>
     </nav>
 
     <!-- Header Actions -->
     <div class="nav-actions">
-      <a href="<?= appUrl('contact.php') ?>" class="btn btn-primary btn-sm">
+      <a href="<?= appUrl('contact') ?>" class="btn btn-primary btn-sm">
         <span>Start a Project</span>
         <svg class="btn-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
           <line x1="5" y1="12" x2="19" y2="12" />
@@ -141,13 +145,13 @@ $practiceAreas = getPracticeAreas();
       <a href="<?= appUrl() ?>" class="mobile-nav-link <?= isActivePage('index.php') ?>">Home</a>
 
       <!-- 2. About Us -->
-      <a href="<?= appUrl('about.php') ?>" class="mobile-nav-link <?= isActivePage('about.php') ?>">About Us</a>
+      <a href="<?= appUrl('about') ?>" class="mobile-nav-link <?= isActivePage('about.php', 'about') ?>">About Us</a>
 
       <!-- 3. IT Services (Expandable Accordion) -->
       <div class="mobile-nav-accordion" id="mobileServicesAccordion">
         <div class="mobile-accordion-row">
           <a href="<?= getServicesOverviewUrl() ?>"
-            class="mobile-nav-link mobile-accordion-link <?= isActivePage('services.php', 'service-detail.php') ?>">
+            class="mobile-nav-link mobile-accordion-link <?= isActivePage('services.php', 'service-detail.php', 'services', 'service') ?>">
             <span>Services</span>
           </a>
           <button type="button" class="mobile-accordion-toggle" id="mobileServicesToggle" aria-expanded="false"
@@ -166,7 +170,7 @@ $practiceAreas = getPracticeAreas();
           <div class="mobile-submenu-inner">
             <div class="mobile-submenu-eyebrow">DIGITAL MARKETING SERVICES</div>
             <a href="<?= getServicesOverviewUrl() ?>"
-              class="mobile-submenu-link mobile-submenu-overview <?= isActivePage('services.php') ?>">
+              class="mobile-submenu-link mobile-submenu-overview <?= isActivePage('services.php', 'services') ?>">
               <span class="mobile-sublink-num">&rarr;</span>
               <span class="mobile-sublink-name">Overview &ndash; All 10 Services</span>
             </a>
@@ -174,7 +178,9 @@ $practiceAreas = getPracticeAreas();
             $currentNavSlug = $_GET['slug'] ?? '';
             if ($currentNavSlug === '') {
               $currPath = parse_url($_SERVER['REQUEST_URI'] ?? '', PHP_URL_PATH);
-              if ($currPath && preg_match('#^/([a-zA-Z0-9_-]+)-company-in-delhi#', $currPath, $m)) {
+              if ($currPath && preg_match('#^/service/([a-zA-Z0-9_-]+)#', $currPath, $m)) {
+                $currentNavSlug = ($m[1] === 'ppc') ? 'ppc-paid-ads' : $m[1];
+              } elseif ($currPath && preg_match('#^/([a-zA-Z0-9_-]+)-company-in-delhi#', $currPath, $m)) {
                 $currentNavSlug = ($m[1] === 'ppc') ? 'ppc-paid-ads' : $m[1];
               }
             }
@@ -192,31 +198,31 @@ $practiceAreas = getPracticeAreas();
       </div>
 
       <!-- 4. Digital Audit -->
-      <a href="<?= appUrl('audit.php') ?>"
-        class="mobile-nav-link <?= isActivePage('audit.php', 'diagnostic.php') ?>">Digital Audit</a>
+      <a href="<?= appUrl('audit') ?>"
+        class="mobile-nav-link <?= isActivePage('audit.php', 'diagnostic.php', 'audit') ?>">Digital Audit</a>
 
       <!-- 5. Case Studies -->
-      <a href="<?= appUrl('case-studies.php') ?>" class="mobile-nav-link <?= isActivePage('case-studies.php') ?>">Case
+      <a href="<?= appUrl('case-studies') ?>" class="mobile-nav-link <?= isActivePage('case-studies.php', 'case-studies') ?>">Case
         Studies</a>
 
       <!-- 6. Blog -->
       <a href="<?= getBlogListingUrl() ?>"
-        class="mobile-nav-link <?= isActivePage('insights.php', 'insight-detail.php', 'blog.php', 'blog-detail.php') ?>">Blog</a>
+        class="mobile-nav-link <?= isActivePage('insights.php', 'insight-detail.php', 'blog.php', 'blog-detail.php', 'blog', 'insights') ?>">Blog</a>
 
       <!-- 7. Contact -->
-      <a href="<?= appUrl('contact.php') ?>" class="mobile-nav-link <?= isActivePage('contact.php') ?>">Contact</a>
+      <a href="<?= appUrl('contact') ?>" class="mobile-nav-link <?= isActivePage('contact.php', 'contact') ?>">Contact</a>
     </nav>
 
     <!-- 8. Start a Project (Primary CTA) & Secondary Action -->
     <div class="mobile-drawer-cta">
-      <a href="<?= appUrl('contact.php') ?>" class="btn btn-primary" style="width: 100%;">
+      <a href="<?= appUrl('contact') ?>" class="btn btn-primary" style="width: 100%;">
         <span>Start a Project</span>
         <svg class="btn-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
           <line x1="5" y1="12" x2="19" y2="12" />
           <polyline points="12 5 19 12 12 19" />
         </svg>
       </a>
-      <a href="<?= appUrl('audit.php') ?>" class="btn btn-secondary" style="width: 100%;">
+      <a href="<?= appUrl('audit') ?>" class="btn btn-secondary" style="width: 100%;">
         <span>Request Free Digital Audit</span>
       </a>
     </div>

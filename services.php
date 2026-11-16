@@ -16,11 +16,13 @@ $canonicalPath = parse_url($canonicalUrl, PHP_URL_PATH);
 $reqPath = parse_url($_SERVER['REQUEST_URI'] ?? '', PHP_URL_PATH) ?? '';
 
 if ($reqPath !== $canonicalPath && in_array($reqPath, [
-    '/services.php', '/services', '/services/',
+    '/services.php', '/services/',
     '/company', '/company/',
-    '/company-in-delhi', '/company-in-delhi/'
+    '/company-in-delhi', '/company-in-delhi/',
+    '/digital-marketing-company-in-delhi', '/digital-marketing-company-in-delhi/'
 ], true)) {
-    header("Location: " . $canonicalUrl, true, 301);
+    $qs = !empty($_SERVER['QUERY_STRING']) ? '?' . $_SERVER['QUERY_STRING'] : '';
+    header("Location: " . $canonicalUrl . $qs, true, 301);
     exit;
 }
 

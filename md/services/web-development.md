@@ -4,8 +4,8 @@
 
 ## Discipline Information
 - **Practice Area**: 10 Web Development
-- **Canonical Web URL**: [https://demo.businesdoctor.com/web-development-company-in-delhi](https://demo.businesdoctor.com/web-development-company-in-delhi)
-- **Clean Markdown URL**: [https://demo.businesdoctor.com/web-development-company-in-delhi.md](https://demo.businesdoctor.com/web-development-company-in-delhi.md)
+- **Canonical Web URL**: [https://demo.businesdoctor.com/service/web-development](https://demo.businesdoctor.com/service/web-development)
+- **Clean Markdown URL**: [https://demo.businesdoctor.com/service/web-development.md](https://demo.businesdoctor.com/service/web-development.md)
 - **Central Markdown URL**: [https://demo.businesdoctor.com/md/services/web-development.md](https://demo.businesdoctor.com/md/services/web-development.md)
 - **Direct Consultation**: [Schedule Practice Scope](https://demo.businesdoctor.com/contact.php?service=Web+Development)
 
@@ -572,7 +572,7 @@ Yes. We offer structured Service Level Agreement (SLA) retainer plans that inclu
               [
                 Request Digital Audit
 
-              ](https://demo.businesdoctor.com/audit.php)
+              ](https://demo.businesdoctor.com/audit)
 
                 +1 (800) 492-3628
 

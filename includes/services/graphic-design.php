@@ -89,35 +89,36 @@ $consultationUrl = appUrl('contact.php?service=' . urlencode($serviceName));
   <rect x="195" y="125" width="140" height="40" rx="6" fill="#061326" stroke="#06B5F9" stroke-opacity="0.3"/>
   <text x="205" y="150" fill="#F5F7FA" font-family="monospace" font-size="11">Navy: #061326</text>
 
-  <rect x="55" y="180" width="280" height="70" rx="8" fill="#0A2038" stroke="#06B5F9" stroke-opacity="0.25"/>
-  <text x="70" y="205" fill="#F5F7FA" font-family="sans-serif" font-size="13" font-weight="bold">Component: &lt;AppButton /&gt;</text>
-  <text x="70" y="225" fill="#B8C7D9" font-family="monospace" font-size="10">State: Hover &bull; Focus &bull; Active &bull; Disabled</text>
-  <rect x="240" y="195" width="80" height="26" rx="4" fill="#06B5F9"/>
-  <text x="255" y="212" fill="#061326" font-family="sans-serif" font-size="11" font-weight="bold">Action</text>
+  <rect x="55" y="178" width="280" height="72" rx="8" fill="#0A2038" stroke="#06B5F9" stroke-opacity="0.25"/>
+  <text x="70" y="202" fill="#F5F7FA" font-family="sans-serif" font-size="12" font-weight="bold">Component: &lt;AppButton /&gt;</text>
+  <rect x="250" y="186" width="72" height="24" rx="4" fill="#06B5F9"/>
+  <text x="268" y="202" fill="#061326" font-family="sans-serif" font-size="11" font-weight="bold">Action</text>
+  <text x="70" y="232" fill="#B8C7D9" font-family="monospace" font-size="10">State: Hover &bull; Focus &bull; Active &bull; Disabled</text>
 
-  <rect x="55" y="265" width="280" height="120" rx="8" fill="#0A2038" stroke="#06B5F9" stroke-opacity="0.25"/>
-  <text x="70" y="290" fill="#F5F7FA" font-family="sans-serif" font-size="12" font-weight="bold">WCAG 2.2 AA Contrast: PASSED</text>
-  <text x="70" y="315" fill="#34D399" font-family="monospace" font-size="11">&bull; 8.6:1 AAA on Dark Canvas</text>
-  <text x="70" y="335" fill="#34D399" font-family="monospace" font-size="11">&bull; 4.8:1 AA on Light Modals</text>
-  <text x="70" y="355" fill="#34D399" font-family="monospace" font-size="11">&bull; 0ms Layout Shifts (CLS)</text>
+  <rect x="55" y="262" width="280" height="128" rx="8" fill="#0A2038" stroke="#06B5F9" stroke-opacity="0.25"/>
+  <text x="70" y="286" fill="#F5F7FA" font-family="sans-serif" font-size="12" font-weight="bold">WCAG 2.2 AA Contrast: PASSED</text>
+  <text x="70" y="309" fill="#34D399" font-family="monospace" font-size="10.5">&bull; 8.6:1 AAA on Dark Canvas</text>
+  <text x="70" y="329" fill="#34D399" font-family="monospace" font-size="10.5">&bull; 4.8:1 AA on Light Modals</text>
+  <text x="70" y="349" fill="#34D399" font-family="monospace" font-size="10.5">&bull; 0ms Layout Shifts (CLS)</text>
+  <text x="70" y="369" fill="#06B5F9" font-family="monospace" font-size="10.5">&bull; Automated Figma Design Tokens</text>
 
   <!-- Sidebar Palette & Specs -->
-  <rect x="370" y="65" width="190" height="160" rx="10" fill="#0A2038" stroke="#06B5F9" stroke-width="1" stroke-opacity="0.3"/>
-  <text x="385" y="90" fill="#06B5F9" font-family="monospace" font-size="11" font-weight="bold">// TYPOGRAPHY</text>
-  <text x="385" y="115" fill="#F5F7FA" font-family="sans-serif" font-size="14" font-weight="bold">Cabinet Grotesk</text>
-  <text x="385" y="135" fill="#B8C7D9" font-family="monospace" font-size="11">Display H1-H4</text>
-  <text x="385" y="165" fill="#F5F7FA" font-family="sans-serif" font-size="14" font-weight="bold">Inter &bull; Plus Jakarta</text>
-  <text x="385" y="185" fill="#B8C7D9" font-family="monospace" font-size="11">Body &bull; 1.65 Line Height</text>
-  <text x="385" y="210" fill="#8FA3B8" font-family="monospace" font-size="10">8-Point Spacing Grid</text>
+  <rect x="365" y="65" width="195" height="162" rx="10" fill="#0A2038" stroke="#06B5F9" stroke-width="1" stroke-opacity="0.3"/>
+  <text x="380" y="90" fill="#06B5F9" font-family="monospace" font-size="11" font-weight="bold">// TYPOGRAPHY</text>
+  <text x="380" y="114" fill="#F5F7FA" font-family="sans-serif" font-size="13" font-weight="bold">Cabinet Grotesk</text>
+  <text x="380" y="132" fill="#8FA3B8" font-family="monospace" font-size="10">Display H1-H4</text>
+  <text x="380" y="158" fill="#F5F7FA" font-family="sans-serif" font-size="13" font-weight="bold">Inter &bull; Plus Jakarta</text>
+  <text x="380" y="176" fill="#8FA3B8" font-family="monospace" font-size="10">Body &bull; 1.65 Line Height</text>
+  <text x="380" y="202" fill="#06B5F9" font-family="monospace" font-size="10">8-Point Spacing Grid</text>
 
-  <rect x="370" y="240" width="190" height="165" rx="10" fill="#0A2038" stroke="#06B5F9" stroke-width="1" stroke-opacity="0.3"/>
-  <text x="385" y="265" fill="#06B5F9" font-family="monospace" font-size="11" font-weight="bold">// PROTOTYPE FIDELITY</text>
-  <circle cx="410" cy="305" r="22" fill="#06B5F9" fill-opacity="0.15" stroke="#06B5F9"/>
-  <text x="403" y="310" fill="#06B5F9" font-family="sans-serif" font-size="14" font-weight="bold">100%</text>
-  <text x="445" y="300" fill="#F5F7FA" font-family="sans-serif" font-size="12" font-weight="bold">Interactive</text>
-  <text x="445" y="318" fill="#B8C7D9" font-family="monospace" font-size="10">Figma to Code</text>
-  <text x="385" y="355" fill="#34D399" font-family="monospace" font-size="11">Design-Token Sync</text>
-  <text x="385" y="375" fill="#B8C7D9" font-family="monospace" font-size="10">CSS Vars &bull; Storybook Ready</text>
+  <rect x="365" y="240" width="195" height="165" rx="10" fill="#0A2038" stroke="#06B5F9" stroke-width="1" stroke-opacity="0.3"/>
+  <text x="380" y="265" fill="#06B5F9" font-family="monospace" font-size="11" font-weight="bold">// PROTOTYPE FIDELITY</text>
+  <circle cx="406" cy="305" r="20" fill="#06B5F9" fill-opacity="0.15" stroke="#06B5F9"/>
+  <text x="393" y="310" fill="#06B5F9" font-family="sans-serif" font-size="12" font-weight="bold">100%</text>
+  <text x="436" y="300" fill="#F5F7FA" font-family="sans-serif" font-size="12" font-weight="bold">Interactive</text>
+  <text x="436" y="318" fill="#B8C7D9" font-family="monospace" font-size="10">Figma to Code</text>
+  <text x="380" y="355" fill="#34D399" font-family="monospace" font-size="11">Design-Token Sync</text>
+  <text x="380" y="375" fill="#B8C7D9" font-family="monospace" font-size="10">CSS Vars &bull; Storybook Ready</text>
 </svg>
           </div>
         </div>
@@ -963,11 +964,11 @@ $consultationUrl = appUrl('contact.php?service=' . urlencode($serviceName));
 
     <div class="srv-faq-container">
       <div class="srv-faq-item">
-        <button type="button" class="srv-faq-btn" aria-expanded="true" aria-controls="faq-ans-0">
+        <button type="button" class="srv-faq-btn" aria-expanded="false" aria-controls="faq-ans-0">
           <span class="srv-faq-question">What deliverables do we receive at the end of a UI/UX project?</span>
           <span class="srv-faq-icon" aria-hidden="true">+</span>
         </button>
-        <div id="faq-ans-0" class="srv-faq-panel" style="max-height: 500px;">
+        <div id="faq-ans-0" class="srv-faq-panel">
           <div class="srv-faq-content">
             <p>You receive a complete, production-ready Figma workspace containing the atomic design system (color tokens, typography, component library with interactive variants), all responsive screen layouts (desktop, tablet, mobile), an interactive click-through prototype, exportable SVGs, and developer documentation with CSS variable specifications.</p>
           </div>

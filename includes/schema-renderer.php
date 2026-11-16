@@ -24,56 +24,56 @@ function getSupportedSchemaPages(): array
         ],
         'about' => [
             'name' => 'About Us',
-            'url' => '/about.php',
-            'recommended_types' => ['AboutPage', 'BreadcrumbList'],
+            'url' => '/about',
+            'recommended_types' => ['AboutPage', 'BreadcrumbList', 'Organization'],
             'is_dynamic' => false
         ],
         'services' => [
             'name' => 'IT Services Portfolio',
-            'url' => '/digital-marketing-company-in-delhi',
-            'recommended_types' => ['ProfessionalService', 'BreadcrumbList'],
+            'url' => '/services',
+            'recommended_types' => ['ProfessionalService', 'BreadcrumbList', 'Organization'],
             'is_dynamic' => false
         ],
         'service-detail' => [
             'name' => 'Individual Service Pages',
-            'url' => '/{slug}-company-in-delhi',
-            'recommended_types' => ['Service', 'BreadcrumbList'],
+            'url' => '/service/{slug}',
+            'recommended_types' => ['Service', 'BreadcrumbList', 'Organization'],
             'is_dynamic' => true
         ],
         'diagnostic' => [
             'name' => 'Digital Architecture Audit',
-            'url' => '/audit.php',
-            'recommended_types' => ['WebPage', 'BreadcrumbList'],
+            'url' => '/audit',
+            'recommended_types' => ['WebPage', 'BreadcrumbList', 'Organization'],
             'is_dynamic' => false
         ],
         'case-studies' => [
             'name' => 'Case Studies Listing',
-            'url' => '/case-studies.php',
-            'recommended_types' => ['WebPage', 'BreadcrumbList'],
+            'url' => '/case-studies',
+            'recommended_types' => ['WebPage', 'BreadcrumbList', 'Organization'],
             'is_dynamic' => false
         ],
         'case-study-detail' => [
             'name' => 'Individual Case Study Pages',
-            'url' => '/case-study-detail.php',
-            'recommended_types' => ['Article', 'BreadcrumbList'],
+            'url' => '/case-studies/{slug}',
+            'recommended_types' => ['Article', 'BreadcrumbList', 'Organization'],
             'is_dynamic' => true
         ],
         'insights' => [
             'name' => 'Perspectives & Blog Listing',
             'url' => '/blog',
-            'recommended_types' => ['WebPage', 'BreadcrumbList'],
+            'recommended_types' => ['WebPage', 'BreadcrumbList', 'Organization'],
             'is_dynamic' => false
         ],
         'insight-detail' => [
             'name' => 'Individual Blog Articles',
             'url' => '/blog/{slug}',
-            'recommended_types' => ['BlogPosting', 'BreadcrumbList'],
+            'recommended_types' => ['BlogPosting', 'BreadcrumbList', 'Organization'],
             'is_dynamic' => true
         ],
         'contact' => [
             'name' => 'Contact Us',
-            'url' => '/contact.php',
-            'recommended_types' => ['ContactPage'],
+            'url' => '/contact',
+            'recommended_types' => ['ContactPage', 'BreadcrumbList', 'Organization'],
             'is_dynamic' => false
         ]
     ];
@@ -87,17 +87,35 @@ function detectCurrentPageKey(): string
     // Check clean route paths first
     $reqPath = parse_url($_SERVER['REQUEST_URI'] ?? '', PHP_URL_PATH);
     if ($reqPath !== null) {
-        if ($reqPath === '/company' || $reqPath === '/company/' || $reqPath === '/company-in-delhi' || $reqPath === '/company-in-delhi/' || $reqPath === '/digital-marketing-company-in-delhi' || $reqPath === '/digital-marketing-company-in-delhi/') {
+        if ($reqPath === '/services' || $reqPath === '/services/' || $reqPath === '/company' || $reqPath === '/company/' || $reqPath === '/company-in-delhi' || $reqPath === '/company-in-delhi/' || $reqPath === '/digital-marketing-company-in-delhi' || $reqPath === '/digital-marketing-company-in-delhi/') {
             return 'services';
         }
-        if (preg_match('#^/company/([a-zA-Z0-9_-]+)#', $reqPath) || preg_match('#^/([a-zA-Z0-9_-]+)-company-in-delhi#', $reqPath) || preg_match('#^/services/([a-zA-Z0-9_-]+)#', $reqPath)) {
+        if (preg_match('#^/service/([a-zA-Z0-9_-]+)#', $reqPath) || preg_match('#^/company/([a-zA-Z0-9_-]+)#', $reqPath) || preg_match('#^/([a-zA-Z0-9_-]+)-company-in-delhi#', $reqPath) || preg_match('#^/services/([a-zA-Z0-9_-]+)#', $reqPath)) {
             return 'service-detail';
         }
-        if ($reqPath === '/blog' || $reqPath === '/blog/') {
+        if ($reqPath === '/blog' || $reqPath === '/blog/' || $reqPath === '/insights' || $reqPath === '/insights/') {
             return 'insights';
         }
-        if (preg_match('#^/blog/([a-zA-Z0-9_-]+)#', $reqPath)) {
+        if (preg_match('#^/blog/([a-zA-Z0-9_-]+)#', $reqPath) || preg_match('#^/insights/([a-zA-Z0-9_-]+)#', $reqPath)) {
             return 'insight-detail';
+        }
+        if ($reqPath === '/about' || $reqPath === '/about/') {
+            return 'about';
+        }
+        if ($reqPath === '/contact' || $reqPath === '/contact/') {
+            return 'contact';
+        }
+        if ($reqPath === '/audit' || $reqPath === '/audit/' || $reqPath === '/diagnostic' || $reqPath === '/diagnostic/') {
+            return 'diagnostic';
+        }
+        if ($reqPath === '/case-studies' || $reqPath === '/case-studies/') {
+            return 'case-studies';
+        }
+        if (preg_match('#^/case-studies/([a-zA-Z0-9_-]+)#', $reqPath)) {
+            return 'case-study-detail';
+        }
+        if ($reqPath === '/' || $reqPath === '') {
+            return 'home';
         }
     }
 
@@ -221,8 +239,8 @@ function getPrimaryOrganizationSchema(string $baseUrl = ''): array
     }
 
     $baseUrl = rtrim($baseUrl ?: (defined('CANONICAL_BASE_URL') ? CANONICAL_BASE_URL : (defined('BASE_URL') ? BASE_URL : 'https://demo.businesdoctor.com')), '/');
-    $appName = defined('APP_NAME') ? APP_NAME : 'BusinessDoctor';
-    $legalName = defined('APP_LEGAL_NAME') ? APP_LEGAL_NAME : 'BusinessDoctor IT Solutions & Digital Services Private Limited';
+    $appName = 'BusinesDoctor';
+    $legalName = 'BusinesDoctor IT Solutions & Digital Services Private Limited';
     $email = defined('APP_EMAIL') ? APP_EMAIL : 'sales@businesdoctor.com';
     $phone = defined('APP_PHONE') ? APP_PHONE : '+1 (800) 492-3628';
 
@@ -238,11 +256,13 @@ function getPrimaryOrganizationSchema(string $baseUrl = ''): array
                 '{{BASE_URL}}' => $baseUrl,
                 '{{CANONICAL_URL}}' => $baseUrl . '/',
                 '{{ORGANIZATION_NAME}}' => $appName,
-                '{{ORGANIZATION_EMAIL}}' => $email
+                '{{ORGANIZATION_EMAIL}}' => $email,
+                '{{ORGANIZATION_ID}}' => $baseUrl . '/#organization'
             ];
             $bound = str_replace(array_keys($replacements), array_values($replacements), $rawJson);
             $decoded = json_decode($bound, true);
             if (is_array($decoded) && ($decoded['@type'] ?? '') === 'Organization') {
+                $decoded['@id'] = $baseUrl . '/#organization';
                 $cached = $decoded;
                 return $cached;
             }
@@ -254,6 +274,7 @@ function getPrimaryOrganizationSchema(string $baseUrl = ''): array
     $cached = [
         '@context' => 'https://schema.org',
         '@type' => 'Organization',
+        '@id' => $baseUrl . '/#organization',
         'name' => $appName,
         'legalName' => $legalName,
         'url' => $baseUrl . '/',
@@ -261,7 +282,7 @@ function getPrimaryOrganizationSchema(string $baseUrl = ''): array
             '@type' => 'ImageObject',
             'url' => $baseUrl . '/assets/img/logo.svg'
         ],
-        'description' => 'BusinessDoctor is an enterprise digital transformation, cloud architecture, and full-stack software development consulting firm.',
+        'description' => 'BusinesDoctor is an enterprise digital transformation, cloud architecture, and full-stack software development consulting firm.',
         'telephone' => $phone,
         'email' => $email,
         'address' => [
@@ -320,6 +341,7 @@ function generateArticleSchemaGraph(array $article, string $baseUrl = ''): array
 
     // 1. Organization Schema (Required: Primary Verified Authority Entity from Source of Truth)
     $organization = getPrimaryOrganizationSchema($baseUrl);
+    $organization['@id'] = $baseUrl . '/#organization';
     $organization['mainEntityOfPage'] = $articleUrl;
 
     // 2. BreadcrumbList Schema (Required: Navigation Trail)
@@ -356,9 +378,7 @@ function generateArticleSchemaGraph(array $article, string $baseUrl = ''): array
         'description' => 'Practical engineering blueprints, Core Web Vitals breakdowns, and conversion optimization strategies from our senior architects and digital strategists.',
         'url' => $baseUrl . '/blog',
         'publisher' => [
-            '@type' => 'Organization',
-            'name' => $appName,
-            'url' => $baseUrl . '/'
+            '@id' => $baseUrl . '/#organization'
         ]
     ];
 
@@ -390,13 +410,7 @@ function generateArticleSchemaGraph(array $article, string $baseUrl = ''): array
             'jobTitle' => $authorTitle
         ],
         'publisher' => [
-            '@type' => 'Organization',
-            'name' => $appName,
-            'url' => $baseUrl . '/',
-            'logo' => [
-                '@type' => 'ImageObject',
-                'url' => $baseUrl . '/assets/img/logo.svg'
-            ]
+            '@id' => $baseUrl . '/#organization'
         ]
     ];
     if (!empty($authorBio)) {
@@ -524,8 +538,9 @@ function renderPageSchemas(?string $pageKey = null, array $contextData = []): st
 
         $replacements = [
             '{{BASE_URL}}' => $baseUrl,
-            '{{ORGANIZATION_NAME}}' => $appName,
+            '{{ORGANIZATION_NAME}}' => 'BusinesDoctor',
             '{{ORGANIZATION_EMAIL}}' => defined('APP_EMAIL') ? APP_EMAIL : 'sales@businesdoctor.com',
+            '{{ORGANIZATION_ID}}' => $baseUrl . '/#organization',
             '{{PAGE_TITLE}}' => addslashes($pageTitle),
             '{{PAGE_DESCRIPTION}}' => addslashes($pageDescription),
             '{{CANONICAL_URL}}' => $canonicalUrl,
@@ -536,12 +551,17 @@ function renderPageSchemas(?string $pageKey = null, array $contextData = []): st
             '{{DATE_MODIFIED}}' => $modDateIso,
             '{{FEATURED_IMAGE}}' => $featuredImg,
             '{{CATEGORY}}' => addslashes($category),
-            '{{SERVICES_URL}}' => $baseUrl . '/digital-marketing-company-in-delhi',
+            '{{SERVICES_URL}}' => $baseUrl . '/services',
             '{{BLOG_URL}}' => $baseUrl . '/blog',
-            '/services.php' => '/digital-marketing-company-in-delhi',
+            '/services.php' => '/services',
             '/insights.php' => '/blog',
-            'services.php' => 'digital-marketing-company-in-delhi',
-            'insights.php' => 'blog'
+            '/about.php' => '/about',
+            '/contact.php' => '/contact',
+            '/audit.php' => '/audit',
+            '/case-studies.php' => '/case-studies',
+            'services.php' => 'services',
+            'insights.php' => 'blog',
+            '/digital-marketing-company-in-delhi' => '/services'
         ];
 
         $hasBreadcrumbs = false;
@@ -573,7 +593,7 @@ function renderPageSchemas(?string $pageKey = null, array $contextData = []): st
                         $pubDate = date('c', strtotime((string)($art['published_at'] ?: $art['created_at'] ?: 'now')));
                         $modDate = date('c', strtotime((string)($art['updated_at'] ?: $pubDate)));
                         $desc = $art['excerpt'] ?: ($art['summary'] ?: '');
-                        $author = $art['author_name'] ?: ($art['author'] ?: 'BusinessDoctor Expert');
+                        $author = $art['author_name'] ?: ($art['author'] ?: 'BusinesDoctor Expert');
 
                         $blogPosts[] = [
                             '@type' => 'BlogPosting',
@@ -594,13 +614,22 @@ function renderPageSchemas(?string $pageKey = null, array $contextData = []): st
                 } catch (Throwable $e) {}
             }
 
-            // Enforce unified single Organization entity per page
+            // Enforce unified single Organization entity per page with stable @id
             if (($row['schema_type'] ?? '') === 'Organization' || ($decoded['@type'] ?? '') === 'Organization') {
                 if ($hasOrganization) {
                     // Prevent duplicate Organization blocks on the same page
                     continue;
                 }
                 $hasOrganization = true;
+                $decoded['@id'] = $baseUrl . '/#organization';
+            } else {
+                // For non-Organization entities, normalize publisher/provider to @id reference
+                if (isset($decoded['publisher']) && is_array($decoded['publisher']) && !isset($decoded['publisher']['@id'])) {
+                    $decoded['publisher'] = ['@id' => $baseUrl . '/#organization'];
+                }
+                if (isset($decoded['provider']) && is_array($decoded['provider']) && !isset($decoded['provider']['@id'])) {
+                    $decoded['provider'] = ['@id' => $baseUrl . '/#organization'];
+                }
             }
 
             // Deduplicate by signature
@@ -614,6 +643,19 @@ function renderPageSchemas(?string $pageKey = null, array $contextData = []): st
 
             $output .= "\n  <!-- Schema.org JSON-LD: " . htmlspecialchars($row['schema_name']) . " (" . htmlspecialchars($row['schema_type']) . ") -->\n";
             $output .= "  <script type=\"application/ld+json\">\n" . $prettyJson . "\n  </script>\n";
+        }
+
+        // Auto-inject standalone Organization Schema if not declared in page_schemas
+        if (!$hasOrganization) {
+            $orgObj = getPrimaryOrganizationSchema($baseUrl);
+            $orgObj['@id'] = $baseUrl . '/#organization';
+            $sig = md5(json_encode($orgObj));
+            if (!isset($renderedSchemas[$sig])) {
+                $renderedSchemas[$sig] = true;
+                $prettyJson = json_encode($orgObj, JSON_PRETTY_PRINT | JSON_UNESCAPED_SLASHES | JSON_UNESCAPED_UNICODE);
+                $output .= "\n  <!-- Schema.org JSON-LD: Primary Enterprise Organization (Independent Entity) -->\n";
+                $output .= "  <script type=\"application/ld+json\">\n" . $prettyJson . "\n  </script>\n";
+            }
         }
 
         // Auto-inject BreadcrumbList for inner pages if not explicitly declared in page_schemas
@@ -632,7 +674,7 @@ function renderPageSchemas(?string $pageKey = null, array $contextData = []): st
                     '@type' => 'ListItem',
                     'position' => 2,
                     'name' => 'Services Portfolio',
-                    'item' => $baseUrl . '/digital-marketing-company-in-delhi'
+                    'item' => $baseUrl . '/services'
                 ];
                 $breadcrumbItems[] = [
                     '@type' => 'ListItem',
@@ -658,7 +700,7 @@ function renderPageSchemas(?string $pageKey = null, array $contextData = []): st
                     '@type' => 'ListItem',
                     'position' => 2,
                     'name' => 'Services Portfolio',
-                    'item' => $baseUrl . '/digital-marketing-company-in-delhi'
+                    'item' => $baseUrl . '/services'
                 ];
             } elseif ($pageKey === 'case-studies') {
                 $breadcrumbItems[] = [
@@ -679,21 +721,21 @@ function renderPageSchemas(?string $pageKey = null, array $contextData = []): st
                     '@type' => 'ListItem',
                     'position' => 2,
                     'name' => 'About Us',
-                    'item' => $baseUrl . '/about.php'
+                    'item' => $baseUrl . '/about'
                 ];
             } elseif ($pageKey === 'contact') {
                 $breadcrumbItems[] = [
                     '@type' => 'ListItem',
                     'position' => 2,
                     'name' => 'Contact Us',
-                    'item' => $baseUrl . '/contact.php'
+                    'item' => $baseUrl . '/contact'
                 ];
             } elseif ($pageKey === 'diagnostic') {
                 $breadcrumbItems[] = [
                     '@type' => 'ListItem',
                     'position' => 2,
                     'name' => 'Digital Architecture Audit',
-                    'item' => $baseUrl . '/audit.php'
+                    'item' => $baseUrl . '/audit'
                 ];
             }
 

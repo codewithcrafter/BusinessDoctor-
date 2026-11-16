@@ -959,11 +959,11 @@ $consultationUrl = appUrl('contact.php?service=' . urlencode($serviceName));
 
     <div class="srv-faq-container">
       <div class="srv-faq-item">
-        <button type="button" class="srv-faq-btn" aria-expanded="true" aria-controls="faq-ans-0">
+        <button type="button" class="srv-faq-btn" aria-expanded="false" aria-controls="faq-ans-0">
           <span class="srv-faq-question">What is included in a typical commercial video production package?</span>
           <span class="srv-faq-icon" aria-hidden="true">+</span>
         </button>
-        <div id="faq-ans-0" class="srv-faq-panel" style="max-height: 500px;">
+        <div id="faq-ans-0" class="srv-faq-panel">
           <div class="srv-faq-content">
             <p>Our full-service packages include end-to-end execution: creative concepting, scriptwriting, professional voiceover, location scouting, casting, 4K/6K cinema camera filming, professional lighting grids, audio capture, editorial cutting, DaVinci Resolve color grading, motion graphics, licensed commercial music, and export in all social and broadcast aspect ratios.</p>
           </div>

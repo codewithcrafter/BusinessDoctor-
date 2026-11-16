@@ -10,13 +10,16 @@ require_once __DIR__ . '/includes/db.php';
 require_once __DIR__ . '/includes/functions.php';
 
 // 1. Permanent Redirects from non-canonical URL formats
-// All service detail pages follow the canonical URL structure: /{service-slug}-company-in-delhi
+// All service detail pages follow the canonical URL structure: /service/{service-slug}
 $reqUri = $_SERVER['REQUEST_URI'] ?? '';
 $reqPath = parse_url($reqUri, PHP_URL_PATH) ?? '';
 $rawSlug = trim($_GET['slug'] ?? '');
 
 // Clean base slug
 $baseRawSlug = $rawSlug;
+if (str_starts_with($baseRawSlug, 'service/')) {
+    $baseRawSlug = substr($baseRawSlug, 8);
+}
 if (str_ends_with($baseRawSlug, '-company-in-delhi')) {
     $baseRawSlug = substr($baseRawSlug, 0, -17);
 }
@@ -40,7 +43,8 @@ if ($practice) {
     $canonicalUrl = getServiceUrl($practice['slug']);
     $canonicalPath = parse_url($canonicalUrl, PHP_URL_PATH);
     if ($reqPath !== $canonicalPath) {
-        header("Location: " . $canonicalUrl, true, 301);
+        $qs = !empty($_SERVER['QUERY_STRING']) && strpos($_SERVER['QUERY_STRING'], 'slug=') === false ? '?' . $_SERVER['QUERY_STRING'] : '';
+        header("Location: " . $canonicalUrl . $qs, true, 301);
         exit;
     }
 }

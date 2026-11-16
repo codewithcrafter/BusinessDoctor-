@@ -169,6 +169,7 @@ class Database
                 slug TEXT NOT NULL UNIQUE,
                 title TEXT NOT NULL,
                 client_name TEXT NULL,
+                project_url TEXT NULL,
                 client_industry TEXT NOT NULL,
                 industry TEXT NULL,
                 practice_area TEXT NOT NULL,

@@ -45,11 +45,11 @@ $practices = getPracticeAreas();
       <div class="footer-col">
         <h4 class="footer-title">Enterprise</h4>
         <div class="footer-links">
-          <a href="<?= appUrl('about.php') ?>" class="footer-link">About BusinessDoctor</a>
-          <a href="<?= appUrl('audit.php') ?>" class="footer-link">Free Technical Digital Audit</a>
-          <a href="<?= appUrl('case-studies.php') ?>" class="footer-link">Client Case Studies</a>
+          <a href="<?= appUrl('about') ?>" class="footer-link">About BusinessDoctor</a>
+          <a href="<?= appUrl('audit') ?>" class="footer-link">Free Technical Digital Audit</a>
+          <a href="<?= appUrl('case-studies') ?>" class="footer-link">Client Case Studies</a>
           <a href="<?= getBlogListingUrl() ?>" class="footer-link">Blogs &amp; Resources</a>
-          <a href="<?= appUrl('contact.php') ?>" class="footer-link">Consultation &amp; Contact</a>
+          <a href="<?= appUrl('contact') ?>" class="footer-link">Consultation &amp; Contact</a>
           <a href="<?= appUrl('admin/login.php') ?>" class="footer-link" style="color: #8FA3B8;">Project Console (Admin)</a>
         </div>
       </div>
@@ -82,9 +82,9 @@ $practices = getPracticeAreas();
         &copy; <?= date('Y') ?> <?= APP_LEGAL_NAME ?>. All rights reserved.
       </div>
       <div class="footer-legal-links">
-        <a href="<?= appUrl('contact.php') ?>" class="footer-link">Terms of Engagement</a>
-        <a href="<?= appUrl('contact.php') ?>" class="footer-link">Privacy & Governance</a>
-        <a href="<?= appUrl('contact.php') ?>" class="footer-link">Security Compliance</a>
+        <a href="<?= appUrl('contact') ?>" class="footer-link">Terms of Engagement</a>
+        <a href="<?= appUrl('contact') ?>" class="footer-link">Privacy & Governance</a>
+        <a href="<?= appUrl('contact') ?>" class="footer-link">Security Compliance</a>
       </div>
     </div>
   </div>

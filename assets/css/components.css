@@ -3231,6 +3231,7 @@ body {
   transform: translateX(-50%) translateY(8px);
   width: min(860px, 95vw) !important;
   max-width: 860px !important;
+  max-height: calc(100vh - 100px) !important;
   background: #071A2C !important;
   border: 1px solid rgba(6, 181, 249, 0.25) !important;
   border-radius: 18px !important;
@@ -3242,7 +3243,28 @@ body {
   pointer-events: none;
   transition: opacity 0.22s cubic-bezier(0.16, 1, 0.3, 1), transform 0.22s cubic-bezier(0.16, 1, 0.3, 1), visibility 0.22s;
   z-index: 10001 !important;
-  overflow: hidden;
+  overflow-y: auto !important;
+  overflow-x: hidden !important;
+  scrollbar-width: thin;
+  scrollbar-color: rgba(6, 181, 249, 0.35) rgba(7, 26, 44, 0.6);
+}
+
+.mega-menu::-webkit-scrollbar {
+  width: 6px;
+}
+
+.mega-menu::-webkit-scrollbar-track {
+  background: rgba(7, 26, 44, 0.6);
+  border-radius: 8px;
+}
+
+.mega-menu::-webkit-scrollbar-thumb {
+  background: rgba(6, 181, 249, 0.35);
+  border-radius: 4px;
+}
+
+.mega-menu::-webkit-scrollbar-thumb:hover {
+  background: rgba(6, 181, 249, 0.7);
 }
 
 /* Invisible upper bridge for seamless cursor hover continuity */
@@ -3331,8 +3353,15 @@ body {
 }
 
 .mega-overview-icon {
-  width: 15px;
-  height: 15px;
+  width: 15px !important;
+  height: 15px !important;
+  min-width: 15px !important;
+  min-height: 15px !important;
+  max-width: 15px !important;
+  max-height: 15px !important;
+  flex-shrink: 0 !important;
+  display: inline-block !important;
+  vertical-align: middle !important;
   transition: transform 0.2s ease;
 }
 
@@ -3345,8 +3374,8 @@ body {
   display: grid;
   grid-template-columns: 1fr 1fr;
   column-gap: 1.25rem;
-  row-gap: 0.4rem;
-  padding: 1rem 1.5rem;
+  row-gap: 0.5rem;
+  padding: 1.25rem 1.5rem 1rem 1.5rem;
   background: #071A2C !important;
 }
 
@@ -3370,19 +3399,25 @@ body {
 }
 
 .mega-icon-circle {
-  width: 38px;
-  height: 38px;
-  border-radius: 50%;
+  width: 38px !important;
+  height: 38px !important;
+  min-width: 38px !important;
+  min-height: 38px !important;
+  max-width: 38px !important;
+  max-height: 38px !important;
+  border-radius: 50% !important;
   background: rgba(6, 181, 249, 0.1) !important;
   color: #06B5F9 !important;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  flex-shrink: 0;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  flex-shrink: 0 !important;
   border: 1px solid rgba(6, 181, 249, 0.25) !important;
   box-shadow: inset 0 0 8px rgba(6, 181, 249, 0.08);
   transition: all 0.2s cubic-bezier(0.16, 1, 0.3, 1);
   margin-top: 2px;
+  overflow: hidden !important;
+  box-sizing: border-box !important;
 }
 
 .mega-service-card:hover .mega-icon-circle {
@@ -3394,10 +3429,17 @@ body {
 }
 
 .mega-icon-circle svg {
-  width: 18px;
-  height: 18px;
-  stroke: currentColor;
+  width: 18px !important;
+  height: 18px !important;
+  min-width: 18px !important;
+  min-height: 18px !important;
+  max-width: 18px !important;
+  max-height: 18px !important;
+  stroke: currentColor !important;
   stroke-width: 2.2;
+  display: block !important;
+  flex-shrink: 0 !important;
+  box-sizing: border-box !important;
 }
 
 .mega-service-info {
@@ -3442,6 +3484,9 @@ body {
   padding: 0.85rem 1.75rem;
   background: #05101F !important;
   border-top: 1px solid rgba(6, 181, 249, 0.15) !important;
+  position: sticky;
+  bottom: 0;
+  z-index: 2;
 }
 
 .mega-footer-question {
@@ -3467,8 +3512,15 @@ body {
 }
 
 .mega-footer-arrow {
-  width: 16px;
-  height: 16px;
+  width: 16px !important;
+  height: 16px !important;
+  min-width: 16px !important;
+  min-height: 16px !important;
+  max-width: 16px !important;
+  max-height: 16px !important;
+  flex-shrink: 0 !important;
+  display: inline-block !important;
+  vertical-align: middle !important;
   transition: transform 0.2s ease;
 }
 

@@ -55,7 +55,7 @@ $consultationUrl = appUrl('contact.php?service=' . urlencode($serviceName));
             <span class="srv-hero-stat-lbl">Blended Marketplace ROAS</span>
           </div>
           <div class="srv-hero-stat-item">
-            <span class="srv-hero-stat-val">&amp;lt; 15%</span>
+            <span class="srv-hero-stat-val">&lt; 15%</span>
             <span class="srv-hero-stat-lbl">Target Amazon ACoS</span>
           </div>
           <div class="srv-hero-stat-item">
@@ -78,57 +78,55 @@ $consultationUrl = appUrl('contact.php?service=' . urlencode($serviceName));
   <text x="90" y="24" fill="#8FA3B8" font-family="monospace" font-size="11" font-weight="600">businessdoctor.retail :: multichannel-marketplace-hub.v2</text>
 
   <!-- Marketplace Hub Center -->
-  <rect x="50" y="70" width="220" height="100" rx="8" fill="#0D2644" stroke="#06B5F9" stroke-width="1.5" stroke-opacity="0.4"/>
-  <text x="70" y="95" fill="#06B5F9" font-family="monospace" font-size="11" font-weight="bold">// BUY BOX RETENTION</text>
-  <text x="70" y="125" fill="#34D399" font-family="sans-serif" font-size="24" font-weight="900">94.2%</text>
-  <text x="160" y="125" fill="#B8C7D9" font-family="monospace" font-size="11">Amazon &bull; Walmart</text>
+  <rect x="40" y="65" width="245" height="105" rx="8" fill="#0D2644" stroke="#06B5F9" stroke-width="1.5" stroke-opacity="0.4"/>
+  <text x="56" y="90" fill="#06B5F9" font-family="monospace" font-size="11" font-weight="bold">// BUY BOX RETENTION</text>
+  <text x="56" y="124" fill="#34D399" font-family="sans-serif" font-size="26" font-weight="900">94.2%</text>
+  <text x="56" y="150" fill="#B8C7D9" font-family="monospace" font-size="10">Amazon &bull; Walmart Defense</text>
 
-  <rect x="330" y="70" width="220" height="100" rx="8" fill="#0D2644" stroke="#06B5F9" stroke-width="1.5" stroke-opacity="0.4"/>
-  <text x="350" y="95" fill="#06B5F9" font-family="monospace" font-size="11" font-weight="bold">// CATALOG VELOCITY</text>
-  <text x="350" y="125" fill="#06B5F9" font-family="sans-serif" font-size="24" font-weight="900">14,200+</text>
-  <text x="450" y="125" fill="#B8C7D9" font-family="monospace" font-size="11">Active SKUs Synced</text>
+  <rect x="315" y="65" width="245" height="105" rx="8" fill="#0D2644" stroke="#06B5F9" stroke-width="1.5" stroke-opacity="0.4"/>
+  <text x="330" y="90" fill="#06B5F9" font-family="monospace" font-size="11" font-weight="bold">// CATALOG VELOCITY</text>
+  <text x="330" y="124" fill="#06B5F9" font-family="sans-serif" font-size="26" font-weight="900">14,200+</text>
+  <text x="330" y="150" fill="#B8C7D9" font-family="monospace" font-size="10">Active SKUs Synced Daily</text>
 
   <!-- Multichannel Inventory & Ads Dashboard -->
-  <rect x="50" y="190" width="500" height="215" rx="10" fill="#0A2038" stroke="#06B5F9" stroke-width="1" stroke-opacity="0.3"/>
-  <text x="70" y="220" fill="#F5F7FA" font-family="sans-serif" font-size="13" font-weight="bold">Unified Inventory, ACoS &amp; Fulfillment Sync</text>
-  <text x="420" y="220" fill="#06B5F9" font-family="monospace" font-size="11">LIVE TELEMETRY</text>
+  <rect x="40" y="185" width="520" height="225" rx="10" fill="#0A2038" stroke="#06B5F9" stroke-width="1" stroke-opacity="0.3"/>
+  <text x="56" y="212" fill="#F5F7FA" font-family="sans-serif" font-size="12" font-weight="bold">Unified Inventory, ACoS &amp; Fulfillment Sync</text>
+  <text x="430" y="212" fill="#06B5F9" font-family="monospace" font-size="10.5">LIVE TELEMETRY</text>
 
   <!-- Channel Nodes -->
-  <rect x="70" y="240" width="130" height="50" rx="6" fill="#0D2644" stroke="#06B5F9" stroke-opacity="0.3"/>
-  <text x="80" y="260" fill="#F5F7FA" font-family="sans-serif" font-size="11" font-weight="bold">Shopify Plus Store</text>
-  <text x="80" y="278" fill="#34D399" font-family="monospace" font-size="10">0.68s Headless Speed</text>
+  <rect x="56" y="228" width="148" height="54" rx="6" fill="#0D2644" stroke="#06B5F9" stroke-opacity="0.3"/>
+  <text x="68" y="248" fill="#F5F7FA" font-family="sans-serif" font-size="11" font-weight="bold">Shopify Plus Store</text>
+  <text x="68" y="268" fill="#34D399" font-family="monospace" font-size="10">0.68s Headless Speed</text>
 
-  <rect x="235" y="240" width="130" height="50" rx="6" fill="#0D2644" stroke="#06B5F9" stroke-opacity="0.3"/>
-  <text x="245" y="260" fill="#F5F7FA" font-family="sans-serif" font-size="11" font-weight="bold">Amazon FBA / SP-API</text>
-  <text x="245" y="278" fill="#34D399" font-family="monospace" font-size="10">14.2% Target ACoS</text>
+  <rect x="224" y="228" width="148" height="54" rx="6" fill="#0D2644" stroke="#06B5F9" stroke-opacity="0.3"/>
+  <text x="236" y="248" fill="#F5F7FA" font-family="sans-serif" font-size="11" font-weight="bold">Amazon FBA SP-API</text>
+  <text x="236" y="268" fill="#34D399" font-family="monospace" font-size="10">14.2% Target ACoS</text>
 
-  <rect x="400" y="240" width="130" height="50" rx="6" fill="#0D2644" stroke="#06B5F9" stroke-opacity="0.3"/>
-  <text x="410" y="260" fill="#F5F7FA" font-family="sans-serif" font-size="11" font-weight="bold">Flipkart / Marketplaces</text>
-  <text x="410" y="278" fill="#34D399" font-family="monospace" font-size="10">Auto-Inventory Sync</text>
+  <rect x="392" y="228" width="148" height="54" rx="6" fill="#0D2644" stroke="#06B5F9" stroke-opacity="0.3"/>
+  <text x="404" y="248" fill="#F5F7FA" font-family="sans-serif" font-size="11" font-weight="bold">Flipkart / Multi-Store</text>
+  <text x="404" y="268" fill="#34D399" font-family="monospace" font-size="10">Auto-Inventory Sync</text>
 
   <!-- Bar Graph Visualization -->
-  <rect x="80" y="320" width="30" height="60" rx="3" fill="#06B5F9" fill-opacity="0.3"/>
-  <rect x="80" y="340" width="30" height="40" rx="3" fill="#06B5F9"/>
-  <text x="82" y="395" fill="#8FA3B8" font-family="monospace" font-size="10">M1</text>
+  <line x1="56" y1="380" x2="360" y2="380" stroke="#06B5F9" stroke-opacity="0.2"/>
+  <rect x="70" y="352" width="32" height="28" rx="3" fill="#06B5F9" fill-opacity="0.6"/>
+  <text x="78" y="396" fill="#8FA3B8" font-family="monospace" font-size="10">M1</text>
 
-  <rect x="150" y="320" width="30" height="60" rx="3" fill="#06B5F9" fill-opacity="0.3"/>
-  <rect x="150" y="325" width="30" height="55" rx="3" fill="#06B5F9"/>
-  <text x="152" y="395" fill="#8FA3B8" font-family="monospace" font-size="10">M2</text>
+  <rect x="130" y="340" width="32" height="40" rx="3" fill="#06B5F9" fill-opacity="0.7"/>
+  <text x="138" y="396" fill="#8FA3B8" font-family="monospace" font-size="10">M2</text>
 
-  <rect x="220" y="320" width="30" height="60" rx="3" fill="#06B5F9" fill-opacity="0.3"/>
-  <rect x="220" y="310" width="30" height="70" rx="3" fill="#06B5F9"/>
-  <text x="222" y="395" fill="#8FA3B8" font-family="monospace" font-size="10">M3</text>
+  <rect x="190" y="328" width="32" height="52" rx="3" fill="#06B5F9" fill-opacity="0.8"/>
+  <text x="198" y="396" fill="#8FA3B8" font-family="monospace" font-size="10">M3</text>
 
-  <rect x="290" y="320" width="30" height="60" rx="3" fill="#06B5F9" fill-opacity="0.3"/>
-  <rect x="290" y="295" width="30" height="85" rx="3" fill="#06B5F9"/>
-  <text x="292" y="395" fill="#8FA3B8" font-family="monospace" font-size="10">M4</text>
+  <rect x="250" y="316" width="32" height="64" rx="3" fill="#06B5F9"/>
+  <text x="258" y="396" fill="#8FA3B8" font-family="monospace" font-size="10">M4</text>
 
-  <rect x="360" y="320" width="30" height="60" rx="3" fill="#06B5F9" fill-opacity="0.3"/>
-  <rect x="360" y="275" width="30" height="105" rx="3" fill="#34D399"/>
-  <text x="362" y="395" fill="#8FA3B8" font-family="monospace" font-size="10">M5</text>
+  <rect x="310" y="304" width="32" height="76" rx="3" fill="#34D399"/>
+  <text x="318" y="396" fill="#8FA3B8" font-family="monospace" font-size="10">M5</text>
 
-  <text x="420" y="340" fill="#34D399" font-family="sans-serif" font-size="16" font-weight="bold">+230% Rev</text>
-  <text x="420" y="360" fill="#B8C7D9" font-family="monospace" font-size="10">Blended Net Margin</text>
+  <rect x="392" y="300" width="148" height="80" rx="6" fill="#0D2644" stroke="#06B5F9" stroke-opacity="0.25"/>
+  <text x="410" y="328" fill="#34D399" font-family="sans-serif" font-size="18" font-weight="900">+230% Rev</text>
+  <text x="410" y="352" fill="#B8C7D9" font-family="monospace" font-size="10">Blended Net Margin</text>
+  <text x="410" y="368" fill="#06B5F9" font-family="monospace" font-size="9.5">Audited Store P&amp;L</text>
 </svg>
           </div>
         </div>
@@ -974,11 +972,11 @@ $consultationUrl = appUrl('contact.php?service=' . urlencode($serviceName));
 
     <div class="srv-faq-container">
       <div class="srv-faq-item">
-        <button type="button" class="srv-faq-btn" aria-expanded="true" aria-controls="faq-ans-0">
+        <button type="button" class="srv-faq-btn" aria-expanded="false" aria-controls="faq-ans-0">
           <span class="srv-faq-question">How do you prevent unauthorized sellers from hijacking our Amazon Buy Box?</span>
           <span class="srv-faq-icon" aria-hidden="true">+</span>
         </button>
-        <div id="faq-ans-0" class="srv-faq-panel" style="max-height: 500px;">
+        <div id="faq-ans-0" class="srv-faq-panel">
           <div class="srv-faq-content">
             <p>We deploy proactive 24/7 Buy Box monitoring software that alerts us within minutes of an unauthorized seller listing on your ASIN. We then execute Brand Registry copyright/trademark infringement notices, cease-and-desist documentation, and automated repricing defense rules.</p>
           </div>
