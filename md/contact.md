@@ -3,8 +3,8 @@
 > Whether you need a custom high-performance web application, a full-funnel digital marketing campaign, an Amazon storefront overhaul, or ongoing cloud infrastructure support, our senior technical teams are ready to collaborate.
 
 ## Engagement Information & Digital Resources
-- **Canonical Web URL**: [https://demo.businesdoctor.com/contact](https://demo.businesdoctor.com/contact)
-- **Clean Markdown URL**: [https://demo.businesdoctor.com/contact.md](https://demo.businesdoctor.com/contact.md)
+- **Canonical Web URL**: [https://demo.businesdoctor.com/contact.php](https://demo.businesdoctor.com/contact.php)
+- **Clean Markdown URL**: [https://demo.businesdoctor.com/contact.php.md](https://demo.businesdoctor.com/contact.php.md)
 - **Central Markdown URL**: [https://demo.businesdoctor.com/md/contact.md](https://demo.businesdoctor.com/md/contact.md)
 - **Master Markdown Index**: [https://demo.businesdoctor.com/md](https://demo.businesdoctor.com/md)
 - **Direct Advisory Phone**: +1 (800) 492-3628

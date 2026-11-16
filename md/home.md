@@ -88,11 +88,11 @@ We hold our practice to rigorous operational commitments:
 ---
 
 ## 08 // Real Results: Documented Enterprise Case Studies
-- **[FinTech SaaS Funnel Resuscitation](https://demo.businesdoctor.com/case-studies/fintech-saas-funnel-resuscitation)**: Replaced a broken 7-step onboarding process with asynchronous micro-auth and Stripe vaulting.
+- **[FinTech SaaS Funnel Resuscitation](https://demo.businesdoctor.com/case-study-detail.php?slug=fintech-saas-funnel-resuscitation)**: Replaced a broken 7-step onboarding process with asynchronous micro-auth and Stripe vaulting.
   - *Metric Shift*: `1.2% Conversion` → `4.8% Conversion (+312% pipeline lift)`
-- **[D2C Apparel Vital Infrastructure Overhaul](https://demo.businesdoctor.com/case-studies/d2c-apparel-vital-infrastructure-overhaul)**: Re-platformed a slow Shopify store into a headless React PWA with Redis inventory locking.
+- **[D2C Apparel Vital Infrastructure Overhaul](https://demo.businesdoctor.com/case-study-detail.php?slug=d2c-apparel-vital-infrastructure-overhaul)**: Re-platformed a slow Shopify store into a headless React PWA with Redis inventory locking.
   - *Metric Shift*: `4.6s Page Load` → `0.78s Page Load (18,500 peak transactions/min)`
-- **[Multichannel Retail Marketplace Dominance](https://demo.businesdoctor.com/case-studies/multichannel-retail-marketplace-dominance)**: Unified 48,000 SKUs across Amazon, Walmart, and eBay with an algorithmic dynamic repricing bot.
+- **[Multichannel Retail Marketplace Dominance](https://demo.businesdoctor.com/case-study-detail.php?slug=multichannel-retail-marketplace-dominance)**: Unified 48,000 SKUs across Amazon, Walmart, and eBay with an algorithmic dynamic repricing bot.
   - *Metric Shift*: `22% Buy Box Share` → `84% Buy Box Share (+$2.1M monthly GMV)`
 
 ---
@@ -109,7 +109,7 @@ We deploy battle-tested enterprise technologies:
 
 ## 10 // Engineering Architecture & Digital Growth Analysis
 Unsure why your website is slow, or why your ad spend isn't producing adequate ROAS? Submit your domain for a complimentary 24-hour diagnostic audit covering server latency, Core Web Vitals, and conversion funnel friction.
-- [Request Free Digital Audit](https://demo.businesdoctor.com/audit)
+- [Request Free Digital Audit](https://demo.businesdoctor.com/audit.php)
 
 ---
 
@@ -133,8 +133,8 @@ BusinessDoctor operates globally with distributed engineering leadership and pri
 ---
 
 ## 12 // Ready to Move Your Business Beyond Limitations?
-- **Schedule Discovery Consultation**: [Contact Practice Leads](https://demo.businesdoctor.com/contact)
-- **Complimentary Diagnostic**: [Request Free Digital Audit](https://demo.businesdoctor.com/audit)
+- **Schedule Discovery Consultation**: [Contact Practice Leads](https://demo.businesdoctor.com/contact.php)
+- **Complimentary Diagnostic**: [Request Free Digital Audit](https://demo.businesdoctor.com/audit.php)
 - **Review Service Disciplines**: [Explore All Practices](https://demo.businesdoctor.com/company)
 
 ---

@@ -400,9 +400,7 @@ function isActivePage(string ...$pages): string
     }
 
     foreach ($pages as $p) {
-        $pClean = preg_replace('/\.php$/', '', $p);
-        $reqClean = trim($reqUri, '/');
-        if ($current === $p || str_ends_with($reqUri, '/' . $p) || str_ends_with($reqUri, $p) || $reqClean === $pClean || $reqClean === $p) {
+        if ($current === $p || str_ends_with($reqUri, '/' . $p) || str_ends_with($reqUri, $p)) {
             return 'active';
         }
     }
@@ -467,42 +465,39 @@ function getServiceUrl(string $slug): string
 
     // Canonical slug mappings for any legacy or alias slugs
     $canonicalMap = [
-        // 10 Canonical Services
-        'smo' => 'smo',
-        'google-business-profile' => 'google-business-profile',
-        'ppc-paid-ads' => 'ppc-paid-ads',
-        'ecommerce-management' => 'ecommerce-management',
-        'graphic-design' => 'graphic-design',
-        'seo' => 'seo',
-        'social-media-marketing' => 'social-media-marketing',
-        'product-photography' => 'product-photography',
-        'video-editing' => 'video-editing',
-        'web-development' => 'web-development',
-
-        // Preserved capability
+        'web-software-development' => 'web-software-development',
+        'digital-marketing-seo' => 'digital-marketing-seo',
+        'ui-ux-branding' => 'ui-ux-branding',
+        'ecommerce-marketplaces' => 'ecommerce-marketplaces',
+        'creative-video-production' => 'creative-video-production',
         'cloud-it-consulting' => 'cloud-it-consulting',
 
-        // Legacy & alias mappings to the 10 canonical services
-        'web-software-development' => 'web-development',
-        'strategic-consulting' => 'web-development',
-        'digital-engineering' => 'web-development',
-        'ai-automation-workflows' => 'web-development',
+        // Alias & legacy mappings to canonical 6 core services
+        'web-development' => 'web-software-development',
+        'strategic-consulting' => 'web-software-development',
+        'digital-engineering' => 'web-software-development',
+        'ai-automation-workflows' => 'web-software-development',
 
-        'digital-marketing-seo' => 'seo',
-        'seo-services' => 'seo',
-        'smo-services' => 'smo',
-        'digital-marketing' => 'seo',
-        'performance-marketing' => 'ppc-paid-ads',
+        'seo' => 'digital-marketing-seo',
+        'seo-services' => 'digital-marketing-seo',
+        'smo' => 'digital-marketing-seo',
+        'smo-services' => 'digital-marketing-seo',
+        'digital-marketing' => 'digital-marketing-seo',
+        'ppc-paid-ads' => 'digital-marketing-seo',
+        'performance-marketing' => 'digital-marketing-seo',
+        'google-business-profile' => 'digital-marketing-seo',
+        'social-media-marketing' => 'digital-marketing-seo',
 
-        'ui-ux-branding' => 'graphic-design',
-        'brand-architecture' => 'graphic-design',
-        'brand-creative-direction' => 'graphic-design',
+        'graphic-design' => 'ui-ux-branding',
+        'brand-architecture' => 'ui-ux-branding',
+        'brand-creative-direction' => 'ui-ux-branding',
 
-        'ecommerce-marketplaces' => 'ecommerce-management',
-        'ecommerce-acceleration' => 'ecommerce-management',
+        'ecommerce-management' => 'ecommerce-marketplaces',
+        'ecommerce-acceleration' => 'ecommerce-marketplaces',
 
-        'creative-video-production' => 'video-editing',
-        'creative-production' => 'video-editing',
+        'video-editing' => 'creative-video-production',
+        'product-photography' => 'creative-video-production',
+        'creative-production' => 'creative-video-production',
     ];
 
     $canonicalSlug = $canonicalMap[$clean] ?? $clean;
@@ -551,50 +546,9 @@ function getCaseStudyUrl(string $slug): string
 }
 
 /**
- * Return clean SEO-friendly canonical URL for Digital Architecture Audit
- * Canonical: https://demo.businesdoctor.com/audit
- */
-function getAuditUrl(): string
-{
-    return appUrl('audit');
-}
-
-/**
- * Return clean SEO-friendly canonical URL for About Firm Profile
- * Canonical: https://demo.businesdoctor.com/about
- */
-function getAboutUrl(): string
-{
-    return appUrl('about');
-}
-
-/**
- * Return clean SEO-friendly canonical URL for Contact / Executive Advisory
- * Canonical: https://demo.businesdoctor.com/contact
- */
-function getContactUrl(string $service = ''): string
-{
-    if (!empty($service)) {
-        return appUrl('contact?service=' . urlencode($service));
-    }
-    return appUrl('contact');
-}
-
-/**
- * Return clean SEO-friendly canonical URL for Homepage
- * Canonical: https://demo.businesdoctor.com/
- */
-function getHomeUrl(): string
-{
-    return appUrl('');
-}
-
-/**
  * Return corresponding Markdown URL for any public HTML or route URL
  * Examples:
- *   /about -> https://demo.businesdoctor.com/about.md
- *   /audit -> https://demo.businesdoctor.com/audit.md
- *   /contact -> https://demo.businesdoctor.com/contact.md
+ *   /about.php -> https://demo.businesdoctor.com/about.php.md
  *   /company/web-software-development -> https://demo.businesdoctor.com/company/web-software-development.md
  *   /company -> https://demo.businesdoctor.com/company.md
  *   /blog/slug -> https://demo.businesdoctor.com/blog/slug.md
@@ -606,20 +560,6 @@ function getMarkdownUrl(string $urlOrPath): string
     $path = trim($parsed, '/');
     if ($path === '' || $path === 'index.php') {
         return appUrl('index.md');
-    }
-    // Clean known .php extensions
-    $cleanMap = [
-        'about.php' => 'about.md',
-        'audit.php' => 'audit.md',
-        'contact.php' => 'contact.md',
-        'services.php' => 'company.md',
-        'company' => 'company.md',
-        'insights.php' => 'blog.md',
-        'insights' => 'blog.md',
-        'case-studies.php' => 'case-studies.md',
-    ];
-    if (isset($cleanMap[$path])) {
-        return appUrl($cleanMap[$path]);
     }
     if (str_ends_with($path, '.md')) {
         return appUrl($path);
@@ -1276,42 +1216,31 @@ function getPracticeBySlug(string $slug): ?array
     }
 
     $canonicalMap = [
-        // 10 Canonical Services
-        'smo' => 'smo',
-        'google-business-profile' => 'google-business-profile',
-        'ppc-paid-ads' => 'ppc-paid-ads',
-        'ecommerce-management' => 'ecommerce-management',
-        'graphic-design' => 'graphic-design',
-        'seo' => 'seo',
-        'social-media-marketing' => 'social-media-marketing',
-        'product-photography' => 'product-photography',
-        'video-editing' => 'video-editing',
-        'web-development' => 'web-development',
+        'web-development' => 'web-software-development',
+        'strategic-consulting' => 'web-software-development',
+        'digital-engineering' => 'web-software-development',
+        'ai-automation-workflows' => 'web-software-development',
 
-        // Preserved capability
-        'cloud-it-consulting' => 'cloud-it-consulting',
+        'seo' => 'digital-marketing-seo',
+        'seo-services' => 'digital-marketing-seo',
+        'smo' => 'digital-marketing-seo',
+        'smo-services' => 'digital-marketing-seo',
+        'digital-marketing' => 'digital-marketing-seo',
+        'ppc-paid-ads' => 'digital-marketing-seo',
+        'performance-marketing' => 'digital-marketing-seo',
+        'google-business-profile' => 'digital-marketing-seo',
+        'social-media-marketing' => 'digital-marketing-seo',
 
-        // Legacy & alias mappings to the 10 canonical services
-        'web-software-development' => 'web-development',
-        'strategic-consulting' => 'web-development',
-        'digital-engineering' => 'web-development',
-        'ai-automation-workflows' => 'web-development',
+        'graphic-design' => 'ui-ux-branding',
+        'brand-architecture' => 'ui-ux-branding',
+        'brand-creative-direction' => 'ui-ux-branding',
 
-        'digital-marketing-seo' => 'seo',
-        'seo-services' => 'seo',
-        'smo-services' => 'smo',
-        'digital-marketing' => 'seo',
-        'performance-marketing' => 'ppc-paid-ads',
+        'ecommerce-management' => 'ecommerce-marketplaces',
+        'ecommerce-acceleration' => 'ecommerce-marketplaces',
 
-        'ui-ux-branding' => 'graphic-design',
-        'brand-architecture' => 'graphic-design',
-        'brand-creative-direction' => 'graphic-design',
-
-        'ecommerce-marketplaces' => 'ecommerce-management',
-        'ecommerce-acceleration' => 'ecommerce-management',
-
-        'creative-video-production' => 'video-editing',
-        'creative-production' => 'video-editing',
+        'video-editing' => 'creative-video-production',
+        'product-photography' => 'creative-video-production',
+        'creative-production' => 'creative-video-production',
     ];
 
     if (isset($canonicalMap[$clean]) && isset($practices[$canonicalMap[$clean]])) {

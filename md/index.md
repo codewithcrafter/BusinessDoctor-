@@ -7,33 +7,28 @@ High-performance machine-readable Markdown repository for generative AI models, 
 - **AI Discovery Manifest**: [https://demo.businesdoctor.com/llms.txt](https://demo.businesdoctor.com/llms.txt)
 - **Comprehensive LLM Context**: [https://demo.businesdoctor.com/llms.md](https://demo.businesdoctor.com/llms.md)
 - **XML Sitemap**: [https://demo.businesdoctor.com/sitemap.xml](https://demo.businesdoctor.com/sitemap.xml)
-- **Last Synchronized**: 2026-11-16 05:10:04 UTC
+- **Last Synchronized**: 2026-11-14 09:15:55 UTC
 
 ---
 
 ## 1. Institutional & Diagnostic Documents
 
 - [Homepage Overview](https://demo.businesdoctor.com/md/home.md) ([Clean URL](https://demo.businesdoctor.com/.md) | [Web Page](https://demo.businesdoctor.com/)): Enterprise digital practice overview.
-- [Firm Profile & Leadership](https://demo.businesdoctor.com/md/about.md) ([Clean URL](https://demo.businesdoctor.com/about.md) | [Web Page](https://demo.businesdoctor.com/about)): Engineering ethos and leadership profile.
-- [Services Overview Hub](https://demo.businesdoctor.com/md/company.md) ([Clean URL](https://demo.businesdoctor.com/company.md) | [Web Page](https://demo.businesdoctor.com/company)): Multi-disciplinary capability catalog.
-- [Executive Advisory & Inquiries](https://demo.businesdoctor.com/md/contact.md) ([Clean URL](https://demo.businesdoctor.com/contact.md) | [Web Page](https://demo.businesdoctor.com/contact)): Direct engagement and consulting channels.
-- [Digital Diagnostic Audit Framework](https://demo.businesdoctor.com/md/audit.md) ([Clean URL](https://demo.businesdoctor.com/audit.md) | [Web Page](https://demo.businesdoctor.com/audit)): Benchmarking performance, security, and CAC.
+- [Firm Profile & Leadership](https://demo.businesdoctor.com/md/about.md) ([Clean URL](https://demo.businesdoctor.com/about.php.md) | [Web Page](https://demo.businesdoctor.com/about.php)): Engineering ethos and leadership profile.
+- [Services Overview Hub](https://demo.businesdoctor.com/md/services.md) ([Clean URL](https://demo.businesdoctor.com/company.md) | [Web Page](https://demo.businesdoctor.com/company)): Multi-disciplinary capability catalog.
+- [Executive Advisory & Inquiries](https://demo.businesdoctor.com/md/contact.md) ([Clean URL](https://demo.businesdoctor.com/contact.php.md) | [Web Page](https://demo.businesdoctor.com/contact.php)): Direct engagement and consulting channels.
+- [Digital Diagnostic Audit Framework](https://demo.businesdoctor.com/md/audit.md) ([Clean URL](https://demo.businesdoctor.com/audit.php.md) | [Web Page](https://demo.businesdoctor.com/audit.php)): Benchmarking performance, security, and CAC.
 - [Technical Blog & Perspectives Catalog](https://demo.businesdoctor.com/md/insights.md) ([Clean URL](https://demo.businesdoctor.com/blog.md) | [Web Page](https://demo.businesdoctor.com/blog)): Index of published technical essays.
-- [Enterprise Case Studies Catalog](https://demo.businesdoctor.com/md/case-studies.md) ([Clean URL](https://demo.businesdoctor.com/case-studies.md) | [Web Page](https://demo.businesdoctor.com/case-studies)): Index of verified client turnarounds.
+- [Enterprise Case Studies Catalog](https://demo.businesdoctor.com/md/case-studies.md) ([Clean URL](https://demo.businesdoctor.com/case-studies.php.md) | [Web Page](https://demo.businesdoctor.com/case-studies.php)): Index of verified client turnarounds.
 
 ## 2. Core Practice Disciplines & Services
 
-- [SMO — Social Media Optimization](https://demo.businesdoctor.com/md/company/smo.md) ([Clean URL](https://demo.businesdoctor.com/company/smo.md) | [Web Page](https://demo.businesdoctor.com/company/smo)): Social Profile Architecture, Content Velocity & Organic Reach.
-- [Google Business Profile Management](https://demo.businesdoctor.com/md/company/google-business-profile.md) ([Clean URL](https://demo.businesdoctor.com/company/google-business-profile.md) | [Web Page](https://demo.businesdoctor.com/company/google-business-profile)): Local 3-Pack Dominance, Verification & High-Intent Local Leads.
-- [PPC / Paid Ads](https://demo.businesdoctor.com/md/company/ppc-paid-ads.md) ([Clean URL](https://demo.businesdoctor.com/company/ppc-paid-ads.md) | [Web Page](https://demo.businesdoctor.com/company/ppc-paid-ads)): Precision Performance Advertising, Search Ads & ROAS Maximization.
-- [Ecommerce Management](https://demo.businesdoctor.com/md/company/ecommerce-management.md) ([Clean URL](https://demo.businesdoctor.com/company/ecommerce-management.md) | [Web Page](https://demo.businesdoctor.com/company/ecommerce-management)): Amazon, Flipkart & Multi-Channel Storefront Scaling.
-- [Graphic Design](https://demo.businesdoctor.com/md/company/graphic-design.md) ([Clean URL](https://demo.businesdoctor.com/company/graphic-design.md) | [Web Page](https://demo.businesdoctor.com/company/graphic-design)): Brand Identity Systems, Commercial Collateral & Visual Direction.
-- [SEO — Search Engine Optimization](https://demo.businesdoctor.com/md/company/seo.md) ([Clean URL](https://demo.businesdoctor.com/company/seo.md) | [Web Page](https://demo.businesdoctor.com/company/seo)): Organic Search Dominance, Technical Hygiene & Keyword Authority.
-- [Social Media Marketing](https://demo.businesdoctor.com/md/company/social-media-marketing.md) ([Clean URL](https://demo.businesdoctor.com/company/social-media-marketing.md) | [Web Page](https://demo.businesdoctor.com/company/social-media-marketing)): Community Building, Targeted Paid Sprints & Conversational Growth.
-- [Product Photography](https://demo.businesdoctor.com/md/company/product-photography.md) ([Clean URL](https://demo.businesdoctor.com/company/product-photography.md) | [Web Page](https://demo.businesdoctor.com/company/product-photography)): Studio Commercial Imaging, 360° Views & E-Commerce Visuals.
-- [Video Editing](https://demo.businesdoctor.com/md/company/video-editing.md) ([Clean URL](https://demo.businesdoctor.com/company/video-editing.md) | [Web Page](https://demo.businesdoctor.com/company/video-editing)): Short-Form Reels, Commercial Brand Films & Motion Graphics.
-- [Web Development](https://demo.businesdoctor.com/md/company/web-development.md) ([Clean URL](https://demo.businesdoctor.com/company/web-development.md) | [Web Page](https://demo.businesdoctor.com/company/web-development)): High-Performance Platforms, Custom Web Apps & Scalable Portals.
-- [Cloud Solutions & IT Consulting](https://demo.businesdoctor.com/md/company/cloud-it-consulting.md) ([Clean URL](https://demo.businesdoctor.com/company/cloud-it-consulting.md) | [Web Page](https://demo.businesdoctor.com/company/cloud-it-consulting)): Cloud Infrastructure, DevOps, Cybersecurity & Systems Maintenance.
+- [Web & Custom Software Development](https://demo.businesdoctor.com/md/services/web-software-development.md) ([Clean URL](https://demo.businesdoctor.com/company/web-software-development.md) | [Web Page](https://demo.businesdoctor.com/company/web-software-development)): High-Performance Web Platforms & Enterprise Applications.
+- [Digital Marketing & Performance Ads](https://demo.businesdoctor.com/md/services/digital-marketing-seo.md) ([Clean URL](https://demo.businesdoctor.com/company/digital-marketing-seo.md) | [Web Page](https://demo.businesdoctor.com/company/digital-marketing-seo)): Search Engine Dominance, Google Ads & Paid Media Scaling.
+- [UI/UX Design & Brand Identity](https://demo.businesdoctor.com/md/services/ui-ux-branding.md) ([Clean URL](https://demo.businesdoctor.com/company/ui-ux-branding.md) | [Web Page](https://demo.businesdoctor.com/company/ui-ux-branding)): Human-Centered Digital Interfaces & Distinct Visual Branding.
+- [E-Commerce & Marketplace Management](https://demo.businesdoctor.com/md/services/ecommerce-marketplaces.md) ([Clean URL](https://demo.businesdoctor.com/company/ecommerce-marketplaces.md) | [Web Page](https://demo.businesdoctor.com/company/ecommerce-marketplaces)): Amazon, Flipkart & Multi-Channel Storefront Growth.
+- [Creative Production & Video Marketing](https://demo.businesdoctor.com/md/services/creative-video-production.md) ([Clean URL](https://demo.businesdoctor.com/company/creative-video-production.md) | [Web Page](https://demo.businesdoctor.com/company/creative-video-production)): Studio Product Photography, Video Production & Social Creatives.
+- [Cloud Solutions & IT Consulting](https://demo.businesdoctor.com/md/services/cloud-it-consulting.md) ([Clean URL](https://demo.businesdoctor.com/company/cloud-it-consulting.md) | [Web Page](https://demo.businesdoctor.com/company/cloud-it-consulting)): Cloud Infrastructure, DevOps, Cybersecurity & Systems Maintenance.
 
 ## 3. Client Case Studies & Proven Results
 

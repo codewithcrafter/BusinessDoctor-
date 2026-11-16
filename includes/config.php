@@ -100,8 +100,7 @@ $isLocalHost = in_array($currentHost, ['127.0.0.1:8000', 'localhost:8000', 'loca
 if (!empty($envAppUrl) && !($isLocalHost && str_contains($envAppUrl, 'demo.businesdoctor.com'))) {
     define('BASE_URL', rtrim($envAppUrl, '/'));
 } else {
-    $isCli = (php_sapi_name() === 'cli' || defined('STDIN'));
-    $protocol = ($isCli || (!empty($_SERVER['HTTPS']) && $_SERVER['HTTPS'] !== 'off') || (isset($_SERVER['SERVER_PORT']) && (int)$_SERVER['SERVER_PORT'] === 443)) ? "https://" : "http://";
+    $protocol = (!empty($_SERVER['HTTPS']) && $_SERVER['HTTPS'] !== 'off' || (isset($_SERVER['SERVER_PORT']) && (int)$_SERVER['SERVER_PORT'] === 443)) ? "https://" : "http://";
     $host = $_SERVER['HTTP_HOST'] ?? 'demo.businesdoctor.com';
     if ($host === 'demo.businessdoctor.com') {
         $host = 'demo.businesdoctor.com';
@@ -113,8 +112,6 @@ if (!empty($envAppUrl) && !($isLocalHost && str_contains($envAppUrl, 'demo.busin
     if ($parts === ['.']) {
         $parts = [];
     }
-    $virtualRoots = ['company', 'services', 'blog', 'insights', 'case-studies', 'audit', 'about', 'contact', 'md'];
-    $parts = array_values(array_filter($parts, fn($p) => $p !== '' && !in_array($p, $virtualRoots, true)));
     if (!empty($parts) && in_array(end($parts), ['admin', 'api', 'scratch', 'tests'], true)) {
         array_pop($parts);
     }

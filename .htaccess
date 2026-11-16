@@ -43,26 +43,10 @@ AddType text/markdown .md
 
     # 301 Redirect legacy /services.php and /insights.php
     RewriteCond %{THE_REQUEST} \s/+services\.php(\s|\?) [NC]
-    RewriteRule ^ /company [R=301,L]
+    RewriteRule ^ /company-in-delhi? [R=301,L]
 
     RewriteCond %{THE_REQUEST} \s/+insights\.php(\s|\?) [NC]
     RewriteRule ^ /blog? [R=301,L]
-
-    # 301 Redirect legacy /case-studies.php to clean /case-studies
-    RewriteCond %{THE_REQUEST} \s/+case-studies\.php(\s|\?) [NC]
-    RewriteRule ^ /case-studies? [R=301,L]
-
-    # 301 Redirect legacy /audit.php to clean /audit
-    RewriteCond %{THE_REQUEST} \s/+audit\.php(\s|\?) [NC]
-    RewriteRule ^ /audit? [R=301,L]
-
-    # 301 Redirect legacy /about.php to clean /about
-    RewriteCond %{THE_REQUEST} \s/+about\.php(\s|\?) [NC]
-    RewriteRule ^ /about? [R=301,L]
-
-    # 301 Redirect legacy /contact.php to clean /contact (preserving query string e.g. service)
-    RewriteCond %{THE_REQUEST} \s/+contact\.php(?:\?([^\s]*))?(\s) [NC]
-    RewriteRule ^ /contact?%1 [R=301,L]
 
     # ============================================================
     # Universal Markdown Document Routes (*.md & /md gateway)
@@ -85,22 +69,27 @@ AddType text/markdown .md
     RewriteRule (\.md$|^md/|^llms\.txt$|^sitemap\.xml$) markdown-router.php [L,QSA]
 
     # 301 Redirect legacy service aliases to canonical /company/{slug}
-    RewriteRule ^(?:services|company)/web-software-development/?$ /company/web-development [R=301,L]
-    RewriteRule ^(?:services|company)/ai-automation-workflows/?$ /company/web-development [R=301,L]
-    RewriteRule ^(?:services|company)/strategic-consulting/?$ /company/web-development [R=301,L]
-    RewriteRule ^(?:services|company)/digital-engineering/?$ /company/web-development [R=301,L]
-    RewriteRule ^(?:services|company)/digital-marketing-seo/?$ /company/seo [R=301,L]
-    RewriteRule ^(?:services|company)/seo-services/?$ /company/seo [R=301,L]
-    RewriteRule ^(?:services|company)/smo-services/?$ /company/smo [R=301,L]
-    RewriteRule ^(?:services|company)/digital-marketing/?$ /company/seo [R=301,L]
-    RewriteRule ^(?:services|company)/performance-marketing/?$ /company/ppc-paid-ads [R=301,L]
-    RewriteRule ^(?:services|company)/ui-ux-branding/?$ /company/graphic-design [R=301,L]
-    RewriteRule ^(?:services|company)/brand-architecture/?$ /company/graphic-design [R=301,L]
-    RewriteRule ^(?:services|company)/brand-creative-direction/?$ /company/graphic-design [R=301,L]
-    RewriteRule ^(?:services|company)/ecommerce-marketplaces/?$ /company/ecommerce-management [R=301,L]
-    RewriteRule ^(?:services|company)/ecommerce-acceleration/?$ /company/ecommerce-management [R=301,L]
-    RewriteRule ^(?:services|company)/creative-video-production/?$ /company/video-editing [R=301,L]
-    RewriteRule ^(?:services|company)/creative-production/?$ /company/video-editing [R=301,L]
+    RewriteRule ^(?:services|company)/web-development/?$ /company/web-software-development [R=301,L]
+    RewriteRule ^(?:services|company)/ai-automation-workflows/?$ /company/web-software-development [R=301,L]
+    RewriteRule ^(?:services|company)/strategic-consulting/?$ /company/web-software-development [R=301,L]
+    RewriteRule ^(?:services|company)/digital-engineering/?$ /company/web-software-development [R=301,L]
+    RewriteRule ^(?:services|company)/seo/?$ /company/digital-marketing-seo [R=301,L]
+    RewriteRule ^(?:services|company)/seo-services/?$ /company/digital-marketing-seo [R=301,L]
+    RewriteRule ^(?:services|company)/smo/?$ /company/digital-marketing-seo [R=301,L]
+    RewriteRule ^(?:services|company)/smo-services/?$ /company/digital-marketing-seo [R=301,L]
+    RewriteRule ^(?:services|company)/digital-marketing/?$ /company/digital-marketing-seo [R=301,L]
+    RewriteRule ^(?:services|company)/ppc-paid-ads/?$ /company/digital-marketing-seo [R=301,L]
+    RewriteRule ^(?:services|company)/performance-marketing/?$ /company/digital-marketing-seo [R=301,L]
+    RewriteRule ^(?:services|company)/google-business-profile/?$ /company/digital-marketing-seo [R=301,L]
+    RewriteRule ^(?:services|company)/social-media-marketing/?$ /company/digital-marketing-seo [R=301,L]
+    RewriteRule ^(?:services|company)/graphic-design/?$ /company/ui-ux-branding [R=301,L]
+    RewriteRule ^(?:services|company)/brand-architecture/?$ /company/ui-ux-branding [R=301,L]
+    RewriteRule ^(?:services|company)/brand-creative-direction/?$ /company/ui-ux-branding [R=301,L]
+    RewriteRule ^(?:services|company)/ecommerce-management/?$ /company/ecommerce-marketplaces [R=301,L]
+    RewriteRule ^(?:services|company)/ecommerce-acceleration/?$ /company/ecommerce-marketplaces [R=301,L]
+    RewriteRule ^(?:services|company)/video-editing/?$ /company/creative-video-production [R=301,L]
+    RewriteRule ^(?:services|company)/product-photography/?$ /company/creative-video-production [R=301,L]
+    RewriteRule ^(?:services|company)/creative-production/?$ /company/creative-video-production [R=301,L]
 
     # 301 Redirect old /{slug}-company-in-delhi to canonical /company/{slug}
     RewriteRule ^([a-zA-Z0-9_-]+)-company-in-delhi/?$ /company/$1 [R=301,L]
@@ -146,19 +135,6 @@ AddType text/markdown .md
     RewriteCond %{REQUEST_FILENAME} !-d
     RewriteRule ^case-studies/?$ case-studies.php [L,QSA]
 
-    # Clean Static Institutional Pages: /audit, /about, /contact
-    RewriteCond %{REQUEST_FILENAME} !-f
-    RewriteCond %{REQUEST_FILENAME} !-d
-    RewriteRule ^audit/?$ audit.php [L,QSA]
-
-    RewriteCond %{REQUEST_FILENAME} !-f
-    RewriteCond %{REQUEST_FILENAME} !-d
-    RewriteRule ^about/?$ about.php [L,QSA]
-
-    RewriteCond %{REQUEST_FILENAME} !-f
-    RewriteCond %{REQUEST_FILENAME} !-d
-    RewriteRule ^contact/?$ contact.php [L,QSA]
-
     # Clean Admin Gateway Rewriting: /admin -> admin/index.php
     RewriteCond %{REQUEST_FILENAME} !-f
     RewriteRule ^admin/?$ admin/index.php [L,QSA]
@@ -176,7 +152,7 @@ AddType text/markdown .md
     Require all denied
 </FilesMatch>
 
-# 5. Security & CDN Response Headers
+# 5. Security Response Headers
 <IfModule mod_headers.c>
     <FilesMatch "\.md$">
         Header set Content-Type "text/markdown; charset=UTF-8"
@@ -184,12 +160,8 @@ AddType text/markdown .md
         Header set X-Robots-Tag "index, follow"
     </FilesMatch>
     <FilesMatch "^(sitemap\.xml|llms\.txt|llms\.md|robots\.txt)$">
-        Header always set Cache-Control "no-cache, no-store, must-revalidate, max-age=0, s-maxage=0"
-        Header always set Pragma "no-cache"
-        Header always set Expires "0"
-        Header always set X-LiteSpeed-Cache-Control "no-cache"
-        Header always set X-LiteSpeed-Purge "*"
-        Header always set Access-Control-Allow-Origin "*"
+        Header set Cache-Control "public, max-age=0, must-revalidate"
+        Header set Pragma "no-cache"
     </FilesMatch>
     Header always set X-Content-Type-Options "nosniff"
     Header always set X-Frame-Options "SAMEORIGIN"
@@ -214,7 +186,6 @@ AddType text/markdown .md
     ExpiresByType application/xml "access plus 0 seconds"
     ExpiresByType text/xml "access plus 0 seconds"
     ExpiresByType text/plain "access plus 0 seconds"
-    ExpiresByType text/markdown "access plus 0 seconds"
     ExpiresByType text/css "access plus 1 month"
     ExpiresByType application/javascript "access plus 1 month"
     ExpiresByType image/svg+xml "access plus 1 month"
