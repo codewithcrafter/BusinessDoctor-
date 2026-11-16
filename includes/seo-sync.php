@@ -1792,7 +1792,8 @@ MD;
             if (preg_match('#(?<!/md)/services/[a-zA-Z0-9_-]+(?!\.md)#', $content, $m)) {
                 $errors[] = "Stale URL pattern detected: {$m[0]}";
             }
-            if (preg_match('#(?<!/md)/company/[a-zA-Z0-9_-]+(?!\.md)#', $content, $m)) {
+            // For manifests other than llms.txt, enforce zero /company/ URLs (llms.txt uses verified canonical /company/ routes)
+            if (!str_ends_with($filePath, 'llms.txt') && preg_match('#(?<!/md)/company/[a-zA-Z0-9_-]+(?!\.md)#', $content, $m)) {
                 $errors[] = "Stale URL pattern detected: {$m[0]}";
             }
         }
