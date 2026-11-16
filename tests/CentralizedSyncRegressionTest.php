@@ -94,8 +94,9 @@ class CentralizedSyncRegressionTest
 
         $sitemap = file_get_contents(ROOT_PATH . '/sitemap.xml');
         $llmsTxt = file_get_contents(ROOT_PATH . '/llms.txt');
-        $llmsMd = file_get_contents(ROOT_PATH . '/llms.md');
         $mdIndex = file_get_contents(ROOT_PATH . '/md/index.md');
+
+        $this->assert("llms.md permanently removed", !file_exists(ROOT_PATH . '/llms.md'));
 
         $tenServices = [
             'smo' => 'https://demo.businesdoctor.com/smo-company-in-delhi',
@@ -113,7 +114,6 @@ class CentralizedSyncRegressionTest
         foreach ($tenServices as $slug => $expectedUrl) {
             $this->assert("Sitemap contains [{$expectedUrl}]", str_contains($sitemap, "<loc>{$expectedUrl}</loc>"), "Found in sitemap.xml");
             $this->assert("llms.txt contains [{$expectedUrl}]", str_contains($llmsTxt, "({$expectedUrl})"), "Found in llms.txt");
-            $this->assert("llms.md contains [{$expectedUrl}]", str_contains($llmsMd, "({$expectedUrl})"), "Found in llms.md");
             $this->assert("md/index.md contains [{$expectedUrl}]", str_contains($mdIndex, "({$expectedUrl})"), "Found in md/index.md");
             $this->assert("Physical markdown exists [md/services/{$slug}.md]", file_exists(ROOT_PATH . "/md/services/{$slug}.md"), "Physical file verified");
         }
@@ -123,8 +123,6 @@ class CentralizedSyncRegressionTest
         $this->assert("Zero stale /company/ in sitemap", !preg_match('#(?<!/md)/company/[a-zA-Z0-9_-]+#', $sitemap));
         $this->assert("Zero stale /services/ in llms.txt", !preg_match('#(?<!/md)/services/[a-zA-Z0-9_-]+(?!\.md)#', $llmsTxt));
         $this->assert("Zero stale /company/ in llms.txt", !preg_match('#(?<!/md)/company/[a-zA-Z0-9_-]+#', $llmsTxt));
-        $this->assert("Zero stale /services/ in llms.md", !preg_match('#(?<!/md)/services/[a-zA-Z0-9_-]+(?!\.md)#', $llmsMd));
-        $this->assert("Zero stale /company/ in llms.md", !preg_match('#(?<!/md)/company/[a-zA-Z0-9_-]+#', $llmsMd));
         $this->assert("Zero stale /company/ in md/index.md", !preg_match('#(?<!/md)/company/[a-zA-Z0-9_-]+#', $mdIndex));
         echo "\n";
     }
@@ -339,6 +337,7 @@ class CentralizedSyncRegressionTest
 
         $llmsTxt2 = file_get_contents(ROOT_PATH . '/llms.txt');
         $this->assert("Second llms.txt preserves canonical service URLs", substr_count($llmsTxt2, '-company-in-delhi') >= 10);
+        $this->assert("Second regeneration does not recreate llms.md", !file_exists(ROOT_PATH . '/llms.md'));
         echo "\n";
     }
 

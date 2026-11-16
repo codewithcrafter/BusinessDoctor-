@@ -4,9 +4,9 @@ $uri = parse_url($_SERVER['REQUEST_URI'], PHP_URL_PATH);
 $file = __DIR__ . $uri;
 
 // ============================================================
-// Universal Discovery & Markdown Request Interception (*.md, /llms.txt, /llms.md, /sitemap.xml)
+// Universal Discovery & Markdown Request Interception (*.md, /llms.txt, /sitemap.xml)
 // ============================================================
-if (str_ends_with($uri, '.md') || in_array($uri, ['/.md', '/md', '/md/', '/llms.txt', '/llms.md', '/sitemap.xml'], true) || str_starts_with($uri, '/md/')) {
+if (str_ends_with($uri, '.md') || in_array($uri, ['/.md', '/md', '/md/', '/llms.txt', '/sitemap.xml'], true) || str_starts_with($uri, '/md/')) {
     require_once __DIR__ . '/includes/markdown-router.php';
     MarkdownRouter::handleRequest($_SERVER['REQUEST_URI']);
     return true;

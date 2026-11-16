@@ -18,7 +18,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['action']) && $_POST['
             $syncResult = SeoSyncEngine::syncAll("Manual Admin Regeneration via Markdown Health Dashboard");
             $writtenCount = $syncResult['files']['md_files']['count_written'] ?? 21;
             $duration = $syncResult['duration_ms'] ?? 0;
-            setFlashMessage('success', "Universal Markdown synchronization completed in {$duration}ms. {$writtenCount} Markdown files, llms.txt, llms.md, and sitemap.xml are now fully updated.");
+            setFlashMessage('success', "Universal Markdown synchronization completed in {$duration}ms. {$writtenCount} Markdown files, llms.txt, and sitemap.xml are now fully updated.");
         } catch (Throwable $e) {
             setFlashMessage('error', 'Synchronization error: ' . $e->getMessage());
         }
@@ -211,7 +211,7 @@ foreach ($pagesInventory as $item) {
       <form method="POST" style="margin: 0;">
         <?= csrfField() ?>
         <input type="hidden" name="action" value="regenerate">
-        <button type="submit" class="admin-btn admin-btn-primary" onclick="return confirm('Audit and re-synchronize all 21 Markdown files, llms.txt, llms.md and sitemap.xml now?');">
+        <button type="submit" class="admin-btn admin-btn-primary" onclick="return confirm('Audit and re-synchronize all Markdown files, llms.txt and sitemap.xml now?');">
           <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="width: 16px; height: 16px; margin-right: 6px;"><polyline points="23 4 23 10 17 10"/><polyline points="1 20 1 14 7 14"/><path d="M3.51 9a9 9 0 0 1 14.85-3.36L23 10M1 14l4.64 4.36A9 9 0 0 0 20.49 15"/></svg>
           Audit &amp; Re-synchronize All Dependencies
         </button>
@@ -272,7 +272,6 @@ foreach ($pagesInventory as $item) {
       </div>
       <div style="display: flex; gap: 0.5rem; margin-top: 0.5rem; flex-wrap: wrap;">
         <a href="../llms.txt" target="_blank" style="background: rgba(6, 181, 249, 0.12); color: #06B5F9; border: 1px solid rgba(6, 181, 249, 0.3); font-size: 0.75rem; padding: 0.25rem 0.5rem; border-radius: 4px; text-decoration: none; font-family: var(--adm-font-mono);">llms.txt (<?= round(filesize(ROOT_PATH . '/llms.txt') / 1024, 1) ?>K) ↗</a>
-        <a href="../llms.md" target="_blank" style="background: rgba(6, 181, 249, 0.12); color: #06B5F9; border: 1px solid rgba(6, 181, 249, 0.3); font-size: 0.75rem; padding: 0.25rem 0.5rem; border-radius: 4px; text-decoration: none; font-family: var(--adm-font-mono);">llms.md (<?= round(filesize(ROOT_PATH . '/llms.md') / 1024, 1) ?>K) ↗</a>
         <a href="../sitemap.xml" target="_blank" style="background: rgba(6, 181, 249, 0.12); color: #06B5F9; border: 1px solid rgba(6, 181, 249, 0.3); font-size: 0.75rem; padding: 0.25rem 0.5rem; border-radius: 4px; text-decoration: none; font-family: var(--adm-font-mono);">sitemap (<?= round(filesize(ROOT_PATH . '/sitemap.xml') / 1024, 1) ?>K) ↗</a>
       </div>
     </div>

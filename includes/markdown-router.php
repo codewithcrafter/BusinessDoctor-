@@ -40,7 +40,7 @@ class MarkdownRouter
             self::sendNotFound("Access denied: Administrative and internal endpoints cannot be rendered as Markdown.");
         }
 
-                // Handle direct discovery files: llms.txt, llms.md, sitemap.xml
+                // Handle direct discovery files: llms.txt, sitemap.xml
         if ($path === '/llms.txt') {
             $content = SeoSyncEngine::generateLlmsTxt();
             header("Content-Type: text/plain; charset=UTF-8");
@@ -50,11 +50,6 @@ class MarkdownRouter
             header("Access-Control-Allow-Origin: *");
             echo $content;
             exit;
-        }
-
-        if ($path === '/llms.md') {
-            $content = SeoSyncEngine::generateLlmsMd();
-            self::sendResponse($content);
         }
 
         if ($path === '/sitemap.xml') {
@@ -368,7 +363,6 @@ class MarkdownRouter
         echo "Please explore our available public documentation at the master index:\n";
         echo "- Master Markdown Index: [{$baseUrl}/md]({$baseUrl}/md)\n";
         echo "- AI Discovery Document: [{$baseUrl}/llms.txt]({$baseUrl}/llms.txt)\n";
-        echo "- Full LLM Knowledge Graph: [{$baseUrl}/llms.md]({$baseUrl}/llms.md)\n";
         exit;
     }
 }

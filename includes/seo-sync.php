@@ -1892,20 +1892,9 @@ MD;
             $errors[] = 'llms.txt generation error: ' . $e->getMessage();
         }
 
-        // 3. Generate & Write llms.md
-        try {
-            $llmsMdContent = self::generateLlmsMd();
-            if (self::writeFileAtomic($llmsMdPath, $llmsMdContent)) {
-                $filesWritten['llms_md'] = [
-                    'path' => 'llms.md',
-                    'size_bytes' => strlen($llmsMdContent),
-                    'status' => 'written'
-                ];
-            } else {
-                $errors[] = 'Failed to write llms.md';
-            }
-        } catch (Throwable $e) {
-            $errors[] = 'llms.md generation error: ' . $e->getMessage();
+        // 3. llms.md has been permanently removed per specification
+        if (file_exists($llmsMdPath)) {
+            @unlink($llmsMdPath);
         }
 
         // 4. Generate & Synchronize Markdown Files (/md and /md/*.md)
