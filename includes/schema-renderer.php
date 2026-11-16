@@ -30,13 +30,13 @@ function getSupportedSchemaPages(): array
         ],
         'services' => [
             'name' => 'IT Services Portfolio',
-            'url' => '/company',
+            'url' => '/digital-marketing-company-in-delhi',
             'recommended_types' => ['ProfessionalService', 'BreadcrumbList'],
             'is_dynamic' => false
         ],
         'service-detail' => [
             'name' => 'Individual Service Pages',
-            'url' => '/company/{slug}',
+            'url' => '/{slug}-company-in-delhi',
             'recommended_types' => ['Service', 'BreadcrumbList'],
             'is_dynamic' => true
         ],
@@ -87,7 +87,7 @@ function detectCurrentPageKey(): string
     // Check clean route paths first
     $reqPath = parse_url($_SERVER['REQUEST_URI'] ?? '', PHP_URL_PATH);
     if ($reqPath !== null) {
-        if ($reqPath === '/company' || $reqPath === '/company/' || $reqPath === '/company-in-delhi' || $reqPath === '/company-in-delhi/') {
+        if ($reqPath === '/company' || $reqPath === '/company/' || $reqPath === '/company-in-delhi' || $reqPath === '/company-in-delhi/' || $reqPath === '/digital-marketing-company-in-delhi' || $reqPath === '/digital-marketing-company-in-delhi/') {
             return 'services';
         }
         if (preg_match('#^/company/([a-zA-Z0-9_-]+)#', $reqPath) || preg_match('#^/([a-zA-Z0-9_-]+)-company-in-delhi#', $reqPath) || preg_match('#^/services/([a-zA-Z0-9_-]+)#', $reqPath)) {
@@ -540,13 +540,11 @@ function renderPageSchemas(?string $pageKey = null, array $contextData = []): st
             '{{DATE_MODIFIED}}' => $modDateIso,
             '{{FEATURED_IMAGE}}' => $featuredImg,
             '{{CATEGORY}}' => addslashes($category),
-            '{{SERVICES_URL}}' => $baseUrl . '/company',
+            '{{SERVICES_URL}}' => $baseUrl . '/digital-marketing-company-in-delhi',
             '{{BLOG_URL}}' => $baseUrl . '/blog',
-            '/services.php' => '/company',
-            '/company-in-delhi' => '/company',
+            '/services.php' => '/digital-marketing-company-in-delhi',
             '/insights.php' => '/blog',
-            'services.php' => 'company',
-            'company-in-delhi' => 'company',
+            'services.php' => 'digital-marketing-company-in-delhi',
             'insights.php' => 'blog'
         ];
 
@@ -565,6 +563,39 @@ function renderPageSchemas(?string $pageKey = null, array $contextData = []): st
             $decoded = json_decode($boundJson, true);
             if (!is_array($decoded) || json_last_error() !== JSON_ERROR_NONE) {
                 continue;
+            }
+
+            // Dynamic enrichment for Blog listing on /blog: attach published articles dynamically
+            if (($row['schema_type'] ?? '') === 'Blog' && $pageKey === 'insights') {
+                try {
+                    $artStmt = $pdo->query("SELECT slug, title, excerpt, summary, author_name, author, published_at, updated_at, created_at FROM insights WHERE status = 'published' ORDER BY published_at DESC, id DESC");
+                    $articles = $artStmt->fetchAll(PDO::FETCH_ASSOC);
+                    $blogPosts = [];
+                    foreach ($articles as $art) {
+                        $artSlug = $art['slug'];
+                        $artUrl = $baseUrl . '/blog/' . urlencode($artSlug);
+                        $pubDate = date('c', strtotime((string)($art['published_at'] ?: $art['created_at'] ?: 'now')));
+                        $modDate = date('c', strtotime((string)($art['updated_at'] ?: $pubDate)));
+                        $desc = $art['excerpt'] ?: ($art['summary'] ?: '');
+                        $author = $art['author_name'] ?: ($art['author'] ?: 'BusinessDoctor Expert');
+
+                        $blogPosts[] = [
+                            '@type' => 'BlogPosting',
+                            'headline' => $art['title'],
+                            'url' => $artUrl,
+                            'description' => $desc,
+                            'datePublished' => $pubDate,
+                            'dateModified' => $modDate,
+                            'author' => [
+                                '@type' => 'Person',
+                                'name' => $author
+                            ]
+                        ];
+                    }
+                    if (!empty($blogPosts)) {
+                        $decoded['blogPost'] = $blogPosts;
+                    }
+                } catch (Throwable $e) {}
             }
 
             // Enforce unified single Organization entity with canonical @id per page
@@ -608,7 +639,7 @@ function renderPageSchemas(?string $pageKey = null, array $contextData = []): st
                     '@type' => 'ListItem',
                     'position' => 2,
                     'name' => 'Services Portfolio',
-                    'item' => $baseUrl . '/company'
+                    'item' => $baseUrl . '/digital-marketing-company-in-delhi'
                 ];
                 $breadcrumbItems[] = [
                     '@type' => 'ListItem',
@@ -634,7 +665,7 @@ function renderPageSchemas(?string $pageKey = null, array $contextData = []): st
                     '@type' => 'ListItem',
                     'position' => 2,
                     'name' => 'Services Portfolio',
-                    'item' => $baseUrl . '/company'
+                    'item' => $baseUrl . '/digital-marketing-company-in-delhi'
                 ];
             } elseif ($pageKey === 'case-studies') {
                 $breadcrumbItems[] = [

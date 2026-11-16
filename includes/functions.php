@@ -501,8 +501,7 @@ function getServiceUrl(string $slug): string
         'strategic-consulting' => 'web-development-company-in-delhi',
         'digital-engineering' => 'web-development-company-in-delhi',
         'ai-automation-workflows' => 'web-development-company-in-delhi',
-
-        'cloud-it-consulting' => 'cloud-it-consulting-company-in-delhi',
+        'cloud-it-consulting' => 'web-development-company-in-delhi',
     ];
 
     $targetSlug = $canonicalMap[$clean] ?? ($clean . '-company-in-delhi');
@@ -1224,6 +1223,7 @@ function getPracticeBySlug(string $slug): ?array
         'strategic-consulting' => 'web-development',
         'digital-engineering' => 'web-development',
         'ai-automation-workflows' => 'web-development',
+        'cloud-it-consulting' => 'web-development',
 
         'digital-marketing-seo' => 'seo',
         'seo-services' => 'seo',
