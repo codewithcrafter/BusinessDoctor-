@@ -1,13 +1,13 @@
-# Digital Marketing & SEO
+# SEO — Search Engine Optimization
 
-> Search Engine Dominance, Google Ads & Paid Media Scaling
+> Organic Search Dominance, Technical Hygiene & Keyword Authority
 
 ## Discipline Information
-- **Practice Area**: 02 Digital Marketing & SEO
-- **Canonical Web URL**: [https://demo.businesdoctor.com/company/digital-marketing-seo](https://demo.businesdoctor.com/company/digital-marketing-seo)
-- **Clean Markdown URL**: [https://demo.businesdoctor.com/company/digital-marketing-seo.md](https://demo.businesdoctor.com/company/digital-marketing-seo.md)
-- **Central Markdown URL**: [https://demo.businesdoctor.com/md/services/digital-marketing-seo.md](https://demo.businesdoctor.com/md/services/digital-marketing-seo.md)
-- **Direct Consultation**: [Schedule Practice Scope](http://demo.businesdoctor.com/contact.php?service=Digital+Marketing+%26+SEO)
+- **Practice Area**: 06 SEO — Search Engine Optimization
+- **Canonical Web URL**: [https://demo.businesdoctor.com/company/seo](https://demo.businesdoctor.com/company/seo)
+- **Clean Markdown URL**: [https://demo.businesdoctor.com/company/seo.md](https://demo.businesdoctor.com/company/seo.md)
+- **Central Markdown URL**: [https://demo.businesdoctor.com/md/company/seo.md](https://demo.businesdoctor.com/md/company/seo.md)
+- **Direct Consultation**: [Schedule Practice Scope](https://demo.businesdoctor.com/contact?service=SEO+%E2%80%94+Search+Engine+Optimization)
 
 ---
 
@@ -20,7 +20,7 @@ PERFORMANCE MARKETING & TECHNICAL SEO
           [
             Get a Free Consultation
 
-          ](http://demo.businesdoctor.com/contact.php?service=Digital+Marketing+%26+SEO)
+          ](https://demo.businesdoctor.com/contact?service=SEO+%E2%80%94+Search+Engine+Optimization)
           [
             Explore Our Services
 
@@ -89,7 +89,7 @@ Verified benchmark engineered across production client deployments.
           [
             Schedule Diagnostic Call
 
-          ](http://demo.businesdoctor.com/contact.php?service=Digital+Marketing+%26+SEO)
+          ](https://demo.businesdoctor.com/contact?service=SEO+%E2%80%94+Search+Engine+Optimization)
 
             GROWTH DIAGNOSTIC ENGINE
 
@@ -140,7 +140,7 @@ Deep architectural remediation ensuring every high-priority page is crawled, ind
           [
             Inquire About This Service
 
-          ](http://demo.businesdoctor.com/contact.php?service=Digital+Marketing+%26+SEO&capability=Technical+SEO+%26+Crawl+Optimization)
+          ](https://demo.businesdoctor.com/contact?service=SEO+%E2%80%94+Search+Engine+Optimization&capability=Technical+SEO+%26+Crawl+Optimization)
 
 ### High-Intent Google Ads & Search Marketing
 
@@ -160,7 +160,7 @@ Precision Google Search, Performance Max, and YouTube campaigns engineered to ca
           [
             Inquire About This Service
 
-          ](http://demo.businesdoctor.com/contact.php?service=Digital+Marketing+%26+SEO&capability=High-Intent+Google+Ads+%26+Search+Marketing)
+          ](https://demo.businesdoctor.com/contact?service=SEO+%E2%80%94+Search+Engine+Optimization&capability=High-Intent+Google+Ads+%26+Search+Marketing)
 
 ### Paid Social & Meta Performance Scaling
 
@@ -180,7 +180,7 @@ High-converting video and image ad campaigns across Instagram, Facebook, and Lin
           [
             Inquire About This Service
 
-          ](http://demo.businesdoctor.com/contact.php?service=Digital+Marketing+%26+SEO&capability=Paid+Social+%26+Meta+Performance+Scaling)
+          ](https://demo.businesdoctor.com/contact?service=SEO+%E2%80%94+Search+Engine+Optimization&capability=Paid+Social+%26+Meta+Performance+Scaling)
 
 ### Conversion Rate Optimization (CRO)
 
@@ -200,7 +200,7 @@ Systematic qualitative and quantitative experimentation on your key landing page
           [
             Inquire About This Service
 
-          ](http://demo.businesdoctor.com/contact.php?service=Digital+Marketing+%26+SEO&capability=Conversion+Rate+Optimization+%28CRO%29)
+          ](https://demo.businesdoctor.com/contact?service=SEO+%E2%80%94+Search+Engine+Optimization&capability=Conversion+Rate+Optimization+%28CRO%29)
 
 ### Server-Side Tracking & Full Attribution
 
@@ -220,7 +220,7 @@ First-party data infrastructure that circumvents ad blockers, Safari ITP, and br
           [
             Inquire About This Service
 
-          ](http://demo.businesdoctor.com/contact.php?service=Digital+Marketing+%26+SEO&capability=Server-Side+Tracking+%26+Full+Attribution)
+          ](https://demo.businesdoctor.com/contact?service=SEO+%E2%80%94+Search+Engine+Optimization&capability=Server-Side+Tracking+%26+Full+Attribution)
 
 ### Topical Authority & Content Strategy
 
@@ -240,7 +240,7 @@ Comprehensive content ecosystems designed around thematic clusters that position
           [
             Inquire About This Service
 
-          ](http://demo.businesdoctor.com/contact.php?service=Digital+Marketing+%26+SEO&capability=Topical+Authority+%26+Content+Strategy)
+          ](https://demo.businesdoctor.com/contact?service=SEO+%E2%80%94+Search+Engine+Optimization&capability=Topical+Authority+%26+Content+Strategy)
 
         STRUCTURED EXECUTION TIMELINE
 
@@ -567,11 +567,11 @@ We implement automated honeypot spam filters, work email verification, and condi
               [
                 Get a Free Consultation
 
-              ](http://demo.businesdoctor.com/contact.php?service=Digital+Marketing+%26+SEO)
+              ](https://demo.businesdoctor.com/contact?service=SEO+%E2%80%94+Search+Engine+Optimization)
               [
                 Request Digital Audit
 
-              ](http://demo.businesdoctor.com/audit.php)
+              ](https://demo.businesdoctor.com/audit)
 
                 +1 (800) 492-3628
 

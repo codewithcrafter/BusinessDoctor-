@@ -4,12 +4,17 @@
 BusinessDoctor is an enterprise digital services practice delivering full-stack software development, performance digital marketing, UI/UX architecture, e-commerce marketplace scaling, creative video production, and cloud IT infrastructure.
 
 ## Core Practice Disciplines
-- [Web & Custom Software Development](https://demo.businesdoctor.com/company/web-software-development): Custom enterprise websites, fast web applications, client portals, and secure database solutions engineered with modern PHP, HTML5, and clean JavaScript.
-- [Digital Marketing & Performance Ads](https://demo.businesdoctor.com/company/digital-marketing-seo): Comprehensive SEO, high-ROI Google Ads campaigns, social media marketing, and data-backed lead generation strategies that drive qualified customer acquisition.
-- [UI/UX Design & Brand Identity](https://demo.businesdoctor.com/company/ui-ux-branding): Modern UI/UX design, interactive prototypes, corporate logo design, brand style guides, and digital marketing creatives that make your brand stand out.
-- [E-Commerce & Marketplace Management](https://demo.businesdoctor.com/company/ecommerce-marketplaces): Full-lifecycle e-commerce growth: Amazon and Flipkart account management, A+ content, catalog SEO, Buy Box protection, and marketplace advertising.
-- [Creative Production & Video Marketing](https://demo.businesdoctor.com/company/creative-video-production): High-resolution commercial product photography, brand promo videos, engaging Reels and Shorts, and motion graphics that captivate digital audiences.
-- [Cloud Solutions & IT Consulting](https://demo.businesdoctor.com/company/cloud-it-consulting): Strategic IT consulting, cloud server setup, continuous website maintenance, security audits, and business process automation.
+- [SMO — Social Media Optimization](https://demo.businesdoctor.com/company/smo): Strategic profile optimization, bio conversion funnels, branded content templates, and improved social visibility.
+- [Google Business Profile Management](https://demo.businesdoctor.com/company/google-business-profile): Complete GBP setup, Google Maps optimization, local search visibility, profile management, and review strategy.
+- [PPC / Paid Ads](https://demo.businesdoctor.com/company/ppc-paid-ads): High-converting Google Search, Performance Max, Meta Ads, and LinkedIn B2B advertising campaigns.
+- [Ecommerce Management](https://demo.businesdoctor.com/company/ecommerce-management): Amazon and Flipkart marketplace management, product listings, inventory optimization, A+ content, and marketplace growth.
+- [Graphic Design](https://demo.businesdoctor.com/company/graphic-design): Corporate brand identity, creative graphics, marketing materials, social media creatives, and visual communication.
+- [SEO — Search Engine Optimization](https://demo.businesdoctor.com/company/seo): Technical SEO, on-page optimization, keyword strategy, search visibility, organic traffic, and performance monitoring.
+- [Social Media Marketing](https://demo.businesdoctor.com/company/social-media-marketing): Social media strategy, content planning, campaign management, audience engagement, and brand growth.
+- [Product Photography](https://demo.businesdoctor.com/company/product-photography): Professional product photography, ecommerce product visuals, creative compositions, and conversion-focused imagery.
+- [Video Editing](https://demo.businesdoctor.com/company/video-editing): Professional promotional videos, short-form content, Instagram Reels, YouTube Shorts, and brand videos.
+- [Web Development](https://demo.businesdoctor.com/company/web-development): Fast, responsive business websites, custom web applications, performance optimization, and conversion-focused development.
+- [Cloud Solutions & IT Consulting](https://demo.businesdoctor.com/company/cloud-it-consulting): Enterprise cloud infrastructure, DevSecOps automation, and strategic IT modernization.
 
 ## Published Blog Articles
 - [Automated Test Blog Post for SEO Sync](https://demo.businesdoctor.com/blog/automated-test-blog-1794647339): Test summary for automated sync verification.
@@ -24,7 +29,7 @@ BusinessDoctor is an enterprise digital services practice delivering full-stack 
 - [Marketplace Management & ROAS Scaling: 4.6x Ad Return for Apex Industrial](https://demo.businesdoctor.com/case-studies/multichannel-retail-marketplace-dominance): [Industrial Equipment & B2B Retail] (1.8x ROAS / 34% Buy Box Loss → 4.6x ROAS / 94% Buy Box Control) Apex Industrial was losing Buy Box share on Amazon and Flipkart due to unauthorized resellers, poor product titles, and unoptimized ad ca...
 
 ## Public Tools & Resources
-- [Free Digital Architecture Audit](https://demo.businesdoctor.com/audit.php): Proprietary diagnostic benchmarking technical bottlenecks, security vulnerabilities, conversion leaks, and scale readiness.
+- [Free Digital Architecture Audit](https://demo.businesdoctor.com/audit): Proprietary diagnostic benchmarking technical bottlenecks, security vulnerabilities, conversion leaks, and scale readiness.
 - [Public Markdown Index](https://demo.businesdoctor.com/md): Complete catalog of pure Markdown mirrors for all published articles, case studies, and practice disciplines.
 - [Comprehensive AI Documentation Index](https://demo.businesdoctor.com/llms.md): Complete machine-readable markdown reference containing full practice details, technical capabilities, and comprehensive catalog.
-- [Executive Advisory & Project Inquiries](https://demo.businesdoctor.com/contact.php): Direct communication portal for engineering scoping, proposals, and consultative advisory.
+- [Executive Advisory & Project Inquiries](https://demo.businesdoctor.com/contact): Direct communication portal for engineering scoping, proposals, and consultative advisory.

@@ -3,11 +3,11 @@
 > Cloud Infrastructure, DevOps, Cybersecurity & Systems Maintenance
 
 ## Discipline Information
-- **Practice Area**: 06 Cloud Solutions & IT Consulting
+- **Practice Area**: 11 Cloud Solutions & IT Consulting
 - **Canonical Web URL**: [https://demo.businesdoctor.com/company/cloud-it-consulting](https://demo.businesdoctor.com/company/cloud-it-consulting)
 - **Clean Markdown URL**: [https://demo.businesdoctor.com/company/cloud-it-consulting.md](https://demo.businesdoctor.com/company/cloud-it-consulting.md)
-- **Central Markdown URL**: [https://demo.businesdoctor.com/md/services/cloud-it-consulting.md](https://demo.businesdoctor.com/md/services/cloud-it-consulting.md)
-- **Direct Consultation**: [Schedule Practice Scope](http://demo.businesdoctor.com/contact.php?service=Cloud+Solutions+%26+IT+Consulting)
+- **Central Markdown URL**: [https://demo.businesdoctor.com/md/company/cloud-it-consulting.md](https://demo.businesdoctor.com/md/company/cloud-it-consulting.md)
+- **Direct Consultation**: [Schedule Practice Scope](https://demo.businesdoctor.com/contact?service=Cloud+Solutions+%26+IT+Consulting)
 
 ---
 
@@ -20,7 +20,7 @@ ENTERPRISE CLOUD ARCHITECTURE & DEVOPS
           [
             Get a Free Consultation
 
-          ](http://demo.businesdoctor.com/contact.php?service=Cloud+Solutions+%26+IT+Consulting)
+          ](https://demo.businesdoctor.com/contact?service=Cloud+Solutions+%26+IT+Consulting)
           [
             Explore Our Services
 
@@ -89,7 +89,7 @@ Verified benchmark engineered across production client deployments.
           [
             Schedule Diagnostic Call
 
-          ](http://demo.businesdoctor.com/contact.php?service=Cloud+Solutions+%26+IT+Consulting)
+          ](https://demo.businesdoctor.com/contact?service=Cloud+Solutions+%26+IT+Consulting)
 
             CLOUD OPERATIONS CENTER
 
@@ -140,7 +140,7 @@ Custom enterprise cloud blueprints engineered for high availability, fault toler
           [
             Inquire About This Service
 
-          ](http://demo.businesdoctor.com/contact.php?service=Cloud+Solutions+%26+IT+Consulting&capability=AWS%2C+GCP+%26+Azure+Architecture+Design)
+          ](https://demo.businesdoctor.com/contact?service=Cloud+Solutions+%26+IT+Consulting&capability=AWS%2C+GCP+%26+Azure+Architecture+Design)
 
 ### DevOps Automation & CI/CD Pipelines
 
@@ -160,7 +160,7 @@ Turn your release cycles into an effortless, automated process with modern autom
           [
             Inquire About This Service
 
-          ](http://demo.businesdoctor.com/contact.php?service=Cloud+Solutions+%26+IT+Consulting&capability=DevOps+Automation+%26+CI%2FCD+Pipelines)
+          ](https://demo.businesdoctor.com/contact?service=Cloud+Solutions+%26+IT+Consulting&capability=DevOps+Automation+%26+CI%2FCD+Pipelines)
 
 ### FinOps Cloud Cost Optimization
 
@@ -180,7 +180,7 @@ Rigorous algorithmic analysis of your cloud resource utilization to identify was
           [
             Inquire About This Service
 
-          ](http://demo.businesdoctor.com/contact.php?service=Cloud+Solutions+%26+IT+Consulting&capability=FinOps+Cloud+Cost+Optimization)
+          ](https://demo.businesdoctor.com/contact?service=Cloud+Solutions+%26+IT+Consulting&capability=FinOps+Cloud+Cost+Optimization)
 
 ### Cybersecurity Hardening & SOC 2 Compliance
 
@@ -200,7 +200,7 @@ Comprehensive infrastructure security audits and implementation to help your org
           [
             Inquire About This Service
 
-          ](http://demo.businesdoctor.com/contact.php?service=Cloud+Solutions+%26+IT+Consulting&capability=Cybersecurity+Hardening+%26+SOC+2+Compliance)
+          ](https://demo.businesdoctor.com/contact?service=Cloud+Solutions+%26+IT+Consulting&capability=Cybersecurity+Hardening+%26+SOC+2+Compliance)
 
 ### Database Performance Tuning & Scaling
 
@@ -220,7 +220,7 @@ Deep architectural remediation for PostgreSQL, MySQL, and Redis: query indexing,
           [
             Inquire About This Service
 
-          ](http://demo.businesdoctor.com/contact.php?service=Cloud+Solutions+%26+IT+Consulting&capability=Database+Performance+Tuning+%26+Scaling)
+          ](https://demo.businesdoctor.com/contact?service=Cloud+Solutions+%26+IT+Consulting&capability=Database+Performance+Tuning+%26+Scaling)
 
 ### 24/7 SRE Monitoring & Disaster Recovery
 
@@ -240,7 +240,7 @@ Round-the-clock telemetry, automated synthetic health checks, and disaster recov
           [
             Inquire About This Service
 
-          ](http://demo.businesdoctor.com/contact.php?service=Cloud+Solutions+%26+IT+Consulting&capability=24%2F7+SRE+Monitoring+%26+Disaster+Recovery)
+          ](https://demo.businesdoctor.com/contact?service=Cloud+Solutions+%26+IT+Consulting&capability=24%2F7+SRE+Monitoring+%26+Disaster+Recovery)
 
         STRUCTURED EXECUTION TIMELINE
 
@@ -567,11 +567,11 @@ Yes. We offer ongoing Site Reliability Engineering (SRE) retainer plans that inc
               [
                 Get a Free Consultation
 
-              ](http://demo.businesdoctor.com/contact.php?service=Cloud+Solutions+%26+IT+Consulting)
+              ](https://demo.businesdoctor.com/contact?service=Cloud+Solutions+%26+IT+Consulting)
               [
                 Request Digital Audit
 
-              ](http://demo.businesdoctor.com/audit.php)
+              ](https://demo.businesdoctor.com/audit)
 
                 +1 (800) 492-3628
 

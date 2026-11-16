@@ -44,9 +44,11 @@ class MarkdownRouter
         if ($path === '/llms.txt') {
             $content = SeoSyncEngine::generateLlmsTxt();
             header("Content-Type: text/plain; charset=UTF-8");
-            header("Cache-Control: no-cache, no-store, must-revalidate, max-age=0");
+            header("Cache-Control: no-cache, no-store, must-revalidate, max-age=0, s-maxage=0");
             header("Pragma: no-cache");
             header("Expires: 0");
+            header("X-LiteSpeed-Cache-Control: no-cache");
+            header("X-LiteSpeed-Purge: *");
             header("Access-Control-Allow-Origin: *");
             echo $content;
             exit;
@@ -54,15 +56,27 @@ class MarkdownRouter
 
         if ($path === '/llms.md') {
             $content = SeoSyncEngine::generateLlmsMd();
-            self::sendResponse($content);
+            header("Content-Type: text/markdown; charset=UTF-8");
+            header("Cache-Control: no-cache, no-store, must-revalidate, max-age=0, s-maxage=0");
+            header("Pragma: no-cache");
+            header("Expires: 0");
+            header("X-LiteSpeed-Cache-Control: no-cache");
+            header("X-LiteSpeed-Purge: *");
+            header("Access-Control-Allow-Origin: *");
+            header("X-Robots-Tag: index, follow");
+            echo $content;
+            exit;
         }
 
         if ($path === '/sitemap.xml') {
             $content = SeoSyncEngine::generateSitemapXml();
             header("Content-Type: application/xml; charset=UTF-8");
-            header("Cache-Control: no-cache, no-store, must-revalidate, max-age=0");
+            header("Cache-Control: no-cache, no-store, must-revalidate, max-age=0, s-maxage=0");
             header("Pragma: no-cache");
             header("Expires: 0");
+            header("X-LiteSpeed-Cache-Control: no-cache");
+            header("X-LiteSpeed-Purge: *");
+            header("Access-Control-Allow-Origin: *");
             echo $content;
             exit;
         }
@@ -140,23 +154,35 @@ class MarkdownRouter
         }
 
         // ----------------------------------------------------
-        // 4. About Page Markdown: /about.php.md, /about.md
+        // 4. About Page Markdown: /about.md (301 redirect legacy /about.php.md)
         // ----------------------------------------------------
-        if ($cleanRoute === '/about.php' || $cleanRoute === '/about') {
+        if ($cleanRoute === '/about.php') {
+            header("Location: " . SeoSyncEngine::getBaseUrl() . "/about.md", true, 301);
+            exit;
+        }
+        if ($cleanRoute === '/about') {
             self::sendResponse(SeoSyncEngine::generateStaticPageMarkdown('about'));
         }
 
         // ----------------------------------------------------
-        // 5. Contact Page Markdown: /contact.php.md, /contact.md
+        // 5. Contact Page Markdown: /contact.md (301 redirect legacy /contact.php.md)
         // ----------------------------------------------------
-        if ($cleanRoute === '/contact.php' || $cleanRoute === '/contact') {
+        if ($cleanRoute === '/contact.php') {
+            header("Location: " . SeoSyncEngine::getBaseUrl() . "/contact.md", true, 301);
+            exit;
+        }
+        if ($cleanRoute === '/contact') {
             self::sendResponse(SeoSyncEngine::generateStaticPageMarkdown('contact'));
         }
 
         // ----------------------------------------------------
-        // 6. Services Overview: /company-in-delhi.md, /services.php.md, /services.md, /company.md
+        // 6. Services Overview: /company.md (301 redirect legacy /services.md, etc.)
         // ----------------------------------------------------
-        if ($cleanRoute === '/company-in-delhi' || $cleanRoute === '/services.php' || $cleanRoute === '/services' || $cleanRoute === '/company') {
+        if ($cleanRoute === '/company-in-delhi' || $cleanRoute === '/services.php' || $cleanRoute === '/services') {
+            header("Location: " . SeoSyncEngine::getBaseUrl() . "/company.md", true, 301);
+            exit;
+        }
+        if ($cleanRoute === '/company') {
             self::sendResponse(SeoSyncEngine::generateStaticPageMarkdown('services'));
         }
 
@@ -188,9 +214,13 @@ class MarkdownRouter
         }
 
         // ----------------------------------------------------
-        // 8. Blog Listing: /blog.md, /blog.php.md, /insights.php.md, /insights.md
+        // 8. Blog Listing: /blog.md (301 redirect legacy /insights.md, etc.)
         // ----------------------------------------------------
-        if ($cleanRoute === '/blog' || $cleanRoute === '/blog.php' || $cleanRoute === '/insights.php' || $cleanRoute === '/insights') {
+        if ($cleanRoute === '/blog.php' || $cleanRoute === '/insights.php' || $cleanRoute === '/insights') {
+            header("Location: " . SeoSyncEngine::getBaseUrl() . "/blog.md", true, 301);
+            exit;
+        }
+        if ($cleanRoute === '/blog') {
             self::sendResponse(SeoSyncEngine::generateStaticPageMarkdown('insights'));
         }
 
@@ -198,7 +228,7 @@ class MarkdownRouter
         // 9. Individual Blog Detail:
         //    A: /blog/{slug}.md (Canonical)
         //    B: /insights/{slug}.md (301 redirect to /blog/{slug}.md)
-        //    C: /insight-detail.php.md?slug={slug}
+        //    C: /insight-detail.php.md?slug={slug} (301 redirect to /blog/{slug}.md)
         // ----------------------------------------------------
         if (preg_match('#^/blog/([a-zA-Z0-9_-]+)$#', $cleanRoute, $m)) {
             self::renderBlogMarkdown($m[1]);
@@ -213,36 +243,46 @@ class MarkdownRouter
             if (empty($slug)) {
                 self::sendNotFound("No blog article slug was specified in query parameters.");
             }
-            self::renderBlogMarkdown((string)$slug);
+            header("Location: " . SeoSyncEngine::getBaseUrl() . "/blog/" . urlencode((string)$slug) . ".md", true, 301);
+            exit;
         }
 
         // ----------------------------------------------------
-        // 10. Case Studies Listing: /case-studies.php.md, /case-studies.md
+        // 10. Case Studies Listing: /case-studies.md (301 redirect /case-studies.php.md)
         // ----------------------------------------------------
-        if ($cleanRoute === '/case-studies.php' || $cleanRoute === '/case-studies') {
+        if ($cleanRoute === '/case-studies.php') {
+            header("Location: " . SeoSyncEngine::getBaseUrl() . "/case-studies.md", true, 301);
+            exit;
+        }
+        if ($cleanRoute === '/case-studies') {
             self::sendResponse(SeoSyncEngine::generateStaticPageMarkdown('case-studies'));
         }
 
         // ----------------------------------------------------
         // 11. Individual Case Study Detail:
-        //     A: /case-study-detail.php.md?slug={slug}
-        //     B: /case-studies/{slug}.md
+        //     A: /case-studies/{slug}.md (Canonical)
+        //     B: /case-study-detail.php.md?slug={slug} (301 redirect)
         // ----------------------------------------------------
         if ($cleanRoute === '/case-study-detail.php' || $cleanRoute === '/case-study-detail') {
             $slug = $params['slug'] ?? '';
             if (empty($slug)) {
                 self::sendNotFound("No case study slug was specified in query parameters.");
             }
-            self::renderCaseStudyMarkdown((string)$slug);
+            header("Location: " . SeoSyncEngine::getBaseUrl() . "/case-studies/" . urlencode((string)$slug) . ".md", true, 301);
+            exit;
         }
         if (preg_match('#^/case-studies/([a-zA-Z0-9_-]+)$#', $cleanRoute, $m)) {
             self::renderCaseStudyMarkdown($m[1]);
         }
 
         // ----------------------------------------------------
-        // 12. Digital Audit: /audit.php.md, /audit.md, /diagnostic.php.md, /diagnostic.md
+        // 12. Digital Audit: /audit.md (301 redirect /audit.php.md, /diagnostic.php.md)
         // ----------------------------------------------------
-        if ($cleanRoute === '/audit.php' || $cleanRoute === '/audit' || $cleanRoute === '/diagnostic.php' || $cleanRoute === '/diagnostic') {
+        if ($cleanRoute === '/audit.php' || $cleanRoute === '/diagnostic.php' || $cleanRoute === '/diagnostic') {
+            header("Location: " . SeoSyncEngine::getBaseUrl() . "/audit.md", true, 301);
+            exit;
+        }
+        if ($cleanRoute === '/audit') {
             self::sendResponse(SeoSyncEngine::generateStaticPageMarkdown('audit'));
         }
 

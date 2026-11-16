@@ -9,7 +9,7 @@ declare(strict_types=1);
 
 $serviceName = 'Creative Production & Video Marketing';
 $serviceSlug = 'creative-video-production';
-$consultationUrl = appUrl('contact.php?service=' . urlencode($serviceName));
+$consultationUrl = appUrl('contact?service=' . urlencode($serviceName));
 ?>
 
 <!-- ============================================================
@@ -335,7 +335,7 @@ $consultationUrl = appUrl('contact.php?service=' . urlencode($serviceName));
           <strong class="text-white">Lowers cost per acquisition by keeping ad creative fresh and engaging.</strong>
         </div>
         <div class="pt-3">
-          <a href="<?= appUrl('contact.php?service=' . urlencode($serviceName) . '&capability=' . urlencode('Direct-Response Performance Video Ads')) ?>" class="srv-link-action">
+          <a href="<?= appUrl('contact?service=' . urlencode($serviceName) . '&capability=' . urlencode('Direct-Response Performance Video Ads')) ?>" class="srv-link-action">
             <span>Inquire About This Service</span>
             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
           </a>
@@ -370,7 +370,7 @@ $consultationUrl = appUrl('contact.php?service=' . urlencode($serviceName));
           <strong class="text-white">Elevates product desirability and dramatically reduces return rates.</strong>
         </div>
         <div class="pt-3">
-          <a href="<?= appUrl('contact.php?service=' . urlencode($serviceName) . '&capability=' . urlencode('Commercial Product Cinematography & Photography')) ?>" class="srv-link-action">
+          <a href="<?= appUrl('contact?service=' . urlencode($serviceName) . '&capability=' . urlencode('Commercial Product Cinematography & Photography')) ?>" class="srv-link-action">
             <span>Inquire About This Service</span>
             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
           </a>
@@ -405,7 +405,7 @@ $consultationUrl = appUrl('contact.php?service=' . urlencode($serviceName));
           <strong class="text-white">Visualizes technical superiority before physical manufacturing is complete.</strong>
         </div>
         <div class="pt-3">
-          <a href="<?= appUrl('contact.php?service=' . urlencode($serviceName) . '&capability=' . urlencode('3D Product Modeling & Motion Design')) ?>" class="srv-link-action">
+          <a href="<?= appUrl('contact?service=' . urlencode($serviceName) . '&capability=' . urlencode('3D Product Modeling & Motion Design')) ?>" class="srv-link-action">
             <span>Inquire About This Service</span>
             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
           </a>
@@ -440,7 +440,7 @@ $consultationUrl = appUrl('contact.php?service=' . urlencode($serviceName));
           <strong class="text-white">Builds unshakeable corporate prestige for enterprise sales and investor relations.</strong>
         </div>
         <div class="pt-3">
-          <a href="<?= appUrl('contact.php?service=' . urlencode($serviceName) . '&capability=' . urlencode('Corporate Brand Films & Executive Documentaries')) ?>" class="srv-link-action">
+          <a href="<?= appUrl('contact?service=' . urlencode($serviceName) . '&capability=' . urlencode('Corporate Brand Films & Executive Documentaries')) ?>" class="srv-link-action">
             <span>Inquire About This Service</span>
             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
           </a>
@@ -475,7 +475,7 @@ $consultationUrl = appUrl('contact.php?service=' . urlencode($serviceName));
           <strong class="text-white">Serves as the highest-converting closing asset for your sales team.</strong>
         </div>
         <div class="pt-3">
-          <a href="<?= appUrl('contact.php?service=' . urlencode($serviceName) . '&capability=' . urlencode('Video Case Studies & Client Testimonials')) ?>" class="srv-link-action">
+          <a href="<?= appUrl('contact?service=' . urlencode($serviceName) . '&capability=' . urlencode('Video Case Studies & Client Testimonials')) ?>" class="srv-link-action">
             <span>Inquire About This Service</span>
             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
           </a>
@@ -510,7 +510,7 @@ $consultationUrl = appUrl('contact.php?service=' . urlencode($serviceName));
           <strong class="text-white">Maintains an omnipresent, authoritative presence across all social algorithms.</strong>
         </div>
         <div class="pt-3">
-          <a href="<?= appUrl('contact.php?service=' . urlencode($serviceName) . '&capability=' . urlencode('Social-First Video Packages (Reels, TikTok & Shorts)')) ?>" class="srv-link-action">
+          <a href="<?= appUrl('contact?service=' . urlencode($serviceName) . '&capability=' . urlencode('Social-First Video Packages (Reels, TikTok & Shorts)')) ?>" class="srv-link-action">
             <span>Inquire About This Service</span>
             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
           </a>
@@ -1075,7 +1075,7 @@ $consultationUrl = appUrl('contact.php?service=' . urlencode($serviceName));
                 <span>Get a Free Consultation</span>
                 <svg class="btn-srv-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
               </a>
-              <a href="<?= appUrl('audit.php') ?>" class="btn-srv-secondary btn-srv-lg">
+              <a href="<?= getAuditUrl() ?>" class="btn-srv-secondary btn-srv-lg">
                 <span>Request Digital Audit</span>
                 <svg class="btn-srv-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="9 18 15 12 9 6"/></svg>
               </a>
@@ -1101,7 +1101,7 @@ $consultationUrl = appUrl('contact.php?service=' . urlencode($serviceName));
                 <h3 class="srv-form-title">Request Technical Consultation</h3>
                 <p class="srv-form-subtitle">Direct consultation with senior enterprise architects.</p>
               </div>
-              <form action="<?= appUrl('contact.php') ?>" method="GET" class="srv-quick-form">
+              <form action="<?= getContactUrl() ?>" method="GET" class="srv-quick-form">
                 <input type="hidden" name="service" value="<?= e($serviceName) ?>">
                 <div class="srv-form-group">
                   <label class="srv-form-label" for="quick_name_creative-video-production.php">Your Full Name</label>

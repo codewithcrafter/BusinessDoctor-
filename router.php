@@ -1,5 +1,6 @@
 <?php
 // BusinessDoctor PHP Built-in Server Router for Local Development
+$_SERVER['SCRIPT_NAME'] = '/index.php';
 $uri = parse_url($_SERVER['REQUEST_URI'], PHP_URL_PATH);
 $file = __DIR__ . $uri;
 
@@ -98,6 +99,40 @@ if (preg_match('#^/case-studies/([a-zA-Z0-9_-]+)/?$#', $uri, $matches)) {
 }
 if (preg_match('#^/case-studies/?$#', $uri)) {
     require __DIR__ . '/case-studies.php';
+    return true;
+}
+if ($uri === '/case-studies.php') {
+    header("Location: /case-studies", true, 301);
+    return true;
+}
+
+// 10. Clean Institutional Pages & 301 Redirects: /audit, /about, /contact
+if ($uri === '/audit.php') {
+    header("Location: /audit", true, 301);
+    return true;
+}
+if (preg_match('#^/audit/?$#', $uri)) {
+    require __DIR__ . '/audit.php';
+    return true;
+}
+
+if ($uri === '/about.php') {
+    header("Location: /about", true, 301);
+    return true;
+}
+if (preg_match('#^/about/?$#', $uri)) {
+    require __DIR__ . '/about.php';
+    return true;
+}
+
+if (str_starts_with($uri, '/contact.php')) {
+    $qs = parse_url($_SERVER['REQUEST_URI'] ?? '', PHP_URL_QUERY);
+    $dest = '/contact' . ($qs ? '?' . $qs : '');
+    header("Location: " . $dest, true, 301);
+    return true;
+}
+if (preg_match('#^/contact/?$#', $uri)) {
+    require __DIR__ . '/contact.php';
     return true;
 }
 

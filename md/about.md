@@ -3,8 +3,8 @@
 > We founded BusinessDoctor to provide modern businesses with a reliable, all-in-one IT and digital growth partner. We eliminate the friction of managing disconnected developers, ad agencies, and designers by bringing them together under one disciplined engineering practice.
 
 ## Firm Information & Digital Resources
-- **Canonical Web URL**: [https://demo.businesdoctor.com/about.php](https://demo.businesdoctor.com/about.php)
-- **Clean Markdown URL**: [https://demo.businesdoctor.com/about.php.md](https://demo.businesdoctor.com/about.php.md)
+- **Canonical Web URL**: [https://demo.businesdoctor.com/about](https://demo.businesdoctor.com/about)
+- **Clean Markdown URL**: [https://demo.businesdoctor.com/about.md](https://demo.businesdoctor.com/about.md)
 - **Central Markdown URL**: [https://demo.businesdoctor.com/md/about.md](https://demo.businesdoctor.com/md/about.md)
 - **Master Markdown Index**: [https://demo.businesdoctor.com/md](https://demo.businesdoctor.com/md)
 - **Corporate Legal Entity**: BusinessDoctor IT Solutions & Digital Services Private Limited
@@ -92,8 +92,8 @@ Championing conversion-centered interface design, design systems, and cohesive e
 
 ## 05 // Elevate Your Digital Capabilities
 Schedule an introductory discovery call with our tech leads to discuss your web development, digital marketing, or branding requirements.
-- **Direct Consultation**: [Schedule a Project Consultation](https://demo.businesdoctor.com/contact.php)
-- **Complimentary Diagnostic**: [Request Free Digital Audit](https://demo.businesdoctor.com/audit.php)
+- **Direct Consultation**: [Schedule a Project Consultation](https://demo.businesdoctor.com/contact)
+- **Complimentary Diagnostic**: [Request Free Digital Audit](https://demo.businesdoctor.com/audit)
 - **Practice Hub**: [Explore IT Services & Practice Areas](https://demo.businesdoctor.com/company)
 
 ---

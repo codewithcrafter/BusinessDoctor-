@@ -8,7 +8,11 @@ require_once __DIR__ . '/../includes/functions.php';
 require_once __DIR__ . '/../includes/seo-sync.php';
 
 header('Content-Type: application/json; charset=UTF-8');
-header('Cache-Control: no-cache, no-store, must-revalidate');
+header('Cache-Control: no-cache, no-store, must-revalidate, max-age=0, s-maxage=0');
+header('Pragma: no-cache');
+header('Expires: 0');
+header('X-LiteSpeed-Cache-Control: no-cache');
+header('X-LiteSpeed-Purge: *');
 
 $result = SeoSyncEngine::syncAll("Production LLM Domain Correction Sync");
 echo json_encode([

@@ -3504,13 +3504,94 @@ body {
   width: min(1340px, 96vw) !important;
   max-height: calc(100vh - 85px) !important;
   overflow-y: auto;
+  background: #071A2C !important;
+  border: 1px solid rgba(6, 181, 249, 0.25) !important;
+  box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.8) !important;
+  border-radius: var(--radius-xl);
 }
 .mega-menu-inner {
-  padding: 1.35rem 2rem !important;
+  padding: 1.35rem 2rem 1.15rem !important;
 }
 .mega-menu-header {
-  padding-bottom: 0.65rem !important;
-  margin-bottom: 0.95rem !important;
+  display: flex !important;
+  justify-content: space-between !important;
+  align-items: flex-end !important;
+  padding-bottom: 0.75rem !important;
+  margin-bottom: 1rem !important;
+  border-bottom: 1px solid rgba(6, 181, 249, 0.15) !important;
+}
+.mega-header-text {
+  flex: 1;
+}
+.mega-eyebrow-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.45rem;
+  background: rgba(6, 181, 249, 0.08);
+  border: 1px solid rgba(6, 181, 249, 0.22);
+  padding: 0.2rem 0.65rem;
+  border-radius: 9999px;
+  margin-bottom: 0.35rem;
+}
+.mega-eyebrow-dot {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: #06B5F9;
+  box-shadow: 0 0 8px #06B5F9;
+}
+.mega-eyebrow {
+  color: #06B5F9 !important;
+  font-family: var(--font-mono);
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+}
+.mega-heading {
+  font-family: var(--font-display);
+  font-size: 1.25rem !important;
+  font-weight: 800 !important;
+  color: #F4F8FC !important;
+  margin: 0 0 0.25rem 0 !important;
+  line-height: 1.25 !important;
+}
+.mega-subhead {
+  color: #8FA3B8 !important;
+  font-size: 0.84rem !important;
+  margin: 0 !important;
+  max-width: 620px;
+}
+.mega-header-action {
+  flex-shrink: 0;
+  margin-left: 1.5rem;
+}
+.mega-overview-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.45rem;
+  color: #06B5F9 !important;
+  font-family: var(--font-sans);
+  font-size: 0.84rem;
+  font-weight: 600;
+  text-decoration: none;
+  padding: 0.45rem 0.95rem;
+  border-radius: var(--radius-sm);
+  background: rgba(6, 181, 249, 0.08);
+  border: 1px solid rgba(6, 181, 249, 0.25);
+  transition: all 0.2s ease;
+  white-space: nowrap;
+}
+.mega-overview-btn:hover {
+  background: rgba(6, 181, 249, 0.2);
+  border-color: #06B5F9;
+  color: #FFFFFF !important;
+  transform: translateX(2px);
+  box-shadow: 0 0 12px rgba(6, 181, 249, 0.3);
+}
+.mega-btn-icon {
+  width: 14px;
+  height: 14px;
 }
 .mega-menu-grid {
   grid-template-columns: 2.75fr 1fr !important;
@@ -3523,36 +3604,137 @@ body {
   gap: 0.4rem 1.15rem !important;
 }
 .mega-service-item {
-  padding: 0.45rem 0.65rem !important;
-  gap: 0.7rem !important;
+  display: flex !important;
+  align-items: flex-start !important;
+  gap: 0.75rem !important;
+  padding: 0.5rem 0.75rem !important;
   border-radius: var(--radius-sm) !important;
+  background: transparent;
+  border: 1px solid transparent;
+  text-decoration: none;
+  transition: all 0.18s ease;
+}
+.mega-service-item:hover {
+  background: rgba(10, 34, 59, 0.55) !important;
+  border-color: rgba(6, 181, 249, 0.35) !important;
+  transform: translateX(3px);
 }
 .mega-item-icon {
   width: 32px !important;
   height: 32px !important;
+  border-radius: var(--radius-sm);
+  background: rgba(10, 34, 59, 0.6) !important;
+  border: 1px solid rgba(6, 181, 249, 0.25) !important;
+  color: #06B5F9 !important;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  transition: all 0.18s ease;
+}
+.mega-service-item:hover .mega-item-icon {
+  background: #06B5F9 !important;
+  color: #061326 !important;
+  border-color: #0099DB !important;
+  box-shadow: 0 0 12px rgba(6, 181, 249, 0.45);
 }
 .mega-item-icon svg {
   width: 16px !important;
   height: 16px !important;
 }
+.mega-item-text {
+  flex: 1;
+  min-width: 0;
+}
 .mega-item-title {
+  font-family: var(--font-display);
   font-size: 0.86rem !important;
+  font-weight: 700 !important;
+  color: #F4F8FC !important;
   margin-bottom: 0.15rem !important;
   white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
+  display: flex;
+  align-items: baseline;
+  gap: 0.35rem;
+}
+.mega-item-num {
+  font-family: var(--font-mono);
+  font-size: 0.76rem !important;
+  color: #06B5F9 !important;
+  font-weight: 700;
+}
+.mega-service-item:hover .mega-item-title {
+  color: #06B5F9 !important;
 }
 .mega-item-desc {
   font-size: 0.75rem !important;
+  color: #8FA3B8 !important;
   line-height: 1.35 !important;
-  -webkit-line-clamp: 1 !important;
+  margin: 0 !important;
+  display: -webkit-box;
+  -webkit-line-clamp: 1;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
 }
 .mega-highlight-card {
-  padding: 1.25rem !important;
+  background: #0A1D35 !important;
+  border: 1px solid rgba(6, 181, 249, 0.3) !important;
+  border-radius: var(--radius-lg);
+  padding: 1.35rem !important;
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.4);
   height: 100%;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
+}
+.mega-highlight-title {
+  font-family: var(--font-display);
+  font-size: 1.05rem !important;
+  font-weight: 700 !important;
+  color: #F4F8FC !important;
+  margin: 0 0 0.5rem 0 !important;
+  line-height: 1.35 !important;
+}
+.mega-highlight-desc {
+  font-size: 0.8rem !important;
+  color: #8FA3B8 !important;
+  line-height: 1.45 !important;
+  margin: 0 0 1.25rem 0 !important;
+}
+.mega-cta-btn {
+  width: 100%;
+  justify-content: center;
+  text-align: center;
+}
+.mega-menu-footer {
+  margin-top: 1rem !important;
+  padding-top: 0.75rem !important;
+  border-top: 1px solid rgba(6, 181, 249, 0.15) !important;
+}
+.mega-footer-bar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.mega-footer-prompt {
+  font-size: 0.82rem;
+  color: #8FA3B8;
+}
+.mega-footer-cta {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35rem;
+  color: #06B5F9 !important;
+  font-size: 0.84rem;
+  font-weight: 600;
+  text-decoration: none;
+  transition: all 0.2s ease;
+}
+.mega-footer-cta:hover {
+  color: #FFFFFF !important;
+  transform: translateX(3px);
 }
 
 .mobile-nav-link {

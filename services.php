@@ -90,7 +90,7 @@ require_once __DIR__ . '/includes/header.php';
                   <polyline points="12 5 19 12 12 19"/>
                 </svg>
               </a>
-              <a href="<?= appUrl('contact.php?service=' . urlencode($p['name'])) ?>" class="btn btn-secondary">
+              <a href="<?= getContactUrl($p['name']) ?>" class="btn btn-secondary">
                 <span>Request Project Scope</span>
               </a>
             </div>

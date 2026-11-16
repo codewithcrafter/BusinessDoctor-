@@ -76,7 +76,7 @@ if (!$practice) {
               <polyline points="12 5 19 12 12 19"/>
             </svg>
           </a>
-          <a href="<?= appUrl('contact.php') ?>" class="btn btn-secondary btn-lg">
+          <a href="<?= getContactUrl() ?>" class="btn btn-secondary btn-lg">
             <span>Inquire About Custom Engineering</span>
           </a>
         </div>
@@ -133,14 +133,14 @@ if (file_exists($servicePartial)) {
       <p class="hero-lead-text"><?= e($practice['description']) ?></p>
 
       <div style="display: flex; gap: 1rem; flex-wrap: wrap; margin-top: 2rem;">
-        <a href="<?= appUrl('contact.php?service=' . urlencode($practice['name'])) ?>" class="btn btn-accent btn-lg">
+        <a href="<?= getContactUrl($practice['name']) ?>" class="btn btn-accent btn-lg">
           <span>Request a Project Proposal</span>
           <svg class="btn-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
             <line x1="5" y1="12" x2="19" y2="12"/>
             <polyline points="12 5 19 12 12 19"/>
           </svg>
         </a>
-        <a href="<?= appUrl('audit.php') ?>" class="btn btn-secondary btn-lg">
+        <a href="<?= getAuditUrl() ?>" class="btn btn-secondary btn-lg">
           <span>Run Digital Architecture Audit</span>
         </a>
       </div>

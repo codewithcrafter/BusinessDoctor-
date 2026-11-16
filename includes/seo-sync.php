@@ -62,7 +62,7 @@ class SeoSyncEngine
                 'description' => 'Explore BusinessDoctor’s 10 integrated digital & technology disciplines: SMO, Google Business Profile Management, PPC / Paid Ads, Ecommerce Management, Graphic Design, SEO, Social Media Marketing, Product Photography, Video Editing, and Web Development.'
             ],
             [
-                'loc' => '/audit.php',
+                'loc' => '/audit',
                 'file' => 'audit.php',
                 'priority' => '0.9',
                 'changefreq' => 'weekly',
@@ -70,7 +70,7 @@ class SeoSyncEngine
                 'description' => 'Diagnostic assessment tool to benchmark technical infrastructure, security posture, conversion leaks, and growth bottlenecks.'
             ],
             [
-                'loc' => '/case-studies.php',
+                'loc' => '/case-studies',
                 'file' => 'case-studies.php',
                 'priority' => '0.8',
                 'changefreq' => 'weekly',
@@ -86,7 +86,7 @@ class SeoSyncEngine
                 'description' => 'Practical engineering blueprints, Core Web Vitals breakdowns, and conversion optimization strategies from our senior architects and digital strategists.'
             ],
             [
-                'loc' => '/about.php',
+                'loc' => '/about',
                 'file' => 'about.php',
                 'priority' => '0.7',
                 'changefreq' => 'monthly',
@@ -94,7 +94,7 @@ class SeoSyncEngine
                 'description' => 'Our history, engineering ethos, global delivery standards, and multidisciplinary leadership team.'
             ],
             [
-                'loc' => '/contact.php',
+                'loc' => '/contact',
                 'file' => 'contact.php',
                 'priority' => '0.8',
                 'changefreq' => 'monthly',
@@ -269,7 +269,8 @@ class SeoSyncEngine
                 if (mb_strlen($summary) > 160) {
                     $summary = mb_substr($summary, 0, 157) . '...';
                 }
-                $lines[] = "- [{$title}]({$baseUrl}/blog/{$slug}): {$summary}";
+                $artUrl = $baseUrl . '/blog/' . rawurlencode($slug);
+                $lines[] = "- [{$title}]({$artUrl}): {$summary}";
             }
         }
         $lines[] = "";
@@ -289,16 +290,19 @@ class SeoSyncEngine
                 if (mb_strlen($desc) > 140) {
                     $desc = mb_substr($desc, 0, 137) . '...';
                 }
-                $lines[] = "- [{$title}]({$baseUrl}/case-studies/{$slug}): [{$industry}]{$metricText} {$desc}";
+                $caseUrl = $baseUrl . '/case-studies/' . rawurlencode($slug);
+                $lines[] = "- [{$title}]({$caseUrl}): [{$industry}]{$metricText} {$desc}";
             }
         }
         $lines[] = "";
 
         $lines[] = "## Public Tools & Resources";
-        $lines[] = "- [Free Digital Architecture Audit]({$baseUrl}/audit.php): Proprietary diagnostic benchmarking technical bottlenecks, security vulnerabilities, conversion leaks, and scale readiness.";
+        $auditUrl = $baseUrl . '/audit';
+        $contactUrl = $baseUrl . '/contact';
+        $lines[] = "- [Free Digital Architecture Audit]({$auditUrl}): Proprietary diagnostic benchmarking technical bottlenecks, security vulnerabilities, conversion leaks, and scale readiness.";
         $lines[] = "- [Public Markdown Index]({$baseUrl}/md): Complete catalog of pure Markdown mirrors for all published articles, case studies, and practice disciplines.";
         $lines[] = "- [Comprehensive AI Documentation Index]({$baseUrl}/llms.md): Complete machine-readable markdown reference containing full practice details, technical capabilities, and comprehensive catalog.";
-        $lines[] = "- [Executive Advisory & Project Inquiries]({$baseUrl}/contact.php): Direct communication portal for engineering scoping, proposals, and consultative advisory.";
+        $lines[] = "- [Executive Advisory & Project Inquiries]({$contactUrl}): Direct communication portal for engineering scoping, proposals, and consultative advisory.";
         $lines[] = "";
 
         return implode("\n", $lines);
@@ -473,7 +477,9 @@ class SeoSyncEngine
         // Digital Diagnostic Tool
         $lines[] = "## 5. Proprietary Digital Diagnostic Engine";
         $lines[] = "";
-        $lines[] = "BusinessDoctor operates an interactive diagnostic assessment portal at [{$baseUrl}/audit.php]({$baseUrl}/audit.php). The tool evaluates enterprise digital operations across four foundational vectors:";
+        $auditUrl = $baseUrl . '/audit';
+        $contactUrl = $baseUrl . '/contact';
+        $lines[] = "BusinessDoctor operates an interactive diagnostic assessment portal at [{$auditUrl}]({$auditUrl}). The tool evaluates enterprise digital operations across four foundational vectors:";
         $lines[] = "1. **Architecture & Engineering**: Monolithic framework latency, Core Web Vitals (LCP, INP, CLS), database querying bottlenecks, and mobile responsiveness.";
         $lines[] = "2. **Customer Acquisition & Traffic**: PPC ad spend waste, conversion funnel friction, organic search visibility, and CAC inflation.";
         $lines[] = "3. **Systems & Security Posture**: Infrastructure uptime resilience, automated backup hygiene, SSL/TLS configurations, and API security.";
@@ -483,7 +489,7 @@ class SeoSyncEngine
         // Contact & Engagement
         $lines[] = "## 6. Enterprise Inquiries & Contact Channels";
         $lines[] = "";
-        $lines[] = "- **Web Engagement Portal**: [{$baseUrl}/contact.php]({$baseUrl}/contact.php)";
+        $lines[] = "- **Web Engagement Portal**: [{$contactUrl}]({$contactUrl})";
         $lines[] = "- **Email Advisory**: [{$email}](mailto:{$email})";
         $lines[] = "- **Direct Phone Line**: {$phone}";
         $lines[] = "- **Headquarters**: {$hq}";
@@ -805,10 +811,10 @@ class SeoSyncEngine
         
         $serviceName = $service['name'] ?? 'Practice Area';
         $serviceSlug = $slug;
-        $consultationUrl = $baseUrl . '/contact.php?service=' . urlencode($serviceName);
-        $canonicalUrl = $baseUrl . '/company/' . urlencode($slug);
-        $cleanMdUrl = $baseUrl . '/company/' . urlencode($slug) . '.md';
-        $mdUrl = $baseUrl . '/md/services/' . urlencode($slug) . '.md';
+        $consultationUrl = $baseUrl . '/contact?service=' . urlencode($serviceName);
+        $canonicalUrl = $baseUrl . '/company/' . rawurlencode($slug);
+        $cleanMdUrl = $baseUrl . '/company/' . rawurlencode($slug) . '.md';
+        $mdUrl = $baseUrl . '/md/company/' . rawurlencode($slug) . '.md';
 
         $bodyMd = '';
         if (file_exists($file)) {
@@ -820,6 +826,13 @@ class SeoSyncEngine
             $cleanHtml = preg_replace('#<svg\b[^>]*>.*?</svg>#is', '', $rawHtml);
             $cleanHtml = preg_replace('#<span class="srv-eyebrow-dot"[^>]*></span>#is', '', $cleanHtml);
             $cleanHtml = preg_replace('#<div class="srv-process-num"[^>]*>.*?</div>#is', '', $cleanHtml);
+
+            // Normalize internal links to clean URLs
+            $cleanHtml = str_replace(
+                ['audit.php', 'contact.php', 'about.php', '/services/'],
+                ['audit', 'contact', 'about', '/company/'],
+                $cleanHtml
+            );
 
             $bodyMd = self::htmlToMarkdown($cleanHtml);
         } else {
@@ -846,6 +859,7 @@ class SeoSyncEngine
             $lines[] = "> " . trim($service['tagline']);
             $lines[] = "";
         }
+        $consultationUrl = getContactUrl($serviceName);
         $lines[] = "## Discipline Information";
         $lines[] = "- **Practice Area**: " . ($service['number'] ?? '') . " {$serviceName}";
         $lines[] = "- **Canonical Web URL**: [{$canonicalUrl}]({$canonicalUrl})";
@@ -884,8 +898,8 @@ class SeoSyncEngine
 > We founded BusinessDoctor to provide modern businesses with a reliable, all-in-one IT and digital growth partner. We eliminate the friction of managing disconnected developers, ad agencies, and designers by bringing them together under one disciplined engineering practice.
 
 ## Firm Information & Digital Resources
-- **Canonical Web URL**: [{$baseUrl}/about.php]({$baseUrl}/about.php)
-- **Clean Markdown URL**: [{$baseUrl}/about.php.md]({$baseUrl}/about.php.md)
+- **Canonical Web URL**: [{$baseUrl}/about]({$baseUrl}/about)
+- **Clean Markdown URL**: [{$baseUrl}/about.md]({$baseUrl}/about.md)
 - **Central Markdown URL**: [{$baseUrl}/md/about.md]({$baseUrl}/md/about.md)
 - **Master Markdown Index**: [{$baseUrl}/md]({$baseUrl}/md)
 - **Corporate Legal Entity**: {$legalName}
@@ -973,8 +987,8 @@ Championing conversion-centered interface design, design systems, and cohesive e
 
 ## 05 // Elevate Your Digital Capabilities
 Schedule an introductory discovery call with our tech leads to discuss your web development, digital marketing, or branding requirements.
-- **Direct Consultation**: [Schedule a Project Consultation]({$baseUrl}/contact.php)
-- **Complimentary Diagnostic**: [Request Free Digital Audit]({$baseUrl}/audit.php)
+- **Direct Consultation**: [Schedule a Project Consultation]({$baseUrl}/contact)
+- **Complimentary Diagnostic**: [Request Free Digital Audit]({$baseUrl}/audit)
 - **Practice Hub**: [Explore IT Services & Practice Areas]({$baseUrl}/company)
 
 ---
@@ -988,8 +1002,8 @@ MD;
 > Whether you need a custom high-performance web application, a full-funnel digital marketing campaign, an Amazon storefront overhaul, or ongoing cloud infrastructure support, our senior technical teams are ready to collaborate.
 
 ## Engagement Information & Digital Resources
-- **Canonical Web URL**: [{$baseUrl}/contact.php]({$baseUrl}/contact.php)
-- **Clean Markdown URL**: [{$baseUrl}/contact.php.md]({$baseUrl}/contact.php.md)
+- **Canonical Web URL**: [{$baseUrl}/contact]({$baseUrl}/contact)
+- **Clean Markdown URL**: [{$baseUrl}/contact.md]({$baseUrl}/contact.md)
 - **Central Markdown URL**: [{$baseUrl}/md/contact.md]({$baseUrl}/md/contact.md)
 - **Master Markdown Index**: [{$baseUrl}/md]({$baseUrl}/md)
 - **Direct Advisory Phone**: {$phone}
@@ -1056,8 +1070,8 @@ MD;
 > Discover technical bottlenecks, page speed issues, and SEO gaps holding back your online business. Submit your domain to receive real live telemetry analysis and a customized project proposal within 24 hours.
 
 ## Diagnostic Resource Information
-- **Canonical Web URL**: [{$baseUrl}/audit.php]({$baseUrl}/audit.php)
-- **Clean Markdown URL**: [{$baseUrl}/audit.php.md]({$baseUrl}/audit.php.md)
+- **Canonical Web URL**: [{$baseUrl}/audit]({$baseUrl}/audit)
+- **Clean Markdown URL**: [{$baseUrl}/audit.md]({$baseUrl}/audit.md)
 - **Central Markdown URL**: [{$baseUrl}/md/audit.md]({$baseUrl}/md/audit.md)
 - **Master Markdown Index**: [{$baseUrl}/md]({$baseUrl}/md)
 - **Audit Turnaround SLA**: Guaranteed delivery of full report to corporate email within 24 hours.
@@ -1114,8 +1128,8 @@ To initiate an automated live telemetry scan and detailed manual engineering rev
 ---
 
 ## 04 // Next Steps
-- **Submit Audit Request**: [Request Free Digital Audit Online]({$baseUrl}/audit.php)
-- **Schedule Live Discovery Call**: [Contact Tech Leads]({$baseUrl}/contact.php)
+- **Submit Audit Request**: [Request Free Digital Audit Online]({$baseUrl}/audit)
+- **Schedule Live Discovery Call**: [Contact Tech Leads]({$baseUrl}/contact)
 - **Explore All IT Disciplines**: [Services Overview]({$baseUrl}/company)
 
 ---
@@ -1132,7 +1146,7 @@ MD;
                 $sLines[] = "## Hub Information & Digital Resources";
                 $sLines[] = "- **Canonical Web URL**: [{$baseUrl}/company]({$baseUrl}/company)";
                 $sLines[] = "- **Clean Markdown URL**: [{$baseUrl}/company.md]({$baseUrl}/company.md)";
-                $sLines[] = "- **Central Markdown URL**: [{$baseUrl}/md/services.md]({$baseUrl}/md/services.md)";
+                $sLines[] = "- **Central Markdown URL**: [{$baseUrl}/md/company.md]({$baseUrl}/md/company.md)";
                 $sLines[] = "- **Master Markdown Index**: [{$baseUrl}/md]({$baseUrl}/md)";
                 $sLines[] = "- **Total Integrated Disciplines**: " . count($services) . " specialized practices";
                 $sLines[] = "";
@@ -1149,8 +1163,8 @@ MD;
                     $description = $s['description'] ?? '';
                     $webUrl = "{$baseUrl}/company/{$slug}";
                     $cleanMdUrl = "{$baseUrl}/company/{$slug}.md";
-                    $centralMdUrl = "{$baseUrl}/md/services/{$slug}.md";
-                    $consultUrl = "{$baseUrl}/contact.php?service=" . urlencode($name);
+                    $centralMdUrl = "{$baseUrl}/md/company/{$slug}.md";
+                    $consultUrl = getContactUrl($name);
 
                     $sLines[] = "### Discipline // {$num}: {$name}";
                     $sLines[] = "> *{$tagline}*";
@@ -1190,8 +1204,8 @@ MD;
 
                 $sLines[] = "## Need a Custom IT or Marketing Solution?";
                 $sLines[] = "Every enterprise challenge is unique. We configure bespoke multi-disciplinary teams tailored to your specific technical architecture, growth bottlenecks, and commercial objectives.";
-                $sLines[] = "- [Schedule Project Consultation]({$baseUrl}/contact.php)";
-                $sLines[] = "- [Request Free Digital Audit]({$baseUrl}/audit.php)";
+                $sLines[] = "- [Schedule Project Consultation]({$baseUrl}/contact)";
+                $sLines[] = "- [Request Free Digital Audit]({$baseUrl}/audit)";
                 $sLines[] = "";
                 $sLines[] = "---";
                 $sLines[] = "*Delivered by [BusinessDoctor]({$baseUrl}) Technology Practice.*";
@@ -1402,11 +1416,11 @@ We hold our practice to rigorous operational commitments:
 ---
 
 ## 08 // Real Results: Documented Enterprise Case Studies
-- **[FinTech SaaS Funnel Resuscitation]({$baseUrl}/case-study-detail.php?slug=fintech-saas-funnel-resuscitation)**: Replaced a broken 7-step onboarding process with asynchronous micro-auth and Stripe vaulting.
+- **[FinTech SaaS Funnel Resuscitation]({$baseUrl}/case-studies/fintech-saas-funnel-resuscitation)**: Replaced a broken 7-step onboarding process with asynchronous micro-auth and Stripe vaulting.
   - *Metric Shift*: `1.2% Conversion` → `4.8% Conversion (+312% pipeline lift)`
-- **[D2C Apparel Vital Infrastructure Overhaul]({$baseUrl}/case-study-detail.php?slug=d2c-apparel-vital-infrastructure-overhaul)**: Re-platformed a slow Shopify store into a headless React PWA with Redis inventory locking.
+- **[D2C Apparel Vital Infrastructure Overhaul]({$baseUrl}/case-studies/d2c-apparel-vital-infrastructure-overhaul)**: Re-platformed a slow Shopify store into a headless React PWA with Redis inventory locking.
   - *Metric Shift*: `4.6s Page Load` → `0.78s Page Load (18,500 peak transactions/min)`
-- **[Multichannel Retail Marketplace Dominance]({$baseUrl}/case-study-detail.php?slug=multichannel-retail-marketplace-dominance)**: Unified 48,000 SKUs across Amazon, Walmart, and eBay with an algorithmic dynamic repricing bot.
+- **[Multichannel Retail Marketplace Dominance]({$baseUrl}/case-studies/multichannel-retail-marketplace-dominance)**: Unified 48,000 SKUs across Amazon, Walmart, and eBay with an algorithmic dynamic repricing bot.
   - *Metric Shift*: `22% Buy Box Share` → `84% Buy Box Share (+$2.1M monthly GMV)`
 
 ---
@@ -1423,7 +1437,7 @@ We deploy battle-tested enterprise technologies:
 
 ## 10 // Engineering Architecture & Digital Growth Analysis
 Unsure why your website is slow, or why your ad spend isn't producing adequate ROAS? Submit your domain for a complimentary 24-hour diagnostic audit covering server latency, Core Web Vitals, and conversion funnel friction.
-- [Request Free Digital Audit]({$baseUrl}/audit.php)
+- [Request Free Digital Audit]({$baseUrl}/audit)
 
 ---
 
@@ -1447,8 +1461,8 @@ BusinessDoctor operates globally with distributed engineering leadership and pri
 ---
 
 ## 12 // Ready to Move Your Business Beyond Limitations?
-- **Schedule Discovery Consultation**: [Contact Practice Leads]({$baseUrl}/contact.php)
-- **Complimentary Diagnostic**: [Request Free Digital Audit]({$baseUrl}/audit.php)
+- **Schedule Discovery Consultation**: [Contact Practice Leads]({$baseUrl}/contact)
+- **Complimentary Diagnostic**: [Request Free Digital Audit]({$baseUrl}/audit)
 - **Review Service Disciplines**: [Explore All Practices]({$baseUrl}/company)
 
 ---
@@ -1489,12 +1503,12 @@ MD;
         $lines[] = "## 1. Institutional & Diagnostic Documents";
         $lines[] = "";
         $lines[] = "- [Homepage Overview]({$baseUrl}/md/home.md) ([Clean URL]({$baseUrl}/.md) | [Web Page]({$baseUrl}/)): Enterprise digital practice overview.";
-        $lines[] = "- [Firm Profile & Leadership]({$baseUrl}/md/about.md) ([Clean URL]({$baseUrl}/about.php.md) | [Web Page]({$baseUrl}/about.php)): Engineering ethos and leadership profile.";
-        $lines[] = "- [Services Overview Hub]({$baseUrl}/md/services.md) ([Clean URL]({$baseUrl}/company.md) | [Web Page]({$baseUrl}/company)): Multi-disciplinary capability catalog.";
-        $lines[] = "- [Executive Advisory & Inquiries]({$baseUrl}/md/contact.md) ([Clean URL]({$baseUrl}/contact.php.md) | [Web Page]({$baseUrl}/contact.php)): Direct engagement and consulting channels.";
-        $lines[] = "- [Digital Diagnostic Audit Framework]({$baseUrl}/md/audit.md) ([Clean URL]({$baseUrl}/audit.php.md) | [Web Page]({$baseUrl}/audit.php)): Benchmarking performance, security, and CAC.";
+        $lines[] = "- [Firm Profile & Leadership]({$baseUrl}/md/about.md) ([Clean URL]({$baseUrl}/about.md) | [Web Page]({$baseUrl}/about)): Engineering ethos and leadership profile.";
+        $lines[] = "- [Services Overview Hub]({$baseUrl}/md/company.md) ([Clean URL]({$baseUrl}/company.md) | [Web Page]({$baseUrl}/company)): Multi-disciplinary capability catalog.";
+        $lines[] = "- [Executive Advisory & Inquiries]({$baseUrl}/md/contact.md) ([Clean URL]({$baseUrl}/contact.md) | [Web Page]({$baseUrl}/contact)): Direct engagement and consulting channels.";
+        $lines[] = "- [Digital Diagnostic Audit Framework]({$baseUrl}/md/audit.md) ([Clean URL]({$baseUrl}/audit.md) | [Web Page]({$baseUrl}/audit)): Benchmarking performance, security, and CAC.";
         $lines[] = "- [Technical Blog & Perspectives Catalog]({$baseUrl}/md/insights.md) ([Clean URL]({$baseUrl}/blog.md) | [Web Page]({$baseUrl}/blog)): Index of published technical essays.";
-        $lines[] = "- [Enterprise Case Studies Catalog]({$baseUrl}/md/case-studies.md) ([Clean URL]({$baseUrl}/case-studies.php.md) | [Web Page]({$baseUrl}/case-studies.php)): Index of verified client turnarounds.";
+        $lines[] = "- [Enterprise Case Studies Catalog]({$baseUrl}/md/case-studies.md) ([Clean URL]({$baseUrl}/case-studies.md) | [Web Page]({$baseUrl}/case-studies)): Index of verified client turnarounds.";
         $lines[] = "";
 
         // 2. Services
@@ -1504,7 +1518,7 @@ MD;
             $name = $s['name'];
             $tag = rtrim(strip_tags($s['tagline'] ?? $s['summary']), '.');
             $cleanUrl = "{$baseUrl}/company/{$slug}.md";
-            $repoUrl = "{$baseUrl}/md/services/{$slug}.md";
+            $repoUrl = "{$baseUrl}/md/company/{$slug}.md";
             $webUrl = "{$baseUrl}/company/{$slug}";
             $lines[] = "- [{$name}]({$repoUrl}) ([Clean URL]({$cleanUrl}) | [Web Page]({$webUrl})): {$tag}.";
         }
@@ -1566,9 +1580,10 @@ MD;
         $mdBaseDir = ROOT_PATH . '/md';
         $insightsDir = $mdBaseDir . '/insights';
         $casesDir = $mdBaseDir . '/case-studies';
-        $servicesDir = $mdBaseDir . '/services';
+        $servicesDir = $mdBaseDir . '/company';
+        $legacyServicesDir = $mdBaseDir . '/services';
 
-        foreach ([$mdBaseDir, $insightsDir, $casesDir, $servicesDir] as $dir) {
+        foreach ([$mdBaseDir, $insightsDir, $casesDir, $servicesDir, $legacyServicesDir] as $dir) {
             if (!is_dir($dir)) {
                 @mkdir($dir, 0755, true);
             }
@@ -1592,25 +1607,38 @@ MD;
             if (self::writeFileAtomic($path, $content)) {
                 $written[] = "md/{$doc}.md";
             }
+            // Also write md/company.md as mirror of services overview
+            if ($doc === 'services') {
+                $companyMdPath = $mdBaseDir . "/company.md";
+                if (self::writeFileAtomic($companyMdPath, $content)) {
+                    $written[] = "md/company.md";
+                }
+            }
         }
 
-        // 3. Services
+        // 3. Services (Canonical directory: md/company/ and legacy mirror: md/services/)
         $services = self::getActiveServices();
         $validServiceSlugs = [];
         foreach ($services as $slug => $s) {
             $validServiceSlugs[] = $slug;
-            $path = $servicesDir . "/{$slug}.md";
             $content = self::generateServiceMarkdown($slug, $s);
-            if (self::writeFileAtomic($path, $content)) {
+
+            $pathCanonical = $servicesDir . "/{$slug}.md";
+            if (self::writeFileAtomic($pathCanonical, $content)) {
+                $written[] = "md/company/{$slug}.md";
+            }
+
+            $pathLegacy = $legacyServicesDir . "/{$slug}.md";
+            if (self::writeFileAtomic($pathLegacy, $content)) {
                 $written[] = "md/services/{$slug}.md";
             }
         }
         // Purge inactive/deleted services
-        foreach (glob($servicesDir . '/*.md') ?: [] as $file) {
+        foreach (array_merge(glob($servicesDir . '/*.md') ?: [], glob($legacyServicesDir . '/*.md') ?: []) as $file) {
             $fileSlug = basename($file, '.md');
             if (!in_array($fileSlug, $validServiceSlugs, true)) {
                 @unlink($file);
-                $purged[] = "md/services/{$fileSlug}.md";
+                $purged[] = str_replace(ROOT_PATH . '/', '', $file);
             }
         }
 
@@ -1690,9 +1718,9 @@ MD;
                 'name' => $s['name'],
                 'public_web_url' => $webUrl,
                 'clean_md_url' => $cleanMd,
-                'repo_md_path' => "md/services/{$slug}.md",
+                'repo_md_path' => "md/company/{$slug}.md",
                 'generator' => 'SeoSyncEngine::generateServiceMarkdown',
-                'manifests' => ['sitemap.xml', 'llms.txt', 'llms.md', 'md/index.md', 'md/services.md'],
+                'manifests' => ['sitemap.xml', 'llms.txt', 'llms.md', 'md/index.md', 'md/company.md'],
                 'schemas' => ['Service', 'BreadcrumbList', 'Organization'],
             ];
         }
@@ -1764,6 +1792,13 @@ MD;
     /**
      * Pre-write validation to guarantee integrity, minimum content length,
      * valid syntax, and strictly prevent stale URL leakage.
+     * Enforces strict prohibition of:
+     * - /services/
+     * - insight-detail.php?slug=
+     * - case-study-detail.php?slug=
+     * - /audit.php
+     * - -company-in-delhi
+     * - demo.businessdoctor.com (misspelled host)
      */
     public static function validateContent(string $filePath, string $content): array
     {
@@ -1780,13 +1815,36 @@ MD;
             }
         }
 
-        // Stale URL pattern check: block /services/{slug} (not /md/services/) or -company-in-delhi
+        // Strict Stale URL Pattern Validation on all discovery and markdown documents
         if (str_ends_with($filePath, '.xml') || str_ends_with($filePath, '.txt') || str_ends_with($filePath, '.md')) {
-            if (preg_match('#(?<!/md)/services/[a-zA-Z0-9_-]+(?!\.md)#', $content, $m)) {
-                $errors[] = "Stale URL pattern detected: {$m[0]}";
+            // 1. Prohibit /services/ in URLs and manifest paths
+            if (preg_match('~https?://[^\\s)\\]"\']*/services/[a-zA-Z0-9_-]+~i', $content, $m) || preg_match('~(?<!/md)/services/[a-zA-Z0-9_-]+(?!\\.md)~', $content, $m)) {
+                $errors[] = "Stale service URL pattern detected: '{$m[0]}'. All services must use /company/{slug}.";
             }
-            if (preg_match('#[a-zA-Z0-9_-]+-company-in-delhi#', $content, $m)) {
-                $errors[] = "Stale URL pattern detected: {$m[0]}";
+
+            // 2. Prohibit legacy insight query strings
+            if (str_contains($content, 'insight-detail.php?slug=') || str_contains($content, 'insight-detail.php')) {
+                $errors[] = "Stale insight URL pattern detected ('insight-detail.php'). All blogs must use /blog/{slug}.";
+            }
+
+            // 3. Prohibit legacy case study query strings
+            if (str_contains($content, 'case-study-detail.php?slug=') || str_contains($content, 'case-study-detail.php')) {
+                $errors[] = "Stale case study URL pattern detected ('case-study-detail.php'). All case studies must use /case-studies/{slug}.";
+            }
+
+            // 4. Prohibit obsolete /audit.php
+            if (preg_match('~/audit\\.php(?:\\b|[?/#])~i', $content, $m)) {
+                $errors[] = "Obsolete URL pattern detected: '/audit.php'. The canonical URL must be '/audit'.";
+            }
+
+            // 5. Prohibit old city suffix
+            if (preg_match('~[a-zA-Z0-9_-]+-company-in-delhi~', $content, $m)) {
+                $errors[] = "Stale legacy city suffix pattern detected: '{$m[0]}'.";
+            }
+
+            // 6. Prohibit wrong domain spelling (extra 's')
+            if (str_contains($content, 'demo.businessdoctor.com')) {
+                $errors[] = "Incorrect domain spelling detected: 'demo.businessdoctor.com' (extra 's'). Correct domain is 'demo.businesdoctor.com'.";
             }
         }
 
@@ -1795,14 +1853,16 @@ MD;
 
     /**
      * Atomically and safely write content to a destination file with validation
+     * Rejects invalid or stale content and throws an explicit RuntimeException.
      */
     public static function writeFileAtomic(string $filePath, string $content, bool $validate = true): bool
     {
         if ($validate) {
             $valErrors = self::validateContent($filePath, $content);
             if (!empty($valErrors)) {
-                error_log("Pre-write validation failed for {$filePath}: " . implode('; ', $valErrors));
-                return false;
+                $errStr = implode('; ', $valErrors);
+                error_log("Pre-write validation failed for {$filePath}: " . $errStr);
+                throw new \RuntimeException("Pre-write validation failed for [{$filePath}]: {$errStr}");
             }
         }
         $dir = dirname($filePath);
@@ -1820,20 +1880,15 @@ MD;
 
         // On Windows, direct copy overwrites safely without requiring risky unlink
         if (DIRECTORY_SEPARATOR === '\\') {
-            $ok = @copy($tempFile, $filePath);
+            $copied = @copy($tempFile, $filePath);
             @unlink($tempFile);
-            if (!$ok) {
-                // Exclusive lock direct write fallback
-                return file_put_contents($filePath, $content, LOCK_EX) !== false;
-            }
-            return true;
+            return $copied;
         }
 
-        // Linux/POSIX atomic rename
-        $renamed = @rename($tempFile, $filePath);
-        if (!$renamed) {
-            @copy($tempFile, $filePath);
-            @unlink($tempFile);
+        // On POSIX systems, atomic rename replaces the file in a single inode operation
+        if (!@rename($tempFile, $filePath)) {
+            @unlink($filePath);
+            return @rename($tempFile, $filePath);
         }
 
         return true;
