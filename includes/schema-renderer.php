@@ -243,9 +243,6 @@ function getPrimaryOrganizationSchema(string $baseUrl = ''): array
             $bound = str_replace(array_keys($replacements), array_values($replacements), $rawJson);
             $decoded = json_decode($bound, true);
             if (is_array($decoded) && ($decoded['@type'] ?? '') === 'Organization') {
-                if (empty($decoded['@id'])) {
-                    $decoded['@id'] = $baseUrl . '/#organization';
-                }
                 $cached = $decoded;
                 return $cached;
             }
@@ -257,7 +254,6 @@ function getPrimaryOrganizationSchema(string $baseUrl = ''): array
     $cached = [
         '@context' => 'https://schema.org',
         '@type' => 'Organization',
-        '@id' => $baseUrl . '/#organization',
         'name' => $appName,
         'legalName' => $legalName,
         'url' => $baseUrl . '/',
@@ -490,7 +486,7 @@ function renderPageSchemas(?string $pageKey = null, array $contextData = []): st
             SELECT schema_name, schema_type, schema_json
             FROM page_schemas
             WHERE page_key = ? AND status = 'active'
-            ORDER BY id ASC
+            ORDER BY (schema_type = 'Organization') DESC, id ASC
         ");
         $stmt->execute([$pageKey]);
         $schemas = $stmt->fetchAll(PDO::FETCH_ASSOC);
@@ -598,16 +594,13 @@ function renderPageSchemas(?string $pageKey = null, array $contextData = []): st
                 } catch (Throwable $e) {}
             }
 
-            // Enforce unified single Organization entity with canonical @id per page
+            // Enforce unified single Organization entity per page
             if (($row['schema_type'] ?? '') === 'Organization' || ($decoded['@type'] ?? '') === 'Organization') {
                 if ($hasOrganization) {
                     // Prevent duplicate Organization blocks on the same page
                     continue;
                 }
                 $hasOrganization = true;
-                if (empty($decoded['@id'])) {
-                    $decoded['@id'] = $baseUrl . '/#organization';
-                }
             }
 
             // Deduplicate by signature

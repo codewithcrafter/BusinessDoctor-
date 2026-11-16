@@ -83,11 +83,11 @@ if (!empty($canonicalUrl)) {
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@500;600;700&family=Plus+Jakarta+Sans:wght@600;700;800&display=swap" rel="stylesheet">
 
   <!-- Core Stylesheets -->
-  <link rel="stylesheet" href="<?= getAssetUrl('assets/css/variables.css') ?>">
-  <link rel="stylesheet" href="<?= getAssetUrl('assets/css/base.css') ?>">
-  <link rel="stylesheet" href="<?= getAssetUrl('assets/css/components.css') ?>">
-  <link rel="stylesheet" href="<?= getAssetUrl('assets/css/responsive.css') ?>">
-  <link rel="stylesheet" href="<?= getAssetUrl('assets/css/services-redesign.css') ?>">
+  <link rel="stylesheet" href="<?= getAssetUrl('assets/css/variables.css') ?>?v=<?= filemtime(__DIR__ . '/../assets/css/variables.css') ?>">
+  <link rel="stylesheet" href="<?= getAssetUrl('assets/css/base.css') ?>?v=<?= filemtime(__DIR__ . '/../assets/css/base.css') ?>">
+  <link rel="stylesheet" href="<?= getAssetUrl('assets/css/components.css') ?>?v=<?= filemtime(__DIR__ . '/../assets/css/components.css') ?>">
+  <link rel="stylesheet" href="<?= getAssetUrl('assets/css/responsive.css') ?>?v=<?= filemtime(__DIR__ . '/../assets/css/responsive.css') ?>">
+  <link rel="stylesheet" href="<?= getAssetUrl('assets/css/services-redesign.css') ?>?v=<?= filemtime(__DIR__ . '/../assets/css/services-redesign.css') ?>">
   <link rel="stylesheet" href="<?= getAssetUrl('assets/css/lead-popup.css') ?>?v=<?= filemtime(__DIR__ . '/../assets/css/lead-popup.css') ?>">
 
   <!-- Favicon SVG (Code brackets / IT tech icon) -->

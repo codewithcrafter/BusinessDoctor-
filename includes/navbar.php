@@ -52,7 +52,7 @@ $practiceAreas = getPracticeAreas();
             </div>
 
             <!-- Spacious 2-Column Services Grid -->
-            <div class="mega-services-grid">
+            <div class="mega-services-grid" style="background: #071A2C !important;">
               <?php foreach ($practiceAreas as $slug => $p): 
                 $displayTitle = ($slug === 'smo') ? 'SMO' : $p['name'];
               ?>
@@ -61,8 +61,8 @@ $practiceAreas = getPracticeAreas();
                     <?= $p['icon'] ?>
                   </div>
                   <div class="mega-service-info">
-                    <span class="mega-service-name"><?= e($displayTitle) ?></span>
-                    <p class="mega-service-desc"><?= e($p['summary']) ?></p>
+                    <span class="mega-service-name" style="color: #FFFFFF !important;"><?= e($displayTitle) ?></span>
+                    <p class="mega-service-desc" style="color: #8FA3B8 !important;"><?= e($p['summary']) ?></p>
                   </div>
                 </a>
               <?php endforeach; ?>
