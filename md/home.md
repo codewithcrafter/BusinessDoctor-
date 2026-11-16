@@ -32,13 +32,17 @@ We engineer digital solutions across four primary pillars to ensure scalable, fr
 ---
 
 ## 03 // Engineered Capabilities Built for Enterprise Scale
-We provide 6 core integrated practice disciplines operating under one accountable standard:
-1. **[Web & Custom Software Development](https://demo.businesdoctor.com/company/web-software-development)**: High-performance enterprise web applications, custom portals, and fast PHP 8+ engineering.
-2. **[Digital Marketing & Performance Ads](https://demo.businesdoctor.com/company/digital-marketing-seo)**: Data-driven customer acquisition across Google Search, Performance Max, Meta, and SEO authority.
-3. **[UI/UX Design & Brand Identity](https://demo.businesdoctor.com/company/ui-ux-branding)**: Conversion-centered interface design, brand identity systems, and enterprise design architecture.
-4. **[E-Commerce & Marketplace Management](https://demo.businesdoctor.com/company/ecommerce-marketplaces)**: Full-funnel marketplace scaling, Amazon & multi-channel operations, and catalog conversion optimization.
-5. **[Creative Production & Video Marketing](https://demo.businesdoctor.com/company/creative-video-production)**: High-impact video creative, motion design, and commercial visual production.
-6. **[Cloud Solutions & IT Consulting](https://demo.businesdoctor.com/company/cloud-it-consulting)**: Enterprise cloud infrastructure, DevOps, cybersecurity audits, and uptime maintenance.
+We provide 10 integrated practice disciplines operating under one accountable standard:
+1. **[SMO](https://demo.businesdoctor.com/smo-company-in-delhi)**: Strategic profile optimization, bio conversion funnels, branded content templates, and improved social visibility.
+2. **[Google Business Profile Management](https://demo.businesdoctor.com/google-business-profile-company-in-delhi)**: Complete GBP setup, Google Maps optimization, local search visibility, profile management, and review strategy.
+3. **[PPC / Paid Ads](https://demo.businesdoctor.com/ppc-company-in-delhi)**: High-converting Google Search, Performance Max, Meta Ads, and LinkedIn B2B advertising campaigns.
+4. **[Ecommerce Management](https://demo.businesdoctor.com/ecommerce-management-company-in-delhi)**: Amazon and Flipkart marketplace management, product listings, inventory optimization, A+ content, and marketplace growth.
+5. **[Graphic Design](https://demo.businesdoctor.com/graphic-design-company-in-delhi)**: Corporate brand identity, creative graphics, marketing materials, social media creatives, and visual communication.
+6. **[SEO — Search Engine Optimization](https://demo.businesdoctor.com/seo-company-in-delhi)**: Technical SEO, on-page optimization, keyword strategy, search visibility, organic traffic, and performance monitoring.
+7. **[Social Media Marketing](https://demo.businesdoctor.com/social-media-marketing-company-in-delhi)**: Social media strategy, content planning, campaign management, audience engagement, and brand growth.
+8. **[Product Photography](https://demo.businesdoctor.com/product-photography-company-in-delhi)**: Professional product photography, ecommerce product visuals, creative compositions, and conversion-focused imagery.
+9. **[Video Editing](https://demo.businesdoctor.com/video-editing-company-in-delhi)**: Professional promotional videos, short-form content, Instagram Reels, YouTube Shorts, and brand videos.
+10. **[Web Development](https://demo.businesdoctor.com/web-development-company-in-delhi)**: Fast, responsive business websites, custom web applications, performance optimization, and conversion-focused development.
 
 ---
 

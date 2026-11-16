@@ -439,16 +439,16 @@ function getBaseUrl(): string
 
 /**
  * Return clean SEO-friendly URL for main services overview
- * Canonical: https://demo.businesdoctor.com/company
+ * Canonical: https://demo.businesdoctor.com/digital-marketing-company-in-delhi
  */
 function getServicesOverviewUrl(): string
 {
-    return appUrl('company');
+    return appUrl('digital-marketing-company-in-delhi');
 }
 
 /**
  * Return clean SEO-friendly canonical URL for an individual service
- * Pattern: https://demo.businesdoctor.com/company/{service-slug}
+ * Pattern: https://demo.businesdoctor.com/{service-slug}-company-in-delhi
  */
 function getServiceUrl(string $slug): string
 {
@@ -465,43 +465,48 @@ function getServiceUrl(string $slug): string
 
     // Canonical slug mappings for any legacy or alias slugs
     $canonicalMap = [
-        'web-software-development' => 'web-software-development',
-        'digital-marketing-seo' => 'digital-marketing-seo',
-        'ui-ux-branding' => 'ui-ux-branding',
-        'ecommerce-marketplaces' => 'ecommerce-marketplaces',
-        'creative-video-production' => 'creative-video-production',
-        'cloud-it-consulting' => 'cloud-it-consulting',
+        // 10 Core Services:
+        'smo' => 'smo-company-in-delhi',
+        'smo-services' => 'smo-company-in-delhi',
 
-        // Alias & legacy mappings to canonical 6 core services
-        'web-development' => 'web-software-development',
-        'strategic-consulting' => 'web-software-development',
-        'digital-engineering' => 'web-software-development',
-        'ai-automation-workflows' => 'web-software-development',
+        'google-business-profile' => 'google-business-profile-company-in-delhi',
 
-        'seo' => 'digital-marketing-seo',
-        'seo-services' => 'digital-marketing-seo',
-        'smo' => 'digital-marketing-seo',
-        'smo-services' => 'digital-marketing-seo',
-        'digital-marketing' => 'digital-marketing-seo',
-        'ppc-paid-ads' => 'digital-marketing-seo',
-        'performance-marketing' => 'digital-marketing-seo',
-        'google-business-profile' => 'digital-marketing-seo',
-        'social-media-marketing' => 'digital-marketing-seo',
+        'ppc' => 'ppc-company-in-delhi',
+        'ppc-paid-ads' => 'ppc-company-in-delhi',
+        'performance-marketing' => 'ppc-company-in-delhi',
 
-        'graphic-design' => 'ui-ux-branding',
-        'brand-architecture' => 'ui-ux-branding',
-        'brand-creative-direction' => 'ui-ux-branding',
+        'ecommerce-management' => 'ecommerce-management-company-in-delhi',
+        'ecommerce-marketplaces' => 'ecommerce-management-company-in-delhi',
+        'ecommerce-acceleration' => 'ecommerce-management-company-in-delhi',
 
-        'ecommerce-management' => 'ecommerce-marketplaces',
-        'ecommerce-acceleration' => 'ecommerce-marketplaces',
+        'graphic-design' => 'graphic-design-company-in-delhi',
+        'ui-ux-branding' => 'graphic-design-company-in-delhi',
+        'brand-architecture' => 'graphic-design-company-in-delhi',
+        'brand-creative-direction' => 'graphic-design-company-in-delhi',
 
-        'video-editing' => 'creative-video-production',
-        'product-photography' => 'creative-video-production',
-        'creative-production' => 'creative-video-production',
+        'seo' => 'seo-company-in-delhi',
+        'seo-services' => 'seo-company-in-delhi',
+        'digital-marketing-seo' => 'seo-company-in-delhi',
+
+        'social-media-marketing' => 'social-media-marketing-company-in-delhi',
+
+        'product-photography' => 'product-photography-company-in-delhi',
+
+        'video-editing' => 'video-editing-company-in-delhi',
+        'creative-video-production' => 'video-editing-company-in-delhi',
+        'creative-production' => 'video-editing-company-in-delhi',
+
+        'web-development' => 'web-development-company-in-delhi',
+        'web-software-development' => 'web-development-company-in-delhi',
+        'strategic-consulting' => 'web-development-company-in-delhi',
+        'digital-engineering' => 'web-development-company-in-delhi',
+        'ai-automation-workflows' => 'web-development-company-in-delhi',
+
+        'cloud-it-consulting' => 'cloud-it-consulting-company-in-delhi',
     ];
 
-    $canonicalSlug = $canonicalMap[$clean] ?? $clean;
-    return appUrl('company/' . rawurlencode($canonicalSlug));
+    $targetSlug = $canonicalMap[$clean] ?? ($clean . '-company-in-delhi');
+    return appUrl($targetSlug);
 }
 
 /**
@@ -1210,41 +1215,40 @@ function getPracticeBySlug(string $slug): ?array
     }
     $clean = trim($clean, '/');
 
-    $practices = getPracticeAreas();
-    if (isset($practices[$clean])) {
-        return $practices[$clean];
-    }
-
+    // Canonical slug mappings for any legacy or alias slugs
     $canonicalMap = [
-        'web-development' => 'web-software-development',
-        'strategic-consulting' => 'web-software-development',
-        'digital-engineering' => 'web-software-development',
-        'ai-automation-workflows' => 'web-software-development',
+        'ppc' => 'ppc-paid-ads',
+        'performance-marketing' => 'ppc-paid-ads',
 
-        'seo' => 'digital-marketing-seo',
-        'seo-services' => 'digital-marketing-seo',
-        'smo' => 'digital-marketing-seo',
-        'smo-services' => 'digital-marketing-seo',
-        'digital-marketing' => 'digital-marketing-seo',
-        'ppc-paid-ads' => 'digital-marketing-seo',
-        'performance-marketing' => 'digital-marketing-seo',
-        'google-business-profile' => 'digital-marketing-seo',
-        'social-media-marketing' => 'digital-marketing-seo',
+        'web-software-development' => 'web-development',
+        'strategic-consulting' => 'web-development',
+        'digital-engineering' => 'web-development',
+        'ai-automation-workflows' => 'web-development',
 
-        'graphic-design' => 'ui-ux-branding',
-        'brand-architecture' => 'ui-ux-branding',
-        'brand-creative-direction' => 'ui-ux-branding',
+        'digital-marketing-seo' => 'seo',
+        'seo-services' => 'seo',
+        'smo-services' => 'smo',
+        'digital-marketing' => 'seo',
 
-        'ecommerce-management' => 'ecommerce-marketplaces',
-        'ecommerce-acceleration' => 'ecommerce-marketplaces',
+        'ui-ux-branding' => 'graphic-design',
+        'brand-architecture' => 'graphic-design',
+        'brand-creative-direction' => 'graphic-design',
 
-        'video-editing' => 'creative-video-production',
-        'product-photography' => 'creative-video-production',
-        'creative-production' => 'creative-video-production',
+        'ecommerce-marketplaces' => 'ecommerce-management',
+        'ecommerce-acceleration' => 'ecommerce-management',
+
+        'creative-video-production' => 'video-editing',
+        'creative-production' => 'video-editing',
     ];
 
-    if (isset($canonicalMap[$clean]) && isset($practices[$canonicalMap[$clean]])) {
-        return $practices[$canonicalMap[$clean]];
+    $resolvedKey = $canonicalMap[$clean] ?? $clean;
+
+    $practices = getPracticeAreas();
+    if (isset($practices[$resolvedKey])) {
+        return $practices[$resolvedKey];
+    }
+    if (isset($practices[$clean])) {
+        return $practices[$clean];
     }
 
     return null;

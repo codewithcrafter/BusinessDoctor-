@@ -43,7 +43,7 @@ AddType text/markdown .md
 
     # 301 Redirect legacy /services.php and /insights.php
     RewriteCond %{THE_REQUEST} \s/+services\.php(\s|\?) [NC]
-    RewriteRule ^ /company-in-delhi? [R=301,L]
+    RewriteRule ^ /digital-marketing-company-in-delhi? [R=301,L]
 
     RewriteCond %{THE_REQUEST} \s/+insights\.php(\s|\?) [NC]
     RewriteRule ^ /blog? [R=301,L]
@@ -63,42 +63,37 @@ AddType text/markdown .md
     RewriteRule ^([a-zA-Z0-9_-]+)\.php\.md$ md/$1.md [L]
 
     # 2. Universal Markdown Routing:
-    # Matches any request ending in .md (e.g. /.md, /about.php.md, /services/foo.md, /insight-detail.php.md)
-    # or targeting the central /md/... repository
     RewriteCond %{REQUEST_URI} !^/markdown-router\.php
     RewriteRule (\.md$|^md/|^llms\.txt$|^sitemap\.xml$) markdown-router.php [L,QSA]
 
-    # 301 Redirect legacy service aliases to canonical /company/{slug}
-    RewriteRule ^(?:services|company)/web-development/?$ /company/web-software-development [R=301,L]
-    RewriteRule ^(?:services|company)/ai-automation-workflows/?$ /company/web-software-development [R=301,L]
-    RewriteRule ^(?:services|company)/strategic-consulting/?$ /company/web-software-development [R=301,L]
-    RewriteRule ^(?:services|company)/digital-engineering/?$ /company/web-software-development [R=301,L]
-    RewriteRule ^(?:services|company)/seo/?$ /company/digital-marketing-seo [R=301,L]
-    RewriteRule ^(?:services|company)/seo-services/?$ /company/digital-marketing-seo [R=301,L]
-    RewriteRule ^(?:services|company)/smo/?$ /company/digital-marketing-seo [R=301,L]
-    RewriteRule ^(?:services|company)/smo-services/?$ /company/digital-marketing-seo [R=301,L]
-    RewriteRule ^(?:services|company)/digital-marketing/?$ /company/digital-marketing-seo [R=301,L]
-    RewriteRule ^(?:services|company)/ppc-paid-ads/?$ /company/digital-marketing-seo [R=301,L]
-    RewriteRule ^(?:services|company)/performance-marketing/?$ /company/digital-marketing-seo [R=301,L]
-    RewriteRule ^(?:services|company)/google-business-profile/?$ /company/digital-marketing-seo [R=301,L]
-    RewriteRule ^(?:services|company)/social-media-marketing/?$ /company/digital-marketing-seo [R=301,L]
-    RewriteRule ^(?:services|company)/graphic-design/?$ /company/ui-ux-branding [R=301,L]
-    RewriteRule ^(?:services|company)/brand-architecture/?$ /company/ui-ux-branding [R=301,L]
-    RewriteRule ^(?:services|company)/brand-creative-direction/?$ /company/ui-ux-branding [R=301,L]
-    RewriteRule ^(?:services|company)/ecommerce-management/?$ /company/ecommerce-marketplaces [R=301,L]
-    RewriteRule ^(?:services|company)/ecommerce-acceleration/?$ /company/ecommerce-marketplaces [R=301,L]
-    RewriteRule ^(?:services|company)/video-editing/?$ /company/creative-video-production [R=301,L]
-    RewriteRule ^(?:services|company)/product-photography/?$ /company/creative-video-production [R=301,L]
-    RewriteRule ^(?:services|company)/creative-production/?$ /company/creative-video-production [R=301,L]
+    # 301 Redirect legacy service aliases to canonical /{slug}-company-in-delhi
+    RewriteRule ^(?:services|company)/ppc(?:-paid-ads)?/?$ /ppc-company-in-delhi [R=301,L]
+    RewriteRule ^(?:services|company)/smo(?:-services)?/?$ /smo-company-in-delhi [R=301,L]
+    RewriteRule ^(?:services|company)/google-business-profile/?$ /google-business-profile-company-in-delhi [R=301,L]
+    RewriteRule ^(?:services|company)/ecommerce-(?:management|marketplaces|acceleration)/?$ /ecommerce-management-company-in-delhi [R=301,L]
+    RewriteRule ^(?:services|company)/graphic-design/?$ /graphic-design-company-in-delhi [R=301,L]
+    RewriteRule ^(?:services|company)/(?:ui-ux-branding|brand-architecture|brand-creative-direction)/?$ /graphic-design-company-in-delhi [R=301,L]
+    RewriteRule ^(?:services|company)/seo(?:-services)?/?$ /seo-company-in-delhi [R=301,L]
+    RewriteRule ^(?:services|company)/digital-marketing(?:-seo)?/?$ /seo-company-in-delhi [R=301,L]
+    RewriteRule ^(?:services|company)/social-media-marketing/?$ /social-media-marketing-company-in-delhi [R=301,L]
+    RewriteRule ^(?:services|company)/product-photography/?$ /product-photography-company-in-delhi [R=301,L]
+    RewriteRule ^(?:services|company)/(?:video-editing|creative-video-production|creative-production)/?$ /video-editing-company-in-delhi [R=301,L]
+    RewriteRule ^(?:services|company)/(?:web-development|web-software-development|strategic-consulting|digital-engineering|ai-automation-workflows)/?$ /web-development-company-in-delhi [R=301,L]
+    RewriteRule ^(?:services|company)/cloud-it-consulting/?$ /cloud-it-consulting-company-in-delhi [R=301,L]
 
-    # 301 Redirect old /{slug}-company-in-delhi to canonical /company/{slug}
-    RewriteRule ^([a-zA-Z0-9_-]+)-company-in-delhi/?$ /company/$1 [R=301,L]
+    # 301 Redirect old alias /{slug}-company-in-delhi variants to new canonical URLs
+    RewriteRule ^ppc-paid-ads-company-in-delhi/?$ /ppc-company-in-delhi [R=301,L]
+    RewriteRule ^web-software-development-company-in-delhi/?$ /web-development-company-in-delhi [R=301,L]
+    RewriteRule ^digital-marketing-seo-company-in-delhi/?$ /seo-company-in-delhi [R=301,L]
+    RewriteRule ^ui-ux-branding-company-in-delhi/?$ /graphic-design-company-in-delhi [R=301,L]
+    RewriteRule ^ecommerce-marketplaces-company-in-delhi/?$ /ecommerce-management-company-in-delhi [R=301,L]
+    RewriteRule ^creative-video-production-company-in-delhi/?$ /video-editing-company-in-delhi [R=301,L]
 
-    # 301 Redirect old /services/{slug} to canonical /company/{slug}
-    RewriteRule ^services/([a-zA-Z0-9_-]+)/?$ /company/$1 [R=301,L]
+    # 301 Redirect generic old /services/{slug} and /company/{slug} to /{slug}-company-in-delhi
+    RewriteRule ^(?:services|company)/([a-zA-Z0-9_-]+)/?$ /$1-company-in-delhi [R=301,L]
 
-    # 301 Redirect old services overview paths to canonical /company
-    RewriteRule ^(?:company-in-delhi|services)/?$ /company [R=301,L]
+    # 301 Redirect old services overview paths to canonical /digital-marketing-company-in-delhi
+    RewriteRule ^(?:company-in-delhi|company|services)/?$ /digital-marketing-company-in-delhi [R=301,L]
 
     # 301 Redirect old /insights/{slug} to /blog/{slug}
     RewriteRule ^insights/([a-zA-Z0-9_-]+)/?$ /blog/$1 [R=301,L]
@@ -106,15 +101,19 @@ AddType text/markdown .md
     # 301 Redirect old /insights to /blog
     RewriteRule ^insights/?$ /blog [R=301,L]
 
-    # Clean Services Overview Rewriting: /company -> services.php
+    # Clean Services Overview Rewriting: /digital-marketing-company-in-delhi -> services.php
     RewriteCond %{REQUEST_FILENAME} !-f
     RewriteCond %{REQUEST_FILENAME} !-d
-    RewriteRule ^company/?$ services.php [L,QSA]
+    RewriteRule ^digital-marketing-company-in-delhi/?$ services.php [L,QSA]
 
-    # Clean Service URL Rewriting: /company/{slug} -> service-detail.php?slug={slug}
+    # Clean Service URL Rewriting: /{slug}-company-in-delhi -> service-detail.php?slug={slug}
     RewriteCond %{REQUEST_FILENAME} !-f
     RewriteCond %{REQUEST_FILENAME} !-d
-    RewriteRule ^company/([a-zA-Z0-9_-]+)/?$ service-detail.php?slug=$1 [L,QSA]
+    RewriteRule ^ppc-company-in-delhi/?$ service-detail.php?slug=ppc-paid-ads [L,QSA]
+
+    RewriteCond %{REQUEST_FILENAME} !-f
+    RewriteCond %{REQUEST_FILENAME} !-d
+    RewriteRule ^([a-zA-Z0-9_-]+)-company-in-delhi/?$ service-detail.php?slug=$1 [L,QSA]
 
     # Clean Blog Listing Rewriting: /blog -> insights.php
     RewriteCond %{REQUEST_FILENAME} !-f

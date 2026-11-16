@@ -1,41 +1,41 @@
 {
-    "last_sync_timestamp": "2026-11-14 09:15:56",
-    "last_sync_iso": "2026-11-14T09:15:56+00:00",
-    "trigger_reason": "Second Regeneration Idempotency Verification",
+    "last_sync_timestamp": "2026-11-16 05:59:38",
+    "last_sync_iso": "2026-11-16T05:59:38+00:00",
+    "trigger_reason": "Cleanup temporary test blogs",
     "status": "success",
-    "duration_ms": 229.21,
+    "duration_ms": 297.81,
     "errors": [],
     "metrics": {
         "static_pages": 7,
-        "services": 6,
+        "services": 10,
         "case_studies": 3,
         "insights": 5,
-        "total_urls_in_sitemap": 21,
-        "total_md_files": 22
+        "total_urls_in_sitemap": 25,
+        "total_md_files": 26
     },
     "files": {
         "sitemap_xml": {
             "path": "sitemap.xml",
-            "size_bytes": 4150,
+            "size_bytes": 4961,
             "status": "written"
         },
         "llms_txt": {
             "path": "llms.txt",
-            "size_bytes": 5357,
+            "size_bytes": 5899,
             "status": "written"
         },
         "llms_md": {
             "path": "llms.md",
-            "size_bytes": 16827,
+            "size_bytes": 21959,
             "status": "written"
         },
         "md_index": {
             "path": "md/index.md",
-            "size_bytes": 8292,
+            "size_bytes": 9515,
             "status": "written"
         },
         "md_files": {
-            "count_written": 22,
+            "count_written": 26,
             "count_purged": 0,
             "status": "synchronized"
         }

@@ -31,15 +31,27 @@ if (str_starts_with($uri, '/admin/')) {
     }
 }
 
-// 3. Clean Services Overview: /company -> services.php
-if (preg_match('#^/company/?$#', $uri)) {
+// 3. Clean Services Overview: /digital-marketing-company-in-delhi -> services.php
+if (preg_match('#^/digital-marketing-company-in-delhi/?$#', $uri)) {
     require __DIR__ . '/services.php';
     return true;
 }
 
-// 4. Clean Individual Service URLs: /company/{slug} -> service-detail.php?slug={slug}
-if (preg_match('#^/company/([a-zA-Z0-9_-]+)/?$#', $uri, $matches)) {
-    $_GET['slug'] = $matches[1];
+// 4. Clean Individual Service URLs: /{slug}-company-in-delhi -> service-detail.php?slug={slug}
+if (preg_match('#^/([a-zA-Z0-9_-]+)-company-in-delhi/?$#', $uri, $matches)) {
+    $rawSlug = $matches[1];
+    if ($rawSlug === 'digital-marketing') {
+        require __DIR__ . '/services.php';
+        return true;
+    }
+    require_once __DIR__ . '/includes/functions.php';
+    $targetUrl = getServiceUrl($rawSlug);
+    $targetPath = parse_url($targetUrl, PHP_URL_PATH);
+    if ($uri !== $targetPath) {
+        header("Location: " . $targetPath, true, 301);
+        return true;
+    }
+    $_GET['slug'] = ($rawSlug === 'ppc') ? 'ppc-paid-ads' : $rawSlug;
     require __DIR__ . '/service-detail.php';
     return true;
 }
@@ -58,25 +70,20 @@ if (preg_match('#^/blog/([a-zA-Z0-9_-]+)/?$#', $uri, $matches)) {
 }
 
 // 7. Legacy Service 301 Permanent Redirects
-// Redirect /{slug}-company-in-delhi -> /company/{slug}
-if (preg_match('#^/([a-zA-Z0-9_-]+)-company-in-delhi/?$#', $uri, $matches)) {
+// Redirect /company/{slug} and /services/{slug} -> canonical /{slug}-company-in-delhi
+if (preg_match('#^/(?:company|services)/([a-zA-Z0-9_-]+)/?$#', $uri, $matches)) {
     require_once __DIR__ . '/includes/functions.php';
     $targetUrl = getServiceUrl($matches[1]);
     $targetPath = parse_url($targetUrl, PHP_URL_PATH);
     header("Location: " . $targetPath, true, 301);
     return true;
 }
-// Redirect /services/{slug} -> /company/{slug}
-if (preg_match('#^/services/([a-zA-Z0-9_-]+)/?$#', $uri, $matches)) {
+// Redirect /company-in-delhi, /company, /services, /services.php -> /digital-marketing-company-in-delhi
+if (preg_match('#^/(?:company-in-delhi|company|services)/?$#', $uri) || $uri === '/services.php') {
     require_once __DIR__ . '/includes/functions.php';
-    $targetUrl = getServiceUrl($matches[1]);
+    $targetUrl = getServicesOverviewUrl();
     $targetPath = parse_url($targetUrl, PHP_URL_PATH);
     header("Location: " . $targetPath, true, 301);
-    return true;
-}
-// Redirect /company-in-delhi, /services, /services.php -> /company
-if (preg_match('#^/(?:company-in-delhi|services)/?$#', $uri) || $uri === '/services.php') {
-    header("Location: /company", true, 301);
     return true;
 }
 

@@ -54,12 +54,12 @@ class SeoSyncEngine
                 'description' => 'BusinessDoctor delivers enterprise IT solutions, web & custom software development, digital marketing, UI/UX architecture, e-commerce, and cloud consulting.'
             ],
             [
-                'loc' => '/company',
+                'loc' => '/digital-marketing-company-in-delhi',
                 'file' => 'services.php',
                 'priority' => '0.9',
                 'changefreq' => 'weekly',
-                'title' => 'IT Services & Practice Areas',
-                'description' => 'Explore BusinessDoctor’s 10 integrated digital & technology disciplines: SMO, Google Business Profile Management, PPC / Paid Ads, Ecommerce Management, Graphic Design, SEO, Social Media Marketing, Product Photography, Video Editing, and Web Development.'
+                'title' => 'Digital Marketing Services Delhi NCR — BusinessDoctor',
+                'description' => 'Targeted growth solutions for businesses in Delhi NCR: SMO, Google Business Profile Management, PPC / Paid Ads, Ecommerce Management, Graphic Design, SEO, Social Media Marketing, Product Photography, Video Editing, and Web Development.'
             ],
             [
                 'loc' => '/audit.php',
@@ -252,7 +252,7 @@ class SeoSyncEngine
         foreach ($services as $slug => $s) {
             $name = $s['name'];
             $summary = rtrim(strip_tags($s['summary'] ?? $s['tagline']), '.');
-            $url = $baseUrl . '/company/' . rawurlencode($slug);
+            $url = getServiceUrl($slug);
             $lines[] = "- [{$name}]({$url}): {$summary}.";
         }
         $lines[] = "";
@@ -349,7 +349,7 @@ class SeoSyncEngine
             $name = $s['name'] ?? '';
             $sTagline = $s['tagline'] ?? '';
             $desc = $s['description'] ?? $s['summary'] ?? '';
-            $url = "{$baseUrl}/company/{$slug}";
+            $url = getServiceUrl($slug);
 
             $lines[] = "### 2.{$num} {$name}";
             $lines[] = "**Tagline**: {$sTagline}";
@@ -806,8 +806,8 @@ class SeoSyncEngine
         $serviceName = $service['name'] ?? 'Practice Area';
         $serviceSlug = $slug;
         $consultationUrl = $baseUrl . '/contact.php?service=' . urlencode($serviceName);
-        $canonicalUrl = $baseUrl . '/company/' . urlencode($slug);
-        $cleanMdUrl = $baseUrl . '/company/' . urlencode($slug) . '.md';
+        $canonicalUrl = getServiceUrl($slug);
+        $cleanMdUrl = getMarkdownUrl($canonicalUrl);
         $mdUrl = $baseUrl . '/md/services/' . urlencode($slug) . '.md';
 
         $bodyMd = '';
@@ -1147,8 +1147,8 @@ MD;
                     $tagline = $s['tagline'] ?? '';
                     $summary = $s['summary'] ?? '';
                     $description = $s['description'] ?? '';
-                    $webUrl = "{$baseUrl}/company/{$slug}";
-                    $cleanMdUrl = "{$baseUrl}/company/{$slug}.md";
+                    $webUrl = getServiceUrl($slug);
+                    $cleanMdUrl = getMarkdownUrl($webUrl);
                     $centralMdUrl = "{$baseUrl}/md/services/{$slug}.md";
                     $consultUrl = "{$baseUrl}/contact.php?service=" . urlencode($name);
 
@@ -1346,13 +1346,17 @@ We engineer digital solutions across four primary pillars to ensure scalable, fr
 ---
 
 ## 03 // Engineered Capabilities Built for Enterprise Scale
-We provide 6 core integrated practice disciplines operating under one accountable standard:
-1. **[Web & Custom Software Development]({$baseUrl}/company/web-software-development)**: High-performance enterprise web applications, custom portals, and fast PHP 8+ engineering.
-2. **[Digital Marketing & Performance Ads]({$baseUrl}/company/digital-marketing-seo)**: Data-driven customer acquisition across Google Search, Performance Max, Meta, and SEO authority.
-3. **[UI/UX Design & Brand Identity]({$baseUrl}/company/ui-ux-branding)**: Conversion-centered interface design, brand identity systems, and enterprise design architecture.
-4. **[E-Commerce & Marketplace Management]({$baseUrl}/company/ecommerce-marketplaces)**: Full-funnel marketplace scaling, Amazon & multi-channel operations, and catalog conversion optimization.
-5. **[Creative Production & Video Marketing]({$baseUrl}/company/creative-video-production)**: High-impact video creative, motion design, and commercial visual production.
-6. **[Cloud Solutions & IT Consulting]({$baseUrl}/company/cloud-it-consulting)**: Enterprise cloud infrastructure, DevOps, cybersecurity audits, and uptime maintenance.
+We provide 10 integrated practice disciplines operating under one accountable standard:
+1. **[SMO]({$baseUrl}/smo-company-in-delhi)**: Strategic profile optimization, bio conversion funnels, branded content templates, and improved social visibility.
+2. **[Google Business Profile Management]({$baseUrl}/google-business-profile-company-in-delhi)**: Complete GBP setup, Google Maps optimization, local search visibility, profile management, and review strategy.
+3. **[PPC / Paid Ads]({$baseUrl}/ppc-company-in-delhi)**: High-converting Google Search, Performance Max, Meta Ads, and LinkedIn B2B advertising campaigns.
+4. **[Ecommerce Management]({$baseUrl}/ecommerce-management-company-in-delhi)**: Amazon and Flipkart marketplace management, product listings, inventory optimization, A+ content, and marketplace growth.
+5. **[Graphic Design]({$baseUrl}/graphic-design-company-in-delhi)**: Corporate brand identity, creative graphics, marketing materials, social media creatives, and visual communication.
+6. **[SEO — Search Engine Optimization]({$baseUrl}/seo-company-in-delhi)**: Technical SEO, on-page optimization, keyword strategy, search visibility, organic traffic, and performance monitoring.
+7. **[Social Media Marketing]({$baseUrl}/social-media-marketing-company-in-delhi)**: Social media strategy, content planning, campaign management, audience engagement, and brand growth.
+8. **[Product Photography]({$baseUrl}/product-photography-company-in-delhi)**: Professional product photography, ecommerce product visuals, creative compositions, and conversion-focused imagery.
+9. **[Video Editing]({$baseUrl}/video-editing-company-in-delhi)**: Professional promotional videos, short-form content, Instagram Reels, YouTube Shorts, and brand videos.
+10. **[Web Development]({$baseUrl}/web-development-company-in-delhi)**: Fast, responsive business websites, custom web applications, performance optimization, and conversion-focused development.
 
 ---
 
@@ -1490,7 +1494,7 @@ MD;
         $lines[] = "";
         $lines[] = "- [Homepage Overview]({$baseUrl}/md/home.md) ([Clean URL]({$baseUrl}/.md) | [Web Page]({$baseUrl}/)): Enterprise digital practice overview.";
         $lines[] = "- [Firm Profile & Leadership]({$baseUrl}/md/about.md) ([Clean URL]({$baseUrl}/about.php.md) | [Web Page]({$baseUrl}/about.php)): Engineering ethos and leadership profile.";
-        $lines[] = "- [Services Overview Hub]({$baseUrl}/md/services.md) ([Clean URL]({$baseUrl}/company.md) | [Web Page]({$baseUrl}/company)): Multi-disciplinary capability catalog.";
+        $lines[] = "- [Services Overview Hub]({$baseUrl}/md/services.md) ([Clean URL]({$baseUrl}/digital-marketing-company-in-delhi.md) | [Web Page]({$baseUrl}/digital-marketing-company-in-delhi)): Multi-disciplinary capability catalog.";
         $lines[] = "- [Executive Advisory & Inquiries]({$baseUrl}/md/contact.md) ([Clean URL]({$baseUrl}/contact.php.md) | [Web Page]({$baseUrl}/contact.php)): Direct engagement and consulting channels.";
         $lines[] = "- [Digital Diagnostic Audit Framework]({$baseUrl}/md/audit.md) ([Clean URL]({$baseUrl}/audit.php.md) | [Web Page]({$baseUrl}/audit.php)): Benchmarking performance, security, and CAC.";
         $lines[] = "- [Technical Blog & Perspectives Catalog]({$baseUrl}/md/insights.md) ([Clean URL]({$baseUrl}/blog.md) | [Web Page]({$baseUrl}/blog)): Index of published technical essays.";
@@ -1503,9 +1507,9 @@ MD;
         foreach ($services as $slug => $s) {
             $name = $s['name'];
             $tag = rtrim(strip_tags($s['tagline'] ?? $s['summary']), '.');
-            $cleanUrl = "{$baseUrl}/company/{$slug}.md";
+            $webUrl = getServiceUrl($slug);
+            $cleanUrl = getMarkdownUrl($webUrl);
             $repoUrl = "{$baseUrl}/md/services/{$slug}.md";
-            $webUrl = "{$baseUrl}/company/{$slug}";
             $lines[] = "- [{$name}]({$repoUrl}) ([Clean URL]({$cleanUrl}) | [Web Page]({$webUrl})): {$tag}.";
         }
         $lines[] = "";
@@ -1780,12 +1784,12 @@ MD;
             }
         }
 
-        // Stale URL pattern check: block /services/{slug} (not /md/services/) or -company-in-delhi
+        // Stale URL pattern check: block legacy /services/{slug} (not /md/services/) or /company/{slug}
         if (str_ends_with($filePath, '.xml') || str_ends_with($filePath, '.txt') || str_ends_with($filePath, '.md')) {
             if (preg_match('#(?<!/md)/services/[a-zA-Z0-9_-]+(?!\.md)#', $content, $m)) {
                 $errors[] = "Stale URL pattern detected: {$m[0]}";
             }
-            if (preg_match('#[a-zA-Z0-9_-]+-company-in-delhi#', $content, $m)) {
+            if (preg_match('#(?<!/md)/company/[a-zA-Z0-9_-]+(?!\.md)#', $content, $m)) {
                 $errors[] = "Stale URL pattern detected: {$m[0]}";
             }
         }

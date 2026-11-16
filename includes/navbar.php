@@ -22,11 +22,11 @@ $practiceAreas = getPracticeAreas();
       <a href="<?= appUrl('about.php') ?>" class="nav-link <?= isActivePage('about.php') ?>">About Us</a>
 
       <!-- Services Mega Menu Parent -->
-      <div class="nav-item has-mega-menu">
+      <div class="nav-item has-mega-menu" id="servicesNavItem">
         <a href="<?= getServicesOverviewUrl() ?>"
           class="nav-link nav-link-dropdown <?= isActivePage('services.php', 'service-detail.php') ?>"
-          aria-haspopup="true" aria-expanded="false">
-          <span>IT Services</span>
+          aria-haspopup="true" aria-expanded="false" id="servicesDropdownTrigger">
+          <span>Services</span>
           <svg class="dropdown-chevron" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
             <path fill-rule="evenodd"
               d="M5.23 7.21a.75.75 0 011.06.02L10 11.168l3.71-3.938a.75.75 0 111.08 1.04l-4.25 4.5a.75.75 0 01-1.08 0l-4.25-4.5a.75.75 0 01.02-1.06z"
@@ -34,53 +34,49 @@ $practiceAreas = getPracticeAreas();
           </svg>
         </a>
 
-        <!-- Mega Menu Flyout Panel -->
-        <div class="mega-menu" role="region" aria-label="Services Mega Menu">
-          <div class="mega-menu-inner container">
-            <div class="mega-menu-header">
-              <span class="mega-eyebrow">DIGITAL &amp; TECHNOLOGY SERVICES</span>
-              <p class="mega-subhead">Explore our specialized digital capabilities engineered to scale modern businesses.</p>
+        <!-- Premium White Mega Menu Flyout Panel (BuzzSpire Inspired) -->
+        <div class="mega-menu" role="region" aria-label="Digital Marketing Services">
+          <div class="mega-menu-inner">
+            <!-- Header -->
+            <div class="mega-menu-topbar">
+              <div class="mega-menu-header-text">
+                <span class="mega-menu-title">Digital Marketing Services</span>
+                <p class="mega-menu-subtitle">Targeted growth solutions for businesses in Delhi NCR</p>
+              </div>
+              <a href="<?= getServicesOverviewUrl() ?>" class="mega-menu-overview-btn" aria-label="Services Overview">
+                <span>Overview</span>
+                <svg viewBox="0 0 20 20" fill="currentColor" class="mega-overview-icon" aria-hidden="true">
+                  <path fill-rule="evenodd" d="M7.21 14.77a.75.75 0 01.02-1.06L11.168 10 7.23 6.29a.75.75 0 111.04-1.08l4.5 4.25a.75.75 0 010 1.08l-4.5 4.25a.75.75 0 01-1.06-.02z" clip-rule="evenodd" />
+                </svg>
+              </a>
             </div>
 
-            <div class="mega-menu-grid">
-              <!-- Services List (2 columns of 3 services) -->
-              <div class="mega-services-cols">
-                <?php foreach ($practiceAreas as $slug => $p): ?>
-                  <a href="<?= getServiceUrl($slug) ?>" class="mega-service-item">
-                    <div class="mega-item-icon"><?= $p['icon'] ?></div>
-                    <div class="mega-item-text">
-                      <div class="mega-item-title">
-                        <span class="mega-item-num"><?= e($p['number']) ?>.</span>
-                        <span><?= e($p['name']) ?></span>
-                      </div>
-                      <p class="mega-item-desc"><?= e($p['summary']) ?></p>
-                    </div>
-                  </a>
-                <?php endforeach; ?>
-              </div>
+            <!-- Spacious 2-Column Services Grid -->
+            <div class="mega-services-grid">
+              <?php foreach ($practiceAreas as $slug => $p): 
+                $displayTitle = ($slug === 'smo') ? 'SMO' : $p['name'];
+              ?>
+                <a href="<?= getServiceUrl($slug) ?>" class="mega-service-card">
+                  <div class="mega-icon-circle">
+                    <?= $p['icon'] ?>
+                  </div>
+                  <div class="mega-service-info">
+                    <span class="mega-service-name"><?= e($displayTitle) ?></span>
+                    <p class="mega-service-desc"><?= e($p['summary']) ?></p>
+                  </div>
+                </a>
+              <?php endforeach; ?>
+            </div>
 
-              <!-- Mega Menu Highlight / Action Column -->
-              <div class="mega-highlight-col">
-                <div class="mega-highlight-card">
-                  <div class="pill-tag small">
-                    <span class="pill-dot"></span>
-                    <span>DIGITAL ASSESSMENT</span>
-                  </div>
-                  <h4>Assess Your Technology & Growth Health</h4>
-                  <p>Uncover bottlenecks in site performance, organic acquisition, and e-commerce conversions with our
-                    technical audit.</p>
-                  <a href="<?= appUrl('audit.php') ?>" class="btn btn-accent btn-sm">
-                    <span>Free Digital Audit</span>
-                    <svg class="btn-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                      <line x1="5" y1="12" x2="19" y2="12" />
-                      <polyline points="12 5 19 12 12 19" />
-                    </svg>
-                  </a>
-                  <div class="mega-highlight-footer">
-                    <a href="<?= getServicesOverviewUrl() ?>" class="text-link">Explore All Services &rarr;</a>
-                  </div>
-                </div>
-              </div>
+            <!-- Footer Strip -->
+            <div class="mega-menu-bottom-bar">
+              <span class="mega-footer-question">Not sure what you need?</span>
+              <a href="<?= appUrl('contact.php') ?>" class="mega-footer-action">
+                <span>Get a Free Consultation</span>
+                <svg viewBox="0 0 20 20" fill="currentColor" class="mega-footer-arrow" aria-hidden="true">
+                  <path fill-rule="evenodd" d="M7.21 14.77a.75.75 0 01.02-1.06L11.168 10 7.23 6.29a.75.75 0 111.04-1.08l4.5 4.25a.75.75 0 010 1.08l-4.5 4.25a.75.75 0 01-1.06-.02z" clip-rule="evenodd" />
+                </svg>
+              </a>
             </div>
           </div>
         </div>
@@ -152,10 +148,10 @@ $practiceAreas = getPracticeAreas();
         <div class="mobile-accordion-row">
           <a href="<?= getServicesOverviewUrl() ?>"
             class="mobile-nav-link mobile-accordion-link <?= isActivePage('services.php', 'service-detail.php') ?>">
-            <span>IT Services</span>
+            <span>Services</span>
           </a>
           <button type="button" class="mobile-accordion-toggle" id="mobileServicesToggle" aria-expanded="false"
-            aria-controls="mobileServicesSubmenu" aria-label="Toggle IT Services Submenu">
+            aria-controls="mobileServicesSubmenu" aria-label="Toggle Services Submenu">
             <span class="accordion-toggle-text">Expand</span>
             <svg class="mobile-accordion-chevron" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
               <path fill-rule="evenodd"
@@ -168,7 +164,7 @@ $practiceAreas = getPracticeAreas();
         <div class="mobile-submenu-panel" id="mobileServicesSubmenu" role="region"
           aria-labelledby="mobileServicesToggle">
           <div class="mobile-submenu-inner">
-            <div class="mobile-submenu-eyebrow">DIGITAL &amp; TECHNOLOGY SERVICES</div>
+            <div class="mobile-submenu-eyebrow">DIGITAL MARKETING SERVICES</div>
             <a href="<?= getServicesOverviewUrl() ?>"
               class="mobile-submenu-link mobile-submenu-overview <?= isActivePage('services.php') ?>">
               <span class="mobile-sublink-num">&rarr;</span>
@@ -178,16 +174,17 @@ $practiceAreas = getPracticeAreas();
             $currentNavSlug = $_GET['slug'] ?? '';
             if ($currentNavSlug === '') {
               $currPath = parse_url($_SERVER['REQUEST_URI'] ?? '', PHP_URL_PATH);
-              if ($currPath && preg_match('#^/(?:services/|company/|)([a-zA-Z0-9_-]+)-company-in-delhi#', $currPath, $m)) {
-                $currentNavSlug = $m[1];
+              if ($currPath && preg_match('#^/([a-zA-Z0-9_-]+)-company-in-delhi#', $currPath, $m)) {
+                $currentNavSlug = ($m[1] === 'ppc') ? 'ppc-paid-ads' : $m[1];
               }
             }
             foreach ($practiceAreas as $slug => $p):
+              $displayTitle = ($slug === 'smo') ? 'SMO' : $p['name'];
               ?>
               <a href="<?= getServiceUrl($slug) ?>"
                 class="mobile-submenu-link <?= ($currentNavSlug === $slug) ? 'active' : '' ?>">
                 <span class="mobile-sublink-num"><?= e($p['number']) ?>.</span>
-                <span class="mobile-sublink-name"><?= e($p['name']) ?></span>
+                <span class="mobile-sublink-name"><?= e($displayTitle) ?></span>
               </a>
             <?php endforeach; ?>
           </div>

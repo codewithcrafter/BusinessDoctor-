@@ -105,6 +105,9 @@ if (!empty($envAppUrl) && !($isLocalHost && str_contains($envAppUrl, 'demo.busin
     if ($host === 'demo.businessdoctor.com') {
         $host = 'demo.businesdoctor.com';
     }
+    if ($host === 'demo.businesdoctor.com') {
+        $protocol = 'https://';
+    }
     $scriptDir = dirname($_SERVER['SCRIPT_NAME'] ?? '');
     $scriptDir = rtrim(str_replace('\\', '/', $scriptDir), '/');
 

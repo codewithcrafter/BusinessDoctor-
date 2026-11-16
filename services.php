@@ -10,16 +10,22 @@ require_once __DIR__ . '/includes/config.php';
 require_once __DIR__ . '/includes/db.php';
 require_once __DIR__ . '/includes/functions.php';
 
-// 301 Permanent Redirect legacy URLs (/services.php, /services, /company-in-delhi) to canonical /company
+// 301 Permanent Redirect legacy URLs to canonical /digital-marketing-company-in-delhi
+$canonicalUrl = getServicesOverviewUrl();
+$canonicalPath = parse_url($canonicalUrl, PHP_URL_PATH);
 $reqPath = parse_url($_SERVER['REQUEST_URI'] ?? '', PHP_URL_PATH) ?? '';
-if ($reqPath === '/services.php' || $reqPath === '/services' || $reqPath === '/services/' || $reqPath === '/company-in-delhi' || $reqPath === '/company-in-delhi/') {
-    header("Location: " . getServicesOverviewUrl(), true, 301);
+
+if ($reqPath !== $canonicalPath && in_array($reqPath, [
+    '/services.php', '/services', '/services/',
+    '/company', '/company/',
+    '/company-in-delhi', '/company-in-delhi/'
+], true)) {
+    header("Location: " . $canonicalUrl, true, 301);
     exit;
 }
 
-$pageTitle = 'IT & Digital Services — BusinessDoctor Enterprise Technology';
-$pageDescription = 'Explore BusinessDoctor\'s core integrated digital & technology practice areas: Web & Custom Software Development, Digital Marketing & Performance Ads, UI/UX Design & Brand Identity, E-Commerce & Marketplace Management, Creative Video Production, and Cloud Solutions & IT Consulting.';
-$canonicalUrl = getServicesOverviewUrl();
+$pageTitle = 'Digital Marketing Services Delhi NCR — BusinessDoctor';
+$pageDescription = 'Targeted digital marketing and technology growth solutions for businesses in Delhi NCR: SMO, Google Business Profile, PPC Ads, Ecommerce, Graphic Design, SEO, SMM, Product Photography, Video Editing, and Web Development.';
 $schemaPageKey = 'services';
 
 $practices = getPracticeAreas();

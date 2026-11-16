@@ -10,7 +10,7 @@ require_once __DIR__ . '/includes/db.php';
 require_once __DIR__ . '/includes/functions.php';
 
 // 1. Permanent Redirects from non-canonical URL formats
-// All service detail pages follow the canonical URL structure: /company/{service-slug}
+// All service detail pages follow the canonical URL structure: /{service-slug}-company-in-delhi
 $reqUri = $_SERVER['REQUEST_URI'] ?? '';
 $reqPath = parse_url($reqUri, PHP_URL_PATH) ?? '';
 $rawSlug = trim($_GET['slug'] ?? '');
@@ -28,18 +28,18 @@ if (str_starts_with($baseRawSlug, 'company/')) {
 $baseRawSlug = trim($baseRawSlug, '/');
 
 // Validate and fetch practice
-if ($baseRawSlug === '') {
+if ($baseRawSlug === '' || $baseRawSlug === 'digital-marketing') {
     header("Location: " . getServicesOverviewUrl(), true, 301);
     exit;
 }
 
 $practice = getPracticeBySlug($baseRawSlug);
 
-// If client requested via legacy patterns or query param or alias, 301 redirect to canonical /company/{canonicalSlug}
+// If client requested via legacy patterns or query param or alias, 301 redirect to canonical
 if ($practice) {
     $canonicalUrl = getServiceUrl($practice['slug']);
     $canonicalPath = parse_url($canonicalUrl, PHP_URL_PATH);
-    if ($reqPath !== $canonicalPath && $reqPath !== '/company/' . $practice['slug']) {
+    if ($reqPath !== $canonicalPath) {
         header("Location: " . $canonicalUrl, true, 301);
         exit;
     }

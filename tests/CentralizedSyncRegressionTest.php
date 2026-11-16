@@ -1,7 +1,7 @@
 <?php
 /**
  * BusinessDoctor — Centralized SEO & Markdown Auto-Synchronization Regression Test Suite
- * Executes 7 core lifecycle scenarios + idempotent regeneration verification.
+ * Updated for the 10 Core Services and *-company-in-delhi canonical URL architecture.
  */
 
 declare(strict_types=1);
@@ -15,6 +15,8 @@ class CentralizedSyncRegressionTest
 {
     private array $results = [];
     private PDO $db;
+    private ?int $createdBlogId = null;
+    private ?string $createdBlogSlug = null;
 
     public function __construct()
     {
@@ -27,7 +29,7 @@ class CentralizedSyncRegressionTest
         echo "STARTING CENTRALIZED SEO & MARKDOWN AUTO-SYNC REGRESSION TEST SUITE\n";
         echo "====================================================================\n\n";
 
-        $this->verifyBaselineSixServices();
+        $this->verifyBaselineTenServices();
         $this->testScenario1_ServiceUrlStructure();
         $this->testScenario2_ServiceDescriptionEdit();
         $this->testScenario3_PublishNewBlog();
@@ -53,38 +55,41 @@ class CentralizedSyncRegressionTest
     }
 
     /**
-     * Baseline check: All 6 core services are active and properly formed
+     * Baseline check: All 10 core services are active and properly formed
      */
-    private function verifyBaselineSixServices(): void
+    private function verifyBaselineTenServices(): void
     {
-        echo "--- Baseline Check: Six Core Services Verification ---\n";
+        echo "--- Baseline Check: Ten Core Services Verification ---\n";
         $services = SeoSyncEngine::getActiveServices();
-        $this->assert("Six Core Services Active", count($services) === 6, "Active services count = " . count($services));
+        $this->assert("Ten Core Services Active", count($services) === 10, "Active services count = " . count($services));
 
         $expectedSlugs = [
-            'web-software-development',
-            'digital-marketing-seo',
-            'ui-ux-branding',
-            'ecommerce-marketplaces',
-            'creative-video-production',
-            'cloud-it-consulting'
+            'smo' => 'smo-company-in-delhi',
+            'google-business-profile' => 'google-business-profile-company-in-delhi',
+            'ppc-paid-ads' => 'ppc-company-in-delhi',
+            'ecommerce-management' => 'ecommerce-management-company-in-delhi',
+            'graphic-design' => 'graphic-design-company-in-delhi',
+            'seo' => 'seo-company-in-delhi',
+            'social-media-marketing' => 'social-media-marketing-company-in-delhi',
+            'product-photography' => 'product-photography-company-in-delhi',
+            'video-editing' => 'video-editing-company-in-delhi',
+            'web-development' => 'web-development-company-in-delhi',
         ];
 
-        foreach ($expectedSlugs as $slug) {
+        foreach ($expectedSlugs as $slug => $expectedPattern) {
             $this->assert("Core Service [{$slug}] exists", isset($services[$slug]), "Found {$slug} in active services");
             $url = getServiceUrl($slug);
-            $expectedUrl = "http://demo.businesdoctor.com/company/{$slug}";
-            $this->assert("Core Service [{$slug}] URL pattern", str_contains($url, "/company/{$slug}"), "URL: {$url}");
+            $this->assert("Core Service [{$slug}] URL pattern", str_contains($url, $expectedPattern), "URL: {$url}");
         }
         echo "\n";
     }
 
     /**
-     * Scenario 1: Verify all 6 /company/{slug} URLs propagate into manifests
+     * Scenario 1: Verify all 10 *-company-in-delhi URLs propagate into manifests
      */
     private function testScenario1_ServiceUrlStructure(): void
     {
-        echo "--- Scenario 1: Service URL /company/{slug} Propagation ---\n";
+        echo "--- Scenario 1: Service URL *-company-in-delhi Propagation ---\n";
         SeoSyncEngine::syncAll("Regression Test Scenario 1: Baseline Propagation");
 
         $sitemap = file_get_contents(ROOT_PATH . '/sitemap.xml');
@@ -92,17 +97,20 @@ class CentralizedSyncRegressionTest
         $llmsMd = file_get_contents(ROOT_PATH . '/llms.md');
         $mdIndex = file_get_contents(ROOT_PATH . '/md/index.md');
 
-        $sixSlugs = [
-            'web-software-development',
-            'digital-marketing-seo',
-            'ui-ux-branding',
-            'ecommerce-marketplaces',
-            'creative-video-production',
-            'cloud-it-consulting'
+        $tenServices = [
+            'smo' => 'https://demo.businesdoctor.com/smo-company-in-delhi',
+            'google-business-profile' => 'https://demo.businesdoctor.com/google-business-profile-company-in-delhi',
+            'ppc-paid-ads' => 'https://demo.businesdoctor.com/ppc-company-in-delhi',
+            'ecommerce-management' => 'https://demo.businesdoctor.com/ecommerce-management-company-in-delhi',
+            'graphic-design' => 'https://demo.businesdoctor.com/graphic-design-company-in-delhi',
+            'seo' => 'https://demo.businesdoctor.com/seo-company-in-delhi',
+            'social-media-marketing' => 'https://demo.businesdoctor.com/social-media-marketing-company-in-delhi',
+            'product-photography' => 'https://demo.businesdoctor.com/product-photography-company-in-delhi',
+            'video-editing' => 'https://demo.businesdoctor.com/video-editing-company-in-delhi',
+            'web-development' => 'https://demo.businesdoctor.com/web-development-company-in-delhi',
         ];
 
-        foreach ($sixSlugs as $slug) {
-            $expectedUrl = "https://demo.businesdoctor.com/company/{$slug}";
+        foreach ($tenServices as $slug => $expectedUrl) {
             $this->assert("Sitemap contains [{$expectedUrl}]", str_contains($sitemap, "<loc>{$expectedUrl}</loc>"), "Found in sitemap.xml");
             $this->assert("llms.txt contains [{$expectedUrl}]", str_contains($llmsTxt, "({$expectedUrl})"), "Found in llms.txt");
             $this->assert("llms.md contains [{$expectedUrl}]", str_contains($llmsMd, "({$expectedUrl})"), "Found in llms.md");
@@ -110,14 +118,14 @@ class CentralizedSyncRegressionTest
             $this->assert("Physical markdown exists [md/services/{$slug}.md]", file_exists(ROOT_PATH . "/md/services/{$slug}.md"), "Physical file verified");
         }
 
-        // Strict assertion: Zero occurrences of old /services/ or -company-in-delhi
+        // Strict assertion: Zero occurrences of stale /services/ or /company/ in manifests
         $this->assert("Zero stale /services/ in sitemap", !preg_match('#(?<!/md)/services/[a-zA-Z0-9_-]+(?!\.md)#', $sitemap));
-        $this->assert("Zero stale -company-in-delhi in sitemap", !str_contains($sitemap, '-company-in-delhi'));
+        $this->assert("Zero stale /company/ in sitemap", !preg_match('#(?<!/md)/company/[a-zA-Z0-9_-]+#', $sitemap));
         $this->assert("Zero stale /services/ in llms.txt", !preg_match('#(?<!/md)/services/[a-zA-Z0-9_-]+(?!\.md)#', $llmsTxt));
-        $this->assert("Zero stale -company-in-delhi in llms.txt", !str_contains($llmsTxt, '-company-in-delhi'));
+        $this->assert("Zero stale /company/ in llms.txt", !preg_match('#(?<!/md)/company/[a-zA-Z0-9_-]+#', $llmsTxt));
         $this->assert("Zero stale /services/ in llms.md", !preg_match('#(?<!/md)/services/[a-zA-Z0-9_-]+(?!\.md)#', $llmsMd));
-        $this->assert("Zero stale -company-in-delhi in llms.md", !str_contains($llmsMd, '-company-in-delhi'));
-        $this->assert("Zero stale -company-in-delhi in md/index.md", !str_contains($mdIndex, '-company-in-delhi'));
+        $this->assert("Zero stale /company/ in llms.md", !preg_match('#(?<!/md)/company/[a-zA-Z0-9_-]+#', $llmsMd));
+        $this->assert("Zero stale /company/ in md/index.md", !preg_match('#(?<!/md)/company/[a-zA-Z0-9_-]+#', $mdIndex));
         echo "\n";
     }
 
@@ -127,7 +135,7 @@ class CentralizedSyncRegressionTest
     private function testScenario2_ServiceDescriptionEdit(): void
     {
         echo "--- Scenario 2: Service Description Edit Propagation ---\n";
-        $slug = 'web-software-development';
+        $slug = 'web-development';
         $originalService = getPracticeBySlug($slug);
         $originalSummary = $originalService['summary'] ?? '';
 
@@ -146,7 +154,6 @@ class CentralizedSyncRegressionTest
         SeoSyncEngine::syncDependenciesFor('service', $slug);
 
         $llmsTxt = file_get_contents(ROOT_PATH . '/llms.txt');
-        $mdIndex = file_get_contents(ROOT_PATH . '/md/index.md');
 
         $this->assert("Updated service summary propagated to llms.txt", str_contains($llmsTxt, $testTag), "Found mutation in llms.txt");
 
@@ -204,9 +211,6 @@ class CentralizedSyncRegressionTest
         $this->createdBlogSlug = $testSlug;
         echo "\n";
     }
-
-    private int $createdBlogId = 0;
-    private string $createdBlogSlug = '';
 
     /**
      * Scenario 4: Edit existing blog article
@@ -325,23 +329,16 @@ class CentralizedSyncRegressionTest
     private function testIdempotentSecondRegeneration(): void
     {
         echo "--- Idempotent Second Regeneration Verification ---\n";
-        $hash1 = [
-            'sitemap' => hash_file('sha256', ROOT_PATH . '/sitemap.xml'),
-            'llms_txt' => hash_file('sha256', ROOT_PATH . '/llms.txt'),
-            'llms_md' => hash_file('sha256', ROOT_PATH . '/llms.md'),
-            'md_index' => hash_file('sha256', ROOT_PATH . '/md/index.md'),
-        ];
-
         // Trigger second regeneration
         $res = SeoSyncEngine::syncAll("Second Regeneration Idempotency Verification");
         $this->assert("Second regeneration status success", $res['status'] === 'success');
 
-        // Check that core content did not drift (allowing timestamp changes if any)
+        // Check that core content did not drift
         $sitemap2 = file_get_contents(ROOT_PATH . '/sitemap.xml');
-        $this->assert("Second sitemap contains all 6 services", substr_count($sitemap2, '/company/') >= 6);
+        $this->assert("Second sitemap contains all 10 services", substr_count($sitemap2, '-company-in-delhi') >= 10);
 
         $llmsTxt2 = file_get_contents(ROOT_PATH . '/llms.txt');
-        $this->assert("Second llms.txt preserves canonical service URLs", substr_count($llmsTxt2, '/company/') >= 6);
+        $this->assert("Second llms.txt preserves canonical service URLs", substr_count($llmsTxt2, '-company-in-delhi') >= 10);
         echo "\n";
     }
 

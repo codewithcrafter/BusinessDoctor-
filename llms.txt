@@ -4,12 +4,16 @@
 BusinessDoctor is an enterprise digital services practice delivering full-stack software development, performance digital marketing, UI/UX architecture, e-commerce marketplace scaling, creative video production, and cloud IT infrastructure.
 
 ## Core Practice Disciplines
-- [Web & Custom Software Development](https://demo.businesdoctor.com/company/web-software-development): Custom enterprise websites, fast web applications, client portals, and secure database solutions engineered with modern PHP, HTML5, and clean JavaScript.
-- [Digital Marketing & Performance Ads](https://demo.businesdoctor.com/company/digital-marketing-seo): Comprehensive SEO, high-ROI Google Ads campaigns, social media marketing, and data-backed lead generation strategies that drive qualified customer acquisition.
-- [UI/UX Design & Brand Identity](https://demo.businesdoctor.com/company/ui-ux-branding): Modern UI/UX design, interactive prototypes, corporate logo design, brand style guides, and digital marketing creatives that make your brand stand out.
-- [E-Commerce & Marketplace Management](https://demo.businesdoctor.com/company/ecommerce-marketplaces): Full-lifecycle e-commerce growth: Amazon and Flipkart account management, A+ content, catalog SEO, Buy Box protection, and marketplace advertising.
-- [Creative Production & Video Marketing](https://demo.businesdoctor.com/company/creative-video-production): High-resolution commercial product photography, brand promo videos, engaging Reels and Shorts, and motion graphics that captivate digital audiences.
-- [Cloud Solutions & IT Consulting](https://demo.businesdoctor.com/company/cloud-it-consulting): Strategic IT consulting, cloud server setup, continuous website maintenance, security audits, and business process automation.
+- [SMO — Social Media Optimization](https://demo.businesdoctor.com/smo-company-in-delhi): Strategic profile optimization, bio conversion funnels, branded content templates, and improved social visibility.
+- [Google Business Profile Management](https://demo.businesdoctor.com/google-business-profile-company-in-delhi): Complete GBP setup, Google Maps optimization, local search visibility, profile management, and review strategy.
+- [PPC / Paid Ads](https://demo.businesdoctor.com/ppc-company-in-delhi): High-converting Google Search, Performance Max, Meta Ads, and LinkedIn B2B advertising campaigns.
+- [Ecommerce Management](https://demo.businesdoctor.com/ecommerce-management-company-in-delhi): Amazon and Flipkart marketplace management, product listings, inventory optimization, A+ content, and marketplace growth.
+- [Graphic Design](https://demo.businesdoctor.com/graphic-design-company-in-delhi): Corporate brand identity, creative graphics, marketing materials, social media creatives, and visual communication.
+- [SEO — Search Engine Optimization](https://demo.businesdoctor.com/seo-company-in-delhi): Technical SEO, on-page optimization, keyword strategy, search visibility, organic traffic, and performance monitoring.
+- [Social Media Marketing](https://demo.businesdoctor.com/social-media-marketing-company-in-delhi): Social media strategy, content planning, campaign management, audience engagement, and brand growth.
+- [Product Photography](https://demo.businesdoctor.com/product-photography-company-in-delhi): Professional product photography, ecommerce product visuals, creative compositions, and conversion-focused imagery.
+- [Video Editing](https://demo.businesdoctor.com/video-editing-company-in-delhi): Professional promotional videos, short-form content, Instagram Reels, YouTube Shorts, and brand videos.
+- [Web Development](https://demo.businesdoctor.com/web-development-company-in-delhi): Fast, responsive business websites, custom web applications, performance optimization, and conversion-focused development.
 
 ## Published Blog Articles
 - [Automated Test Blog Post for SEO Sync](https://demo.businesdoctor.com/blog/automated-test-blog-1794647339): Test summary for automated sync verification.
