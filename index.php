@@ -98,14 +98,14 @@ require_once __DIR__ . '/includes/header.php';
             </div>
 
             <h1 class="hero-headline-oversized">
-              Technology That Moves Business Forward.
-              <span class="text-gradient-pine">Engineered for Scalable Growth.</span>
+              Is Your Digital Presence Underperforming?
+              <span class="text-gradient-pine">You need the best digital marketing company for Business Growth.</span>
             </h1>
 
             <p class="hero-lead-text">
-              From intelligent software to digital growth, we engineer solutions that help businesses move beyond
-              limitations. We unify custom engineering, performance marketing, and marketplace operations under one
-              disciplined standard.
+              Every business needs the right diagnosis to grow, and here Business Doctor is to diagnose your business !!
+              We are the Best digital marketing company in Delhi that works according to what you need and what your
+              business needs.
             </p>
 
             <div class="hero-actions-group">
@@ -133,14 +133,16 @@ require_once __DIR__ . '/includes/header.php';
           <div class="hero-revealed-layer" id="heroRevealedLayer">
             <div class="revealed-eyebrow">
               <span class="pill-dot" style="background-color: var(--color-accent);"></span>
-              <span>DISCIPLINED DIGITAL TRANSFORMATION</span>
+              <span>full-service digital marketing company </span>
             </div>
             <h2 class="revealed-headline">
-              Engineering Without Compromise.
+              Your business needs the right prescription
+
             </h2>
             <p class="revealed-desc">
-              High-velocity software architecture, sub-second global infrastructure, and audited marketing ROI operating
-              under one accountable standard.
+              We are a top digital marketing company in Delhi that provides all the digital services that your business
+              needs on a single platform. We plan everything from scratch according to your needs.
+
             </p>
             <div class="revealed-badges-grid">
               <div class="revealed-badge-item">
@@ -259,11 +261,14 @@ require_once __DIR__ . '/includes/header.php';
         <span class="pill-dot"></span>
         <span>FEATURED CAPABILITIES</span>
       </div>
-      <h2 class="section-title" style="font-size: clamp(2rem, 3.5vw, 3rem);">Engineered Capabilities Built for
-        Enterprise Scale</h2>
+      <h2 class="section-title" style="font-size: clamp(2rem, 3.5vw, 3rem);">Digital Marketing Services in Delhi
+        Designed to Grow Your Business
+      </h2>
       <p class="lead">
-        We deliver end-to-end capabilities across six specialized disciplines—eliminating technology bottlenecks,
-        scaling customer acquisition, and commanding marketplace authority.
+        Business Doctor is a full-service digital marketing company in Delhi NCR that provides you with the best digital
+        marketing services, from web development, digital marketing and e-commerce management to cloud solutions. Our
+        team provides you with suitable personalization strategies that help you to grow.
+
       </p>
     </div>
 
@@ -387,11 +392,13 @@ require_once __DIR__ . '/includes/header.php';
         <span class="pill-dot"></span>
         <span>BUSINESS TRANSFORMATION</span>
       </div>
-      <h2 class="section-title" style="font-size: clamp(2rem, 3.5vw, 3rem);">Why Managing Multiple Freelancers &amp;
-        Vendors Slows Down Your Growth</h2>
+      <h2 class="section-title" style="font-size: clamp(2rem, 3.5vw, 3rem);">A digital marketing company &amp;
+        that simplifies business growth</h2>
       <p class="lead">
-        Most companies struggle because their web developer, SEO specialist, ad agency, and designer never communicate.
-        BusinessDoctor unifies end-to-end technology and digital services under one disciplined standard.
+        In today's competitive world, every business faces challenges such as low online visibility, low leads and more.
+        BusinessDoctor understands your business’s challenges and offers solutions that fit your needs. BusinessDoctor
+        provides marketing services such as website development, software development, SEO, social media marketing,
+        branding and cloud solutions.
       </p>
     </div>
 
@@ -401,10 +408,12 @@ require_once __DIR__ . '/includes/header.php';
         <div class="matrix-header">
           <span class="matrix-badge">Fragmented Vendors &amp; Generic Agencies</span>
         </div>
-        <h3>Disconnected Work, Technical Debt &amp; Wasted Ad Budgets</h3>
+        <h3>Common challenges that &amp;hold your business back </h3>
         <p style="font-size: 0.95rem; color: #cbd5e1; line-height: 1.6;">
-          Hiring separate freelancers or specialized agencies leads to finger-pointing, slow project delivery, bloated
-          code, and unoptimized ad spend.
+          Nowadays, many businesses invest a lot in their website and digital marketing, but they are still unable to
+          reach quality leads and customers. Due to a lack of proper planning and an effective strategy, marketing
+          budgets get spent, but they can't meet business expectations.
+
         </p>
 
         <div class="matrix-list">
@@ -414,8 +423,8 @@ require_once __DIR__ . '/includes/header.php';
               <line x1="15" y1="9" x2="9" y2="15" />
               <line x1="9" y1="9" x2="15" y2="15" />
             </svg>
-            <span><strong>Bloated, Slow Websites:</strong> Developers use pre-made templates with 5-second load times
-              that destroy your SEO rankings and paid traffic conversions.</span>
+            <span><strong> Low lead generation-</strong> Are you struggling to get potential
+              customers? Everyone just visits your website, but you still don't get leads.</span>
           </div>
           <div class="matrix-item">
             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
@@ -423,8 +432,9 @@ require_once __DIR__ . '/includes/header.php';
               <line x1="15" y1="9" x2="9" y2="15" />
               <line x1="9" y1="9" x2="15" y2="15" />
             </svg>
-            <span><strong>Inefficient Paid Ad Spend:</strong> Marketing agencies burn budgets on generic audiences while
-              failing to fix fundamental landing page bottlenecks.</span>
+            <span><strong> Low Online Visibility -</strong> Are potential customers not finding your business online?
+              Your website stays behind due to poor seo and a weak online presence on search engines.
+            </span>
           </div>
           <div class="matrix-item">
             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
@@ -432,8 +442,9 @@ require_once __DIR__ . '/includes/header.php';
               <line x1="15" y1="9" x2="9" y2="15" />
               <line x1="9" y1="9" x2="15" y2="15" />
             </svg>
-            <span><strong>Zero Single Accountability:</strong> When customer acquisition costs soar, developers blame
-              the marketers, and marketers blame the website.</span>
+            <span><strong>Poor Customer Engagement:</strong>Are people not interacting with your brand? Maybe due to low
+              engagement, poor appearance and inconsistent content, your audience is losing interest in your
+              brand.</span>
           </div>
         </div>
       </div>
@@ -443,10 +454,12 @@ require_once __DIR__ . '/includes/header.php';
         <div class="matrix-header">
           <span class="matrix-badge">The BusinessDoctor Advantage</span>
         </div>
-        <h3>Integrated Engineering &amp; High-Velocity Digital Execution</h3>
+        <h3>Solution for &amp; better growth</h3>
         <p style="font-size: 0.95rem; color: rgba(255, 255, 255, 0.85); line-height: 1.6;">
-          We operate as your dedicated technology and digital growth partner—building clean software, scaling traffic,
-          optimizing conversions, and protecting your bottom line.
+          The BusinessDoctor understands your market problem, and we work according to what you need and what your
+          business needs. We analyze your website, digital marketing and campaigns and make a strategy according to that
+          so that you get quality leads and potential customers
+
         </p>
 
         <div class="matrix-list">
@@ -455,24 +468,25 @@ require_once __DIR__ . '/includes/header.php';
               <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14" />
               <polyline points="22 4 12 14.01 9 11.01" />
             </svg>
-            <span><strong>Custom Enterprise Engineering:</strong> Clean, semantic, lightning-fast PHP, HTML5, and
-              vanilla JS web applications that load in under 1 second globally.</span>
+            <span><strong>Lead generation - </strong>We use targeted marketing to reach the right audience and attract
+              interested customers so that we can convert them into quality leads.</span>
           </div>
           <div class="matrix-item">
             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
               <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14" />
               <polyline points="22 4 12 14.01 9 11.01" />
             </svg>
-            <span><strong>High-ROI Performance Marketing:</strong> Targeted Google Search, Meta Ads, and Technical SEO
-              campaigns built to deliver profitable customer acquisition.</span>
+            <span><strong>Online visibility -</strong> We customize every strategy to improve your online visibility on
+              Google search results and to reach potential customers through SEO and keyword optimisation.</span>
           </div>
           <div class="matrix-item">
             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
               <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14" />
               <polyline points="22 4 12 14.01 9 11.01" />
             </svg>
-            <span><strong>Dedicated Senior Tech Leads:</strong> One accountable partner managing your digital
-              transformation with transparent milestone reporting.</span>
+            <span><strong> Poor customer engagement-</strong>Our team posts interesting and engaging content regularly
+              on social media to increase audience interaction with your business so that you get quality customers.
+            </span>
           </div>
         </div>
       </div>
@@ -490,10 +504,12 @@ require_once __DIR__ . '/includes/header.php';
         <span class="pill-dot"></span>
         <span>BUSINESS IMPACT</span>
       </div>
-      <h2 class="section-title">Why Businesses Choose BusinessDoctor</h2>
+      <h2 class="section-title">Why Businesses Choose BusinessDoctor as Best Digital Marketing company in Delhi</h2>
       <p class="lead" style="max-width: 760px; margin: 0 auto;">
-        From stronger brand visibility to measurable commercial growth, we combine technology, marketing and business
-        strategy to deliver meaningful outcomes.
+        BusinessDoctor is a full-service digital marketing company. We believe that every business has the potential to
+        grow and we provide them with complete business solutions like a strong online presence, quality lead
+        generation, better brand visibility and more leads, which help them to grow their business better. Our goal is
+        not just to grow your brand, our goal is to make your brand recognisable.
       </p>
     </div>
 
@@ -515,8 +531,7 @@ require_once __DIR__ . '/includes/header.php';
           </button>
           <div class="benefits-accordion-panel" id="benefitPanel0" role="region" aria-labelledby="benefitTrigger0">
             <p class="benefit-desc">
-              Build a stronger digital presence through search engines, social platforms, content and integrated digital
-              channels.
+              We increase your brand visibility through better search engine optimization, keyword research and more.
             </p>
             <div class="benefit-tag-strip">
               <span class="benefit-pill">Omnichannel Presence</span>
@@ -540,8 +555,7 @@ require_once __DIR__ . '/includes/header.php';
           </button>
           <div class="benefits-accordion-panel" id="benefitPanel1" role="region" aria-labelledby="benefitTrigger1">
             <p class="benefit-desc">
-              Create relevant customer experiences that encourage interaction, strengthen relationships and improve
-              audience engagement.
+              We create content that not only engages but also makes a genuine connection with the audience.
             </p>
             <div class="benefit-tag-strip">
               <span class="benefit-pill">Interactive UX</span>
@@ -565,8 +579,8 @@ require_once __DIR__ . '/includes/header.php';
           </button>
           <div class="benefits-accordion-panel" id="benefitPanel2" role="region" aria-labelledby="benefitTrigger2">
             <p class="benefit-desc">
-              Use performance tracking, campaign optimization and data-led marketing decisions to improve marketing
-              efficiency and returns.
+              Business Doctor generates a better return on investment by using an effective strategy, reducing
+              unnecessary spending.
             </p>
             <div class="benefit-tag-strip">
               <span class="benefit-pill">ROAS Optimization</span>
@@ -582,7 +596,7 @@ require_once __DIR__ . '/includes/header.php';
             aria-controls="benefitPanel3">
             <span class="benefit-trigger-left">
               <span class="benefit-num">04</span>
-              <span class="benefit-title">Reach the Right Audience</span>
+              <span class="benefit-title">Reaching the right audience </span>
             </span>
             <svg class="benefit-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
               <polyline points="6 9 12 15 18 9" />
@@ -590,8 +604,8 @@ require_once __DIR__ . '/includes/header.php';
           </button>
           <div class="benefits-accordion-panel" id="benefitPanel3" role="region" aria-labelledby="benefitTrigger3">
             <p class="benefit-desc">
-              Identify relevant audience segments and connect your products and services with customers who are more
-              likely to convert.
+              Business Doctor connects your business with a quality audience that is actually interested in your product
+              or service.
             </p>
             <div class="benefit-tag-strip">
               <span class="benefit-pill">Precision Segmentation</span>
@@ -607,7 +621,7 @@ require_once __DIR__ . '/includes/header.php';
             aria-controls="benefitPanel4">
             <span class="benefit-trigger-left">
               <span class="benefit-num">05</span>
-              <span class="benefit-title">Make Data-Driven Decisions</span>
+              <span class="benefit-title">Make Data-Driven Content </span>
             </span>
             <svg class="benefit-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
               <polyline points="6 9 12 15 18 9" />
@@ -615,7 +629,8 @@ require_once __DIR__ . '/includes/header.php';
           </button>
           <div class="benefits-accordion-panel" id="benefitPanel4" role="region" aria-labelledby="benefitTrigger4">
             <p class="benefit-desc">
-              Turn campaign analytics, customer behaviour and performance insights into informed business decisions.
+              Our team creates engaging content based on real data, audience behaviour and platform insights to get
+              better results.
             </p>
             <div class="benefit-tag-strip">
               <span class="benefit-pill">Real-Time Dashboards</span>
@@ -631,7 +646,7 @@ require_once __DIR__ . '/includes/header.php';
             aria-controls="benefitPanel5">
             <span class="benefit-trigger-left">
               <span class="benefit-num">06</span>
-              <span class="benefit-title">Improve Conversion Rates</span>
+              <span class="benefit-title">Improve conversion rate </span>
             </span>
             <svg class="benefit-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
               <polyline points="6 9 12 15 18 9" />
@@ -639,8 +654,7 @@ require_once __DIR__ . '/includes/header.php';
           </button>
           <div class="benefits-accordion-panel" id="benefitPanel5" role="region" aria-labelledby="benefitTrigger5">
             <p class="benefit-desc">
-              Optimize landing pages, customer journeys and digital experiences to reduce friction and increase
-              qualified conversions.
+              Business Doctor increases the number of conversions on your website, not just website visitors.
             </p>
             <div class="benefit-tag-strip">
               <span class="benefit-pill">Conversion Architecture</span>
@@ -1021,11 +1035,11 @@ require_once __DIR__ . '/includes/header.php';
           <span>OUR APPROACH</span>
         </div>
         <h2 class="section-title"
-          style="font-size: clamp(2.2rem, 3.8vw, 3.25rem); line-height: 1.15; margin-bottom: 1rem;">A Disciplined
-          Engineering &amp; Growth Methodology</h2>
+          style="font-size: clamp(2.2rem, 3.8vw, 3.25rem); line-height: 1.15; margin-bottom: 1rem;">A strong approach
+          &amp; for business growth</h2>
         <p class="lead" style="margin-bottom: 0;">
-          From initial architectural diagnosis to continuous performance scaling, our 5-stage framework ensures
-          precision, speed, and measurable business return.
+          We work according to what you need and what your brand needs. We inspect your business, customise a plan and
+          monitor it until it reaches its full potential.
         </p>
       </div>
 
@@ -1095,10 +1109,10 @@ require_once __DIR__ . '/includes/header.php';
               <span class="stage-phase-tag">PHASE 01 // ARCHITECTURAL AUDIT</span>
             </div>
             <span class="approach-num">01</span>
-            <h3 class="approach-title">Discover</h3>
+            <h3 class="approach-title">Discover </h3>
             <p class="approach-desc">
-              Deep-dive technical audit into your current codebase, database efficiency, SEO visibility, paid
-              acquisition CAC, and conversion leakages.
+              We start with understanding your goals, business needs, target audience and challenges. It helps us to
+              create a strategy for your business.
             </p>
           </div>
           <div class="approach-deliverable">
@@ -1115,10 +1129,10 @@ require_once __DIR__ . '/includes/header.php';
               <span class="stage-phase-tag">PHASE 02 // SYSTEMS ARCHITECTURE</span>
             </div>
             <span class="approach-num">02</span>
-            <h3 class="approach-title">Strategize</h3>
+            <h3 class="approach-title">Strategies </h3>
             <p class="approach-desc">
-              Formulating an enterprise solution blueprint: data schema, technology stack selection, paid channel
-              allocation, and measurable milestone roadmap.
+              Strategies are the main foundation of the growth journey. We customize every strategy while keeping your
+              needs and goals in mind.
             </p>
           </div>
           <div class="approach-deliverable">
@@ -1135,10 +1149,9 @@ require_once __DIR__ . '/includes/header.php';
               <span class="stage-phase-tag">PHASE 03 // FULL-STACK BUILD</span>
             </div>
             <span class="approach-num">03</span>
-            <h3 class="approach-title">Engineer</h3>
+            <h3 class="approach-title">Engineer </h3>
             <p class="approach-desc">
-              Executing clean custom development with PHP 8+, modern HTML5/CSS3, and vanilla JS, paired with
-              conversion-driven UI/UX design and catalog setup.
+              Execute the plan with seo, ads, website development and more so that you can achieve your business goal.
             </p>
           </div>
           <div class="approach-deliverable">
@@ -1155,10 +1168,10 @@ require_once __DIR__ . '/includes/header.php';
               <span class="stage-phase-tag">PHASE 04 // PERFORMANCE &amp; ROAS</span>
             </div>
             <span class="approach-num">04</span>
-            <h3 class="approach-title">Optimize</h3>
+            <h3 class="approach-title">Optimization </h3>
             <p class="approach-desc">
-              Achieving 100% Core Web Vitals, A/B testing landing page conversion rates, eliminating low-performing ad
-              audiences, and defending the Buy Box.
+              At Businessdoctor, after executing the strategy, we optimise performance. We find out what is working well
+              and where we need necessary changes
             </p>
           </div>
           <div class="approach-deliverable">
@@ -1177,8 +1190,8 @@ require_once __DIR__ . '/includes/header.php';
             <span class="approach-num">05</span>
             <h3 class="approach-title">Grow</h3>
             <p class="approach-desc">
-              Scaling high-margin channels, expanding organic search dominance, automating repetitive workflows, and
-              providing 24/7 technical monitoring.
+              At Businessdoctor, we focus on taking your business to the next level. Our team focuses on building your
+              online presence more strongly.
             </p>
           </div>
           <div class="approach-deliverable">
@@ -1219,11 +1232,11 @@ require_once __DIR__ . '/includes/header.php';
         <span>PROVEN OUTCOMES</span>
       </div>
       <h2 class="accountability-title">
-        Built on Engineering Integrity &amp; <span class="title-accent">Measurable Accountability</span>
+        Real Business Growth with &amp; <span class="title-accent">the Right Digital Marketing Strategy.</span>
       </h2>
       <p class="accountability-desc">
-        We partner with established companies that demand transparent roadmaps, enterprise security standards, and zero
-        wasted capital.
+        At Business Doctor, a trusted digital marketing company in Delhi, we provide everything from generating quality
+        leads to increasing online visibility which helps your business grow.
       </p>
     </div>
 
@@ -1272,10 +1285,10 @@ require_once __DIR__ . '/includes/header.php';
           </svg>
         </div>
         <div class="accountability-card-body">
-          <h4 class="accountability-card-title">Framework-Free Speed</h4>
+          <h4 class="accountability-card-title">Faster Website Performance</h4>
           <p class="accountability-card-desc">
-            Clean PHP 8+ and Vanilla JavaScript eliminating megabytes of third-party bloat, delivering sub-second global
-            response times.
+            Business Doctor is a digital marketing company in Delhi. We design user friendly websites with faster
+            performance. This makes the user experience better.
           </p>
           <div class="accountability-card-footer">
             <span class="accountability-micro-badge">Vanilla Stack</span>
@@ -1333,10 +1346,10 @@ require_once __DIR__ . '/includes/header.php';
           </svg>
         </div>
         <div class="accountability-card-body">
-          <h4 class="accountability-card-title">Ironclad Security</h4>
+          <h4 class="accountability-card-title">Stronger Online Visibility</h4>
           <p class="accountability-card-desc">
-            Strict parameter binding, CSRF/SSRF prevention, brute-force rate limits, and secure headers protecting your
-            enterprise data.
+            We provide the best seo service in delhi that improve your business's online visibility. Good online
+            visibility will help you to get more leads and quality customers.
           </p>
           <div class="accountability-card-footer">
             <span class="accountability-micro-badge">Enterprise Defense</span>
@@ -1395,10 +1408,10 @@ require_once __DIR__ . '/includes/header.php';
           </svg>
         </div>
         <div class="accountability-card-body">
-          <h4 class="accountability-card-title">Zero Ad Waste Guarantee</h4>
+          <h4 class="accountability-card-title">Better Lead Generation</h4>
           <p class="accountability-card-desc">
-            Every dollar spent on Google, Meta, or Amazon is tied directly to verified revenue and protected bottom-line
-            operating margins.
+            Our team helps you to get quality leads that help your business to grow and turn enquiries into real
+            potential customers. Our goal is to help you build a strong customer base and achieve long term success.
           </p>
           <div class="accountability-card-footer">
             <span class="accountability-micro-badge">Audited Capital</span>
@@ -1454,10 +1467,10 @@ require_once __DIR__ . '/includes/header.php';
           </svg>
         </div>
         <div class="accountability-card-body">
-          <h4 class="accountability-card-title">Dedicated Tech Leads</h4>
+          <h4 class="accountability-card-title">Zero Ad Waste Guarantee</h4>
           <p class="accountability-card-desc">
-            Direct communication with senior engineers and strategists—no junior account managers or offshore
-            communication layers.
+            Our goal is maximum utilisation of your advertising budget and to reduce unnecessary ad spending. We make
+            sure that your ad reaches the right audience through smart, data driven strategies and continuous campaigns.
           </p>
           <div class="accountability-card-footer">
             <span class="accountability-micro-badge">Principal Architects</span>
@@ -1507,10 +1520,11 @@ require_once __DIR__ . '/includes/header.php';
         <span class="pill-dot"></span>
         <span>PROOF OF WORK</span>
       </div>
-      <h2 class="section-title">Real Results. Real Business Impact.</h2>
+      <h2 class="section-title"> Real Client Stories and Digital Business Success Experiences</h2>
       <p class="lead" style="max-width: 760px; margin: 0 auto;">
-        Explore how BusinessDoctor combines engineering, marketing and digital strategy to solve business challenges and
-        deliver measurable outcomes.
+        Explore how BusinessDoctor Online Marketing company in Delhi combines engineering, marketing and digital
+        strategy to solve business challenges and deliver measurable outcomes. Our professional team helps your business
+        to reach its full potential.
       </p>
     </div>
 
@@ -1588,7 +1602,7 @@ require_once __DIR__ . '/includes/header.php';
         <span class="pill-dot"></span>
         <span>OUR TECHNOLOGY STACK</span>
       </div>
-      <h2 class="section-title">Tools That Power Our Work.</h2>
+      <h2 class="section-title">Tools That Power Our Digital Marketing and Business Solutions.</h2>
       <p class="lead" style="max-width: 760px; margin: 0 auto;">
         We use trusted platforms and professional tools to build, manage, analyze and optimize digital experiences.
       </p>
@@ -1667,7 +1681,7 @@ require_once __DIR__ . '/includes/header.php';
           <span class="tool-category-badge">Analytics</span>
         </div>
         <h4 class="tool-name">Google Analytics 4</h4>
-        <p class="tool-purpose">Event-driven behavioral telemetry, multi-touch attribution, and conversion funnels.</p>
+        <p class="tool-purpose">Event-driven behavioral telemetry, multi-touch attribution and conversion funnels.</p>
       </div>
 
       <!-- 5. Google Search Console -->
@@ -1682,7 +1696,7 @@ require_once __DIR__ . '/includes/header.php';
           <span class="tool-category-badge">Analytics</span>
         </div>
         <h4 class="tool-name">Google Search Console</h4>
-        <p class="tool-purpose">Organic indexing health, crawl optimization, and search query performance monitoring.
+        <p class="tool-purpose">Organic indexing health, crawl optimization and search query performance monitoring.
         </p>
       </div>
 
@@ -1697,7 +1711,7 @@ require_once __DIR__ . '/includes/header.php';
           <span class="tool-category-badge">SEO</span>
         </div>
         <h4 class="tool-name">SEMrush</h4>
-        <p class="tool-purpose">Competitor intelligence, paid search gap analysis, and keyword search intent modeling.
+        <p class="tool-purpose">Competitor intelligence, paid search gap analysis and keyword search intent modeling.
         </p>
       </div>
 
@@ -1713,7 +1727,7 @@ require_once __DIR__ . '/includes/header.php';
           <span class="tool-category-badge">SEO</span>
         </div>
         <h4 class="tool-name">Ahrefs</h4>
-        <p class="tool-purpose">Enterprise backlink audits, domain authority benchmarking, and technical site crawling.
+        <p class="tool-purpose">Enterprise backlink audits, domain authority benchmarking and technical site crawling.
         </p>
       </div>
 
@@ -1730,7 +1744,7 @@ require_once __DIR__ . '/includes/header.php';
           <span class="tool-category-badge">Design</span>
         </div>
         <h4 class="tool-name">Figma</h4>
-        <p class="tool-purpose">Collaborative UI/UX wireframing, component design systems, and rapid prototyping.</p>
+        <p class="tool-purpose">Collaborative UI/UX wireframing, component design systems and rapid prototyping.</p>
       </div>
 
       <!-- 9. Canva -->
@@ -1745,7 +1759,7 @@ require_once __DIR__ . '/includes/header.php';
           <span class="tool-category-badge">Design</span>
         </div>
         <h4 class="tool-name">Canva</h4>
-        <p class="tool-purpose">Rapid marketing collateral, social creative variations, and brand template libraries.
+        <p class="tool-purpose">Rapid marketing collateral, social creative variations and brand template libraries.
         </p>
       </div>
 
@@ -1762,7 +1776,7 @@ require_once __DIR__ . '/includes/header.php';
           <span class="tool-category-badge">Design</span>
         </div>
         <h4 class="tool-name">Adobe Creative Cloud</h4>
-        <p class="tool-purpose">Professional studio photo retouching, vector brand identities, and motion graphics.</p>
+        <p class="tool-purpose">Professional studio photo retouching, vector brand identities and motion graphics. </p>
       </div>
 
       <!-- 11. WordPress -->
@@ -1778,7 +1792,7 @@ require_once __DIR__ . '/includes/header.php';
           <span class="tool-category-badge">Web &amp; CMS</span>
         </div>
         <h4 class="tool-name">WordPress</h4>
-        <p class="tool-purpose">Editorial publication systems, content portals, and headless CMS architectures.</p>
+        <p class="tool-purpose">Editorial publication systems, content portals and headless CMS architectures.</p>
       </div>
 
       <!-- 12. Shopify -->
@@ -1794,7 +1808,8 @@ require_once __DIR__ . '/includes/header.php';
           <span class="tool-category-badge">Commerce</span>
         </div>
         <h4 class="tool-name">Shopify</h4>
-        <p class="tool-purpose">High-converting D2C storefronts, streamlined checkout funnels, and app integrations.</p>
+        <p class="tool-purpose">High-converting D2C storefronts, streamlined checkout funnels and app integrations.
+        </p>
       </div>
 
       <!-- 13. HubSpot -->
@@ -1811,7 +1826,7 @@ require_once __DIR__ . '/includes/header.php';
           <span class="tool-category-badge">CRM</span>
         </div>
         <h4 class="tool-name">HubSpot</h4>
-        <p class="tool-purpose">Inbound marketing automation, enterprise CRM pipelines, and lead scoring logic.</p>
+        <p class="tool-purpose">Inbound marketing automation, enterprise CRM pipelines and lead scoring logic.</p>
       </div>
 
       <!-- 14. Mailchimp -->
@@ -1826,7 +1841,7 @@ require_once __DIR__ . '/includes/header.php';
           <span class="tool-category-badge">Automation</span>
         </div>
         <h4 class="tool-name">Mailchimp</h4>
-        <p class="tool-purpose">Lifecycle email marketing, automated cart recovery, and subscriber segmentation.</p>
+        <p class="tool-purpose">Email marketing, automated cart recovery and subscriber segmentation.</p>
       </div>
     </div>
 
@@ -1848,11 +1863,11 @@ require_once __DIR__ . '/includes/header.php';
         <span class="pill-dot"></span>
         <span>ENGINEERING PERSPECTIVES &amp; BLOG</span>
       </div>
-      <h2 class="section-title" style="font-size: clamp(2rem, 3.5vw, 3rem);">Engineering Architecture &amp; Digital
-        Growth Analysis</h2>
+      <h2 class="section-title" style="font-size: clamp(2rem, 3.5vw, 3rem);">Digital Marketing, Technology &amp;
+        Business Growth Insights</h2>
       <p class="lead">
-        Executive perspectives on custom web application architecture, Core Web Vitals optimization, paid media
-        strategy, and e-commerce scaling.
+        At Business Doctor, we focus on modern technology and smart digital solutions that improve your brand's online
+        visibility and website performance and help the sustainable growth of your business.
       </p>
     </div>
 
@@ -1916,9 +1931,13 @@ require_once __DIR__ . '/includes/header.php';
 
     <!-- View All Blogs CTA -->
     <div style="text-align: center; margin-top: 2.75rem;">
-      <a href="<?= getBlogListingUrl() ?>" class="btn btn-secondary btn-md" style="display: inline-flex; align-items: center; gap: 0.5rem;">
+      <a href="<?= getBlogListingUrl() ?>" class="btn btn-secondary btn-md"
+        style="display: inline-flex; align-items: center; gap: 0.5rem;">
         <span>View All Blogs</span>
-        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" width="16" height="16" stroke-width="2"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" width="16" height="16" stroke-width="2">
+          <line x1="5" y1="12" x2="19" y2="12" />
+          <polyline points="12 5 19 12 12 19" />
+        </svg>
       </a>
     </div>
   </div>
@@ -1938,52 +1957,76 @@ require_once __DIR__ . '/includes/header.php';
         Frequently Asked Questions About BusinessDoctor Advisory &amp; Engineering
       </h2>
       <p class="lead" style="font-size: 1.05rem; color: var(--color-text-muted);">
-        Clear answers on our enterprise technology consulting, digital architecture audits, global service delivery, and turnaround methodology.
+        Clear answers on our enterprise technology consulting, digital architecture audits, global service delivery, and
+        turnaround methodology.
       </p>
     </div>
 
-    <div class="faq-accordion-grid" style="max-width: 900px; margin: 0 auto; display: flex; flex-direction: column; gap: 1.25rem;">
+    <div class="faq-accordion-grid"
+      style="max-width: 900px; margin: 0 auto; display: flex; flex-direction: column; gap: 1.25rem;">
       <!-- FAQ Item 1 -->
-      <div class="card faq-card" style="padding: 1.75rem 2rem; border-radius: var(--radius-md); border: 1px solid var(--color-border); background: var(--color-card-bg, #0A192F);">
-        <h3 class="faq-question" style="font-size: 1.2rem; font-weight: 700; color: #FFFFFF; margin-bottom: 0.65rem; display: flex; align-items: center; gap: 0.75rem;">
-          <span style="display: inline-flex; width: 28px; height: 28px; border-radius: 50%; background: rgba(6, 181, 249, 0.15); color: #06B5F9; font-size: 0.85rem; font-family: var(--font-mono); align-items: center; justify-content: center; flex-shrink: 0;">01</span>
-          <span>What services does BusinessDoctor provide?</span>
+      <div class="card faq-card"
+        style="padding: 1.75rem 2rem; border-radius: var(--radius-md); border: 1px solid var(--color-border); background: var(--color-card-bg, #0A192F);">
+        <h3 class="faq-question"
+          style="font-size: 1.2rem; font-weight: 700; color: #FFFFFF; margin-bottom: 0.65rem; display: flex; align-items: center; gap: 0.75rem;">
+          <span
+            style="display: inline-flex; width: 28px; height: 28px; border-radius: 50%; background: rgba(6, 181, 249, 0.15); color: #06B5F9; font-size: 0.85rem; font-family: var(--font-mono); align-items: center; justify-content: center; flex-shrink: 0;">01</span>
+          <span> How do I choose the Best Digital Marketing company for My Business?</span>
         </h3>
-        <p class="faq-answer" style="font-size: 0.95rem; color: var(--color-text-muted); line-height: 1.65; margin: 0; padding-left: 2.5rem;">
-          BusinessDoctor provides enterprise digital transformation, custom software and web application development, cloud architecture, performance marketing and SEO, UI/UX design, and e-commerce marketplace scaling.
+        <p class="faq-answer"
+          style="font-size: 0.95rem; color: var(--color-text-muted); line-height: 1.65; margin: 0; padding-left: 2.5rem;">
+          Choosing a digital marketing company will depend on your goals, budget and target audience. You want to find
+          an company that will understand your needs and provide the correct services with a clear strategy to help your
+          business grow.
         </p>
       </div>
 
       <!-- FAQ Item 2 -->
-      <div class="card faq-card" style="padding: 1.75rem 2rem; border-radius: var(--radius-md); border: 1px solid var(--color-border); background: var(--color-card-bg, #0A192F);">
-        <h3 class="faq-question" style="font-size: 1.2rem; font-weight: 700; color: #FFFFFF; margin-bottom: 0.65rem; display: flex; align-items: center; gap: 0.75rem;">
-          <span style="display: inline-flex; width: 28px; height: 28px; border-radius: 50%; background: rgba(6, 181, 249, 0.15); color: #06B5F9; font-size: 0.85rem; font-family: var(--font-mono); align-items: center; justify-content: center; flex-shrink: 0;">02</span>
-          <span>How does BusinessDoctor approach digital architecture audits?</span>
+      <div class="card faq-card"
+        style="padding: 1.75rem 2rem; border-radius: var(--radius-md); border: 1px solid var(--color-border); background: var(--color-card-bg, #0A192F);">
+        <h3 class="faq-question"
+          style="font-size: 1.2rem; font-weight: 700; color: #FFFFFF; margin-bottom: 0.65rem; display: flex; align-items: center; gap: 0.75rem;">
+          <span
+            style="display: inline-flex; width: 28px; height: 28px; border-radius: 50%; background: rgba(6, 181, 249, 0.15); color: #06B5F9; font-size: 0.85rem; font-family: var(--font-mono); align-items: center; justify-content: center; flex-shrink: 0;">02</span>
+          <span>What digital marketing services does BusinessDoctor offer?</span>
         </h3>
-        <p class="faq-answer" style="font-size: 0.95rem; color: var(--color-text-muted); line-height: 1.65; margin: 0; padding-left: 2.5rem;">
-          We conduct comprehensive technical audits evaluating Time to First Byte (TTFB), Core Web Vitals (LCP, FID/INP, CLS), database query latency, mobile conversion funnels, and tracking telemetry before proposing strategic code refactoring and infrastructure upgrades.
+        <p class="faq-answer"
+          style="font-size: 0.95rem; color: var(--color-text-muted); line-height: 1.65; margin: 0; padding-left: 2.5rem;">
+          BusinessDoctor offers digital marketing services including SEO, social media marketing, paid advertising,
+          content marketing and website development.
         </p>
       </div>
 
       <!-- FAQ Item 3 -->
-      <div class="card faq-card" style="padding: 1.75rem 2rem; border-radius: var(--radius-md); border: 1px solid var(--color-border); background: var(--color-card-bg, #0A192F);">
-        <h3 class="faq-question" style="font-size: 1.2rem; font-weight: 700; color: #FFFFFF; margin-bottom: 0.65rem; display: flex; align-items: center; gap: 0.75rem;">
-          <span style="display: inline-flex; width: 28px; height: 28px; border-radius: 50%; background: rgba(6, 181, 249, 0.15); color: #06B5F9; font-size: 0.85rem; font-family: var(--font-mono); align-items: center; justify-content: center; flex-shrink: 0;">03</span>
-          <span>Where is BusinessDoctor headquartered and what is your service coverage?</span>
+      <div class="card faq-card"
+        style="padding: 1.75rem 2rem; border-radius: var(--radius-md); border: 1px solid var(--color-border); background: var(--color-card-bg, #0A192F);">
+        <h3 class="faq-question"
+          style="font-size: 1.2rem; font-weight: 700; color: #FFFFFF; margin-bottom: 0.65rem; display: flex; align-items: center; gap: 0.75rem;">
+          <span
+            style="display: inline-flex; width: 28px; height: 28px; border-radius: 50%; background: rgba(6, 181, 249, 0.15); color: #06B5F9; font-size: 0.85rem; font-family: var(--font-mono); align-items: center; justify-content: center; flex-shrink: 0;">03</span>
+          <span>How can digital marketing help My Business grow?</span>
         </h3>
-        <p class="faq-answer" style="font-size: 0.95rem; color: var(--color-text-muted); line-height: 1.65; margin: 0; padding-left: 2.5rem;">
-          BusinessDoctor operates an enterprise delivery centre located at First Floor, Ram Dutt Enclave, B-16, Block D, Uttam Nagar East, Uttam Nagar, New Delhi, Delhi, 110059, India, providing executive technology advisory and full-stack software development services globally to enterprise clients across North America, Europe, and Asia-Pacific.
+        <p class="faq-answer"
+          style="font-size: 0.95rem; color: var(--color-text-muted); line-height: 1.65; margin: 0; padding-left: 2.5rem;">
+          Digital marketing can help your business gain more visibility online. It can improve your website traffic,
+          create brand awareness, lead generation and increase sales.
         </p>
       </div>
 
       <!-- FAQ Item 4 -->
-      <div class="card faq-card" style="padding: 1.75rem 2rem; border-radius: var(--radius-md); border: 1px solid var(--color-border); background: var(--color-card-bg, #0A192F);">
-        <h3 class="faq-question" style="font-size: 1.2rem; font-weight: 700; color: #FFFFFF; margin-bottom: 0.65rem; display: flex; align-items: center; gap: 0.75rem;">
-          <span style="display: inline-flex; width: 28px; height: 28px; border-radius: 50%; background: rgba(6, 181, 249, 0.15); color: #06B5F9; font-size: 0.85rem; font-family: var(--font-mono); align-items: center; justify-content: center; flex-shrink: 0;">04</span>
-          <span>How do I engage BusinessDoctor for an enterprise IT project?</span>
+      <div class="card faq-card"
+        style="padding: 1.75rem 2rem; border-radius: var(--radius-md); border: 1px solid var(--color-border); background: var(--color-card-bg, #0A192F);">
+        <h3 class="faq-question"
+          style="font-size: 1.2rem; font-weight: 700; color: #FFFFFF; margin-bottom: 0.65rem; display: flex; align-items: center; gap: 0.75rem;">
+          <span
+            style="display: inline-flex; width: 28px; height: 28px; border-radius: 50%; background: rgba(6, 181, 249, 0.15); color: #06B5F9; font-size: 0.85rem; font-family: var(--font-mono); align-items: center; justify-content: center; flex-shrink: 0;">04</span>
+          <span>How long will it take my digital marketing to deliver results?</span>
         </h3>
-        <p class="faq-answer" style="font-size: 0.95rem; color: var(--color-text-muted); line-height: 1.65; margin: 0; padding-left: 2.5rem;">
-          You can request a complimentary digital architecture audit via our audit portal, initiate a consultation through our contact page, or call our direct enterprise advisory line at +1 (800) 492-3628 to connect with our practice directors.
+        <p class="faq-answer"
+          style="font-size: 0.95rem; color: var(--color-text-muted); line-height: 1.65; margin: 0; padding-left: 2.5rem;">
+          The amount of time that it takes to deliver results will depend on your goals. Paid advertising can provide
+          fast results with increased traffic and lead generation. SEO usually takes several months to see any real
+          improvements.
         </p>
       </div>
     </div>
