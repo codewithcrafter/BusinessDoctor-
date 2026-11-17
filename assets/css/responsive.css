@@ -200,16 +200,17 @@
     overflow: hidden !important;
     display: flex !important;
     flex-direction: column !important;
-    justify-content: center !important;
+    justify-content: flex-start !important;
     padding: 1rem 0 !important;
     box-sizing: border-box !important;
   }
 
   .hero-stage-inner {
-    padding-top: 0 !important;
+    padding-top: 0.75rem !important;
     padding-bottom: 0 !important;
     width: 100% !important;
     box-sizing: border-box !important;
+    justify-content: flex-start !important;
   }
 
   .hero-anim-viewport {
@@ -218,7 +219,7 @@
     grid-template-rows: 1fr !important;
     position: relative !important;
     width: 100% !important;
-    align-items: center !important;
+    align-items: flex-start !important;
     justify-items: center !important;
     min-height: 480px !important;
   }
@@ -230,7 +231,7 @@
     display: grid !important;
     grid-template-columns: 1fr !important;
     grid-template-rows: 1fr !important;
-    align-items: center !important;
+    align-items: flex-start !important;
     justify-items: center !important;
     min-height: 440px !important;
   }

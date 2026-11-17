@@ -24,43 +24,49 @@ $consultationUrl = appUrl('contact.php?service=' . urlencode($serviceName));
           <span>PERFORMANCE MARKETING &amp; TECHNICAL SEO</span>
         </div>
         <h1 class="srv-hero-title">
-          Engineering High-ROI <br><span class="text-brand">Digital Marketing &amp; Technical SEO</span>
+          Smarter Strategies <br><span class="text-brand">Stronger Results &amp; </span>
         </h1>
         <p class="srv-hero-desc">
-          We replace vanity agency metrics with revenue-focused digital growth: programmatic technical SEO, high-intent Google Search and Meta Ads, server-side attribution, and continuous conversion rate optimization.
+          Boost your online presence and improve the search visibility of your business with a reliable SEO company in
+          Delhi. At Business Doctor, we deliver skilled seo services in Delhi that help your business achieve consistent
+          growth and attract suitable traffic. We build our seo strategy according to your business goals and the
+          specific audience you want to target, and generate organic traffic. At Business Doctor, we offer a complete
+          Seo solution for your business, including technical seo, on page seo, off page seo, local seo service, keyword
+          strategy, and quality link building that help your business grow and build a strong online presence.
         </p>
 
         <div class="srv-hero-actions">
           <a href="<?= e($consultationUrl) ?>" class="btn-srv-primary">
             <span>Get a Free Consultation</span>
             <svg class="btn-srv-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
-              <line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/>
+              <line x1="5" y1="12" x2="19" y2="12" />
+              <polyline points="12 5 19 12 12 19" />
             </svg>
           </a>
           <a href="#services-list" class="btn-srv-secondary">
             <span>Explore Our Services</span>
             <svg class="btn-srv-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-              <polyline points="6 9 12 15 18 9"/>
+              <polyline points="6 9 12 15 18 9" />
             </svg>
           </a>
         </div>
 
         <div class="srv-hero-stats">
           <div class="srv-hero-stat-item">
-            <span class="srv-hero-stat-val">4.2x</span>
-            <span class="srv-hero-stat-lbl">Average Client ROAS</span>
+            <span class="srv-hero-stat-val">3.8x</span>
+            <span class="srv-hero-stat-lbl">Average organic traffic growth in 6 months</span>
           </div>
           <div class="srv-hero-stat-item">
-            <span class="srv-hero-stat-val">-38%</span>
-            <span class="srv-hero-stat-lbl">Customer Acquisition Cost</span>
+            <span class="srv-hero-stat-val">120+ </span>
+            <span class="srv-hero-stat-lbl">Keywords ranking on page one</span>
           </div>
           <div class="srv-hero-stat-item">
-            <span class="srv-hero-stat-val">+215%</span>
-            <span class="srv-hero-stat-lbl">Organic Search Traffic</span>
+            <span class="srv-hero-stat-val">100% </span>
+            <span class="srv-hero-stat-lbl">Transparent monthly reporting</span>
           </div>
           <div class="srv-hero-stat-item">
-            <span class="srv-hero-stat-val">100%</span>
-            <span class="srv-hero-stat-lbl">First-Party Tracking SLA</span>
+            <span class="srv-hero-stat-val">90 days </span>
+            <span class="srv-hero-stat-lbl">Typical time to visible ranking movement</span>
           </div>
         </div>
       </div>
@@ -69,64 +75,86 @@ $consultationUrl = appUrl('contact.php?service=' . urlencode($serviceName));
         <div class="srv-hero-visual">
           <div class="srv-visual-glow"></div>
           <div class="srv-visual-frame">
-            <svg viewBox="0 0 600 440" fill="none" xmlns="http://www.w3.org/2000/svg" style="width:100%; height:auto; display:block;">
-  <rect width="600" height="440" rx="14" fill="#071A2C"/>
-  <path d="M0 44H600M0 88H600M0 132H600M0 176H600M0 220H600M0 264H600M0 308H600M0 352H600M0 396H600" stroke="#06B5F9" stroke-opacity="0.08"/>
-  <path d="M60 0V440M120 0V440M180 0V440M240 0V440M300 0V440M360 0V440M420 0V440M480 0V440M540 0V440" stroke="#06B5F9" stroke-opacity="0.08"/>
-  <rect width="600" height="40" rx="14" fill="#0A223B"/>
-  <circle cx="28" cy="20" r="5" fill="#F87171"/>
-  <circle cx="46" cy="20" r="5" fill="#FBBF24"/>
-  <circle cx="64" cy="20" r="5" fill="#34D399"/>
-  <text x="90" y="24" fill="#8FA3B8" font-family="monospace" font-size="11" font-weight="600">businessdoctor.growth :: paid-ads-organic-telemetry.v2</text>
-  
-  <!-- Metrics Cards -->
-  <rect x="40" y="65" width="245" height="100" rx="8" fill="#0D2644" stroke="#06B5F9" stroke-width="1.5" stroke-opacity="0.4"/>
-  <text x="56" y="90" fill="#06B5F9" font-family="monospace" font-size="11" font-weight="bold">// PAID MEDIA ROAS</text>
-  <text x="56" y="122" fill="#34D399" font-family="sans-serif" font-size="26" font-weight="900">4.82x</text>
-  <text x="56" y="146" fill="#B8C7D9" font-family="monospace" font-size="10">Target: &gt; 3.50x &bull; +42% YoY</text>
+            <svg viewBox="0 0 600 440" fill="none" xmlns="http://www.w3.org/2000/svg"
+              style="width:100%; height:auto; display:block;">
+              <rect width="600" height="440" rx="14" fill="#071A2C" />
+              <path d="M0 44H600M0 88H600M0 132H600M0 176H600M0 220H600M0 264H600M0 308H600M0 352H600M0 396H600"
+                stroke="#06B5F9" stroke-opacity="0.08" />
+              <path d="M60 0V440M120 0V440M180 0V440M240 0V440M300 0V440M360 0V440M420 0V440M480 0V440M540 0V440"
+                stroke="#06B5F9" stroke-opacity="0.08" />
+              <rect width="600" height="40" rx="14" fill="#0A223B" />
+              <circle cx="28" cy="20" r="5" fill="#F87171" />
+              <circle cx="46" cy="20" r="5" fill="#FBBF24" />
+              <circle cx="64" cy="20" r="5" fill="#34D399" />
+              <text x="90" y="24" fill="#8FA3B8" font-family="monospace" font-size="11"
+                font-weight="600">businessdoctor.growth :: paid-ads-organic-telemetry.v2</text>
 
-  <rect x="315" y="65" width="245" height="100" rx="8" fill="#0D2644" stroke="#06B5F9" stroke-width="1.5" stroke-opacity="0.4"/>
-  <text x="330" y="90" fill="#06B5F9" font-family="monospace" font-size="11" font-weight="bold">// BLENDED CAC REDUCTION</text>
-  <text x="330" y="122" fill="#06B5F9" font-family="sans-serif" font-size="26" font-weight="900">-38.4%</text>
-  <text x="330" y="146" fill="#B8C7D9" font-family="monospace" font-size="10">CPL &bull; Qualified Intent Volume</text>
+              <!-- Metrics Cards -->
+              <rect x="40" y="65" width="245" height="100" rx="8" fill="#0D2644" stroke="#06B5F9" stroke-width="1.5"
+                stroke-opacity="0.4" />
+              <text x="56" y="90" fill="#06B5F9" font-family="monospace" font-size="11" font-weight="bold">// PAID MEDIA
+                ROAS</text>
+              <text x="56" y="122" fill="#34D399" font-family="sans-serif" font-size="26" font-weight="900">4.82x</text>
+              <text x="56" y="146" fill="#B8C7D9" font-family="monospace" font-size="10">Target: &gt; 3.50x &bull; +42%
+                YoY</text>
 
-  <!-- Interactive Chart Area -->
-  <rect x="40" y="178" width="520" height="228" rx="10" fill="#0A2038" stroke="#06B5F9" stroke-width="1" stroke-opacity="0.25"/>
-  <text x="58" y="206" fill="#F5F7FA" font-family="sans-serif" font-size="12" font-weight="bold">Conversion Funnel &amp; Revenue Velocity</text>
-  
-  <!-- Live Telemetry Badge -->
-  <rect x="430" y="193" width="112" height="19" rx="4" fill="#061A2E" stroke="#06B5F9" stroke-width="0.8" stroke-opacity="0.5"/>
-  <circle cx="440" cy="202.5" r="3" fill="#34D399"/>
-  <text x="448" y="206" fill="#06B5F9" font-family="monospace" font-size="9" font-weight="bold" letter-spacing="0.5">LIVE TELEMETRY</text>
-  
-  <!-- Curve Trend Area Fill -->
-  <path d="M60 340 C 140 330, 220 285, 300 265 C 370 248, 440 238, 515 235 L 515 375 L 60 375 Z" fill="url(#grad1)" opacity="0.22"/>
-  
-  <!-- Curve Trend Stroke -->
-  <path d="M60 340 C 140 330, 220 285, 300 265 C 370 248, 440 238, 515 235" stroke="#06B5F9" stroke-width="3" fill="none" stroke-linecap="round"/>
-  
-  <!-- Secondary dashed baseline -->
-  <path d="M60 355 C 160 355, 320 350, 515 345" stroke="#8FA3B8" stroke-width="1.8" stroke-dasharray="4 4" fill="none" stroke-opacity="0.6"/>
-  <text x="350" y="338" fill="#8FA3B8" font-family="monospace" font-size="9.5" font-weight="600">Legacy Baseline</text>
+              <rect x="315" y="65" width="245" height="100" rx="8" fill="#0D2644" stroke="#06B5F9" stroke-width="1.5"
+                stroke-opacity="0.4" />
+              <text x="330" y="90" fill="#06B5F9" font-family="monospace" font-size="11" font-weight="bold">// BLENDED
+                CAC REDUCTION</text>
+              <text x="330" y="122" fill="#06B5F9" font-family="sans-serif" font-size="26"
+                font-weight="900">-38.4%</text>
+              <text x="330" y="146" fill="#B8C7D9" font-family="monospace" font-size="10">CPL &bull; Qualified Intent
+                Volume</text>
 
-  <!-- Data Points -->
-  <circle cx="300" cy="265" r="4.5" fill="#06B5F9" stroke="#ffffff" stroke-width="2"/>
-  <circle cx="515" cy="235" r="5.5" fill="#34D399" stroke="#ffffff" stroke-width="2"/>
-  
-  <!-- +148% REV Badge with clean dedicated spacing -->
-  <rect x="420" y="252" width="105" height="23" rx="4" fill="#0D2644" stroke="#34D399" stroke-width="1" stroke-opacity="0.7"/>
-  <text x="435" y="267.5" fill="#34D399" font-family="monospace" font-size="10.5" font-weight="bold">+148% REV</text>
-  
-  <!-- Bottom Audited Label with clear margins -->
-  <text x="58" y="390" fill="#8FA3B8" font-family="monospace" font-size="9.5">Audited Blended CAC &bull; Attribution Multi-Touch Model</text>
-  
-  <defs>
-    <linearGradient id="grad1" x1="0" y1="0" x2="0" y2="1">
-      <stop offset="0%" stop-color="#06B5F9"/>
-      <stop offset="100%" stop-color="#071A2C" stop-opacity="0"/>
-    </linearGradient>
-  </defs>
-</svg>
+              <!-- Interactive Chart Area -->
+              <rect x="40" y="178" width="520" height="228" rx="10" fill="#0A2038" stroke="#06B5F9" stroke-width="1"
+                stroke-opacity="0.25" />
+              <text x="58" y="206" fill="#F5F7FA" font-family="sans-serif" font-size="12" font-weight="bold">Conversion
+                Funnel &amp; Revenue Velocity</text>
+
+              <!-- Live Telemetry Badge -->
+              <rect x="430" y="193" width="112" height="19" rx="4" fill="#061A2E" stroke="#06B5F9" stroke-width="0.8"
+                stroke-opacity="0.5" />
+              <circle cx="440" cy="202.5" r="3" fill="#34D399" />
+              <text x="448" y="206" fill="#06B5F9" font-family="monospace" font-size="9" font-weight="bold"
+                letter-spacing="0.5">LIVE TELEMETRY</text>
+
+              <!-- Curve Trend Area Fill -->
+              <path d="M60 340 C 140 330, 220 285, 300 265 C 370 248, 440 238, 515 235 L 515 375 L 60 375 Z"
+                fill="url(#grad1)" opacity="0.22" />
+
+              <!-- Curve Trend Stroke -->
+              <path d="M60 340 C 140 330, 220 285, 300 265 C 370 248, 440 238, 515 235" stroke="#06B5F9"
+                stroke-width="3" fill="none" stroke-linecap="round" />
+
+              <!-- Secondary dashed baseline -->
+              <path d="M60 355 C 160 355, 320 350, 515 345" stroke="#8FA3B8" stroke-width="1.8" stroke-dasharray="4 4"
+                fill="none" stroke-opacity="0.6" />
+              <text x="350" y="338" fill="#8FA3B8" font-family="monospace" font-size="9.5" font-weight="600">Legacy
+                Baseline</text>
+
+              <!-- Data Points -->
+              <circle cx="300" cy="265" r="4.5" fill="#06B5F9" stroke="#ffffff" stroke-width="2" />
+              <circle cx="515" cy="235" r="5.5" fill="#34D399" stroke="#ffffff" stroke-width="2" />
+
+              <!-- +148% REV Badge with clean dedicated spacing -->
+              <rect x="420" y="252" width="105" height="23" rx="4" fill="#0D2644" stroke="#34D399" stroke-width="1"
+                stroke-opacity="0.7" />
+              <text x="435" y="267.5" fill="#34D399" font-family="monospace" font-size="10.5" font-weight="bold">+148%
+                REV</text>
+
+              <!-- Bottom Audited Label with clear margins -->
+              <text x="58" y="390" fill="#8FA3B8" font-family="monospace" font-size="9.5">Audited Blended CAC &bull;
+                Attribution Multi-Touch Model</text>
+
+              <defs>
+                <linearGradient id="grad1" x1="0" y1="0" x2="0" y2="1">
+                  <stop offset="0%" stop-color="#06B5F9" />
+                  <stop offset="100%" stop-color="#071A2C" stop-opacity="0" />
+                </linearGradient>
+              </defs>
+            </svg>
           </div>
         </div>
       </div>
@@ -142,7 +170,9 @@ $consultationUrl = appUrl('contact.php?service=' . urlencode($serviceName));
     <div class="srv-key-takeaways">
       <div class="srv-takeaways-header">
         <div class="srv-takeaways-kicker">
-          <svg class="srv-takeaways-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"/></svg>
+          <svg class="srv-takeaways-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+            <path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5" />
+          </svg>
           <span>KEY TAKEAWAYS &bull; AT A GLANCE</span>
         </div>
         <span class="srv-takeaways-pill">Core Execution Highlights</span>
@@ -152,7 +182,9 @@ $consultationUrl = appUrl('contact.php?service=' . urlencode($serviceName));
           <div class="srv-takeaway-top">
             <span class="srv-takeaway-val">4.2x</span>
             <div class="srv-takeaway-badge">
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+                <polyline points="20 6 9 17 4 12" />
+              </svg>
             </div>
           </div>
           <span class="srv-takeaway-label">Average Client ROAS</span>
@@ -162,7 +194,9 @@ $consultationUrl = appUrl('contact.php?service=' . urlencode($serviceName));
           <div class="srv-takeaway-top">
             <span class="srv-takeaway-val">-38%</span>
             <div class="srv-takeaway-badge">
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+                <polyline points="20 6 9 17 4 12" />
+              </svg>
             </div>
           </div>
           <span class="srv-takeaway-label">Customer Acquisition Cost</span>
@@ -172,7 +206,9 @@ $consultationUrl = appUrl('contact.php?service=' . urlencode($serviceName));
           <div class="srv-takeaway-top">
             <span class="srv-takeaway-val">+215%</span>
             <div class="srv-takeaway-badge">
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+                <polyline points="20 6 9 17 4 12" />
+              </svg>
             </div>
           </div>
           <span class="srv-takeaway-label">Organic Search Traffic</span>
@@ -182,7 +218,9 @@ $consultationUrl = appUrl('contact.php?service=' . urlencode($serviceName));
           <div class="srv-takeaway-top">
             <span class="srv-takeaway-val">100%</span>
             <div class="srv-takeaway-badge">
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+                <polyline points="20 6 9 17 4 12" />
+              </svg>
             </div>
           </div>
           <span class="srv-takeaway-label">First-Party Tracking SLA</span>
@@ -205,42 +243,54 @@ $consultationUrl = appUrl('contact.php?service=' . urlencode($serviceName));
           <span>DATA-DRIVEN GROWTH PHILOSOPHY</span>
         </div>
         <h2 class="srv-section-title">
-          Transforming Ad Spend into <span class="text-brand">Predictable Revenue Pipelines</span>
+          Convert your Search Visibility <span class="text-brand">into Real Revenue</span>
         </h2>
         <p class="srv-section-subtitle mb-4">
-          Most marketing agencies burn budgets on impressions, clicks, and generic blog posts that never generate qualified business pipeline. At BusinessDoctor, we treat digital marketing as an engineering discipline rooted in conversion telemetry and algorithmic precision.
-        </p>
+          Many companies will invest in an SEO company in Delhi however often the results are reports based around
+          impressions and traffic only, with little real enquiry. With our focus on helping your business grow, we’ll
+          identify your revenue goals and create a strategy that targets the right keywords, landing pages and authority
+          signals.
         <p class="srv-card-desc mb-4">
-          Whether fixing severe Core Web Vitals crawl budget leaks or architecting multi-touch paid ad funnels across Google and Meta, our campaigns are engineered to maximize client lifetime value and lower customer acquisition cost (CAC).
+          The Digital landscape is very competitive in Delhi, with many businesses competing for positions across
+          hundreds of search terms. In order to rank well in search engines you need
         </p>
 
         <div class="srv-feature-list mb-4">
           <div class="srv-feature-item">
-            <svg class="srv-check-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
+            <svg class="srv-check-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+              <polyline points="20 6 9 17 4 12" />
+            </svg>
             <div>
-              <strong class="text-white">Server-Side Attribution (CAPI &amp; GA4):</strong> 
-              <span class="text-secondary">Bypassing iOS 14+ cookie blocking with resilient server-to-server event tracking.</span>
+              <strong class="text-white">Technical SEO &amp;–</strong>
+              <span class="text-secondary"> We fix every issue that stops your website from crawling and indexing
+                properly. We also optimise your website speed and improve your technical SEO.</span>
             </div>
           </div>
           <div class="srv-feature-item">
-            <svg class="srv-check-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
+            <svg class="srv-check-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+              <polyline points="20 6 9 17 4 12" />
+            </svg>
             <div>
-              <strong class="text-white">Technical Crawl &amp; Semantic SEO:</strong> 
-              <span class="text-secondary">Fixing indexation barriers, internal page link equity, and entity schemas for Googlebot.</span>
+              <strong class="text-white">Commercial &amp;Transactional Keywords –</strong>
+              <span class="text-secondary">We focus on driving traffic through keywords searches that help your business
+                to reach people searching for your products or services.</span>
             </div>
           </div>
           <div class="srv-feature-item">
-            <svg class="srv-check-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
+            <svg class="srv-check-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+              <polyline points="20 6 9 17 4 12" />
+            </svg>
             <div>
-              <strong class="text-white">High-Intent Paid Acquisition:</strong> 
-              <span class="text-secondary">Laser-targeted Google Search, Performance Max, and Meta retargeting funnels.</span>
+              <strong class="text-white">Local and National Visibility –</strong>
+              <span class="text-secondary"> We also work on improving your visibility in Delhi NCR (Gurugram & Noida)
+                and provide opportunities to reach your business to the right audiences.</span>
             </div>
           </div>
           <div class="srv-feature-item">
-            <svg class="srv-check-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
+            <svg class="srv-check-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+              <polyline points="20 6 9 17 4 12" />
+            </svg>
             <div>
-              <strong class="text-white">Landing Page CRO Sprints:</strong> 
-              <span class="text-secondary">Multivariate testing designed to turn paid click traffic into committed paying customers.</span>
             </div>
           </div>
         </div>
@@ -248,7 +298,10 @@ $consultationUrl = appUrl('contact.php?service=' . urlencode($serviceName));
         <div class="pt-2">
           <a href="<?= e($consultationUrl) ?>" class="btn-srv-primary">
             <span>Schedule Diagnostic Call</span>
-            <svg class="btn-srv-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+            <svg class="btn-srv-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+              <line x1="5" y1="12" x2="19" y2="12" />
+              <polyline points="12 5 19 12 12 19" />
+            </svg>
           </a>
         </div>
       </div>
@@ -268,20 +321,20 @@ $consultationUrl = appUrl('contact.php?service=' . urlencode($serviceName));
             </p>
             <div class="srv-hud-metrics">
               <div class="srv-hud-metric-box">
-                <div class="srv-hud-metric-num">94.8%</div>
-                <div class="srv-hud-metric-label">Crawl Efficiency</div>
+                <div class="srv-hud-metric-num">6.2%</div>
+                <div class="srv-hud-metric-label">Organic Click-Through Rate</div>
               </div>
               <div class="srv-hud-metric-box">
-                <div class="srv-hud-metric-num">4.6%</div>
-                <div class="srv-hud-metric-label">Demo Request Conv</div>
+                <div class="srv-hud-metric-num">4.1</div>
+                <div class="srv-hud-metric-label">Average Position</div>
               </div>
               <div class="srv-hud-metric-box">
-                <div class="srv-hud-metric-num">$290</div>
-                <div class="srv-hud-metric-label">Target CAC Achieved</div>
+                <div class="srv-hud-metric-num">+180%</div>
+                <div class="srv-hud-metric-label">Qualified Leads </div>
               </div>
               <div class="srv-hud-metric-box">
-                <div class="srv-hud-metric-num">0.8s</div>
-                <div class="srv-hud-metric-label">LCP Page Speed</div>
+                <div class="srv-hud-metric-num">38%</div>
+                <div class="srv-hud-metric-label"> Bounce Rate</div>
               </div>
             </div>
             <div class="srv-hud-tag-list mt-3">
@@ -310,221 +363,309 @@ $consultationUrl = appUrl('contact.php?service=' . urlencode($serviceName));
         <span>COMPREHENSIVE CAPABILITIES</span>
       </div>
       <h2 class="srv-section-title">
-        Specialized Services Built for <span class="text-brand">Enterprise Scale</span>
+        Specialized SEO Services in Delhi <span class="text-brand">Built to Grow Your Business</span>
       </h2>
       <p class="srv-section-subtitle">
-        Every capability is executed by veteran specialists dedicated to predictable return on investment and zero fluff.
+        Every SEO solution is designed by a professional SEO company in Delhi helps to improve your website search
+        visibility, attract qualified traffic, and drive measurable business growth.
       </p>
     </div>
 
     <div class="srv-grid srv-grid-3">
       <div class="srv-card">
         <div class="srv-card-icon-wrap">
-          <div class="srv-icon-box"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg></div>
+          <div class="srv-icon-box"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <circle cx="11" cy="11" r="8" />
+              <line x1="21" y1="21" x2="16.65" y2="16.65" />
+            </svg></div>
         </div>
-        <h3 class="srv-card-title">Technical SEO &amp; Crawl Optimization</h3>
-        <p class="srv-card-desc">Deep architectural remediation ensuring every high-priority page is crawled, indexed, and recognized as authoritative by search engines.</p>
+        <h3 class="srv-card-title">Technical SEO &amp; & Site Audit </h3>
+        <p class="srv-card-desc">Through technical SEO, we help your business to build a solid base for your website. To
+          do this, we will carry out a full technical SEO audit to find any issues on your website.</p>
         <div class="srv-feature-list mb-3">
           <div class="srv-feature-item">
-            <svg class="srv-check-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
-            <span>Core Web Vitals Optimization</span>
+            <svg class="srv-check-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+              <polyline points="20 6 9 17 4 12" />
+            </svg>
+            <span>Crawl and index optimization</span>
           </div>
           <div class="srv-feature-item">
-            <svg class="srv-check-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
-            <span>Server-Side Rendering &amp; Edge Caching</span>
+            <svg class="srv-check-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+              <polyline points="20 6 9 17 4 12" />
+            </svg>
+            <span>Core Web &amp; Vitals improvement</span>
           </div>
           <div class="srv-feature-item">
-            <svg class="srv-check-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
-            <span>Entity &amp; Knowledge Graph Schema</span>
-          </div>
-          <div class="srv-feature-item">
-            <svg class="srv-check-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
-            <span>Internal Link Equity Distribution</span>
+            <svg class="srv-check-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+              <polyline points="20 6 9 17 4 12" />
+            </svg>
+            <span>Schema markup implementation </span>
           </div>
         </div>
         <div class="srv-benefit-badge">
-          <span class="text-secondary">BUSINESS VALUE:</span> 
-          <strong class="text-white">Rank for competitive high-intent terms without ongoing ad spend.</strong>
+          <span class="text-secondary">Business Value:</span>
+          <strong class="text-white"> A faster, crawlable site that ranks more pages.</strong>
         </div>
         <div class="pt-3">
-          <a href="<?= appUrl('contact.php?service=' . urlencode($serviceName) . '&capability=' . urlencode('Technical SEO & Crawl Optimization')) ?>" class="srv-link-action">
+          <a href="<?= appUrl('contact.php?service=' . urlencode($serviceName) . '&capability=' . urlencode('Technical SEO & Crawl Optimization')) ?>"
+            class="srv-link-action">
             <span>Inquire About This Service</span>
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <line x1="5" y1="12" x2="19" y2="12" />
+              <polyline points="12 5 19 12 12 19" />
+            </svg>
           </a>
         </div>
       </div>
       <div class="srv-card">
         <div class="srv-card-icon-wrap">
-          <div class="srv-icon-box"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><circle cx="12" cy="12" r="6"/><circle cx="12" cy="12" r="2"/></svg></div>
+          <div class="srv-icon-box"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <circle cx="12" cy="12" r="10" />
+              <circle cx="12" cy="12" r="6" />
+              <circle cx="12" cy="12" r="2" />
+            </svg></div>
         </div>
-        <h3 class="srv-card-title">High-Intent Google Ads &amp; Search Marketing</h3>
-        <p class="srv-card-desc">Precision Google Search, Performance Max, and YouTube campaigns engineered to capture active buyers at the exact moment of commercial intent.</p>
+        <h3 class="srv-card-title">Local SEO &amp; Services in Delhi</h3>
+        <p class="srv-card-desc">Your next customer could be just down the road, searching on their phone. We optimise
+          your Google Business Profile, use local keywords, and manage your business listings.</p>
         <div class="srv-feature-list mb-3">
           <div class="srv-feature-item">
-            <svg class="srv-check-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
-            <span>Exact-Match Buyer Keyword Clustering</span>
+            <svg class="srv-check-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+              <polyline points="20 6 9 17 4 12" />
+            </svg>
+            <span>Google Business Profile optimization</span>
           </div>
           <div class="srv-feature-item">
-            <svg class="srv-check-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
-            <span>Smart Bidding Strategy Calibration</span>
+            <svg class="srv-check-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+              <polyline points="20 6 9 17 4 12" />
+            </svg>
+            <span>Local citations and NAP consistency</span>
           </div>
           <div class="srv-feature-item">
-            <svg class="srv-check-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
-            <span>Automated Negative Keyword Scripts</span>
-          </div>
-          <div class="srv-feature-item">
-            <svg class="srv-check-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
-            <span>Dynamic Ad Copy Customization</span>
+            <svg class="srv-check-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+              <polyline points="20 6 9 17 4 12" />
+            </svg>
+            <span>Review generation strategy</span>
           </div>
         </div>
         <div class="srv-benefit-badge">
-          <span class="text-secondary">BUSINESS VALUE:</span> 
-          <strong class="text-white">Predictable pipeline of inbound demo requests and qualified sales calls.</strong>
+          <span class="text-secondary">Business Value: </span>
+          <strong class="text-white">More calls, walk-ins, and direction requests.</strong>
         </div>
         <div class="pt-3">
-          <a href="<?= appUrl('contact.php?service=' . urlencode($serviceName) . '&capability=' . urlencode('High-Intent Google Ads & Search Marketing')) ?>" class="srv-link-action">
+          <a href="<?= appUrl('contact.php?service=' . urlencode($serviceName) . '&capability=' . urlencode('High-Intent Google Ads & Search Marketing')) ?>"
+            class="srv-link-action">
             <span>Inquire About This Service</span>
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <line x1="5" y1="12" x2="19" y2="12" />
+              <polyline points="12 5 19 12 12 19" />
+            </svg>
           </a>
         </div>
       </div>
       <div class="srv-card">
         <div class="srv-card-icon-wrap">
-          <div class="srv-icon-box"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="18" y1="20" x2="18" y2="10"/><line x1="12" y1="20" x2="12" y2="4"/><line x1="6" y1="20" x2="6" y2="14"/></svg></div>
+          <div class="srv-icon-box"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <line x1="18" y1="20" x2="18" y2="10" />
+              <line x1="12" y1="20" x2="12" y2="4" />
+              <line x1="6" y1="20" x2="6" y2="14" />
+            </svg></div>
         </div>
-        <h3 class="srv-card-title">Paid Social &amp; Meta Performance Scaling</h3>
-        <p class="srv-card-desc">High-converting video and image ad campaigns across Instagram, Facebook, and LinkedIn designed to generate demand and scale customer volume.</p>
+        <h3 class="srv-card-title"> ​On-Page SEO Services </h3>
+        <p class="srv-card-desc">By on page Seo, your website content will be optimized and made for both seo friendly
+          as well as user friendly.</p>
         <div class="srv-feature-list mb-3">
           <div class="srv-feature-item">
-            <svg class="srv-check-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
+            <svg class="srv-check-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+              <polyline points="20 6 9 17 4 12" />
+            </svg>
             <span>Creative Fatigue Rotation Strategy</span>
           </div>
           <div class="srv-feature-item">
-            <svg class="srv-check-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
+            <svg class="srv-check-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+              <polyline points="20 6 9 17 4 12" />
+            </svg>
             <span>Lookalike &amp; First-Party Custom Audiences</span>
           </div>
           <div class="srv-feature-item">
-            <svg class="srv-check-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
+            <svg class="srv-check-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+              <polyline points="20 6 9 17 4 12" />
+            </svg>
             <span>Meta Advantage+ Bid Structuring</span>
           </div>
           <div class="srv-feature-item">
-            <svg class="srv-check-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
+            <svg class="srv-check-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+              <polyline points="20 6 9 17 4 12" />
+            </svg>
             <span>Cross-Platform Retargeting Sequences</span>
           </div>
         </div>
         <div class="srv-benefit-badge">
-          <span class="text-secondary">BUSINESS VALUE:</span> 
+          <span class="text-secondary">BUSINESS VALUE:</span>
           <strong class="text-white">Lower customer acquisition cost through scalable creative testing.</strong>
         </div>
         <div class="pt-3">
-          <a href="<?= appUrl('contact.php?service=' . urlencode($serviceName) . '&capability=' . urlencode('Paid Social & Meta Performance Scaling')) ?>" class="srv-link-action">
+          <a href="<?= appUrl('contact.php?service=' . urlencode($serviceName) . '&capability=' . urlencode('Paid Social & Meta Performance Scaling')) ?>"
+            class="srv-link-action">
             <span>Inquire About This Service</span>
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <line x1="5" y1="12" x2="19" y2="12" />
+              <polyline points="12 5 19 12 12 19" />
+            </svg>
           </a>
         </div>
       </div>
       <div class="srv-card">
         <div class="srv-card-icon-wrap">
-          <div class="srv-icon-box"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polygon points="22 3 2 3 10 12.46 10 19 14 21 14 12.46 22 3"/></svg></div>
+          <div class="srv-icon-box"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <polygon points="22 3 2 3 10 12.46 10 19 14 21 14 12.46 22 3" />
+            </svg></div>
         </div>
         <h3 class="srv-card-title">Conversion Rate Optimization (CRO)</h3>
-        <p class="srv-card-desc">Systematic qualitative and quantitative experimentation on your key landing pages to maximize the percentage of visitors who become customers.</p>
+        <p class="srv-card-desc">Systematic qualitative and quantitative experimentation on your key landing pages to
+          maximize the percentage of visitors who become customers.</p>
         <div class="srv-feature-list mb-3">
           <div class="srv-feature-item">
-            <svg class="srv-check-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
+            <svg class="srv-check-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+              <polyline points="20 6 9 17 4 12" />
+            </svg>
             <span>Heatmap &amp; Session Recording Audits</span>
           </div>
           <div class="srv-feature-item">
-            <svg class="srv-check-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
+            <svg class="srv-check-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+              <polyline points="20 6 9 17 4 12" />
+            </svg>
             <span>A/B Multivariate Headline &amp; Layout Testing</span>
           </div>
           <div class="srv-feature-item">
-            <svg class="srv-check-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
+            <svg class="srv-check-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+              <polyline points="20 6 9 17 4 12" />
+            </svg>
             <span>Frictionless Mobile-First Form Design</span>
           </div>
           <div class="srv-feature-item">
-            <svg class="srv-check-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
+            <svg class="srv-check-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+              <polyline points="20 6 9 17 4 12" />
+            </svg>
             <span>Psychological Social Proof Placements</span>
           </div>
         </div>
         <div class="srv-benefit-badge">
-          <span class="text-secondary">BUSINESS VALUE:</span> 
-          <strong class="text-white">Double your lead volume without increasing your ad spend by a single dollar.</strong>
+          <span class="text-secondary">BUSINESS VALUE:</span>
+          <strong class="text-white">Double your lead volume without increasing your ad spend by a single
+            dollar.</strong>
         </div>
         <div class="pt-3">
-          <a href="<?= appUrl('contact.php?service=' . urlencode($serviceName) . '&capability=' . urlencode('Conversion Rate Optimization (CRO)')) ?>" class="srv-link-action">
+          <a href="<?= appUrl('contact.php?service=' . urlencode($serviceName) . '&capability=' . urlencode('Conversion Rate Optimization (CRO)')) ?>"
+            class="srv-link-action">
             <span>Inquire About This Service</span>
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <line x1="5" y1="12" x2="19" y2="12" />
+              <polyline points="12 5 19 12 12 19" />
+            </svg>
           </a>
         </div>
       </div>
       <div class="srv-card">
         <div class="srv-card-icon-wrap">
-          <div class="srv-icon-box"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="16 18 22 12 16 6"/><polyline points="8 6 2 12 8 18"/></svg></div>
+          <div class="srv-icon-box"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <polyline points="16 18 22 12 16 6" />
+              <polyline points="8 6 2 12 8 18" />
+            </svg></div>
         </div>
         <h3 class="srv-card-title">Server-Side Tracking &amp; Full Attribution</h3>
-        <p class="srv-card-desc">First-party data infrastructure that circumvents ad blockers, Safari ITP, and browser restrictions to feed clean conversion signals to ad networks.</p>
+        <p class="srv-card-desc">First-party data infrastructure that circumvents ad blockers, Safari ITP, and browser
+          restrictions to feed clean conversion signals to ad networks.</p>
         <div class="srv-feature-list mb-3">
           <div class="srv-feature-item">
-            <svg class="srv-check-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
+            <svg class="srv-check-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+              <polyline points="20 6 9 17 4 12" />
+            </svg>
             <span>Server-Side Google Tag Manager (sGTM)</span>
           </div>
           <div class="srv-feature-item">
-            <svg class="srv-check-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
+            <svg class="srv-check-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+              <polyline points="20 6 9 17 4 12" />
+            </svg>
             <span>Meta CAPI &amp; Google Offline Conversions</span>
           </div>
           <div class="srv-feature-item">
-            <svg class="srv-check-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
+            <svg class="srv-check-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+              <polyline points="20 6 9 17 4 12" />
+            </svg>
             <span>Multi-Touch Attribution Modeling</span>
           </div>
           <div class="srv-feature-item">
-            <svg class="srv-check-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
+            <svg class="srv-check-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+              <polyline points="20 6 9 17 4 12" />
+            </svg>
             <span>CRM Closed-Loop Revenue Sync</span>
           </div>
         </div>
         <div class="srv-benefit-badge">
-          <span class="text-secondary">BUSINESS VALUE:</span> 
+          <span class="text-secondary">BUSINESS VALUE:</span>
           <strong class="text-white">Algorithms optimize for actual revenue instead of low-value vanity clicks.</strong>
         </div>
         <div class="pt-3">
-          <a href="<?= appUrl('contact.php?service=' . urlencode($serviceName) . '&capability=' . urlencode('Server-Side Tracking & Full Attribution')) ?>" class="srv-link-action">
+          <a href="<?= appUrl('contact.php?service=' . urlencode($serviceName) . '&capability=' . urlencode('Server-Side Tracking & Full Attribution')) ?>"
+            class="srv-link-action">
             <span>Inquire About This Service</span>
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <line x1="5" y1="12" x2="19" y2="12" />
+              <polyline points="12 5 19 12 12 19" />
+            </svg>
           </a>
         </div>
       </div>
       <div class="srv-card">
         <div class="srv-card-icon-wrap">
-          <div class="srv-icon-box"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polygon points="12 2 2 7 12 12 22 7 12 2"/><polyline points="2 17 12 22 22 17"/><polyline points="2 12 12 17 22 12"/></svg></div>
+          <div class="srv-icon-box"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <polygon points="12 2 2 7 12 12 22 7 12 2" />
+              <polyline points="2 17 12 22 22 17" />
+              <polyline points="2 12 12 17 22 12" />
+            </svg></div>
         </div>
         <h3 class="srv-card-title">Topical Authority &amp; Content Strategy</h3>
-        <p class="srv-card-desc">Comprehensive content ecosystems designed around thematic clusters that position your brand as the undeniable authority in your industry.</p>
+        <p class="srv-card-desc">Comprehensive content ecosystems designed around thematic clusters that position your
+          brand as the undeniable authority in your industry.</p>
         <div class="srv-feature-list mb-3">
           <div class="srv-feature-item">
-            <svg class="srv-check-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
+            <svg class="srv-check-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+              <polyline points="20 6 9 17 4 12" />
+            </svg>
             <span>Semantic Search Intent Mapping</span>
           </div>
           <div class="srv-feature-item">
-            <svg class="srv-check-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
+            <svg class="srv-check-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+              <polyline points="20 6 9 17 4 12" />
+            </svg>
             <span>In-Depth Research Reports &amp; Whitepapers</span>
           </div>
           <div class="srv-feature-item">
-            <svg class="srv-check-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
+            <svg class="srv-check-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+              <polyline points="20 6 9 17 4 12" />
+            </svg>
             <span>Programmatic Content Architecture</span>
           </div>
           <div class="srv-feature-item">
-            <svg class="srv-check-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
+            <svg class="srv-check-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+              <polyline points="20 6 9 17 4 12" />
+            </svg>
             <span>High-Authority Backlink Acquisition</span>
           </div>
         </div>
         <div class="srv-benefit-badge">
-          <span class="text-secondary">BUSINESS VALUE:</span> 
+          <span class="text-secondary">BUSINESS VALUE:</span>
           <strong class="text-white">Sustained organic traffic moat that competitors cannot easily duplicate.</strong>
         </div>
         <div class="pt-3">
-          <a href="<?= appUrl('contact.php?service=' . urlencode($serviceName) . '&capability=' . urlencode('Topical Authority & Content Strategy')) ?>" class="srv-link-action">
+          <a href="<?= appUrl('contact.php?service=' . urlencode($serviceName) . '&capability=' . urlencode('Topical Authority & Content Strategy')) ?>"
+            class="srv-link-action">
             <span>Inquire About This Service</span>
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <line x1="5" y1="12" x2="19" y2="12" />
+              <polyline points="12 5 19 12 12 19" />
+            </svg>
           </a>
         </div>
       </div>
@@ -546,24 +687,32 @@ $consultationUrl = appUrl('contact.php?service=' . urlencode($serviceName));
         The 6-Phase Engineering &amp; Delivery <span class="text-brand">Framework</span>
       </h2>
       <p class="srv-section-subtitle">
-        Predictable milestones, rigorous testing checkpoints, and full visibility at every stage of the project lifecycle.
+        Predictable milestones, rigorous testing checkpoints, and full visibility at every stage of the project
+        lifecycle.
       </p>
     </div>
 
-        <div class="srv-process-nav" role="tablist" aria-label="Process Milestones">
-      <button type="button" class="srv-process-pill is-active" data-step="01"><span class="srv-pill-num">1</span> Phase 01</button>
-      <button type="button" class="srv-process-pill" data-step="02"><span class="srv-pill-num">2</span> Phase 02</button>
-      <button type="button" class="srv-process-pill" data-step="03"><span class="srv-pill-num">3</span> Phase 03</button>
-      <button type="button" class="srv-process-pill" data-step="04"><span class="srv-pill-num">4</span> Phase 04</button>
-      <button type="button" class="srv-process-pill" data-step="05"><span class="srv-pill-num">5</span> Phase 05</button>
-      <button type="button" class="srv-process-pill" data-step="06"><span class="srv-pill-num">6</span> Phase 06</button>
+    <div class="srv-process-nav" role="tablist" aria-label="Process Milestones">
+      <button type="button" class="srv-process-pill is-active" data-step="01"><span class="srv-pill-num">1</span> Phase
+        01</button>
+      <button type="button" class="srv-process-pill" data-step="02"><span class="srv-pill-num">2</span> Phase
+        02</button>
+      <button type="button" class="srv-process-pill" data-step="03"><span class="srv-pill-num">3</span> Phase
+        03</button>
+      <button type="button" class="srv-process-pill" data-step="04"><span class="srv-pill-num">4</span> Phase
+        04</button>
+      <button type="button" class="srv-process-pill" data-step="05"><span class="srv-pill-num">5</span> Phase
+        05</button>
+      <button type="button" class="srv-process-pill" data-step="06"><span class="srv-pill-num">6</span> Phase
+        06</button>
     </div>
 
     <div class="srv-process-timeline">
       <div class="srv-process-card" data-step="01">
         <div class="srv-phase-badge">PHASE 01 &bull; WEEKS 1–2</div>
         <h3 class="srv-process-title">Technical Audit &amp; Tracking Calibration</h3>
-        <p class="srv-card-desc mb-3">We perform exhaustive crawl audits, review historical ad accounts, and deploy server-side tracking tags to establish an unshakeable data foundation.</p>
+        <p class="srv-card-desc mb-3">We perform exhaustive crawl audits, review historical ad accounts, and deploy
+          server-side tracking tags to establish an unshakeable data foundation.</p>
         <div class="srv-process-deliverable">
           <span class="srv-deliverable-lbl">KEY DELIVERABLES:</span>
           <ul class="srv-bullet-list">
@@ -576,7 +725,8 @@ $consultationUrl = appUrl('contact.php?service=' . urlencode($serviceName));
       <div class="srv-process-card" data-step="02">
         <div class="srv-phase-badge">PHASE 02 &bull; WEEKS 2–3</div>
         <h3 class="srv-process-title">Audience Mapping &amp; Campaign Architecture</h3>
-        <p class="srv-card-desc mb-3">We build the campaign structures, segment buyer personas, identify high-intent keyword clusters, and draft high-converting ad copy.</p>
+        <p class="srv-card-desc mb-3">We build the campaign structures, segment buyer personas, identify high-intent
+          keyword clusters, and draft high-converting ad copy.</p>
         <div class="srv-process-deliverable">
           <span class="srv-deliverable-lbl">KEY DELIVERABLES:</span>
           <ul class="srv-bullet-list">
@@ -589,7 +739,8 @@ $consultationUrl = appUrl('contact.php?service=' . urlencode($serviceName));
       <div class="srv-process-card" data-step="03">
         <div class="srv-phase-badge">PHASE 03 &bull; WEEKS 3–4</div>
         <h3 class="srv-process-title">Landing Page CRO &amp; Asset Deployment</h3>
-        <p class="srv-card-desc mb-3">We design and engineer bespoke, lightning-fast landing pages with optimized copy, clear value propositions, and frictionless lead capture forms.</p>
+        <p class="srv-card-desc mb-3">We design and engineer bespoke, lightning-fast landing pages with optimized copy,
+          clear value propositions, and frictionless lead capture forms.</p>
         <div class="srv-process-deliverable">
           <span class="srv-deliverable-lbl">KEY DELIVERABLES:</span>
           <ul class="srv-bullet-list">
@@ -602,7 +753,8 @@ $consultationUrl = appUrl('contact.php?service=' . urlencode($serviceName));
       <div class="srv-process-card" data-step="04">
         <div class="srv-phase-badge">PHASE 04 &bull; WEEKS 4–6</div>
         <h3 class="srv-process-title">Campaign Launch &amp; Initial Bidding Calibration</h3>
-        <p class="srv-card-desc mb-3">We launch campaigns under strict manual and algorithmic guardrails, monitoring search query reports and real-time impression share daily.</p>
+        <p class="srv-card-desc mb-3">We launch campaigns under strict manual and algorithmic guardrails, monitoring
+          search query reports and real-time impression share daily.</p>
         <div class="srv-process-deliverable">
           <span class="srv-deliverable-lbl">KEY DELIVERABLES:</span>
           <ul class="srv-bullet-list">
@@ -615,7 +767,8 @@ $consultationUrl = appUrl('contact.php?service=' . urlencode($serviceName));
       <div class="srv-process-card" data-step="05">
         <div class="srv-phase-badge">PHASE 05 &bull; WEEKS 6–10</div>
         <h3 class="srv-process-title">Multivariate Testing &amp; Creative Iteration</h3>
-        <p class="srv-card-desc mb-3">We systematically test new ad creatives, landing page variations, and bid strategies to lower CPA and discover winning combinations.</p>
+        <p class="srv-card-desc mb-3">We systematically test new ad creatives, landing page variations, and bid
+          strategies to lower CPA and discover winning combinations.</p>
         <div class="srv-process-deliverable">
           <span class="srv-deliverable-lbl">KEY DELIVERABLES:</span>
           <ul class="srv-bullet-list">
@@ -628,7 +781,8 @@ $consultationUrl = appUrl('contact.php?service=' . urlencode($serviceName));
       <div class="srv-process-card" data-step="06">
         <div class="srv-phase-badge">PHASE 06 &bull; ONGOING</div>
         <h3 class="srv-process-title">Budget Scaling &amp; Executive BI Dashboards</h3>
-        <p class="srv-card-desc mb-3">We scale profitable ad sets, optimize for downstream customer LTV, and provide real-time Looker Studio dashboards for executive stakeholders.</p>
+        <p class="srv-card-desc mb-3">We scale profitable ad sets, optimize for downstream customer LTV, and provide
+          real-time Looker Studio dashboards for executive stakeholders.</p>
         <div class="srv-process-deliverable">
           <span class="srv-deliverable-lbl">KEY DELIVERABLES:</span>
           <ul class="srv-bullet-list">
@@ -656,60 +810,85 @@ $consultationUrl = appUrl('contact.php?service=' . urlencode($serviceName));
         Why Leading Companies Partner with <span class="text-brand">BusinessDoctor</span>
       </h2>
       <p class="srv-section-subtitle">
-        We bridge the gap between business strategy and deep technical execution, providing senior expertise without agency bloat.
+        We bridge the gap between business strategy and deep technical execution, providing senior expertise without
+        agency bloat.
       </p>
     </div>
 
     <div class="srv-grid srv-grid-3">
       <div class="srv-card">
-        <div class="srv-icon-box mb-3"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="12" y1="1" x2="12" y2="23"/><path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/></svg></div>
+        <div class="srv-icon-box mb-3"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <line x1="12" y1="1" x2="12" y2="23" />
+            <path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6" />
+          </svg></div>
         <h3 class="srv-card-title">Zero Vanity Metrics</h3>
-        <p class="srv-card-desc">We don’t celebrate clicks, impressions, or generic traffic. We report on pipeline value, closed revenue, ROAS, and customer acquisition cost.</p>
+        <p class="srv-card-desc">We don’t celebrate clicks, impressions, or generic traffic. We report on pipeline
+          value, closed revenue, ROAS, and customer acquisition cost.</p>
         <div class="srv-metric-highlight mt-2">
           <span class="text-brand font-mono font-bold">ROAS &amp; CAC</span>
           <span class="text-muted text-sm ms-2">Core Success Metrics</span>
         </div>
       </div>
       <div class="srv-card">
-        <div class="srv-icon-box mb-3"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg></div>
+        <div class="srv-icon-box mb-3"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z" />
+          </svg></div>
         <h3 class="srv-card-title">100% Account Ownership</h3>
-        <p class="srv-card-desc">You own all ad accounts, pixels, tracking tags, and creative assets. If we ever part ways, your historical data and account learnings stay yours.</p>
+        <p class="srv-card-desc">You own all ad accounts, pixels, tracking tags, and creative assets. If we ever part
+          ways, your historical data and account learnings stay yours.</p>
         <div class="srv-metric-highlight mt-2">
           <span class="text-brand font-mono font-bold">100%</span>
           <span class="text-muted text-sm ms-2">Client Owned Assets</span>
         </div>
       </div>
       <div class="srv-card">
-        <div class="srv-icon-box mb-3"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="16 18 22 12 16 6"/><polyline points="8 6 2 12 8 18"/></svg></div>
+        <div class="srv-icon-box mb-3"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <polyline points="16 18 22 12 16 6" />
+            <polyline points="8 6 2 12 8 18" />
+          </svg></div>
         <h3 class="srv-card-title">In-House Technical Engineering</h3>
-        <p class="srv-card-desc">Our marketers work side-by-side with senior developers, enabling us to fix complex site code, Core Web Vitals, and tracking APIs in hours.</p>
+        <p class="srv-card-desc">Our marketers work side-by-side with senior developers, enabling us to fix complex site
+          code, Core Web Vitals, and tracking APIs in hours.</p>
         <div class="srv-metric-highlight mt-2">
           <span class="text-brand font-mono font-bold">&lt; 24h</span>
           <span class="text-muted text-sm ms-2">Technical Turnaround</span>
         </div>
       </div>
       <div class="srv-card">
-        <div class="srv-icon-box mb-3"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><circle cx="12" cy="12" r="6"/><circle cx="12" cy="12" r="2"/></svg></div>
+        <div class="srv-icon-box mb-3"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <circle cx="12" cy="12" r="10" />
+            <circle cx="12" cy="12" r="6" />
+            <circle cx="12" cy="12" r="2" />
+          </svg></div>
         <h3 class="srv-card-title">First-Party Server-Side Data</h3>
-        <p class="srv-card-desc">We bypass browser tracking restrictions with bulletproof server-side architectures, giving ad algorithms 30% more signal accuracy.</p>
+        <p class="srv-card-desc">We bypass browser tracking restrictions with bulletproof server-side architectures,
+          giving ad algorithms 30% more signal accuracy.</p>
         <div class="srv-metric-highlight mt-2">
           <span class="text-brand font-mono font-bold">+30%</span>
           <span class="text-muted text-sm ms-2">More Signal Accuracy</span>
         </div>
       </div>
       <div class="srv-card">
-        <div class="srv-icon-box mb-3"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="18" y1="20" x2="18" y2="10"/><line x1="12" y1="20" x2="12" y2="4"/><line x1="6" y1="20" x2="6" y2="14"/></svg></div>
+        <div class="srv-icon-box mb-3"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <line x1="18" y1="20" x2="18" y2="10" />
+            <line x1="12" y1="20" x2="12" y2="4" />
+            <line x1="6" y1="20" x2="6" y2="14" />
+          </svg></div>
         <h3 class="srv-card-title">Senior Media Buyers Only</h3>
-        <p class="srv-card-desc">Your campaigns are managed directly by seasoned growth practitioners with multi-million dollar ad spend experience, never handed to junior interns.</p>
+        <p class="srv-card-desc">Your campaigns are managed directly by seasoned growth practitioners with multi-million
+          dollar ad spend experience, never handed to junior interns.</p>
         <div class="srv-metric-highlight mt-2">
           <span class="text-brand font-mono font-bold">10+ Yrs</span>
           <span class="text-muted text-sm ms-2">Average Strategist Experience</span>
         </div>
       </div>
       <div class="srv-card">
-        <div class="srv-icon-box mb-3"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/></svg></div>
+        <div class="srv-icon-box mb-3"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <polyline points="22 12 18 12 15 21 9 3 6 12 2 12" />
+          </svg></div>
         <h3 class="srv-card-title">Rapid Creative Rotation</h3>
-        <p class="srv-card-desc">We combat ad fatigue by continuously producing and testing fresh hooks, high-contrast imagery, and persuasive video angles.</p>
+        <p class="srv-card-desc">We combat ad fatigue by continuously producing and testing fresh hooks, high-contrast
+          imagery, and persuasive video angles.</p>
         <div class="srv-metric-highlight mt-2">
           <span class="text-brand font-mono font-bold">Weekly</span>
           <span class="text-muted text-sm ms-2">Fresh Creative Drops</span>
@@ -733,7 +912,8 @@ $consultationUrl = appUrl('contact.php?service=' . urlencode($serviceName));
         Tools to Be <span class="text-brand">Used</span>
       </h2>
       <p class="srv-section-subtitle">
-        We select battle-tested, high-performance tooling suited for scale, reliability, and seamless ongoing maintenance.
+        We select battle-tested, high-performance tooling suited for scale, reliability, and seamless ongoing
+        maintenance.
       </p>
     </div>
 
@@ -860,92 +1040,122 @@ $consultationUrl = appUrl('contact.php?service=' . urlencode($serviceName));
       </p>
     </div>
 
-        <div class="srv-carousel-wrapper" data-carousel="use-cases">
+    <div class="srv-carousel-wrapper" data-carousel="use-cases">
       <div class="srv-carousel-nav-header">
         <div class="srv-carousel-kicker">
           <span class="text-brand font-mono font-bold">SECTOR ARCHITECTURES</span>
           <span class="text-muted text-sm ml-2">&bull; Interactive scroll &amp; swipe</span>
         </div>
         <div class="srv-carousel-controls">
-          <button type="button" class="srv-carousel-btn srv-carousel-prev" aria-label="Previous Sector Solution"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="15 18 9 12 15 6"/></svg></button>
-          <button type="button" class="srv-carousel-btn srv-carousel-next" aria-label="Next Sector Solution"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="9 18 15 12 9 6"/></svg></button>
+          <button type="button" class="srv-carousel-btn srv-carousel-prev" aria-label="Previous Sector Solution"><svg
+              viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+              <polyline points="15 18 9 12 15 6" />
+            </svg></button>
+          <button type="button" class="srv-carousel-btn srv-carousel-next" aria-label="Next Sector Solution"><svg
+              viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+              <polyline points="9 18 15 12 9 6" />
+            </svg></button>
         </div>
       </div>
       <div class="srv-carousel-track">
 
-      <div class="srv-industry-card">
-        <div class="srv-industry-header">
-          <div class="srv-icon-box"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="12" y1="1" x2="12" y2="23"/><path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/></svg></div>
-          <span class="srv-industry-tag">FINTECH &amp; BANKING</span>
-        </div>
-        <h3 class="srv-card-title">High-Trust Financial Acquisition Funnels</h3>
-        <p class="srv-card-desc">Navigating strict regulatory advertising policies while driving verified customer accounts and institutional loan inquiries.</p>
-        <div class="srv-industry-outcome">
-          <span class="srv-deliverable-lbl">PRIMARY BUSINESS OUTCOME:</span>
-          <strong class="text-brand">42% Reduction in Cost Per Funded Account</strong>
-        </div>
-      </div>
-      <div class="srv-industry-card">
-        <div class="srv-industry-header">
-          <div class="srv-icon-box"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg></div>
-          <span class="srv-industry-tag">HEALTHCARE &amp; CLINICAL</span>
-        </div>
-        <h3 class="srv-card-title">HIPAA-Compliant Patient Booking Growth</h3>
-        <p class="srv-card-desc">High-intent localized search campaigns paired with privacy-first analytics to book qualified patient consultations.</p>
-        <div class="srv-industry-outcome">
-          <span class="srv-deliverable-lbl">PRIMARY BUSINESS OUTCOME:</span>
-          <strong class="text-brand">3.8x Growth in High-Value Procedure Inquiries</strong>
-        </div>
-      </div>
-      <div class="srv-industry-card">
-        <div class="srv-industry-header">
-          <div class="srv-icon-box"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="18" y1="20" x2="18" y2="10"/><line x1="12" y1="20" x2="12" y2="4"/><line x1="6" y1="20" x2="6" y2="14"/></svg></div>
-          <span class="srv-industry-tag">E-COMMERCE &amp; RETAIL</span>
-        </div>
-        <h3 class="srv-card-title">Omnichannel Scaling &amp;amp; ROAS Optimization</h3>
-        <p class="srv-card-desc">Unified Google Shopping, Meta dynamic product ads, and technical catalog SEO driving high-margin repeat purchases.</p>
-        <div class="srv-industry-outcome">
-          <span class="srv-deliverable-lbl">PRIMARY BUSINESS OUTCOME:</span>
-          <strong class="text-brand">4.6x Blended ROAS Across 12,000+ SKUs</strong>
-        </div>
-      </div>
-      <div class="srv-industry-card">
-        <div class="srv-industry-header">
-          <div class="srv-icon-box"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polygon points="12 2 2 7 12 12 22 7 12 2"/><polyline points="2 17 12 22 22 17"/><polyline points="2 12 12 17 22 12"/></svg></div>
-          <span class="srv-industry-tag">B2B SAAS &amp; ENTERPRISE</span>
-        </div>
-        <h3 class="srv-card-title">Account-Based Search &amp;amp; Qualified Demo Funnels</h3>
-        <p class="srv-card-desc">Targeting enterprise decision-makers searching for competitor alternatives and specific software capabilities.</p>
-        <div class="srv-industry-outcome">
-          <span class="srv-deliverable-lbl">PRIMARY BUSINESS OUTCOME:</span>
-          <strong class="text-brand">0 CAC with 4.6% Demo-to-Opportunity Conv</strong>
-        </div>
-      </div>
-      <div class="srv-industry-card">
-        <div class="srv-industry-header">
-          <div class="srv-icon-box"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg></div>
-          <span class="srv-industry-tag">REAL ESTATE &amp; INFRASTRUCTURE</span>
-        </div>
-        <h3 class="srv-card-title">High-Ticket Investor Lead Generation</h3>
-        <p class="srv-card-desc">Geo-targeted search and luxury visual campaigns connecting commercial developers with accredited investors.</p>
-        <div class="srv-industry-outcome">
-          <span class="srv-deliverable-lbl">PRIMARY BUSINESS OUTCOME:</span>
-          <strong class="text-brand">M+ in Verified Inbound Pipeline</strong>
-        </div>
-      </div>
-      <div class="srv-industry-card">
-        <div class="srv-industry-header">
-          <div class="srv-icon-box"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/></svg></div>
-          <span class="srv-industry-tag">PROFESSIONAL SERVICES</span>
-        </div>
-        <h3 class="srv-card-title">Topical Authority &amp;amp; Consultative Inbound</h3>
-        <p class="srv-card-desc">Dominating high-relevance search queries to generate inbound retainers for corporate law, tax, and consulting firms.</p>
-        <div class="srv-industry-outcome">
-          <span class="srv-deliverable-lbl">PRIMARY BUSINESS OUTCOME:</span>
-          <strong class="text-brand">+180% Organic Inbound Retainer Inquiries</strong>
-        </div>
-      </div>
+        <div class="srv-industry-card">
+          <div class="srv-industry-header">
+            <div class="srv-icon-box"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <line x1="12" y1="1" x2="12" y2="23" />
+                <path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6" />
+              </svg></div>
+            <span class="srv-industry-tag">FINTECH &amp; BANKING</span>
           </div>
+          <h3 class="srv-card-title">High-Trust Financial Acquisition Funnels</h3>
+          <p class="srv-card-desc">Navigating strict regulatory advertising policies while driving verified customer
+            accounts and institutional loan inquiries.</p>
+          <div class="srv-industry-outcome">
+            <span class="srv-deliverable-lbl">PRIMARY BUSINESS OUTCOME:</span>
+            <strong class="text-brand">42% Reduction in Cost Per Funded Account</strong>
+          </div>
+        </div>
+        <div class="srv-industry-card">
+          <div class="srv-industry-header">
+            <div class="srv-icon-box"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z" />
+              </svg></div>
+            <span class="srv-industry-tag">HEALTHCARE &amp; CLINICAL</span>
+          </div>
+          <h3 class="srv-card-title">HIPAA-Compliant Patient Booking Growth</h3>
+          <p class="srv-card-desc">High-intent localized search campaigns paired with privacy-first analytics to book
+            qualified patient consultations.</p>
+          <div class="srv-industry-outcome">
+            <span class="srv-deliverable-lbl">PRIMARY BUSINESS OUTCOME:</span>
+            <strong class="text-brand">3.8x Growth in High-Value Procedure Inquiries</strong>
+          </div>
+        </div>
+        <div class="srv-industry-card">
+          <div class="srv-industry-header">
+            <div class="srv-icon-box"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <line x1="18" y1="20" x2="18" y2="10" />
+                <line x1="12" y1="20" x2="12" y2="4" />
+                <line x1="6" y1="20" x2="6" y2="14" />
+              </svg></div>
+            <span class="srv-industry-tag">E-COMMERCE &amp; RETAIL</span>
+          </div>
+          <h3 class="srv-card-title">Omnichannel Scaling &amp;amp; ROAS Optimization</h3>
+          <p class="srv-card-desc">Unified Google Shopping, Meta dynamic product ads, and technical catalog SEO driving
+            high-margin repeat purchases.</p>
+          <div class="srv-industry-outcome">
+            <span class="srv-deliverable-lbl">PRIMARY BUSINESS OUTCOME:</span>
+            <strong class="text-brand">4.6x Blended ROAS Across 12,000+ SKUs</strong>
+          </div>
+        </div>
+        <div class="srv-industry-card">
+          <div class="srv-industry-header">
+            <div class="srv-icon-box"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <polygon points="12 2 2 7 12 12 22 7 12 2" />
+                <polyline points="2 17 12 22 22 17" />
+                <polyline points="2 12 12 17 22 12" />
+              </svg></div>
+            <span class="srv-industry-tag">B2B SAAS &amp; ENTERPRISE</span>
+          </div>
+          <h3 class="srv-card-title">Account-Based Search &amp;amp; Qualified Demo Funnels</h3>
+          <p class="srv-card-desc">Targeting enterprise decision-makers searching for competitor alternatives and
+            specific software capabilities.</p>
+          <div class="srv-industry-outcome">
+            <span class="srv-deliverable-lbl">PRIMARY BUSINESS OUTCOME:</span>
+            <strong class="text-brand">0 CAC with 4.6% Demo-to-Opportunity Conv</strong>
+          </div>
+        </div>
+        <div class="srv-industry-card">
+          <div class="srv-industry-header">
+            <div class="srv-icon-box"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <circle cx="11" cy="11" r="8" />
+                <line x1="21" y1="21" x2="16.65" y2="16.65" />
+              </svg></div>
+            <span class="srv-industry-tag">REAL ESTATE &amp; INFRASTRUCTURE</span>
+          </div>
+          <h3 class="srv-card-title">High-Ticket Investor Lead Generation</h3>
+          <p class="srv-card-desc">Geo-targeted search and luxury visual campaigns connecting commercial developers with
+            accredited investors.</p>
+          <div class="srv-industry-outcome">
+            <span class="srv-deliverable-lbl">PRIMARY BUSINESS OUTCOME:</span>
+            <strong class="text-brand">M+ in Verified Inbound Pipeline</strong>
+          </div>
+        </div>
+        <div class="srv-industry-card">
+          <div class="srv-industry-header">
+            <div class="srv-icon-box"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <polyline points="22 12 18 12 15 21 9 3 6 12 2 12" />
+              </svg></div>
+            <span class="srv-industry-tag">PROFESSIONAL SERVICES</span>
+          </div>
+          <h3 class="srv-card-title">Topical Authority &amp;amp; Consultative Inbound</h3>
+          <p class="srv-card-desc">Dominating high-relevance search queries to generate inbound retainers for corporate
+            law, tax, and consulting firms.</p>
+          <div class="srv-industry-outcome">
+            <span class="srv-deliverable-lbl">PRIMARY BUSINESS OUTCOME:</span>
+            <strong class="text-brand">+180% Organic Inbound Retainer Inquiries</strong>
+          </div>
+        </div>
+      </div>
       <div class="srv-carousel-dots" aria-hidden="true"></div>
     </div>
   </div>
@@ -965,19 +1175,24 @@ $consultationUrl = appUrl('contact.php?service=' . urlencode($serviceName));
         Common Questions About <span class="text-brand">Digital Marketing &amp; SEO</span>
       </h2>
       <p class="srv-section-subtitle">
-        Everything you need to know about our scope, timeline, engineering standards, communication, and ongoing support.
+        Everything you need to know about our scope, timeline, engineering standards, communication, and ongoing
+        support.
       </p>
     </div>
 
     <div class="srv-faq-container">
       <div class="srv-faq-item">
         <button type="button" class="srv-faq-btn" aria-expanded="false" aria-controls="faq-ans-0">
-          <span class="srv-faq-question">How quickly can we expect to see results from technical SEO versus paid advertising?</span>
+          <span class="srv-faq-question">How quickly can we expect to see results from technical SEO versus paid
+            advertising?</span>
           <span class="srv-faq-icon" aria-hidden="true">+</span>
         </button>
         <div id="faq-ans-0" class="srv-faq-panel">
           <div class="srv-faq-content">
-            <p>Paid advertising campaigns (Google Search, Meta Ads) begin driving qualified traffic and conversion data within 48 to 72 hours of launch. Technical SEO and organic authority building typically demonstrate noticeable indexation and ranking velocity within 60 to 90 days, with exponential traffic and lead growth compounding over 6 to 12 months.</p>
+            <p>Paid advertising campaigns (Google Search, Meta Ads) begin driving qualified traffic and conversion data
+              within 48 to 72 hours of launch. Technical SEO and organic authority building typically demonstrate
+              noticeable indexation and ranking velocity within 60 to 90 days, with exponential traffic and lead growth
+              compounding over 6 to 12 months.</p>
           </div>
         </div>
       </div>
@@ -988,7 +1203,9 @@ $consultationUrl = appUrl('contact.php?service=' . urlencode($serviceName));
         </button>
         <div id="faq-ans-1" class="srv-faq-panel">
           <div class="srv-faq-content">
-            <p>No. We operate on transparent monthly retainers with clear deliverables, milestone checkpoints, and 30-day notice terms. We believe in earning our partnership every single month through measurable revenue performance, not legal entrapment.</p>
+            <p>No. We operate on transparent monthly retainers with clear deliverables, milestone checkpoints, and
+              30-day notice terms. We believe in earning our partnership every single month through measurable revenue
+              performance, not legal entrapment.</p>
           </div>
         </div>
       </div>
@@ -999,18 +1216,23 @@ $consultationUrl = appUrl('contact.php?service=' . urlencode($serviceName));
         </button>
         <div id="faq-ans-2" class="srv-faq-panel">
           <div class="srv-faq-content">
-            <p>You do—100%. We always work inside your own Google Ads, Meta Business Manager, and Google Cloud accounts. If you ever decide to bring marketing in-house, all campaigns, audiences, historical learning data, and creative files remain your property.</p>
+            <p>You do—100%. We always work inside your own Google Ads, Meta Business Manager, and Google Cloud accounts.
+              If you ever decide to bring marketing in-house, all campaigns, audiences, historical learning data, and
+              creative files remain your property.</p>
           </div>
         </div>
       </div>
       <div class="srv-faq-item">
         <button type="button" class="srv-faq-btn" aria-expanded="false" aria-controls="faq-ans-3">
-          <span class="srv-faq-question">How do you handle the tracking issues caused by Apple iOS 14+ and Safari ITP?</span>
+          <span class="srv-faq-question">How do you handle the tracking issues caused by Apple iOS 14+ and Safari
+            ITP?</span>
           <span class="srv-faq-icon" aria-hidden="true">+</span>
         </button>
         <div id="faq-ans-3" class="srv-faq-panel">
           <div class="srv-faq-content">
-            <p>We engineer a custom first-party server-side tracking architecture using Server-Side Google Tag Manager (sGTM) and Direct Meta Conversions API (CAPI). Events are routed through your own custom domain, bypassing client-side ad blockers and providing ad algorithms with accurate conversion data.</p>
+            <p>We engineer a custom first-party server-side tracking architecture using Server-Side Google Tag Manager
+              (sGTM) and Direct Meta Conversions API (CAPI). Events are routed through your own custom domain, bypassing
+              client-side ad blockers and providing ad algorithms with accurate conversion data.</p>
           </div>
         </div>
       </div>
@@ -1021,7 +1243,9 @@ $consultationUrl = appUrl('contact.php?service=' . urlencode($serviceName));
         </button>
         <div id="faq-ans-4" class="srv-faq-panel">
           <div class="srv-faq-content">
-            <p>We typically work with growth-stage and enterprise companies investing at least $3,000 to $50,000+ per month in paid media. This level of spend ensures adequate statistical significance for rapid multivariate testing and algorithmic bidding calibration.</p>
+            <p>We typically work with growth-stage and enterprise companies investing at least $3,000 to $50,000+ per
+              month in paid media. This level of spend ensures adequate statistical significance for rapid multivariate
+              testing and algorithmic bidding calibration.</p>
           </div>
         </div>
       </div>
@@ -1032,7 +1256,8 @@ $consultationUrl = appUrl('contact.php?service=' . urlencode($serviceName));
         </button>
         <div id="faq-ans-5" class="srv-faq-panel">
           <div class="srv-faq-content">
-            <p>We handle everything. Our in-house engineering team designs, writes, and develops high-converting, sub-second landing pages optimized specifically for your target buyer persona and Core Web Vitals.</p>
+            <p>We handle everything. Our in-house engineering team designs, writes, and develops high-converting,
+              sub-second landing pages optimized specifically for your target buyer persona and Core Web Vitals.</p>
           </div>
         </div>
       </div>
@@ -1043,7 +1268,9 @@ $consultationUrl = appUrl('contact.php?service=' . urlencode($serviceName));
         </button>
         <div id="faq-ans-6" class="srv-faq-panel">
           <div class="srv-faq-content">
-            <p>You receive continuous, 24/7 access to a custom Looker Studio executive dashboard syncing directly with your ad accounts and CRM. In addition, we conduct bi-weekly strategy calls and deliver comprehensive monthly performance and optimization roadmaps.</p>
+            <p>You receive continuous, 24/7 access to a custom Looker Studio executive dashboard syncing directly with
+              your ad accounts and CRM. In addition, we conduct bi-weekly strategy calls and deliver comprehensive
+              monthly performance and optimization roadmaps.</p>
           </div>
         </div>
       </div>
@@ -1054,7 +1281,9 @@ $consultationUrl = appUrl('contact.php?service=' . urlencode($serviceName));
         </button>
         <div id="faq-ans-7" class="srv-faq-panel">
           <div class="srv-faq-content">
-            <p>We implement automated honeypot spam filters, work email verification, and conditional qualification logic on all lead forms. Furthermore, we feed closed-won offline conversion data from your CRM back to Google and Meta so the bidding algorithms optimize for paying customers, not empty form fills.</p>
+            <p>We implement automated honeypot spam filters, work email verification, and conditional qualification
+              logic on all lead forms. Furthermore, we feed closed-won offline conversion data from your CRM back to
+              Google and Meta so the bidding algorithms optimize for paying customers, not empty form fills.</p>
           </div>
         </div>
       </div>
@@ -1073,36 +1302,52 @@ $consultationUrl = appUrl('contact.php?service=' . urlencode($serviceName));
         <div class="srv-cta-grid-2col">
           <div>
             <div class="srv-badge mb-3">
-          <span class="srv-badge-dot"></span>
-          <span>TAKE THE NEXT STEP</span>
-        </div>
+              <span class="srv-badge-dot"></span>
+              <span>TAKE THE NEXT STEP</span>
+            </div>
             <h2 class="srv-cta-title">
-          Ready to Eliminate Ad Waste &amp; Scale <span class="text-brand">Profitable Acquisition?</span>
-        </h2>
+              Ready to Eliminate Ad Waste &amp; Scale <span class="text-brand">Profitable Acquisition?</span>
+            </h2>
             <p class="srv-cta-lead">
-          Schedule a comprehensive growth diagnostic call. Our senior marketing architects will audit your current ad accounts, technical SEO health, and conversion funnel.
-        </p>
+              Schedule a comprehensive growth diagnostic call. Our senior marketing architects will audit your current
+              ad accounts, technical SEO health, and conversion funnel.
+            </p>
             <div class="srv-cta-actions" style="justify-content: flex-start; margin-bottom: 2rem;">
               <a href="<?= e($consultationUrl) ?>" class="btn-srv-primary btn-srv-lg">
                 <span>Get a Free Consultation</span>
-                <svg class="btn-srv-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+                <svg class="btn-srv-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+                  <line x1="5" y1="12" x2="19" y2="12" />
+                  <polyline points="12 5 19 12 12 19" />
+                </svg>
               </a>
               <a href="<?= appUrl('audit.php') ?>" class="btn-srv-secondary btn-srv-lg">
                 <span>Request Digital Audit</span>
-                <svg class="btn-srv-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="9 18 15 12 9 6"/></svg>
+                <svg class="btn-srv-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <polyline points="9 18 15 12 9 6" />
+                </svg>
               </a>
             </div>
-            <div class="srv-cta-contact-meta" style="justify-content: flex-start; border-top: 1px solid rgba(6, 181, 249, 0.15); padding-top: 1.5rem;">
+            <div class="srv-cta-contact-meta"
+              style="justify-content: flex-start; border-top: 1px solid rgba(6, 181, 249, 0.15); padding-top: 1.5rem;">
               <div class="srv-meta-item">
-                <svg class="srv-meta-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+                <svg class="srv-meta-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <path
+                    d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z" />
+                </svg>
                 <span class="text-white"><?= htmlspecialchars(APP_PHONE) ?></span>
               </div>
               <div class="srv-meta-item">
-                <svg class="srv-meta-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+                <svg class="srv-meta-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z" />
+                  <polyline points="22,6 12,13 2,6" />
+                </svg>
                 <span class="text-white"><?= htmlspecialchars(APP_EMAIL) ?></span>
               </div>
               <div class="srv-meta-item">
-                <svg class="srv-meta-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+                <svg class="srv-meta-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <circle cx="12" cy="12" r="10" />
+                  <polyline points="12 6 12 12 16 14" />
+                </svg>
                 <span class="text-secondary">Response Time: Under 2 Hours</span>
               </div>
             </div>
@@ -1117,26 +1362,35 @@ $consultationUrl = appUrl('contact.php?service=' . urlencode($serviceName));
                 <input type="hidden" name="service" value="<?= e($serviceName) ?>">
                 <div class="srv-form-group">
                   <label class="srv-form-label" for="quick_name_seo.php">Your Full Name</label>
-                  <input type="text" id="quick_name_seo.php" name="name" required class="srv-form-input" placeholder="e.g. Sarah Jenkins">
+                  <input type="text" id="quick_name_seo.php" name="name" required class="srv-form-input"
+                    placeholder="e.g. Sarah Jenkins">
                 </div>
                 <div class="srv-form-group">
                   <label class="srv-form-label" for="quick_email_seo.php">Work Email</label>
-                  <input type="email" id="quick_email_seo.php" name="email" required class="srv-form-input" placeholder="e.g. sarah@enterprise.com">
+                  <input type="email" id="quick_email_seo.php" name="email" required class="srv-form-input"
+                    placeholder="e.g. sarah@enterprise.com">
                 </div>
                 <div class="srv-form-group">
                   <label class="srv-form-label" for="quick_company_seo.php">Company / Domain</label>
-                  <input type="text" id="quick_company_seo.php" name="company" class="srv-form-input" placeholder="e.g. Enterprise Corp (enterprise.com)">
+                  <input type="text" id="quick_company_seo.php" name="company" class="srv-form-input"
+                    placeholder="e.g. Enterprise Corp (enterprise.com)">
                 </div>
                 <div class="srv-form-group">
                   <label class="srv-form-label" for="quick_notes_seo.php">Project Scope &amp; Objectives</label>
-                  <textarea id="quick_notes_seo.php" name="notes" rows="2" class="srv-form-textarea" placeholder="Briefly describe your timeline, goals, or current technical bottlenecks..."></textarea>
+                  <textarea id="quick_notes_seo.php" name="notes" rows="2" class="srv-form-textarea"
+                    placeholder="Briefly describe your timeline, goals, or current technical bottlenecks..."></textarea>
                 </div>
                 <button type="submit" class="srv-form-submit">
                   <span>Send Consultation Request</span>
-                  <svg class="btn-srv-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+                  <svg class="btn-srv-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+                    <line x1="5" y1="12" x2="19" y2="12" />
+                    <polyline points="12 5 19 12 12 19" />
+                  </svg>
                 </button>
                 <div class="srv-form-disclaimer">
-                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+                    <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z" />
+                  </svg>
                   <span>100% strict NDA guarantee. Zero spam policy.</span>
                 </div>
               </form>
@@ -1145,6 +1399,6 @@ $consultationUrl = appUrl('contact.php?service=' . urlencode($serviceName));
         </div>
       </div>
     </div>
-    </div>
+  </div>
   </div>
 </section>

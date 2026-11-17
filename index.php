@@ -272,6 +272,89 @@ require_once __DIR__ . '/includes/header.php';
       </p>
     </div>
 
+    <?php
+    $featuredCapabilities = [
+      'web-software-development' => [
+        'number' => '01',
+        'name' => 'Web and software development services',
+        'description' => 'Business Doctor is an Affordable Digital Marketing company in Delhi that provides digital marketing services. We build every website from scratch and custom software solutions according to your needs, creating secure, fast and easy to use digital solutions. Our services reflect your brand identity and make your brand remarkable.',
+        'features' => [
+          'Custom Website and Software Development',
+          'User-Friendly UI/UX Design',
+          'Mobile Friendly Development',
+          'Advanced Features and API Integration',
+          'Secure and Scalable Digital Solutions',
+        ],
+        'url' => getServiceUrl('web-development'),
+      ],
+      'digital-marketing-ppc-seo' => [
+        'number' => '02',
+        'name' => 'Digital marketing, PPC and SEO services',
+        'description' => 'Better search engine optimization, digital marketing and performance ads can help your website rank and get you more leads, as we are an affordable digital marketing company in Delhi. Our team provides you with everything that makes your business recognisable, from improving Google search rankings to running targeted ad campaigns. Business Doctor’s team provides you with the best and affordable seo and digital marketing services in delhi NCR.',
+        'features' => [
+          'Effective Keyword Research and SEO',
+          'On-Page, Off-Page and Technical SEO Optimisation',
+          'Google Ads and PPC Campaign Management',
+          'Social Media and Paid Advertising',
+          'Lead Generation and Performance Tracking',
+        ],
+        'url' => getServiceUrl('seo'),
+      ],
+      'ui-ux-brand-identity' => [
+        'number' => '03',
+        'name' => 'UI/UX Design and Brand Identity',
+        'description' => 'Business doctors create attractive and user friendly websites and software that help your business grow and provide you with leads, so that you can reach quality customers. We customise every project to make your brand memorable and to provide users with the most seamless experience.',
+        'features' => [
+          'User Friendly UI/UX Design',
+          'Creative Websites',
+          'Logo and Brand Identity Design',
+          'Engaging Visual and Graphic Design',
+          'Consistent Brand Colours and Typography',
+        ],
+        'url' => getServiceUrl('graphic-design'),
+      ],
+      'ecommerce-marketplace-management' => [
+        'number' => '04',
+        'name' => 'E-Commerce and Marketplace Management Service',
+        'description' => 'Businessdoctor is the best digital marketing company in Delhi that helps businesses manage and grow their online stores across different platforms, from product listing and inventory management to order handling and sales tracking. Our team ensures a smooth shopping experience for customers and better business growth.',
+        'features' => [
+          'Online Store Management',
+          'Product Listing and Optimisation',
+          'Marketplace Account Management',
+          'Order and Inventory Management',
+          'Sales and Performance Tracking',
+        ],
+        'url' => getServiceUrl('ecommerce-management'),
+      ],
+      'creative-production-video-marketing' => [
+        'number' => '05',
+        'name' => 'Creative Production and Video Marketing',
+        'description' => 'Businessdoctor is the best online digital marketing company in Delhi. Our team creates interesting and engaging content that grabs the audience\'s attention. Your engaging Instagram reels, product photography, videography and more everything is our responsibility.',
+        'features' => [
+          'Promotional Video Creation',
+          'Social Media Reels and Shorts',
+          'Product Photography and Videography',
+          'UGC Video Production',
+          'Video Editing and Motion Graphics',
+        ],
+        'url' => getServiceUrl('video-editing'),
+      ],
+      'cloud-solutions-it-consulting' => [
+        'number' => '06',
+        'name' => 'Cloud Solutions and IT Consulting',
+        'description' => 'We are the Affordable Digital Marketing company in Delhi that provides IT solutions and cloud services to your business that make your data safe and daily operations smooth. We are the Best digital marketing company in Delhi, helping with cloud setup, data management, security and technical support so that you can manage your business technology easily.',
+        'features' => [
+          'Cloud Storage and Data Management',
+          'Cloud Setup and Migration',
+          'Data Security and Backup Solutions',
+          'IT Infrastructure Management',
+          'Technical Support and System Monitoring',
+        ],
+        'url' => getServicesOverviewUrl(),
+      ],
+    ];
+    ?>
+
     <div class="capabilities-explorer">
       <!-- Capability Navigation Tabs with Horizontal Scroll Controls -->
       <div class="capabilities-nav-wrapper">
@@ -285,12 +368,12 @@ require_once __DIR__ . '/includes/header.php';
 
         <div class="capabilities-nav-bar" id="capabilitiesNavBar" role="tablist" aria-label="Capabilities Navigation">
           <?php $idx = 0;
-          foreach ($practices as $slug => $p):
+          foreach ($featuredCapabilities as $slug => $p):
             $idx++; ?>
             <button type="button" class="cap-tab-btn <?= $idx === 1 ? 'active' : '' ?>"
               data-target="cap-pane-<?= e($slug) ?>" role="tab" aria-selected="<?= $idx === 1 ? 'true' : 'false' ?>">
               <span class="cap-tab-num"><?= e($p['number']) ?>.</span>
-              <span><?= e($p['short_title']) ?></span>
+              <span><?= e($p['name']) ?></span>
             </button>
           <?php endforeach; ?>
         </div>
@@ -306,7 +389,7 @@ require_once __DIR__ . '/includes/header.php';
 
       <!-- Capability Tab Panes -->
       <?php $idx = 0;
-      foreach ($practices as $slug => $p):
+      foreach ($featuredCapabilities as $slug => $p):
         $idx++; ?>
         <div class="cap-tab-pane <?= $idx === 1 ? 'active' : '' ?>" id="cap-pane-<?= e($slug) ?>" role="tabpanel">
           <div class="capability-editorial-card">
@@ -316,7 +399,7 @@ require_once __DIR__ . '/includes/header.php';
                 <div class="cap-card-eyebrow">
                   <span>DISCIPLINE <?= e($p['number']) ?></span>
                   <span>•</span>
-                  <span><?= e($p['tagline']) ?></span>
+                  <span><?= e($p['name']) ?></span>
                 </div>
                 <h3 class="cap-card-title"><?= e($p['name']) ?></h3>
                 <p class="cap-card-desc"><?= e($p['description']) ?></p>
@@ -326,20 +409,20 @@ require_once __DIR__ . '/includes/header.php';
                     style="font-family: var(--font-mono); font-size: 0.75rem; color: #06B5F9; font-weight: 700; text-transform: uppercase; letter-spacing: 0.1em; margin-bottom: 0.25rem;">
                     CORE DELIVERABLES &amp; EXECUTION:
                   </div>
-                  <?php foreach ($p['deliverables'] as $deliv): ?>
+                  <?php foreach ($p['features'] as $feat): ?>
                     <div class="cap-deliverable-item">
                       <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
                         <polyline points="20 6 9 17 4 12" />
                       </svg>
-                      <span><?= e($deliv) ?></span>
+                      <span><?= e($feat) ?></span>
                     </div>
                   <?php endforeach; ?>
                 </div>
               </div>
 
               <div>
-                <a href="<?= getServiceUrl($slug) ?>" class="btn btn-primary">
-                  <span>Explore Full <?= e($p['short_title']) ?> Roadmap</span>
+                <a href="<?= e($p['url']) ?>" class="btn btn-primary">
+                  <span>Explore Full <?= e($p['name']) ?> Roadmap</span>
                   <svg class="btn-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
                     <line x1="5" y1="12" x2="19" y2="12" />
                     <polyline points="12 5 19 12 12 19" />
@@ -352,21 +435,26 @@ require_once __DIR__ . '/includes/header.php';
             <div class="cap-card-sidebar">
               <div>
                 <div class="cap-sidebar-kpi-block">
-                  <div class="cap-sidebar-kpi-label">KEY PERFORMANCE COMMITMENT</div>
-                  <div class="cap-sidebar-kpi-value"><?= e($p['kpis'][0]) ?></div>
+                  <div class="cap-sidebar-kpi-label">KEY SERVICE CAPABILITIES</div>
+                  <div style="font-family: var(--font-display); font-size: 1.35rem; font-weight: 700; color: #F4F8FC; line-height: 1.25; margin-top: 0.4rem;">
+                    <?= e($p['name']) ?>
+                  </div>
                 </div>
 
-                <div style="margin-top: 2rem;">
-                  <div class="cap-sidebar-kpi-label">TECHNICAL STANDARDS</div>
-                  <div class="cap-sidebar-chips">
-                    <?php foreach ($p['kpis'] as $kpi): ?>
-                      <span class="cap-sidebar-chip"><?= e($kpi) ?></span>
+                <div style="margin-top: 1.75rem;">
+                  <div class="cap-sidebar-kpi-label">CORE SCOPE HIGHLIGHTS</div>
+                  <div class="cap-sidebar-chips" style="margin-top: 0.75rem; display: flex; flex-direction: column; gap: 0.65rem;">
+                    <?php foreach ($p['features'] as $feat): ?>
+                      <div class="cap-sidebar-chip" style="display: flex; align-items: center; gap: 0.6rem; padding: 0.55rem 0.85rem; font-size: 0.84rem; font-family: var(--font-sans); border-radius: 6px; background: rgba(6, 181, 249, 0.08); border: 1px solid rgba(6, 181, 249, 0.22); color: #F4F8FC;">
+                        <span style="display: inline-block; width: 6px; height: 6px; border-radius: 50%; background: #06B5F9; flex-shrink: 0;"></span>
+                        <span><?= e($feat) ?></span>
+                      </div>
                     <?php endforeach; ?>
                   </div>
                 </div>
               </div>
 
-              <div style="margin-top: 3rem; border-top: 1px solid rgba(255,255,255,0.15); padding-top: 1.5rem;">
+              <div style="margin-top: 2.5rem; border-top: 1px solid rgba(255,255,255,0.15); padding-top: 1.5rem;">
                 <p style="font-size: 0.85rem; color: rgba(255,255,255,0.78); line-height: 1.5; margin-bottom: 1rem;">
                   Need an architectural evaluation or custom scope for <?= e($p['name']) ?>?
                 </p>
@@ -826,24 +914,24 @@ require_once __DIR__ . '/includes/header.php';
               <g transform="translate(300, 48)">
                 <rect width="215" height="66" rx="8" fill="#071A2C" stroke="rgba(6, 181, 249, 0.3)"
                   stroke-width="1.2" />
-                <circle cx="24" cy="33" r="7" fill="#06B5F9" />
-                <text x="42" y="27" fill="#F4F8FC" font-size="12" font-family="var(--font-display)"
+                <circle cx="20" cy="33" r="6" fill="#06B5F9" />
+                <text x="36" y="25" fill="#F4F8FC" font-size="11.5" font-family="var(--font-display)"
                   font-weight="700">Revenue Return</text>
-                <text x="42" y="45" fill="#0099DB" font-size="14" font-family="var(--font-mono)" font-weight="800">76%
+                <text x="36" y="43" fill="#0099DB" font-size="12" font-family="var(--font-mono)" font-weight="800">76%
                   of Total Value</text>
-                <text x="42" y="58" fill="#AABBCB" font-size="9" font-family="var(--font-mono)">Verified Commercial
+                <text x="36" y="57" fill="#AABBCB" font-size="9" font-family="var(--font-mono)">Verified Commercial
                   Lift</text>
               </g>
 
               <g transform="translate(300, 134)">
                 <rect width="215" height="66" rx="8" fill="#071A2C" stroke="rgba(6, 181, 249, 0.2)"
                   stroke-width="1.2" />
-                <circle cx="24" cy="33" r="7" fill="#0A223B" stroke="#0099DB" stroke-width="1.5" />
-                <text x="42" y="27" fill="#F4F8FC" font-size="12" font-family="var(--font-display)"
+                <circle cx="20" cy="33" r="6" fill="#0A223B" stroke="#0099DB" stroke-width="1.5" />
+                <text x="36" y="25" fill="#F4F8FC" font-size="11.5" font-family="var(--font-display)"
                   font-weight="700">Marketing Investment</text>
-                <text x="42" y="45" fill="#C3D0DE" font-size="14" font-family="var(--font-mono)" font-weight="800">24%
+                <text x="36" y="43" fill="#C3D0DE" font-size="12" font-family="var(--font-mono)" font-weight="800">24%
                   Optimized Capital</text>
-                <text x="42" y="58" fill="#AABBCB" font-size="9" font-family="var(--font-mono)">Zero Ad Budget
+                <text x="36" y="57" fill="#AABBCB" font-size="9" font-family="var(--font-mono)">Zero Ad Budget
                   Waste</text>
               </g>
             </svg>
@@ -880,8 +968,8 @@ require_once __DIR__ . '/includes/header.php';
                 text-anchor="middle">QUALIFIED LEADS (32% // 160K)</text>
 
               <polygon points="175,152 365,152 335,190 205,190" fill="url(#seg2)" stroke="#06B5F9" stroke-width="1.4" />
-              <text x="270" y="170" fill="#F4F8FC" font-size="11.5" font-family="var(--font-display)" font-weight="700"
-                text-anchor="middle">ENGAGED USERS (18% // 90K)</text>
+              <text x="270" y="171" fill="#F4F8FC" font-size="9.5" font-family="var(--font-display)" font-weight="700"
+                text-anchor="middle" letter-spacing="0.2px">ENGAGED USERS (18% // 90K)</text>
 
               <polygon points="210,196 330,196 305,236 235,236" fill="url(#seg2)" stroke="#0099DB" stroke-width="1.6" />
               <text x="270" y="214" fill="#061326" font-size="10.5" font-family="var(--font-display)" font-weight="900"
@@ -955,11 +1043,12 @@ require_once __DIR__ . '/includes/header.php';
               <rect x="30" y="16" width="480" height="36" rx="6" fill="#071A2C" stroke="rgba(6, 181, 249, 0.3)"
                 stroke-width="1.2" />
               <rect x="30" y="16" width="476" height="36" rx="6" fill="url(#cfGrad)" fill-opacity="0.25" />
-              <text x="45" y="39" fill="#F4F8FC" font-size="12" font-family="var(--font-display)" font-weight="700">1.
+              <text x="44" y="39" fill="#F4F8FC" font-size="11.5" font-family="var(--font-display)" font-weight="700">1.
                 VISITORS</text>
-              <text x="365" y="39" fill="#0099DB" font-size="12" font-family="var(--font-mono)"
-                font-weight="700">10,000</text>
-              <text x="465" y="39" fill="#AABBCB" font-size="11" font-family="var(--font-mono)">100%</text>
+              <text x="448" y="39" fill="#0099DB" font-size="11.5" font-family="var(--font-mono)" font-weight="700"
+                text-anchor="end">10,000</text>
+              <text x="496" y="39" fill="#AABBCB" font-size="11" font-family="var(--font-mono)"
+                text-anchor="end">100%</text>
 
               <text x="270" y="60" fill="#8297AA" font-size="9" font-family="var(--font-mono)" text-anchor="middle">▼
                 -36% (High-intent discovery filter)</text>
@@ -967,45 +1056,48 @@ require_once __DIR__ . '/includes/header.php';
               <rect x="65" y="66" width="410" height="36" rx="6" fill="#071A2C" stroke="rgba(6, 181, 249, 0.35)"
                 stroke-width="1.2" />
               <rect x="65" y="66" width="310" height="36" rx="6" fill="url(#cfGrad)" fill-opacity="0.35" />
-              <text x="80" y="89" fill="#F4F8FC" font-size="12" font-family="var(--font-display)" font-weight="700">2.
+              <text x="79" y="89" fill="#F4F8FC" font-size="11.5" font-family="var(--font-display)" font-weight="700">2.
                 PRODUCT/SERVICE VIEWS</text>
-              <text x="365" y="89" fill="#0099DB" font-size="12" font-family="var(--font-mono)"
-                font-weight="700">6,400</text>
-              <text x="435" y="89" fill="#AABBCB" font-size="11" font-family="var(--font-mono)">64%</text>
+              <text x="414" y="89" fill="#0099DB" font-size="11.5" font-family="var(--font-mono)" font-weight="700"
+                text-anchor="end">6,400</text>
+              <text x="461" y="89" fill="#AABBCB" font-size="11" font-family="var(--font-mono)"
+                text-anchor="end">64%</text>
 
               <text x="270" y="110" fill="#8297AA" font-size="9" font-family="var(--font-mono)" text-anchor="middle">▼
                 -30% (Solution alignment evaluation)</text>
 
-              <rect x="105" y="116" width="330" height="36" rx="6" fill="#071A2C" stroke="rgba(6, 181, 249, 0.45)"
+              <rect x="100" y="116" width="340" height="36" rx="6" fill="#071A2C" stroke="rgba(6, 181, 249, 0.45)"
                 stroke-width="1.2" />
-              <rect x="105" y="116" width="180" height="36" rx="6" fill="url(#cfGrad)" fill-opacity="0.5" />
-              <text x="120" y="139" fill="#F4F8FC" font-size="12" font-family="var(--font-display)" font-weight="700">3.
+              <rect x="100" y="116" width="190" height="36" rx="6" fill="url(#cfGrad)" fill-opacity="0.5" />
+              <text x="114" y="139" fill="#F4F8FC" font-size="11.5" font-family="var(--font-display)" font-weight="700">3.
                 ENQUIRIES</text>
-              <text x="330" y="139" fill="#0099DB" font-size="12" font-family="var(--font-mono)"
-                font-weight="700">3,400</text>
-              <text x="395" y="139" fill="#AABBCB" font-size="11" font-family="var(--font-mono)">34%</text>
+              <text x="378" y="139" fill="#0099DB" font-size="11.5" font-family="var(--font-mono)" font-weight="700"
+                text-anchor="end">3,400</text>
+              <text x="426" y="139" fill="#AABBCB" font-size="11" font-family="var(--font-mono)"
+                text-anchor="end">34%</text>
 
               <text x="270" y="160" fill="#8297AA" font-size="9" font-family="var(--font-mono)" text-anchor="middle">▼
                 -16% (Scope and qualification fit)</text>
 
-              <rect x="145" y="166" width="250" height="36" rx="6" fill="#071A2C" stroke="rgba(6, 181, 249, 0.55)"
+              <rect x="135" y="166" width="270" height="36" rx="6" fill="#071A2C" stroke="rgba(6, 181, 249, 0.55)"
                 stroke-width="1.2" />
-              <rect x="145" y="166" width="115" height="36" rx="6" fill="url(#cfGrad)" fill-opacity="0.65" />
-              <text x="160" y="189" fill="#F4F8FC" font-size="12" font-family="var(--font-display)" font-weight="700">4.
+              <rect x="135" y="166" width="125" height="36" rx="6" fill="url(#cfGrad)" fill-opacity="0.65" />
+              <text x="149" y="189" fill="#F4F8FC" font-size="11" font-family="var(--font-display)" font-weight="700">4.
                 QUALIFIED LEADS</text>
-              <text x="315" y="189" fill="#0099DB" font-size="12" font-family="var(--font-mono)"
-                font-weight="700">1,800</text>
-              <text x="360" y="189" fill="#AABBCB" font-size="11" font-family="var(--font-mono)">18%</text>
+              <text x="344" y="189" fill="#0099DB" font-size="11.5" font-family="var(--font-mono)" font-weight="700"
+                text-anchor="end">1,800</text>
+              <text x="391" y="189" fill="#AABBCB" font-size="11" font-family="var(--font-mono)"
+                text-anchor="end">18%</text>
 
               <text x="270" y="210" fill="#8297AA" font-size="9" font-family="var(--font-mono)" text-anchor="middle">▼
                 -9.8% (Commercial commitment)</text>
 
-              <rect x="180" y="216" width="180" height="38" rx="8" fill="#071A2C" stroke="#06B5F9" stroke-width="1.6" />
-              <rect x="180" y="216" width="180" height="38" rx="8" fill="#06B5F9" fill-opacity="0.2" />
-              <text x="195" y="240" fill="#0099DB" font-size="12" font-family="var(--font-display)" font-weight="900">5.
+              <rect x="165" y="216" width="210" height="38" rx="8" fill="#071A2C" stroke="#06B5F9" stroke-width="1.6" />
+              <rect x="165" y="216" width="210" height="38" rx="8" fill="#06B5F9" fill-opacity="0.2" />
+              <text x="178" y="240" fill="#0099DB" font-size="11" font-family="var(--font-display)" font-weight="800">5.
                 CONVERSIONS</text>
-              <text x="305" y="240" fill="#06B5F9" font-size="13" font-family="var(--font-mono)" font-weight="800">820
-                (8.2%)</text>
+              <text x="362" y="240" fill="#06B5F9" font-size="11.5" font-family="var(--font-mono)" font-weight="800"
+                text-anchor="end">820 (8.2%)</text>
             </svg>
           </div>
         </div>
