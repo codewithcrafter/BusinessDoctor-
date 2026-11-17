@@ -38,7 +38,7 @@ require_once __DIR__ . '/includes/header.php';
 <!-- Contact & Inquiry Grid -->
 <section class="section" style="background-color: var(--color-surface); border-top: 1px solid var(--color-slate-200); border-bottom: 1px solid var(--color-slate-200);">
   <div class="container">
-    <div class="hero-grid" style="align-items: flex-start; gap: 4rem;">
+    <div class="hero-grid" style="display: grid; grid-template-columns: 1fr; gap: 3.5rem; align-items: flex-start;">
       <!-- Consultation Request Form -->
       <div class="card" style="padding: 3.5rem; border-radius: var(--radius-xl);">
         <h3 style="font-size: 1.6rem; color: var(--color-text); font-weight: 800; margin-bottom: 0.5rem;">

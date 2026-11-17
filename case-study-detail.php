@@ -228,8 +228,13 @@ require_once __DIR__ . '/includes/header.php';
       </div>
     </div>
 
-    <!-- 01 // OVERVIEW & CHALLENGE -->
-    <div style="margin-bottom: 3.5rem;">
+    <!-- Dynamic Table of Contents -->
+    <nav id="page-toc-card" class="page-toc-card" style="display: none;" aria-label="Table of Contents"></nav>
+
+    <!-- Case Study Content Stream -->
+    <div class="case-study-article-body">
+      <!-- 01 // OVERVIEW & CHALLENGE -->
+      <div style="margin-bottom: 3.5rem;">
       <div style="font-family: var(--font-mono); font-size: 0.75rem; color: #06B5F9; font-weight: 700; text-transform: uppercase; letter-spacing: 0.1em; margin-bottom: 0.5rem;">
         01 // THE CHALLENGE &amp; BOTTLENECKS
       </div>
@@ -341,6 +346,7 @@ require_once __DIR__ . '/includes/header.php';
         <?= nl2br(e($case['results'] ?: $case['result_description'])) ?>
       </div>
     </div>
+    </div>
 
     <!-- Executive Quote -->
     <?php if (!empty($case['quote_text'])): ?>
@@ -416,4 +422,5 @@ require_once __DIR__ . '/includes/header.php';
   </div>
 </section>
 
+<script src="<?= getAssetUrl('assets/js/toc.js') ?>?v=<?= filemtime(__DIR__ . '/assets/js/toc.js') ?>"></script>
 <?php require_once __DIR__ . '/includes/footer.php'; ?>

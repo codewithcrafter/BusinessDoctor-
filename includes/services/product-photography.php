@@ -21,18 +21,18 @@ $consultationUrl = appUrl('contact.php?service=' . urlencode($serviceName));
       <div class="srv-col-12 srv-col-lg-6">
         <div class="srv-eyebrow">
           <span class="srv-eyebrow-dot"></span>
-          <span>COMMERCIAL STUDIO & VISUAL DETAIL</span>
+          <span>PRODUCT PHOTOGRAPHY COMPANY IN DELHI</span>
         </div>
         <h1 class="srv-hero-title">
-          Commercial Studio Photography that <br><span class="text-brand">Converts Browsers into Buyers</span>
+          Product Photography Company in Delhi That Turns <span class="text-brand">Browsers Into Buyers</span>
         </h1>
         <p class="srv-hero-desc">
-          High-resolution commercial product imagery tailored for e-commerce storefronts, Amazon listings, and luxury print catalogs: clean pure-white background catalog shots, stylized lifestyle staging, 360-degree interactive captures, and macro texture detailing.
+          Product photography is not just about clicking pictures of your product, it is more about having the right angle, right lighting, right background and more, which makes your product more premium. Business Doctor is a product photography company in Delhi that provides product photography services. Our professional team manages everything from the background to the camera angle that makes your product more realistic.
         </p>
 
         <div class="srv-hero-actions">
           <a href="<?= e($consultationUrl) ?>" class="btn-srv-primary">
-            <span>Get a Free Consultation</span>
+            <span>Schedule Diagnostic Call</span>
             <svg class="btn-srv-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
               <line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/>
             </svg>
@@ -47,20 +47,20 @@ $consultationUrl = appUrl('contact.php?service=' . urlencode($serviceName));
 
         <div class="srv-hero-stats">
           <div class="srv-hero-stat-item">
-            <span class="srv-hero-stat-val">4K / 8K</span>
-            <span class="srv-hero-stat-lbl">Commercial Resolution</span>
+            <span class="srv-hero-stat-val">61 MP</span>
+            <span class="srv-hero-stat-lbl">Sony High-Resolution</span>
           </div>
           <div class="srv-hero-stat-item">
-            <span class="srv-hero-stat-val">+45%</span>
-            <span class="srv-hero-stat-lbl">Product Page Conversion</span>
+            <span class="srv-hero-stat-val">RGB 255</span>
+            <span class="srv-hero-stat-lbl">Pure White Standards</span>
           </div>
           <div class="srv-hero-stat-item">
             <span class="srv-hero-stat-val">100%</span>
             <span class="srv-hero-stat-lbl">Marketplace Compliant</span>
           </div>
           <div class="srv-hero-stat-item">
-            <span class="srv-hero-stat-val">RGB 255</span>
-            <span class="srv-hero-stat-lbl">Pure White Accuracy</span>
+            <span class="srv-hero-stat-val">360&deg;</span>
+            <span class="srv-hero-stat-lbl">Interactive Captures</span>
           </div>
         </div>
       </div>
@@ -116,39 +116,42 @@ $consultationUrl = appUrl('contact.php?service=' . urlencode($serviceName));
           <span>VISUAL CONVERSION STANDARDS</span>
         </div>
         <h2 class="srv-section-title">
-          Why High-Resolution Photography is Your <span class="text-brand">Best Sales Closer</span>
+          Why Photography Is Your <span class="text-brand">Best Sales Closer</span>
         </h2>
         <p class="srv-section-subtitle mb-4">
-          In digital commerce, your customer cannot physically touch, hold, or inspect your product. Low-resolution photos, inaccurate colors, or sloppy lighting instantly introduce doubt, driving potential buyers straight to competitors with higher return rates.
+          In today's world, customers cannot buy a product just by looking at its photo because physical feel by touching it is not possible; that is where product photography comes in. Business Doctor is a product photography company that provides product photography, which plays an important role in building customer trust.
         </p>
         <p class="srv-card-desc mb-4">
-          At BusinessDoctor, our commercial photography studio utilizes full-frame high-resolution camera systems, color-calibrated Profoto lighting, and rigorous post-production retouching. We deliver crystal-clear imagery that highlights craftsmanship and accelerates purchasing decisions.
+          A well-equipped studio setup is required for professional photography. We use a Sony 61 MP camera for high-resolution image capture. We use perfect lighting to highlight every detail that makes your product look attractive. We don't focus on capturing aesthetic photos, we focus on e-commerce product photography, which helps customers understand your product and builds customer trust.
         </p>
 
         <div class="srv-feature-list mb-4">
-                    <div class="srv-feature-item">
+          <div class="srv-feature-item">
             <svg class="srv-check-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
             <div>
-              <strong class="text-white">Pure White RGB 255 Catalog Shots:</strong> 
+              <strong class="text-white">Pure White RGB 255:</strong> 
               <span class="text-secondary">100% compliant with Amazon, Flipkart, and Google Shopping technical standards.</span>
             </div>
-          </div>          <div class="srv-feature-item">
+          </div>
+          <div class="srv-feature-item">
             <svg class="srv-check-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
             <div>
-              <strong class="text-white">Contextual Lifestyle Staging:</strong> 
-              <span class="text-secondary">Stylized tabletop and environmental sets that demonstrate product scale, usage, and luxury appeal.</span>
+              <strong class="text-white">Lifestyle Staging:</strong> 
+              <span class="text-secondary">Showing the product in a real-life setting so that customers can imagine how and where they can use it.</span>
             </div>
-          </div>          <div class="srv-feature-item">
+          </div>
+          <div class="srv-feature-item">
             <svg class="srv-check-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
             <div>
-              <strong class="text-white">Precision Color Calibration:</strong> 
-              <span class="text-secondary">Calibrated with X-Rite ColorChecker charts to ensure on-screen colors match physical products perfectly.</span>
+              <strong class="text-white">Colour Calibration:</strong> 
+              <span class="text-secondary">Making sure that the product's colours in photos look as close as possible to the actual colour of the product.</span>
             </div>
-          </div>          <div class="srv-feature-item">
+          </div>
+          <div class="srv-feature-item">
             <svg class="srv-check-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
             <div>
-              <strong class="text-white">Macro Texture & Material Detailing:</strong> 
-              <span class="text-secondary">Extreme close-up macro captures revealing premium textures, stitching, and precision engineering.</span>
+              <strong class="text-white">Macro Detailing:</strong> 
+              <span class="text-secondary">Taking close-up shots - highlighting small details, finish, texture and product quality</span>
             </div>
           </div>
         </div>
@@ -175,28 +178,30 @@ $consultationUrl = appUrl('contact.php?service=' . urlencode($serviceName));
               Real-time telemetry tracking performance velocity, conversion attribution, and brand authority.
             </p>
             <div class="srv-hud-metrics">
-                            <div class="srv-hud-metric-box">
+              <div class="srv-hud-metric-box">
                 <div class="srv-hud-metric-num">61 MP</div>
-                <div class="srv-hud-metric-label">Camera Sensor Stills</div>
-              </div>              <div class="srv-hud-metric-box">
+                <div class="srv-hud-metric-label">High-Resolution Stills</div>
+              </div>
+              <div class="srv-hud-metric-box">
+                <div class="srv-hud-metric-num">RGB 255</div>
+                <div class="srv-hud-metric-label">Pure White Background</div>
+              </div>
+              <div class="srv-hud-metric-box">
                 <div class="srv-hud-metric-num">100%</div>
-                <div class="srv-hud-metric-label">sRGB / Adobe RGB Color</div>
-              </div>              <div class="srv-hud-metric-box">
-                <div class="srv-hud-metric-num">0.00</div>
-                <div class="srv-hud-metric-label">Color Delta-E Variance</div>
-              </div>              <div class="srv-hud-metric-box">
-                <div class="srv-hud-metric-num">24-48h</div>
-                <div class="srv-hud-metric-label">Sample Turnaround</div>
+                <div class="srv-hud-metric-label">Marketplace Compliant</div>
+              </div>
+              <div class="srv-hud-metric-box">
+                <div class="srv-hud-metric-num">24 to 72</div>
+                <div class="srv-hud-metric-label">360-Degree Frames</div>
               </div>
             </div>
             <div class="srv-hud-tag-list mt-3">
-              <span class="srv-tool-badge">Sony Alpha Full-Frame</span>
-<span class="srv-tool-badge">Capture One Pro</span>
-<span class="srv-tool-badge">Profoto Studio Strobes</span>
-<span class="srv-tool-badge">Adobe Lightroom</span>
-<span class="srv-tool-badge">Photoshop CC</span>
-<span class="srv-tool-badge">X-Rite ColorChecker</span>
-
+              <span class="srv-tool-badge">Professional DSLR / Mirrorless Cameras</span>
+              <span class="srv-tool-badge">Macro Lenses</span>
+              <span class="srv-tool-badge">Studio Lighting</span>
+              <span class="srv-tool-badge">Adobe Photoshop</span>
+              <span class="srv-tool-badge">Adobe Lightroom</span>
+              <span class="srv-tool-badge">Plain White Background</span>
             </div>
           </div>
         </div>
@@ -219,35 +224,40 @@ $consultationUrl = appUrl('contact.php?service=' . urlencode($serviceName));
         Eliminating Costly <span class="text-brand">E-Commerce Product Visual Flaws</span>
       </h2>
       <p class="srv-section-subtitle">
-        Common photography mistakes that suppress e-commerce conversion rates and spike returns.
+        Common e-commerce mistakes that reduce the conversion rate
       </p>
     </div>
 
     <div class="srv-grid srv-grid-3">
-            <div class="srv-card">
+      <div class="srv-card">
         <div class="srv-card-icon-wrap"><div class="srv-icon-box" style="color: #F87171; background: rgba(248, 113, 113, 0.12); border-color: rgba(248, 113, 113, 0.25);"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="12"/><line x1="12" y1="16" x2="12.01" y2="16"/></svg></div><span class="srv-card-index">01</span></div>
         <h3 class="srv-card-title text-white">Smartphone Photo Quality</h3>
-        <p class="srv-card-desc">Shooting products on mobile phones produces lens distortion, digital grain, and inconsistent color rendition.</p>
-      </div>      <div class="srv-card">
+        <p class="srv-card-desc">Camera quality on mobile can affect photo clarity, lighting, colour and product detailing and can affect customers’ trust.</p>
+      </div>
+      <div class="srv-card">
         <div class="srv-card-icon-wrap"><div class="srv-icon-box" style="color: #F87171; background: rgba(248, 113, 113, 0.12); border-color: rgba(248, 113, 113, 0.25);"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><line x1="4.93" y1="4.93" x2="19.07" y2="19.07"/></svg></div><span class="srv-card-index">02</span></div>
         <h3 class="srv-card-title text-white">High Return Rates from Color Mismatch</h3>
-        <p class="srv-card-desc">Inaccurate white balance causes customers to receive items that look completely different from the website.</p>
-      </div>      <div class="srv-card">
+        <p class="srv-card-desc">Improper colour balancing can cause customers to receive a product that looks completely different from the website.</p>
+      </div>
+      <div class="srv-card">
         <div class="srv-card-icon-wrap"><div class="srv-icon-box" style="color: #F87171; background: rgba(248, 113, 113, 0.12); border-color: rgba(248, 113, 113, 0.25);"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="3"/><path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 0 1 0 2.83 2 2 0 0 1-2.83 0l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-2 2 2 2 0 0 1-2-2v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 0 1-2.83 0 2 2 0 0 1 0-2.83l.06-.06a1.65 1.65 0 0 0 .33-1.82 1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1-2-2 2 2 0 0 1 2-2h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 0 1 0-2.83 2 2 0 0 1 2.83 0l.06.06a1.65 1.65 0 0 0 1.82.33H9a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 2-2 2 2 0 0 1 2 2v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 0 1 2.83 0 2 2 0 0 1 0 2.83l-.06.06a1.65 1.65 0 0 0-.33 1.82V9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 2 2 2 2 0 0 1-2 2h-.09a1.65 1.65 0 0 0-1.51 1z"/></svg></div><span class="srv-card-index">03</span></div>
         <h3 class="srv-card-title text-white">Amazon & Marketplace Rejection</h3>
-        <p class="srv-card-desc">Non-compliant background gray values or incorrect pixel dimensions get product listings flagged or suppressed.</p>
-      </div>      <div class="srv-card">
+        <p class="srv-card-desc">If the background of the product photo is not appropriate, the marketplace can hide or suppress the product listing, which can affect product visibility and sales.</p>
+      </div>
+      <div class="srv-card">
         <div class="srv-card-icon-wrap"><div class="srv-icon-box" style="color: #F87171; background: rgba(248, 113, 113, 0.12); border-color: rgba(248, 113, 113, 0.25);"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><polyline points="21 15 16 10 5 21"/></svg></div><span class="srv-card-index">04</span></div>
         <h3 class="srv-card-title text-white">No Sense of Scale or Context</h3>
-        <p class="srv-card-desc">Catalog-only shots without lifestyle context leave shoppers guessing about dimensions and practical use.</p>
-      </div>      <div class="srv-card">
+        <p class="srv-card-desc">Only a plain product without any lifestyle setup can confuse customers about the product's actual size.</p>
+      </div>
+      <div class="srv-card">
         <div class="srv-card-icon-wrap"><div class="srv-icon-box" style="color: #F87171; background: rgba(248, 113, 113, 0.12); border-color: rgba(248, 113, 113, 0.25);"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M10.29 3.86L1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L13.71 3.86a2 2 0 0 0-3.42 0z"/></svg></div><span class="srv-card-index">05</span></div>
         <h3 class="srv-card-title text-white">Harsh Shadows & Blown Highlights</h3>
-        <p class="srv-card-desc">Uncontrolled studio reflections on metallic, glass, or glossy packaging obscure branding and labels.</p>
-      </div>      <div class="srv-card">
+        <p class="srv-card-desc">Unnecessary studio reflections on metallic, glass, or glossy packaging unclear branding and labels.</p>
+      </div>
+      <div class="srv-card">
         <div class="srv-card-icon-wrap"><div class="srv-icon-box" style="color: #F87171; background: rgba(248, 113, 113, 0.12); border-color: rgba(248, 113, 113, 0.25);"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="9" cy="21" r="1"/><circle cx="20" cy="21" r="1"/><path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"/></svg></div><span class="srv-card-index">06</span></div>
         <h3 class="srv-card-title text-white">Slow Multi-Week Studio Turnaround</h3>
-        <p class="srv-card-desc">Waiting weeks for product photos delays inventory launches and wastes precious seasonal sales windows.</p>
+        <p class="srv-card-desc">Waiting weeks for your product photos delays inventory launches and wastes precious seasonal sales.</p>
       </div>
     </div>
   </div>
@@ -264,96 +274,136 @@ $consultationUrl = appUrl('contact.php?service=' . urlencode($serviceName));
         <span>COMPREHENSIVE SCOPE</span>
       </div>
       <h2 class="srv-section-title">
-        Commercial <span class="text-brand">Product Photography Scope</span>
+        Product Photography Company in Delhi That <span class="text-brand">Helps Your Products Sell</span>
       </h2>
       <p class="srv-section-subtitle">
-        From sample intake and studio lighting to advanced retouching and multi-format export.
+        As a professional product photography company in delhi. we focus on providing high quality, creative and attractive product photography. Our services include clean studio shots, lifestyle photography, macro detailing, market place rady and more, which help your brand build trust.
       </p>
     </div>
 
     <div class="srv-grid srv-grid-3">
-            <div class="srv-card">
+      <div class="srv-card">
         <div class="srv-card-icon-wrap"><div class="srv-icon-box"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M23 19a2 2 0 0 1-2 2H3a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h4l2-3h6l2 3h4a2 2 0 0 1 2 2z"/><circle cx="12" cy="13" r="4"/></svg></div></div>
-        <h3 class="srv-card-title text-white">Pure White Background Catalog Shots</h3>
-        <p class="srv-card-desc">Flawless isolation shots on pure white backgrounds (RGB 255, 255, 255) with natural contact shadows.</p>
-        <ul style="list-style: none; padding: 0; margin: 1rem 0 0; display: flex; flex-direction: column; gap: 0.5rem; font-size: 0.85rem; color: #B8C7D9;"><li style="display: flex; gap: 0.5rem; align-items: flex-start;"><span style="color: #06B5F9;">&bull;</span><span>Amazon & Flipkart primary image compliance</span></li><li style="display: flex; gap: 0.5rem; align-items: flex-start;"><span style="color: #06B5F9;">&bull;</span><span>Precision hand-drawn clipping paths</span></li><li style="display: flex; gap: 0.5rem; align-items: flex-start;"><span style="color: #06B5F9;">&bull;</span><span>Zero haloing or jagged edges</span></li></ul></div>
+        <h3 class="srv-card-title text-white">White Background Product Photography</h3>
+        <p class="srv-card-desc">We create a perfect image with a pure white background, which highlights product details easily and makes the product look more realistic and professional.</p>
+        <ul style="list-style: none; padding: 0; margin: 1rem 0 0; display: flex; flex-direction: column; gap: 0.5rem; font-size: 0.85rem; color: #B8C7D9;">
+          <li style="display: flex; gap: 0.5rem; align-items: flex-start;"><span style="color: #06B5F9;">&bull;</span><span>Smooth edges</span></li>
+          <li style="display: flex; gap: 0.5rem; align-items: flex-start;"><span style="color: #06B5F9;">&bull;</span><span>Manual background removal.</span></li>
+          <li style="display: flex; gap: 0.5rem; align-items: flex-start;"><span style="color: #06B5F9;">&bull;</span><span>Marketplace image guidelines.</span></li>
+        </ul>
+      </div>
+
       <div class="srv-card">
         <div class="srv-card-icon-wrap"><div class="srv-icon-box"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><polyline points="21 15 16 10 5 21"/></svg></div></div>
-        <h3 class="srv-card-title text-white">Stylized Lifestyle & Contextual Sets</h3>
-        <p class="srv-card-desc">Curated tabletop staging with props, natural textures, and creative lighting that bring products to life.</p>
-        <ul style="list-style: none; padding: 0; margin: 1rem 0 0; display: flex; flex-direction: column; gap: 0.5rem; font-size: 0.85rem; color: #B8C7D9;"><li style="display: flex; gap: 0.5rem; align-items: flex-start;"><span style="color: #06B5F9;">&bull;</span><span>Prop sourcing & set construction</span></li><li style="display: flex; gap: 0.5rem; align-items: flex-start;"><span style="color: #06B5F9;">&bull;</span><span>Editorial social media & web banners</span></li><li style="display: flex; gap: 0.5rem; align-items: flex-start;"><span style="color: #06B5F9;">&bull;</span><span>Brand aesthetic color harmony</span></li></ul></div>
+        <h3 class="srv-card-title text-white">Lifestyle Product Photography</h3>
+        <p class="srv-card-desc">We use a perfect, creative and attractive setup for photography, where we give a real-life feel by using natural texture, natural lighting and more.</p>
+        <ul style="list-style: none; padding: 0; margin: 1rem 0 0; display: flex; flex-direction: column; gap: 0.5rem; font-size: 0.85rem; color: #B8C7D9;">
+          <li style="display: flex; gap: 0.5rem; align-items: flex-start;"><span style="color: #06B5F9;">&bull;</span><span>Choosing props and creating product setups.</span></li>
+          <li style="display: flex; gap: 0.5rem; align-items: flex-start;"><span style="color: #06B5F9;">&bull;</span><span>Creating images for social media and website banners.</span></li>
+          <li style="display: flex; gap: 0.5rem; align-items: flex-start;"><span style="color: #06B5F9;">&bull;</span><span>Using colours that match the brand's style.</span></li>
+        </ul>
+      </div>
+
       <div class="srv-card">
         <div class="srv-card-icon-wrap"><div class="srv-icon-box"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"/></svg></div></div>
-        <h3 class="srv-card-title text-white">360-Degree Interactive Spin Photography</h3>
-        <p class="srv-card-desc">Capturing 24 to 72 sequential frames on motorized turntables for seamless interactive web product inspection.</p>
-        <ul style="list-style: none; padding: 0; margin: 1rem 0 0; display: flex; flex-direction: column; gap: 0.5rem; font-size: 0.85rem; color: #B8C7D9;"><li style="display: flex; gap: 0.5rem; align-items: flex-start;"><span style="color: #06B5F9;">&bull;</span><span>Smooth 360-degree interactive rotation</span></li><li style="display: flex; gap: 0.5rem; align-items: flex-start;"><span style="color: #06B5F9;">&bull;</span><span>HTML5 & JavaScript player integration</span></li><li style="display: flex; gap: 0.5rem; align-items: flex-start;"><span style="color: #06B5F9;">&bull;</span><span>Mobile touch & zoom compatibility</span></li></ul></div>
+        <h3 class="srv-card-title text-white">360 Degree Product Photography</h3>
+        <p class="srv-card-desc">Taking 24 to 72 photos of your product from many different angles using a motorized turntable, so that customers can view and rotate the product 360 degrees on a website.</p>
+        <ul style="list-style: none; padding: 0; margin: 1rem 0 0; display: flex; flex-direction: column; gap: 0.5rem; font-size: 0.85rem; color: #B8C7D9;">
+          <li style="display: flex; gap: 0.5rem; align-items: flex-start;"><span style="color: #06B5F9;">&bull;</span><span>Smooth 360-degree product rotation.</span></li>
+          <li style="display: flex; gap: 0.5rem; align-items: flex-start;"><span style="color: #06B5F9;">&bull;</span><span>Easy website integration.</span></li>
+          <li style="display: flex; gap: 0.5rem; align-items: flex-start;"><span style="color: #06B5F9;">&bull;</span><span>Mobile touch and zoom support.</span></li>
+        </ul>
+      </div>
+
       <div class="srv-card">
         <div class="srv-card-icon-wrap"><div class="srv-icon-box"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M12 2a14.5 14.5 0 0 0 0 20 14.5 14.5 0 0 0 0-20"/><path d="M2 12h20"/></svg></div></div>
         <h3 class="srv-card-title text-white">Macro Detail & Texture Close-Ups</h3>
-        <p class="srv-card-desc">Ultra-sharp macro photography spotlighting product craftsmanship, materials, controls, and premium finishes.</p>
-        <ul style="list-style: none; padding: 0; margin: 1rem 0 0; display: flex; flex-direction: column; gap: 0.5rem; font-size: 0.85rem; color: #B8C7D9;"><li style="display: flex; gap: 0.5rem; align-items: flex-start;"><span style="color: #06B5F9;">&bull;</span><span>Fabric, leather, and metal textures</span></li><li style="display: flex; gap: 0.5rem; align-items: flex-start;"><span style="color: #06B5F9;">&bull;</span><span>Ingrediant & formulation close-ups</span></li><li style="display: flex; gap: 0.5rem; align-items: flex-start;"><span style="color: #06B5F9;">&bull;</span><span>Packaging detail and holographic labels</span></li></ul></div>
+        <p class="srv-card-desc">Very close and very clear photos that show every small detail of the product.</p>
+        <ul style="list-style: none; padding: 0; margin: 1rem 0 0; display: flex; flex-direction: column; gap: 0.5rem; font-size: 0.85rem; color: #B8C7D9;">
+          <li style="display: flex; gap: 0.5rem; align-items: flex-start;"><span style="color: #06B5F9;">&bull;</span><span>Fabric, leather, metal texture</span></li>
+          <li style="display: flex; gap: 0.5rem; align-items: flex-start;"><span style="color: #06B5F9;">&bull;</span><span>Packaging detail.</span></li>
+          <li style="display: flex; gap: 0.5rem; align-items: flex-start;"><span style="color: #06B5F9;">&bull;</span><span>Reflective label</span></li>
+        </ul>
+      </div>
+
       <div class="srv-card">
         <div class="srv-card-icon-wrap"><div class="srv-icon-box"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="m12 3-1.912 5.813a2 2 0 0 1-1.275 1.275L3 12l5.813 1.912a2 2 0 0 1 1.275 1.275L12 21l1.912-5.813a2 2 0 0 1 1.275-1.275L21 12l-5.813-1.912a2 2 0 0 1-1.275-1.275L12 3Z"/></svg></div></div>
-        <h3 class="srv-card-title text-white">Commercial Post-Production & Retouching</h3>
-        <p class="srv-card-desc">High-end digital cleanup removing dust, microscopic scratches, fingerprints, and color imperfections.</p>
-        <ul style="list-style: none; padding: 0; margin: 1rem 0 0; display: flex; flex-direction: column; gap: 0.5rem; font-size: 0.85rem; color: #B8C7D9;"><li style="display: flex; gap: 0.5rem; align-items: flex-start;"><span style="color: #06B5F9;">&bull;</span><span>Blemish & reflection cleanup</span></li><li style="display: flex; gap: 0.5rem; align-items: flex-start;"><span style="color: #06B5F9;">&bull;</span><span>Color calibration & tone grading</span></li><li style="display: flex; gap: 0.5rem; align-items: flex-start;"><span style="color: #06B5F9;">&bull;</span><span>Symmetrical reshaping & alignment</span></li></ul></div>
+        <h3 class="srv-card-title text-white">Product Photo Retouching</h3>
+        <p class="srv-card-desc">Making product photos look clean, perfect and professional by removing unwanted marks and fixing colours.</p>
+        <ul style="list-style: none; padding: 0; margin: 1rem 0 0; display: flex; flex-direction: column; gap: 0.5rem; font-size: 0.85rem; color: #B8C7D9;">
+          <li style="display: flex; gap: 0.5rem; align-items: flex-start;"><span style="color: #06B5F9;">&bull;</span><span>Reflection cleanup</span></li>
+          <li style="display: flex; gap: 0.5rem; align-items: flex-start;"><span style="color: #06B5F9;">&bull;</span><span>Symmetric reshaping</span></li>
+          <li style="display: flex; gap: 0.5rem; align-items: flex-start;"><span style="color: #06B5F9;">&bull;</span><span>Tone grading</span></li>
+        </ul>
+      </div>
+
       <div class="srv-card">
         <div class="srv-card-icon-wrap"><div class="srv-icon-box"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg></div></div>
         <h3 class="srv-card-title text-white">Multi-Resolution Asset Delivery</h3>
-        <p class="srv-card-desc">Delivery of web-optimized WebP, high-res JPEG, transparent PNG, and print-ready TIFF formats.</p>
-        <ul style="list-style: none; padding: 0; margin: 1rem 0 0; display: flex; flex-direction: column; gap: 0.5rem; font-size: 0.85rem; color: #B8C7D9;"><li style="display: flex; gap: 0.5rem; align-items: flex-start;"><span style="color: #06B5F9;">&bull;</span><span>Web-ready compressed formats</span></li><li style="display: flex; gap: 0.5rem; align-items: flex-start;"><span style="color: #06B5F9;">&bull;</span><span>High-res archival master files</span></li><li style="display: flex; gap: 0.5rem; align-items: flex-start;"><span style="color: #06B5F9;">&bull;</span><span>Organized SKU folder hierarchy</span></li></ul></div>
-
+        <p class="srv-card-desc">Delivery of web-optimized WebP, high-res JPEG, transparent PNG and print-ready TIFF formats.</p>
+        <ul style="list-style: none; padding: 0; margin: 1rem 0 0; display: flex; flex-direction: column; gap: 0.5rem; font-size: 0.85rem; color: #B8C7D9;">
+          <li style="display: flex; gap: 0.5rem; align-items: flex-start;"><span style="color: #06B5F9;">&bull;</span><span>Web-ready compressed formats</span></li>
+          <li style="display: flex; gap: 0.5rem; align-items: flex-start;"><span style="color: #06B5F9;">&bull;</span><span>High-quality original photo</span></li>
+          <li style="display: flex; gap: 0.5rem; align-items: flex-start;"><span style="color: #06B5F9;">&bull;</span><span>Organized SKU</span></li>
+        </ul>
+      </div>
     </div>
   </div>
 </section>
 
 <!-- ============================================================
-     SECTION 5 — STEP-BY-STEP PROCESS
+     SECTION 5 — WHY BRANDS CHOOSE US
      ============================================================ -->
-<section class="srv-section" id="process">
+<section class="srv-section" id="why-choose-us">
   <div class="srv-container">
     <div class="srv-section-header text-center">
       <div class="srv-badge">
         <span class="srv-badge-dot"></span>
-        <span>EXECUTION FRAMEWORK</span>
+        <span>COMPETITIVE ADVANTAGE</span>
       </div>
       <h2 class="srv-section-title">
-        How We Work: <span class="text-brand">Structured &amp; Accountable</span>
+        Why Brands Choose Us for <span class="text-brand">Product Photography in Delhi NCR</span>
       </h2>
       <p class="srv-section-subtitle">
-        From baseline diagnostic audit to scaled execution, our structured workflow eliminates guesswork and delivers predictable results.
+        Six reasons brands trust us with their product images
       </p>
     </div>
 
-    <div class="srv-process-grid">
-            <div class="srv-process-card">
-        <div class="srv-process-num">01</div>
-        <h3 class="srv-process-title">Product Intake & Creative Brief</h3>
-        <p class="srv-process-desc">We receive your product samples, review your brand aesthetic guidelines, and create a shot list.</p>
-        <div style="font-family: var(--font-mono); font-size: 0.78rem; color: #06B5F9; font-weight: 700; margin-top: 1rem;">
-          MILESTONE: Approved Shot List & Moodboard
-        </div>
-      </div>      <div class="srv-process-card">
-        <div class="srv-process-num">02</div>
-        <h3 class="srv-process-title">Studio Lighting & Staging</h3>
-        <p class="srv-process-desc">We calibrate lighting, clean products to perfection, and shoot tethered directly to Capture One.</p>
-        <div style="font-family: var(--font-mono); font-size: 0.78rem; color: #06B5F9; font-weight: 700; margin-top: 1rem;">
-          MILESTONE: Tethered Live Capture Review
-        </div>
-      </div>      <div class="srv-process-card">
-        <div class="srv-process-num">03</div>
-        <h3 class="srv-process-title">Digital Retouching & Clipping</h3>
-        <p class="srv-process-desc">Our post-production specialists clean blemishes, calibrate colors, create clipping masks, and add shadows.</p>
-        <div style="font-family: var(--font-mono); font-size: 0.78rem; color: #06B5F9; font-weight: 700; margin-top: 1rem;">
-          MILESTONE: Retouched Proof Review
-        </div>
-      </div>      <div class="srv-process-card">
-        <div class="srv-process-num">04</div>
-        <h3 class="srv-process-title">Final Export & Secure Delivery</h3>
-        <p class="srv-process-desc">We export web and print formats organized by SKU numbers and deliver them via secure cloud storage.</p>
-        <div style="font-family: var(--font-mono); font-size: 0.78rem; color: #06B5F9; font-weight: 700; margin-top: 1rem;">
-          MILESTONE: Complete Asset Handover
-        </div>
+    <div class="srv-grid srv-grid-3">
+      <div class="srv-card">
+        <div class="srv-card-icon-wrap"><div class="srv-icon-box"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg></div><span class="srv-card-index">01</span></div>
+        <h3 class="srv-card-title text-white">Quick Turnaround</h3>
+        <p class="srv-card-desc">We can deliver bulk photo shoots, editing and more on time so that you can update your product on time without wasting weeks.</p>
+      </div>
+
+      <div class="srv-card">
+        <div class="srv-card-icon-wrap"><div class="srv-icon-box"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg></div><span class="srv-card-index">02</span></div>
+        <h3 class="srv-card-title text-white">Consistent Catalogue Look</h3>
+        <p class="srv-card-desc">We use suitable lighting, background framing and editing for every photo so that it looks clean and professional on your website.</p>
+      </div>
+
+      <div class="srv-card">
+        <div class="srv-card-icon-wrap"><div class="srv-icon-box"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 2L3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z"/><line x1="3" y1="6" x2="21" y2="6"/><path d="M16 10a4 4 0 0 1-8 0"/></svg></div><span class="srv-card-index">03</span></div>
+        <h3 class="srv-card-title text-white">Marketplace-Ready Files</h3>
+        <p class="srv-card-desc">We create images according to Amazon, Flipkart and Shopify rules. This can reduce the chances of rejection and re-editing.</p>
+      </div>
+
+      <div class="srv-card">
+        <div class="srv-card-icon-wrap"><div class="srv-icon-box"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg></div><span class="srv-card-index">04</span></div>
+        <h3 class="srv-card-title text-white">Experienced Studio Team</h3>
+        <p class="srv-card-desc">We have a team of experienced photographers who know which camera angles, backgrounds and all suit your product so that your product looks attractive and premium.</p>
+      </div>
+
+      <div class="srv-card">
+        <div class="srv-card-icon-wrap"><div class="srv-icon-box"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg></div><span class="srv-card-index">05</span></div>
+        <h3 class="srv-card-title text-white">Local NCR support</h3>
+        <p class="srv-card-desc">Easy product pickup, in-studio photoshoot and quick reshoots. No courier problems, and you can easily check and manage your photoshoot.</p>
+      </div>
+
+      <div class="srv-card">
+        <div class="srv-card-icon-wrap"><div class="srv-icon-box"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="12" y1="1" x2="12" y2="23"/><path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/></svg></div><span class="srv-card-index">06</span></div>
+        <h3 class="srv-card-title text-white">Transparent Pricing</h3>
+        <p class="srv-card-desc">We have Clear pricing for every image or product, with no hidden charges. You get to know the cost in advance, making it easy to plan your budget.</p>
       </div>
     </div>
   </div>
@@ -370,18 +420,50 @@ $consultationUrl = appUrl('contact.php?service=' . urlencode($serviceName));
         <span>TOOLING &amp; INFRASTRUCTURE</span>
       </div>
       <h2 class="srv-section-title">
-        Enterprise-Grade <span class="text-brand">Tools &amp; Technology Stack</span>
+        Tools to be <span class="text-brand">used</span>
       </h2>
       <p class="srv-section-subtitle">
-        We utilize industry-standard platforms, diagnostic software, and proprietary telemetry tools to ensure flawless execution.
+        We use professional cameras and lighting and editing that make your product look premium and attractive.
       </p>
     </div>
 
-    <div class="srv-grid srv-grid-3">
-      <div class="srv-card"><h4 style="font-size: 1.1rem; color: #fff; margin-bottom: 1rem; border-bottom: 1px solid rgba(6,181,249,0.2); padding-bottom: 0.5rem;">Camera & Lenses</h4><div style="display: flex; flex-wrap: wrap; gap: 0.5rem;"><span class="srv-tool-badge">Sony Alpha 61MP Full-Frame</span><span class="srv-tool-badge">Sony G-Master 90mm Macro</span><span class="srv-tool-badge">24-70mm f/2.8</span><span class="srv-tool-badge">50mm f/1.2</span></div></div>
-<div class="srv-card"><h4 style="font-size: 1.1rem; color: #fff; margin-bottom: 1rem; border-bottom: 1px solid rgba(6,181,249,0.2); padding-bottom: 0.5rem;">Studio Lighting</h4><div style="display: flex; flex-wrap: wrap; gap: 0.5rem;"><span class="srv-tool-badge">Profoto D2 Strobes</span><span class="srv-tool-badge">Softboxes & Octaboxes</span><span class="srv-tool-badge">C-Stands</span><span class="srv-tool-badge">Motorized 360 Turntable</span></div></div>
-<div class="srv-card"><h4 style="font-size: 1.1rem; color: #fff; margin-bottom: 1rem; border-bottom: 1px solid rgba(6,181,249,0.2); padding-bottom: 0.5rem;">Post-Production Software</h4><div style="display: flex; flex-wrap: wrap; gap: 0.5rem;"><span class="srv-tool-badge">Capture One Pro</span><span class="srv-tool-badge">Adobe Photoshop CC</span><span class="srv-tool-badge">Lightroom Classic</span><span class="srv-tool-badge">ColorChecker Passport</span></div></div>
-
+    <div class="srv-grid srv-grid-4">
+      <div class="srv-card">
+        <h4 style="font-size: 1.1rem; color: #fff; margin-bottom: 1rem; border-bottom: 1px solid rgba(6,181,249,0.2); padding-bottom: 0.5rem;">Camera &amp; Lenses</h4>
+        <div style="display: flex; flex-direction: column; gap: 0.5rem; font-size: 0.9rem; color: #B8C7D9;">
+          <span>&bull; Professional DSLR / Mirrorless Cameras</span>
+          <span>&bull; Macro Lenses</span>
+          <span>&bull; Prime Lenses</span>
+          <span>&bull; Telephoto Lenses</span>
+        </div>
+      </div>
+      <div class="srv-card">
+        <h4 style="font-size: 1.1rem; color: #fff; margin-bottom: 1rem; border-bottom: 1px solid rgba(6,181,249,0.2); padding-bottom: 0.5rem;">Studio Lighting</h4>
+        <div style="display: flex; flex-direction: column; gap: 0.5rem; font-size: 0.9rem; color: #B8C7D9;">
+          <span>&bull; Softboxes</span>
+          <span>&bull; LED Studio Lights</span>
+          <span>&bull; Reflectors</span>
+          <span>&bull; Light Diffusers</span>
+        </div>
+      </div>
+      <div class="srv-card">
+        <h4 style="font-size: 1.1rem; color: #fff; margin-bottom: 1rem; border-bottom: 1px solid rgba(6,181,249,0.2); padding-bottom: 0.5rem;">Post-Production</h4>
+        <div style="display: flex; flex-direction: column; gap: 0.5rem; font-size: 0.9rem; color: #B8C7D9;">
+          <span>&bull; Adobe Photoshop</span>
+          <span>&bull; Adobe Lightroom</span>
+          <span>&bull; Color Correction</span>
+          <span>&bull; Image Retouching</span>
+        </div>
+      </div>
+      <div class="srv-card">
+        <h4 style="font-size: 1.1rem; color: #fff; margin-bottom: 1rem; border-bottom: 1px solid rgba(6,181,249,0.2); padding-bottom: 0.5rem;">Professional background</h4>
+        <div style="display: flex; flex-direction: column; gap: 0.5rem; font-size: 0.9rem; color: #B8C7D9;">
+          <span>&bull; Plain White Background</span>
+          <span>&bull; Solid Colour Background</span>
+          <span>&bull; Textured Background</span>
+          <span>&bull; Gradient Background</span>
+        </div>
+      </div>
     </div>
   </div>
 </section>
@@ -397,45 +479,71 @@ $consultationUrl = appUrl('contact.php?service=' . urlencode($serviceName));
         <span>PRACTICAL APPLICATIONS</span>
       </div>
       <h2 class="srv-section-title">
-        Tailored Strategies Across <span class="text-brand">Diverse Industries</span>
+        Industries Served by the Best Product Photography <span class="text-brand">Company in Delhi NCR</span>
       </h2>
       <p class="srv-section-subtitle">
-        Discover how our Product Photography discipline drives measurable outcomes across key vertical markets.
+        Tailored commercial photography solutions across key retail and manufacturing sectors.
       </p>
     </div>
 
     <div class="srv-grid srv-grid-2">
-            <div class="srv-card">
-        <span class="srv-badge mb-2"><span>Cosmetics & Skincare</span></span>
-        <h3 class="srv-card-title text-white">Luxury Packaging & Texture Macro</h3>
-        <p class="srv-card-desc mb-3">Captured glass dropper bottles, cream textures, and luxury metallic typography with flawless reflection control.</p>
+      <div class="srv-card">
+        <span class="srv-badge mb-2"><span>1. Cosmetics</span></span>
+        <h3 class="srv-card-title text-white">Cosmetics</h3>
+        <p class="srv-card-desc mb-3">Attractive photoshoot of bottles, tubes and makeup palettes, which makes the product colour and texture look attractive</p>
         <div style="border-top: 1px solid rgba(255,255,255,0.08); padding-top: 0.75rem; display: flex; justify-content: space-between; align-items: center; font-size: 0.85rem;">
           <span style="color: #8FA3B8;">Outcome:</span>
-          <span style="color: #34D399; font-family: var(--font-mono); font-weight: 700;">+52% Conversion Lift</span>
+          <span style="color: #34D399; font-family: var(--font-mono); font-weight: 700;">premium look of online products</span>
         </div>
-      </div>      <div class="srv-card">
-        <span class="srv-badge mb-2"><span>Electronics & Hardware</span></span>
-        <h3 class="srv-card-title text-white">Consumer Tech 360-Degree Spins</h3>
-        <p class="srv-card-desc mb-3">Produced interactive 360-degree rotation view showing every port, button, and ergonomic contour.</p>
+      </div>
+
+      <div class="srv-card">
+        <span class="srv-badge mb-2"><span>2. Electronics</span></span>
+        <h3 class="srv-card-title text-white">Electronics</h3>
+        <p class="srv-card-desc mb-3">Sharp photoshoot of appliances which shows clear port design and finishing and clear features</p>
         <div style="border-top: 1px solid rgba(255,255,255,0.08); padding-top: 0.75rem; display: flex; justify-content: space-between; align-items: center; font-size: 0.85rem;">
           <span style="color: #8FA3B8;">Outcome:</span>
-          <span style="color: #34D399; font-family: var(--font-mono); font-weight: 700;">35% Lower Return Rate</span>
+          <span style="color: #34D399; font-family: var(--font-mono); font-weight: 700;">Customers can understand the product easily.</span>
         </div>
-      </div>      <div class="srv-card">
-        <span class="srv-badge mb-2"><span>Apparel & Footwear</span></span>
-        <h3 class="srv-card-title text-white">Catalog Stills & Material Detailing</h3>
-        <p class="srv-card-desc mb-3">Shot clean white-background footwear angles paired with macro stitching close-ups and outdoor lifestyle.</p>
+      </div>
+
+      <div class="srv-card">
+        <span class="srv-badge mb-2"><span>3. Apparel &amp; Footwear</span></span>
+        <h3 class="srv-card-title text-white">Apparel &amp; Footwear</h3>
+        <p class="srv-card-desc mb-3">Product photos of clothes and shoes using a mannequin and a model to show fabric, fit and stitching better</p>
         <div style="border-top: 1px solid rgba(255,255,255,0.08); padding-top: 0.75rem; display: flex; justify-content: space-between; align-items: center; font-size: 0.85rem;">
           <span style="color: #8FA3B8;">Outcome:</span>
-          <span style="color: #34D399; font-family: var(--font-mono); font-weight: 700;">Over 4,000 SKUs Photographed</span>
+          <span style="color: #34D399; font-family: var(--font-mono); font-weight: 700;">Helps customers choose the right product</span>
         </div>
-      </div>      <div class="srv-card">
-        <span class="srv-badge mb-2"><span>Packaged Food & Beverages</span></span>
-        <h3 class="srv-card-title text-white">Tabletop Staging & Fresh Ingredients</h3>
-        <p class="srv-card-desc mb-3">Styled artisanal gourmet food packaging alongside raw natural ingredients with warm morning lighting.</p>
+      </div>
+
+      <div class="srv-card">
+        <span class="srv-badge mb-2"><span>4. Food &amp; Beverages</span></span>
+        <h3 class="srv-card-title text-white">Food &amp; Beverages</h3>
+        <p class="srv-card-desc mb-3">Attractive photos of packaged food and drinks using natural lighting that attract customers</p>
         <div style="border-top: 1px solid rgba(255,255,255,0.08); padding-top: 0.75rem; display: flex; justify-content: space-between; align-items: center; font-size: 0.85rem;">
           <span style="color: #8FA3B8;">Outcome:</span>
-          <span style="color: #34D399; font-family: var(--font-mono); font-weight: 700;">Featured on National Retailers</span>
+          <span style="color: #34D399; font-family: var(--font-mono); font-weight: 700;">Makes products look more appealing and increases clicks.</span>
+        </div>
+      </div>
+
+      <div class="srv-card">
+        <span class="srv-badge mb-2"><span>5. Jewellery &amp; Accessories</span></span>
+        <h3 class="srv-card-title text-white">Jewellery &amp; Accessories</h3>
+        <p class="srv-card-desc mb-3">We capture the shine, metal finish and small details of jewellery without unwanted reflections.</p>
+        <div style="border-top: 1px solid rgba(255,255,255,0.08); padding-top: 0.75rem; display: flex; justify-content: space-between; align-items: center; font-size: 0.85rem;">
+          <span style="color: #8FA3B8;">Outcome:</span>
+          <span style="color: #34D399; font-family: var(--font-mono); font-weight: 700;">Makes jewellery look more valuable and premium.</span>
+        </div>
+      </div>
+
+      <div class="srv-card">
+        <span class="srv-badge mb-2"><span>6. Home &amp; Furniture</span></span>
+        <h3 class="srv-card-title text-white">Home &amp; Furniture</h3>
+        <p class="srv-card-desc mb-3">Clean product and lifestyle photos showing the size, material, design and style of furniture and home products.</p>
+        <div style="border-top: 1px solid rgba(255,255,255,0.08); padding-top: 0.75rem; display: flex; justify-content: space-between; align-items: center; font-size: 0.85rem;">
+          <span style="color: #8FA3B8;">Outcome:</span>
+          <span style="color: #34D399; font-family: var(--font-mono); font-weight: 700;">Customers understand the product and make better buying decisions.</span>
         </div>
       </div>
     </div>
@@ -456,89 +564,55 @@ $consultationUrl = appUrl('contact.php?service=' . urlencode($serviceName));
         Common Questions About <span class="text-brand">Product Photography</span>
       </h2>
       <p class="srv-section-subtitle">
-        Clear answers about our methodology, timelines, deliverables, SLAs, and commercial engagement terms.
+        Faq Common Questions About Product Photography
       </p>
     </div>
 
     <div class="srv-faq-container">
-            <div class="srv-faq-item">
+      <div class="srv-faq-item">
         <button type="button" class="srv-faq-btn" aria-expanded="false" aria-controls="faq-ans-0">
-          <span class="srv-faq-question">How do we ship product samples to your studio?</span>
+          <span class="srv-faq-question">1. What types of products do you photograph?</span>
           <span class="srv-faq-icon" aria-hidden="true">+</span>
         </button>
         <div id="faq-ans-0" class="srv-faq-panel">
           <div class="srv-faq-content">
-            <p>We provide secure shipping instructions to our commercial studio. We request at least 2 identical samples per SKU to ensure we have backup options in case of minor packaging flaws.</p>
+            <p>We photograph fashion, beauty, skincare, jewellery, electronics, food and other products.</p>
           </div>
         </div>
-      </div>      <div class="srv-faq-item">
+      </div>
+
+      <div class="srv-faq-item">
         <button type="button" class="srv-faq-btn" aria-expanded="false" aria-controls="faq-ans-1">
-          <span class="srv-faq-question">How long does a typical product photography shoot take?</span>
+          <span class="srv-faq-question">2. Do you provide product photo editing services?</span>
           <span class="srv-faq-icon" aria-hidden="true">+</span>
         </button>
-        <div id="faq-ans-1" class="srv-faq-panel" >
+        <div id="faq-ans-1" class="srv-faq-panel">
           <div class="srv-faq-content">
-            <p>Standard shoots of 10 to 50 SKUs are typically shot, retouched, and delivered within 5 to 7 business days from sample receipt.</p>
+            <p>Yes, we provide professional editing, colour correction, background cleanup, retouching services and more.</p>
           </div>
         </div>
-      </div>      <div class="srv-faq-item">
+      </div>
+
+      <div class="srv-faq-item">
         <button type="button" class="srv-faq-btn" aria-expanded="false" aria-controls="faq-ans-2">
-          <span class="srv-faq-question">Are your photos 100% compliant with Amazon and Flipkart standards?</span>
+          <span class="srv-faq-question">3. How long does it take to complete a product photoshoot?</span>
           <span class="srv-faq-icon" aria-hidden="true">+</span>
         </button>
-        <div id="faq-ans-2" class="srv-faq-panel" >
+        <div id="faq-ans-2" class="srv-faq-panel">
           <div class="srv-faq-content">
-            <p>Yes. All pure white background photos are delivered at RGB (255, 255, 255) with 2000x2000px minimum resolution to activate marketplace zoom features.</p>
+            <p>Delivery time depends on the number of products and editing requirements. We always follow the agreed timeline.</p>
           </div>
         </div>
-      </div>      <div class="srv-faq-item">
+      </div>
+
+      <div class="srv-faq-item">
         <button type="button" class="srv-faq-btn" aria-expanded="false" aria-controls="faq-ans-3">
-          <span class="srv-faq-question">Can you shoot lifestyle photography with models?</span>
+          <span class="srv-faq-question">4. Do you provide images for Amazon, Flipkart and Shopify?</span>
           <span class="srv-faq-icon" aria-hidden="true">+</span>
         </button>
-        <div id="faq-ans-3" class="srv-faq-panel" >
+        <div id="faq-ans-3" class="srv-faq-panel">
           <div class="srv-faq-content">
-            <p>Yes. We offer lifestyle shoots with hand models or full on-set talent upon request, including location scouting and prop sourcing.</p>
-          </div>
-        </div>
-      </div>      <div class="srv-faq-item">
-        <button type="button" class="srv-faq-btn" aria-expanded="false" aria-controls="faq-ans-4">
-          <span class="srv-faq-question">Do you provide transparent background PNG files?</span>
-          <span class="srv-faq-icon" aria-hidden="true">+</span>
-        </button>
-        <div id="faq-ans-4" class="srv-faq-panel" >
-          <div class="srv-faq-content">
-            <p>Yes. Upon request, we deliver transparent PNG files with hand-clipped vector paths so you can place products onto any background color or marketing graphic.</p>
-          </div>
-        </div>
-      </div>      <div class="srv-faq-item">
-        <button type="button" class="srv-faq-btn" aria-expanded="false" aria-controls="faq-ans-5">
-          <span class="srv-faq-question">What happens to the product samples after the shoot?</span>
-          <span class="srv-faq-icon" aria-hidden="true">+</span>
-        </button>
-        <div id="faq-ans-5" class="srv-faq-panel" >
-          <div class="srv-faq-content">
-            <p>We can securely return all samples to your warehouse via your preferred courier, or store them safely in our studio for future seasonal shoots.</p>
-          </div>
-        </div>
-      </div>      <div class="srv-faq-item">
-        <button type="button" class="srv-faq-btn" aria-expanded="false" aria-controls="faq-ans-6">
-          <span class="srv-faq-question">How do you ensure color accuracy?</span>
-          <span class="srv-faq-icon" aria-hidden="true">+</span>
-        </button>
-        <div id="faq-ans-6" class="srv-faq-panel" >
-          <div class="srv-faq-content">
-            <p>We use calibrated X-Rite ColorChecker profiles under color-balanced studio strobes. Our monitors are hardware-calibrated weekly to ensure 100% color fidelity.</p>
-          </div>
-        </div>
-      </div>      <div class="srv-faq-item">
-        <button type="button" class="srv-faq-btn" aria-expanded="false" aria-controls="faq-ans-7">
-          <span class="srv-faq-question">Who owns the copyright to the final photos?</span>
-          <span class="srv-faq-icon" aria-hidden="true">+</span>
-        </button>
-        <div id="faq-ans-7" class="srv-faq-panel" >
-          <div class="srv-faq-content">
-            <p>You do. Upon final payment, you receive full commercial usage rights for web, social media, marketplaces, print catalogs, and global advertising with zero royalties.</p>
+            <p>Yes, we create high-quality product images that follow the requirements of Amazon, Flipkart and Shopify.</p>
           </div>
         </div>
       </div>
@@ -568,7 +642,7 @@ $consultationUrl = appUrl('contact.php?service=' . urlencode($serviceName));
             </p>
             <div class="srv-cta-actions" style="justify-content: flex-start; margin-bottom: 2rem;">
               <a href="<?= e($consultationUrl) ?>" class="btn-srv-primary btn-srv-lg">
-                <span>Get a Free Consultation</span>
+                <span>Schedule Diagnostic Call</span>
                 <svg class="btn-srv-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
               </a>
               <a href="<?= appUrl('audit.php') ?>" class="btn-srv-secondary btn-srv-lg">

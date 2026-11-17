@@ -1,6 +1,6 @@
 <?php
 /**
- * BusinessDoctor Service Detail View — Creative Production & Video Marketing
+ * BusinessDoctor Service Detail View — Video Editing
  * Discipline 09 — Full-Width Modern Enterprise Landing Page
  * Brand Color: #06B5F9
  */
@@ -21,20 +21,21 @@ $consultationUrl = appUrl('contact.php?service=' . urlencode($serviceName));
       <div class="srv-col-12 srv-col-lg-6">
         <div class="srv-eyebrow">
           <span class="srv-eyebrow-dot"></span>
-          <span>COMMERCIAL CINEMATOGRAPHY &amp; VIDEO MARKETING</span>
+          <span>VIDEO EDITING COMPANY IN DELHI</span>
         </div>
         <h1 class="srv-hero-title">
-          Producing High-Impact <br><span class="text-brand">Commercial Video &amp; Creative Media</span>
+          Video Editing Company in Delhi <br><span class="text-brand">for High-Impact Brand and Ad Videos</span>
         </h1>
         <p class="srv-hero-desc">
-          We produce cinema-grade commercial video, high-converting social ads (Reels/TikTok/YouTube), 3D product renders, and corporate brand films engineered to capture attention, stop the scroll, and accelerate conversions.
+          Get the footage but no time to edit it? BusinessDoctor is a video editing company in Delhi that turns raw clips into clean, sharp videos for your ads, reels, products and brand. Send your files, tell us the goal, and get a video ready to post.
         </p>
 
         <div class="srv-hero-actions">
           <a href="<?= e($consultationUrl) ?>" class="btn-srv-primary">
             <span>Get a Free Consultation</span>
             <svg class="btn-srv-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
-              <line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/>
+              <line x1="5" y1="12" x2="19" y2="12"/>
+              <polyline points="12 5 19 12 12 19"/>
             </svg>
           </a>
           <a href="#services-list" class="btn-srv-secondary">
@@ -47,20 +48,20 @@ $consultationUrl = appUrl('contact.php?service=' . urlencode($serviceName));
 
         <div class="srv-hero-stats">
           <div class="srv-hero-stat-item">
-            <span class="srv-hero-stat-val">4K / 6K</span>
-            <span class="srv-hero-stat-lbl">Cinema Cinema Production</span>
+            <span class="srv-hero-stat-val">Fast</span>
+            <span class="srv-hero-stat-lbl">Fast Turnaround: Delivery date fixed before start</span>
           </div>
           <div class="srv-hero-stat-item">
-            <span class="srv-hero-stat-val">72%+</span>
-            <span class="srv-hero-stat-lbl">Average 3-Second Hook Rate</span>
+            <span class="srv-hero-stat-val">Included</span>
+            <span class="srv-hero-stat-lbl">Revisions Included: We fix until it matches brief</span>
           </div>
           <div class="srv-hero-stat-item">
-            <span class="srv-hero-stat-val">+85%</span>
-            <span class="srv-hero-stat-lbl">Conversion Rate Lift</span>
+            <span class="srv-hero-stat-val">All Ratios</span>
+            <span class="srv-hero-stat-lbl">Every Platform Size: 9:16, 16:9 and 1:1 files</span>
           </div>
           <div class="srv-hero-stat-item">
             <span class="srv-hero-stat-val">100%</span>
-            <span class="srv-hero-stat-lbl">Broadcast Licensing Rights</span>
+            <span class="srv-hero-stat-lbl">Full Ownership: Final videos are yours</span>
           </div>
         </div>
       </div>
@@ -75,7 +76,7 @@ $consultationUrl = appUrl('contact.php?service=' . urlencode($serviceName));
   <path d="M60 0V440M120 0V440M180 0V440M240 0V440M300 0V440M360 0V440M420 0V440M480 0V440M540 0V440" stroke="#06B5F9" stroke-opacity="0.08"/>
   <rect width="600" height="40" rx="14" fill="#0A223B"/>
   <circle cx="28" cy="20" r="5" fill="#F87171"/><circle cx="46" cy="20" r="5" fill="#FBBF24"/><circle cx="64" cy="20" r="5" fill="#34D399"/>
-  <text x="90" y="24" fill="#8FA3B8" font-family="monospace" font-size="11" font-weight="600">businessdoctor.studio :: 4k-commercial-video-pipeline.v2</text>
+  <text x="90" y="24" fill="#8FA3B8" font-family="monospace" font-size="11" font-weight="600">businessdoctor.studio :: video-editing-pipeline.v2</text>
 
   <!-- Video Viewport Monitor -->
   <rect x="40" y="65" width="345" height="230" rx="10" fill="#030E1A" stroke="#06B5F9" stroke-width="1.5" stroke-opacity="0.4"/>
@@ -87,34 +88,34 @@ $consultationUrl = appUrl('contact.php?service=' . urlencode($serviceName));
   <line x1="212" y1="120" x2="212" y2="240" stroke="#06B5F9" stroke-opacity="0.3"/>
   <rect x="55" y="80" width="76" height="24" rx="4" fill="#EF4444"/>
   <text x="64" y="96" fill="#ffffff" font-family="monospace" font-size="10.5" font-weight="bold">&bull; REC 4K</text>
-  <text x="235" y="96" fill="#34D399" font-family="monospace" font-size="10.5">60 FPS &bull; ProRes RAW</text>
+  <text x="235" y="96" fill="#34D399" font-family="monospace" font-size="10.5">60 FPS &bull; ProRes Master</text>
   
   <!-- Audio Waveform -->
   <path d="M 60 262 C 63.7 261, 74.5 255.3, 82 256 C 89.5 256.7, 97 267.3, 105 266 C 113 264.7, 121.7 247.2, 130 248 C 138.3 248.8, 146.3 271.7, 155 271 C 163.7 270.3, 172.8 244.5, 182 244 C 191.2 243.5, 200.7 267.8, 210 268 C 219.3 268.2, 228.8 244.3, 238 245 C 247.2 245.7, 256.3 271.2, 265 272 C 273.7 272.8, 281.7 250.8, 290 250 C 298.3 249.2, 306.7 266, 315 267 C 323.3 268, 331.7 256.8, 340 256 C 348.3 255.2, 360.8 261, 365 262" stroke="#06B5F9" stroke-width="2" fill="none"/>
 
   <!-- Side Metrics -->
   <rect x="400" y="65" width="160" height="110" rx="8" fill="#0D2644" stroke="#06B5F9" stroke-opacity="0.3"/>
-  <text x="415" y="90" fill="#06B5F9" font-family="monospace" font-size="11" font-weight="bold">// AD RETENTION</text>
-  <text x="415" y="122" fill="#34D399" font-family="sans-serif" font-size="24" font-weight="900">72.4%</text>
-  <text x="415" y="148" fill="#B8C7D9" font-family="monospace" font-size="10">3s Hook Rate (+44%)</text>
+  <text x="415" y="90" fill="#06B5F9" font-family="monospace" font-size="11" font-weight="bold">// FAST TURNAROUND</text>
+  <text x="415" y="122" fill="#34D399" font-family="sans-serif" font-size="22" font-weight="900">Guaranteed</text>
+  <text x="415" y="148" fill="#B8C7D9" font-family="monospace" font-size="10">Fixed Delivery Date</text>
 
   <rect x="400" y="185" width="160" height="110" rx="8" fill="#0D2644" stroke="#06B5F9" stroke-opacity="0.3"/>
-  <text x="415" y="210" fill="#06B5F9" font-family="monospace" font-size="11" font-weight="bold">// CONVERSION LIFT</text>
-  <text x="415" y="242" fill="#06B5F9" font-family="sans-serif" font-size="24" font-weight="900">+85%</text>
-  <text x="415" y="268" fill="#B8C7D9" font-family="monospace" font-size="10">Paid Video Ad ROAS</text>
+  <text x="415" y="210" fill="#06B5F9" font-family="monospace" font-size="11" font-weight="bold">// MULTI-PLATFORM</text>
+  <text x="415" y="242" fill="#06B5F9" font-family="sans-serif" font-size="22" font-weight="900">9:16 / 16:9</text>
+  <text x="415" y="268" fill="#B8C7D9" font-family="monospace" font-size="10">Reels, Shorts, Feeds</text>
 
   <!-- Timeline Panel Below -->
   <rect x="40" y="310" width="520" height="95" rx="8" fill="#0A2038" stroke="#06B5F9" stroke-opacity="0.3"/>
-  <text x="56" y="333" fill="#06B5F9" font-family="monospace" font-size="11" font-weight="bold">// MULTI-TRACK TIMELINE (DAVINCI RESOLVE / PREMIERE)</text>
+  <text x="56" y="333" fill="#06B5F9" font-family="monospace" font-size="11" font-weight="bold">// MULTI-TRACK TIMELINE (PREMIERE / DAVINCI)</text>
   <rect x="56" y="348" width="155" height="22" rx="4" fill="#06B5F9" fill-opacity="0.25" stroke="#06B5F9" stroke-opacity="0.4"/>
-  <text x="66" y="363" fill="#ffffff" font-family="monospace" font-size="9.5" font-weight="600">V1: Commercial 4K</text>
+  <text x="66" y="363" fill="#ffffff" font-family="monospace" font-size="9.5" font-weight="600">V1: Commercial Hooks</text>
 
   <rect x="221" y="348" width="145" height="22" rx="4" fill="#34D399" fill-opacity="0.25" stroke="#34D399" stroke-opacity="0.4"/>
-  <text x="231" y="363" fill="#ffffff" font-family="monospace" font-size="9.5" font-weight="600">V2: 3D Product B-Roll</text>
+  <text x="231" y="363" fill="#ffffff" font-family="monospace" font-size="9.5" font-weight="600">V2: Captions &amp; Titles</text>
 
   <rect x="376" y="348" width="168" height="22" rx="4" fill="#06B5F9" fill-opacity="0.25" stroke="#06B5F9" stroke-opacity="0.4"/>
-  <text x="386" y="363" fill="#ffffff" font-family="monospace" font-size="9.5" font-weight="600">A1: Master Dolby 5.1</text>
-  <text x="56" y="392" fill="#8FA3B8" font-family="monospace" font-size="9.5">Timeline Resolution: 3840 x 2160 UHD &bull; Color Managed ACEScc</text>
+  <text x="386" y="363" fill="#ffffff" font-family="monospace" font-size="9.5" font-weight="600">A1: Master Dialogue &amp; Music</text>
+  <text x="56" y="392" fill="#8FA3B8" font-family="monospace" font-size="9.5">Timeline Resolution: Multi-Format UHD &bull; Color &amp; Audio Mastered</text>
 </svg>
           </div>
         </div>
@@ -124,7 +125,7 @@ $consultationUrl = appUrl('contact.php?service=' . urlencode($serviceName));
 </section>
 
 <!-- ============================================================
-     KEY TAKEAWAYS & EXECUTIVE SUMMARY (Reference Feature B)
+     KEY TAKEAWAYS & EXECUTIVE SUMMARY
      ============================================================ -->
 <section class="srv-section srv-section-takeaways" style="padding-top: 0; padding-bottom: 2.5rem;">
   <div class="srv-container">
@@ -132,40 +133,40 @@ $consultationUrl = appUrl('contact.php?service=' . urlencode($serviceName));
       <div class="srv-takeaways-header">
         <div class="srv-takeaways-kicker">
           <svg class="srv-takeaways-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"/></svg>
-          <span>KEY TAKEAWAYS &bull; AT A GLANCE</span>
+          <span>KEY TAKEAWAYS &bull; WHY BRANDS HIRE BUSINESSDOCTOR?</span>
         </div>
         <span class="srv-takeaways-pill">Core Execution Highlights</span>
       </div>
       <div class="srv-takeaways-grid">
         <div class="srv-takeaway-card">
           <div class="srv-takeaway-top">
-            <span class="srv-takeaway-val">4K / 6K</span>
+            <span class="srv-takeaway-val">Fast</span>
             <div class="srv-takeaway-badge">
               <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
             </div>
           </div>
-          <span class="srv-takeaway-label">Cinema Cinema Production</span>
-          <p class="srv-takeaway-desc">Verified benchmark engineered across production client deployments.</p>
+          <span class="srv-takeaway-label">Fast Turnaround</span>
+          <p class="srv-takeaway-desc">We fix the delivery date before we start, and we stick to it.</p>
         </div>
         <div class="srv-takeaway-card">
           <div class="srv-takeaway-top">
-            <span class="srv-takeaway-val">72%+</span>
+            <span class="srv-takeaway-val">Included</span>
             <div class="srv-takeaway-badge">
               <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
             </div>
           </div>
-          <span class="srv-takeaway-label">Average 3-Second Hook Rate</span>
-          <p class="srv-takeaway-desc">Verified benchmark engineered across production client deployments.</p>
+          <span class="srv-takeaway-label">Revisions Included</span>
+          <p class="srv-takeaway-desc">Not happy with the first cut? We fix it until it matches your brief.</p>
         </div>
         <div class="srv-takeaway-card">
           <div class="srv-takeaway-top">
-            <span class="srv-takeaway-val">+85%</span>
+            <span class="srv-takeaway-val">9:16 / 16:9</span>
             <div class="srv-takeaway-badge">
               <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
             </div>
           </div>
-          <span class="srv-takeaway-label">Conversion Rate Lift</span>
-          <p class="srv-takeaway-desc">Verified benchmark engineered across production client deployments.</p>
+          <span class="srv-takeaway-label">Every Platform Size</span>
+          <p class="srv-takeaway-desc">9:16, 16:9 and 1:1 files, ready for each app.</p>
         </div>
         <div class="srv-takeaway-card">
           <div class="srv-takeaway-top">
@@ -174,8 +175,8 @@ $consultationUrl = appUrl('contact.php?service=' . urlencode($serviceName));
               <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
             </div>
           </div>
-          <span class="srv-takeaway-label">Broadcast Licensing Rights</span>
-          <p class="srv-takeaway-desc">Verified benchmark engineered across production client deployments.</p>
+          <span class="srv-takeaway-label">Full Ownership</span>
+          <p class="srv-takeaway-desc">The final videos are yours to use anywhere.</p>
         </div>
       </div>
     </div>
@@ -191,52 +192,52 @@ $consultationUrl = appUrl('contact.php?service=' . urlencode($serviceName));
       <div class="srv-col-12 srv-col-lg-6">
         <div class="srv-badge mb-3">
           <span class="srv-badge-dot"></span>
-          <span>VISUAL STORYTELLING FRAMEWORK</span>
+          <span>HIRE A PROFESSIONAL VIDEO EDITING COMPANY</span>
         </div>
         <h2 class="srv-section-title">
-          Cinematic Storytelling Engineered for <span class="text-brand">Direct Commercial Impact</span>
+          Hire a Professional Video Editing Company in Delhi <span class="text-brand">That Brings Real Results</span>
         </h2>
         <p class="srv-section-subtitle mb-4">
-          In an era of relentless algorithmic scrolling, dull stock imagery and amateur smartphone footage will actively undermine your brand value and balloon your customer acquisition costs.
+          When you hire our video editing company in Delhi, one editor learns your brand and handles your videos from start to finish. You always know who to call and when your video will land.
         </p>
         <p class="srv-card-desc mb-4">
-          At BusinessDoctor, we bridge the gap between Hollywood-grade cinematography and direct-response performance marketing. From 4K commercial camera packages and studio lighting to 3D motion graphics and narrative brand films, our video assets are engineered to build trust and compel action.
+          Our editors work with our marketing team, so every hook and call to action is placed to get you enquiries, not just views.
         </p>
 
         <div class="srv-feature-list mb-4">
           <div class="srv-feature-item">
             <svg class="srv-check-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
             <div>
-              <strong class="text-white">Cinema-Grade Studio &amp; On-Location Production:</strong> 
-              <span class="text-secondary">Sony FX / RED 4K/6K cinema packages, precision lighting, and professional audio capture.</span>
+              <strong class="text-white">Ad Video Editing:</strong> 
+              <span class="text-secondary">Two or three hook versions of every ad, so you can test and keep the winner.</span>
             </div>
           </div>
           <div class="srv-feature-item">
             <svg class="srv-check-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
             <div>
-              <strong class="text-white">High-Converting Performance Video Ads:</strong> 
-              <span class="text-secondary">Scripted for Meta, TikTok, and YouTube with verified 3-second hook structures.</span>
+              <strong class="text-white">Reel and Short-Form Editing:</strong> 
+              <span class="text-secondary">Quick cuts, clear captions and the right size for every app.</span>
             </div>
           </div>
           <div class="srv-feature-item">
             <svg class="srv-check-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
             <div>
-              <strong class="text-white">3D Product Visualization &amp; Motion Design:</strong> 
-              <span class="text-secondary">Photorealistic Blender and Cinema4D exploded views and micro-feature showcases.</span>
+              <strong class="text-white">Product and Marketplace Video Editing:</strong> 
+              <span class="text-secondary">Listing videos that show features and help buyers decide.</span>
             </div>
           </div>
           <div class="srv-feature-item">
             <svg class="srv-check-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
             <div>
-              <strong class="text-white">Corporate Documentaries &amp; Case Study Films:</strong> 
-              <span class="text-secondary">Compelling narrative proof that convinces enterprise buying committees to say yes.</span>
+              <strong class="text-white">Corporate and Testimonial Editing:</strong> 
+              <span class="text-secondary">Brand films and client stories that build trust fast.</span>
             </div>
           </div>
         </div>
 
         <div class="pt-2">
           <a href="<?= e($consultationUrl) ?>" class="btn-srv-primary">
-            <span>Schedule Diagnostic Call</span>
+            <span>Get a Free Consultation</span>
             <svg class="btn-srv-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
           </a>
         </div>
@@ -253,33 +254,33 @@ $consultationUrl = appUrl('contact.php?service=' . urlencode($serviceName));
           </div>
           <div class="srv-hud-body">
             <p class="srv-card-desc mb-4">
-              Real-time telemetry tracking viewer drop-off curves, hook rates, and video ad conversion lift.
+              Real-time video production metrics tracking delivery timelines, hook performance, and platform-specific exports.
             </p>
             <div class="srv-hud-metrics">
               <div class="srv-hud-metric-box">
-                <div class="srv-hud-metric-num">72.4%</div>
-                <div class="srv-hud-metric-label">3-Sec Hook Rate</div>
+                <div class="srv-hud-metric-num">Fast</div>
+                <div class="srv-hud-metric-label">Turnaround</div>
               </div>
               <div class="srv-hud-metric-box">
-                <div class="srv-hud-metric-num">+85%</div>
-                <div class="srv-hud-metric-label">Video Ad Conv Lift</div>
+                <div class="srv-hud-metric-num">9:16 &bull; 16:9</div>
+                <div class="srv-hud-metric-label">Multi-Platform Size</div>
               </div>
               <div class="srv-hud-metric-box">
-                <div class="srv-hud-metric-num">4K 60P</div>
-                <div class="srv-hud-metric-label">Native Master Format</div>
+                <div class="srv-hud-metric-num">100%</div>
+                <div class="srv-hud-metric-label">Full Ownership</div>
               </div>
               <div class="srv-hud-metric-box">
-                <div class="srv-hud-metric-num">14 Days</div>
-                <div class="srv-hud-metric-label">Average Turnaround</div>
+                <div class="srv-hud-metric-num">1-on-1</div>
+                <div class="srv-hud-metric-label">Dedicated Editor</div>
               </div>
             </div>
             <div class="srv-hud-tag-list mt-3">
-              <span class="srv-tool-badge">DaVinci Resolve</span>
-              <span class="srv-tool-badge">Premiere Pro</span>
-              <span class="srv-tool-badge">Blender 3D</span>
-              <span class="srv-tool-badge">After Effects</span>
-              <span class="srv-tool-badge">Dolby Master</span>
-              <span class="srv-tool-badge">RED Cinema</span>
+              <span class="srv-tool-badge">Ad Video Editing</span>
+              <span class="srv-tool-badge">Reel Editing</span>
+              <span class="srv-tool-badge">Product Videos</span>
+              <span class="srv-tool-badge">Corporate Films</span>
+              <span class="srv-tool-badge">Testimonials</span>
+              <span class="srv-tool-badge">Monthly Packages</span>
             </div>
           </div>
         </div>
@@ -296,335 +297,204 @@ $consultationUrl = appUrl('contact.php?service=' . urlencode($serviceName));
     <div class="srv-section-header text-center">
       <div class="srv-badge">
         <span class="srv-badge-dot"></span>
-        <span>COMPREHENSIVE CAPABILITIES</span>
+        <span>WHAT WE OFFER</span>
       </div>
       <h2 class="srv-section-title">
-        Specialized Services Built for <span class="text-brand">Enterprise Scale</span>
+        Video Editing Solutions From a Professional <span class="text-brand">Video Editing Company in Delhi</span>
       </h2>
       <p class="srv-section-subtitle">
-        Every capability is executed by veteran specialists dedicated to predictable return on investment and zero fluff.
+        Every video is cut by a real editor who cares how it performs. No templates, no copy-paste edits.
       </p>
     </div>
 
-    <div class="srv-grid srv-grid-3">
+    <div class="srv-grid-3">
+      <!-- Service Card 1 -->
       <div class="srv-card">
-        <div class="srv-card-icon-wrap">
-          <div class="srv-icon-box"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polygon points="23 7 16 12 23 17 23 7"/><rect x="1" y="5" width="15" height="14" rx="2" ry="2"/></svg></div>
+        <div class="srv-card-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="2" width="20" height="20" rx="2.18" ry="2.18"/><line x1="7" y1="2" x2="7" y2="22"/><line x1="17" y1="2" x2="17" y2="22"/><line x1="2" y1="12" x2="22" y2="12"/><line x1="2" y1="7" x2="7" y2="7"/><line x1="2" y1="17" x2="7" y2="17"/><line x1="17" y1="17" x2="22" y2="17"/><line x1="17" y1="7" x2="22" y2="7"/></svg>
         </div>
-        <h3 class="srv-card-title">Direct-Response Performance Video Ads</h3>
-        <p class="srv-card-desc">High-converting short-form video ads scripted, filmed, and edited specifically to stop the scroll and drive immediate purchases on Meta, TikTok, and YouTube.</p>
-        <div class="srv-feature-list mb-3">
-          <div class="srv-feature-item">
-            <svg class="srv-check-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
-            <span>3-Second Hook Pattern Interrupts</span>
-          </div>
-          <div class="srv-feature-item">
-            <svg class="srv-check-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
-            <span>Kinetic On-Screen Captions &amp; Sound Effects</span>
-          </div>
-          <div class="srv-feature-item">
-            <svg class="srv-check-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
-            <span>Split-Test Variant Drops (3 Hooks x 2 CTAs)</span>
-          </div>
-          <div class="srv-feature-item">
-            <svg class="srv-check-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
-            <span>Vertical 9:16 &amp; Horizontal 16:9 Renders</span>
-          </div>
-        </div>
-        <div class="srv-benefit-badge">
-          <span class="text-secondary">BUSINESS VALUE:</span> 
-          <strong class="text-white">Lowers cost per acquisition by keeping ad creative fresh and engaging.</strong>
-        </div>
-        <div class="pt-3">
-          <a href="<?= appUrl('contact.php?service=' . urlencode($serviceName) . '&capability=' . urlencode('Direct-Response Performance Video Ads')) ?>" class="srv-link-action">
-            <span>Inquire About This Service</span>
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
-          </a>
-        </div>
+        <h3 class="srv-card-title">Ad Video Editing Company for Meta, YouTube and Google</h3>
+        <p class="srv-card-desc">Your ad gets about three seconds to stop the scroll. We cut it that way. You get a few versions with different hooks, so you can run the one that works.</p>
+        <ul class="srv-card-list">
+          <li>Strong 3-second hooks</li>
+          <li>Bold captions and sound effects</li>
+          <li>Hook and CTA variations for testing</li>
+          <li>9:16 and 16:9 exports</li>
+        </ul>
       </div>
+
+      <!-- Service Card 2 -->
       <div class="srv-card">
-        <div class="srv-card-icon-wrap">
-          <div class="srv-icon-box"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M23 19a2 2 0 0 1-2 2H3a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h4l2-3h6l2 3h4a2 2 0 0 1 2 2z"/><circle cx="12" cy="13" r="4"/></svg></div>
+        <div class="srv-card-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polygon points="23 7 16 12 23 17 23 7"/><rect x="1" y="5" width="15" height="14" rx="2" ry="2"/></svg>
         </div>
-        <h3 class="srv-card-title">Commercial Product Cinematography &amp; Photography</h3>
-        <p class="srv-card-desc">Studio and on-location commercial photography capturing your physical products with macro lenses, controlled studio lighting, and texture styling.</p>
-        <div class="srv-feature-list mb-3">
-          <div class="srv-feature-item">
-            <svg class="srv-check-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
-            <span>High-Speed Macro Fluid Motion Rigs</span>
-          </div>
-          <div class="srv-feature-item">
-            <svg class="srv-check-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
-            <span>Multi-Angle Studio Product Photography</span>
-          </div>
-          <div class="srv-feature-item">
-            <svg class="srv-check-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
-            <span>Lifestyle &amp; In-Context Model Shoots</span>
-          </div>
-          <div class="srv-feature-item">
-            <svg class="srv-check-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
-            <span>Color-Accurate Master Retouching</span>
-          </div>
-        </div>
-        <div class="srv-benefit-badge">
-          <span class="text-secondary">BUSINESS VALUE:</span> 
-          <strong class="text-white">Elevates product desirability and dramatically reduces return rates.</strong>
-        </div>
-        <div class="pt-3">
-          <a href="<?= appUrl('contact.php?service=' . urlencode($serviceName) . '&capability=' . urlencode('Commercial Product Cinematography & Photography')) ?>" class="srv-link-action">
-            <span>Inquire About This Service</span>
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
-          </a>
-        </div>
+        <h3 class="srv-card-title">Reel Editing Company for Instagram and Shorts</h3>
+        <p class="srv-card-desc">Send us the raw clips. We handle cuts, music and captions, and you get Reels and Shorts that look made for each app.</p>
+        <ul class="srv-card-list">
+          <li>Trend-aware cuts and transitions</li>
+          <li>Easy-to-read captions</li>
+          <li>Music and sound matching</li>
+          <li>Batch editing for the full month</li>
+        </ul>
       </div>
+
+      <!-- Service Card 3 -->
       <div class="srv-card">
-        <div class="srv-card-icon-wrap">
-          <div class="srv-icon-box"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="16 18 22 12 16 6"/><polyline points="8 6 2 12 8 18"/></svg></div>
+        <div class="srv-card-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 2L3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z"/><line x1="3" y1="6" x2="21" y2="6"/><path d="M16 10a4 4 0 0 1-8 0"/></svg>
         </div>
-        <h3 class="srv-card-title">3D Product Modeling &amp; Motion Design</h3>
-        <p class="srv-card-desc">Photorealistic 3D product animation built in Blender and Cinema 4D, showcasing internal components, engineering features, and sleek materials.</p>
-        <div class="srv-feature-list mb-3">
-          <div class="srv-feature-item">
-            <svg class="srv-check-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
-            <span>CAD-to-Polygon 3D Optimization</span>
-          </div>
-          <div class="srv-feature-item">
-            <svg class="srv-check-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
-            <span>Photorealistic Texture &amp; Material Physics</span>
-          </div>
-          <div class="srv-feature-item">
-            <svg class="srv-check-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
-            <span>Exploded Mechanism Animations</span>
-          </div>
-          <div class="srv-feature-item">
-            <svg class="srv-check-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
-            <span>Abstract Architectural Motion Graphics</span>
-          </div>
-        </div>
-        <div class="srv-benefit-badge">
-          <span class="text-secondary">BUSINESS VALUE:</span> 
-          <strong class="text-white">Visualizes technical superiority before physical manufacturing is complete.</strong>
-        </div>
-        <div class="pt-3">
-          <a href="<?= appUrl('contact.php?service=' . urlencode($serviceName) . '&capability=' . urlencode('3D Product Modeling & Motion Design')) ?>" class="srv-link-action">
-            <span>Inquire About This Service</span>
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
-          </a>
-        </div>
+        <h3 class="srv-card-title">Product Video Editing Company for Marketplaces and Stores</h3>
+        <p class="srv-card-desc">We edit listing videos for Amazon, Flipkart and your own store. Features show up clearly on screen, so buyers feel sure about clicking Buy.</p>
+        <ul class="srv-card-list">
+          <li>Feature call-outs on screen</li>
+          <li>Colour correction for a true product look</li>
+          <li>Clear audio and voiceover sync</li>
+          <li>Marketplace-ready sizes</li>
+        </ul>
       </div>
+
+      <!-- Service Card 4 -->
       <div class="srv-card">
-        <div class="srv-card-icon-wrap">
-          <div class="srv-icon-box"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><circle cx="12" cy="12" r="6"/><circle cx="12" cy="12" r="2"/></svg></div>
+        <div class="srv-card-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"/><polyline points="3.27 6.96 12 12.01 20.73 6.96"/><line x1="12" y1="22.08" x2="12" y2="12"/></svg>
         </div>
-        <h3 class="srv-card-title">Corporate Brand Films &amp; Executive Documentaries</h3>
-        <p class="srv-card-desc">Cinematic narrative films showcasing your founders, engineering facilities, company culture, and customer transformation stories.</p>
-        <div class="srv-feature-list mb-3">
-          <div class="srv-feature-item">
-            <svg class="srv-check-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
-            <span>Multi-Camera 4K Executive Interviews</span>
-          </div>
-          <div class="srv-feature-item">
-            <svg class="srv-check-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
-            <span>Cinematic B-Roll of Operations &amp; Labs</span>
-          </div>
-          <div class="srv-feature-item">
-            <svg class="srv-check-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
-            <span>Original Musical Scoring &amp; Sound Design</span>
-          </div>
-          <div class="srv-feature-item">
-            <svg class="srv-check-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
-            <span>Dolby 5.1 &amp; Stereo Audio Mastering</span>
-          </div>
-        </div>
-        <div class="srv-benefit-badge">
-          <span class="text-secondary">BUSINESS VALUE:</span> 
-          <strong class="text-white">Builds unshakeable corporate prestige for enterprise sales and investor relations.</strong>
-        </div>
-        <div class="pt-3">
-          <a href="<?= appUrl('contact.php?service=' . urlencode($serviceName) . '&capability=' . urlencode('Corporate Brand Films & Executive Documentaries')) ?>" class="srv-link-action">
-            <span>Inquire About This Service</span>
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
-          </a>
-        </div>
+        <h3 class="srv-card-title">Corporate Video Editing Company</h3>
+        <p class="srv-card-desc">Brand films, founder videos, company intros and event highlights. We cut them to look sharp and sound right.</p>
+        <ul class="srv-card-list">
+          <li>Interview and multi-camera editing</li>
+          <li>Logo, lower thirds and brand fonts</li>
+          <li>Music and sound balancing</li>
+          <li>Short cutdowns for social media</li>
+        </ul>
       </div>
+
+      <!-- Service Card 5 -->
       <div class="srv-card">
-        <div class="srv-card-icon-wrap">
-          <div class="srv-icon-box"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polygon points="12 2 2 7 12 12 22 7 12 2"/><polyline points="2 17 12 22 22 17"/><polyline points="2 12 12 17 22 12"/></svg></div>
+        <div class="srv-card-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
         </div>
-        <h3 class="srv-card-title">Video Case Studies &amp; Client Testimonials</h3>
-        <p class="srv-card-desc">Documentary-style client video testimonials that capture authentic emotional transformation, hard financial metrics, and undeniable peer proof.</p>
-        <div class="srv-feature-list mb-3">
-          <div class="srv-feature-item">
-            <svg class="srv-check-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
-            <span>Remote 4K Director Kits &amp; On-Site Crews</span>
-          </div>
-          <div class="srv-feature-item">
-            <svg class="srv-check-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
-            <span>Structured Metric-Driven Interview Scripting</span>
-          </div>
-          <div class="srv-feature-item">
-            <svg class="srv-check-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
-            <span>B-Roll Integration of Client Using Product</span>
-          </div>
-          <div class="srv-feature-item">
-            <svg class="srv-check-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
-            <span>Social Cutdowns for Sales Rep Outbound</span>
-          </div>
-        </div>
-        <div class="srv-benefit-badge">
-          <span class="text-secondary">BUSINESS VALUE:</span> 
-          <strong class="text-white">Serves as the highest-converting closing asset for your sales team.</strong>
-        </div>
-        <div class="pt-3">
-          <a href="<?= appUrl('contact.php?service=' . urlencode($serviceName) . '&capability=' . urlencode('Video Case Studies & Client Testimonials')) ?>" class="srv-link-action">
-            <span>Inquire About This Service</span>
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
-          </a>
-        </div>
+        <h3 class="srv-card-title">Testimonial and Case Study Video Editing</h3>
+        <p class="srv-card-desc">Happy clients sell better than any ad. We turn their words into short, honest videos you can send to your next buyer.</p>
+        <ul class="srv-card-list">
+          <li>Interview cuts with key results on screen</li>
+          <li>B-roll added where needed</li>
+          <li>Short social cutdowns</li>
+          <li>Branded intro and outro</li>
+        </ul>
       </div>
+
+      <!-- Service Card 6 -->
       <div class="srv-card">
-        <div class="srv-card-icon-wrap">
-          <div class="srv-icon-box"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="4" y1="21" x2="4" y2="14"/><line x1="4" y1="10" x2="4" y2="3"/><line x1="12" y1="21" x2="12" y2="12"/><line x1="12" y1="8" x2="12" y2="3"/><line x1="20" y1="21" x2="20" y2="16"/><line x1="20" y1="12" x2="20" y2="3"/><line x1="1" y1="14" x2="7" y2="14"/><line x1="9" y1="8" x2="15" y2="8"/><line x1="17" y1="16" x2="23" y2="16"/></svg></div>
+        <div class="srv-card-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
         </div>
-        <h3 class="srv-card-title">Social-First Video Packages (Reels, TikTok &amp; Shorts)</h3>
-        <p class="srv-card-desc">High-velocity monthly video production delivering batch packages of educational, entertaining, and promotional short-form content.</p>
-        <div class="srv-feature-list mb-3">
-          <div class="srv-feature-item">
-            <svg class="srv-check-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
-            <span>Trend-Aware Scripting &amp; Storyboards</span>
-          </div>
-          <div class="srv-feature-item">
-            <svg class="srv-check-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
-            <span>Batch Studio Filming Days</span>
-          </div>
-          <div class="srv-feature-item">
-            <svg class="srv-check-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
-            <span>Native App Platform Transitions</span>
-          </div>
-          <div class="srv-feature-item">
-            <svg class="srv-check-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
-            <span>Content Calendar Scheduling Integration</span>
-          </div>
-        </div>
-        <div class="srv-benefit-badge">
-          <span class="text-secondary">BUSINESS VALUE:</span> 
-          <strong class="text-white">Maintains an omnipresent, authoritative presence across all social algorithms.</strong>
-        </div>
-        <div class="pt-3">
-          <a href="<?= appUrl('contact.php?service=' . urlencode($serviceName) . '&capability=' . urlencode('Social-First Video Packages (Reels, TikTok & Shorts)')) ?>" class="srv-link-action">
-            <span>Inquire About This Service</span>
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
-          </a>
-        </div>
+        <h3 class="srv-card-title">Monthly Video Editing Packages</h3>
+        <p class="srv-card-desc">Posting every week? Our video editing company in Delhi gives you a fixed number of edits per month with one editor who learns your style. We keep pricing simple and affordable, so you know the cost from day one.</p>
+        <ul class="srv-card-list">
+          <li>Fixed videos every month</li>
+          <li>One dedicated editor</li>
+          <li>Priority turnaround</li>
+          <li>A simple plan that grows with you</li>
+        </ul>
       </div>
     </div>
   </div>
 </section>
 
 <!-- ============================================================
-     SECTION 5 — OUR PROCESS
+     SECTION 5 — 6-PHASE PROCESS
      ============================================================ -->
 <section class="srv-section" id="process">
   <div class="srv-container">
     <div class="srv-section-header text-center">
       <div class="srv-badge">
         <span class="srv-badge-dot"></span>
-        <span>STRUCTURED EXECUTION TIMELINE</span>
+        <span>OUR PROCESS</span>
       </div>
       <h2 class="srv-section-title">
-        The 6-Phase Engineering &amp; Delivery <span class="text-brand">Framework</span>
+        Our 6-Phase Video Editing Process, <span class="text-brand">From Footage to Delivery</span>
       </h2>
       <p class="srv-section-subtitle">
-        Predictable milestones, rigorous testing checkpoints, and full visibility at every stage of the project lifecycle.
+        Six steps. You know what is happening at every stage.
       </p>
     </div>
 
-        <div class="srv-process-nav" role="tablist" aria-label="Process Milestones">
-      <button type="button" class="srv-process-pill is-active" data-step="01"><span class="srv-pill-num">1</span> Phase 01</button>
-      <button type="button" class="srv-process-pill" data-step="02"><span class="srv-pill-num">2</span> Phase 02</button>
-      <button type="button" class="srv-process-pill" data-step="03"><span class="srv-pill-num">3</span> Phase 03</button>
-      <button type="button" class="srv-process-pill" data-step="04"><span class="srv-pill-num">4</span> Phase 04</button>
-      <button type="button" class="srv-process-pill" data-step="05"><span class="srv-pill-num">5</span> Phase 05</button>
-      <button type="button" class="srv-process-pill" data-step="06"><span class="srv-pill-num">6</span> Phase 06</button>
-    </div>
-
     <div class="srv-process-timeline">
-      <div class="srv-process-card" data-step="01">
-        <div class="srv-phase-badge">PHASE 01 &bull; WEEKS 1–2</div>
-        <h3 class="srv-process-title">Creative Brief, Concepting &amp; Scripting</h3>
-        <p class="srv-card-desc mb-3">We define the core commercial objective, analyze competitor visual tropes, craft compelling scripts, and build visual storyboards.</p>
-        <div class="srv-process-deliverable">
-          <span class="srv-deliverable-lbl">KEY DELIVERABLES:</span>
-          <ul class="srv-bullet-list">
-            <li>Creative Strategy Brief</li>
-            <li>Word-for-Word Scripts with Visual Cues</li>
-            <li>Scene-by-Scene Visual Storyboards</li>
-          </ul>
+      <!-- Step 1 -->
+      <div class="srv-process-step">
+        <div class="srv-step-number">01</div>
+        <div class="srv-step-content">
+          <h3 class="srv-step-title">1. Brief and Footage Review</h3>
+          <p class="srv-step-desc">You share the goal, the footage and any reference videos. We check everything and plan the edit.</p>
+          <div class="srv-step-deliverables">
+            <span class="srv-deliverable-label">Key Deliverables:</span>
+            <span>Edit plan, Footage checklist, Delivery date</span>
+          </div>
         </div>
       </div>
-      <div class="srv-process-card" data-step="02">
-        <div class="srv-phase-badge">PHASE 02 &bull; WEEKS 2–3</div>
-        <h3 class="srv-process-title">Pre-Production &amp; Logistics Planning</h3>
-        <p class="srv-card-desc mb-3">We scout locations, cast professional talent, design studio sets, prepare equipment packages, and assemble call sheets.</p>
-        <div class="srv-process-deliverable">
-          <span class="srv-deliverable-lbl">KEY DELIVERABLES:</span>
-          <ul class="srv-bullet-list">
-            <li>Cast &amp; Location Confirmations</li>
-            <li>Production Call Sheet &amp; Schedule</li>
-            <li>Set Design &amp; Wardrobe Palette Approval</li>
-          </ul>
+
+      <!-- Step 2 -->
+      <div class="srv-process-step">
+        <div class="srv-step-number">02</div>
+        <div class="srv-step-content">
+          <h3 class="srv-step-title">2. Rough Cut Assembly</h3>
+          <p class="srv-step-desc">We build the story on the timeline, trim the extras and set the pace.</p>
+          <div class="srv-step-deliverables">
+            <span class="srv-deliverable-label">Key Deliverables:</span>
+            <span>First assembly, Story flow, Music direction</span>
+          </div>
         </div>
       </div>
-      <div class="srv-process-card" data-step="03">
-        <div class="srv-phase-badge">PHASE 03 &bull; WEEKS 3–4</div>
-        <h3 class="srv-process-title">Principal Photography &amp; Cinema Production</h3>
-        <p class="srv-card-desc mb-3">Our crew executes principal photography using 4K/6K cinema packages, precision lighting, and multi-channel master audio.</p>
-        <div class="srv-process-deliverable">
-          <span class="srv-deliverable-lbl">KEY DELIVERABLES:</span>
-          <ul class="srv-bullet-list">
-            <li>Complete Raw Cinema Footage Capture</li>
-            <li>Dual On-Site Data Backups (RAID)</li>
-            <li>Client Remote Video Feed Monitoring</li>
-          </ul>
+
+      <!-- Step 3 -->
+      <div class="srv-process-step">
+        <div class="srv-step-number">03</div>
+        <div class="srv-step-content">
+          <h3 class="srv-step-title">3. Fine Cut, Graphics and Captions</h3>
+          <p class="srv-step-desc">We polish every cut and add captions, titles and your brand look.</p>
+          <div class="srv-step-deliverables">
+            <span class="srv-deliverable-label">Key Deliverables:</span>
+            <span>Fine cut, Captions and titles, Brand graphics</span>
+          </div>
         </div>
       </div>
-      <div class="srv-process-card" data-step="04">
-        <div class="srv-phase-badge">PHASE 04 &bull; WEEKS 4–5</div>
-        <h3 class="srv-process-title">Editorial Assembly &amp; Rough Cut Review</h3>
-        <p class="srv-card-desc mb-3">We assemble the narrative timeline, pacing, and dialogue flow, delivering an interactive rough cut for your executive team.</p>
-        <div class="srv-process-deliverable">
-          <span class="srv-deliverable-lbl">KEY DELIVERABLES:</span>
-          <ul class="srv-bullet-list">
-            <li>Frame.io Interactive Video Review Link</li>
-            <li>Rough Cut Editorial Assembly</li>
-            <li>Feedback &amp; Revision Tracking</li>
-          </ul>
+
+      <!-- Step 4 -->
+      <div class="srv-process-step">
+        <div class="srv-step-number">04</div>
+        <div class="srv-step-content">
+          <h3 class="srv-step-title">4. Colour Grading and Sound Design</h3>
+          <p class="srv-step-desc">We fix the colours, clean up the audio and mix the music, so the video looks and sounds right.</p>
+          <div class="srv-step-deliverables">
+            <span class="srv-deliverable-label">Key Deliverables:</span>
+            <span>Colour graded video, Clean audio mix, Licensed music</span>
+          </div>
         </div>
       </div>
-      <div class="srv-process-card" data-step="05">
-        <div class="srv-phase-badge">PHASE 05 &bull; WEEKS 5–6</div>
-        <h3 class="srv-process-title">Color Grading, 3D VFX &amp; Sound Design</h3>
-        <p class="srv-card-desc mb-3">We grade in DaVinci Resolve, animate kinetic motion graphics, and mix immersive sound design with licensed music tracks.</p>
-        <div class="srv-process-deliverable">
-          <span class="srv-deliverable-lbl">KEY DELIVERABLES:</span>
-          <ul class="srv-bullet-list">
-            <li>DaVinci Color Master Grade</li>
-            <li>3D Motion Graphics &amp; Captions</li>
-            <li>Dolby Master Sound Design</li>
-          </ul>
+
+      <!-- Step 5 -->
+      <div class="srv-process-step">
+        <div class="srv-step-number">05</div>
+        <div class="srv-step-content">
+          <h3 class="srv-step-title">5. Review and Revisions</h3>
+          <p class="srv-step-desc">You watch the cut, leave your comments and we fix them fast.</p>
+          <div class="srv-step-deliverables">
+            <span class="srv-deliverable-label">Key Deliverables:</span>
+            <span>Review link, Time-stamped feedback, Updated cut</span>
+          </div>
         </div>
       </div>
-      <div class="srv-process-card" data-step="06">
-        <div class="srv-phase-badge">PHASE 06 &bull; WEEKS 6–7</div>
-        <h3 class="srv-process-title">Multi-Format Export &amp; Ad Deployment</h3>
-        <p class="srv-card-desc mb-3">We render master files in 16:9, 9:16, and 1:1 aspect ratios, providing ProRes archives and web-optimized deliverables for ad managers.</p>
-        <div class="srv-process-deliverable">
-          <span class="srv-deliverable-lbl">KEY DELIVERABLES:</span>
-          <ul class="srv-bullet-list">
-            <li>Master ProRes &amp; H.265 Files</li>
-            <li>Vertical (9:16) &amp; Horizontal (16:9) Cuts</li>
-            <li>Full Commercial License Documentation</li>
-          </ul>
+
+      <!-- Step 6 -->
+      <div class="srv-process-step">
+        <div class="srv-step-number">06</div>
+        <div class="srv-step-content">
+          <h3 class="srv-step-title">6. Multi format Export and Delivery</h3>
+          <p class="srv-step-desc">We send the final files in every size you need, ready to post.</p>
+          <div class="srv-step-deliverables">
+            <span class="srv-deliverable-label">Key Deliverables:</span>
+            <span>9:16, 16:9 and 1:1 files, Master file, Full ownership of the final video</span>
+          </div>
         </div>
       </div>
     </div>
@@ -632,418 +502,312 @@ $consultationUrl = appUrl('contact.php?service=' . urlencode($serviceName));
 </section>
 
 <!-- ============================================================
-     SECTION 6 — WHY CHOOSE BUSINESSDOCTOR
+     SECTION 6 — WHY CHOOSE US
      ============================================================ -->
 <section class="srv-section srv-bg-surface" id="why-choose-us">
   <div class="srv-container">
     <div class="srv-section-header text-center">
       <div class="srv-badge">
         <span class="srv-badge-dot"></span>
-        <span>COMPETITIVE ADVANTAGE</span>
+        <span>WHY CHOOSE US</span>
       </div>
       <h2 class="srv-section-title">
-        Why Leading Companies Partner with <span class="text-brand">BusinessDoctor</span>
+        Why Leading Brands Choose BusinessDoctor as Their <span class="text-brand">Video Editing Company in Delhi</span>
       </h2>
       <p class="srv-section-subtitle">
-        We bridge the gap between business strategy and deep technical execution, providing senior expertise without agency bloat.
+        Experienced editors, simple pricing and one team that handles it all.
       </p>
     </div>
 
-    <div class="srv-grid srv-grid-3">
-      <div class="srv-card">
-        <div class="srv-icon-box mb-3"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polygon points="23 7 16 12 23 17 23 7"/><rect x="1" y="5" width="15" height="14" rx="2" ry="2"/></svg></div>
-        <h3 class="srv-card-title">Cinema-Grade Camera Gear</h3>
-        <p class="srv-card-desc">We film on high-end cinema systems (RED, Sony FX line) paired with prime lenses to deliver rich depth-of-field and Hollywood aesthetics.</p>
-        <div class="srv-metric-highlight mt-2">
-          <span class="text-brand font-mono font-bold">4K / 6K</span>
-          <span class="text-muted text-sm ms-2">Native Resolution</span>
-        </div>
+    <div class="srv-grid-3">
+      <div class="srv-benefit-card">
+        <div class="srv-benefit-badge">Built for Results</div>
+        <h3 class="srv-benefit-title">Marketing-First Editors</h3>
+        <p class="srv-benefit-desc">We edit to get clicks and sales, not to win awards.</p>
       </div>
-      <div class="srv-card">
-        <div class="srv-icon-box mb-3"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="12" y1="1" x2="12" y2="23"/><path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/></svg></div>
-        <h3 class="srv-card-title">Direct-Response ROI Focus</h3>
-        <p class="srv-card-desc">We are performance marketers first. Every scene, hook, and line of copy is designed to convert viewers into revenue, not win vanity awards.</p>
-        <div class="srv-metric-highlight mt-2">
-          <span class="text-brand font-mono font-bold">+85%</span>
-          <span class="text-muted text-sm ms-2">Average ROAS Lift</span>
-        </div>
+
+      <div class="srv-benefit-card">
+        <div class="srv-benefit-badge">One Point of Contact</div>
+        <h3 class="srv-benefit-title">Dedicated Editor</h3>
+        <p class="srv-benefit-desc">One editor learns your brand and stays with you.</p>
       </div>
-      <div class="srv-card">
-        <div class="srv-icon-box mb-3"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="4" y1="21" x2="4" y2="14"/><line x1="4" y1="10" x2="4" y2="3"/><line x1="12" y1="21" x2="12" y2="12"/><line x1="12" y1="8" x2="12" y2="3"/><line x1="20" y1="21" x2="20" y2="16"/><line x1="20" y1="12" x2="20" y2="3"/><line x1="1" y1="14" x2="7" y2="14"/><line x1="9" y1="8" x2="15" y2="8"/><line x1="17" y1="16" x2="23" y2="16"/></svg></div>
-        <h3 class="srv-card-title">Rapid Modular Ad Variant Testing</h3>
-        <p class="srv-card-desc">We don’t deliver just one video; we deliver multiple hook variations and calls-to-action so your media buyers can test and win.</p>
-        <div class="srv-metric-highlight mt-2">
-          <span class="text-brand font-mono font-bold">3x2 Matrix</span>
-          <span class="text-muted text-sm ms-2">Hooks x CTAs per Shoot</span>
-        </div>
+
+      <div class="srv-benefit-card">
+        <div class="srv-benefit-badge">Test and Win</div>
+        <h3 class="srv-benefit-title">Multiple Hook Versions</h3>
+        <p class="srv-benefit-desc">You get a few openings to test, so your ads keep getting better.</p>
       </div>
-      <div class="srv-card">
-        <div class="srv-icon-box mb-3"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg></div>
-        <h3 class="srv-card-title">100% Broadcast Licensing Rights</h3>
-        <p class="srv-card-desc">All music tracks, voiceover talent, and fonts come with lifetime, worldwide commercial and broadcast usage rights included.</p>
-        <div class="srv-metric-highlight mt-2">
-          <span class="text-brand font-mono font-bold">Worldwide</span>
-          <span class="text-muted text-sm ms-2">Lifetime Usage Included</span>
-        </div>
+
+      <div class="srv-benefit-card">
+        <div class="srv-benefit-badge">No Hidden Costs</div>
+        <h3 class="srv-benefit-title">Simple, Clear Pricing</h3>
+        <p class="srv-benefit-desc">You get a quote before we start. No surprise charges later.</p>
       </div>
-      <div class="srv-card">
-        <div class="srv-icon-box mb-3"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="16 18 22 12 16 6"/><polyline points="8 6 2 12 8 18"/></svg></div>
-        <h3 class="srv-card-title">In-House 3D &amp; VFX Artists</h3>
-        <p class="srv-card-desc">Our 3D animators render photorealistic CAD models and exploded mechanisms that physical cameras simply cannot capture.</p>
-        <div class="srv-metric-highlight mt-2">
-          <span class="text-brand font-mono font-bold">Photorealistic</span>
-          <span class="text-muted text-sm ms-2">Blender &amp; C4D Pipeline</span>
-        </div>
+
+      <div class="srv-benefit-card">
+        <div class="srv-benefit-badge">Simple Reviews</div>
+        <h3 class="srv-benefit-title">Easy Feedback</h3>
+        <p class="srv-benefit-desc">Leave comments right on the video timeline. No long emails.</p>
       </div>
-      <div class="srv-card">
-        <div class="srv-icon-box mb-3"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/></svg></div>
-        <h3 class="srv-card-title">Fast 14-Day Delivery Sprints</h3>
-        <p class="srv-card-desc">Our streamlined pre-production and editing pipelines allow us to go from concept approval to final master delivery in just two weeks.</p>
-        <div class="srv-metric-highlight mt-2">
-          <span class="text-brand font-mono font-bold">14 Days</span>
-          <span class="text-muted text-sm ms-2">Concept to Delivery</span>
-        </div>
+
+      <div class="srv-benefit-card">
+        <div class="srv-benefit-badge">One Team, One Standard</div>
+        <h3 class="srv-benefit-title">Full Digital Team Under One Roof</h3>
+        <p class="srv-benefit-desc">Unlike a typical video editing agency, we also run your ads, website and listings, so everything works together.</p>
       </div>
     </div>
   </div>
 </section>
 
 <!-- ============================================================
-     SECTION 7 — TECHNOLOGY & TOOLS WE USE
+     SECTION 7 — TECHNOLOGIES & TOOLS
      ============================================================ -->
 <section class="srv-section" id="technologies">
   <div class="srv-container">
     <div class="srv-section-header text-center">
       <div class="srv-badge">
         <span class="srv-badge-dot"></span>
-        <span>TOOLS TO BE USED</span>
+        <span>TOOL STACK</span>
       </div>
       <h2 class="srv-section-title">
-        Tools to Be <span class="text-brand">Used</span>
+        Professional Tools <span class="text-brand">Our Editors Use</span>
       </h2>
       <p class="srv-section-subtitle">
-        We select battle-tested, high-performance tooling suited for scale, reliability, and seamless ongoing maintenance.
+        The software our editors work in every day.
       </p>
     </div>
 
-    <div class="srv-tech-grid">
+    <div class="srv-grid-4">
       <div class="srv-tech-category">
-        <h3 class="srv-tech-cat-title">Cinema Cameras &amp; Lighting</h3>
-        <div class="srv-tech-tags">
-          <div class="srv-tool-item">
-            <span class="srv-tool-dot"></span>
-            <span class="srv-tool-name">Sony FX6 / FX3 Cinema</span>
-            <span class="srv-tool-role">Primary 4K 120fps Capture</span>
-          </div>
-          <div class="srv-tool-item">
-            <span class="srv-tool-dot"></span>
-            <span class="srv-tool-name">RED Digital Cinema</span>
-            <span class="srv-tool-role">6K Raw Commercial Master</span>
-          </div>
-          <div class="srv-tool-item">
-            <span class="srv-tool-dot"></span>
-            <span class="srv-tool-name">Aputure &amp; Nanlite</span>
-            <span class="srv-tool-role">High-CRI Studio Lighting</span>
-          </div>
-          <div class="srv-tool-item">
-            <span class="srv-tool-dot"></span>
-            <span class="srv-tool-name">Sennheiser &amp; Deity</span>
-            <span class="srv-tool-role">Broadcast Lavalier &amp; Shotgun Audio</span>
-          </div>
-        </div>
+        <h3 class="srv-tech-cat-title">Editing and Assembly</h3>
+        <ul class="srv-tech-list">
+          <li>Adobe Premiere Pro (main timeline editing)</li>
+          <li>DaVinci Resolve (colour and edit)</li>
+          <li>Final Cut Pro (fast Mac editing)</li>
+          <li>CapCut Pro (quick social cuts)</li>
+        </ul>
       </div>
+
       <div class="srv-tech-category">
-        <h3 class="srv-tech-cat-title">Post-Production &amp; Color Grading</h3>
-        <div class="srv-tech-tags">
-          <div class="srv-tool-item">
-            <span class="srv-tool-dot"></span>
-            <span class="srv-tool-name">DaVinci Resolve Studio</span>
-            <span class="srv-tool-role">Color Grading &amp; Film Emulation</span>
-          </div>
-          <div class="srv-tool-item">
-            <span class="srv-tool-dot"></span>
-            <span class="srv-tool-name">Adobe Premiere Pro</span>
-            <span class="srv-tool-role">Multi-Track Editorial Assembly</span>
-          </div>
-          <div class="srv-tool-item">
-            <span class="srv-tool-dot"></span>
-            <span class="srv-tool-name">Adobe After Effects</span>
-            <span class="srv-tool-role">Kinetic Typography &amp; Motion Graphics</span>
-          </div>
-          <div class="srv-tool-item">
-            <span class="srv-tool-dot"></span>
-            <span class="srv-tool-name">iZotope RX Audio</span>
-            <span class="srv-tool-role">Spectral Audio Repair &amp; Mastering</span>
-          </div>
-        </div>
+        <h3 class="srv-tech-cat-title">Motion Graphics</h3>
+        <ul class="srv-tech-list">
+          <li>After Effects (animated titles)</li>
+          <li>Cinema 4D (3D logos and text)</li>
+          <li>Blender (3D and effects)</li>
+          <li>Mocha Pro (tracking)</li>
+        </ul>
       </div>
+
       <div class="srv-tech-category">
-        <h3 class="srv-tech-cat-title">3D Animation &amp; Visual Effects</h3>
-        <div class="srv-tech-tags">
-          <div class="srv-tool-item">
-            <span class="srv-tool-dot"></span>
-            <span class="srv-tool-name">Blender 3D</span>
-            <span class="srv-tool-role">Product Modeling &amp; Cycles Renders</span>
-          </div>
-          <div class="srv-tool-item">
-            <span class="srv-tool-dot"></span>
-            <span class="srv-tool-name">Cinema 4D + Redshift</span>
-            <span class="srv-tool-role">Complex Dynamic Simulations</span>
-          </div>
-          <div class="srv-tool-item">
-            <span class="srv-tool-dot"></span>
-            <span class="srv-tool-name">Substance 3D Painter</span>
-            <span class="srv-tool-role">Physically Based Materials</span>
-          </div>
-          <div class="srv-tool-item">
-            <span class="srv-tool-dot"></span>
-            <span class="srv-tool-name">Unreal Engine 5</span>
-            <span class="srv-tool-role">Real-Time Virtual Environments</span>
-          </div>
-        </div>
+        <h3 class="srv-tech-cat-title">Audio and Sound</h3>
+        <ul class="srv-tech-list">
+          <li>Adobe Audition (voice clean-up)</li>
+          <li>iZotope RX (noise removal)</li>
+          <li>Artlist (licensed music)</li>
+          <li>Musicbed (premium music)</li>
+        </ul>
       </div>
+
       <div class="srv-tech-category">
-        <h3 class="srv-tech-cat-title">Review &amp; Delivery Platforms</h3>
-        <div class="srv-tech-tags">
-          <div class="srv-tool-item">
-            <span class="srv-tool-dot"></span>
-            <span class="srv-tool-name">Frame.io</span>
-            <span class="srv-tool-role">Timecode-Accurate Client Review</span>
-          </div>
-          <div class="srv-tool-item">
-            <span class="srv-tool-dot"></span>
-            <span class="srv-tool-name">Artlist / Musicbed</span>
-            <span class="srv-tool-role">Global Broadcast Music Licensing</span>
-          </div>
-          <div class="srv-tool-item">
-            <span class="srv-tool-dot"></span>
-            <span class="srv-tool-name">Dropbox Replay</span>
-            <span class="srv-tool-role">Multi-Platform Video Handoff</span>
-          </div>
-          <div class="srv-tool-item">
-            <span class="srv-tool-dot"></span>
-            <span class="srv-tool-name">Apple ProRes 422 HQ</span>
-            <span class="srv-tool-role">Lossless Master Archive Standard</span>
-          </div>
-        </div>
+        <h3 class="srv-tech-cat-title">Review and Delivery</h3>
+        <ul class="srv-tech-list">
+          <li>Frame.io (time-stamped feedback)</li>
+          <li>Dropbox Replay (easy review)</li>
+          <li>Google Drive (secure sharing)</li>
+          <li>ProRes and H.265 (high quality exports)</li>
+        </ul>
       </div>
     </div>
   </div>
 </section>
 
 <!-- ============================================================
-     SECTION 8 — INDUSTRY USE CASES
+     SECTION 8 — INDUSTRY SECTORS
      ============================================================ -->
 <section class="srv-section srv-bg-surface" id="industry-use-cases">
   <div class="srv-container">
     <div class="srv-section-header text-center">
       <div class="srv-badge">
         <span class="srv-badge-dot"></span>
-        <span>INDUSTRY SPECIALIZATION</span>
+        <span>SECTOR EXPERTISE</span>
       </div>
       <h2 class="srv-section-title">
-        Tailored Solutions for <span class="text-brand">High-Growth Sectors</span>
+        Video Editing Company in Delhi for <span class="text-brand">High-Growth Sectors</span>
       </h2>
       <p class="srv-section-subtitle">
-        We solve domain-specific compliance, performance, and workflow challenges across multiple complex industries.
+        As a video editing company in Delhi, we edit for brands across India. These are the fields we work with most.
       </p>
     </div>
 
-        <div class="srv-carousel-wrapper" data-carousel="use-cases">
-      <div class="srv-carousel-nav-header">
-        <div class="srv-carousel-kicker">
-          <span class="text-brand font-mono font-bold">SECTOR ARCHITECTURES</span>
-          <span class="text-muted text-sm ml-2">&bull; Interactive scroll &amp; swipe</span>
-        </div>
-        <div class="srv-carousel-controls">
-          <button type="button" class="srv-carousel-btn srv-carousel-prev" aria-label="Previous Sector Solution"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="15 18 9 12 15 6"/></svg></button>
-          <button type="button" class="srv-carousel-btn srv-carousel-next" aria-label="Next Sector Solution"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="9 18 15 12 9 6"/></svg></button>
+    <div class="srv-grid-3">
+      <div class="srv-card">
+        <h3 class="srv-card-title">D2C and Consumer</h3>
+        <p class="srv-card-desc"><strong>Product Ad Edits:</strong> Fast, bright cuts that show the product and push the buy.</p>
+        <div class="srv-sector-outcome">
+          <span class="srv-outcome-badge">Outcome</span>
+          <span>Stronger ads, lower cost per sale.</span>
         </div>
       </div>
-      <div class="srv-carousel-track">
 
-      <div class="srv-industry-card">
-        <div class="srv-industry-header">
-          <div class="srv-icon-box"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="9" cy="21" r="1"/><circle cx="20" cy="21" r="1"/><path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"/></svg></div>
-          <span class="srv-industry-tag">D2C &amp; CONSUMER LIFESTYLE</span>
-        </div>
-        <h3 class="srv-card-title">High-Conversion Product Ad Suites</h3>
-        <p class="srv-card-desc">Kinetic macro close-ups and unboxing videos showcasing textures, packaging, and real-world application.</p>
-        <div class="srv-industry-outcome">
-          <span class="srv-deliverable-lbl">PRIMARY BUSINESS OUTCOME:</span>
-          <strong class="text-brand">3.8x Return on Ad Spend on TikTok &amp; Meta</strong>
+      <div class="srv-card">
+        <h3 class="srv-card-title">E-Commerce Sellers</h3>
+        <p class="srv-card-desc"><strong>Listing Video Edits:</strong> Clear videos that show features on Amazon and Flipkart.</p>
+        <div class="srv-sector-outcome">
+          <span class="srv-outcome-badge">Outcome</span>
+          <span>Buyers feel confident and order more.</span>
         </div>
       </div>
-      <div class="srv-industry-card">
-        <div class="srv-industry-header">
-          <div class="srv-icon-box"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="16 18 22 12 16 6"/><polyline points="8 6 2 12 8 18"/></svg></div>
-          <span class="srv-industry-tag">B2B SAAS &amp; ENTERPRISE SOFTWARE</span>
-        </div>
-        <h3 class="srv-card-title">Cinematic Product Walkthroughs &amp;amp; Teasers</h3>
-        <p class="srv-card-desc">Dynamic UI screen recordings paired with 3D isometric graphics and professional voiceover explaining complex value props.</p>
-        <div class="srv-industry-outcome">
-          <span class="srv-deliverable-lbl">PRIMARY BUSINESS OUTCOME:</span>
-          <strong class="text-brand">+48% Increase in Homepage Demo Booking</strong>
+
+      <div class="srv-card">
+        <h3 class="srv-card-title">B2B SaaS</h3>
+        <p class="srv-card-desc"><strong>Product Walkthrough Edits:</strong> Screen recordings, text and voiceover edited into clean demos.</p>
+        <div class="srv-sector-outcome">
+          <span class="srv-outcome-badge">Outcome</span>
+          <span>More demo bookings.</span>
         </div>
       </div>
-      <div class="srv-industry-card">
-        <div class="srv-industry-header">
-          <div class="srv-icon-box"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg></div>
-          <span class="srv-industry-tag">HEALTHCARE &amp; BIOTECH</span>
-        </div>
-        <h3 class="srv-card-title">Empathetic Patient Story Documentaries</h3>
-        <p class="srv-card-desc">High-production clinical documentaries showcasing patient recoveries, physician expertise, and sterile lab technologies.</p>
-        <div class="srv-industry-outcome">
-          <span class="srv-deliverable-lbl">PRIMARY BUSINESS OUTCOME:</span>
-          <strong class="text-brand">94% Viewer Retention on Educational Case Videos</strong>
+
+      <div class="srv-card">
+        <h3 class="srv-card-title">Real Estate</h3>
+        <p class="srv-card-desc"><strong>Property Video Edits:</strong> Walkthroughs and drone clips cut into smooth property tours.</p>
+        <div class="srv-sector-outcome">
+          <span class="srv-outcome-badge">Outcome</span>
+          <span>More site-visit enquiries.</span>
         </div>
       </div>
-      <div class="srv-industry-card">
-        <div class="srv-industry-header">
-          <div class="srv-icon-box"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="18" height="18" rx="2" ry="2"/><line x1="3" y1="9" x2="21" y2="9"/><line x1="9" y1="21" x2="9" y2="9"/></svg></div>
-          <span class="srv-industry-tag">LUXURY REAL ESTATE &amp; RESORTS</span>
-        </div>
-        <h3 class="srv-card-title">4K Drone &amp;amp; Architectural Cinematography</h3>
-        <p class="srv-card-desc">Golden-hour aerial flyovers, stabilized interior walkthroughs, and lifestyle vignettes for multi-million-dollar listings.</p>
-        <div class="srv-industry-outcome">
-          <span class="srv-deliverable-lbl">PRIMARY BUSINESS OUTCOME:</span>
-          <strong class="text-brand">M+ in Inbound International Inquiries</strong>
+
+      <div class="srv-card">
+        <h3 class="srv-card-title">Education</h3>
+        <p class="srv-card-desc"><strong>Course and Promo Edits:</strong> Course promos and lecture clips edited and captioned.</p>
+        <div class="srv-sector-outcome">
+          <span class="srv-outcome-badge">Outcome</span>
+          <span>More student sign-ups.</span>
         </div>
       </div>
-      <div class="srv-industry-card">
-        <div class="srv-industry-header">
-          <div class="srv-icon-box"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="12" y1="1" x2="12" y2="23"/><path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/></svg></div>
-          <span class="srv-industry-tag">FINTECH &amp; INVESTMENT FIRMS</span>
-        </div>
-        <h3 class="srv-card-title">High-Trust Corporate Brand Films</h3>
-        <p class="srv-card-desc">Executive interviews and trading floor b-roll that project financial stability, regulatory compliance, and technological prowess.</p>
-        <div class="srv-industry-outcome">
-          <span class="srv-deliverable-lbl">PRIMARY BUSINESS OUTCOME:</span>
-          <strong class="text-brand">Instituted as Core Pitch Deck Asset for Series B</strong>
+
+      <div class="srv-card">
+        <h3 class="srv-card-title">Healthcare</h3>
+        <p class="srv-card-desc"><strong>Clinic and Doctor Videos:</strong> Warm, clear videos for doctors and clinics.</p>
+        <div class="srv-sector-outcome">
+          <span class="srv-outcome-badge">Outcome</span>
+          <span>More patient trust and bookings.</span>
         </div>
       </div>
-      <div class="srv-industry-card">
-        <div class="srv-industry-header">
-          <div class="srv-icon-box"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/></svg></div>
-          <span class="srv-industry-tag">MANUFACTURING &amp; INDUSTRIAL</span>
-        </div>
-        <h3 class="srv-card-title">Factory Tour &amp;amp; Engineering Showcase</h3>
-        <p class="srv-card-desc">Robotics in motion, laser cutting close-ups, and ISO-certified assembly line footage establishing manufacturing authority.</p>
-        <div class="srv-industry-outcome">
-          <span class="srv-deliverable-lbl">PRIMARY BUSINESS OUTCOME:</span>
-          <strong class="text-brand">Replaced In-Person Audits for Overseas Buyers</strong>
-        </div>
-      </div>
-          </div>
-      <div class="srv-carousel-dots" aria-hidden="true"></div>
     </div>
   </div>
 </section>
 
 <!-- ============================================================
-     SECTION 10 — INTERACTIVE FAQ ACCORDION
+     SECTION 9 — FREQUENTLY ASKED QUESTIONS
      ============================================================ -->
-<section class="srv-section srv-bg-surface" id="faq">
+<section class="srv-section" id="faq">
   <div class="srv-container">
     <div class="srv-section-header text-center">
       <div class="srv-badge">
         <span class="srv-badge-dot"></span>
-        <span>FREQUENTLY ASKED QUESTIONS</span>
+        <span>QUESTIONS &amp; ANSWERS</span>
       </div>
       <h2 class="srv-section-title">
-        Common Questions About <span class="text-brand">Creative Production &amp; Video Marketing</span>
+        Hiring a Video Editing Company in Delhi: <span class="text-brand">Your Questions Answered</span>
       </h2>
       <p class="srv-section-subtitle">
-        Everything you need to know about our scope, timeline, engineering standards, communication, and ongoing support.
+        Everything you need to know about our video editing process, pricing, timelines, and deliverables.
       </p>
     </div>
 
     <div class="srv-faq-container">
       <div class="srv-faq-item">
-        <button type="button" class="srv-faq-btn" aria-expanded="false" aria-controls="faq-ans-0">
-          <span class="srv-faq-question">What is included in a typical commercial video production package?</span>
-          <span class="srv-faq-icon" aria-hidden="true">+</span>
-        </button>
-        <div id="faq-ans-0" class="srv-faq-panel">
-          <div class="srv-faq-content">
-            <p>Our full-service packages include end-to-end execution: creative concepting, scriptwriting, professional voiceover, location scouting, casting, 4K/6K cinema camera filming, professional lighting grids, audio capture, editorial cutting, DaVinci Resolve color grading, motion graphics, licensed commercial music, and export in all social and broadcast aspect ratios.</p>
-          </div>
-        </div>
-      </div>
-      <div class="srv-faq-item">
         <button type="button" class="srv-faq-btn" aria-expanded="false" aria-controls="faq-ans-1">
-          <span class="srv-faq-question">Can you shoot on location at our company offices or factory?</span>
+          <span class="srv-faq-question">How much does a video editing company in Delhi charge?</span>
           <span class="srv-faq-icon" aria-hidden="true">+</span>
         </button>
         <div id="faq-ans-1" class="srv-faq-panel">
           <div class="srv-faq-content">
-            <p>Yes. Our production crews regularly travel nationwide and internationally with compact, airline-approved cinema gear to film on-site at corporate headquarters, manufacturing facilities, medical clinics, and remote client locations.</p>
+            <p>The price depends on video length, style and how many videos you need. Share your requirements and we will send you a clear quote.</p>
           </div>
         </div>
       </div>
+
       <div class="srv-faq-item">
         <button type="button" class="srv-faq-btn" aria-expanded="false" aria-controls="faq-ans-2">
-          <span class="srv-faq-question">How many revisions do we get during the video editing phase?</span>
+          <span class="srv-faq-question">How do I hire BusinessDoctor as my video editing company in Delhi?</span>
           <span class="srv-faq-icon" aria-hidden="true">+</span>
         </button>
         <div id="faq-ans-2" class="srv-faq-panel">
           <div class="srv-faq-content">
-            <p>We conduct structured feedback milestones using Frame.io, allowing you to click anywhere on the video frame and leave exact time-stamped comments. We include up to two rounds of comprehensive revisions after the initial rough cut to guarantee perfection.</p>
+            <p>Fill the form or call us. Share your footage and goal, and we confirm the scope, price and delivery date before we start. We work with brands in Delhi and across Delhi NCR, and online with clients across India.</p>
           </div>
         </div>
       </div>
+
       <div class="srv-faq-item">
         <button type="button" class="srv-faq-btn" aria-expanded="false" aria-controls="faq-ans-3">
-          <span class="srv-faq-question">Do you provide vertical (9:16) video cuts for Instagram Reels and TikTok?</span>
+          <span class="srv-faq-question">What does your video editing package include?</span>
           <span class="srv-faq-icon" aria-hidden="true">+</span>
         </button>
         <div id="faq-ans-3" class="srv-faq-panel">
           <div class="srv-faq-content">
-            <p>Yes. We plan for multi-format delivery during the storyboard stage. Our cameras compose shots that allow native vertical 9:16 crops with customized kinetic captions optimized specifically for Instagram Reels, TikTok, and YouTube Shorts.</p>
+            <p>Cutting, colour correction, sound clean-up, captions, brand graphics, exports in every size and revisions. Monthly packages also include a dedicated editor.</p>
           </div>
         </div>
       </div>
+
       <div class="srv-faq-item">
         <button type="button" class="srv-faq-btn" aria-expanded="false" aria-controls="faq-ans-4">
-          <span class="srv-faq-question">Who owns the final video files and raw footage?</span>
+          <span class="srv-faq-question">How many revisions do I get?</span>
           <span class="srv-faq-icon" aria-hidden="true">+</span>
         </button>
         <div id="faq-ans-4" class="srv-faq-panel">
           <div class="srv-faq-content">
-            <p>You receive 100% full ownership and worldwide commercial broadcast rights to all final rendered video assets upon project completion. Raw footage archives can also be delivered on portable hard drives upon request.</p>
+            <p>Revision rounds are included in every project. Tell us the exact changes and we update the video until it matches your brief.</p>
           </div>
         </div>
       </div>
+
       <div class="srv-faq-item">
         <button type="button" class="srv-faq-btn" aria-expanded="false" aria-controls="faq-ans-5">
-          <span class="srv-faq-question">How long does the entire production process take from start to finish?</span>
+          <span class="srv-faq-question">What is the turnaround time after I share my footage?</span>
           <span class="srv-faq-icon" aria-hidden="true">+</span>
         </button>
         <div id="faq-ans-5" class="srv-faq-panel">
           <div class="srv-faq-content">
-            <p>A typical commercial or performance video ad project takes 2 to 4 weeks from initial concept and script approval to final delivery. Rapid short-form social video batches can often be delivered in under 10 business days.</p>
+            <p>We fix the delivery date before we start. Short social edits move faster, and longer corporate videos take more time. Ask for a quote with a timeline.</p>
           </div>
         </div>
       </div>
+
       <div class="srv-faq-item">
         <button type="button" class="srv-faq-btn" aria-expanded="false" aria-controls="faq-ans-6">
-          <span class="srv-faq-question">Can you create animated 3D product videos if we do not have physical prototypes yet?</span>
+          <span class="srv-faq-question">Does your video editing company in Delhi offer monthly plans?</span>
           <span class="srv-faq-icon" aria-hidden="true">+</span>
         </button>
         <div id="faq-ans-6" class="srv-faq-panel">
           <div class="srv-faq-content">
-            <p>Yes. If you provide CAD files (STEP, IGES, OBJ, or FBX), our 3D team can texture, light, and animate photorealistic 3D renders that look identical to a physical product before your manufacturing tooling is even finished.</p>
+            <p>Yes. Pick a fixed number of videos per month with one dedicated editor and priority delivery. Tell us your deadline and we will confirm if it works.</p>
           </div>
         </div>
       </div>
+
       <div class="srv-faq-item">
         <button type="button" class="srv-faq-btn" aria-expanded="false" aria-controls="faq-ans-7">
-          <span class="srv-faq-question">How does your team ensure video ads actually convert into revenue?</span>
+          <span class="srv-faq-question">Do you deliver vertical cuts for Reels and Shorts?</span>
           <span class="srv-faq-icon" aria-hidden="true">+</span>
         </button>
         <div id="faq-ans-7" class="srv-faq-panel">
           <div class="srv-faq-content">
-            <p>We structure scripts using proven direct-response marketing principles: immediate 3-second pattern interrupts, rapid identification of customer pain points, clear demonstration of your unique solution, social proof, and a single, compelling call to action.</p>
+            <p>Yes. Every video can be exported in 9:16, 16:9 and 1:1, so one edit fits every app.</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="srv-faq-item">
+        <button type="button" class="srv-faq-btn" aria-expanded="false" aria-controls="faq-ans-8">
+          <span class="srv-faq-question">Do I own the final video files after delivery?</span>
+          <span class="srv-faq-icon" aria-hidden="true">+</span>
+        </button>
+        <div id="faq-ans-8" class="srv-faq-panel">
+          <div class="srv-faq-content">
+            <p>Yes. Once the project is complete, the final videos are yours to use anywhere you want.</p>
           </div>
         </div>
       </div>
@@ -1052,7 +816,7 @@ $consultationUrl = appUrl('contact.php?service=' . urlencode($serviceName));
 </section>
 
 <!-- ============================================================
-     SECTION 11 — FINAL CONVERSION CTA
+     SECTION 10 — FINAL CONVERSION CTA
      ============================================================ -->
 <section class="srv-section srv-cta-section" id="cta">
   <div class="srv-container">
@@ -1062,15 +826,15 @@ $consultationUrl = appUrl('contact.php?service=' . urlencode($serviceName));
         <div class="srv-cta-grid-2col">
           <div>
             <div class="srv-badge mb-3">
-          <span class="srv-badge-dot"></span>
-          <span>TAKE THE NEXT STEP</span>
-        </div>
+              <span class="srv-badge-dot"></span>
+              <span>TAKE THE NEXT STEP</span>
+            </div>
             <h2 class="srv-cta-title">
-          Ready to Elevate Your Brand with <span class="text-brand">Cinema-Grade Video?</span>
-        </h2>
+              Ready to Hire a <span class="text-brand">Video Editing Company in Delhi That Delivers?</span>
+            </h2>
             <p class="srv-cta-lead">
-          Schedule a creative consultation. Our executive producers will review your campaign objectives, analyze your brand visual assets, and present tailored commercial concepts.
-        </p>
+              Looking for a video editing company in Delhi? We work with brands in Noida, Delhi and across Delhi NCR, and online with clients all over India. Send your footage, tell us what you want, and we will send you a quote.
+            </p>
             <div class="srv-cta-actions" style="justify-content: flex-start; margin-bottom: 2rem;">
               <a href="<?= e($consultationUrl) ?>" class="btn-srv-primary btn-srv-lg">
                 <span>Get a Free Consultation</span>
@@ -1105,20 +869,20 @@ $consultationUrl = appUrl('contact.php?service=' . urlencode($serviceName));
               <form action="<?= appUrl('contact.php') ?>" method="GET" class="srv-quick-form">
                 <input type="hidden" name="service" value="<?= e($serviceName) ?>">
                 <div class="srv-form-group">
-                  <label class="srv-form-label" for="quick_name_video-editing.php">Your Full Name</label>
-                  <input type="text" id="quick_name_video-editing.php" name="name" required class="srv-form-input" placeholder="e.g. Sarah Jenkins">
+                  <label class="srv-form-label" for="quick_name_video-editing">Your Full Name</label>
+                  <input type="text" id="quick_name_video-editing" name="name" required class="srv-form-input" placeholder="e.g. Sarah Jenkins">
                 </div>
                 <div class="srv-form-group">
-                  <label class="srv-form-label" for="quick_email_video-editing.php">Work Email</label>
-                  <input type="email" id="quick_email_video-editing.php" name="email" required class="srv-form-input" placeholder="e.g. sarah@enterprise.com">
+                  <label class="srv-form-label" for="quick_email_video-editing">Work Email</label>
+                  <input type="email" id="quick_email_video-editing" name="email" required class="srv-form-input" placeholder="e.g. sarah@enterprise.com">
                 </div>
                 <div class="srv-form-group">
-                  <label class="srv-form-label" for="quick_company_video-editing.php">Company / Domain</label>
-                  <input type="text" id="quick_company_video-editing.php" name="company" class="srv-form-input" placeholder="e.g. Enterprise Corp (enterprise.com)">
+                  <label class="srv-form-label" for="quick_company_video-editing">Company / Domain</label>
+                  <input type="text" id="quick_company_video-editing" name="company" class="srv-form-input" placeholder="e.g. Enterprise Corp (enterprise.com)">
                 </div>
                 <div class="srv-form-group">
-                  <label class="srv-form-label" for="quick_notes_video-editing.php">Project Scope &amp; Objectives</label>
-                  <textarea id="quick_notes_video-editing.php" name="notes" rows="2" class="srv-form-textarea" placeholder="Briefly describe your timeline, goals, or current technical bottlenecks..."></textarea>
+                  <label class="srv-form-label" for="quick_notes_video-editing">Project Scope &amp; Objectives</label>
+                  <textarea id="quick_notes_video-editing" name="notes" rows="2" class="srv-form-textarea" placeholder="Briefly describe your timeline, goals, or current technical bottlenecks..."></textarea>
                 </div>
                 <button type="submit" class="srv-form-submit">
                   <span>Send Consultation Request</span>
@@ -1133,7 +897,6 @@ $consultationUrl = appUrl('contact.php?service=' . urlencode($serviceName));
           </div>
         </div>
       </div>
-    </div>
     </div>
   </div>
 </section>

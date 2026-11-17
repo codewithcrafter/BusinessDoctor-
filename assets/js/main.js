@@ -216,10 +216,13 @@ document.addEventListener('DOMContentLoaded', () => {
     // --- Click & Touch Interaction ---
     if (trigger) {
       trigger.addEventListener('click', (e) => {
-        e.preventDefault();
-        if (megaMenuItem.classList.contains('is-open')) {
-          closeMenu();
-        } else {
+        // Desktop / Pointer devices: allow direct navigation to /services on click
+        if (window.innerWidth > 991 || window.matchMedia('(hover: hover) and (pointer: fine)').matches) {
+          return;
+        }
+        // Touch devices without hover: first tap opens dropdown, second tap navigates
+        if (!megaMenuItem.classList.contains('is-open')) {
+          e.preventDefault();
           openMenu();
         }
       });

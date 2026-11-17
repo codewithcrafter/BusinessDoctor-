@@ -10,13 +10,13 @@ require_once __DIR__ . '/includes/config.php';
 require_once __DIR__ . '/includes/db.php';
 require_once __DIR__ . '/includes/functions.php';
 
-// 301 Permanent Redirect legacy URLs to canonical /digital-marketing-company-in-delhi
+// 301 Permanent Redirect legacy URLs to canonical /services
 $canonicalUrl = getServicesOverviewUrl();
 $canonicalPath = parse_url($canonicalUrl, PHP_URL_PATH);
 $reqPath = parse_url($_SERVER['REQUEST_URI'] ?? '', PHP_URL_PATH) ?? '';
 
 if ($reqPath !== $canonicalPath && in_array($reqPath, [
-    '/services.php', '/services/',
+    '/services.php',
     '/company', '/company/',
     '/company-in-delhi', '/company-in-delhi/',
     '/digital-marketing-company-in-delhi', '/digital-marketing-company-in-delhi/'
@@ -26,27 +26,27 @@ if ($reqPath !== $canonicalPath && in_array($reqPath, [
     exit;
 }
 
-$pageTitle = 'Digital Marketing Services Delhi NCR — BusinessDoctor';
-$pageDescription = 'Targeted digital marketing and technology growth solutions for businesses in Delhi NCR: SMO, Google Business Profile, PPC Ads, Ecommerce, Graphic Design, SEO, SMM, Product Photography, Video Editing, and Web Development.';
+$pageTitle = 'Digital Marketing Company in Delhi That Turns Clicks Into Customers — BusinessDoctor';
+$pageDescription = 'Business Doctor provides digital marketing services in Delhi NCR. We provide services like seo, social media marketing, content marketing, email marketing, lead generation, web development, graphic design, etc.';
 $schemaPageKey = 'services';
 
-$practices = getPracticeAreas();
+$practices = getPracticeAreas(true);
 
 require_once __DIR__ . '/includes/header.php';
 ?>
 
 <!-- Services Hero -->
 <section class="section hero-enterprise" style="padding-top: 5rem; padding-bottom: 4rem;">
-  <div class="container text-center" style="max-width: 900px; margin: 0 auto;">
+  <div class="container text-center" style="max-width: 920px; margin: 0 auto;">
     <div class="eyebrow-badge">
       <span class="pill-dot"></span>
-      <span>DIGITAL &amp; TECHNOLOGY SERVICES</span>
+      <span>DIGITAL MARKETING SERVICES IN DELHI NCR</span>
     </div>
     <h1 class="hero-headline-oversized" style="font-size: clamp(2.4rem, 4.5vw, 3.8rem); margin-top: 1rem; margin-bottom: 1.5rem;">
-      Full-Stack Technology &amp; <br><span class="text-brand">Digital Growth Disciplines</span>
+      Digital Marketing Company in Delhi <br><span class="text-brand">That Turns Clicks Into Customers</span>
     </h1>
-    <p class="hero-lead-text" style="max-width: 780px; margin: 0 auto 2rem;">
-      We engineer high-performance web software, manage profitable paid acquisition portfolios, and build distinctive brand architectures. Ten specialized disciplines operating under one accountable standard.
+    <p class="hero-lead-text" style="max-width: 840px; margin: 0 auto 2rem;">
+      Business Doctor provides digital marketing services in Delhi NCR. We provide services like seo, social media marketing, content marketing, email marketing, lead generation, web development, graphic design, etc. We manage everything from website development to social media marketing. We customize everything according to your needs and your business's needs so that you get quality leads and potential customers.
     </p>
   </div>
 </section>
@@ -112,23 +112,27 @@ require_once __DIR__ . '/includes/header.php';
                   PERFORMANCE BENCHMARKS
                 </span>
                 <div class="practice-icon" style="width: 40px; height: 40px; background: rgba(6, 181, 249, 0.15); color: var(--color-accent); border-color: rgba(6, 181, 249, 0.3);">
-                  <?= $p['icon'] ?>
+                  <?= $p['icon'] ?? '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg>' ?>
                 </div>
               </div>
 
+              <?php if (!empty($p['kpis'][0])): ?>
               <div class="cap-sidebar-kpi-block">
                 <div class="cap-sidebar-kpi-label">KEY PERFORMANCE COMMITMENT</div>
                 <div class="cap-sidebar-kpi-value"><?= e($p['kpis'][0]) ?></div>
               </div>
+              <?php endif; ?>
 
+              <?php if (count($p['kpis']) > 1): ?>
               <div style="margin-top: 2rem;">
                 <div class="cap-sidebar-kpi-label">TECHNICAL STANDARDS</div>
                 <div class="cap-sidebar-chips">
-                  <?php foreach ($p['kpis'] as $kpi): ?>
-                    <span class="cap-sidebar-chip"><?= e($kpi) ?></span>
-                  <?php endforeach; ?>
+                  <?php for ($i = 1; $i < count($p['kpis']); $i++): ?>
+                    <span class="cap-sidebar-chip"><?= e($p['kpis'][$i]) ?></span>
+                  <?php endfor; ?>
                 </div>
               </div>
+              <?php endif; ?>
             </div>
 
             <div style="margin-top: 3rem; border-top: 1px solid rgba(255,255,255,0.12); padding-top: 1.5rem; font-family: var(--font-mono); font-size: 0.78rem; color: rgba(255,255,255,0.7);">
@@ -146,9 +150,9 @@ require_once __DIR__ . '/includes/header.php';
   <div class="container text-center">
     <div class="enterprise-closing-cta">
       <div class="closing-cta-content">
-        <h2 class="closing-cta-title">Need a Custom IT or Marketing Solution?</h2>
+        <h2 class="closing-cta-title">Need a Custom IT or Digital Marketing Solution for Your Business?</h2>
         <p class="closing-cta-lead">
-          Our senior technical architects are available to discuss your specifications, provide recommendations, and formulate a transparent scope.
+          Every business has different goals and we customise every project according to your needs because we believe that every business needs a different strategy to grow. Business Doctor is a digital marketing company in delhi that provides you with the best digital marketing services in delhi NCR
         </p>
         <div class="closing-cta-buttons">
           <a href="<?= appUrl('contact.php') ?>" class="btn btn-primary btn-lg">

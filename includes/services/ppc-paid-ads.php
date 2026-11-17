@@ -21,46 +21,67 @@ $consultationUrl = appUrl('contact.php?service=' . urlencode($serviceName));
       <div class="srv-col-12 srv-col-lg-6">
         <div class="srv-eyebrow">
           <span class="srv-eyebrow-dot"></span>
-          <span>PERFORMANCE MEDIA & PROFITABLE SCALING</span>
+          <span>PPC COMPANY IN DELHI</span>
         </div>
         <h1 class="srv-hero-title">
-          Precision Paid Advertising Engineered for <br><span class="text-brand">Maximum ROAS &amp; Lowest CAC</span>
+          PPC Company in Delhi for <br><span class="text-brand">High-ROAS Google, Meta and LinkedIn Ad Campaigns</span>
         </h1>
         <p class="srv-hero-desc">
-          We architect disciplined, data-driven paid advertising campaigns across Google Search, Performance Max, Meta Ads, and LinkedIn B2B. With server-side conversion tracking (CAPI), negative keyword architecture, and conversion rate optimization, every dollar is engineered for profitable return.
+          We are a PPC company in Delhi that runs Google, Meta and LinkedIn ads for brands that want leads and sales, not just clicks. Our team is based in Delhi NCR. We set up your campaigns, fix your tracking and send you a clear report every week. Share your ad account and we will do a free audit and send you a quote.
         </p>
 
         <div class="srv-hero-actions">
           <a href="<?= e($consultationUrl) ?>" class="btn-srv-primary">
-            <span>Get a Free Consultation</span>
+            <span>Get a Free Audit &amp; Quote</span>
             <svg class="btn-srv-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
-              <line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/>
+              <line x1="5" y1="12" x2="19" y2="12"/>
+              <polyline points="12 5 19 12 12 19"/>
             </svg>
           </a>
           <a href="#services-list" class="btn-srv-secondary">
-            <span>Explore Scope</span>
+            <span>Explore Services</span>
             <svg class="btn-srv-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
               <polyline points="6 9 12 15 18 9"/>
             </svg>
           </a>
         </div>
 
-        <div class="srv-hero-stats">
-          <div class="srv-hero-stat-item">
-            <span class="srv-hero-stat-val">3.8x+</span>
-            <span class="srv-hero-stat-lbl">Verified Average ROAS</span>
+        <div class="srv-hero-propositions">
+          <div class="srv-hero-prop-card">
+            <div class="srv-hero-prop-icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"/><polyline points="3.27 6.96 12 12.01 20.73 6.96"/><line x1="12" y1="22.08" x2="12" y2="12"/></svg>
+            </div>
+            <div class="srv-hero-prop-content">
+              <span class="srv-hero-prop-val">Google &bull; Meta</span>
+              <span class="srv-hero-prop-lbl">Google, Meta, LinkedIn - ad platforms we manage</span>
+            </div>
           </div>
-          <div class="srv-hero-stat-item">
-            <span class="srv-hero-stat-val">-40%</span>
-            <span class="srv-hero-stat-lbl">Customer Acquisition Cost</span>
+          <div class="srv-hero-prop-card">
+            <div class="srv-hero-prop-icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
+            </div>
+            <div class="srv-hero-prop-content">
+              <span class="srv-hero-prop-val">Weekly</span>
+              <span class="srv-hero-prop-lbl">Weekly - performance report</span>
+            </div>
           </div>
-          <div class="srv-hero-stat-item">
-            <span class="srv-hero-stat-val">100%</span>
-            <span class="srv-hero-stat-lbl">Server-Side CAPI Tracked</span>
+          <div class="srv-hero-prop-card">
+            <div class="srv-hero-prop-icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="11" width="18" height="11" rx="2" ry="2"/><path d="M7 11V7a5 5 0 0 1 9.9-1"/></svg>
+            </div>
+            <div class="srv-hero-prop-content">
+              <span class="srv-hero-prop-val">No Lock In</span>
+              <span class="srv-hero-prop-lbl">No lock in - cancel anytime</span>
+            </div>
           </div>
-          <div class="srv-hero-stat-item">
-            <span class="srv-hero-stat-val">0%</span>
-            <span class="srv-hero-stat-lbl">Wasted Ad Spend</span>
+          <div class="srv-hero-prop-card">
+            <div class="srv-hero-prop-icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="2" width="20" height="8" rx="2" ry="2"/><rect x="2" y="14" width="20" height="8" rx="2" ry="2"/><line x1="6" y1="6" x2="6.01" y2="6"/><line x1="6" y1="18" x2="6.01" y2="18"/></svg>
+            </div>
+            <div class="srv-hero-prop-content">
+              <span class="srv-hero-prop-val">Server Side</span>
+              <span class="srv-hero-prop-lbl">Server side - tracking setup included</span>
+            </div>
           </div>
         </div>
       </div>
@@ -75,27 +96,22 @@ $consultationUrl = appUrl('contact.php?service=' . urlencode($serviceName));
               <path d="M60 0V440M120 0V440M180 0V440M240 0V440M300 0V440M360 0V440M420 0V440M480 0V440M540 0V440" stroke="#06B5F9" stroke-opacity="0.08"/>
               <rect width="600" height="40" rx="14" fill="#0A223B"/>
               <circle cx="28" cy="20" r="5" fill="#F87171"/><circle cx="46" cy="20" r="5" fill="#FBBF24"/><circle cx="64" cy="20" r="5" fill="#34D399"/>
-              <text x="90" y="24" fill="#8FA3B8" font-family="monospace" font-size="11" font-weight="600">businessdoctor.internal :: telemetry-engine.v2</text>
-              
-              <rect x="50" y="70" width="230" height="90" rx="8" fill="#0D2644" stroke="#06B5F9" stroke-width="1.5" stroke-opacity="0.4"/>
-              <text x="70" y="95" fill="#06B5F9" font-family="monospace" font-size="11" font-weight="bold">// DISCIPLINE // 03</text>
-              <text x="70" y="122" fill="#F5F7FA" font-family="sans-serif" font-size="14" font-weight="bold">PPC / Paid Ads</text>
-              <text x="70" y="142" fill="#B8C7D9" font-family="monospace" font-size="11">Active Execution &bull; Calibrated</text>
-
-              <rect x="320" y="70" width="230" height="90" rx="8" fill="#0D2644" stroke="#06B5F9" stroke-width="1.5" stroke-opacity="0.4"/>
-              <text x="340" y="95" fill="#06B5F9" font-family="monospace" font-size="11" font-weight="bold">// AUDIT &amp; QUALITY</text>
-              <text x="340" y="122" fill="#F5F7FA" font-family="sans-serif" font-size="14" font-weight="bold">Enterprise SLA Standards</text>
-              <text x="340" y="142" fill="#B8C7D9" font-family="monospace" font-size="11">Continuous Accountability</text>
-
-              <line x1="280" y1="115" x2="320" y2="115" stroke="#06B5F9" stroke-width="2" stroke-dasharray="3 3"/>
-
-              <rect x="50" y="180" width="500" height="225" rx="10" fill="#051424" stroke="#06B5F9" stroke-width="1" stroke-opacity="0.3"/>
-              <text x="70" y="210" fill="#34D399" font-family="monospace" font-size="12">$ execute --benchmark ppc-paid-ads</text>
-              <text x="70" y="235" fill="#F5F7FA" font-family="monospace" font-size="11">&gt; 200 OK &bull; [Status: Calibrated] [Throughput: High]</text>
-              <text x="70" y="260" fill="#8FA3B8" font-family="monospace" font-size="11">&gt; Core Standard: Zero Fluff, Measurable Business ROI</text>
-              <text x="70" y="285" fill="#06B5F9" font-family="monospace" font-size="11">&gt; Verification Protocol: 100% Quality Assurance</text>
-              <text x="70" y="310" fill="#B8C7D9" font-family="monospace" font-size="11">&gt; Operational Readiness: Verified</text>
-              <text x="70" y="340" fill="#34D399" font-family="monospace" font-size="11">&gt; All Systems Active</text>
+              <text x="90" y="24" fill="#8FA3B8" font-family="monospace" font-size="11" font-weight="600">businessdoctor.ads :: ppc-performance-engine</text>
+              <rect x="40" y="65" width="520" height="150" rx="10" fill="#030E1A" stroke="#06B5F9" stroke-width="1.5" stroke-opacity="0.4"/>
+              <text x="65" y="100" fill="#06B5F9" font-family="monospace" font-size="12" font-weight="bold">// CAMPAIGN CONVERSION FUNNEL</text>
+              <path d="M 65 170 L 150 130 L 240 150 L 330 100 L 420 120 L 520 75" stroke="#34D399" stroke-width="3" fill="none"/>
+              <circle cx="520" cy="75" r="5" fill="#34D399"/>
+              <text x="440" y="65" fill="#34D399" font-family="sans-serif" font-size="13" font-weight="bold">High-ROAS</text>
+              <rect x="40" y="235" width="250" height="170" rx="8" fill="#0D2644" stroke="#06B5F9" stroke-opacity="0.3"/>
+              <text x="60" y="265" fill="#06B5F9" font-family="monospace" font-size="11" font-weight="bold">// TRACKING ARCHITECTURE</text>
+              <text x="60" y="305" fill="#34D399" font-family="sans-serif" font-size="28" font-weight="900">Server-Side</text>
+              <text x="60" y="330" fill="#B8C7D9" font-family="sans-serif" font-size="12">CAPI &bull; GTM &bull; GA4 Tracked</text>
+              <text x="60" y="365" fill="#ffffff" font-family="sans-serif" font-size="13" font-weight="600">100% Attribution Accuracy</text>
+              <rect x="310" y="235" width="250" height="170" rx="8" fill="#0D2644" stroke="#06B5F9" stroke-opacity="0.3"/>
+              <text x="330" y="265" fill="#06B5F9" font-family="monospace" font-size="11" font-weight="bold">// CONTRACT TERMS</text>
+              <text x="330" y="305" fill="#06B5F9" font-family="sans-serif" font-size="28" font-weight="900">No Lock-In</text>
+              <text x="330" y="330" fill="#B8C7D9" font-family="sans-serif" font-size="12">Weekly Performance Reports</text>
+              <text x="330" y="365" fill="#34D399" font-family="sans-serif" font-size="13" font-weight="600">Full Account Ownership</text>
             </svg>
           </div>
         </div>
@@ -105,7 +121,66 @@ $consultationUrl = appUrl('contact.php?service=' . urlencode($serviceName));
 </section>
 
 <!-- ============================================================
-     SECTION 2 — SERVICE INTRODUCTION
+     KEY TAKEAWAYS & EXECUTIVE SUMMARY
+     ============================================================ -->
+<section class="srv-section srv-section-takeaways" style="padding-top: 0; padding-bottom: 2.5rem;">
+  <div class="srv-container">
+    <div class="srv-key-takeaways">
+      <div class="srv-takeaways-header">
+        <div class="srv-takeaways-kicker">
+          <svg class="srv-takeaways-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"/></svg>
+          <span>Why Brands Hire BusinessDoctor as Their PPC Company in Delhi</span>
+        </div>
+        <span class="srv-takeaways-pill">Core Execution Highlights</span>
+      </div>
+      <div class="srv-takeaways-grid">
+        <div class="srv-takeaway-card">
+          <div class="srv-takeaway-top">
+            <span class="srv-takeaway-val">Revenue</span>
+            <div class="srv-takeaway-badge">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
+            </div>
+          </div>
+          <span class="srv-takeaway-label">Revenue First Reporting</span>
+          <p class="srv-takeaway-desc">We report on sales and cost per lead, not just clicks.</p>
+        </div>
+        <div class="srv-takeaway-card">
+          <div class="srv-takeaway-top">
+            <span class="srv-takeaway-val">Server-Side</span>
+            <div class="srv-takeaway-badge">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
+            </div>
+          </div>
+          <span class="srv-takeaway-label">Server Side Tracking</span>
+          <p class="srv-takeaway-desc">You see which ad brought which enquiry.</p>
+        </div>
+        <div class="srv-takeaway-card">
+          <div class="srv-takeaway-top">
+            <span class="srv-takeaway-val">No Lock-In</span>
+            <div class="srv-takeaway-badge">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
+            </div>
+          </div>
+          <span class="srv-takeaway-label">No Lock In Contracts</span>
+          <p class="srv-takeaway-desc">Stay because the results are good, not because you signed.</p>
+        </div>
+        <div class="srv-takeaway-card">
+          <div class="srv-takeaway-top">
+            <span class="srv-takeaway-val">1-on-1</span>
+            <div class="srv-takeaway-badge">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
+            </div>
+          </div>
+          <span class="srv-takeaway-label">Dedicated Ad Manager</span>
+          <p class="srv-takeaway-desc">One person owns your account and picks up your calls.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============================================================
+     SECTION 2 — SERVICE INTRODUCTION & PHILOSOPHY
      ============================================================ -->
 <section class="srv-section srv-bg-surface" id="introduction">
   <div class="srv-container">
@@ -113,49 +188,52 @@ $consultationUrl = appUrl('contact.php?service=' . urlencode($serviceName));
       <div class="srv-col-12 srv-col-lg-6">
         <div class="srv-badge mb-3">
           <span class="srv-badge-dot"></span>
-          <span>UNIT ECONOMICS PHILOSOPHY</span>
+          <span>DIRECT COMMERCIAL IMPACT</span>
         </div>
         <h2 class="srv-section-title">
-          Why Most Companies Burn Money on Ads &mdash; <span class="text-brand">And How We Fix It</span>
+          Hire a PPC Agency in Delhi Built for <span class="text-brand">Direct Commercial Impact</span>
         </h2>
         <p class="srv-section-subtitle mb-4">
-          Most digital advertising agencies focus on vanity metrics: impressions, clicks, and estimated reach. Meanwhile, client budgets are squandered on broad match keyword leakage, bot traffic, and fragmented post-iOS conversion tracking that misinforms bidding algorithms.
+          When you hire us as your PPC company in Delhi, one ad manager owns your account. We set up the campaigns, write the ads, fix the tracking and send a weekly report. Before you pay anything, you get a free audit of your account.
         </p>
         <p class="srv-card-desc mb-4">
-          At BusinessDoctor, we treat paid advertising as a financial instrument. We establish rock-solid server-side attribution, craft high-converting landing pages, engineer negative keyword fortresses, and scale only winning ad variants that deliver positive return on ad spend (ROAS).
+          As a Google Ads company in Delhi, we do not stop at the ad. We connect every campaign to a landing page and proper conversion tracking, so you know which ad brought which enquiry and which sale.
         </p>
 
         <div class="srv-feature-list mb-4">
-                    <div class="srv-feature-item">
+          <div class="srv-feature-item">
             <svg class="srv-check-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
             <div>
-              <strong class="text-white">Granular Keyword Intent:</strong> 
-              <span class="text-secondary">Strict exact and phrase match structures that eliminate irrelevant query waste.</span>
+              <strong class="text-white">Google Ads Management:</strong> 
+              <span class="text-secondary">High-intent search and lead generation campaigns.</span>
             </div>
-          </div>          <div class="srv-feature-item">
+          </div>
+          <div class="srv-feature-item">
             <svg class="srv-check-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
             <div>
-              <strong class="text-white">Server-Side CAPI Tracking:</strong> 
-              <span class="text-secondary">100% conversion attribution via Meta Conversions API and Google Tag Manager Server-Side.</span>
+              <strong class="text-white">Meta Ads Management:</strong> 
+              <span class="text-secondary">Facebook and Instagram performance sales funnels.</span>
             </div>
-          </div>          <div class="srv-feature-item">
+          </div>
+          <div class="srv-feature-item">
             <svg class="srv-check-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
             <div>
-              <strong class="text-white">Direct-Response Ad Creative:</strong> 
-              <span class="text-secondary">Psychology-backed ad copywriting, high-impact visuals, and video hooks that capture attention.</span>
+              <strong class="text-white">LinkedIn B2B Ads:</strong> 
+              <span class="text-secondary">Account-based targeting to decision makers.</span>
             </div>
-          </div>          <div class="srv-feature-item">
+          </div>
+          <div class="srv-feature-item">
             <svg class="srv-check-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
             <div>
-              <strong class="text-white">Continuous Landing Page CRO:</strong> 
-              <span class="text-secondary">Dedicated landing page A/B testing to maximize conversion rates and lower cost per acquisition.</span>
+              <strong class="text-white">Conversion Tracking and CRO:</strong> 
+              <span class="text-secondary">Server-side CAPI and high-converting landing pages.</span>
             </div>
           </div>
         </div>
 
         <div class="pt-2">
           <a href="<?= e($consultationUrl) ?>" class="btn-srv-primary">
-            <span>Schedule Diagnostic Call</span>
+            <span>Get a Free Audit &amp; Quote</span>
             <svg class="btn-srv-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
           </a>
         </div>
@@ -164,119 +242,44 @@ $consultationUrl = appUrl('contact.php?service=' . urlencode($serviceName));
       <div class="srv-col-12 srv-col-lg-6 mt-4 mt-lg-0">
         <div class="srv-hud-card">
           <div class="srv-hud-header">
-            <span class="srv-hud-title">PAID MEDIA PERFORMANCE TELEMETRY</span>
+            <span class="srv-hud-title">PPC PERFORMANCE TELEMETRY</span>
             <span class="srv-hud-status">
               <span class="srv-hud-pulse"></span>
-              SYSTEM STATUS: OPTIMAL
+              CAMPAIGNS MONITORED LIVE
             </span>
           </div>
           <div class="srv-hud-body">
             <p class="srv-card-desc mb-4">
-              Real-time telemetry tracking performance velocity, conversion attribution, and brand authority.
+              Real-time campaign tracking across Google, Meta, and LinkedIn with CAPI server-side sync.
             </p>
             <div class="srv-hud-metrics">
-                            <div class="srv-hud-metric-box">
-                <div class="srv-hud-metric-num">4.2x</div>
-                <div class="srv-hud-metric-label">Blended Target ROAS</div>
-              </div>              <div class="srv-hud-metric-box">
-                <div class="srv-hud-metric-num">$18.40</div>
-                <div class="srv-hud-metric-label">Target Cost Per Lead</div>
-              </div>              <div class="srv-hud-metric-box">
+              <div class="srv-hud-metric-box">
+                <div class="srv-hud-metric-num">Weekly</div>
+                <div class="srv-hud-metric-label">Reports</div>
+              </div>
+              <div class="srv-hud-metric-box">
+                <div class="srv-hud-metric-num">CAPI</div>
+                <div class="srv-hud-metric-label">Tracking Setup</div>
+              </div>
+              <div class="srv-hud-metric-box">
                 <div class="srv-hud-metric-num">100%</div>
-                <div class="srv-hud-metric-label">Conversion Event Match</div>
-              </div>              <div class="srv-hud-metric-box">
-                <div class="srv-hud-metric-num">84%</div>
-                <div class="srv-hud-metric-label">Impression Share</div>
+                <div class="srv-hud-metric-label">Account Ownership</div>
+              </div>
+              <div class="srv-hud-metric-box">
+                <div class="srv-hud-metric-num">High</div>
+                <div class="srv-hud-metric-label">Target ROAS</div>
               </div>
             </div>
             <div class="srv-hud-tag-list mt-3">
               <span class="srv-tool-badge">Google Ads</span>
-<span class="srv-tool-badge">Meta Ads Manager</span>
-<span class="srv-tool-badge">LinkedIn Campaign Mgr</span>
-<span class="srv-tool-badge">GTM Server-Side</span>
-<span class="srv-tool-badge">Triple Whale</span>
-<span class="srv-tool-badge">GA4</span>
-
+              <span class="srv-tool-badge">Meta Ads</span>
+              <span class="srv-tool-badge">LinkedIn Ads</span>
+              <span class="srv-tool-badge">Performance Max</span>
+              <span class="srv-tool-badge">CRO</span>
+              <span class="srv-tool-badge">CAPI Tracking</span>
             </div>
           </div>
         </div>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- ============================================================
-     SECTION 3 — PROBLEMS WE SOLVE
-     ============================================================ -->
-<section class="srv-section" id="pain-points">
-  <div class="srv-container">
-    <div class="srv-section-header text-center">
-      <div class="srv-badge">
-        <span class="srv-badge-dot"></span>
-        <span>CHALLENGES SOLVED</span>
-      </div>
-      <h2 class="srv-section-title">
-        Eliminating Costly <span class="text-brand">Paid Media Budget Waste</span>
-      </h2>
-      <p class="srv-section-subtitle">
-        The structural tracking and targeting failures that secretly destroy advertising profitability.
-      </p>
-    </div>
-
-    <div class="srv-grid srv-grid-3">
-      <div class="srv-card">
-        <div class="srv-card-icon-wrap">
-          <div class="srv-icon-box">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><line x1="22" y1="12" x2="18" y2="12"/><line x1="6" y1="12" x2="2" y2="12"/><line x1="12" y1="6" x2="12" y2="2"/><line x1="12" y1="22" x2="12" y2="18"/></svg>
-          </div>
-        </div>
-        <h3 class="srv-card-title text-white">Broad Match Budget Bleed</h3>
-        <p class="srv-card-desc">Relying on broad keywords forces your budget to pay for completely irrelevant search terms that never convert.</p>
-      </div>
-      <div class="srv-card">
-        <div class="srv-card-icon-wrap">
-          <div class="srv-icon-box">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M17.94 17.94A10.07 10.07 0 0 1 12 20c-7 0-11-8-11-8a18.45 18.45 0 0 1 5.06-5.94M9.9 4.24A9.12 9.12 0 0 1 12 4c7 0 11 8 11 8a18.5 18.5 0 0 1-2.16 3.19m-6.72-1.07a3 3 0 1 1-4.24-4.24"/><line x1="1" y1="1" x2="23" y2="23"/></svg>
-          </div>
-        </div>
-        <h3 class="srv-card-title text-white">Post-iOS Tracking Blindness</h3>
-        <p class="srv-card-desc">Browser-only pixels lose 30-40% of conversion data, preventing ad platforms from optimizing for real buyers.</p>
-      </div>
-      <div class="srv-card">
-        <div class="srv-card-icon-wrap">
-          <div class="srv-icon-box">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="23 18 13.5 8.5 8.5 13.5 1 6"/><polyline points="17 18 23 18 23 12"/></svg>
-          </div>
-        </div>
-        <h3 class="srv-card-title text-white">High CAC & Weak Conversion Rates</h3>
-        <p class="srv-card-desc">Sending expensive paid traffic to generic homepages rather than tailored, conversion-focused landing pages.</p>
-      </div>
-      <div class="srv-card">
-        <div class="srv-card-icon-wrap">
-          <div class="srv-icon-box">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 2v6h-6"/><path d="M3 12a9 9 0 0 1 15-6.7L21 8"/><path d="M3 22v-6h6"/><path d="M21 12a9 9 0 0 1-15 6.7L3 16"/></svg>
-          </div>
-        </div>
-        <h3 class="srv-card-title text-white">Ad Fatigue & Stagnant Creative</h3>
-        <p class="srv-card-desc">Running the same ad creatives for months leads to audience burnout, dropping CTRs, and skyrocketing CPMs.</p>
-      </div>
-      <div class="srv-card">
-        <div class="srv-card-icon-wrap">
-          <div class="srv-icon-box">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M16 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="8.5" cy="7" r="4"/><line x1="18" y1="8" x2="23" y2="13"/><line x1="23" y1="8" x2="18" y2="13"/></svg>
-          </div>
-        </div>
-        <h3 class="srv-card-title text-white">Unqualified B2B Lead Forms</h3>
-        <p class="srv-card-desc">Generating hundreds of cheap form submissions from students and competitors instead of real decision-makers.</p>
-      </div>
-      <div class="srv-card">
-        <div class="srv-card-icon-wrap">
-          <div class="srv-icon-box">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/><line x1="4.5" y1="9" x2="19.5" y2="15"/></svg>
-          </div>
-        </div>
-        <h3 class="srv-card-title text-white">No Negative Keyword Defense</h3>
-        <p class="srv-card-desc">Failing to continuously audit search queries lets budget drain into "free", "login", or "jobs" searches.</p>
       </div>
     </div>
   </div>
@@ -290,126 +293,228 @@ $consultationUrl = appUrl('contact.php?service=' . urlencode($serviceName));
     <div class="srv-section-header text-center">
       <div class="srv-badge">
         <span class="srv-badge-dot"></span>
-        <span>COMPREHENSIVE SCOPE</span>
+        <span>WHAT WE OFFER</span>
       </div>
       <h2 class="srv-section-title">
-        Full-Funnel <span class="text-brand">PPC &amp; Paid Media Scope</span>
+        PPC Management Services From a <span class="text-brand">Professional PPC Company in Delhi</span>
       </h2>
       <p class="srv-section-subtitle">
-        End-to-end campaign architecture, creative production, and daily bid management.
+        Performance-engineered ad management designed to turn ad clicks into confirmed buyers and high-intent commercial enquiries.
       </p>
     </div>
 
-    <div class="srv-grid srv-grid-3">
+    <div class="srv-grid-3">
+      <!-- Service Card 1 -->
       <div class="srv-card">
-        <div class="srv-card-icon-wrap">
-          <div class="srv-icon-box">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
-          </div>
+        <div class="srv-card-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
         </div>
-        <h3 class="srv-card-title text-white">Google Search & Intent Harvesting</h3>
-        <p class="srv-card-desc">Capturing high-intent buyers searching for your exact solutions with disciplined single-theme ad groups.</p>
-        <ul style="list-style: none; padding: 0; margin: 1rem 0 0; display: flex; flex-direction: column; gap: 0.5rem; font-size: 0.85rem; color: #B8C7D9;"><li style="display: flex; gap: 0.5rem; align-items: flex-start;"><span style="color: #06B5F9;">&bull;</span><span>Exact & phrase match architecture</span></li><li style="display: flex; gap: 0.5rem; align-items: flex-start;"><span style="color: #06B5F9;">&bull;</span><span>Exhaustive negative keyword lists</span></li><li style="display: flex; gap: 0.5rem; align-items: flex-start;"><span style="color: #06B5F9;">&bull;</span><span>Target CPA & Target ROAS bidding</span></li></ul></div>
-      <div class="srv-card">
-        <div class="srv-card-icon-wrap">
-          <div class="srv-icon-box">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 2 3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4Z"/><path d="M3 6h18"/><path d="M16 10a4 4 0 0 1-8 0"/></svg>
-          </div>
+        <h3 class="srv-card-title">Google Ads Company in Delhi for Search and Lead Generation</h3>
+        <p class="srv-card-desc">We build search campaigns around people who are ready to buy or call. Your money goes to keywords that bring real enquiries.</p>
+        <ul class="srv-card-list">
+          <li>Keyword research and match type plan</li>
+          <li>Ad copy written for clicks and calls</li>
+          <li>Negative keyword list updated every week</li>
+          <li>Daily bid and budget control</li>
+        </ul>
+        <div class="srv-sector-outcome mt-3">
+          <span class="srv-outcome-badge">Business Value</span>
+          <span>You pay for enquiries, not random clicks.</span>
         </div>
-        <h3 class="srv-card-title text-white">Google Performance Max & Shopping</h3>
-        <p class="srv-card-desc">Leveraging Google's AI across YouTube, Display, Search, and Maps with structured product feeds and asset groups.</p>
-        <ul style="list-style: none; padding: 0; margin: 1rem 0 0; display: flex; flex-direction: column; gap: 0.5rem; font-size: 0.85rem; color: #B8C7D9;"><li style="display: flex; gap: 0.5rem; align-items: flex-start;"><span style="color: #06B5F9;">&bull;</span><span>Merchant Center feed optimization</span></li><li style="display: flex; gap: 0.5rem; align-items: flex-start;"><span style="color: #06B5F9;">&bull;</span><span>First-party audience signal upload</span></li><li style="display: flex; gap: 0.5rem; align-items: flex-start;"><span style="color: #06B5F9;">&bull;</span><span>Negative placement exclusions</span></li></ul>
       </div>
-      <div class="srv-card">
-        <div class="srv-card-icon-wrap">
-          <div class="srv-icon-box">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="m3 11 18-5v12L3 14v-3z"/><path d="M11.6 16.8a3 3 0 1 1-5.8-1.6"/></svg>
-          </div>
-        </div>
-        <h3 class="srv-card-title text-white">Meta Direct-Response (FB & IG)</h3>
-        <p class="srv-card-desc">Scalable customer acquisition across Facebook and Instagram using high-converting video and carousel creatives.</p>
-        <ul style="list-style: none; padding: 0; margin: 1rem 0 0; display: flex; flex-direction: column; gap: 0.5rem; font-size: 0.85rem; color: #B8C7D9;"><li style="display: flex; gap: 0.5rem; align-items: flex-start;"><span style="color: #06B5F9;">&bull;</span><span>Broad audience & Advantage+ campaigns</span></li><li style="display: flex; gap: 0.5rem; align-items: flex-start;"><span style="color: #06B5F9;">&bull;</span><span>Retargeting with dynamic product ads</span></li><li style="display: flex; gap: 0.5rem; align-items: flex-start;"><span style="color: #06B5F9;">&bull;</span><span>Weekly ad creative testing sprints</span></li></ul>
-      </div>
-      <div class="srv-card">
-        <div class="srv-card-icon-wrap">
-          <div class="srv-icon-box">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="7" width="20" height="14" rx="2" ry="2"/><path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16"/></svg>
-          </div>
-        </div>
-        <h3 class="srv-card-title text-white">LinkedIn ABM for B2B</h3>
-        <p class="srv-card-desc">Laser-targeted advertising targeting verified decision-makers by job title, industry, company revenue, and seniority.</p>
-        <ul style="list-style: none; padding: 0; margin: 1rem 0 0; display: flex; flex-direction: column; gap: 0.5rem; font-size: 0.85rem; color: #B8C7D9;"><li style="display: flex; gap: 0.5rem; align-items: flex-start;"><span style="color: #06B5F9;">&bull;</span><span>Account-Based Marketing lists</span></li><li style="display: flex; gap: 0.5rem; align-items: flex-start;"><span style="color: #06B5F9;">&bull;</span><span>Lead Gen Form frictionless capture</span></li><li style="display: flex; gap: 0.5rem; align-items: flex-start;"><span style="color: #06B5F9;">&bull;</span><span>Thought leadership ad amplification</span></li></ul>
-      </div>
-      <div class="srv-card">
-        <div class="srv-card-icon-wrap">
-          <div class="srv-icon-box">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="2" width="20" height="8" rx="2" ry="2"/><rect x="2" y="14" width="20" height="8" rx="2" ry="2"/><line x1="6" y1="6" x2="6.01" y2="6"/><line x1="6" y1="18" x2="6.01" y2="18"/></svg>
-          </div>
-        </div>
-        <h3 class="srv-card-title text-white">Server-Side Attribution (CAPI)</h3>
-        <p class="srv-card-desc">Deploying server-side tracking via Google Cloud / AWS so ad algorithms receive 100% accurate conversion signals.</p>
-        <ul style="list-style: none; padding: 0; margin: 1rem 0 0; display: flex; flex-direction: column; gap: 0.5rem; font-size: 0.85rem; color: #B8C7D9;"><li style="display: flex; gap: 0.5rem; align-items: flex-start;"><span style="color: #06B5F9;">&bull;</span><span>Meta Conversions API (CAPI)</span></li><li style="display: flex; gap: 0.5rem; align-items: flex-start;"><span style="color: #06B5F9;">&bull;</span><span>Google Ads Enhanced Conversions</span></li><li style="display: flex; gap: 0.5rem; align-items: flex-start;"><span style="color: #06B5F9;">&bull;</span><span>Offline conversion tracking sync</span></li></ul>
-      </div>
-      <div class="srv-card">
-        <div class="srv-card-icon-wrap">
-          <div class="srv-icon-box">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="4" y1="21" x2="4" y2="14"/><line x1="4" y1="10" x2="4" y2="3"/><line x1="12" y1="21" x2="12" y2="12"/><line x1="12" y1="8" x2="12" y2="3"/><line x1="20" y1="21" x2="20" y2="16"/><line x1="20" y1="12" x2="20" y2="3"/><line x1="1" y1="14" x2="7" y2="14"/><line x1="9" y1="8" x2="15" y2="8"/><line x1="17" y1="16" x2="23" y2="16"/></svg>
-          </div>
-        </div>
-        <h3 class="srv-card-title text-white">Landing Page CRO & A/B Testing</h3>
-        <p class="srv-card-desc">Designing and developing high-speed, sub-second landing pages engineered specifically for high conversion rates.</p>
-        <ul style="list-style: none; padding: 0; margin: 1rem 0 0; display: flex; flex-direction: column; gap: 0.5rem; font-size: 0.85rem; color: #B8C7D9;"><li style="display: flex; gap: 0.5rem; align-items: flex-start;"><span style="color: #06B5F9;">&bull;</span><span>A/B headline & offer split tests</span></li><li style="display: flex; gap: 0.5rem; align-items: flex-start;"><span style="color: #06B5F9;">&bull;</span><span>Frictionless multi-step forms</span></li><li style="display: flex; gap: 0.5rem; align-items: flex-start;"><span style="color: #06B5F9;">&bull;</span><span>Mobile conversion optimization</span></li></ul></div>
 
+      <!-- Service Card 2 -->
+      <div class="srv-card">
+        <div class="srv-card-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 2L3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z"/><line x1="3" y1="6" x2="21" y2="6"/><path d="M16 10a4 4 0 0 1-8 0"/></svg>
+        </div>
+        <h3 class="srv-card-title">Performance Max and Shopping Ads Company for Ecommerce Brands</h3>
+        <p class="srv-card-desc">We clean up your product feed and set up Shopping and Performance Max so your best sellers get the budget.</p>
+        <ul class="srv-card-list">
+          <li>Product feed clean-up</li>
+          <li>Asset groups by product category</li>
+          <li>ROAS targets for each category</li>
+          <li>Merchant Center setup and fixes</li>
+        </ul>
+        <div class="srv-sector-outcome mt-3">
+          <span class="srv-outcome-badge">Business Value</span>
+          <span>More orders from the same ad spend.</span>
+        </div>
+      </div>
+
+      <!-- Service Card 3 -->
+      <div class="srv-card">
+        <div class="srv-card-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/></svg>
+        </div>
+        <h3 class="srv-card-title">Meta Ads Agency for Facebook and Instagram Sales Campaigns</h3>
+        <p class="srv-card-desc">We run Meta ads that turn scrollers into buyers. We test new creatives every week so your ads do not go stale.</p>
+        <ul class="srv-card-list">
+          <li>Audience and look like setup</li>
+          <li>Weekly creative testing</li>
+          <li>Pixel and Conversions API setup</li>
+          <li>Retargeting for visitors and cart drop offs</li>
+        </ul>
+        <div class="srv-sector-outcome mt-3">
+          <span class="srv-outcome-badge">Business Value</span>
+          <span>Lower cost per sale and steady daily orders.</span>
+        </div>
+      </div>
+
+      <!-- Service Card 4 -->
+      <div class="srv-card">
+        <div class="srv-card-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/></svg>
+        </div>
+        <h3 class="srv-card-title">LinkedIn Ads Company for B2B Lead Generation</h3>
+        <p class="srv-card-desc">We reach decision makers by job title, company size and industry. No spend on people who cannot buy.</p>
+        <ul class="srv-card-list">
+          <li>Job title and company targeting</li>
+          <li>Lead gen forms people actually fill</li>
+          <li>Account-based target lists</li>
+          <li>CRM sync for every lead</li>
+        </ul>
+        <div class="srv-sector-outcome mt-3">
+          <span class="srv-outcome-badge">Business Value</span>
+          <span>Your sales team gets leads worth calling.</span>
+        </div>
+      </div>
+
+      <!-- Service Card 5 -->
+      <div class="srv-card">
+        <div class="srv-card-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polygon points="23 7 16 12 23 17 23 7"/><rect x="1" y="5" width="15" height="14" rx="2" ry="2"/></svg>
+        </div>
+        <h3 class="srv-card-title">Remarketing, Display and YouTube Ads Management</h3>
+        <p class="srv-card-desc">We bring back people who visited your site but did not buy, and keep your brand in front of them.</p>
+        <ul class="srv-card-list">
+          <li>Cart abandoner ads</li>
+          <li>YouTube and Display setup</li>
+          <li>Frequency caps so ads do not annoy</li>
+          <li>Audience layers by buying intent</li>
+        </ul>
+        <div class="srv-sector-outcome mt-3">
+          <span class="srv-outcome-badge">Business Value</span>
+          <span>Win back visitors you already paid for.</span>
+        </div>
+      </div>
+
+      <!-- Service Card 6 -->
+      <div class="srv-card">
+        <div class="srv-card-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
+        </div>
+        <h3 class="srv-card-title">Monthly PPC Management Packages</h3>
+        <p class="srv-card-desc">One fixed monthly plan for all your ad platforms. You know what you pay and what you get.</p>
+        <ul class="srv-card-list">
+          <li>Fixed monthly scope</li>
+          <li>Weekly reports</li>
+          <li>Monthly strategy call</li>
+          <li>Cancel anytime</li>
+        </ul>
+        <div class="srv-sector-outcome mt-3">
+          <span class="srv-outcome-badge">Business Value</span>
+          <span>Predictable cost and no surprises.</span>
+        </div>
+      </div>
     </div>
   </div>
 </section>
 
 <!-- ============================================================
-     SECTION 5 — STEP-BY-STEP PROCESS
+     SECTION 5 — 6-PHASE PROCESS
      ============================================================ -->
 <section class="srv-section" id="process">
   <div class="srv-container">
     <div class="srv-section-header text-center">
       <div class="srv-badge">
         <span class="srv-badge-dot"></span>
-        <span>EXECUTION FRAMEWORK</span>
+        <span>OUR PROCESS</span>
       </div>
       <h2 class="srv-section-title">
-        How We Work: <span class="text-brand">Structured &amp; Accountable</span>
+        Our 6-Phase PPC Process, <span class="text-brand">From Audit to Scale</span>
       </h2>
       <p class="srv-section-subtitle">
-        From baseline diagnostic audit to scaled execution, our structured workflow eliminates guesswork and delivers predictable results.
+        Here is how our PPC company in Delhi takes your account from audit to scale.
       </p>
     </div>
 
-    <div class="srv-process-grid">
-            <div class="srv-process-card">
-        <div class="srv-process-num">01</div>
-        <h3 class="srv-process-title">Unit Economics & Tracking Audit</h3>
-        <p class="srv-process-desc">We calculate your target CAC and LTV, audit existing campaigns, and verify server-side conversion tracking.</p>
-        <div style="font-family: var(--font-mono); font-size: 0.78rem; color: #06B5F9; font-weight: 700; margin-top: 1rem;">
-          MILESTONE: Attribution & Tracking Verified
+    <div class="srv-process-timeline">
+      <!-- Step 1 -->
+      <div class="srv-process-step">
+        <div class="srv-step-number">01</div>
+        <div class="srv-step-content">
+          <h3 class="srv-step-title">Account and Tracking Audit</h3>
+          <p class="srv-step-desc">We check your ad account, tracking and past spend to find where money is leaking.</p>
+          <div class="srv-step-deliverables">
+            <span class="srv-deliverable-label">Key Deliverables:</span>
+            <span>audit report, tracking checklist, budget leak list.</span>
+          </div>
         </div>
-      </div>      <div class="srv-process-card">
-        <div class="srv-process-num">02</div>
-        <h3 class="srv-process-title">Audience & Keyword Modeling</h3>
-        <p class="srv-process-desc">We build segmented keyword trees, draft negative keyword exclusions, and configure custom audience signals.</p>
-        <div style="font-family: var(--font-mono); font-size: 0.78rem; color: #06B5F9; font-weight: 700; margin-top: 1rem;">
-          MILESTONE: Campaign Structure Blueprint
+      </div>
+
+      <!-- Step 2 -->
+      <div class="srv-process-step">
+        <div class="srv-step-number">02</div>
+        <div class="srv-step-content">
+          <h3 class="srv-step-title">Keyword and Audience Planning</h3>
+          <p class="srv-step-desc">We pick the keywords and audiences closest to a sale and map out the campaigns.</p>
+          <div class="srv-step-deliverables">
+            <span class="srv-deliverable-label">Key Deliverables:</span>
+            <span>keyword map, audience list, campaign structure.</span>
+          </div>
         </div>
-      </div>      <div class="srv-process-card">
-        <div class="srv-process-num">03</div>
-        <h3 class="srv-process-title">Creative & Landing Page Launch</h3>
-        <p class="srv-process-desc">We produce high-impact ad creatives, write compelling copy, deploy dedicated landing pages, and launch.</p>
-        <div style="font-family: var(--font-mono); font-size: 0.78rem; color: #06B5F9; font-weight: 700; margin-top: 1rem;">
-          MILESTONE: Live Multi-Channel Campaign
+      </div>
+
+      <!-- Step 3 -->
+      <div class="srv-process-step">
+        <div class="srv-step-number">03</div>
+        <div class="srv-step-content">
+          <h3 class="srv-step-title">Ad Creative and Landing Page</h3>
+          <p class="srv-step-desc">We write the ads and suggest page changes so visitors actually enquire.</p>
+          <div class="srv-step-deliverables">
+            <span class="srv-deliverable-label">Key Deliverables:</span>
+            <span>ad copy, creative set, landing page fixes.</span>
+          </div>
         </div>
-      </div>      <div class="srv-process-card">
-        <div class="srv-process-num">04</div>
-        <h3 class="srv-process-title">Algorithmic Optimization & Scale</h3>
-        <p class="srv-process-desc">We prune non-performing keywords, rotate winning creative variants, and scale budget on profitable channels.</p>
-        <div style="font-family: var(--font-mono); font-size: 0.78rem; color: #06B5F9; font-weight: 700; margin-top: 1rem;">
-          MILESTONE: Target ROAS Achieved & Scaled
+      </div>
+
+      <!-- Step 4 -->
+      <div class="srv-process-step">
+        <div class="srv-step-number">04</div>
+        <div class="srv-step-content">
+          <h3 class="srv-step-title">Campaign Launch</h3>
+          <p class="srv-step-desc">We go live only after tracking is tested and working.</p>
+          <div class="srv-step-deliverables">
+            <span class="srv-deliverable-label">Key Deliverables:</span>
+            <span>live campaigns, working conversion tracking, launch checklist.</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Step 5 -->
+      <div class="srv-process-step">
+        <div class="srv-step-number">05</div>
+        <div class="srv-step-content">
+          <h3 class="srv-step-title">Optimization and Scaling</h3>
+          <p class="srv-step-desc">Every week we cut weak spending and push the budget to what works.</p>
+          <div class="srv-step-deliverables">
+            <span class="srv-deliverable-label">Key Deliverables:</span>
+            <span>weekly optimizations, A/B test results, scaling plan.</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Step 6 -->
+      <div class="srv-process-step">
+        <div class="srv-step-number">06</div>
+        <div class="srv-step-content">
+          <h3 class="srv-step-title">Reporting and Review</h3>
+          <p class="srv-step-desc">You see the numbers in simple language, not jargon.</p>
+          <div class="srv-step-deliverables">
+            <span class="srv-deliverable-label">Key Deliverables:</span>
+            <span>live dashboard, monthly report, strategy call.</span>
+          </div>
         </div>
       </div>
     </div>
@@ -417,185 +522,312 @@ $consultationUrl = appUrl('contact.php?service=' . urlencode($serviceName));
 </section>
 
 <!-- ============================================================
-     SECTION 6 — TOOLS & TECHNOLOGY
+     SECTION 6 — WHY CHOOSE US
      ============================================================ -->
-<section class="srv-section srv-bg-surface" id="technology">
+<section class="srv-section srv-bg-surface" id="why-choose-us">
   <div class="srv-container">
     <div class="srv-section-header text-center">
       <div class="srv-badge">
         <span class="srv-badge-dot"></span>
-        <span>TOOLING &amp; INFRASTRUCTURE</span>
+        <span>WHY CHOOSE US</span>
       </div>
       <h2 class="srv-section-title">
-        Enterprise-Grade <span class="text-brand">Tools &amp; Technology Stack</span>
+        Why Leading Brands Choose BusinessDoctor as Their <span class="text-brand">PPC Company in Delhi</span>
       </h2>
       <p class="srv-section-subtitle">
-        We utilize industry-standard platforms, diagnostic software, and proprietary telemetry tools to ensure flawless execution.
+        A dedicated advertising team committed to lowering customer acquisition costs and driving real business revenue.
       </p>
     </div>
 
-    <div class="srv-grid srv-grid-3">
-      <div class="srv-card"><h4 style="font-size: 1.1rem; color: #fff; margin-bottom: 1rem; border-bottom: 1px solid rgba(6,181,249,0.2); padding-bottom: 0.5rem;">Ad Platforms</h4><div style="display: flex; flex-wrap: wrap; gap: 0.5rem;"><span class="srv-tool-badge">Google Ads</span><span class="srv-tool-badge">Meta Ads Manager</span><span class="srv-tool-badge">LinkedIn Ads</span><span class="srv-tool-badge">YouTube Advertising</span></div></div>
-<div class="srv-card"><h4 style="font-size: 1.1rem; color: #fff; margin-bottom: 1rem; border-bottom: 1px solid rgba(6,181,249,0.2); padding-bottom: 0.5rem;">Tracking & Telemetry</h4><div style="display: flex; flex-wrap: wrap; gap: 0.5rem;"><span class="srv-tool-badge">GTM Server-Side</span><span class="srv-tool-badge">Meta CAPI</span><span class="srv-tool-badge">Google Analytics 4</span><span class="srv-tool-badge">Triple Whale</span></div></div>
-<div class="srv-card"><h4 style="font-size: 1.1rem; color: #fff; margin-bottom: 1rem; border-bottom: 1px solid rgba(6,181,249,0.2); padding-bottom: 0.5rem;">Creative & CRO</h4><div style="display: flex; flex-wrap: wrap; gap: 0.5rem;"><span class="srv-tool-badge">Figma</span><span class="srv-tool-badge">Adobe Premiere Pro</span><span class="srv-tool-badge">Unbounce</span><span class="srv-tool-badge">Hotjar</span></div></div>
-
-    </div>
-  </div>
-</section>
-
-<!-- ============================================================
-     SECTION 7 — INDUSTRY USE CASES
-     ============================================================ -->
-<section class="srv-section" id="use-cases">
-  <div class="srv-container">
-    <div class="srv-section-header text-center">
-      <div class="srv-badge">
-        <span class="srv-badge-dot"></span>
-        <span>PRACTICAL APPLICATIONS</span>
+    <div class="srv-grid-3">
+      <div class="srv-benefit-card">
+        <div class="srv-benefit-badge">ROAS Focused - Dedicated Manager</div>
+        <h3 class="srv-benefit-title">Revenue First Account Managers</h3>
+        <p class="srv-benefit-desc">Your manager at our PPC company in Delhi talks about sales and cost per lead, not clicks and impressions.</p>
       </div>
-      <h2 class="srv-section-title">
-        Tailored Strategies Across <span class="text-brand">Diverse Industries</span>
-      </h2>
-      <p class="srv-section-subtitle">
-        Discover how our PPC / Paid Ads discipline drives measurable outcomes across key vertical markets.
-      </p>
-    </div>
 
-    <div class="srv-grid srv-grid-2">
-            <div class="srv-card">
-        <span class="srv-badge mb-2"><span>Enterprise B2B Software</span></span>
-        <h3 class="srv-card-title text-white">LinkedIn ABM & Google Search Pipeline</h3>
-        <p class="srv-card-desc mb-3">Generated over 40 qualified demo requests per month from Fortune 1000 CTOs at an audited 45% lower CAC.</p>
-        <div style="border-top: 1px solid rgba(255,255,255,0.08); padding-top: 0.75rem; display: flex; justify-content: space-between; align-items: center; font-size: 0.85rem;">
-          <span style="color: #8FA3B8;">Outcome:</span>
-          <span style="color: #34D399; font-family: var(--font-mono); font-weight: 700;">4.8x Pipeline Revenue</span>
-        </div>
-      </div>      <div class="srv-card">
-        <span class="srv-badge mb-2"><span>Direct-to-Consumer E-Commerce</span></span>
-        <h3 class="srv-card-title text-white">Meta Scaling with Server-Side CAPI</h3>
-        <p class="srv-card-desc mb-3">Scaled monthly ad spend from $15,000 to $85,000 while maintaining a consistent 4.1x blended return on ad spend.</p>
-        <div style="border-top: 1px solid rgba(255,255,255,0.08); padding-top: 0.75rem; display: flex; justify-content: space-between; align-items: center; font-size: 0.85rem;">
-          <span style="color: #8FA3B8;">Outcome:</span>
-          <span style="color: #34D399; font-family: var(--font-mono); font-weight: 700;">+420% Net Monthly Sales</span>
-        </div>
-      </div>      <div class="srv-card">
-        <span class="srv-badge mb-2"><span>High-Ticket Local Services</span></span>
-        <h3 class="srv-card-title text-white">Google Search Call-Only Campaigns</h3>
-        <p class="srv-card-desc mb-3">Captured exclusive inbound commercial contractor calls with zero budget leakage to residential queries.</p>
-        <div style="border-top: 1px solid rgba(255,255,255,0.08); padding-top: 0.75rem; display: flex; justify-content: space-between; align-items: center; font-size: 0.85rem;">
-          <span style="color: #8FA3B8;">Outcome:</span>
-          <span style="color: #34D399; font-family: var(--font-mono); font-weight: 700;">120+ Verified Monthly Calls</span>
-        </div>
-      </div>      <div class="srv-card">
-        <span class="srv-badge mb-2"><span>Financial Advisory Firm</span></span>
-        <h3 class="srv-card-title text-white">Compliant Lead Funnel Optimization</h3>
-        <p class="srv-card-desc mb-3">Deployed compliant high-net-worth investor lead generation funnel with multi-step qualification forms.</p>
-        <div style="border-top: 1px solid rgba(255,255,255,0.08); padding-top: 0.75rem; display: flex; justify-content: space-between; align-items: center; font-size: 0.85rem;">
-          <span style="color: #8FA3B8;">Outcome:</span>
-          <span style="color: #34D399; font-family: var(--font-mono); font-weight: 700;">$32M in New AUM Inquiries</span>
-        </div>
+      <div class="srv-benefit-card">
+        <div class="srv-benefit-badge">Accurate Data - CAPI Ready</div>
+        <h3 class="srv-benefit-title">Server Side Tracking Setup</h3>
+        <p class="srv-benefit-desc">Your data stays accurate even with browser and iOS limits.</p>
+      </div>
+
+      <div class="srv-benefit-card">
+        <div class="srv-benefit-badge">Budget Control - Lower CAC</div>
+        <h3 class="srv-benefit-title">Negative Keyword Protection</h3>
+        <p class="srv-benefit-desc">We block searches that waste money and review them every week.</p>
+      </div>
+
+      <div class="srv-benefit-card">
+        <div class="srv-benefit-badge">Real Time Reporting - Full Access</div>
+        <h3 class="srv-benefit-title">Transparent Live Dashboards</h3>
+        <p class="srv-benefit-desc">Check your numbers any day, without asking us.</p>
+      </div>
+
+      <div class="srv-benefit-card">
+        <div class="srv-benefit-badge">100% Ownership - No Lock In</div>
+        <h3 class="srv-benefit-title">Ad Account Ownership With You</h3>
+        <p class="srv-benefit-desc">Your ad accounts stay in your name. If you leave, everything goes with you.</p>
+      </div>
+
+      <div class="srv-benefit-card">
+        <div class="srv-benefit-badge">End to End - Complete Channel Scope</div>
+        <h3 class="srv-benefit-title">Full Digital Team Under One Roof</h3>
+        <p class="srv-benefit-desc">Need a landing page, creatives or SEO along with ads? One team handles it all.</p>
       </div>
     </div>
   </div>
 </section>
 
 <!-- ============================================================
-     SECTION 8 — INTERACTIVE FAQ ACCORDION
+     SECTION 7 — TECHNOLOGIES & TOOLS
      ============================================================ -->
-<section class="srv-section srv-bg-surface" id="faq">
+<section class="srv-section" id="technologies">
   <div class="srv-container">
     <div class="srv-section-header text-center">
       <div class="srv-badge">
         <span class="srv-badge-dot"></span>
-        <span>FREQUENTLY ASKED QUESTIONS</span>
+        <span>TOOL STACK</span>
       </div>
       <h2 class="srv-section-title">
-        Common Questions About <span class="text-brand">PPC / Paid Ads</span>
+        Professional Tools <span class="text-brand">Our PPC Company in Delhi Uses</span>
       </h2>
       <p class="srv-section-subtitle">
-        Clear answers about our methodology, timelines, deliverables, SLAs, and commercial engagement terms.
+        We use these tools to build, track and report on every campaign.
+      </p>
+    </div>
+
+    <div class="srv-grid-4">
+      <div class="srv-tech-category">
+        <h3 class="srv-tech-cat-title">Ad Platforms</h3>
+        <ul class="srv-tech-list">
+          <li><strong>Google Ads:</strong> Search and Shopping campaigns</li>
+          <li><strong>Meta Ads:</strong> Facebook and Instagram sales</li>
+          <li><strong>LinkedIn Ads:</strong> B2B lead generation</li>
+          <li><strong>Microsoft Ads:</strong> Bing search campaigns</li>
+        </ul>
+      </div>
+
+      <div class="srv-tech-category">
+        <h3 class="srv-tech-cat-title">Tracking and Analytics</h3>
+        <ul class="srv-tech-list">
+          <li><strong>GA4:</strong> Track visitor behaviour</li>
+          <li><strong>Google Tag Manager:</strong> Fire tags without code</li>
+          <li><strong>Server-Side Tagging:</strong> Accurate, privacy-safe data</li>
+          <li><strong>Meta CAPI:</strong> Better Meta conversion tracking</li>
+        </ul>
+      </div>
+
+      <div class="srv-tech-category">
+        <h3 class="srv-tech-cat-title">Landing Page and CRO</h3>
+        <ul class="srv-tech-list">
+          <li><strong>Unbounce:</strong> Build high-converting landing pages</li>
+          <li><strong>VWO:</strong> A/B test page changes</li>
+          <li><strong>Hotjar:</strong> See where users drop</li>
+          <li><strong>Figma:</strong> Design ad and page layouts</li>
+        </ul>
+      </div>
+
+      <div class="srv-tech-category">
+        <h3 class="srv-tech-cat-title">Reporting and Automation</h3>
+        <ul class="srv-tech-list">
+          <li><strong>Looker Studio:</strong> Live performance dashboards</li>
+          <li><strong>Supermetrics:</strong> Pull ad data automatically</li>
+          <li><strong>CRM Integration:</strong> Sync leads to sales</li>
+          <li><strong>Zapier:</strong> Automate lead follow-ups</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============================================================
+     SECTION 8 — INDUSTRY SECTORS
+     ============================================================ -->
+<section class="srv-section srv-bg-surface" id="industry-use-cases">
+  <div class="srv-container">
+    <div class="srv-section-header text-center">
+      <div class="srv-badge">
+        <span class="srv-badge-dot"></span>
+        <span>SECTOR EXPERTISE</span>
+      </div>
+      <h2 class="srv-section-title">
+        PPC Company in Delhi for <span class="text-brand">High-Growth Sectors</span>
+      </h2>
+      <p class="srv-section-subtitle">
+        Specialized performance paid advertising tailored to sector economics and high-intent buyer journeys.
+      </p>
+    </div>
+
+    <div class="srv-grid-3">
+      <div class="srv-card">
+        <h3 class="srv-card-title">D2C and Consumer</h3>
+        <p class="srv-card-desc"><strong>Ad Campaigns for D2C Brands:</strong> Sales campaigns on Meta and Google that bring repeat buyers.</p>
+        <div class="srv-sector-outcome">
+          <span class="srv-outcome-badge">Outcome</span>
+          <span>higher ROAS.</span>
+        </div>
+      </div>
+
+      <div class="srv-card">
+        <h3 class="srv-card-title">Ecommerce Sellers</h3>
+        <p class="srv-card-desc"><strong>Shopping and Performance Max Ads:</strong> Product ads that push your best sellers.</p>
+        <div class="srv-sector-outcome">
+          <span class="srv-outcome-badge">Outcome</span>
+          <span>more orders from the same budget.</span>
+        </div>
+      </div>
+
+      <div class="srv-card">
+        <h3 class="srv-card-title">B2B SaaS</h3>
+        <p class="srv-card-desc"><strong>Lead Generation Ads:</strong> Search and LinkedIn campaigns for demo requests.</p>
+        <div class="srv-sector-outcome">
+          <span class="srv-outcome-badge">Outcome</span>
+          <span>lower cost per qualified lead.</span>
+        </div>
+      </div>
+
+      <div class="srv-card">
+        <h3 class="srv-card-title">Real Estate</h3>
+        <p class="srv-card-desc"><strong>Property Enquiry Campaigns:</strong> Ads that reach buyers searching in your area.</p>
+        <div class="srv-sector-outcome">
+          <span class="srv-outcome-badge">Outcome</span>
+          <span>lower cost per site visit.</span>
+        </div>
+      </div>
+
+      <div class="srv-card">
+        <h3 class="srv-card-title">Education</h3>
+        <p class="srv-card-desc"><strong>Admission Enquiry Ads:</strong> Campaigns timed to admission seasons.</p>
+        <div class="srv-sector-outcome">
+          <span class="srv-outcome-badge">Outcome</span>
+          <span>more admission enquiries.</span>
+        </div>
+      </div>
+
+      <div class="srv-card">
+        <h3 class="srv-card-title">Healthcare</h3>
+        <p class="srv-card-desc"><strong>Appointment Booking Ads:</strong> Local ads that fill your calendar.</p>
+        <div class="srv-sector-outcome">
+          <span class="srv-outcome-badge">Outcome</span>
+          <span>quality appointment bookings.</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============================================================
+     SECTION 9 — FREQUENTLY ASKED QUESTIONS
+     ============================================================ -->
+<section class="srv-section" id="faq">
+  <div class="srv-container">
+    <div class="srv-section-header text-center">
+      <div class="srv-badge">
+        <span class="srv-badge-dot"></span>
+        <span>QUESTIONS &amp; ANSWERS</span>
+      </div>
+      <h2 class="srv-section-title">
+        Hiring a PPC Company in Delhi: <span class="text-brand">Your Questions Answered</span>
+      </h2>
+      <p class="srv-section-subtitle">
+        Everything you need to know about our paid advertising management, fee models, tracking, and campaign launch.
       </p>
     </div>
 
     <div class="srv-faq-container">
-            <div class="srv-faq-item">
-        <button type="button" class="srv-faq-btn" aria-expanded="false" aria-controls="faq-ans-0">
-          <span class="srv-faq-question">What is the minimum recommended ad budget to get started?</span>
-          <span class="srv-faq-icon" aria-hidden="true">+</span>
-        </button>
-        <div id="faq-ans-0" class="srv-faq-panel">
-          <div class="srv-faq-content">
-            <p>We recommend a minimum media spend of $2,000 to $3,000 per month. This provides sufficient conversion data for machine-learning bidding algorithms to optimize effectively.</p>
-          </div>
-        </div>
-      </div>      <div class="srv-faq-item">
+      <div class="srv-faq-item">
         <button type="button" class="srv-faq-btn" aria-expanded="false" aria-controls="faq-ans-1">
-          <span class="srv-faq-question">How quickly will we see results from PPC advertising?</span>
+          <span class="srv-faq-question">How much does a PPC company in Delhi charge?</span>
           <span class="srv-faq-icon" aria-hidden="true">+</span>
         </button>
-        <div id="faq-ans-1" class="srv-faq-panel" >
+        <div id="faq-ans-1" class="srv-faq-panel">
           <div class="srv-faq-content">
-            <p>Unlike SEO, PPC delivers traffic within hours of campaign launch. Predictable conversion optimization and algorithmic stabilization typically take 2 to 4 weeks of continuous testing.</p>
+            <p>Our fee depends on your platforms and monthly ad spend. After a free audit, we send one fixed monthly quote. Share your requirements to get yours.</p>
           </div>
         </div>
-      </div>      <div class="srv-faq-item">
+      </div>
+
+      <div class="srv-faq-item">
         <button type="button" class="srv-faq-btn" aria-expanded="false" aria-controls="faq-ans-2">
-          <span class="srv-faq-question">Do you build dedicated landing pages for ad campaigns?</span>
+          <span class="srv-faq-question">How do I hire BusinessDoctor as my PPC agency?</span>
           <span class="srv-faq-icon" aria-hidden="true">+</span>
         </button>
-        <div id="faq-ans-2" class="srv-faq-panel" >
+        <div id="faq-ans-2" class="srv-faq-panel">
           <div class="srv-faq-content">
-            <p>Yes. Sending paid traffic to generic homepages cuts conversion rates in half. We design, code, and A/B test high-speed landing pages tailored specifically to each campaign.</p>
+            <p>Fill out the form, share your ad account for a free audit, and we will send a quote. That is the simplest way to hire a PPC company in Delhi.</p>
           </div>
         </div>
-      </div>      <div class="srv-faq-item">
+      </div>
+
+      <div class="srv-faq-item">
         <button type="button" class="srv-faq-btn" aria-expanded="false" aria-controls="faq-ans-3">
-          <span class="srv-faq-question">What is server-side conversion tracking (CAPI) and why is it needed?</span>
+          <span class="srv-faq-question">What does your PPC management package include?</span>
           <span class="srv-faq-icon" aria-hidden="true">+</span>
         </button>
-        <div id="faq-ans-3" class="srv-faq-panel" >
+        <div id="faq-ans-3" class="srv-faq-panel">
           <div class="srv-faq-content">
-            <p>Modern browser privacy updates and ad blockers block up to 40% of standard pixel tracking. Server-side CAPI sends conversion events directly from your web server to Google and Meta, restoring complete data accuracy.</p>
+            <p>Campaign setup, ad copy, tracking, weekly optimization, weekly reports and a monthly call. Share your requirements for a quote with the full scope.</p>
           </div>
         </div>
-      </div>      <div class="srv-faq-item">
+      </div>
+
+      <div class="srv-faq-item">
         <button type="button" class="srv-faq-btn" aria-expanded="false" aria-controls="faq-ans-4">
-          <span class="srv-faq-question">Who pays the advertising platform costs (Google, Meta)?</span>
+          <span class="srv-faq-question">What is the minimum ad budget to get started?</span>
           <span class="srv-faq-icon" aria-hidden="true">+</span>
         </button>
-        <div id="faq-ans-4" class="srv-faq-panel" >
+        <div id="faq-ans-4" class="srv-faq-panel">
           <div class="srv-faq-content">
-            <p>You pay the ad platforms directly using your own corporate credit card. You maintain 100% account ownership, data history, and transparency at all times.</p>
+            <p>After the audit, we tell you honestly what budget your goal needs. Share your requirements for a quote.</p>
           </div>
         </div>
-      </div>      <div class="srv-faq-item">
+      </div>
+
+      <div class="srv-faq-item">
         <button type="button" class="srv-faq-btn" aria-expanded="false" aria-controls="faq-ans-5">
-          <span class="srv-faq-question">How do you prevent click fraud and bot traffic?</span>
+          <span class="srv-faq-question">How soon can you launch my campaigns after onboarding?</span>
           <span class="srv-faq-icon" aria-hidden="true">+</span>
         </button>
-        <div id="faq-ans-5" class="srv-faq-panel" >
+        <div id="faq-ans-5" class="srv-faq-panel">
           <div class="srv-faq-content">
-            <p>We implement automated IP exclusion rules, restrict audience targeting strictly to validated geographies, and filter out search partner network placements known for fraudulent traffic.</p>
+            <p>Once we have account access and your brief, we plan, set up and test tracking before going live. Share your requirements to start.</p>
           </div>
         </div>
-      </div>      <div class="srv-faq-item">
+      </div>
+
+      <div class="srv-faq-item">
         <button type="button" class="srv-faq-btn" aria-expanded="false" aria-controls="faq-ans-6">
-          <span class="srv-faq-question">How frequently do you test new ad creatives?</span>
+          <span class="srv-faq-question">Do you also build landing pages for ad campaigns?</span>
           <span class="srv-faq-icon" aria-hidden="true">+</span>
         </button>
-        <div id="faq-ans-6" class="srv-faq-panel" >
+        <div id="faq-ans-6" class="srv-faq-panel">
           <div class="srv-faq-content">
-            <p>We run weekly or bi-weekly creative testing cycles, testing new hooks, headlines, visual assets, and formats to stay ahead of audience fatigue.</p>
+            <p>Yes. We build or fix pages made for ad traffic, so more visitors turn into enquiries. Share your requirements for a quote.</p>
           </div>
         </div>
-      </div>      <div class="srv-faq-item">
+      </div>
+
+      <div class="srv-faq-item">
         <button type="button" class="srv-faq-btn" aria-expanded="false" aria-controls="faq-ans-7">
-          <span class="srv-faq-question">What reports do we receive each month?</span>
+          <span class="srv-faq-question">How often do I receive performance reports?</span>
           <span class="srv-faq-icon" aria-hidden="true">+</span>
         </button>
-        <div id="faq-ans-7" class="srv-faq-panel" >
+        <div id="faq-ans-7" class="srv-faq-panel">
           <div class="srv-faq-content">
-            <p>You receive real-time Looker Studio dashboard access and detailed monthly executive reports breaking down spend, revenue, cost per acquisition (CAC), and verified ROAS.</p>
+            <p>You get a weekly report, live dashboard access and a monthly strategy call. Share your requirements for a quote.</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="srv-faq-item">
+        <button type="button" class="srv-faq-btn" aria-expanded="false" aria-controls="faq-ans-8">
+          <span class="srv-faq-question">Do I keep ownership of my ad accounts and data?</span>
+          <span class="srv-faq-icon" aria-hidden="true">+</span>
+        </button>
+        <div id="faq-ans-8" class="srv-faq-panel">
+          <div class="srv-faq-content">
+            <p>Yes. Your ad accounts, data and creatives always stay with you. Share your requirements for a quote.</p>
           </div>
         </div>
       </div>
@@ -604,7 +836,7 @@ $consultationUrl = appUrl('contact.php?service=' . urlencode($serviceName));
 </section>
 
 <!-- ============================================================
-     SECTION 9 — FINAL CONVERSION CTA
+     SECTION 10 — FINAL CONVERSION CTA
      ============================================================ -->
 <section class="srv-section srv-cta-section" id="cta">
   <div class="srv-container">
@@ -618,18 +850,18 @@ $consultationUrl = appUrl('contact.php?service=' . urlencode($serviceName));
               <span>TAKE THE NEXT STEP</span>
             </div>
             <h2 class="srv-cta-title">
-              Ready to Scale Profitable <span class="text-brand">Paid Customer Acquisition?</span>
+              Ready to Scale with a High-ROAS <span class="text-brand">PPC Company in Delhi?</span>
             </h2>
             <p class="srv-cta-lead">
-              Schedule a paid media architecture audit. Our senior performance media strategists will inspect your ad accounts, identify wasted spend, and model a high-ROAS roadmap.
+              Share your ad account and we will do a free audit and send you a quote. Our team is based in Delhi NCR and ready to scale your campaigns.
             </p>
             <div class="srv-cta-actions" style="justify-content: flex-start; margin-bottom: 2rem;">
               <a href="<?= e($consultationUrl) ?>" class="btn-srv-primary btn-srv-lg">
-                <span>Get a Free Consultation</span>
+                <span>Get a Free Audit &amp; Quote</span>
                 <svg class="btn-srv-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
               </a>
               <a href="<?= appUrl('audit.php') ?>" class="btn-srv-secondary btn-srv-lg">
-                <span>Request Digital Audit</span>
+                <span>Request Account Audit</span>
                 <svg class="btn-srv-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="9 18 15 12 9 6"/></svg>
               </a>
             </div>
@@ -651,26 +883,26 @@ $consultationUrl = appUrl('contact.php?service=' . urlencode($serviceName));
           <div>
             <div class="srv-quick-form-card">
               <div class="srv-form-header">
-                <h3 class="srv-form-title">Request Practice Consultation</h3>
-                <p class="srv-form-subtitle">Direct consultation with senior PPC / Paid Ads strategists.</p>
+                <h3 class="srv-form-title">Request Technical Consultation</h3>
+                <p class="srv-form-subtitle">Direct consultation with senior performance media architects.</p>
               </div>
               <form action="<?= appUrl('contact.php') ?>" method="GET" class="srv-quick-form">
                 <input type="hidden" name="service" value="<?= e($serviceName) ?>">
                 <div class="srv-form-group">
-                  <label class="srv-form-label" for="quick_name_ppc-paid-ads.php">Your Full Name</label>
-                  <input type="text" id="quick_name_ppc-paid-ads.php" name="name" required class="srv-form-input" placeholder="e.g. Sarah Jenkins">
+                  <label class="srv-form-label" for="quick_name_ppc-paid-ads">Your Full Name</label>
+                  <input type="text" id="quick_name_ppc-paid-ads" name="name" required class="srv-form-input" placeholder="e.g. Sarah Jenkins">
                 </div>
                 <div class="srv-form-group">
-                  <label class="srv-form-label" for="quick_email_ppc-paid-ads.php">Work Email</label>
-                  <input type="email" id="quick_email_ppc-paid-ads.php" name="email" required class="srv-form-input" placeholder="e.g. sarah@enterprise.com">
+                  <label class="srv-form-label" for="quick_email_ppc-paid-ads">Work Email</label>
+                  <input type="email" id="quick_email_ppc-paid-ads" name="email" required class="srv-form-input" placeholder="e.g. sarah@enterprise.com">
                 </div>
                 <div class="srv-form-group">
-                  <label class="srv-form-label" for="quick_company_ppc-paid-ads.php">Company / Domain</label>
-                  <input type="text" id="quick_company_ppc-paid-ads.php" name="company" class="srv-form-input" placeholder="e.g. Enterprise Corp (enterprise.com)">
+                  <label class="srv-form-label" for="quick_company_ppc-paid-ads">Company / Domain</label>
+                  <input type="text" id="quick_company_ppc-paid-ads" name="company" class="srv-form-input" placeholder="e.g. Enterprise Corp (enterprise.com)">
                 </div>
                 <div class="srv-form-group">
-                  <label class="srv-form-label" for="quick_notes_ppc-paid-ads.php">Project Scope &amp; Goals</label>
-                  <textarea id="quick_notes_ppc-paid-ads.php" name="notes" rows="2" class="srv-form-textarea" placeholder="Briefly describe your objectives, challenges, or current growth bottlenecks..."></textarea>
+                  <label class="srv-form-label" for="quick_notes_ppc-paid-ads">Project Scope &amp; Objectives</label>
+                  <textarea id="quick_notes_ppc-paid-ads" name="notes" rows="2" class="srv-form-textarea" placeholder="Briefly describe your ad spend, target platforms, or performance bottlenecks..."></textarea>
                 </div>
                 <button type="submit" class="srv-form-submit">
                   <span>Send Consultation Request</span>

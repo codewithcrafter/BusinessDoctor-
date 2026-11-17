@@ -21,20 +21,21 @@ $consultationUrl = appUrl('contact.php?service=' . urlencode($serviceName));
       <div class="srv-col-12 srv-col-lg-6">
         <div class="srv-eyebrow">
           <span class="srv-eyebrow-dot"></span>
-          <span>OMNICHANNEL COMMERCE &amp; MARKETPLACE SCALING</span>
+          <span>ECOMMERCE MANAGEMENT COMPANY IN DELHI</span>
         </div>
         <h1 class="srv-hero-title">
-          Scaling Multi-Channel <br><span class="text-brand">E-Commerce &amp; Marketplace Dominance</span>
+          Ecommerce Management Company in Delhi <br><span class="text-brand">That Treats Your Store Like Its Own</span>
         </h1>
         <p class="srv-hero-desc">
-          We engineer high-growth digital commerce infrastructure: bespoke D2C storefronts, Amazon &amp; Flipkart marketplace optimization, algorithmic advertising, Buy Box protection, and automated multi-channel inventory feeds.
+          Running an online store takes more hours than most owners expect. BusinessDoctor is an ecommerce management company in Delhi that takes over the daily work like your website, listings, ads, orders and marketplace accounts. You focus on your product. We focus on making every sale count. No big promises, just steady work, clear reports and real profit at the end of the month.
         </p>
 
         <div class="srv-hero-actions">
           <a href="<?= e($consultationUrl) ?>" class="btn-srv-primary">
             <span>Get a Free Consultation</span>
             <svg class="btn-srv-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
-              <line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/>
+              <line x1="5" y1="12" x2="19" y2="12"/>
+              <polyline points="12 5 19 12 12 19"/>
             </svg>
           </a>
           <a href="#services-list" class="btn-srv-secondary">
@@ -47,20 +48,20 @@ $consultationUrl = appUrl('contact.php?service=' . urlencode($serviceName));
 
         <div class="srv-hero-stats">
           <div class="srv-hero-stat-item">
-            <span class="srv-hero-stat-val">94%+</span>
-            <span class="srv-hero-stat-lbl">Average Buy Box Retention</span>
+            <span class="srv-hero-stat-val">1 Team</span>
+            <span class="srv-hero-stat-lbl">One team for everything. No running behind 5 freelancers</span>
           </div>
           <div class="srv-hero-stat-item">
-            <span class="srv-hero-stat-val">4.6x</span>
-            <span class="srv-hero-stat-lbl">Blended Marketplace ROAS</span>
+            <span class="srv-hero-stat-val">6 Channels</span>
+            <span class="srv-hero-stat-lbl">Shopify, WooCommerce, Amazon, Flipkart, Myntra, Meesho</span>
           </div>
           <div class="srv-hero-stat-item">
-            <span class="srv-hero-stat-val">&lt; 15%</span>
-            <span class="srv-hero-stat-lbl">Target Amazon ACoS</span>
+            <span class="srv-hero-stat-val">Profit</span>
+            <span class="srv-hero-stat-lbl">Plans built around your profit, not just sales numbers</span>
           </div>
           <div class="srv-hero-stat-item">
-            <span class="srv-hero-stat-val">99.9%</span>
-            <span class="srv-hero-stat-lbl">Stock Sync Accuracy</span>
+            <span class="srv-hero-stat-val">Delhi NCR</span>
+            <span class="srv-hero-stat-lbl">Same-day support, phone calls and in-person meetings</span>
           </div>
         </div>
       </div>
@@ -70,64 +71,28 @@ $consultationUrl = appUrl('contact.php?service=' . urlencode($serviceName));
           <div class="srv-visual-glow"></div>
           <div class="srv-visual-frame">
             <svg viewBox="0 0 600 440" fill="none" xmlns="http://www.w3.org/2000/svg" style="width:100%; height:auto; display:block;">
-  <rect width="600" height="440" rx="14" fill="#071A2C"/>
-  <path d="M0 44H600M0 88H600M0 132H600M0 176H600M0 220H600M0 264H600M0 308H600M0 352H600M0 396H600" stroke="#06B5F9" stroke-opacity="0.08"/>
-  <path d="M60 0V440M120 0V440M180 0V440M240 0V440M300 0V440M360 0V440M420 0V440M480 0V440M540 0V440" stroke="#06B5F9" stroke-opacity="0.08"/>
-  <rect width="600" height="40" rx="14" fill="#0A223B"/>
-  <circle cx="28" cy="20" r="5" fill="#F87171"/><circle cx="46" cy="20" r="5" fill="#FBBF24"/><circle cx="64" cy="20" r="5" fill="#34D399"/>
-  <text x="90" y="24" fill="#8FA3B8" font-family="monospace" font-size="11" font-weight="600">businessdoctor.retail :: multichannel-marketplace-hub.v2</text>
-
-  <!-- Marketplace Hub Center -->
-  <rect x="40" y="65" width="245" height="105" rx="8" fill="#0D2644" stroke="#06B5F9" stroke-width="1.5" stroke-opacity="0.4"/>
-  <text x="56" y="90" fill="#06B5F9" font-family="monospace" font-size="11" font-weight="bold">// BUY BOX RETENTION</text>
-  <text x="56" y="124" fill="#34D399" font-family="sans-serif" font-size="26" font-weight="900">94.2%</text>
-  <text x="56" y="150" fill="#B8C7D9" font-family="monospace" font-size="10">Amazon &bull; Walmart Defense</text>
-
-  <rect x="315" y="65" width="245" height="105" rx="8" fill="#0D2644" stroke="#06B5F9" stroke-width="1.5" stroke-opacity="0.4"/>
-  <text x="330" y="90" fill="#06B5F9" font-family="monospace" font-size="11" font-weight="bold">// CATALOG VELOCITY</text>
-  <text x="330" y="124" fill="#06B5F9" font-family="sans-serif" font-size="26" font-weight="900">14,200+</text>
-  <text x="330" y="150" fill="#B8C7D9" font-family="monospace" font-size="10">Active SKUs Synced Daily</text>
-
-  <!-- Multichannel Inventory & Ads Dashboard -->
-  <rect x="40" y="185" width="520" height="225" rx="10" fill="#0A2038" stroke="#06B5F9" stroke-width="1" stroke-opacity="0.3"/>
-  <text x="56" y="212" fill="#F5F7FA" font-family="sans-serif" font-size="12" font-weight="bold">Unified Inventory, ACoS &amp; Fulfillment Sync</text>
-  <text x="430" y="212" fill="#06B5F9" font-family="monospace" font-size="10.5">LIVE TELEMETRY</text>
-
-  <!-- Channel Nodes -->
-  <rect x="56" y="228" width="148" height="54" rx="6" fill="#0D2644" stroke="#06B5F9" stroke-opacity="0.3"/>
-  <text x="68" y="248" fill="#F5F7FA" font-family="sans-serif" font-size="11" font-weight="bold">Shopify Plus Store</text>
-  <text x="68" y="268" fill="#34D399" font-family="monospace" font-size="10">0.68s Headless Speed</text>
-
-  <rect x="224" y="228" width="148" height="54" rx="6" fill="#0D2644" stroke="#06B5F9" stroke-opacity="0.3"/>
-  <text x="236" y="248" fill="#F5F7FA" font-family="sans-serif" font-size="11" font-weight="bold">Amazon FBA SP-API</text>
-  <text x="236" y="268" fill="#34D399" font-family="monospace" font-size="10">14.2% Target ACoS</text>
-
-  <rect x="392" y="228" width="148" height="54" rx="6" fill="#0D2644" stroke="#06B5F9" stroke-opacity="0.3"/>
-  <text x="404" y="248" fill="#F5F7FA" font-family="sans-serif" font-size="11" font-weight="bold">Flipkart / Multi-Store</text>
-  <text x="404" y="268" fill="#34D399" font-family="monospace" font-size="10">Auto-Inventory Sync</text>
-
-  <!-- Bar Graph Visualization -->
-  <line x1="56" y1="380" x2="360" y2="380" stroke="#06B5F9" stroke-opacity="0.2"/>
-  <rect x="70" y="352" width="32" height="28" rx="3" fill="#06B5F9" fill-opacity="0.6"/>
-  <text x="78" y="396" fill="#8FA3B8" font-family="monospace" font-size="10">M1</text>
-
-  <rect x="130" y="340" width="32" height="40" rx="3" fill="#06B5F9" fill-opacity="0.7"/>
-  <text x="138" y="396" fill="#8FA3B8" font-family="monospace" font-size="10">M2</text>
-
-  <rect x="190" y="328" width="32" height="52" rx="3" fill="#06B5F9" fill-opacity="0.8"/>
-  <text x="198" y="396" fill="#8FA3B8" font-family="monospace" font-size="10">M3</text>
-
-  <rect x="250" y="316" width="32" height="64" rx="3" fill="#06B5F9"/>
-  <text x="258" y="396" fill="#8FA3B8" font-family="monospace" font-size="10">M4</text>
-
-  <rect x="310" y="304" width="32" height="76" rx="3" fill="#34D399"/>
-  <text x="318" y="396" fill="#8FA3B8" font-family="monospace" font-size="10">M5</text>
-
-  <rect x="392" y="300" width="148" height="80" rx="6" fill="#0D2644" stroke="#06B5F9" stroke-opacity="0.25"/>
-  <text x="410" y="328" fill="#34D399" font-family="sans-serif" font-size="18" font-weight="900">+230% Rev</text>
-  <text x="410" y="352" fill="#B8C7D9" font-family="monospace" font-size="10">Blended Net Margin</text>
-  <text x="410" y="368" fill="#06B5F9" font-family="monospace" font-size="9.5">Audited Store P&amp;L</text>
-</svg>
+              <rect width="600" height="440" rx="14" fill="#071A2C"/>
+              <path d="M0 44H600M0 88H600M0 132H600M0 176H600M0 220H600M0 264H600M0 308H600M0 352H600M0 396H600" stroke="#06B5F9" stroke-opacity="0.08"/>
+              <path d="M60 0V440M120 0V440M180 0V440M240 0V440M300 0V440M360 0V440M420 0V440M480 0V440M540 0V440" stroke="#06B5F9" stroke-opacity="0.08"/>
+              <rect width="600" height="40" rx="14" fill="#0A223B"/>
+              <circle cx="28" cy="20" r="5" fill="#F87171"/><circle cx="46" cy="20" r="5" fill="#FBBF24"/><circle cx="64" cy="20" r="5" fill="#34D399"/>
+              <text x="90" y="24" fill="#8FA3B8" font-family="monospace" font-size="11" font-weight="600">businessdoctor.studio :: ecommerce-operations-hub</text>
+              <rect x="40" y="65" width="520" height="150" rx="10" fill="#030E1A" stroke="#06B5F9" stroke-width="1.5" stroke-opacity="0.4"/>
+              <text x="65" y="100" fill="#06B5F9" font-family="monospace" font-size="12" font-weight="bold">// MULTI-CHANNEL REVENUE &amp; MARGIN FLOW</text>
+              <path d="M 65 180 L 150 150 L 240 160 L 330 120 L 420 135 L 520 80" stroke="#34D399" stroke-width="3" fill="none"/>
+              <circle cx="520" cy="80" r="5" fill="#34D399"/>
+              <text x="430" y="70" fill="#34D399" font-family="sans-serif" font-size="13" font-weight="bold">Net Profit Focus</text>
+              <rect x="40" y="235" width="250" height="170" rx="8" fill="#0D2644" stroke="#06B5F9" stroke-opacity="0.3"/>
+              <text x="60" y="265" fill="#06B5F9" font-family="monospace" font-size="11" font-weight="bold">// CHANNELS MANAGED</text>
+              <text x="60" y="305" fill="#34D399" font-family="sans-serif" font-size="28" font-weight="900">6 Platforms</text>
+              <text x="60" y="330" fill="#B8C7D9" font-family="sans-serif" font-size="12">Amazon &bull; Flipkart &bull; Shopify &bull; D2C</text>
+              <text x="60" y="365" fill="#ffffff" font-family="sans-serif" font-size="13" font-weight="600">Live Inventory &amp; Order Sync</text>
+              <rect x="310" y="235" width="250" height="170" rx="8" fill="#0D2644" stroke="#06B5F9" stroke-opacity="0.3"/>
+              <text x="330" y="265" fill="#06B5F9" font-family="monospace" font-size="11" font-weight="bold">// LOCAL PRESENCE</text>
+              <text x="330" y="305" fill="#06B5F9" font-family="sans-serif" font-size="28" font-weight="900">Delhi NCR</text>
+              <text x="330" y="330" fill="#B8C7D9" font-family="sans-serif" font-size="12">Dedicated Account Manager</text>
+              <text x="330" y="365" fill="#34D399" font-family="sans-serif" font-size="13" font-weight="600">Same-Day In-Person Support</text>
+            </svg>
           </div>
         </div>
       </div>
@@ -136,7 +101,7 @@ $consultationUrl = appUrl('contact.php?service=' . urlencode($serviceName));
 </section>
 
 <!-- ============================================================
-     KEY TAKEAWAYS & EXECUTIVE SUMMARY (Reference Feature B)
+     KEY TAKEAWAYS & EXECUTIVE SUMMARY
      ============================================================ -->
 <section class="srv-section srv-section-takeaways" style="padding-top: 0; padding-bottom: 2.5rem;">
   <div class="srv-container">
@@ -144,50 +109,50 @@ $consultationUrl = appUrl('contact.php?service=' . urlencode($serviceName));
       <div class="srv-takeaways-header">
         <div class="srv-takeaways-kicker">
           <svg class="srv-takeaways-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"/></svg>
-          <span>KEY TAKEAWAYS &bull; AT A GLANCE</span>
+          <span>What You Get With Us</span>
         </div>
         <span class="srv-takeaways-pill">Core Execution Highlights</span>
       </div>
       <div class="srv-takeaways-grid">
         <div class="srv-takeaway-card">
           <div class="srv-takeaway-top">
-            <span class="srv-takeaway-val">94%+</span>
+            <span class="srv-takeaway-val">1 Team</span>
             <div class="srv-takeaway-badge">
               <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
             </div>
           </div>
-          <span class="srv-takeaway-label">Average Buy Box Retention</span>
-          <p class="srv-takeaway-desc">Verified benchmark engineered across production client deployments.</p>
+          <span class="srv-takeaway-label">One Team for Everything</span>
+          <p class="srv-takeaway-desc">No more running behind five different freelancers.</p>
         </div>
         <div class="srv-takeaway-card">
           <div class="srv-takeaway-top">
-            <span class="srv-takeaway-val">4.6x</span>
+            <span class="srv-takeaway-val">6 Channels</span>
             <div class="srv-takeaway-badge">
               <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
             </div>
           </div>
-          <span class="srv-takeaway-label">Blended Marketplace ROAS</span>
-          <p class="srv-takeaway-desc">Verified benchmark engineered across production client deployments.</p>
+          <span class="srv-takeaway-label">Full Ecommerce Management</span>
+          <p class="srv-takeaway-desc">Shopify, WooCommerce, Amazon, Flipkart, Myntra and Meesho.</p>
         </div>
         <div class="srv-takeaway-card">
           <div class="srv-takeaway-top">
-            <span class="srv-takeaway-val">&amp;lt; 15%</span>
+            <span class="srv-takeaway-val">Profit First</span>
             <div class="srv-takeaway-badge">
               <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
             </div>
           </div>
-          <span class="srv-takeaway-label">Target Amazon ACoS</span>
-          <p class="srv-takeaway-desc">Verified benchmark engineered across production client deployments.</p>
+          <span class="srv-takeaway-label">Built Around Your Profit</span>
+          <p class="srv-takeaway-desc">Plans built around your profit, not just your sales numbers.</p>
         </div>
         <div class="srv-takeaway-card">
           <div class="srv-takeaway-top">
-            <span class="srv-takeaway-val">99.9%</span>
+            <span class="srv-takeaway-val">Monthly</span>
             <div class="srv-takeaway-badge">
               <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
             </div>
           </div>
-          <span class="srv-takeaway-label">Stock Sync Accuracy</span>
-          <p class="srv-takeaway-desc">Verified benchmark engineered across production client deployments.</p>
+          <span class="srv-takeaway-label">Simple Monthly Report</span>
+          <p class="srv-takeaway-desc">A simple monthly report with your sales, returns, ad spend and growth.</p>
         </div>
       </div>
     </div>
@@ -195,7 +160,7 @@ $consultationUrl = appUrl('contact.php?service=' . urlencode($serviceName));
 </section>
 
 <!-- ============================================================
-     SECTION 2 — SERVICE INTRODUCTION
+     SECTION 2 — SERVICE INTRODUCTION & PHILOSOPHY
      ============================================================ -->
 <section class="srv-section srv-bg-surface" id="introduction">
   <div class="srv-container">
@@ -203,52 +168,24 @@ $consultationUrl = appUrl('contact.php?service=' . urlencode($serviceName));
       <div class="srv-col-12 srv-col-lg-6">
         <div class="srv-badge mb-3">
           <span class="srv-badge-dot"></span>
-          <span>RETAIL ENGINEERING FRAMEWORK</span>
+          <span>WHY WE WORK THIS WAY</span>
         </div>
         <h2 class="srv-section-title">
-          Unifying Direct-to-Consumer &amp; <span class="text-brand">Global Marketplace Scale</span>
+          Why We Work <span class="text-brand">This Way</span>
         </h2>
         <p class="srv-section-subtitle mb-4">
-          Selling across your own D2C storefront, Amazon, Flipkart, and international marketplaces is fraught with inventory stockouts, margin erosion, price-war hijackers, and ad spend waste.
+          Online stores fail not for having a bad product but because of neglecting the little things. Weak product titles mean they can't be found by customers. Wasteful ads target the wrong products. When you try to purchase there's no stock even though the product says it's available, meaning you lose out on your order. You're getting lots of returns but no one is asking why. All of these factors are affecting your margins.
         </p>
         <p class="srv-card-desc mb-4">
-          At BusinessDoctor, we treat digital retail as an integrated supply-chain and growth ecosystem. We build lightning-fast headless storefronts, optimize marketplace product rankings, deploy automated repricing algorithms, and safeguard brand equity.
+          As an ecommerce management agency based in Delhi we will identify the issue causing you to lose money. We will look at your sales, ad spend, returns and shipping costs to pinpoint the main issue and sort it out. As an ecommerce management company in Delhi we measure our success by asking one question: have you made more profit this month?
         </p>
-
-        <div class="srv-feature-list mb-4">
-          <div class="srv-feature-item">
-            <svg class="srv-check-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
-            <div>
-              <strong class="text-white">Amazon &amp; Marketplace Growth Architecture:</strong> 
-              <span class="text-secondary">High-conversion A+ Content, Brand Stores, listing keyword optimization, and Buy Box defense.</span>
-            </div>
-          </div>
-          <div class="srv-feature-item">
-            <svg class="srv-check-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
-            <div>
-              <strong class="text-white">Sub-Second D2C Commerce Stacks:</strong> 
-              <span class="text-secondary">Headless Shopify Plus, custom PHP/WooCommerce, and high-speed edge caching.</span>
-            </div>
-          </div>
-          <div class="srv-feature-item">
-            <svg class="srv-check-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
-            <div>
-              <strong class="text-white">Algorithmic Sponsored Ads (PPC):</strong> 
-              <span class="text-secondary">Precision Sponsored Products, Brands, and Display campaigns engineered for low ACoS.</span>
-            </div>
-          </div>
-          <div class="srv-feature-item">
-            <svg class="srv-check-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
-            <div>
-              <strong class="text-white">Automated ERP &amp; Stock Synchronization:</strong> 
-              <span class="text-secondary">Real-time multi-warehouse inventory sync preventing overselling and account suspensions.</span>
-            </div>
-          </div>
-        </div>
+        <p class="srv-card-desc mb-4">
+          We won't use any complex terms or confusing charts. You will always understand exactly what we have done, why and what has changed.
+        </p>
 
         <div class="pt-2">
           <a href="<?= e($consultationUrl) ?>" class="btn-srv-primary">
-            <span>Schedule Diagnostic Call</span>
+            <span>Get a Free Consultation</span>
             <svg class="btn-srv-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
           </a>
         </div>
@@ -257,41 +194,41 @@ $consultationUrl = appUrl('contact.php?service=' . urlencode($serviceName));
       <div class="srv-col-12 srv-col-lg-6 mt-4 mt-lg-0">
         <div class="srv-hud-card">
           <div class="srv-hud-header">
-            <span class="srv-hud-title">COMMERCE ENGINE TELEMETRY</span>
+            <span class="srv-hud-title">ECOMMERCE OPERATIONS TELEMETRY</span>
             <span class="srv-hud-status">
               <span class="srv-hud-pulse"></span>
-              OMNICHANNEL FEEDS SYNCED
+              DAILY OPERATIONS ACTIVE
             </span>
           </div>
           <div class="srv-hud-body">
             <p class="srv-card-desc mb-4">
-              Live monitoring of marketplace Buy Box share, return rates, inventory velocity, and blended ad margins.
+              Real-time monitoring across catalogue health, inventory sync, advertising efficiency, and net margin protection.
             </p>
             <div class="srv-hud-metrics">
               <div class="srv-hud-metric-box">
-                <div class="srv-hud-metric-num">94.2%</div>
-                <div class="srv-hud-metric-label">Buy Box Share</div>
+                <div class="srv-hud-metric-num">Live</div>
+                <div class="srv-hud-metric-label">Stock Sync</div>
               </div>
               <div class="srv-hud-metric-box">
-                <div class="srv-hud-metric-num">13.8%</div>
-                <div class="srv-hud-metric-label">Target ACoS</div>
+                <div class="srv-hud-metric-num">6+</div>
+                <div class="srv-hud-metric-label">Marketplaces</div>
               </div>
               <div class="srv-hud-metric-box">
-                <div class="srv-hud-metric-num">0.68s</div>
-                <div class="srv-hud-metric-label">Checkout Latency</div>
+                <div class="srv-hud-metric-num">0</div>
+                <div class="srv-hud-metric-label">Hidden Terms</div>
               </div>
               <div class="srv-hud-metric-box">
-                <div class="srv-hud-metric-num">+230%</div>
-                <div class="srv-hud-metric-label">YoY GMV Expansion</div>
+                <div class="srv-hud-metric-num">100%</div>
+                <div class="srv-hud-metric-label">Profit Focus</div>
               </div>
             </div>
             <div class="srv-hud-tag-list mt-3">
-              <span class="srv-tool-badge">Amazon SP-API</span>
-              <span class="srv-tool-badge">Shopify Plus</span>
-              <span class="srv-tool-badge">Helium 10</span>
-              <span class="srv-tool-badge">Flipkart Ads</span>
+              <span class="srv-tool-badge">Shopify</span>
               <span class="srv-tool-badge">WooCommerce</span>
-              <span class="srv-tool-badge">Klaviyo</span>
+              <span class="srv-tool-badge">Amazon</span>
+              <span class="srv-tool-badge">Flipkart</span>
+              <span class="srv-tool-badge">Myntra</span>
+              <span class="srv-tool-badge">Meesho</span>
             </div>
           </div>
         </div>
@@ -308,225 +245,122 @@ $consultationUrl = appUrl('contact.php?service=' . urlencode($serviceName));
     <div class="srv-section-header text-center">
       <div class="srv-badge">
         <span class="srv-badge-dot"></span>
-        <span>COMPREHENSIVE CAPABILITIES</span>
+        <span>WHAT WE OFFER</span>
       </div>
       <h2 class="srv-section-title">
-        Specialized Services Built for <span class="text-brand">Enterprise Scale</span>
+        Ecommerce Management Services <span class="text-brand">in Delhi</span>
       </h2>
       <p class="srv-section-subtitle">
-        Every capability is executed by veteran specialists dedicated to predictable return on investment and zero fluff.
+        As an ecommerce management company in Delhi, we cover everything from your first product upload to your thousand orders. Here is what we handle for you.
       </p>
     </div>
 
-    <div class="srv-grid srv-grid-3">
+    <div class="srv-grid-3">
+      <!-- Service Card 1 -->
       <div class="srv-card">
-        <div class="srv-card-icon-wrap">
-          <div class="srv-icon-box"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="9" cy="21" r="1"/><circle cx="20" cy="21" r="1"/><path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"/></svg></div>
+        <div class="srv-card-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 2L3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z"/><line x1="3" y1="6" x2="21" y2="6"/><path d="M16 10a4 4 0 0 1-8 0"/></svg>
         </div>
-        <h3 class="srv-card-title">Amazon &amp; Marketplace Management</h3>
-        <p class="srv-card-desc">Full-lifecycle marketplace execution across Amazon, Flipkart, and global portals: catalog management, brand registry, listing defense, and case resolution.</p>
-        <div class="srv-feature-list mb-3">
-          <div class="srv-feature-item">
-            <svg class="srv-check-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
-            <span>Brand Registry &amp; Trademark Protection</span>
-          </div>
-          <div class="srv-feature-item">
-            <svg class="srv-check-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
-            <span>Listing Hijacker Removal &amp; MAP Monitoring</span>
-          </div>
-          <div class="srv-feature-item">
-            <svg class="srv-check-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
-            <span>FBA Inbound Logistics Guidance</span>
-          </div>
-          <div class="srv-feature-item">
-            <svg class="srv-check-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
-            <span>Seller Support Dispute Resolution</span>
-          </div>
-        </div>
-        <div class="srv-benefit-badge">
-          <span class="text-secondary">BUSINESS VALUE:</span> 
-          <strong class="text-white">Protects your margins and secures consistent 90%+ Buy Box dominance.</strong>
-        </div>
-        <div class="pt-3">
-          <a href="<?= appUrl('contact.php?service=' . urlencode($serviceName) . '&capability=' . urlencode('Amazon & Marketplace Management')) ?>" class="srv-link-action">
-            <span>Inquire About This Service</span>
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
-          </a>
+        <h3 class="srv-card-title">Ecommerce Store Management</h3>
+        <p class="srv-card-desc">Our Shopify store management service from Delhi includes adding new products, updating prices, creating promotions, changing banners and improving site speed, leaving you with an up-to-date, fast performing store to ensure your customers won’t bounce off your site.</p>
+        <ul class="srv-card-list">
+          <li>Product uploads, price changes and offers</li>
+          <li>Banner and homepage updates</li>
+          <li>Site speed and checkout fixes</li>
+        </ul>
+        <div class="srv-sector-outcome mt-3">
+          <span class="srv-outcome-badge">Business Value</span>
+          <span>Fewer visitors leave halfway, so more of your traffic turns into orders.</span>
         </div>
       </div>
+
+      <!-- Service Card 2 -->
       <div class="srv-card">
-        <div class="srv-card-icon-wrap">
-          <div class="srv-icon-box"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="12" y1="1" x2="12" y2="23"/><path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/></svg></div>
+        <div class="srv-card-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="7" width="20" height="14" rx="2" ry="2"/><path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16"/></svg>
         </div>
-        <h3 class="srv-card-title">Sponsored Ads &amp; PPC Campaign Optimization</h3>
-        <p class="srv-card-desc">Algorithmic advertising management designed to maximize product sales while keeping ACoS and TACoS strictly within profitable thresholds.</p>
-        <div class="srv-feature-list mb-3">
-          <div class="srv-feature-item">
-            <svg class="srv-check-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
-            <span>Sponsored Products, Brands &amp; Video</span>
-          </div>
-          <div class="srv-feature-item">
-            <svg class="srv-check-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
-            <span>Automated Daily Bid Adjustments</span>
-          </div>
-          <div class="srv-feature-item">
-            <svg class="srv-check-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
-            <span>Competitor ASIN Conquesting Campaigns</span>
-          </div>
-          <div class="srv-feature-item">
-            <svg class="srv-check-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
-            <span>Dayparting &amp; Hourly Placement Control</span>
-          </div>
-        </div>
-        <div class="srv-benefit-badge">
-          <span class="text-secondary">BUSINESS VALUE:</span> 
-          <strong class="text-white">Scale profitable retail sales without eroding your operating margins.</strong>
-        </div>
-        <div class="pt-3">
-          <a href="<?= appUrl('contact.php?service=' . urlencode($serviceName) . '&capability=' . urlencode('Sponsored Ads & PPC Campaign Optimization')) ?>" class="srv-link-action">
-            <span>Inquire About This Service</span>
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
-          </a>
+        <h3 class="srv-card-title">Marketplace Management</h3>
+        <p class="srv-card-desc">We are a marketplace management company based in Delhi. We offer Amazon, Flipkart, Myntra and Meesho account management. List, submit and review your products with us so they are visible and your account is secure.</p>
+        <ul class="srv-card-list">
+          <li>Listing and keeping checks</li>
+          <li>Review and rating handling</li>
+          <li>Deals and promotion planning</li>
+        </ul>
+        <div class="srv-sector-outcome mt-3">
+          <span class="srv-outcome-badge">Business Value</span>
+          <span>Better rankings and a healthy account mean steady marketplace sales.</span>
         </div>
       </div>
+
+      <!-- Service Card 3 -->
       <div class="srv-card">
-        <div class="srv-card-icon-wrap">
-          <div class="srv-icon-box"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="18" height="18" rx="2" ry="2"/><line x1="3" y1="9" x2="21" y2="9"/><line x1="9" y1="21" x2="9" y2="9"/></svg></div>
+        <div class="srv-card-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/><polyline points="10 9 9 9 8 9"/></svg>
         </div>
-        <h3 class="srv-card-title">A+ Content, Brand Stores &amp; Visual Merchandising</h3>
-        <p class="srv-card-desc">High-conversion visual storytelling that elevates your brand perception above cheap generic competitors on crowded retail pages.</p>
-        <div class="srv-feature-list mb-3">
-          <div class="srv-feature-item">
-            <svg class="srv-check-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
-            <span>Premium A+ (EBC) Content Design</span>
-          </div>
-          <div class="srv-feature-item">
-            <svg class="srv-check-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
-            <span>Custom Multi-Page Amazon Brand Stores</span>
-          </div>
-          <div class="srv-feature-item">
-            <svg class="srv-check-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
-            <span>High-Resolution 3D Infographics</span>
-          </div>
-          <div class="srv-feature-item">
-            <svg class="srv-check-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
-            <span>Lifestyle Feature Comparison Grids</span>
-          </div>
-        </div>
-        <div class="srv-benefit-badge">
-          <span class="text-secondary">BUSINESS VALUE:</span> 
-          <strong class="text-white">Boosts listing conversion rates by an average of 15% to 30%.</strong>
-        </div>
-        <div class="pt-3">
-          <a href="<?= appUrl('contact.php?service=' . urlencode($serviceName) . '&capability=' . urlencode('A+ Content, Brand Stores & Visual Merchandising')) ?>" class="srv-link-action">
-            <span>Inquire About This Service</span>
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
-          </a>
+        <h3 class="srv-card-title">Ecommerce Catalogue Management</h3>
+        <p class="srv-card-desc">Our ecommerce catalogue management services will ensure that your listings are easy to sell by providing clear search terms with relevant keywords, easy to read bullet points, accurate descriptions, proper categorisation and quality images to make it easy for shoppers to find and add your products to their basket.</p>
+        <ul class="srv-card-list">
+          <li>Titles and bullet points with the right keywords</li>
+          <li>Clear descriptions and correct categories</li>
+          <li>Sharp, clean product images</li>
+        </ul>
+        <div class="srv-sector-outcome mt-3">
+          <span class="srv-outcome-badge">Business Value</span>
+          <span>Shoppers find you faster and click “Add to Cart” more often.</span>
         </div>
       </div>
+
+      <!-- Service Card 4 -->
       <div class="srv-card">
-        <div class="srv-card-icon-wrap">
-          <div class="srv-icon-box"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="16 18 22 12 16 6"/><polyline points="8 6 2 12 8 18"/></svg></div>
+        <div class="srv-card-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="16.5" y1="9.4" x2="7.5" y2="4.21"/><path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"/><polyline points="3.27 6.96 12 12.01 20.73 6.96"/><line x1="12" y1="22.08" x2="12" y2="12"/></svg>
         </div>
-        <h3 class="srv-card-title">High-Performance D2C Storefront Engineering</h3>
-        <p class="srv-card-desc">Custom Shopify Plus, PHP/WooCommerce, or headless storefronts engineered for sub-second load times and frictionless mobile checkout.</p>
-        <div class="srv-feature-list mb-3">
-          <div class="srv-feature-item">
-            <svg class="srv-check-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
-            <span>Sub-Second TTFB &amp; Core Web Vitals</span>
-          </div>
-          <div class="srv-feature-item">
-            <svg class="srv-check-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
-            <span>One-Click Mobile Payment Wallets (Apple Pay/UPI)</span>
-          </div>
-          <div class="srv-feature-item">
-            <svg class="srv-check-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
-            <span>Custom Bundling &amp; Upsell Logic</span>
-          </div>
-          <div class="srv-feature-item">
-            <svg class="srv-check-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
-            <span>Automated Abandoned Cart Flows</span>
-          </div>
-        </div>
-        <div class="srv-benefit-badge">
-          <span class="text-secondary">BUSINESS VALUE:</span> 
-          <strong class="text-white">Drives higher average order value and lowers customer acquisition costs.</strong>
-        </div>
-        <div class="pt-3">
-          <a href="<?= appUrl('contact.php?service=' . urlencode($serviceName) . '&capability=' . urlencode('High-Performance D2C Storefront Engineering')) ?>" class="srv-link-action">
-            <span>Inquire About This Service</span>
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
-          </a>
+        <h3 class="srv-card-title">Order and Inventory Management</h3>
+        <p class="srv-card-desc">Our order and inventory management services ensure that you have accurate stock levels across all channels. Fewer cancellations, quicker dispatch and happy customers. Efficient stock management will help boost your seller rating and therefore get your listings seen by more people.</p>
+        <ul class="srv-card-list">
+          <li>Live stock sync across platforms</li>
+          <li>Order tracking and dispatch follow-up</li>
+          <li>Return and cancellation checks</li>
+        </ul>
+        <div class="srv-sector-outcome mt-3">
+          <span class="srv-outcome-badge">Business Value</span>
+          <span>Fewer cancellations, happier buyers and better seller ratings.</span>
         </div>
       </div>
+
+      <!-- Service Card 5 -->
       <div class="srv-card">
-        <div class="srv-card-icon-wrap">
-          <div class="srv-icon-box"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="2" width="20" height="8" rx="2" ry="2"/><rect x="2" y="14" width="20" height="8" rx="2" ry="2"/><line x1="6" y1="6" x2="6.01" y2="6"/><line x1="6" y1="18" x2="6.01" y2="18"/></svg></div>
+        <div class="srv-card-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M16 8l-8 8"/><path d="M8 8h8v8"/></svg>
         </div>
-        <h3 class="srv-card-title">Multi-Channel Inventory &amp; ERP Synchronization</h3>
-        <p class="srv-card-desc">Automated middleware connecting your warehouse, ERP, and physical retail stores to all digital channels via modern REST and webhook APIs.</p>
-        <div class="srv-feature-list mb-3">
-          <div class="srv-feature-item">
-            <svg class="srv-check-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
-            <span>Real-Time Multi-Warehouse Stock Sync</span>
-          </div>
-          <div class="srv-feature-item">
-            <svg class="srv-check-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
-            <span>Automated Low-Stock Alert Webhooks</span>
-          </div>
-          <div class="srv-feature-item">
-            <svg class="srv-check-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
-            <span>Unified Multi-Channel Order Routing</span>
-          </div>
-          <div class="srv-feature-item">
-            <svg class="srv-check-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
-            <span>Marketplace Fee Reconciliation</span>
-          </div>
-        </div>
-        <div class="srv-benefit-badge">
-          <span class="text-secondary">BUSINESS VALUE:</span> 
-          <strong class="text-white">Eliminates overselling, manual spreadsheets, and out-of-stock ranking penalties.</strong>
-        </div>
-        <div class="pt-3">
-          <a href="<?= appUrl('contact.php?service=' . urlencode($serviceName) . '&capability=' . urlencode('Multi-Channel Inventory & ERP Synchronization')) ?>" class="srv-link-action">
-            <span>Inquire About This Service</span>
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
-          </a>
+        <h3 class="srv-card-title">Ecommerce Advertising</h3>
+        <p class="srv-card-desc">Delhi-based ecommerce advertising agency. We manage all your Google Shopping, Meta and marketplace ads. We invest in the right products and pause the wrong ones. This helps you make the most of your ad spend and protects your margins.</p>
+        <ul class="srv-card-list">
+          <li>Campaigns built on your best-margin products</li>
+          <li>Weekly budget and bid checks</li>
+          <li>Pausing ads that don’t pay back</li>
+        </ul>
+        <div class="srv-sector-outcome mt-3">
+          <span class="srv-outcome-badge">Business Value</span>
+          <span>Every ad rupee works harder and your margin stays safe.</span>
         </div>
       </div>
+
+      <!-- Service Card 6 -->
       <div class="srv-card">
-        <div class="srv-card-icon-wrap">
-          <div class="srv-icon-box"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/></svg></div>
+        <div class="srv-card-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
         </div>
-        <h3 class="srv-card-title">Customer Retention &amp; Lifecycle Email/SMS</h3>
-        <p class="srv-card-desc">Automated post-purchase marketing flows that turn first-time shoppers into profitable repeat buyers and brand advocates.</p>
-        <div class="srv-feature-list mb-3">
-          <div class="srv-feature-item">
-            <svg class="srv-check-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
-            <span>Klaviyo Behavioral Segmentation</span>
-          </div>
-          <div class="srv-feature-item">
-            <svg class="srv-check-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
-            <span>Predictive Replenishment Triggers</span>
-          </div>
-          <div class="srv-feature-item">
-            <svg class="srv-check-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
-            <span>Win-Back &amp; Lapsed Customer Sequences</span>
-          </div>
-          <div class="srv-feature-item">
-            <svg class="srv-check-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
-            <span>VIP Loyalty &amp; Review Generation Flows</span>
-          </div>
-        </div>
-        <div class="srv-benefit-badge">
-          <span class="text-secondary">BUSINESS VALUE:</span> 
-          <strong class="text-white">Generates 25% to 40% of total revenue from zero-ad-cost owned channels.</strong>
-        </div>
-        <div class="pt-3">
-          <a href="<?= appUrl('contact.php?service=' . urlencode($serviceName) . '&capability=' . urlencode('Customer Retention & Lifecycle Email/SMS')) ?>" class="srv-link-action">
-            <span>Inquire About This Service</span>
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
-          </a>
+        <h3 class="srv-card-title">Ecommerce SEO</h3>
+        <p class="srv-card-desc">Our ecommerce SEO services in Delhi will help you improve your category pages, product pages and blogs so that you gain more customers via Google without paying per click.</p>
+        <ul class="srv-card-list">
+          <li>Category and product page fixes</li>
+          <li>Keyword-based blog content</li>
+          <li>Basic technical clean-up</li>
+        </ul>
+        <div class="srv-sector-outcome mt-3">
+          <span class="srv-outcome-badge">Business Value</span>
+          <span>More buyers come through Google, so you depend less on paid clicks.</span>
         </div>
       </div>
     </div>
@@ -534,109 +368,99 @@ $consultationUrl = appUrl('contact.php?service=' . urlencode($serviceName));
 </section>
 
 <!-- ============================================================
-     SECTION 5 — OUR PROCESS
+     SECTION 5 — PROCESS FRAMEWORK
      ============================================================ -->
 <section class="srv-section" id="process">
   <div class="srv-container">
     <div class="srv-section-header text-center">
       <div class="srv-badge">
         <span class="srv-badge-dot"></span>
-        <span>STRUCTURED EXECUTION TIMELINE</span>
+        <span>OUR PROCESS</span>
       </div>
       <h2 class="srv-section-title">
-        The 6-Phase Engineering &amp; Delivery <span class="text-brand">Framework</span>
+        How We <span class="text-brand">Work</span>
       </h2>
       <p class="srv-section-subtitle">
-        Predictable milestones, rigorous testing checkpoints, and full visibility at every stage of the project lifecycle.
+        Here is how our ecommerce management company in Delhi takes your store from confused to consistent.
       </p>
     </div>
 
-        <div class="srv-process-nav" role="tablist" aria-label="Process Milestones">
-      <button type="button" class="srv-process-pill is-active" data-step="01"><span class="srv-pill-num">1</span> Phase 01</button>
-      <button type="button" class="srv-process-pill" data-step="02"><span class="srv-pill-num">2</span> Phase 02</button>
-      <button type="button" class="srv-process-pill" data-step="03"><span class="srv-pill-num">3</span> Phase 03</button>
-      <button type="button" class="srv-process-pill" data-step="04"><span class="srv-pill-num">4</span> Phase 04</button>
-      <button type="button" class="srv-process-pill" data-step="05"><span class="srv-pill-num">5</span> Phase 05</button>
-      <button type="button" class="srv-process-pill" data-step="06"><span class="srv-pill-num">6</span> Phase 06</button>
-    </div>
-
     <div class="srv-process-timeline">
-      <div class="srv-process-card" data-step="01">
-        <div class="srv-phase-badge">PHASE 01 &bull; WEEKS 1–2</div>
-        <h3 class="srv-process-title">Marketplace &amp; Storefront Diagnostic Audit</h3>
-        <p class="srv-card-desc mb-3">We audit listing quality scores, Buy Box historical retention, ad spend efficiency, inventory feed latencies, and competitor pricing.</p>
-        <div class="srv-process-deliverable">
-          <span class="srv-deliverable-lbl">KEY DELIVERABLES:</span>
-          <ul class="srv-bullet-list">
-            <li>Comprehensive Retail Health Audit</li>
-            <li>Listing Keyword Gap Analysis</li>
-            <li>Negative Keyword &amp; Waste Elimination List</li>
-          </ul>
+      <!-- Step 1 -->
+      <div class="srv-process-step">
+        <div class="srv-step-number">01</div>
+        <div class="srv-step-content">
+          <h3 class="srv-step-title">1. Audit</h3>
+          <p class="srv-step-desc">We look at your website, listings, ads and old sales. We find what is working and what is not.</p>
+          <div class="srv-step-deliverables">
+            <span class="srv-deliverable-label">Key Deliverables:</span>
+            <span>Store audit report, list of money leaks, priority fix list.</span>
+          </div>
         </div>
       </div>
-      <div class="srv-process-card" data-step="02">
-        <div class="srv-phase-badge">PHASE 02 &bull; WEEKS 2–3</div>
-        <h3 class="srv-process-title">Listing Engineering &amp; Visual Creative Overhaul</h3>
-        <p class="srv-card-desc mb-3">We rewrite product titles, bullets, and backend terms for search indexing, while designing premium A+ Content and infographic modules.</p>
-        <div class="srv-process-deliverable">
-          <span class="srv-deliverable-lbl">KEY DELIVERABLES:</span>
-          <ul class="srv-bullet-list">
-            <li>Indexed Keyword Copy Matrix</li>
-            <li>A+ Enhanced Brand Content Assets</li>
-            <li>Brand Store Navigation Wireframe</li>
-          </ul>
+
+      <!-- Step 2 -->
+      <div class="srv-process-step">
+        <div class="srv-step-number">02</div>
+        <div class="srv-step-content">
+          <h3 class="srv-step-title">2. Growth Plan</h3>
+          <p class="srv-step-desc">We set clear goals, select the right channels for your products and make a realistic 3-Months plan.</p>
+          <div class="srv-step-deliverables">
+            <span class="srv-deliverable-label">Key Deliverables:</span>
+            <span>Channel plan, monthly targets, 90-day roadmap.</span>
+          </div>
         </div>
       </div>
-      <div class="srv-process-card" data-step="03">
-        <div class="srv-phase-badge">PHASE 03 &bull; WEEKS 3–4</div>
-        <h3 class="srv-process-title">Ad Campaign Restructuring &amp; Bid Guardrails</h3>
-        <p class="srv-card-desc mb-3">We segment campaigns into discovery, exact-match ranking, and competitor conquesting buckets with strict target ACoS rules.</p>
-        <div class="srv-process-deliverable">
-          <span class="srv-deliverable-lbl">KEY DELIVERABLES:</span>
-          <ul class="srv-bullet-list">
-            <li>PPC Campaign Structure Blueprint</li>
-            <li>Automated Bid Rules Implementation</li>
-            <li>Branded Keyword Defense Funnels</li>
-          </ul>
+
+      <!-- Step 3 -->
+      <div class="srv-process-step">
+        <div class="srv-step-number">03</div>
+        <div class="srv-step-content">
+          <h3 class="srv-step-title">3. Setup</h3>
+          <p class="srv-step-desc">Prior to spending on advertising, we ensure your catalogue is clean, tracking is correct and your accounts are set up. This ensures any cost issues are avoided from the start.</p>
+          <div class="srv-step-deliverables">
+            <span class="srv-deliverable-label">Key Deliverables:</span>
+            <span>Cleaned catalogue, working tracking, organised accounts.</span>
+          </div>
         </div>
       </div>
-      <div class="srv-process-card" data-step="04">
-        <div class="srv-phase-badge">PHASE 04 &bull; WEEKS 4–6</div>
-        <h3 class="srv-process-title">Inventory Automation &amp; Channel Syncing</h3>
-        <p class="srv-card-desc mb-3">We connect automated inventory feeds between your warehouse/Shopify and Amazon/Flipkart APIs to prevent stockouts.</p>
-        <div class="srv-process-deliverable">
-          <span class="srv-deliverable-lbl">KEY DELIVERABLES:</span>
-          <ul class="srv-bullet-list">
-            <li>Multi-Channel Inventory Webhook Setup</li>
-            <li>Automated Low-Stock Alert System</li>
-            <li>Order Routing Integration Verification</li>
-          </ul>
+
+      <!-- Step 4 -->
+      <div class="srv-process-step">
+        <div class="srv-step-number">04</div>
+        <div class="srv-step-content">
+          <h3 class="srv-step-title">4. Launch</h3>
+          <p class="srv-step-desc">Improved listings and new ad campaigns will be created. Every change made will be recorded.</p>
+          <div class="srv-step-deliverables">
+            <span class="srv-deliverable-label">Key Deliverables:</span>
+            <span>Optimised listings, live ad campaigns, change log.</span>
+          </div>
         </div>
       </div>
-      <div class="srv-process-card" data-step="05">
-        <div class="srv-phase-badge">PHASE 05 &bull; WEEKS 6–10</div>
-        <h3 class="srv-process-title">Conversion Optimization &amp; Review Engine</h3>
-        <p class="srv-card-desc mb-3">We deploy compliant post-purchase review generation workflows, A/B test main listing imagery, and optimize D2C checkout flows.</p>
-        <div class="srv-process-deliverable">
-          <span class="srv-deliverable-lbl">KEY DELIVERABLES:</span>
-          <ul class="srv-bullet-list">
-            <li>Automated Review Request Sequences</li>
-            <li>Main Image Click-Through Split Tests</li>
-            <li>Klaviyo Lifecycle Retention Flows</li>
-          </ul>
+
+      <!-- Step 5 -->
+      <div class="srv-process-step">
+        <div class="srv-step-number">05</div>
+        <div class="srv-step-content">
+          <h3 class="srv-step-title">5. Daily Management</h3>
+          <p class="srv-step-desc">Every day uploads, orders, reviews, pricing and marketplace tasks will be completed.</p>
+          <div class="srv-step-deliverables">
+            <span class="srv-deliverable-label">Key Deliverables:</span>
+            <span>Daily task updates, order and stock checks, review replies.</span>
+          </div>
         </div>
       </div>
-      <div class="srv-process-card" data-step="06">
-        <div class="srv-phase-badge">PHASE 06 &bull; ONGOING</div>
-        <h3 class="srv-process-title">Scaling, Brand Protection &amp; BI Reporting</h3>
-        <p class="srv-card-desc mb-3">We monitor listing hijackers 24/7, expand into new marketplace categories, and provide real-time executive profit dashboards.</p>
-        <div class="srv-process-deliverable">
-          <span class="srv-deliverable-lbl">KEY DELIVERABLES:</span>
-          <ul class="srv-bullet-list">
-            <li>Live Margin &amp; Profit BI Dashboard</li>
-            <li>24/7 Buy Box &amp; Hijacker Monitoring</li>
-            <li>Monthly Strategy Growth Reviews</li>
-          </ul>
+
+      <!-- Step 6 -->
+      <div class="srv-process-step">
+        <div class="srv-step-number">06</div>
+        <div class="srv-step-content">
+          <h3 class="srv-step-title">6. Reporting and Growth</h3>
+          <p class="srv-step-desc">Each month you’ll receive a clear report. With increased budgets allocated to the winning products and any losing aspects will be removed.</p>
+          <div class="srv-step-deliverables">
+            <span class="srv-deliverable-label">Key Deliverables:</span>
+            <span>Monthly performance report, budget shift plan, next-month targets.</span>
+          </div>
         </div>
       </div>
     </div>
@@ -644,418 +468,310 @@ $consultationUrl = appUrl('contact.php?service=' . urlencode($serviceName));
 </section>
 
 <!-- ============================================================
-     SECTION 6 — WHY CHOOSE BUSINESSDOCTOR
+     SECTION 6 — WHY CHOOSE US
      ============================================================ -->
 <section class="srv-section srv-bg-surface" id="why-choose-us">
   <div class="srv-container">
     <div class="srv-section-header text-center">
       <div class="srv-badge">
         <span class="srv-badge-dot"></span>
-        <span>COMPETITIVE ADVANTAGE</span>
+        <span>WHY CHOOSE US</span>
       </div>
       <h2 class="srv-section-title">
-        Why Leading Companies Partner with <span class="text-brand">BusinessDoctor</span>
+        Why Brands Pick BusinessDoctor as Their <span class="text-brand">Ecommerce Growth Agency in Delhi NCR</span>
       </h2>
       <p class="srv-section-subtitle">
-        We bridge the gap between business strategy and deep technical execution, providing senior expertise without agency bloat.
+        A dedicated team focused on your profit, margins, and steady daily store growth.
       </p>
     </div>
 
-    <div class="srv-grid srv-grid-3">
-      <div class="srv-card">
-        <div class="srv-icon-box mb-3"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="9" cy="21" r="1"/><circle cx="20" cy="21" r="1"/><path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"/></svg></div>
-        <h3 class="srv-card-title">Full-Lifecycle Retail Engineering</h3>
-        <p class="srv-card-desc">We handle everything from supply-chain inventory feeds to creative A+ design and algorithmic ad spend, providing an end-to-end partner.</p>
-        <div class="srv-metric-highlight mt-2">
-          <span class="text-brand font-mono font-bold">End-to-End</span>
-          <span class="text-muted text-sm ms-2">Complete Channel Scope</span>
-        </div>
+    <div class="srv-grid-3">
+      <div class="srv-benefit-card">
+        <div class="srv-benefit-badge">Local Market Knowledge Same-Day Support</div>
+        <h3 class="srv-benefit-title">We Are Based in Delhi</h3>
+        <p class="srv-benefit-desc">A proper ecommerce management company in Delhi should know the local market. We know how Indian buyers shop, how the festive rush hits and how local delivery works. You can also visit us and get quick answers.</p>
       </div>
-      <div class="srv-card">
-        <div class="srv-icon-box mb-3"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="12" y1="1" x2="12" y2="23"/><path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/></svg></div>
-        <h3 class="srv-card-title">Obsession with Contribution Margin</h3>
-        <p class="srv-card-desc">We don’t just report gross sales; we track marketplace fees, ad spend, and cost of goods to optimize for true net bottom-line profit.</p>
-        <div class="srv-metric-highlight mt-2">
-          <span class="text-brand font-mono font-bold">Net Profit</span>
-          <span class="text-muted text-sm ms-2">Primary KPI Focus</span>
-        </div>
+
+      <div class="srv-benefit-card">
+        <div class="srv-benefit-badge">End-to-End Complete Channel Scope</div>
+        <h3 class="srv-benefit-title">Many Platforms, One Plan</h3>
+        <p class="srv-benefit-desc">Shopify, WooCommerce, Amazon, Flipkart and more, all under one plan and one team. No mixed messages between different vendors.</p>
       </div>
-      <div class="srv-card">
-        <div class="srv-icon-box mb-3"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg></div>
-        <h3 class="srv-card-title">Proactive Brand &amp; Buy Box Defense</h3>
-        <p class="srv-card-desc">Our automated monitoring tools detect unauthorized sellers, counterfeiters, and pricing violations the moment they appear.</p>
-        <div class="srv-metric-highlight mt-2">
-          <span class="text-brand font-mono font-bold">24/7</span>
-          <span class="text-muted text-sm ms-2">Automated Monitoring</span>
-        </div>
+
+      <div class="srv-benefit-card">
+        <div class="srv-benefit-badge">Full Transparency Real ROI Data</div>
+        <h3 class="srv-benefit-title">Honest Numbers</h3>
+        <p class="srv-benefit-desc">Our ecommerce management company in Delhi shows you real figures for sales, returns, ad spend and ROI. We never hide behind vague updates.</p>
       </div>
-      <div class="srv-card">
-        <div class="srv-icon-box mb-3"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="16 18 22 12 16 6"/><polyline points="8 6 2 12 8 18"/></svg></div>
-        <h3 class="srv-card-title">Deep API &amp; Developer Expertise</h3>
-        <p class="srv-card-desc">Unlike creative-only agencies, our developers write directly to the Amazon Selling Partner API (SP-API) and Shopify GraphQL APIs.</p>
-        <div class="srv-metric-highlight mt-2">
-          <span class="text-brand font-mono font-bold">Native APIs</span>
-          <span class="text-muted text-sm ms-2">Direct Code Integration</span>
-        </div>
+
+      <div class="srv-benefit-card">
+        <div class="srv-benefit-badge">Margin Focused Profit Tracking</div>
+        <h3 class="srv-benefit-title">Profit Comes First</h3>
+        <p class="srv-benefit-desc">We watch your margins, shipping costs and returns. Sales that lose money are not growth, and we won’t chase them.</p>
       </div>
-      <div class="srv-card">
-        <div class="srv-icon-box mb-3"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><circle cx="12" cy="12" r="6"/><circle cx="12" cy="12" r="2"/></svg></div>
-        <h3 class="srv-card-title">Proprietary Keyword Harvesting Scripts</h3>
-        <p class="srv-card-desc">We continuously identify high-converting customer search terms from auto campaigns and migrate them into exact-match ranking assets.</p>
-        <div class="srv-metric-highlight mt-2">
-          <span class="text-brand font-mono font-bold">Weekly</span>
-          <span class="text-muted text-sm ms-2">Automated Search Term Mining</span>
-        </div>
+
+      <div class="srv-benefit-card">
+        <div class="srv-benefit-badge">Dedicated Support Single Point of Contact</div>
+        <h3 class="srv-benefit-title">One Account Manager</h3>
+        <p class="srv-benefit-desc">At our ecommerce management company in Delhi, one person learns your business well and picks up your calls. You don’t have to explain the same thing twice.</p>
       </div>
-      <div class="srv-card">
-        <div class="srv-icon-box mb-3"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="2" width="20" height="8" rx="2" ry="2"/><rect x="2" y="14" width="20" height="8" rx="2" ry="2"/><line x1="6" y1="6" x2="6.01" y2="6"/><line x1="6" y1="18" x2="6.01" y2="18"/></svg></div>
-        <h3 class="srv-card-title">Zero Stockout Penalties</h3>
-        <p class="srv-card-desc">We engineer automated inventory safeguards to preserve your organic ranking momentum and avoid costly FBA storage overages.</p>
-        <div class="srv-metric-highlight mt-2">
-          <span class="text-brand font-mono font-bold">99.9%</span>
-          <span class="text-muted text-sm ms-2">Stock Sync Reliability</span>
-        </div>
+
+      <div class="srv-benefit-card">
+        <div class="srv-benefit-badge">Scalable Packages Start Small</div>
+        <h3 class="srv-benefit-title">Flexible Plans</h3>
+        <p class="srv-benefit-desc">New D2C brand or an old seller, our ecommerce management company in Delhi has a plan you can start small with and grow later when you see results.</p>
       </div>
     </div>
   </div>
 </section>
 
 <!-- ============================================================
-     SECTION 7 — TECHNOLOGY & TOOLS WE USE
+     SECTION 7 — TECHNOLOGIES & TOOLS
      ============================================================ -->
 <section class="srv-section" id="technologies">
   <div class="srv-container">
     <div class="srv-section-header text-center">
       <div class="srv-badge">
         <span class="srv-badge-dot"></span>
-        <span>TOOLS TO BE USED</span>
+        <span>TOOL STACK</span>
       </div>
       <h2 class="srv-section-title">
-        Tools to Be <span class="text-brand">Used</span>
+        Tools <span class="text-brand">We Use</span>
       </h2>
       <p class="srv-section-subtitle">
-        We select battle-tested, high-performance tooling suited for scale, reliability, and seamless ongoing maintenance.
+        Good decisions need clean data. That’s why our ecommerce management company in Delhi works with proven tools for every part of your store.
       </p>
     </div>
 
-    <div class="srv-tech-grid">
+    <div class="srv-grid-4">
       <div class="srv-tech-category">
-        <h3 class="srv-tech-cat-title">Marketplace APIs &amp; Intelligence</h3>
-        <div class="srv-tech-tags">
-          <div class="srv-tool-item">
-            <span class="srv-tool-dot"></span>
-            <span class="srv-tool-name">Amazon SP-API</span>
-            <span class="srv-tool-role">Direct Catalog &amp; Order Integration</span>
-          </div>
-          <div class="srv-tool-item">
-            <span class="srv-tool-dot"></span>
-            <span class="srv-tool-name">Helium 10</span>
-            <span class="srv-tool-role">Reverse ASIN &amp; Keyword Tracking</span>
-          </div>
-          <div class="srv-tool-item">
-            <span class="srv-tool-dot"></span>
-            <span class="srv-tool-name">Jungle Scout</span>
-            <span class="srv-tool-role">Market Volume &amp; Niche Spy</span>
-          </div>
-          <div class="srv-tool-item">
-            <span class="srv-tool-dot"></span>
-            <span class="srv-tool-name">Flipkart Seller Hub</span>
-            <span class="srv-tool-role">Marketplace Order Management</span>
-          </div>
-        </div>
+        <h3 class="srv-tech-cat-title">Store Platforms</h3>
+        <ul class="srv-tech-list">
+          <li>Shopify - Store setup and management</li>
+          <li>WooCommerce - Product and order handling</li>
+        </ul>
       </div>
+
       <div class="srv-tech-category">
-        <h3 class="srv-tech-cat-title">D2C Commerce Platforms</h3>
-        <div class="srv-tech-tags">
-          <div class="srv-tool-item">
-            <span class="srv-tool-dot"></span>
-            <span class="srv-tool-name">Shopify Plus</span>
-            <span class="srv-tool-role">Enterprise Storefronts</span>
-          </div>
-          <div class="srv-tool-item">
-            <span class="srv-tool-dot"></span>
-            <span class="srv-tool-name">WooCommerce / PHP 8</span>
-            <span class="srv-tool-role">Custom Self-Hosted Commerce</span>
-          </div>
-          <div class="srv-tool-item">
-            <span class="srv-tool-dot"></span>
-            <span class="srv-tool-name">Stripe / Razorpay</span>
-            <span class="srv-tool-role">Global Payment Gateway Sync</span>
-          </div>
-          <div class="srv-tool-item">
-            <span class="srv-tool-dot"></span>
-            <span class="srv-tool-name">Cloudflare CDN</span>
-            <span class="srv-tool-role">Sub-Second Global Edge Caching</span>
-          </div>
-        </div>
+        <h3 class="srv-tech-cat-title">Marketplace Tools</h3>
+        <ul class="srv-tech-list">
+          <li>Amazon Seller Central - Listings, orders and reviews</li>
+          <li>Flipkart Seller Hub - Catalogue and promotion management</li>
+        </ul>
       </div>
+
       <div class="srv-tech-category">
-        <h3 class="srv-tech-cat-title">Advertising &amp; Algorithmic Bidding</h3>
-        <div class="srv-tech-tags">
-          <div class="srv-tool-item">
-            <span class="srv-tool-dot"></span>
-            <span class="srv-tool-name">Amazon Ads Console</span>
-            <span class="srv-tool-role">Sponsored Products/Brands</span>
-          </div>
-          <div class="srv-tool-item">
-            <span class="srv-tool-dot"></span>
-            <span class="srv-tool-name">Pacvue / Perpetua</span>
-            <span class="srv-tool-role">Algorithmic Bid Adjustments</span>
-          </div>
-          <div class="srv-tool-item">
-            <span class="srv-tool-dot"></span>
-            <span class="srv-tool-name">Google Merchant Center</span>
-            <span class="srv-tool-role">Shopping Product Feeds</span>
-          </div>
-          <div class="srv-tool-item">
-            <span class="srv-tool-dot"></span>
-            <span class="srv-tool-name">Meta Advantage+ Catalog</span>
-            <span class="srv-tool-role">Dynamic Retargeting Ads</span>
-          </div>
-        </div>
+        <h3 class="srv-tech-cat-title">Ads and Analytics</h3>
+        <ul class="srv-tech-list">
+          <li>Google Analytics - Sales and traffic tracking</li>
+          <li>Meta Ads Manager - Ad campaigns and budgets</li>
+        </ul>
       </div>
+
       <div class="srv-tech-category">
-        <h3 class="srv-tech-cat-title">Inventory &amp; Lifecycle Marketing</h3>
-        <div class="srv-tech-tags">
-          <div class="srv-tool-item">
-            <span class="srv-tool-dot"></span>
-            <span class="srv-tool-name">Klaviyo</span>
-            <span class="srv-tool-role">Predictive Post-Purchase Flows</span>
-          </div>
-          <div class="srv-tool-item">
-            <span class="srv-tool-dot"></span>
-            <span class="srv-tool-name">Katana / Zoho Inventory</span>
-            <span class="srv-tool-role">Multi-Warehouse ERP</span>
-          </div>
-          <div class="srv-tool-item">
-            <span class="srv-tool-dot"></span>
-            <span class="srv-tool-name">Gorgias</span>
-            <span class="srv-tool-role">Omnichannel Customer Support</span>
-          </div>
-          <div class="srv-tool-item">
-            <span class="srv-tool-dot"></span>
-            <span class="srv-tool-name">ShipStation</span>
-            <span class="srv-tool-role">Automated Carrier Logistics</span>
-          </div>
-        </div>
+        <h3 class="srv-tech-cat-title">SEO and Research</h3>
+        <ul class="srv-tech-list">
+          <li>SEMrush - Keyword and competitor research</li>
+          <li>Ahrefs - Ranking and backlink tracking</li>
+        </ul>
       </div>
+    </div>
+
+    <div class="text-center mt-4">
+      <p style="color: var(--color-text-muted); font-size: 0.95rem; max-width: 820px; margin: 0 auto;">
+        We also use inventory and order tools to keep your stock right on every channel. Clean data means we guess less, decide better and protect your margin.
+      </p>
     </div>
   </div>
 </section>
 
 <!-- ============================================================
-     SECTION 8 — INDUSTRY USE CASES
+     SECTION 8 — INDUSTRY SECTORS
      ============================================================ -->
 <section class="srv-section srv-bg-surface" id="industry-use-cases">
   <div class="srv-container">
     <div class="srv-section-header text-center">
       <div class="srv-badge">
         <span class="srv-badge-dot"></span>
-        <span>INDUSTRY SPECIALIZATION</span>
+        <span>SECTOR EXPERTISE</span>
       </div>
       <h2 class="srv-section-title">
-        Tailored Solutions for <span class="text-brand">High-Growth Sectors</span>
+        Industries <span class="text-brand">We Manage</span>
       </h2>
       <p class="srv-section-subtitle">
-        We solve domain-specific compliance, performance, and workflow challenges across multiple complex industries.
+        Our ecommerce management company in Delhi has worked with online stores in these areas:
       </p>
     </div>
 
-        <div class="srv-carousel-wrapper" data-carousel="use-cases">
-      <div class="srv-carousel-nav-header">
-        <div class="srv-carousel-kicker">
-          <span class="text-brand font-mono font-bold">SECTOR ARCHITECTURES</span>
-          <span class="text-muted text-sm ml-2">&bull; Interactive scroll &amp; swipe</span>
-        </div>
-        <div class="srv-carousel-controls">
-          <button type="button" class="srv-carousel-btn srv-carousel-prev" aria-label="Previous Sector Solution"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="15 18 9 12 15 6"/></svg></button>
-          <button type="button" class="srv-carousel-btn srv-carousel-next" aria-label="Next Sector Solution"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="9 18 15 12 9 6"/></svg></button>
+    <div class="srv-grid-4">
+      <div class="srv-card">
+        <h3 class="srv-card-title">Fashion and Apparel</h3>
+        <p class="srv-card-desc">We fix size charts, photos and product details so buyers pick the right fit the first time.</p>
+        <div class="srv-sector-outcome">
+          <span class="srv-outcome-badge">Outcome</span>
+          <span>Fewer size-related returns and stronger festive sales.</span>
         </div>
       </div>
-      <div class="srv-carousel-track">
 
-      <div class="srv-industry-card">
-        <div class="srv-industry-header">
-          <div class="srv-icon-box"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="9" cy="21" r="1"/><circle cx="20" cy="21" r="1"/><path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"/></svg></div>
-          <span class="srv-industry-tag">CONSUMER ELECTRONICS</span>
-        </div>
-        <h3 class="srv-card-title">High-Tech Multi-Channel Hardware Scaling</h3>
-        <p class="srv-card-desc">Navigating high warranty inquiries, aggressive counterfeiters, and competitive PPC ad bidding in consumer gadgets.</p>
-        <div class="srv-industry-outcome">
-          <span class="srv-deliverable-lbl">PRIMARY BUSINESS OUTCOME:</span>
-          <strong class="text-brand">4.8x ROAS with 96% Buy Box Protection</strong>
+      <div class="srv-card">
+        <h3 class="srv-card-title">Electronics and Accessories</h3>
+        <p class="srv-card-desc">We track prices and ads daily, so you stay competitive without losing margin.</p>
+        <div class="srv-sector-outcome">
+          <span class="srv-outcome-badge">Outcome</span>
+          <span>Better price control and higher ad return.</span>
         </div>
       </div>
-      <div class="srv-industry-card">
-        <div class="srv-industry-header">
-          <div class="srv-icon-box"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/><circle cx="12" cy="12" r="3"/></svg></div>
-          <span class="srv-industry-tag">LUXURY APPAREL &amp; FASHION</span>
-        </div>
-        <h3 class="srv-card-title">Editorial Brand Storefronts &amp;amp; Multi-Variations</h3>
-        <p class="srv-card-desc">Managing complex size/color variation matrices while maintaining an elevated luxury brand aesthetic.</p>
-        <div class="srv-industry-outcome">
-          <span class="srv-deliverable-lbl">PRIMARY BUSINESS OUTCOME:</span>
-          <strong class="text-brand">32% Reduction in Return Rates via Size Guides</strong>
+
+      <div class="srv-card">
+        <h3 class="srv-card-title">Home and Kitchen</h3>
+        <p class="srv-card-desc">We write clear listings that answer size, material and use before the buyer asks.</p>
+        <div class="srv-sector-outcome">
+          <span class="srv-outcome-badge">Outcome</span>
+          <span>Clearer listings and more repeat orders.</span>
         </div>
       </div>
-      <div class="srv-industry-card">
-        <div class="srv-industry-header">
-          <div class="srv-icon-box"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg></div>
-          <span class="srv-industry-tag">HEALTH &amp; NUTRITION (SUPPLEMENTS)</span>
-        </div>
-        <h3 class="srv-card-title">Strict FDA/FSSAI Compliance &amp;amp; Subscriptions</h3>
-        <p class="srv-card-desc">Scaling compliant ingestible listings with automated Amazon Subscribe &amp; Save and Klaviyo repeat purchase funnels.</p>
-        <div class="srv-industry-outcome">
-          <span class="srv-deliverable-lbl">PRIMARY BUSINESS OUTCOME:</span>
-          <strong class="text-brand">38% of Revenue from Recurring Subscriptions</strong>
+
+      <div class="srv-card">
+        <h3 class="srv-card-title">Beauty and Personal Care</h3>
+        <p class="srv-card-desc">We help you collect honest reviews and keep your listings clean and compliant.</p>
+        <div class="srv-sector-outcome">
+          <span class="srv-outcome-badge">Outcome</span>
+          <span>More reviews and steady repeat buyers.</span>
         </div>
       </div>
-      <div class="srv-industry-card">
-        <div class="srv-industry-header">
-          <div class="srv-icon-box"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="2" width="20" height="8" rx="2" ry="2"/><rect x="2" y="14" width="20" height="8" rx="2" ry="2"/><line x1="6" y1="6" x2="6.01" y2="6"/><line x1="6" y1="18" x2="6.01" y2="18"/></svg></div>
-          <span class="srv-industry-tag">INDUSTRIAL &amp; B2B TOOLS</span>
-        </div>
-        <h3 class="srv-card-title">Heavy Catalog Synchronization (10,000+ SKUs)</h3>
-        <p class="srv-card-desc">Automating bulk product specification uploads, wholesale tier pricing, and freight delivery logistics.</p>
-        <div class="srv-industry-outcome">
-          <span class="srv-deliverable-lbl">PRIMARY BUSINESS OUTCOME:</span>
-          <strong class="text-brand">+230% Top-Line Revenue Growth</strong>
+
+      <div class="srv-card">
+        <h3 class="srv-card-title">Jewellery and Gifting</h3>
+        <p class="srv-card-desc">We improve photos, descriptions and festive offers so buyers feel safe ordering.</p>
+        <div class="srv-sector-outcome">
+          <span class="srv-outcome-badge">Outcome</span>
+          <span>Higher buyer trust and better gifting-season sales.</span>
         </div>
       </div>
-      <div class="srv-industry-card">
-        <div class="srv-industry-header">
-          <div class="srv-icon-box"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="18" height="18" rx="2" ry="2"/><line x1="3" y1="9" x2="21" y2="9"/><line x1="9" y1="21" x2="9" y2="9"/></svg></div>
-          <span class="srv-industry-tag">HOME &amp; KITCHENWARES</span>
-        </div>
-        <h3 class="srv-card-title">A+ Visual Merchandising &amp;amp; Video Ads</h3>
-        <p class="srv-card-desc">High-impact lifestyle photography and short-form video ads showing product durability and kitchen aesthetic.</p>
-        <div class="srv-industry-outcome">
-          <span class="srv-deliverable-lbl">PRIMARY BUSINESS OUTCOME:</span>
-          <strong class="text-brand">+34% Boost in Listing Conversion Rate</strong>
+
+      <div class="srv-card">
+        <h3 class="srv-card-title">Health and Wellness</h3>
+        <p class="srv-card-desc">We keep your listings accurate and within marketplace rules, without making them hard to buy from.</p>
+        <div class="srv-sector-outcome">
+          <span class="srv-outcome-badge">Outcome</span>
+          <span>Compliant listings and loyal customers.</span>
         </div>
       </div>
-      <div class="srv-industry-card">
-        <div class="srv-industry-header">
-          <div class="srv-icon-box"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/></svg></div>
-          <span class="srv-industry-tag">BEAUTY &amp; PERSONAL CARE</span>
-        </div>
-        <h3 class="srv-card-title">Omnichannel Social Commerce &amp;amp; Marketplaces</h3>
-        <p class="srv-card-desc">Connecting TikTok Shop, Instagram storefronts, and Amazon FBA for frictionless multi-channel checkout.</p>
-        <div class="srv-industry-outcome">
-          <span class="srv-deliverable-lbl">PRIMARY BUSINESS OUTCOME:</span>
-          <strong class="text-brand">5.2x Blended Campaign ROAS</strong>
+
+      <div class="srv-card">
+        <h3 class="srv-card-title">FMCG and Grocery</h3>
+        <p class="srv-card-desc">We keep your stock correct and dispatch quickly, so high-volume orders don’t get cancelled.</p>
+        <div class="srv-sector-outcome">
+          <span class="srv-outcome-badge">Outcome</span>
+          <span>Accurate stock and faster dispatch.</span>
         </div>
       </div>
-          </div>
-      <div class="srv-carousel-dots" aria-hidden="true"></div>
+
+      <div class="srv-card">
+        <h3 class="srv-card-title">Industrial and B2B Products</h3>
+        <p class="srv-card-desc">We build listings with clear specs and bulk pricing that serious business buyers look for.</p>
+        <div class="srv-sector-outcome">
+          <span class="srv-outcome-badge">Outcome</span>
+          <span>Quality enquiries and bulk orders.</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="text-center mt-4">
+      <p style="color: var(--color-text-muted); font-size: 0.95rem; max-width: 820px; margin: 0 auto;">
+        Every category sells in its own way. A jewellery buyer thinks differently from a grocery buyer. So we change the pricing, content and ads to match your products and your customers.
+      </p>
     </div>
   </div>
 </section>
 
 <!-- ============================================================
-     SECTION 10 — INTERACTIVE FAQ ACCORDION
+     SECTION 9 — FREQUENTLY ASKED QUESTIONS
      ============================================================ -->
-<section class="srv-section srv-bg-surface" id="faq">
+<section class="srv-section" id="faq">
   <div class="srv-container">
     <div class="srv-section-header text-center">
       <div class="srv-badge">
         <span class="srv-badge-dot"></span>
-        <span>FREQUENTLY ASKED QUESTIONS</span>
+        <span>QUESTIONS &amp; ANSWERS</span>
       </div>
       <h2 class="srv-section-title">
-        Common Questions About <span class="text-brand">E-Commerce &amp; Marketplace Management</span>
+        Questions People Ask About an <span class="text-brand">Ecommerce Management Company in Delhi</span>
       </h2>
       <p class="srv-section-subtitle">
-        Everything you need to know about our scope, timeline, engineering standards, communication, and ongoing support.
+        Everything you need to know about our ecommerce operations, marketplace management, and pricing.
       </p>
     </div>
 
     <div class="srv-faq-container">
       <div class="srv-faq-item">
-        <button type="button" class="srv-faq-btn" aria-expanded="false" aria-controls="faq-ans-0">
-          <span class="srv-faq-question">How do you prevent unauthorized sellers from hijacking our Amazon Buy Box?</span>
-          <span class="srv-faq-icon" aria-hidden="true">+</span>
-        </button>
-        <div id="faq-ans-0" class="srv-faq-panel">
-          <div class="srv-faq-content">
-            <p>We deploy proactive 24/7 Buy Box monitoring software that alerts us within minutes of an unauthorized seller listing on your ASIN. We then execute Brand Registry copyright/trademark infringement notices, cease-and-desist documentation, and automated repricing defense rules.</p>
-          </div>
-        </div>
-      </div>
-      <div class="srv-faq-item">
         <button type="button" class="srv-faq-btn" aria-expanded="false" aria-controls="faq-ans-1">
-          <span class="srv-faq-question">Can you manage both our Amazon account and our independent D2C website?</span>
+          <span class="srv-faq-question">What does an ecommerce management company do?</span>
           <span class="srv-faq-icon" aria-hidden="true">+</span>
         </button>
         <div id="faq-ans-1" class="srv-faq-panel">
           <div class="srv-faq-content">
-            <p>Yes. In fact, managing both channels under unified leadership produces the best results. We align pricing, inventory, creative photography, and customer data so that your D2C store and marketplace presence reinforce each other instead of competing.</p>
+            <p>It runs your online selling work for you. At BusinessDoctor, an ecommerce management company in Delhi, we handle your listings, catalogue, ads, orders, stock, marketplaces and reports. You get your time back to focus on your products.</p>
           </div>
         </div>
       </div>
+
       <div class="srv-faq-item">
         <button type="button" class="srv-faq-btn" aria-expanded="false" aria-controls="faq-ans-2">
-          <span class="srv-faq-question">What is an acceptable target ACoS for marketplace advertising?</span>
+          <span class="srv-faq-question">Why should I hire an ecommerce management company in Delhi?</span>
           <span class="srv-faq-icon" aria-hidden="true">+</span>
         </button>
         <div id="faq-ans-2" class="srv-faq-panel">
           <div class="srv-faq-content">
-            <p>Target ACoS depends on your product gross margins and whether your goal is aggressive market share expansion or maximum immediate cash flow. For mature listings, we typically maintain a target ACoS between 12% and 18%, while total advertising cost of sales (TACoS) remains below 8%.</p>
+            <p>Because local knowledge saves money. An ecommerce management company in Delhi knows how Indian buyers behave, how marketplace rules work and where deliveries usually go wrong. You can also sit across the table with your team whenever you need.</p>
           </div>
         </div>
       </div>
+
       <div class="srv-faq-item">
         <button type="button" class="srv-faq-btn" aria-expanded="false" aria-controls="faq-ans-3">
-          <span class="srv-faq-question">How do you resolve complex Amazon Seller Support policy disputes and listing suppressions?</span>
+          <span class="srv-faq-question">Which platforms can you manage?</span>
           <span class="srv-faq-icon" aria-hidden="true">+</span>
         </button>
         <div id="faq-ans-3" class="srv-faq-panel">
           <div class="srv-faq-content">
-            <p>Our team has extensive experience preparing Plan of Action (POA) documentation, root-cause analyses, and regulatory compliance certificates required to overturn erroneous suppressions and reinstate suspended ASINs quickly.</p>
+            <p>As a marketplace management company in Delhi, we work with Shopify, WooCommerce, Amazon, Flipkart, Myntra and Meesho. We can manage your own website too.</p>
           </div>
         </div>
       </div>
+
       <div class="srv-faq-item">
         <button type="button" class="srv-faq-btn" aria-expanded="false" aria-controls="faq-ans-4">
-          <span class="srv-faq-question">Do you create the 3D graphics, infographics, and A+ Content in-house?</span>
+          <span class="srv-faq-question">How much do your services cost?</span>
           <span class="srv-faq-icon" aria-hidden="true">+</span>
         </button>
         <div id="faq-ans-4" class="srv-faq-panel">
           <div class="srv-faq-content">
-            <p>Yes. Our specialized creative production team renders 3D product visuals, designs high-converting lifestyle infographics, and drafts persuasive sales copy customized for Amazon and mobile commerce displays.</p>
+            <p>The cost of our ecommerce management service will vary based on the number of products you need to sell, how many platforms you have and your advertising budget. We can give you a clear price after a free audit. No hidden fees.</p>
           </div>
         </div>
       </div>
+
       <div class="srv-faq-item">
         <button type="button" class="srv-faq-btn" aria-expanded="false" aria-controls="faq-ans-5">
-          <span class="srv-faq-question">How does real-time inventory synchronization work across channels?</span>
+          <span class="srv-faq-question">How soon will I see results?</span>
           <span class="srv-faq-icon" aria-hidden="true">+</span>
         </button>
         <div id="faq-ans-5" class="srv-faq-panel">
           <div class="srv-faq-content">
-            <p>We deploy direct API connections between your warehouse management system (WMS) and the Amazon SP-API, Flipkart API, and Shopify GraphQL. When an item sells on any channel, inventory levels update across all channels instantly to eliminate overselling.</p>
+            <p>With our ecommerce management company in Delhi, catalogue and listing fixes often show results within a few weeks. Ads and SEO build stronger and steadier growth over two to three months.</p>
           </div>
         </div>
       </div>
+
       <div class="srv-faq-item">
         <button type="button" class="srv-faq-btn" aria-expanded="false" aria-controls="faq-ans-6">
-          <span class="srv-faq-question">What monthly retail revenue does a brand need to partner with BusinessDoctor?</span>
+          <span class="srv-faq-question">Do you offer a free audit?</span>
           <span class="srv-faq-icon" aria-hidden="true">+</span>
         </button>
         <div id="faq-ans-6" class="srv-faq-panel">
           <div class="srv-faq-content">
-            <p>We generally work with retail brands generating at least $10,000 to $500,000+ in monthly digital gross merchandise value (GMV). This scale justifies algorithmic advertising, dedicated channel management, and custom API integration.</p>
-          </div>
-        </div>
-      </div>
-      <div class="srv-faq-item">
-        <button type="button" class="srv-faq-btn" aria-expanded="false" aria-controls="faq-ans-7">
-          <span class="srv-faq-question">Who owns our marketplace accounts, customer databases, and creative assets?</span>
-          <span class="srv-faq-icon" aria-hidden="true">+</span>
-        </button>
-        <div id="faq-ans-7" class="srv-faq-panel">
-          <div class="srv-faq-content">
-            <p>You do—100%. We operate directly within your existing seller accounts and Shopify portals. All historical customer lists, advertising campaigns, and creative files remain your exclusive property.</p>
+            <p>Yes. Share your store or marketplace link and our ecommerce management company in Delhi will show you where you can sell more and spend less.</p>
           </div>
         </div>
       </div>
@@ -1064,7 +780,7 @@ $consultationUrl = appUrl('contact.php?service=' . urlencode($serviceName));
 </section>
 
 <!-- ============================================================
-     SECTION 11 — FINAL CONVERSION CTA
+     SECTION 10 — FINAL CONVERSION CTA
      ============================================================ -->
 <section class="srv-section srv-cta-section" id="cta">
   <div class="srv-container">
@@ -1074,15 +790,15 @@ $consultationUrl = appUrl('contact.php?service=' . urlencode($serviceName));
         <div class="srv-cta-grid-2col">
           <div>
             <div class="srv-badge mb-3">
-          <span class="srv-badge-dot"></span>
-          <span>TAKE THE NEXT STEP</span>
-        </div>
+              <span class="srv-badge-dot"></span>
+              <span>TAKE THE NEXT STEP</span>
+            </div>
             <h2 class="srv-cta-title">
-          Ready to Eliminate Stockouts &amp; Scale <span class="text-brand">Profitable Retail Sales?</span>
-        </h2>
+              Want One Team to Handle <span class="text-brand">All of This?</span>
+            </h2>
             <p class="srv-cta-lead">
-          Schedule a comprehensive e-commerce diagnostic session. Our retail architects will audit your listing health, Buy Box share, ACoS efficiency, and supply chain APIs.
-        </p>
+              Talk to an ecommerce management company in Delhi that does the work, not just the planning. Pick an ecommerce management company in Delhi NCR and you can call us or meet us the same day.
+            </p>
             <div class="srv-cta-actions" style="justify-content: flex-start; margin-bottom: 2rem;">
               <a href="<?= e($consultationUrl) ?>" class="btn-srv-primary btn-srv-lg">
                 <span>Get a Free Consultation</span>
@@ -1117,20 +833,20 @@ $consultationUrl = appUrl('contact.php?service=' . urlencode($serviceName));
               <form action="<?= appUrl('contact.php') ?>" method="GET" class="srv-quick-form">
                 <input type="hidden" name="service" value="<?= e($serviceName) ?>">
                 <div class="srv-form-group">
-                  <label class="srv-form-label" for="quick_name_ecommerce-management.php">Your Full Name</label>
-                  <input type="text" id="quick_name_ecommerce-management.php" name="name" required class="srv-form-input" placeholder="e.g. Sarah Jenkins">
+                  <label class="srv-form-label" for="quick_name_ecommerce-management">Your Full Name</label>
+                  <input type="text" id="quick_name_ecommerce-management" name="name" required class="srv-form-input" placeholder="e.g. Sarah Jenkins">
                 </div>
                 <div class="srv-form-group">
-                  <label class="srv-form-label" for="quick_email_ecommerce-management.php">Work Email</label>
-                  <input type="email" id="quick_email_ecommerce-management.php" name="email" required class="srv-form-input" placeholder="e.g. sarah@enterprise.com">
+                  <label class="srv-form-label" for="quick_email_ecommerce-management">Work Email</label>
+                  <input type="email" id="quick_email_ecommerce-management" name="email" required class="srv-form-input" placeholder="e.g. sarah@enterprise.com">
                 </div>
                 <div class="srv-form-group">
-                  <label class="srv-form-label" for="quick_company_ecommerce-management.php">Company / Domain</label>
-                  <input type="text" id="quick_company_ecommerce-management.php" name="company" class="srv-form-input" placeholder="e.g. Enterprise Corp (enterprise.com)">
+                  <label class="srv-form-label" for="quick_company_ecommerce-management">Company / Domain</label>
+                  <input type="text" id="quick_company_ecommerce-management" name="company" class="srv-form-input" placeholder="e.g. Enterprise Corp (enterprise.com)">
                 </div>
                 <div class="srv-form-group">
-                  <label class="srv-form-label" for="quick_notes_ecommerce-management.php">Project Scope &amp; Objectives</label>
-                  <textarea id="quick_notes_ecommerce-management.php" name="notes" rows="2" class="srv-form-textarea" placeholder="Briefly describe your timeline, goals, or current technical bottlenecks..."></textarea>
+                  <label class="srv-form-label" for="quick_notes_ecommerce-management">Project Scope &amp; Objectives</label>
+                  <textarea id="quick_notes_ecommerce-management" name="notes" rows="2" class="srv-form-textarea" placeholder="Briefly describe your timeline, goals, or current technical bottlenecks..."></textarea>
                 </div>
                 <button type="submit" class="srv-form-submit">
                   <span>Send Consultation Request</span>
@@ -1145,7 +861,6 @@ $consultationUrl = appUrl('contact.php?service=' . urlencode($serviceName));
           </div>
         </div>
       </div>
-    </div>
     </div>
   </div>
 </section>

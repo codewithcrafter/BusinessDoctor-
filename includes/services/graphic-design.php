@@ -1,6 +1,6 @@
 <?php
 /**
- * BusinessDoctor Service Detail View — UI/UX Design & Brand Identity
+ * BusinessDoctor Service Detail View — Graphic Design & Brand Identity
  * Discipline 05 — Full-Width Modern Enterprise Landing Page
  * Brand Color: #06B5F9
  */
@@ -21,20 +21,21 @@ $consultationUrl = appUrl('contact.php?service=' . urlencode($serviceName));
       <div class="srv-col-12 srv-col-lg-6">
         <div class="srv-eyebrow">
           <span class="srv-eyebrow-dot"></span>
-          <span>HUMAN-CENTERED DESIGN &amp; BRAND SYSTEMS</span>
+          <span>Creative Design and Branding Agency</span>
         </div>
         <h1 class="srv-hero-title">
-          Crafting High-Converting <br><span class="text-brand">UI/UX Experiences &amp; Brand Systems</span>
+          Graphic Design Company in Delhi <br><span class="text-brand">That Turns Visuals Into Customers</span>
         </h1>
         <p class="srv-hero-desc">
-          We engineer intuitive digital products, enterprise design systems in Figma, and iconic brand identities that command authority, reduce user friction, and dramatically elevate conversion rates.
+          BusinessDoctor is a graphic design company in Delhi for businesses that want more than a nice-looking logo. We build brand identities, packaging, print material and social media creatives that earn trust at first glance and push buyers towards one action: contacting you.
         </p>
 
         <div class="srv-hero-actions">
           <a href="<?= e($consultationUrl) ?>" class="btn-srv-primary">
-            <span>Get a Free Consultation</span>
+            <span>Get a Free Design Quote</span>
             <svg class="btn-srv-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
-              <line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/>
+              <line x1="5" y1="12" x2="19" y2="12"/>
+              <polyline points="12 5 19 12 12 19"/>
             </svg>
           </a>
           <a href="#services-list" class="btn-srv-secondary">
@@ -47,20 +48,20 @@ $consultationUrl = appUrl('contact.php?service=' . urlencode($serviceName));
 
         <div class="srv-hero-stats">
           <div class="srv-hero-stat-item">
+            <span class="srv-hero-stat-val">5-7 Days</span>
+            <span class="srv-hero-stat-lbl">Typical Logo Turnaround</span>
+          </div>
+          <div class="srv-hero-stat-item">
+            <span class="srv-hero-stat-val">6 Steps</span>
+            <span class="srv-hero-stat-lbl">Clear Design Process</span>
+          </div>
+          <div class="srv-hero-stat-item">
             <span class="srv-hero-stat-val">100%</span>
-            <span class="srv-hero-stat-lbl">Figma-to-Code Parity</span>
+            <span class="srv-hero-stat-lbl">Original, Custom Artwork</span>
           </div>
           <div class="srv-hero-stat-item">
-            <span class="srv-hero-stat-val">+64%</span>
-            <span class="srv-hero-stat-lbl">User Task Completion Rate</span>
-          </div>
-          <div class="srv-hero-stat-item">
-            <span class="srv-hero-stat-val">AAA</span>
-            <span class="srv-hero-stat-lbl">WCAG Accessibility Standards</span>
-          </div>
-          <div class="srv-hero-stat-item">
-            <span class="srv-hero-stat-val">0-Bloat</span>
-            <span class="srv-hero-stat-lbl">Modular Design Tokens</span>
+            <span class="srv-hero-stat-val">All Formats</span>
+            <span class="srv-hero-stat-lbl">Print and Digital-Ready Files</span>
           </div>
         </div>
       </div>
@@ -70,56 +71,29 @@ $consultationUrl = appUrl('contact.php?service=' . urlencode($serviceName));
           <div class="srv-visual-glow"></div>
           <div class="srv-visual-frame">
             <svg viewBox="0 0 600 440" fill="none" xmlns="http://www.w3.org/2000/svg" style="width:100%; height:auto; display:block;">
-  <rect width="600" height="440" rx="14" fill="#071A2C"/>
-  <path d="M0 44H600M0 88H600M0 132H600M0 176H600M0 220H600M0 264H600M0 308H600M0 352H600M0 396H600" stroke="#06B5F9" stroke-opacity="0.08"/>
-  <path d="M60 0V440M120 0V440M180 0V440M240 0V440M300 0V440M360 0V440M420 0V440M480 0V440M540 0V440" stroke="#06B5F9" stroke-opacity="0.08"/>
-  <rect width="600" height="40" rx="14" fill="#0A223B"/>
-  <circle cx="28" cy="20" r="5" fill="#F87171"/><circle cx="46" cy="20" r="5" fill="#FBBF24"/><circle cx="64" cy="20" r="5" fill="#34D399"/>
-  <text x="90" y="24" fill="#8FA3B8" font-family="monospace" font-size="11" font-weight="600">businessdoctor.design :: design-tokens-system.v2</text>
-  
-  <!-- Canvas Mockup Window -->
-  <rect x="40" y="65" width="310" height="340" rx="10" fill="#0D2644" stroke="#06B5F9" stroke-width="1.5" stroke-opacity="0.4"/>
-  <rect x="55" y="80" width="280" height="30" rx="6" fill="#0A1D33"/>
-  <text x="70" y="100" fill="#06B5F9" font-family="sans-serif" font-size="12" font-weight="bold">DESIGN SYSTEM &bull; FIGMA ATOMS</text>
-  
-  <!-- Tokens List in Canvas -->
-  <rect x="55" y="125" width="130" height="40" rx="6" fill="#06B5F9" fill-opacity="0.2" stroke="#06B5F9"/>
-  <text x="65" y="150" fill="#06B5F9" font-family="monospace" font-size="11" font-weight="bold">Primary: #06B5F9</text>
-  
-  <rect x="195" y="125" width="140" height="40" rx="6" fill="#061326" stroke="#06B5F9" stroke-opacity="0.3"/>
-  <text x="205" y="150" fill="#F5F7FA" font-family="monospace" font-size="11">Navy: #061326</text>
-
-  <rect x="55" y="178" width="280" height="72" rx="8" fill="#0A2038" stroke="#06B5F9" stroke-opacity="0.25"/>
-  <text x="70" y="202" fill="#F5F7FA" font-family="sans-serif" font-size="12" font-weight="bold">Component: &lt;AppButton /&gt;</text>
-  <rect x="250" y="186" width="72" height="24" rx="4" fill="#06B5F9"/>
-  <text x="268" y="202" fill="#061326" font-family="sans-serif" font-size="11" font-weight="bold">Action</text>
-  <text x="70" y="232" fill="#B8C7D9" font-family="monospace" font-size="10">State: Hover &bull; Focus &bull; Active &bull; Disabled</text>
-
-  <rect x="55" y="262" width="280" height="128" rx="8" fill="#0A2038" stroke="#06B5F9" stroke-opacity="0.25"/>
-  <text x="70" y="286" fill="#F5F7FA" font-family="sans-serif" font-size="12" font-weight="bold">WCAG 2.2 AA Contrast: PASSED</text>
-  <text x="70" y="309" fill="#34D399" font-family="monospace" font-size="10.5">&bull; 8.6:1 AAA on Dark Canvas</text>
-  <text x="70" y="329" fill="#34D399" font-family="monospace" font-size="10.5">&bull; 4.8:1 AA on Light Modals</text>
-  <text x="70" y="349" fill="#34D399" font-family="monospace" font-size="10.5">&bull; 0ms Layout Shifts (CLS)</text>
-  <text x="70" y="369" fill="#06B5F9" font-family="monospace" font-size="10.5">&bull; Automated Figma Design Tokens</text>
-
-  <!-- Sidebar Palette & Specs -->
-  <rect x="365" y="65" width="195" height="162" rx="10" fill="#0A2038" stroke="#06B5F9" stroke-width="1" stroke-opacity="0.3"/>
-  <text x="380" y="90" fill="#06B5F9" font-family="monospace" font-size="11" font-weight="bold">// TYPOGRAPHY</text>
-  <text x="380" y="114" fill="#F5F7FA" font-family="sans-serif" font-size="13" font-weight="bold">Cabinet Grotesk</text>
-  <text x="380" y="132" fill="#8FA3B8" font-family="monospace" font-size="10">Display H1-H4</text>
-  <text x="380" y="158" fill="#F5F7FA" font-family="sans-serif" font-size="13" font-weight="bold">Inter &bull; Plus Jakarta</text>
-  <text x="380" y="176" fill="#8FA3B8" font-family="monospace" font-size="10">Body &bull; 1.65 Line Height</text>
-  <text x="380" y="202" fill="#06B5F9" font-family="monospace" font-size="10">8-Point Spacing Grid</text>
-
-  <rect x="365" y="240" width="195" height="165" rx="10" fill="#0A2038" stroke="#06B5F9" stroke-width="1" stroke-opacity="0.3"/>
-  <text x="380" y="265" fill="#06B5F9" font-family="monospace" font-size="11" font-weight="bold">// PROTOTYPE FIDELITY</text>
-  <circle cx="406" cy="305" r="20" fill="#06B5F9" fill-opacity="0.15" stroke="#06B5F9"/>
-  <text x="393" y="310" fill="#06B5F9" font-family="sans-serif" font-size="12" font-weight="bold">100%</text>
-  <text x="436" y="300" fill="#F5F7FA" font-family="sans-serif" font-size="12" font-weight="bold">Interactive</text>
-  <text x="436" y="318" fill="#B8C7D9" font-family="monospace" font-size="10">Figma to Code</text>
-  <text x="380" y="355" fill="#34D399" font-family="monospace" font-size="11">Design-Token Sync</text>
-  <text x="380" y="375" fill="#B8C7D9" font-family="monospace" font-size="10">CSS Vars &bull; Storybook Ready</text>
-</svg>
+              <rect width="600" height="440" rx="14" fill="#071A2C"/>
+              <path d="M0 44H600M0 88H600M0 132H600M0 176H600M0 220H600M0 264H600M0 308H600M0 352H600M0 396H600" stroke="#06B5F9" stroke-opacity="0.08"/>
+              <path d="M60 0V440M120 0V440M180 0V440M240 0V440M300 0V440M360 0V440M420 0V440M480 0V440M540 0V440" stroke="#06B5F9" stroke-opacity="0.08"/>
+              <rect width="600" height="40" rx="14" fill="#0A223B"/>
+              <circle cx="28" cy="20" r="5" fill="#F87171"/><circle cx="46" cy="20" r="5" fill="#FBBF24"/><circle cx="64" cy="20" r="5" fill="#34D399"/>
+              <text x="90" y="24" fill="#8FA3B8" font-family="monospace" font-size="11" font-weight="600">businessdoctor.design :: brand-identity-system</text>
+              <rect x="40" y="65" width="520" height="150" rx="10" fill="#030E1A" stroke="#06B5F9" stroke-width="1.5" stroke-opacity="0.4"/>
+              <text x="65" y="100" fill="#06B5F9" font-family="monospace" font-size="12" font-weight="bold">// VECTOR ACCURACY &amp; BRAND GUIDELINES</text>
+              <circle cx="160" cy="140" r="45" stroke="#34D399" stroke-width="2"/>
+              <polygon points="260,105 300,175 220,175" stroke="#06B5F9" stroke-width="2" fill="none"/>
+              <rect x="330" y="110" width="60" height="60" stroke="#FBBF24" stroke-width="2" fill="none"/>
+              <text x="420" y="145" fill="#ffffff" font-family="sans-serif" font-size="13" font-weight="600">100% Custom Vector Art</text>
+              <rect x="40" y="235" width="250" height="170" rx="8" fill="#0D2644" stroke="#06B5F9" stroke-opacity="0.3"/>
+              <text x="60" y="265" fill="#06B5F9" font-family="monospace" font-size="11" font-weight="bold">// DELIVERY TIMELINE</text>
+              <text x="60" y="305" fill="#34D399" font-family="sans-serif" font-size="28" font-weight="900">5-7 Days</text>
+              <text x="60" y="330" fill="#B8C7D9" font-family="sans-serif" font-size="12">Logo Concepts &amp; Reasoning</text>
+              <text x="60" y="365" fill="#ffffff" font-family="sans-serif" font-size="13" font-weight="600">Print &amp; Web Ready Formats</text>
+              <rect x="310" y="235" width="250" height="170" rx="8" fill="#0D2644" stroke="#06B5F9" stroke-opacity="0.3"/>
+              <text x="330" y="265" fill="#06B5F9" font-family="monospace" font-size="11" font-weight="bold">// ASSET EXPORTS</text>
+              <text x="330" y="305" fill="#06B5F9" font-family="sans-serif" font-size="28" font-weight="900">AI &bull; PSD</text>
+              <text x="330" y="330" fill="#B8C7D9" font-family="sans-serif" font-size="12">PDF &bull; PNG &bull; SVG &bull; EPS</text>
+              <text x="330" y="365" fill="#34D399" font-family="sans-serif" font-size="13" font-weight="600">Complete Source Files Handover</text>
+            </svg>
           </div>
         </div>
       </div>
@@ -128,7 +102,7 @@ $consultationUrl = appUrl('contact.php?service=' . urlencode($serviceName));
 </section>
 
 <!-- ============================================================
-     KEY TAKEAWAYS & EXECUTIVE SUMMARY (Reference Feature B)
+     KEY TAKEAWAYS & EXECUTIVE SUMMARY
      ============================================================ -->
 <section class="srv-section srv-section-takeaways" style="padding-top: 0; padding-bottom: 2.5rem;">
   <div class="srv-container">
@@ -136,50 +110,50 @@ $consultationUrl = appUrl('contact.php?service=' . urlencode($serviceName));
       <div class="srv-takeaways-header">
         <div class="srv-takeaways-kicker">
           <svg class="srv-takeaways-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"/></svg>
-          <span>KEY TAKEAWAYS &bull; AT A GLANCE</span>
+          <span>Key Takeaways at a Glance</span>
         </div>
-        <span class="srv-takeaways-pill">Core Execution Highlights</span>
+        <span class="srv-takeaways-pill">Quick Summary</span>
       </div>
       <div class="srv-takeaways-grid">
         <div class="srv-takeaway-card">
           <div class="srv-takeaway-top">
-            <span class="srv-takeaway-val">100%</span>
+            <span class="srv-takeaway-val">Full Scope</span>
             <div class="srv-takeaway-badge">
               <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
             </div>
           </div>
-          <span class="srv-takeaway-label">Figma-to-Code Parity</span>
-          <p class="srv-takeaway-desc">Verified benchmark engineered across production client deployments.</p>
+          <span class="srv-takeaway-label">Full Service</span>
+          <p class="srv-takeaway-desc">Logo, branding, print, packaging, social media and UI/UX from one experienced graphic design company in Delhi.</p>
         </div>
         <div class="srv-takeaway-card">
           <div class="srv-takeaway-top">
-            <span class="srv-takeaway-val">+64%</span>
+            <span class="srv-takeaway-val">Goal-Led</span>
             <div class="srv-takeaway-badge">
               <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
             </div>
           </div>
-          <span class="srv-takeaway-label">User Task Completion Rate</span>
-          <p class="srv-takeaway-desc">Verified benchmark engineered across production client deployments.</p>
+          <span class="srv-takeaway-label">Goal-Led Design</span>
+          <p class="srv-takeaway-desc">Every project begins with your audience, competitors and business goal.</p>
         </div>
         <div class="srv-takeaway-card">
           <div class="srv-takeaway-top">
-            <span class="srv-takeaway-val">AAA</span>
+            <span class="srv-takeaway-val">Clear</span>
             <div class="srv-takeaway-badge">
               <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
             </div>
           </div>
-          <span class="srv-takeaway-label">WCAG Accessibility Standards</span>
-          <p class="srv-takeaway-desc">Verified benchmark engineered across production client deployments.</p>
+          <span class="srv-takeaway-label">Transparent Terms</span>
+          <p class="srv-takeaway-desc">Itemised quote, fixed timeline and revision rounds agreed upfront.</p>
         </div>
         <div class="srv-takeaway-card">
           <div class="srv-takeaway-top">
-            <span class="srv-takeaway-val">0-Bloat</span>
+            <span class="srv-takeaway-val">Ready</span>
             <div class="srv-takeaway-badge">
               <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
             </div>
           </div>
-          <span class="srv-takeaway-label">Modular Design Tokens</span>
-          <p class="srv-takeaway-desc">Verified benchmark engineered across production client deployments.</p>
+          <span class="srv-takeaway-label">Ready to Use</span>
+          <p class="srv-takeaway-desc">Files for print, web and social media, with source files handed over to you.</p>
         </div>
       </div>
     </div>
@@ -187,7 +161,7 @@ $consultationUrl = appUrl('contact.php?service=' . urlencode($serviceName));
 </section>
 
 <!-- ============================================================
-     SECTION 2 — SERVICE INTRODUCTION
+     SECTION 2 — PROBLEM TO SOLUTION
      ============================================================ -->
 <section class="srv-section srv-bg-surface" id="introduction">
   <div class="srv-container">
@@ -195,52 +169,45 @@ $consultationUrl = appUrl('contact.php?service=' . urlencode($serviceName));
       <div class="srv-col-12 srv-col-lg-6">
         <div class="srv-badge mb-3">
           <span class="srv-badge-dot"></span>
-          <span>DESIGN ENGINEERING PHILOSOPHY</span>
+          <span>PROBLEM TO SOLUTION</span>
         </div>
         <h2 class="srv-section-title">
-          Design That Looks Premium and <span class="text-brand">Converts Without Friction</span>
+          Turning Your Brand Image Into a <span class="text-brand">Steady Stream of Enquiries</span>
         </h2>
         <p class="srv-section-subtitle mb-4">
-          Great UI/UX is not merely artistic expression; it is psychological clarity and usability engineering. When enterprise interfaces are cluttered, users get overwhelmed, support tickets spike, and sales funnels abandon.
+          Most businesses spend on ads, SEO and printing, yet lose customers at the first look. A mismatched logo, a crowded brochure or an untidy Instagram feed makes buyers hesitate, and hesitation costs sales.
         </p>
         <p class="srv-card-desc mb-4">
-          At BusinessDoctor, our design team unifies deep human factors research, atomic Figma design tokens, rapid click-through prototyping, and complete WCAG 2.2 AA accessibility so your product looks world-class and scales effortlessly.
+          Choosing the right graphic design company in Delhi fixes this at the root. When your visuals are consistent and professional, every rupee you spend on marketing performs better, and your sales team spends less time convincing people that you are the right choice.
         </p>
 
         <div class="srv-feature-list mb-4">
           <div class="srv-feature-item">
             <svg class="srv-check-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
             <div>
-              <strong class="text-white">Atomic Design System Architecture:</strong> 
-              <span class="text-secondary">Tokenized typography, colors, and components in Figma with 1:1 CSS variable parity.</span>
+              <strong class="text-white">Brand Clarity:</strong> 
+              <span class="text-secondary">One logo, colour system and font set across every touchpoint.</span>
             </div>
           </div>
           <div class="srv-feature-item">
             <svg class="srv-check-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
             <div>
-              <strong class="text-white">Usability Research &amp; Heatmap Auditing:</strong> 
-              <span class="text-secondary">Identifying conversion leaks, navigation confusion, and cognitive overload.</span>
+              <strong class="text-white">Faster Decisions:</strong> 
+              <span class="text-secondary">Clean layouts that help buyers find prices, features and contact details quickly.</span>
             </div>
           </div>
           <div class="srv-feature-item">
             <svg class="srv-check-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
             <div>
-              <strong class="text-white">Interactive High-Fidelity Prototyping:</strong> 
-              <span class="text-secondary">Testing realistic user journeys with your stakeholders prior to writing a line of code.</span>
-            </div>
-          </div>
-          <div class="srv-feature-item">
-            <svg class="srv-check-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
-            <div>
-              <strong class="text-white">Comprehensive Brand Identity Guidelines:</strong> 
-              <span class="text-secondary">Vector logos, color palettes, micro-interactions, and visual tone documentation.</span>
+              <strong class="text-white">Lower Rework Costs:</strong> 
+              <span class="text-secondary">Print-ready files built correctly the first time, so you avoid wasted reprints.</span>
             </div>
           </div>
         </div>
 
         <div class="pt-2">
           <a href="<?= e($consultationUrl) ?>" class="btn-srv-primary">
-            <span>Schedule Diagnostic Call</span>
+            <span>Book a Free Consultation</span>
             <svg class="btn-srv-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
           </a>
         </div>
@@ -249,41 +216,41 @@ $consultationUrl = appUrl('contact.php?service=' . urlencode($serviceName));
       <div class="srv-col-12 srv-col-lg-6 mt-4 mt-lg-0">
         <div class="srv-hud-card">
           <div class="srv-hud-header">
-            <span class="srv-hud-title">DESIGN TELEMETRY MATRIX</span>
+            <span class="srv-hud-title">DESIGN DELIVERY SNAPSHOT</span>
             <span class="srv-hud-status">
               <span class="srv-hud-pulse"></span>
-              FIGMA TO CODE SYNCED
+              WHAT EVERY PROJECT INCLUDES
             </span>
           </div>
           <div class="srv-hud-body">
             <p class="srv-card-desc mb-4">
-              Atomic tokens, accessibility metrics, and user journey task velocity tracked in real time.
+              Real-time design deliverables and production standards guaranteed with every client engagement.
             </p>
             <div class="srv-hud-metrics">
               <div class="srv-hud-metric-box">
-                <div class="srv-hud-metric-num">0.00</div>
-                <div class="srv-hud-metric-label">Layout Shift (CLS)</div>
+                <div class="srv-hud-metric-num">5-7 Days</div>
+                <div class="srv-hud-metric-label">Logo Turnaround</div>
               </div>
               <div class="srv-hud-metric-box">
-                <div class="srv-hud-metric-num">99.4%</div>
-                <div class="srv-hud-metric-label">Design Token Parity</div>
+                <div class="srv-hud-metric-num">Concepts</div>
+                <div class="srv-hud-metric-label">Presented With Reasoning</div>
               </div>
               <div class="srv-hud-metric-box">
-                <div class="srv-hud-metric-num">8.6:1</div>
-                <div class="srv-hud-metric-label">Max Contrast Ratio</div>
+                <div class="srv-hud-metric-num">Revisions</div>
+                <div class="srv-hud-metric-label">Included as Per Quote</div>
               </div>
               <div class="srv-hud-metric-box">
-                <div class="srv-hud-metric-num">3.2x</div>
-                <div class="srv-hud-metric-label">Dev Handoff Speed</div>
+                <div class="srv-hud-metric-num">AI &bull; PSD</div>
+                <div class="srv-hud-metric-label">Source &amp; Export Files</div>
               </div>
             </div>
             <div class="srv-hud-tag-list mt-3">
-              <span class="srv-tool-badge">Figma Tokens</span>
-              <span class="srv-tool-badge">Storybook</span>
-              <span class="srv-tool-badge">WCAG 2.2 AA</span>
-              <span class="srv-tool-badge">Adobe CC</span>
-              <span class="srv-tool-badge">CSS Variables</span>
-              <span class="srv-tool-badge">Micro-Interactions</span>
+              <span class="srv-tool-badge">Logo Design</span>
+              <span class="srv-tool-badge">Brand Identity</span>
+              <span class="srv-tool-badge">Print &amp; Brochure</span>
+              <span class="srv-tool-badge">Packaging</span>
+              <span class="srv-tool-badge">Social Creatives</span>
+              <span class="srv-tool-badge">UI/UX Web</span>
             </div>
           </div>
         </div>
@@ -300,225 +267,140 @@ $consultationUrl = appUrl('contact.php?service=' . urlencode($serviceName));
     <div class="srv-section-header text-center">
       <div class="srv-badge">
         <span class="srv-badge-dot"></span>
-        <span>COMPREHENSIVE CAPABILITIES</span>
+        <span>SERVICES</span>
       </div>
       <h2 class="srv-section-title">
-        Specialized Services Built for <span class="text-brand">Enterprise Scale</span>
+        Graphic Design Services in Delhi <span class="text-brand">Built for Growing Businesses</span>
       </h2>
       <p class="srv-section-subtitle">
-        Every capability is executed by veteran specialists dedicated to predictable return on investment and zero fluff.
+        Whether you are launching a new brand or refreshing an old one, our graphic design services in Delhi cover everything under one roof. Every service is handled by one team, so your brand looks the same on a signboard, a catalogue and a social media post, and you never have to chase separate freelancers.
       </p>
     </div>
 
-    <div class="srv-grid srv-grid-3">
+    <div class="srv-grid-3">
+      <!-- Service Card 1 -->
       <div class="srv-card">
-        <div class="srv-card-icon-wrap">
-          <div class="srv-icon-box"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 5.5A3.5 3.5 0 0 1 8.5 2H12v7H8.5A3.5 3.5 0 0 1 5 5.5z"/><path d="M12 2h3.5a3.5 3.5 0 1 1 0 7H12V2z"/><path d="M12 12.5a3.5 3.5 0 1 1 7 0 3.5 3.5 0 1 1-7 0z"/><path d="M5 19.5A3.5 3.5 0 0 1 8.5 16H12v3.5a3.5 3.5 0 1 1-7 0z"/><path d="M5 12.5A3.5 3.5 0 0 1 8.5 9H12v7H8.5A3.5 3.5 0 0 1 5 12.5z"/></svg></div>
+        <div class="srv-card-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M12 8v8"/><path d="M8 12h8"/></svg>
         </div>
-        <h3 class="srv-card-title">Enterprise UI/UX Design Systems</h3>
-        <p class="srv-card-desc">Scalable design systems built in Figma with reusable components, responsive auto-layout, variable modes, and design token integration.</p>
-        <div class="srv-feature-list mb-3">
-          <div class="srv-feature-item">
-            <svg class="srv-check-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
-            <span>Atomic Component Libraries</span>
-          </div>
-          <div class="srv-feature-item">
-            <svg class="srv-check-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
-            <span>Light &amp; Dark Mode Token Sync</span>
-          </div>
-          <div class="srv-feature-item">
-            <svg class="srv-check-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
-            <span>Responsive Auto-Layout Frames</span>
-          </div>
-          <div class="srv-feature-item">
-            <svg class="srv-check-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
-            <span>Interactive Component Variants</span>
-          </div>
+        <h3 class="srv-card-title">Logo Design</h3>
+        <p class="srv-card-desc">As a logo design company in Delhi, we create simple, memorable marks that stay sharp from a visiting card to a shop signboard.</p>
+        <ul class="srv-card-list">
+          <li>Multiple concepts with clear reasoning</li>
+          <li>Scalable vector files</li>
+          <li>Colour, black and white versions</li>
+        </ul>
+        <div class="srv-sector-outcome mt-3">
+          <span class="srv-outcome-badge">Business Value</span>
+          <span>A recognisable logo helps customers remember you and recommend you.</span>
         </div>
-        <div class="srv-benefit-badge">
-          <span class="text-secondary">BUSINESS VALUE:</span> 
-          <strong class="text-white">Accelerates frontend development cycles by up to 50% while guaranteeing pixel consistency.</strong>
-        </div>
-        <div class="pt-3">
-          <a href="<?= appUrl('contact.php?service=' . urlencode($serviceName) . '&capability=' . urlencode('Enterprise UI/UX Design Systems')) ?>" class="srv-link-action">
-            <span>Inquire About This Service</span>
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
-          </a>
+        <div class="mt-3">
+          <a href="<?= e($consultationUrl) ?>" class="text-brand" style="font-weight: 600; font-size: 0.9rem;">Inquire About This Service &rarr;</a>
         </div>
       </div>
+
+      <!-- Service Card 2 -->
       <div class="srv-card">
-        <div class="srv-card-icon-wrap">
-          <div class="srv-icon-box"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/><circle cx="12" cy="12" r="3"/></svg></div>
+        <div class="srv-card-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20.24 12.24a6 6 0 0 0-8.49-8.49L5 10.5V19h8.5z"/><line x1="16" y1="8" x2="2" y2="22"/><line x1="17.5" y1="15" x2="9" y2="15"/></svg>
         </div>
-        <h3 class="srv-card-title">Corporate Brand Identity &amp; Visual Language</h3>
-        <p class="srv-card-desc">Distilling your company values into an unmistakable corporate identity: logo suites, iconography, typography, and brand guideline portals.</p>
-        <div class="srv-feature-list mb-3">
-          <div class="srv-feature-item">
-            <svg class="srv-check-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
-            <span>Primary &amp; Secondary Vector Logo Suites</span>
-          </div>
-          <div class="srv-feature-item">
-            <svg class="srv-check-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
-            <span>Color Science &amp; Palette Definition</span>
-          </div>
-          <div class="srv-feature-item">
-            <svg class="srv-check-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
-            <span>Custom Typography Pairing</span>
-          </div>
-          <div class="srv-feature-item">
-            <svg class="srv-check-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
-            <span>Comprehensive Brand Guidelines Manual</span>
-          </div>
+        <h3 class="srv-card-title">Brand Identity Design</h3>
+        <p class="srv-card-desc">Colours, typography, icons and usage rules in one guide. As a branding agency in Delhi, we keep your business consistent everywhere customers see it.</p>
+        <ul class="srv-card-list">
+          <li>Colour palette and typography</li>
+          <li>Brand guidelines document</li>
+          <li>Business cards and stationery</li>
+        </ul>
+        <div class="srv-sector-outcome mt-3">
+          <span class="srv-outcome-badge">Business Value</span>
+          <span>Consistent branding builds trust and supports fair pricing.</span>
         </div>
-        <div class="srv-benefit-badge">
-          <span class="text-secondary">BUSINESS VALUE:</span> 
-          <strong class="text-white">Positions your enterprise as the dominant, trusted leader in your industry category.</strong>
-        </div>
-        <div class="pt-3">
-          <a href="<?= appUrl('contact.php?service=' . urlencode($serviceName) . '&capability=' . urlencode('Corporate Brand Identity & Visual Language')) ?>" class="srv-link-action">
-            <span>Inquire About This Service</span>
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
-          </a>
+        <div class="mt-3">
+          <a href="<?= e($consultationUrl) ?>" class="text-brand" style="font-weight: 600; font-size: 0.9rem;">Inquire About This Service &rarr;</a>
         </div>
       </div>
+
+      <!-- Service Card 3 -->
       <div class="srv-card">
-        <div class="srv-card-icon-wrap">
-          <div class="srv-icon-box"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polygon points="12 2 2 7 12 12 22 7 12 2"/><polyline points="2 17 12 22 22 17"/><polyline points="2 12 12 17 22 12"/></svg></div>
+        <div class="srv-card-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/></svg>
         </div>
-        <h3 class="srv-card-title">Web &amp; Mobile App Product Design</h3>
-        <p class="srv-card-desc">End-to-end UX/UI architecture for SaaS platforms, client portals, mobile applications (iOS/Android), and complex dashboard interfaces.</p>
-        <div class="srv-feature-list mb-3">
-          <div class="srv-feature-item">
-            <svg class="srv-check-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
-            <span>User Journey &amp; Flow Wireframing</span>
-          </div>
-          <div class="srv-feature-item">
-            <svg class="srv-check-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
-            <span>High-Fidelity Screen Layouts</span>
-          </div>
-          <div class="srv-feature-item">
-            <svg class="srv-check-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
-            <span>Interactive Micro-Interactions</span>
-          </div>
-          <div class="srv-feature-item">
-            <svg class="srv-check-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
-            <span>Multi-Tenant Permission Hierarchy UI</span>
-          </div>
+        <h3 class="srv-card-title">Brochure and Print Design</h3>
+        <p class="srv-card-desc">Brochures, catalogues and company profiles organised for easy reading and strong first impressions.</p>
+        <ul class="srv-card-list">
+          <li>Brochures and catalogues</li>
+          <li>Flyers, posters and standees</li>
+          <li>Company profiles</li>
+        </ul>
+        <div class="srv-sector-outcome mt-3">
+          <span class="srv-outcome-badge">Business Value</span>
+          <span>Clear layouts help buyers decide faster in meetings and exhibitions.</span>
         </div>
-        <div class="srv-benefit-badge">
-          <span class="text-secondary">BUSINESS VALUE:</span> 
-          <strong class="text-white">Transforms complicated enterprise workflows into enjoyable, frictionless user experiences.</strong>
-        </div>
-        <div class="pt-3">
-          <a href="<?= appUrl('contact.php?service=' . urlencode($serviceName) . '&capability=' . urlencode('Web & Mobile App Product Design')) ?>" class="srv-link-action">
-            <span>Inquire About This Service</span>
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
-          </a>
+        <div class="mt-3">
+          <a href="<?= e($consultationUrl) ?>" class="text-brand" style="font-weight: 600; font-size: 0.9rem;">Inquire About This Service &rarr;</a>
         </div>
       </div>
+
+      <!-- Service Card 4 -->
       <div class="srv-card">
-        <div class="srv-card-icon-wrap">
-          <div class="srv-icon-box"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><circle cx="12" cy="12" r="6"/><circle cx="12" cy="12" r="2"/></svg></div>
+        <div class="srv-card-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="16.5" y1="9.4" x2="7.5" y2="4.21"/><path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"/><polyline points="3.27 6.96 12 12.01 20.73 6.96"/><line x1="12" y1="22.08" x2="12" y2="12"/></svg>
         </div>
-        <h3 class="srv-card-title">Conversion-Focused Landing Page UX</h3>
-        <p class="srv-card-desc">High-impact landing pages structured with psychological visual hierarchy, strategic eye-flow, and distraction-free checkout paths.</p>
-        <div class="srv-feature-list mb-3">
-          <div class="srv-feature-item">
-            <svg class="srv-check-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
-            <span>F-Pattern Visual Scanning Layouts</span>
-          </div>
-          <div class="srv-feature-item">
-            <svg class="srv-check-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
-            <span>Frictionless Multi-Step Lead Flows</span>
-          </div>
-          <div class="srv-feature-item">
-            <svg class="srv-check-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
-            <span>Social Proof &amp; Trust Badge Modules</span>
-          </div>
-          <div class="srv-feature-item">
-            <svg class="srv-check-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
-            <span>Core Web Vitals Visual Pre-Flight</span>
-          </div>
+        <h3 class="srv-card-title">Packaging Design</h3>
+        <p class="srv-card-desc">Our packaging design services help your product stand out on the shelf and arrive at your printer in a clean, production-ready file.</p>
+        <ul class="srv-card-list">
+          <li>Box and label design</li>
+          <li>Print-ready layouts</li>
+          <li>Shelf and marketplace visibility</li>
+        </ul>
+        <div class="srv-sector-outcome mt-3">
+          <span class="srv-outcome-badge">Business Value</span>
+          <span>Strong packaging helps your product get noticed and picked.</span>
         </div>
-        <div class="srv-benefit-badge">
-          <span class="text-secondary">BUSINESS VALUE:</span> 
-          <strong class="text-white">Maximizes paid media ROI by turning a higher percentage of visitors into pipeline.</strong>
-        </div>
-        <div class="pt-3">
-          <a href="<?= appUrl('contact.php?service=' . urlencode($serviceName) . '&capability=' . urlencode('Conversion-Focused Landing Page UX')) ?>" class="srv-link-action">
-            <span>Inquire About This Service</span>
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
-          </a>
+        <div class="mt-3">
+          <a href="<?= e($consultationUrl) ?>" class="text-brand" style="font-weight: 600; font-size: 0.9rem;">Inquire About This Service &rarr;</a>
         </div>
       </div>
+
+      <!-- Service Card 5 -->
       <div class="srv-card">
-        <div class="srv-card-icon-wrap">
-          <div class="srv-icon-box"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg></div>
+        <div class="srv-card-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/></svg>
         </div>
-        <h3 class="srv-card-title">WCAG 2.2 AA Accessibility Audits &amp; Remediation</h3>
-        <p class="srv-card-desc">Rigorous accessibility testing ensuring color contrast ratios, focus states, and keyboard interactions meet international compliance.</p>
-        <div class="srv-feature-list mb-3">
-          <div class="srv-feature-item">
-            <svg class="srv-check-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
-            <span>Automated &amp; Manual Contrast Scoring</span>
-          </div>
-          <div class="srv-feature-item">
-            <svg class="srv-check-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
-            <span>Keyboard Navigation Flow Mapping</span>
-          </div>
-          <div class="srv-feature-item">
-            <svg class="srv-check-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
-            <span>Screen Reader Semantic Verification</span>
-          </div>
-          <div class="srv-feature-item">
-            <svg class="srv-check-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
-            <span>Accessible Form Error State Patterns</span>
-          </div>
+        <h3 class="srv-card-title">Social Media Creatives</h3>
+        <p class="srv-card-desc">Posts, carousels and ad banners that match your brand and keep your page looking active and professional.</p>
+        <ul class="srv-card-list">
+          <li>Posts and carousels</li>
+          <li>Ad banners</li>
+          <li>Reel covers and templates</li>
+        </ul>
+        <div class="srv-sector-outcome mt-3">
+          <span class="srv-outcome-badge">Business Value</span>
+          <span>A polished feed builds credibility and supports paid campaigns.</span>
         </div>
-        <div class="srv-benefit-badge">
-          <span class="text-secondary">BUSINESS VALUE:</span> 
-          <strong class="text-white">Protects your brand from ADA compliance exposure while expanding your usable market.</strong>
-        </div>
-        <div class="pt-3">
-          <a href="<?= appUrl('contact.php?service=' . urlencode($serviceName) . '&capability=' . urlencode('WCAG 2.2 AA Accessibility Audits & Remediation')) ?>" class="srv-link-action">
-            <span>Inquire About This Service</span>
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
-          </a>
+        <div class="mt-3">
+          <a href="<?= e($consultationUrl) ?>" class="text-brand" style="font-weight: 600; font-size: 0.9rem;">Inquire About This Service &rarr;</a>
         </div>
       </div>
+
+      <!-- Service Card 6 -->
       <div class="srv-card">
-        <div class="srv-card-icon-wrap">
-          <div class="srv-icon-box"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/></svg></div>
+        <div class="srv-card-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="3" width="20" height="14" rx="2" ry="2"/><line x1="8" y1="21" x2="16" y2="21"/><line x1="12" y1="17" x2="12" y2="21"/></svg>
         </div>
-        <h3 class="srv-card-title">Interactive Prototyping &amp; User Testing</h3>
-        <p class="srv-card-desc">Full-featured clickable prototypes that simulate realistic data inputs, page transitions, and responsive behaviors for executive stakeholder signoff.</p>
-        <div class="srv-feature-list mb-3">
-          <div class="srv-feature-item">
-            <svg class="srv-check-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
-            <span>Click-Through Interactive Prototypes</span>
-          </div>
-          <div class="srv-feature-item">
-            <svg class="srv-check-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
-            <span>User Testing Session Observation</span>
-          </div>
-          <div class="srv-feature-item">
-            <svg class="srv-check-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
-            <span>Task Completion Time Benchmarks</span>
-          </div>
-          <div class="srv-feature-item">
-            <svg class="srv-check-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
-            <span>Executive Decision Walkthrough Decks</span>
-          </div>
+        <h3 class="srv-card-title">UI/UX and Web Graphics</h3>
+        <p class="srv-card-desc">Website banners, landing page visuals and app screens designed to guide visitors towards one clear action.</p>
+        <ul class="srv-card-list">
+          <li>Website banners</li>
+          <li>Landing page visuals</li>
+          <li>App and dashboard screens</li>
+        </ul>
+        <div class="srv-sector-outcome mt-3">
+          <span class="srv-outcome-badge">Business Value</span>
+          <span>Clear visuals reduce confusion and increase calls, messages and sales.</span>
         </div>
-        <div class="srv-benefit-badge">
-          <span class="text-secondary">BUSINESS VALUE:</span> 
-          <strong class="text-white">Validates key user journeys before development, eliminating costly architectural rework.</strong>
-        </div>
-        <div class="pt-3">
-          <a href="<?= appUrl('contact.php?service=' . urlencode($serviceName) . '&capability=' . urlencode('Interactive Prototyping & User Testing')) ?>" class="srv-link-action">
-            <span>Inquire About This Service</span>
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
-          </a>
+        <div class="mt-3">
+          <a href="<?= e($consultationUrl) ?>" class="text-brand" style="font-weight: 600; font-size: 0.9rem;">Inquire About This Service &rarr;</a>
         </div>
       </div>
     </div>
@@ -526,109 +408,99 @@ $consultationUrl = appUrl('contact.php?service=' . urlencode($serviceName));
 </section>
 
 <!-- ============================================================
-     SECTION 5 — OUR PROCESS
+     SECTION 5 — 6-PHASE PROCESS
      ============================================================ -->
 <section class="srv-section" id="process">
   <div class="srv-container">
     <div class="srv-section-header text-center">
       <div class="srv-badge">
         <span class="srv-badge-dot"></span>
-        <span>STRUCTURED EXECUTION TIMELINE</span>
+        <span>FRAMEWORK</span>
       </div>
       <h2 class="srv-section-title">
-        The 6-Phase Engineering &amp; Delivery <span class="text-brand">Framework</span>
+        The 6-Phase Design and <span class="text-brand">Delivery Framework</span>
       </h2>
       <p class="srv-section-subtitle">
-        Predictable milestones, rigorous testing checkpoints, and full visibility at every stage of the project lifecycle.
+        Clear milestones, honest timelines and approvals at every stage. This is how our creative design agency in Delhi keeps every project on track.
       </p>
     </div>
 
-        <div class="srv-process-nav" role="tablist" aria-label="Process Milestones">
-      <button type="button" class="srv-process-pill is-active" data-step="01"><span class="srv-pill-num">1</span> Phase 01</button>
-      <button type="button" class="srv-process-pill" data-step="02"><span class="srv-pill-num">2</span> Phase 02</button>
-      <button type="button" class="srv-process-pill" data-step="03"><span class="srv-pill-num">3</span> Phase 03</button>
-      <button type="button" class="srv-process-pill" data-step="04"><span class="srv-pill-num">4</span> Phase 04</button>
-      <button type="button" class="srv-process-pill" data-step="05"><span class="srv-pill-num">5</span> Phase 05</button>
-      <button type="button" class="srv-process-pill" data-step="06"><span class="srv-pill-num">6</span> Phase 06</button>
-    </div>
-
     <div class="srv-process-timeline">
-      <div class="srv-process-card" data-step="01">
-        <div class="srv-phase-badge">PHASE 01 &bull; WEEKS 1–2</div>
-        <h3 class="srv-process-title">User Research &amp; Heuristic Audit</h3>
-        <p class="srv-card-desc mb-3">We interview stakeholders, study user behavioral sessions, review competitor UX benchmarks, and identify conversion friction points.</p>
-        <div class="srv-process-deliverable">
-          <span class="srv-deliverable-lbl">KEY DELIVERABLES:</span>
-          <ul class="srv-bullet-list">
-            <li>UX Heuristic Audit Report</li>
-            <li>User Persona &amp; Journey Maps</li>
-            <li>Competitor Visual Benchmark Matrix</li>
-          </ul>
+      <!-- Phase 1 -->
+      <div class="srv-process-step">
+        <div class="srv-step-number">01</div>
+        <div class="srv-step-content">
+          <h3 class="srv-step-title">Phase 01 – Discovery and Brief</h3>
+          <p class="srv-step-desc">We learn your business, customers, competitors and goals through a short briefing.</p>
+          <div class="srv-step-deliverables">
+            <span class="srv-deliverable-label">Key Deliverables:</span>
+            <span>Written design brief &bull; Competitor snapshot</span>
+          </div>
         </div>
       </div>
-      <div class="srv-process-card" data-step="02">
-        <div class="srv-phase-badge">PHASE 02 &bull; WEEKS 2–3</div>
-        <h3 class="srv-process-title">Information Architecture &amp; Wireframes</h3>
-        <p class="srv-card-desc mb-3">We design low-fidelity structural wireframes and sitemaps to optimize navigation flow and cognitive hierarchy before visual styling.</p>
-        <div class="srv-process-deliverable">
-          <span class="srv-deliverable-lbl">KEY DELIVERABLES:</span>
-          <ul class="srv-bullet-list">
-            <li>Complete Structural Sitemaps</li>
-            <li>Low-Fidelity Interactive Wireframes</li>
-            <li>Core Flow Validation Walkthrough</li>
-          </ul>
+
+      <!-- Phase 2 -->
+      <div class="srv-process-step">
+        <div class="srv-step-number">02</div>
+        <div class="srv-step-content">
+          <h3 class="srv-step-title">Phase 02 – Research and Direction</h3>
+          <p class="srv-step-desc">We study your market and share style directions for approval before any design begins.</p>
+          <div class="srv-step-deliverables">
+            <span class="srv-deliverable-label">Key Deliverables:</span>
+            <span>Moodboard &bull; Colour and style direction</span>
+          </div>
         </div>
       </div>
-      <div class="srv-process-card" data-step="03">
-        <div class="srv-phase-badge">PHASE 03 &bull; WEEKS 3–4</div>
-        <h3 class="srv-process-title">Design Token System &amp; Visual Exploration</h3>
-        <p class="srv-card-desc mb-3">We establish typography, color systems, grid scales, and initial high-fidelity mood boards for executive feedback.</p>
-        <div class="srv-process-deliverable">
-          <span class="srv-deliverable-lbl">KEY DELIVERABLES:</span>
-          <ul class="srv-bullet-list">
-            <li>Figma Design Token Foundation</li>
-            <li>3 Distinct Visual Mood Directions</li>
-            <li>Iconography &amp; Color Hierarchy Specs</li>
-          </ul>
+
+      <!-- Phase 3 -->
+      <div class="srv-process-step">
+        <div class="srv-step-number">03</div>
+        <div class="srv-step-content">
+          <h3 class="srv-step-title">Phase 03 – Concept Design</h3>
+          <p class="srv-step-desc">Our designers create the first concepts from the approved direction and explain each choice.</p>
+          <div class="srv-step-deliverables">
+            <span class="srv-deliverable-label">Key Deliverables:</span>
+            <span>Initial concepts &bull; Design rationale</span>
+          </div>
         </div>
       </div>
-      <div class="srv-process-card" data-step="04">
-        <div class="srv-phase-badge">PHASE 04 &bull; WEEKS 4–6</div>
-        <h3 class="srv-process-title">High-Fidelity Component &amp; Screen Design</h3>
-        <p class="srv-card-desc mb-3">We design every responsive view across desktop, tablet, and mobile, building out full atomic component libraries in Figma.</p>
-        <div class="srv-process-deliverable">
-          <span class="srv-deliverable-lbl">KEY DELIVERABLES:</span>
-          <ul class="srv-bullet-list">
-            <li>Complete High-Fidelity UI Screens</li>
-            <li>Atomic Component Library with Variants</li>
-            <li>Edge Case States (Errors, Loading, Empty)</li>
-          </ul>
+
+      <!-- Phase 4 -->
+      <div class="srv-process-step">
+        <div class="srv-step-number">04</div>
+        <div class="srv-step-content">
+          <h3 class="srv-step-title">Phase 04 – Feedback and Revisions</h3>
+          <p class="srv-step-desc">You share your thoughts and we refine the work, round by round, until it feels right.</p>
+          <div class="srv-step-deliverables">
+            <span class="srv-deliverable-label">Key Deliverables:</span>
+            <span>Revision rounds as per quote &bull; Refined designs</span>
+          </div>
         </div>
       </div>
-      <div class="srv-process-card" data-step="05">
-        <div class="srv-phase-badge">PHASE 05 &bull; WEEKS 6–7</div>
-        <h3 class="srv-process-title">Clickable Prototyping &amp; Usability Testing</h3>
-        <p class="srv-card-desc mb-3">We wire screens into interactive prototypes and run guided usability tasks to verify that flows are effortless and intuitive.</p>
-        <div class="srv-process-deliverable">
-          <span class="srv-deliverable-lbl">KEY DELIVERABLES:</span>
-          <ul class="srv-bullet-list">
-            <li>Interactive Figma Prototype</li>
-            <li>Usability Session Findings Deck</li>
-            <li>Refined Screen Micro-Interactions</li>
-          </ul>
+
+      <!-- Phase 5 -->
+      <div class="srv-process-step">
+        <div class="srv-step-number">05</div>
+        <div class="srv-step-content">
+          <h3 class="srv-step-title">Phase 05 – Finalisation</h3>
+          <p class="srv-step-desc">We prepare final files in the correct size, resolution and colour mode.</p>
+          <div class="srv-step-deliverables">
+            <span class="srv-deliverable-label">Key Deliverables:</span>
+            <span>Print-ready files &bull; Web-ready exports</span>
+          </div>
         </div>
       </div>
-      <div class="srv-process-card" data-step="06">
-        <div class="srv-phase-badge">PHASE 06 &bull; WEEKS 7–8</div>
-        <h3 class="srv-process-title">Developer Handoff &amp; Design Token Sync</h3>
-        <p class="srv-card-desc mb-3">We export clean CSS variables, organize developer handoff documentation, and conduct paired walkthroughs with the engineering team.</p>
-        <div class="srv-process-deliverable">
-          <span class="srv-deliverable-lbl">KEY DELIVERABLES:</span>
-          <ul class="srv-bullet-list">
-            <li>Tokenized CSS/SCSS Export Files</li>
-            <li>Figma Inspect Ready Specs</li>
-            <li>Design QA Checklist for Frontend Devs</li>
-          </ul>
+
+      <!-- Phase 6 -->
+      <div class="srv-process-step">
+        <div class="srv-step-number">06</div>
+        <div class="srv-step-content">
+          <h3 class="srv-step-title">Phase 06 – Delivery and Support</h3>
+          <p class="srv-step-desc">You receive every source and export file, along with simple guidance on using them.</p>
+          <div class="srv-step-deliverables">
+            <span class="srv-deliverable-label">Key Deliverables:</span>
+            <span>Source files &bull; Brand usage guidance</span>
+          </div>
         </div>
       </div>
     </div>
@@ -636,418 +508,287 @@ $consultationUrl = appUrl('contact.php?service=' . urlencode($serviceName));
 </section>
 
 <!-- ============================================================
-     SECTION 6 — WHY CHOOSE BUSINESSDOCTOR
+     SECTION 6 — WHY CHOOSE US
      ============================================================ -->
 <section class="srv-section srv-bg-surface" id="why-choose-us">
   <div class="srv-container">
     <div class="srv-section-header text-center">
       <div class="srv-badge">
         <span class="srv-badge-dot"></span>
-        <span>COMPETITIVE ADVANTAGE</span>
+        <span>WHY CHOOSE US</span>
       </div>
       <h2 class="srv-section-title">
-        Why Leading Companies Partner with <span class="text-brand">BusinessDoctor</span>
+        Why Growing Brands Choose BusinessDoctor as Their <span class="text-brand">Graphic Design Company in Delhi</span>
       </h2>
       <p class="srv-section-subtitle">
-        We bridge the gap between business strategy and deep technical execution, providing senior expertise without agency bloat.
+        Plenty of designers can make something pretty, but pretty alone does not fill your enquiry inbox. We combine creative skill with business thinking and clear communication, which is why clients return for their next project.
       </p>
     </div>
 
-    <div class="srv-grid srv-grid-3">
-      <div class="srv-card">
-        <div class="srv-icon-box mb-3"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 5.5A3.5 3.5 0 0 1 8.5 2H12v7H8.5A3.5 3.5 0 0 1 5 5.5z"/><path d="M12 2h3.5a3.5 3.5 0 1 1 0 7H12V2z"/><path d="M12 12.5a3.5 3.5 0 1 1 7 0 3.5 3.5 0 1 1-7 0z"/><path d="M5 19.5A3.5 3.5 0 0 1 8.5 16H12v3.5a3.5 3.5 0 1 1-7 0z"/><path d="M5 12.5A3.5 3.5 0 0 1 8.5 9H12v7H8.5A3.5 3.5 0 0 1 5 12.5z"/></svg></div>
-        <h3 class="srv-card-title">100% Figma Auto-Layout Parity</h3>
-        <p class="srv-card-desc">Our design files are meticulously organized with responsive auto-layout, exact constraints, and atomic components that developers love.</p>
-        <div class="srv-metric-highlight mt-2">
-          <span class="text-brand font-mono font-bold">Pixel-Perfect</span>
-          <span class="text-muted text-sm ms-2">Developer-Ready Specs</span>
-        </div>
+    <div class="srv-grid-3">
+      <div class="srv-benefit-card">
+        <div class="srv-benefit-badge">Goal-Led Design</div>
+        <h3 class="srv-benefit-title">Business-First Thinking</h3>
+        <p class="srv-benefit-desc">Every design is built around a goal, whether that is enquiries, sales or a stronger first impression.</p>
       </div>
-      <div class="srv-card">
-        <div class="srv-icon-box mb-3"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg></div>
-        <h3 class="srv-card-title">WCAG 2.2 AA Compliance First</h3>
-        <p class="srv-card-desc">Every single color combination, button state, and typographical choice is tested for contrast and readability from day one.</p>
-        <div class="srv-metric-highlight mt-2">
-          <span class="text-brand font-mono font-bold">AAA / AA</span>
-          <span class="text-muted text-sm ms-2">Accessibility Standard</span>
-        </div>
+
+      <div class="srv-benefit-card">
+        <div class="srv-benefit-badge">Zero Templates</div>
+        <h3 class="srv-benefit-title">100% Original Work</h3>
+        <p class="srv-benefit-desc">Every design is created from scratch. No stock templates, no copied artwork.</p>
       </div>
-      <div class="srv-card">
-        <div class="srv-icon-box mb-3"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><circle cx="12" cy="12" r="6"/><circle cx="12" cy="12" r="2"/></svg></div>
-        <h3 class="srv-card-title">Conversion-Driven Aesthetics</h3>
-        <p class="srv-card-desc">We don’t design for design awards; we design for commercial revenue, user retention, and sub-second comprehension.</p>
-        <div class="srv-metric-highlight mt-2">
-          <span class="text-brand font-mono font-bold">+64%</span>
-          <span class="text-muted text-sm ms-2">Average Flow Completion</span>
-        </div>
+
+      <div class="srv-benefit-card">
+        <div class="srv-benefit-badge">Multi-Industry Experience</div>
+        <h3 class="srv-benefit-title">Experienced Designers</h3>
+        <p class="srv-benefit-desc">Our team has handled projects across many industries and knows what works in your market.</p>
       </div>
-      <div class="srv-card">
-        <div class="srv-icon-box mb-3"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="4" y1="21" x2="4" y2="14"/><line x1="4" y1="10" x2="4" y2="3"/><line x1="12" y1="21" x2="12" y2="12"/><line x1="12" y1="8" x2="12" y2="3"/><line x1="20" y1="21" x2="20" y2="16"/><line x1="20" y1="12" x2="20" y2="3"/><line x1="1" y1="14" x2="7" y2="14"/><line x1="9" y1="8" x2="15" y2="8"/><line x1="17" y1="16" x2="23" y2="16"/></svg></div>
-        <h3 class="srv-card-title">Direct Frontend Developer Sync</h3>
-        <p class="srv-card-desc">Our designers understand CSS flexbox, CSS grid, and browser rendering limits, preventing unrealistic design proposals that break in code.</p>
-        <div class="srv-metric-highlight mt-2">
-          <span class="text-brand font-mono font-bold">0 Rework</span>
-          <span class="text-muted text-sm ms-2">Realistic Architecture</span>
-        </div>
+
+      <div class="srv-benefit-card">
+        <div class="srv-benefit-badge">Fixed Timelines</div>
+        <h3 class="srv-benefit-title">On-Time Delivery</h3>
+        <p class="srv-benefit-desc">You get a clear timeline at the start, and we respect it.</p>
       </div>
-      <div class="srv-card">
-        <div class="srv-icon-box mb-3"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/><circle cx="12" cy="12" r="3"/></svg></div>
-        <h3 class="srv-card-title">Scalable Design Token Systems</h3>
-        <p class="srv-card-desc">Global changes to your primary brand color, font, or corner radii cascade instantly across hundreds of screens in seconds.</p>
-        <div class="srv-metric-highlight mt-2">
-          <span class="text-brand font-mono font-bold">Instant</span>
-          <span class="text-muted text-sm ms-2">Global Brand Updates</span>
-        </div>
+
+      <div class="srv-benefit-card">
+        <div class="srv-benefit-badge">No Hidden Charges</div>
+        <h3 class="srv-benefit-title">Honest, Clear Pricing</h3>
+        <p class="srv-benefit-desc">A simple quote that lists exactly what is included.</p>
       </div>
-      <div class="srv-card">
-        <div class="srv-icon-box mb-3"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polygon points="12 2 2 7 12 12 22 7 12 2"/><polyline points="2 17 12 22 22 17"/><polyline points="2 12 12 17 22 12"/></svg></div>
-        <h3 class="srv-card-title">Full IP &amp; Vector Asset Ownership</h3>
-        <p class="srv-card-desc">You receive full ownership of all raw Figma files, vector SVGs, font licenses, and brand style guides with zero licensing restrictions.</p>
-        <div class="srv-metric-highlight mt-2">
-          <span class="text-brand font-mono font-bold">100%</span>
-          <span class="text-muted text-sm ms-2">Client Owned IP</span>
-        </div>
+
+      <div class="srv-benefit-card">
+        <div class="srv-benefit-badge">Consistent Everywhere</div>
+        <h3 class="srv-benefit-title">Complete Marketing Support</h3>
+        <p class="srv-benefit-desc">Designs that fit your website, SEO and social media marketing.</p>
       </div>
     </div>
   </div>
 </section>
 
 <!-- ============================================================
-     SECTION 7 — TECHNOLOGY & TOOLS WE USE
+     SECTION 7 — TECHNOLOGIES & TOOLS
      ============================================================ -->
 <section class="srv-section" id="technologies">
   <div class="srv-container">
     <div class="srv-section-header text-center">
       <div class="srv-badge">
         <span class="srv-badge-dot"></span>
-        <span>TOOLS TO BE USED</span>
+        <span>TOOL STACK</span>
       </div>
       <h2 class="srv-section-title">
-        Tools to Be <span class="text-brand">Used</span>
+        Tools We Use <span class="text-brand">to Design</span>
       </h2>
       <p class="srv-section-subtitle">
-        We select battle-tested, high-performance tooling suited for scale, reliability, and seamless ongoing maintenance.
+        Every designer at our graphic design company in Delhi works with industry-standard software, so you get sharp, flexible files that any printer or platform can use.
       </p>
     </div>
 
-    <div class="srv-tech-grid">
+    <div class="srv-grid-4">
       <div class="srv-tech-category">
-        <h3 class="srv-tech-cat-title">Core Design &amp; Prototyping</h3>
-        <div class="srv-tech-tags">
-          <div class="srv-tool-item">
-            <span class="srv-tool-dot"></span>
-            <span class="srv-tool-name">Figma</span>
-            <span class="srv-tool-role">Auto-Layout &amp; Design Systems</span>
-          </div>
-          <div class="srv-tool-item">
-            <span class="srv-tool-dot"></span>
-            <span class="srv-tool-name">Figma Tokens</span>
-            <span class="srv-tool-role">Design Token Management</span>
-          </div>
-          <div class="srv-tool-item">
-            <span class="srv-tool-dot"></span>
-            <span class="srv-tool-name">Adobe Illustrator</span>
-            <span class="srv-tool-role">Vector Iconography &amp; Logo Specs</span>
-          </div>
-          <div class="srv-tool-item">
-            <span class="srv-tool-dot"></span>
-            <span class="srv-tool-name">Principle / ProtoPie</span>
-            <span class="srv-tool-role">Advanced Micro-Interactions</span>
-          </div>
-        </div>
+        <h3 class="srv-tech-cat-title">Branding and Logo</h3>
+        <ul class="srv-tech-list">
+          <li>Adobe Illustrator</li>
+          <li>CorelDRAW</li>
+          <li>Adobe Photoshop</li>
+        </ul>
       </div>
+
       <div class="srv-tech-category">
-        <h3 class="srv-tech-cat-title">Developer Handoff &amp; Token Sync</h3>
-        <div class="srv-tech-tags">
-          <div class="srv-tool-item">
-            <span class="srv-tool-dot"></span>
-            <span class="srv-tool-name">Storybook</span>
-            <span class="srv-tool-role">Isolated Component Explorer</span>
-          </div>
-          <div class="srv-tool-item">
-            <span class="srv-tool-dot"></span>
-            <span class="srv-tool-name">Zeroheight</span>
-            <span class="srv-tool-role">Living Style Guide Documentation</span>
-          </div>
-          <div class="srv-tool-item">
-            <span class="srv-tool-dot"></span>
-            <span class="srv-tool-name">CSS Custom Props</span>
-            <span class="srv-tool-role">1:1 Variable Code Sync</span>
-          </div>
-          <div class="srv-tool-item">
-            <span class="srv-tool-dot"></span>
-            <span class="srv-tool-name">Git Repository Sync</span>
-            <span class="srv-tool-role">Versioned Design Assets</span>
-          </div>
-        </div>
+        <h3 class="srv-tech-cat-title">Print and Packaging</h3>
+        <ul class="srv-tech-list">
+          <li>Adobe InDesign</li>
+          <li>Adobe Acrobat Pro</li>
+          <li>Pantone Colour System</li>
+        </ul>
       </div>
+
       <div class="srv-tech-category">
-        <h3 class="srv-tech-cat-title">Usability &amp; Analytics Audits</h3>
-        <div class="srv-tech-tags">
-          <div class="srv-tool-item">
-            <span class="srv-tool-dot"></span>
-            <span class="srv-tool-name">Hotjar</span>
-            <span class="srv-tool-role">Heatmaps &amp; Friction Analysis</span>
-          </div>
-          <div class="srv-tool-item">
-            <span class="srv-tool-dot"></span>
-            <span class="srv-tool-name">Maze</span>
-            <span class="srv-tool-role">Unmoderated Usability Testing</span>
-          </div>
-          <div class="srv-tool-item">
-            <span class="srv-tool-dot"></span>
-            <span class="srv-tool-name">Contrast Analyser</span>
-            <span class="srv-tool-role">WCAG 2.2 Color Verification</span>
-          </div>
-          <div class="srv-tool-item">
-            <span class="srv-tool-dot"></span>
-            <span class="srv-tool-name">Google Lighthouse</span>
-            <span class="srv-tool-role">CLS &amp; Visual Stability Score</span>
-          </div>
-        </div>
+        <h3 class="srv-tech-cat-title">UI/UX and Web</h3>
+        <ul class="srv-tech-list">
+          <li>Figma</li>
+          <li>FigJam</li>
+          <li>Google Fonts</li>
+        </ul>
       </div>
+
       <div class="srv-tech-category">
-        <h3 class="srv-tech-cat-title">Creative Assets &amp; 3D Visuals</h3>
-        <div class="srv-tech-tags">
-          <div class="srv-tool-item">
-            <span class="srv-tool-dot"></span>
-            <span class="srv-tool-name">Adobe Photoshop</span>
-            <span class="srv-tool-role">Asset Retouching &amp; Textures</span>
-          </div>
-          <div class="srv-tool-item">
-            <span class="srv-tool-dot"></span>
-            <span class="srv-tool-name">Blender</span>
-            <span class="srv-tool-role">Isometric 3D Illustrations</span>
-          </div>
-          <div class="srv-tool-item">
-            <span class="srv-tool-dot"></span>
-            <span class="srv-tool-name">LottieFiles</span>
-            <span class="srv-tool-role">Lightweight JSON Animations</span>
-          </div>
-          <div class="srv-tool-item">
-            <span class="srv-tool-dot"></span>
-            <span class="srv-tool-name">FontFont / Monotype</span>
-            <span class="srv-tool-role">Enterprise Web Typography</span>
-          </div>
-        </div>
+        <h3 class="srv-tech-cat-title">Motion and Social</h3>
+        <ul class="srv-tech-list">
+          <li>Adobe After Effects</li>
+          <li>Adobe Premiere Pro</li>
+          <li>Adobe Photoshop</li>
+        </ul>
       </div>
     </div>
   </div>
 </section>
 
 <!-- ============================================================
-     SECTION 8 — INDUSTRY USE CASES
+     SECTION 8 — INDUSTRY SECTORS
      ============================================================ -->
 <section class="srv-section srv-bg-surface" id="industry-use-cases">
   <div class="srv-container">
     <div class="srv-section-header text-center">
       <div class="srv-badge">
         <span class="srv-badge-dot"></span>
-        <span>INDUSTRY SPECIALIZATION</span>
+        <span>SECTORS</span>
       </div>
       <h2 class="srv-section-title">
-        Tailored Solutions for <span class="text-brand">High-Growth Sectors</span>
+        Tailored Graphic Design for <span class="text-brand">High-Growth Sectors</span>
       </h2>
       <p class="srv-section-subtitle">
-        We solve domain-specific compliance, performance, and workflow challenges across multiple complex industries.
+        Different industries need different visual language. A clinic should look calm and trustworthy, while a restaurant should look warm and tempting. As a graphic design company in Delhi that works across sectors, we study how your buyers think before we open any software.
       </p>
     </div>
 
-        <div class="srv-carousel-wrapper" data-carousel="use-cases">
-      <div class="srv-carousel-nav-header">
-        <div class="srv-carousel-kicker">
-          <span class="text-brand font-mono font-bold">SECTOR ARCHITECTURES</span>
-          <span class="text-muted text-sm ml-2">&bull; Interactive scroll &amp; swipe</span>
-        </div>
-        <div class="srv-carousel-controls">
-          <button type="button" class="srv-carousel-btn srv-carousel-prev" aria-label="Previous Sector Solution"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="15 18 9 12 15 6"/></svg></button>
-          <button type="button" class="srv-carousel-btn srv-carousel-next" aria-label="Next Sector Solution"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="9 18 15 12 9 6"/></svg></button>
+    <div class="srv-grid-3">
+      <div class="srv-card">
+        <h3 class="srv-card-title">Real Estate</h3>
+        <p class="srv-card-desc">Project branding, brochures, hoardings and sales kits that make developments look premium and credible.</p>
+        <div class="srv-sector-outcome">
+          <span class="srv-outcome-badge">Typical Deliverables</span>
+          <span>Brochures &bull; Hoardings &bull; Project Logos</span>
         </div>
       </div>
-      <div class="srv-carousel-track">
 
-      <div class="srv-industry-card">
-        <div class="srv-industry-header">
-          <div class="srv-icon-box"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="12" y1="1" x2="12" y2="23"/><path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/></svg></div>
-          <span class="srv-industry-tag">FINTECH &amp; BANKING</span>
-        </div>
-        <h3 class="srv-card-title">Trust-First Financial Dashboards</h3>
-        <p class="srv-card-desc">High-density transactional tables, biometric login flows, and clear data visualization engineered for wealth managers and retail investors.</p>
-        <div class="srv-industry-outcome">
-          <span class="srv-deliverable-lbl">PRIMARY BUSINESS OUTCOME:</span>
-          <strong class="text-brand">82% Reduction in User Transfer Errors</strong>
+      <div class="srv-card">
+        <h3 class="srv-card-title">Healthcare</h3>
+        <p class="srv-card-desc">Clean, calm and trust-building material for clinics, hospitals and wellness brands.</p>
+        <div class="srv-sector-outcome">
+          <span class="srv-outcome-badge">Typical Deliverables</span>
+          <span>Clinic Branding &bull; Patient Leaflets &bull; Social Posts</span>
         </div>
       </div>
-      <div class="srv-industry-card">
-        <div class="srv-industry-header">
-          <div class="srv-icon-box"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg></div>
-          <span class="srv-industry-tag">HEALTHCARE &amp; CLINICAL</span>
-        </div>
-        <h3 class="srv-card-title">Patient &amp;amp; Clinical Provider Portals</h3>
-        <p class="srv-card-desc">Accessible, distraction-free interfaces for telehealth appointments, medical records, and prescription renewals.</p>
-        <div class="srv-industry-outcome">
-          <span class="srv-deliverable-lbl">PRIMARY BUSINESS OUTCOME:</span>
-          <strong class="text-brand">99.8% Usability Score for Senior Demographics</strong>
+
+      <div class="srv-card">
+        <h3 class="srv-card-title">E-commerce and D2C</h3>
+        <p class="srv-card-desc">Product banners, marketplace graphics and packaging that help online shoppers choose you.</p>
+        <div class="srv-sector-outcome">
+          <span class="srv-outcome-badge">Typical Deliverables</span>
+          <span>Packaging &bull; Banners &bull; Ad Creatives</span>
         </div>
       </div>
-      <div class="srv-industry-card">
-        <div class="srv-industry-header">
-          <div class="srv-icon-box"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="9" cy="21" r="1"/><circle cx="20" cy="21" r="1"/><path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"/></svg></div>
-          <span class="srv-industry-tag">LUXURY &amp; D2C E-COMMERCE</span>
-        </div>
-        <h3 class="srv-card-title">Editorial Brand Storefronts &amp;amp; Fast Checkout</h3>
-        <p class="srv-card-desc">Immersive visual storytelling, dynamic size pickers, and single-tap mobile checkout designed to maximize average order value.</p>
-        <div class="srv-industry-outcome">
-          <span class="srv-deliverable-lbl">PRIMARY BUSINESS OUTCOME:</span>
-          <strong class="text-brand">+28% Increase in Mobile Conversion Rate</strong>
-        </div>
-      </div>
-      <div class="srv-industry-card">
-        <div class="srv-industry-header">
-          <div class="srv-icon-box"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polygon points="12 2 2 7 12 12 22 7 12 2"/><polyline points="2 17 12 22 22 17"/><polyline points="2 12 12 17 22 12"/></svg></div>
-          <span class="srv-industry-tag">B2B SAAS &amp; ENTERPRISE</span>
-        </div>
-        <h3 class="srv-card-title">Complex Workflow Simplification</h3>
-        <p class="srv-card-desc">Transforming cluttered multi-tier permission consoles and analytics tools into clean, intuitive workspaces.</p>
-        <div class="srv-industry-outcome">
-          <span class="srv-deliverable-lbl">PRIMARY BUSINESS OUTCOME:</span>
-          <strong class="text-brand">45% Drop in Customer Onboarding Time</strong>
-        </div>
-      </div>
-      <div class="srv-industry-card">
-        <div class="srv-industry-header">
-          <div class="srv-icon-box"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="18" height="18" rx="2" ry="2"/><line x1="3" y1="9" x2="21" y2="9"/><line x1="9" y1="21" x2="9" y2="9"/></svg></div>
-          <span class="srv-industry-tag">REAL ESTATE &amp; ARCHITECTURE</span>
-        </div>
-        <h3 class="srv-card-title">Interactive Property Portals &amp;amp; VR Tours</h3>
-        <p class="srv-card-desc">High-resolution architectural showcases, interactive floor plan navigators, and direct private tour booking flows.</p>
-        <div class="srv-industry-outcome">
-          <span class="srv-deliverable-lbl">PRIMARY BUSINESS OUTCOME:</span>
-          <strong class="text-brand">3.4x Increase in Qualified Private Viewings</strong>
-        </div>
-      </div>
-      <div class="srv-industry-card">
-        <div class="srv-industry-header">
-          <div class="srv-icon-box"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/></svg></div>
-          <span class="srv-industry-tag">PROFESSIONAL CONSULTING</span>
-        </div>
-        <h3 class="srv-card-title">Authoritative Brand Identity &amp;amp; Portal</h3>
-        <p class="srv-card-desc">Editorial typography, bespoke whitepaper layouts, and partner profiles that communicate undeniable executive stature.</p>
-        <div class="srv-industry-outcome">
-          <span class="srv-deliverable-lbl">PRIMARY BUSINESS OUTCOME:</span>
-          <strong class="text-brand">100% Brand Consistency Across 8 Global Offices</strong>
-        </div>
-      </div>
-          </div>
-      <div class="srv-carousel-dots" aria-hidden="true"></div>
+    </div>
+
+    <div class="text-center mt-4">
+      <p style="color: var(--color-text-muted); font-size: 0.95rem;">
+        We also design for education, restaurants, startups and B2B manufacturers.
+      </p>
     </div>
   </div>
 </section>
 
 <!-- ============================================================
-     SECTION 10 — INTERACTIVE FAQ ACCORDION
+     SECTION 9 — FREQUENTLY ASKED QUESTIONS
      ============================================================ -->
-<section class="srv-section srv-bg-surface" id="faq">
+<section class="srv-section" id="faq">
   <div class="srv-container">
     <div class="srv-section-header text-center">
       <div class="srv-badge">
         <span class="srv-badge-dot"></span>
-        <span>FREQUENTLY ASKED QUESTIONS</span>
+        <span>QUESTIONS &amp; ANSWERS</span>
       </div>
       <h2 class="srv-section-title">
-        Common Questions About <span class="text-brand">UI/UX Design &amp; Brand Identity</span>
+        Common Questions About <span class="text-brand">Graphic Design in Delhi</span>
       </h2>
       <p class="srv-section-subtitle">
-        Everything you need to know about our scope, timeline, engineering standards, communication, and ongoing support.
+        Everything you need to know about our graphic design services, pricing, timelines, and deliverables.
       </p>
     </div>
 
     <div class="srv-faq-container">
       <div class="srv-faq-item">
-        <button type="button" class="srv-faq-btn" aria-expanded="false" aria-controls="faq-ans-0">
-          <span class="srv-faq-question">What deliverables do we receive at the end of a UI/UX project?</span>
-          <span class="srv-faq-icon" aria-hidden="true">+</span>
-        </button>
-        <div id="faq-ans-0" class="srv-faq-panel">
-          <div class="srv-faq-content">
-            <p>You receive a complete, production-ready Figma workspace containing the atomic design system (color tokens, typography, component library with interactive variants), all responsive screen layouts (desktop, tablet, mobile), an interactive click-through prototype, exportable SVGs, and developer documentation with CSS variable specifications.</p>
-          </div>
-        </div>
-      </div>
-      <div class="srv-faq-item">
         <button type="button" class="srv-faq-btn" aria-expanded="false" aria-controls="faq-ans-1">
-          <span class="srv-faq-question">Do you also code the frontend or only provide designs in Figma?</span>
+          <span class="srv-faq-question">1. What does a graphic design company in Delhi do?</span>
           <span class="srv-faq-icon" aria-hidden="true">+</span>
         </button>
         <div id="faq-ans-1" class="srv-faq-panel">
           <div class="srv-faq-content">
-            <p>We offer both. Because BusinessDoctor is a full-stack digital engineering firm, we can take the Figma files directly into production code (HTML5, modern CSS/SCSS, React, Vue, or PHP), guaranteeing 100% pixel-perfect implementation without handoff friction.</p>
+            <p>A graphic design company in Delhi creates visual material for businesses, including logos, brand identities, brochures, packaging, social media creatives and website graphics.</p>
           </div>
         </div>
       </div>
+
       <div class="srv-faq-item">
         <button type="button" class="srv-faq-btn" aria-expanded="false" aria-controls="faq-ans-2">
-          <span class="srv-faq-question">How many design revisions are included during the project?</span>
+          <span class="srv-faq-question">2. How much do graphic design services in Delhi cost?</span>
           <span class="srv-faq-icon" aria-hidden="true">+</span>
         </button>
         <div id="faq-ans-2" class="srv-faq-panel">
           <div class="srv-faq-content">
-            <p>Our iterative sprint process includes structured review milestones at every stage (wireframes, visual mood directions, component library, and final screen flows). Rather than limiting you to arbitrary revision counts, we collaborate until the design meets your exact business objectives and executive standards.</p>
+            <p>The price depends on your requirement. A single logo costs less than a full brand identity or a multi-page catalogue. Share your needs and we will send a clear, itemised quote.</p>
           </div>
         </div>
       </div>
+
       <div class="srv-faq-item">
         <button type="button" class="srv-faq-btn" aria-expanded="false" aria-controls="faq-ans-3">
-          <span class="srv-faq-question">Can you redesign our product without breaking our existing backend?</span>
+          <span class="srv-faq-question">3. How long does a logo design project take?</span>
           <span class="srv-faq-icon" aria-hidden="true">+</span>
         </button>
         <div id="faq-ans-3" class="srv-faq-panel">
           <div class="srv-faq-content">
-            <p>Yes. We frequently conduct UI modernization projects where the underlying database, APIs, and business logic remain intact while we deliver a completely modernized, high-performance frontend interface.</p>
+            <p>Most logo projects take five to seven working days, depending on how quickly you share feedback.</p>
           </div>
         </div>
       </div>
+
       <div class="srv-faq-item">
         <button type="button" class="srv-faq-btn" aria-expanded="false" aria-controls="faq-ans-4">
-          <span class="srv-faq-question">How do you ensure the designs are accessible (WCAG compliant)?</span>
+          <span class="srv-faq-question">4. Will I get the source files?</span>
           <span class="srv-faq-icon" aria-hidden="true">+</span>
         </button>
         <div id="faq-ans-4" class="srv-faq-panel">
           <div class="srv-faq-content">
-            <p>We test every color combination against automated contrast checkers to ensure WCAG 2.2 AA (and AAA where applicable) compliance. We also design dedicated focus states, ensure semantic typographic hierarchy, and verify minimum 48x48px touch targets for mobile usability.</p>
+            <p>Yes. After final payment, you receive the editable source files and export formats for print and digital use.</p>
           </div>
         </div>
       </div>
+
       <div class="srv-faq-item">
         <button type="button" class="srv-faq-btn" aria-expanded="false" aria-controls="faq-ans-5">
-          <span class="srv-faq-question">How long does a typical UI/UX or brand redesign project take?</span>
+          <span class="srv-faq-question">5. How many revisions are included?</span>
           <span class="srv-faq-icon" aria-hidden="true">+</span>
         </button>
         <div id="faq-ans-5" class="srv-faq-panel">
           <div class="srv-faq-content">
-            <p>A focused landing page or corporate brand identity typically takes 3 to 4 weeks. A comprehensive web application or complex SaaS redesign typically spans 6 to 10 weeks depending on the number of unique user flows and components.</p>
+            <p>Every package includes revision rounds until the design matches the approved brief. The exact number is mentioned in your quote.</p>
           </div>
         </div>
       </div>
+
       <div class="srv-faq-item">
         <button type="button" class="srv-faq-btn" aria-expanded="false" aria-controls="faq-ans-6">
-          <span class="srv-faq-question">Who owns the intellectual property and copyright of the designs?</span>
+          <span class="srv-faq-question">6. Can you design for both print and digital?</span>
           <span class="srv-faq-icon" aria-hidden="true">+</span>
         </button>
         <div id="faq-ans-6" class="srv-faq-panel">
           <div class="srv-faq-content">
-            <p>You own 100% of all intellectual property, design files, custom illustrations, and brand assets upon project completion. We do not charge licensing fees or retain ownership.</p>
+            <p>Yes. Our graphic design services in Delhi cover both. We prepare every file in the right size, resolution and colour mode for print, websites and social media.</p>
           </div>
         </div>
       </div>
+
       <div class="srv-faq-item">
         <button type="button" class="srv-faq-btn" aria-expanded="false" aria-controls="faq-ans-7">
-          <span class="srv-faq-question">Can you work with our internal development team during handoff?</span>
+          <span class="srv-faq-question">7. Do you work with startups and small businesses?</span>
           <span class="srv-faq-icon" aria-hidden="true">+</span>
         </button>
         <div id="faq-ans-7" class="srv-faq-panel">
           <div class="srv-faq-content">
-            <p>Absolutely. We conduct live walkthrough sessions with your engineering leads, provide interactive Figma inspect links, export design token JSON/CSS files, and remain available for design QA during their sprint build.</p>
+            <p>Yes. We offer practical branding packages for startups, and we also support established companies that need a refresh. A new business gets a complete identity on a sensible budget, and an older one gets a cleaner, more modern look without losing the recognition it has already built.</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="srv-faq-item">
+        <button type="button" class="srv-faq-btn" aria-expanded="false" aria-controls="faq-ans-8">
+          <span class="srv-faq-question">8. How do I get started?</span>
+          <span class="srv-faq-icon" aria-hidden="true">+</span>
+        </button>
+        <div id="faq-ans-8" class="srv-faq-panel">
+          <div class="srv-faq-content">
+            <p>Fill in the enquiry form or call us. We will understand your requirement, suggest the right services and share a timeline and quote within one working day.</p>
           </div>
         </div>
       </div>
@@ -1056,7 +797,7 @@ $consultationUrl = appUrl('contact.php?service=' . urlencode($serviceName));
 </section>
 
 <!-- ============================================================
-     SECTION 11 — FINAL CONVERSION CTA
+     SECTION 10 — FINAL CONVERSION CTA
      ============================================================ -->
 <section class="srv-section srv-cta-section" id="cta">
   <div class="srv-container">
@@ -1066,22 +807,22 @@ $consultationUrl = appUrl('contact.php?service=' . urlencode($serviceName));
         <div class="srv-cta-grid-2col">
           <div>
             <div class="srv-badge mb-3">
-          <span class="srv-badge-dot"></span>
-          <span>TAKE THE NEXT STEP</span>
-        </div>
+              <span class="srv-badge-dot"></span>
+              <span>TAKE THE NEXT STEP</span>
+            </div>
             <h2 class="srv-cta-title">
-          Ready to Transform Your Product into a <span class="text-brand">World-Class Experience?</span>
-        </h2>
+              Ready to Hire a Graphic Design Company in Delhi <span class="text-brand">You Can Trust?</span>
+            </h2>
             <p class="srv-cta-lead">
-          Schedule a design diagnostic session. Our senior product designers will review your current interface, identify conversion friction points, and map an executive design roadmap.
-        </p>
+              Tell us about your business and we will suggest the right design approach, timeline and budget, with no obligation. Whether you need a logo, a full brand identity or a year of social media creatives, let BusinessDoctor make your brand look as good as your work deserves. Your competitors are already improving how they look, so the best time to start is today.
+            </p>
             <div class="srv-cta-actions" style="justify-content: flex-start; margin-bottom: 2rem;">
               <a href="<?= e($consultationUrl) ?>" class="btn-srv-primary btn-srv-lg">
-                <span>Get a Free Consultation</span>
+                <span>Book Your Free Consultation</span>
                 <svg class="btn-srv-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
               </a>
               <a href="<?= appUrl('audit.php') ?>" class="btn-srv-secondary btn-srv-lg">
-                <span>Request Digital Audit</span>
+                <span>Request Free Audit</span>
                 <svg class="btn-srv-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="9 18 15 12 9 6"/></svg>
               </a>
             </div>
@@ -1096,33 +837,33 @@ $consultationUrl = appUrl('contact.php?service=' . urlencode($serviceName));
               </div>
               <div class="srv-meta-item">
                 <svg class="srv-meta-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
-                <span class="text-secondary">Response Time: Under 2 Hours</span>
+                <span class="text-secondary">Response Time: Within 24 working hours</span>
               </div>
             </div>
           </div>
           <div>
             <div class="srv-quick-form-card">
               <div class="srv-form-header">
-                <h3 class="srv-form-title">Request Technical Consultation</h3>
-                <p class="srv-form-subtitle">Direct consultation with senior enterprise architects.</p>
+                <h3 class="srv-form-title">Request Design Consultation</h3>
+                <p class="srv-form-subtitle">Direct consultation with senior creative leads.</p>
               </div>
               <form action="<?= appUrl('contact.php') ?>" method="GET" class="srv-quick-form">
                 <input type="hidden" name="service" value="<?= e($serviceName) ?>">
                 <div class="srv-form-group">
-                  <label class="srv-form-label" for="quick_name_graphic-design.php">Your Full Name</label>
-                  <input type="text" id="quick_name_graphic-design.php" name="name" required class="srv-form-input" placeholder="e.g. Sarah Jenkins">
+                  <label class="srv-form-label" for="quick_name_graphic-design">Your Full Name</label>
+                  <input type="text" id="quick_name_graphic-design" name="name" required class="srv-form-input" placeholder="e.g. Sarah Jenkins">
                 </div>
                 <div class="srv-form-group">
-                  <label class="srv-form-label" for="quick_email_graphic-design.php">Work Email</label>
-                  <input type="email" id="quick_email_graphic-design.php" name="email" required class="srv-form-input" placeholder="e.g. sarah@enterprise.com">
+                  <label class="srv-form-label" for="quick_email_graphic-design">Work Email</label>
+                  <input type="email" id="quick_email_graphic-design" name="email" required class="srv-form-input" placeholder="e.g. sarah@enterprise.com">
                 </div>
                 <div class="srv-form-group">
-                  <label class="srv-form-label" for="quick_company_graphic-design.php">Company / Domain</label>
-                  <input type="text" id="quick_company_graphic-design.php" name="company" class="srv-form-input" placeholder="e.g. Enterprise Corp (enterprise.com)">
+                  <label class="srv-form-label" for="quick_company_graphic-design">Company / Domain</label>
+                  <input type="text" id="quick_company_graphic-design" name="company" class="srv-form-input" placeholder="e.g. Enterprise Corp (enterprise.com)">
                 </div>
                 <div class="srv-form-group">
-                  <label class="srv-form-label" for="quick_notes_graphic-design.php">Project Scope &amp; Objectives</label>
-                  <textarea id="quick_notes_graphic-design.php" name="notes" rows="2" class="srv-form-textarea" placeholder="Briefly describe your timeline, goals, or current technical bottlenecks..."></textarea>
+                  <label class="srv-form-label" for="quick_notes_graphic-design">Project Scope &amp; Objectives</label>
+                  <textarea id="quick_notes_graphic-design" name="notes" rows="2" class="srv-form-textarea" placeholder="Briefly describe your design needs, brand goals, or timelines..."></textarea>
                 </div>
                 <button type="submit" class="srv-form-submit">
                   <span>Send Consultation Request</span>
@@ -1137,7 +878,6 @@ $consultationUrl = appUrl('contact.php?service=' . urlencode($serviceName));
           </div>
         </div>
       </div>
-    </div>
     </div>
   </div>
 </section>

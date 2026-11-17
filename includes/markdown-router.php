@@ -110,10 +110,10 @@ class MarkdownRouter
             if (in_array($subClean, ['about', 'contact', 'audit', 'services', 'insights', 'case-studies'], true)) {
                 self::sendResponse(SeoSyncEngine::generateStaticPageMarkdown($subClean));
             }
-            if (preg_match('#^(?:services|company)/([a-zA-Z0-9_-]+)$#', $subClean, $m)) {
+            if (preg_match('#^(?:services|service|company)/([a-zA-Z0-9_-]+)$#', $subClean, $m)) {
                 self::renderServiceMarkdown($m[1]);
             }
-            if (preg_match('#^insights/([a-zA-Z0-9_-]+)$#', $subClean, $m)) {
+            if (preg_match('#^(?:insights|blog)/([a-zA-Z0-9_-]+)$#', $subClean, $m)) {
                 self::renderBlogMarkdown($m[1]);
             }
             if (preg_match('#^case-studies/([a-zA-Z0-9_-]+)$#', $subClean, $m)) {
@@ -149,48 +149,32 @@ class MarkdownRouter
         }
 
         // ----------------------------------------------------
-        // 6. Services Overview: /digital-marketing-company-in-delhi.md
+        // 6. Services Overview: /services.md, /services, /company.md
         // ----------------------------------------------------
-        if ($cleanRoute === '/digital-marketing-company-in-delhi') {
+        if (in_array($cleanRoute, ['/services', '/services.php', '/company', '/company-in-delhi', '/digital-marketing-company-in-delhi'], true)) {
             self::sendResponse(SeoSyncEngine::generateStaticPageMarkdown('services'));
-        }
-        if ($cleanRoute === '/company-in-delhi' || $cleanRoute === '/services.php' || $cleanRoute === '/services' || $cleanRoute === '/company') {
-            header("Location: " . getMarkdownUrl(getServicesOverviewUrl()), true, 301);
-            exit;
         }
 
         // ----------------------------------------------------
         // 7. Individual Service Detail Pages:
-        //    A: /{slug}-company-in-delhi.md (Canonical)
-        //    B: /company/{slug}.md (301 redirect to /{slug}-company-in-delhi.md)
-        //    C: /services/{slug}.md (301 redirect to /{slug}-company-in-delhi.md)
-        //    D: /service-detail.php.md?slug={slug} (301 redirect)
+        //    A: /service/{slug}.md
+        //    B: /company/{slug}.md
+        //    C: /services/{slug}.md
+        //    D: /{slug}-company-in-delhi.md
+        //    E: /service-detail.php.md?slug={slug}
         // ----------------------------------------------------
-        if (preg_match('#^/([a-zA-Z0-9_-]+)-company-in-delhi$#', $cleanRoute, $m)) {
+        if (preg_match('#^/(?:service|services|company)/([a-zA-Z0-9_-]+)$#', $cleanRoute, $m) || preg_match('#^/([a-zA-Z0-9_-]+)-company-in-delhi$#', $cleanRoute, $m)) {
             if ($m[1] === 'digital-marketing') {
                 self::sendResponse(SeoSyncEngine::generateStaticPageMarkdown('services'));
             }
-            $targetUrl = getServiceUrl($m[1]);
-            $canonMdUrl = getMarkdownUrl($targetUrl);
-            $canonMdPath = parse_url($canonMdUrl, PHP_URL_PATH);
-            $reqMdPath = parse_url($cleanRoute . '.md', PHP_URL_PATH);
-            if ($reqMdPath !== $canonMdPath) {
-                header("Location: " . $canonMdUrl, true, 301);
-                exit;
-            }
             self::renderServiceMarkdown($m[1]);
-        }
-        if (preg_match('#^/(?:company|services)/([a-zA-Z0-9_-]+)$#', $cleanRoute, $m)) {
-            header("Location: " . getMarkdownUrl(getServiceUrl($m[1])), true, 301);
-            exit;
         }
         if ($cleanRoute === '/service-detail.php' || $cleanRoute === '/service-detail') {
             $slug = $params['slug'] ?? '';
             if (empty($slug)) {
                 self::sendNotFound("No practice discipline slug was specified.");
             }
-            header("Location: " . getMarkdownUrl(getServiceUrl((string)$slug)), true, 301);
-            exit;
+            self::renderServiceMarkdown((string)$slug);
         }
 
         // ----------------------------------------------------
@@ -274,16 +258,6 @@ class MarkdownRouter
         $practice = getPracticeBySlug($slug);
         if (!$practice) {
             self::sendNotFound("Practice discipline '{$slug}' does not exist or is not active.");
-        }
-
-        $canonicalUrl = getServiceUrl($practice['slug']);
-        $canonicalMdUrl = getMarkdownUrl($canonicalUrl);
-        $canonicalMdPath = parse_url($canonicalMdUrl, PHP_URL_PATH);
-
-        $currPath = parse_url($_SERVER['REQUEST_URI'] ?? '', PHP_URL_PATH) ?? '';
-        if ($currPath !== '' && $currPath !== $canonicalMdPath) {
-            header("Location: " . $canonicalMdUrl, true, 301);
-            exit;
         }
 
         self::sendResponse(SeoSyncEngine::generateServiceMarkdown($practice['slug'], $practice));

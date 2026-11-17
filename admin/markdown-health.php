@@ -43,43 +43,43 @@ $pagesInventory = [
         'clean_md' => '/.md',
         'repo_file' => 'md/home.md',
         'source' => 'filesystem: index.php',
-        'deps' => 'sitemap.xml, llms.txt, llms.md, md/index.md',
+        'deps' => 'sitemap.xml, llms.txt, md/index.md',
     ],
     [
         'section' => 'Institutional',
         'title' => 'About the Firm & Leadership',
-        'web_url' => '/about.php',
-        'clean_md' => '/about.php.md',
+        'web_url' => '/about',
+        'clean_md' => '/about.md',
         'repo_file' => 'md/about.md',
         'source' => 'filesystem: about.php',
-        'deps' => 'sitemap.xml, llms.txt, llms.md, md/index.md',
+        'deps' => 'sitemap.xml, llms.txt, md/index.md',
     ],
     [
         'section' => 'Institutional',
         'title' => 'Services Hub & Disciplines',
-        'web_url' => '/company',
-        'clean_md' => '/company.md',
+        'web_url' => '/services',
+        'clean_md' => '/services.md',
         'source' => 'filesystem: services.php',
-        'deps' => 'sitemap.xml, llms.txt, llms.md, md/index.md',
+        'deps' => 'sitemap.xml, llms.txt, md/index.md',
         'repo_file' => 'md/services.md',
     ],
     [
         'section' => 'Institutional',
         'title' => 'Executive Advisory & Contact',
-        'web_url' => '/contact.php',
-        'clean_md' => '/contact.php.md',
+        'web_url' => '/contact',
+        'clean_md' => '/contact.md',
         'repo_file' => 'md/contact.md',
         'source' => 'filesystem: contact.php',
-        'deps' => 'sitemap.xml, llms.txt, llms.md, md/index.md',
+        'deps' => 'sitemap.xml, llms.txt, md/index.md',
     ],
     [
         'section' => 'Institutional',
         'title' => 'Digital Architecture Audit',
-        'web_url' => '/audit.php',
-        'clean_md' => '/audit.php.md',
+        'web_url' => '/audit',
+        'clean_md' => '/audit.md',
         'repo_file' => 'md/audit.md',
         'source' => 'filesystem: audit.php',
-        'deps' => 'sitemap.xml, llms.txt, llms.md, md/index.md',
+        'deps' => 'sitemap.xml, llms.txt, md/index.md',
     ],
     [
         'section' => 'Institutional',
@@ -88,30 +88,30 @@ $pagesInventory = [
         'clean_md' => '/blog.md',
         'repo_file' => 'md/insights.md',
         'source' => 'filesystem: insights.php',
-        'deps' => 'sitemap.xml, llms.txt, llms.md, md/index.md',
+        'deps' => 'sitemap.xml, llms.txt, md/index.md',
     ],
     [
         'section' => 'Institutional',
         'title' => 'Case Studies & Results Hub',
-        'web_url' => '/case-studies.php',
-        'clean_md' => '/case-studies.php.md',
+        'web_url' => '/case-studies',
+        'clean_md' => '/case-studies.md',
         'repo_file' => 'md/case-studies.md',
         'source' => 'filesystem: case-studies.php',
-        'deps' => 'sitemap.xml, llms.txt, llms.md, md/index.md',
+        'deps' => 'sitemap.xml, llms.txt, md/index.md',
     ],
 ];
 
-// Add 6 Active Services
+// Add 10 Active Services
 $services = SeoSyncEngine::getActiveServices();
 foreach ($services as $slug => $s) {
     $pagesInventory[] = [
         'section' => 'Practice Discipline',
         'title' => ($s['number'] ?? '') . ' ' . ($s['name'] ?? $slug),
-        'web_url' => '/company/' . $slug,
-        'clean_md' => '/company/' . $slug . '.md',
+        'web_url' => '/service/' . $slug,
+        'clean_md' => '/service/' . $slug . '.md',
         'repo_file' => 'md/services/' . $slug . '.md',
         'source' => 'services table (id: ' . ($s['id'] ?? $slug) . ')',
-        'deps' => 'sitemap.xml, llms.txt, llms.md, md/index.md, Schema',
+        'deps' => 'sitemap.xml, llms.txt, md/index.md, Schema',
     ];
 }
 
@@ -125,7 +125,7 @@ foreach ($cases as $c) {
         'clean_md' => '/case-studies/' . $c['slug'] . '.md',
         'repo_file' => 'md/case-studies/' . $c['slug'] . '.md',
         'source' => 'case_studies table (id: ' . ($c['id'] ?? $c['slug']) . ')',
-        'deps' => 'sitemap.xml, llms.txt, llms.md, md/index.md',
+        'deps' => 'sitemap.xml, llms.txt, md/index.md',
     ];
 }
 
@@ -139,7 +139,7 @@ foreach ($blogs as $b) {
         'clean_md' => '/blog/' . $b['slug'] . '.md',
         'repo_file' => 'md/insights/' . $b['slug'] . '.md',
         'source' => 'insights table (id: ' . ($b['id'] ?? $b['slug']) . ')',
-        'deps' => 'sitemap.xml, llms.txt, llms.md, md/index.md, Schema',
+        'deps' => 'sitemap.xml, llms.txt, md/index.md, Schema',
     ];
 }
 
@@ -182,8 +182,8 @@ foreach ($pagesInventory as $item) {
         $contentHash = substr(hash('sha256', $content), 0, 10);
         $lastMod = date('M d, H:i', filemtime($filePath));
 
-        // Stale URL detector: flags old /services/{slug} or -company-in-delhi
-        if (preg_match('#(?<!/md)/services/[a-zA-Z0-9_-]+(?!\.md)|[a-zA-Z0-9_-]+-company-in-delhi#', $content)) {
+        // Stale URL detector: flags legacy .php links or obsolete -company-in-delhi slugs
+        if (preg_match('#[a-zA-Z0-9_-]+-company-in-delhi|/(?:about|contact|audit|case-studies|case-study-detail)\.php#', $content)) {
             $hasStaleUrl = true;
         }
     }
@@ -235,7 +235,7 @@ foreach ($pagesInventory as $item) {
         <?= count($pagesInventory) - 1 ?> Pages
       </div>
       <div style="font-size: 0.8rem; color: var(--adm-muted); margin-top: 0.35rem;">
-        7 Static + 6 Services + 3 Cases + 4 Blogs
+        7 Static + <?= count($services) ?> Services + <?= count($cases) ?> Cases + <?= count($blogs) ?> Blogs
       </div>
     </div>
 

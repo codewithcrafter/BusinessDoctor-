@@ -3,8 +3,8 @@
 > Whether you need a custom high-performance web application, a full-funnel digital marketing campaign, an Amazon storefront overhaul, or ongoing cloud infrastructure support, our senior technical teams are ready to collaborate.
 
 ## Engagement Information & Digital Resources
-- **Canonical Web URL**: [https://demo.businesdoctor.com/contact.php](https://demo.businesdoctor.com/contact.php)
-- **Clean Markdown URL**: [https://demo.businesdoctor.com/contact.php.md](https://demo.businesdoctor.com/contact.php.md)
+- **Canonical Web URL**: [https://demo.businesdoctor.com/contact](https://demo.businesdoctor.com/contact)
+- **Clean Markdown URL**: [https://demo.businesdoctor.com/contact.md](https://demo.businesdoctor.com/contact.md)
 - **Central Markdown URL**: [https://demo.businesdoctor.com/md/contact.md](https://demo.businesdoctor.com/md/contact.md)
 - **Master Markdown Index**: [https://demo.businesdoctor.com/md](https://demo.businesdoctor.com/md)
 - **Direct Advisory Phone**: +1 (800) 492-3628
@@ -50,7 +50,7 @@ When you engage BusinessDoctor, you speak directly with experienced software eng
 - **Headquarters**: First Floor, Ram Dutt Enclave, B-16, Block D, Uttam Nagar East, Uttam Nagar, New Delhi, Delhi, 110059
 - **Advisory Direct Line**: +1 (800) 492-3628
 - **General & Scoping Inquiries**: [sales@businesdoctor.com](mailto:sales@businesdoctor.com)
-- **Technical Support Desk**: [support@businessdoctor.com](mailto:support@businessdoctor.com)
+- **Technical Support Desk**: [sales@businesdoctor.com](mailto:sales@businesdoctor.com)
 - **Operating Hours**: Monday through Friday, 09:00 – 19:00 IST / 24/7/365 Emergency Monitoring for Enterprise Clients with Active SLAs.
 
 ---

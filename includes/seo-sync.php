@@ -90,8 +90,8 @@ class SeoSyncEngine
                 'file' => 'about.php',
                 'priority' => '0.7',
                 'changefreq' => 'monthly',
-                'title' => 'About BusinesDoctor — Firm Profile & Leadership',
-                'description' => 'Our history, engineering ethos, global delivery standards, and multidisciplinary leadership team.'
+                'title' => 'About BusinessDoctor — Firm Profile & Practice',
+                'description' => 'Our history, engineering ethos, global delivery standards, and digital marketing practice methodology.'
             ],
             [
                 'loc' => '/contact',
@@ -265,7 +265,7 @@ class SeoSyncEngine
         $lines[] = "";
         $lines[] = "## Company";
         $lines[] = "- [BusinesDoctor Homepage]({$baseUrl}/): Primary enterprise portal outlining technology capabilities, client transformations, and strategic consulting frameworks.";
-        $lines[] = "- [About BusinesDoctor]({$baseUrl}/about): Executive leadership, engineering principles, core consulting values, and practice methodology.";
+        $lines[] = "- [About BusinesDoctor]({$baseUrl}/about): Digital marketing practice methodology, engineering principles, and core consulting values.";
         $lines[] = "- [Contact Us]({$baseUrl}/contact): Direct communication channels, enterprise project scoping, consultation requests, and verified headquarters address.";
         $lines[] = "- [Digital Architecture Audit]({$baseUrl}/audit): Complimentary diagnostic benchmarking technical bottlenecks, Core Web Vitals, conversion leaks, and infrastructure readiness.";
         $lines[] = "";
@@ -480,7 +480,7 @@ class SeoSyncEngine
         // Digital Diagnostic Tool
         $lines[] = "## 5. Proprietary Digital Diagnostic Engine";
         $lines[] = "";
-        $lines[] = "BusinessDoctor operates an interactive diagnostic assessment portal at [{$baseUrl}/audit.php]({$baseUrl}/audit.php). The tool evaluates enterprise digital operations across four foundational vectors:";
+        $lines[] = "BusinessDoctor operates an interactive diagnostic assessment portal at [{$baseUrl}/audit]({$baseUrl}/audit). The tool evaluates enterprise digital operations across four foundational vectors:";
         $lines[] = "1. **Architecture & Engineering**: Monolithic framework latency, Core Web Vitals (LCP, INP, CLS), database querying bottlenecks, and mobile responsiveness.";
         $lines[] = "2. **Customer Acquisition & Traffic**: PPC ad spend waste, conversion funnel friction, organic search visibility, and CAC inflation.";
         $lines[] = "3. **Systems & Security Posture**: Infrastructure uptime resilience, automated backup hygiene, SSL/TLS configurations, and API security.";
@@ -490,7 +490,7 @@ class SeoSyncEngine
         // Contact & Engagement
         $lines[] = "## 6. Enterprise Inquiries & Contact Channels";
         $lines[] = "";
-        $lines[] = "- **Web Engagement Portal**: [{$baseUrl}/contact.php]({$baseUrl}/contact.php)";
+        $lines[] = "- **Web Engagement Portal**: [{$baseUrl}/contact]({$baseUrl}/contact)";
         $lines[] = "- **Email Advisory**: [{$email}](mailto:{$email})";
         $lines[] = "- **Direct Phone Line**: {$phone}";
         $lines[] = "- **Headquarters**: {$hq}";
@@ -512,6 +512,18 @@ class SeoSyncEngine
             return '';
         }
         $md = str_replace(["\r\n", "\r"], "\n", $html);
+
+        // Safeguard: protect `<` immediately followed by a digit from being consumed by strip_tags()
+        $md = preg_replace('/<(?=[0-9])/', '&lt;', $md);
+
+        // Normalize legacy URL paths to clean canonical routes
+        $md = str_replace(
+            ['contact.php', 'about.php', 'audit.php', 'case-studies.php', 'case-study-detail.php?slug='],
+            ['contact', 'about', 'audit', 'case-studies', 'case-studies/'],
+            $md
+        );
+        $md = preg_replace('#/(?:company|services)/([a-zA-Z0-9_-]+)(?!\.md)#', '/service/$1', $md);
+        $md = preg_replace('#/([a-zA-Z0-9_-]+)-company-in-delhi#', '/service/$1', $md);
 
         // Code blocks
         $md = preg_replace_callback('#<pre><code(?:\s+class="language-([a-zA-Z0-9_-]+)")?>(.*?)</code></pre>#is', function($m) {
@@ -812,9 +824,9 @@ class SeoSyncEngine
         
         $serviceName = $service['name'] ?? 'Practice Area';
         $serviceSlug = $slug;
-        $consultationUrl = $baseUrl . '/contact.php?service=' . urlencode($serviceName);
-        $canonicalUrl = getServiceUrl($slug);
-        $cleanMdUrl = getMarkdownUrl($canonicalUrl);
+        $consultationUrl = $baseUrl . '/contact?service=' . urlencode($serviceName);
+        $canonicalUrl = $baseUrl . '/service/' . $slug;
+        $cleanMdUrl = $baseUrl . '/service/' . $slug . '.md';
         $mdUrl = $baseUrl . '/md/services/' . urlencode($slug) . '.md';
 
         $bodyMd = '';
@@ -829,6 +841,8 @@ class SeoSyncEngine
             $cleanHtml = preg_replace('#<div class="srv-process-num"[^>]*>.*?</div>#is', '', $cleanHtml);
 
             $bodyMd = self::htmlToMarkdown($cleanHtml);
+            // Re-enforce canonical clean consultation URL so included templates don't pollute local scope
+            $consultationUrl = $baseUrl . '/contact?service=' . urlencode($serviceName);
         } else {
             $desc = !empty($service['description']) ? self::htmlToMarkdown($service['description']) : ($service['summary'] ?? '');
             $bodyMd = "## Practice Overview\n\n" . $desc;
@@ -886,13 +900,13 @@ class SeoSyncEngine
         switch ($pageKey) {
             case 'about':
                 return <<<MD
-# Engineering Technology. Accelerating Scalable Growth.
+# Business Doctor - Digital Marketing company in Delhi
 
-> We founded BusinessDoctor to provide modern businesses with a reliable, all-in-one IT and digital growth partner. We eliminate the friction of managing disconnected developers, ad agencies, and designers by bringing them together under one disciplined engineering practice.
+> Business Doctor is a digital marketing company in Delhi that provides seo services in delhi , ppc services, social media marketing in Delhi, website development services and graphic design services in Delhi, which helps your business to grow and reach its full potential. We personalize every strategy according to your business needs. We aim to increase your brand visibility and get you quality leads.
 
 ## Firm Information & Digital Resources
-- **Canonical Web URL**: [{$baseUrl}/about.php]({$baseUrl}/about.php)
-- **Clean Markdown URL**: [{$baseUrl}/about.php.md]({$baseUrl}/about.php.md)
+- **Canonical Web URL**: [{$baseUrl}/about]({$baseUrl}/about)
+- **Clean Markdown URL**: [{$baseUrl}/about.md]({$baseUrl}/about.md)
 - **Central Markdown URL**: [{$baseUrl}/md/about.md]({$baseUrl}/md/about.md)
 - **Master Markdown Index**: [{$baseUrl}/md]({$baseUrl}/md)
 - **Corporate Legal Entity**: {$legalName}
@@ -901,88 +915,53 @@ class SeoSyncEngine
 
 ---
 
-## 01 // The BusinessDoctor Philosophy: Why We Call Ourselves BusinessDoctor
-A clinical engineering approach to diagnosing digital friction, eliminating architecture bottlenecks, and prescribing sustainable enterprise growth.
+## The BusinessDoctor Philosophy: Why Businesses Call BusinessDoctor the Best Digital Marketing Company in Delhi
+We believe that every business has the potential to grow and we provide a full-service digital marketing company that helps your business grow.Our professional team helps you at every step from web development to lead generation. We don't make big promises and leave you in the middle, we provide you with weekly reports and updates on your business so that you can track your growth as well.
 
-### 01.1 The Symptoms of Digital Friction (Diagnostic Identification)
-Every growing enterprise encounters digital friction: an outdated website that repels prospective clients, slow server response times that kill search engine rankings, paid advertising campaigns that fail to convert, or marketplace listings that lose sales to competitors.
-- **Conversion Drop-off**: Fragmented checkout flows, unintuitive information architecture, and unoptimized landing pages that drain marketing budgets.
-- **Latency Bottlenecks**: Monolithic bloat, uncompressed media assets, unindexed databases, and poor Time to First Byte (TTFB).
-- **Ad Spend Waste**: High Customer Acquisition Cost (CAC) driven by disconnected messaging, untracked conversion APIs, and broken sales funnels.
+### 01 // Diagnostic Identification: Challenges a Digital Marketing Company in Delhi Can Help Solve
+Does your business have low lead generation, poor website performance, poor user experience and a low conversion rate? If these challenges are limiting your growth, you need the right strategy to grow your business from Business Doctor- a trusted digital marketing company in Delhi that helps your brand to get quality customers.
 
-### 01.2 End-to-End Technical Care (The Clinical Diagnosis)
-Just as any complex system needs expert trouble-shooters to diagnose root technical failures and prescribe robust engineering solutions, **BusinessDoctor provides end-to-end technical care for your digital presence**.
-- **Root-Cause Diagnosis**: We don't mask symptoms with superficial redesigns. We inspect database queries, server logs, ad account configurations, and UX funnels.
-- **Systemic Prescription**: Custom software development, targeted search engine optimization, high-converting UI/UX design, and multi-channel marketplace scaling.
+### 02 // The Clinical Diagnosis: End-to-End Digital Marketing Services in Delhi
+Business Doctor's experienced digital marketing team identifies the root cause of your low performance and makes a personalized solution plan that suits your business problem. We believe that every business needs a different approach to grow. Our professional team manages everything on-page, off-page, Website development and more.
 
-### 01.3 Precision Engineering & Scale (Measurable Execution)
-We don't sell superficial fixes or bloated templates. Our software engineers, performance marketers, and UI/UX designers analyze your technical infrastructure, rebuild broken user journeys, build lightning-fast web applications, and scale customer acquisition with data-backed precision.
-- **Custom PHP 8+ Architecture**: Zero bloated frameworks or unmaintained third-party plugins. Clean, modular procedural and object-oriented architectures.
-- **Sub-Second Load Times**: Edge caching via Cloudflare CDN, WebP/AVIF asset optimization, and lean relational database queries.
-- **Data-Led Acquisition**: Full-funnel tracking with Google Analytics 4, Meta Conversions API (CAPI), and granular server-side attribution.
+### 03 // Measurable Execution: Growth-Focused Digital Marketing Solutions in Delhi
+Once we identify the problem and create the plan, we implement it and follow up till we reach the desired result. As a full-service digital marketing company, we provide everything from developing user friendly websites to improving marketing campaigns, our aim is to deliver measurable results.
 
 ---
 
-## 02 // Operating Standards: Four Commitments We Stand By
-Non-negotiable architectural benchmarks and accountability standards engineered into every client partnership.
+## Four Commitments We Stand By as a Digital Marketing Company
+As a Digital Marketing company in Delhi, we believe that successful partnership is built on trust, accountability, engineering excellence and transparency. We follow our four non-negotiable commitments to make sure that every business achieves its full potential.
 
-### Commitment 1: Clean, Framework-Free Code
-- Sub-second server response times (TTFB < 200ms) with lightweight PHP and vanilla JavaScript.
-- Zero bloated frameworks, fragile CMS plugins, or unnecessary dependencies that introduce security vulnerabilities.
-- Maintainable, well-documented codebases built for enterprise longevity and multi-developer handoff.
+### Commitment 01: Clean, Framework-Free Code
+Business Doctor, a trusted digital marketing company in Delhi focuses on clean coding, which avoids unnecessary heavy frameworks and makes websites fast, effective and user-friendly providing users with a smooth and seamless experience and helping to make your business recognisable.
 
-### Commitment 2: Measurable Commercial ROI
-- Every engineering sprint and marketing campaign is directly tied to measurable commercial outcomes.
-- We report transparently on conversion rates, revenue pipeline lift, customer acquisition cost (CAC), and Core Web Vitals.
-- No vanity metrics. No opaque agency reporting.
+### Commitment 02: Measurable Commercial ROI
+Business Doctor is a professional digital marketing company. Our team doesn't just focus on improving website marketing,we identify the gaps of your business that are holding it back and work on them so that you get quality leads. We also track how many leads, sales, and conversions you are getting.
 
-### Commitment 3: Integrated End-to-End Delivery
-- Complete harmony between software engineering, brand design, paid advertising, and marketplace management.
-- Eliminate inter-agency finger-pointing: one senior team owns full responsibility from architecture to conversion.
-- Cross-functional agile delivery teams led by dedicated principal technical directors.
+### Commitment 03: Integrated End-to-End Delivery
+BusinessDoctor, a digital marketing company in Delhi provides full services in digital marketing from website development to digital marketing so that you get all services on one platform.
 
-### Commitment 4: Long-Term Partnership & Support
-- Continuous post-launch monitoring, security patching, and proactive performance tuning.
-- 99.9% uptime architecture with automated database backups and edge CDN failover.
-- Guaranteed 2-hour response Service Level Agreement (SLA) for enterprise-critical support requests.
+### Commitment 04: Long-Term Partnership & Support
+We don't just believe in making a website we believe in building long term business relationships. We monitor your business’s regular performance, improve the strategy according to needs and support you at every step so that your business can grow continuously.
 
 ---
 
-## 03 // Mission & Strategic Vision: Driven by Purpose. Defined by Results.
+## Our Purpose & Direction: Business Growth Through Digital Marketing Solutions
+At BusinessDoctor, we help businesses grow through a strategic digital marketing plan and innovative technology. As a digital marketing expert in Delhi, we focus on improving online visibility, generating quality leads, improving user experiences and increasing conversions.
 
-### Our Mission
-To dismantle digital inefficiency and engineer high-velocity digital architectures that deliver undeniable commercial results.
-- **Precision Diagnostics**: Uncompromising technical audits that uncover root-cause bottlenecks before prescribing code or marketing solutions.
-- **Disciplined Execution**: Senior-led agile sprints adhering to zero-defect standards, clean code principles, and rigorous load testing.
-- **Compounding Value**: Building durable digital assets that lower customer acquisition costs and drive multi-year enterprise value.
+### Our Mission: Digital Marketing Solutions for Business Growth
+Business Doctor's mission is to overcome the challenges that your business is facing by providing the right strategy so that you get potential customers. Through transparency and technical excellence, we want to create impact and make your brand unforgettable.
 
-### Our Strategic Vision
-To be the definitive technology partner for organizations that refuse to accept mediocrity in their digital infrastructure.
-- **Global Standards**: Deploying tier-one enterprise engineering, security, and design methodologies to high-growth organizations worldwide.
-- **Autonomous Scaling**: Building robust, self-healing platforms capable of handling 100x traffic surges without performance degradation.
-- **Sustainable Tech**: Lean software design that minimizes compute overhead, eliminates technical debt, and maximizes operational margins.
+### Our Vision: Trusted Digital Marketing company for Business Growth
+Business Doctors is a trusted digital marketing company in Delhi. Our vision is to be a digital marketing partner for businesses to empower businesses with innovative digital strategies, advanced technologies, lead generation and sustainable growth. We want to provide solutions for your digital challenges, so that you can build a strong online presence.
 
 ---
 
-## 04 // Leadership & Technology Directors
-Our practice is directed by senior technology architects and growth strategists with extensive enterprise experience:
-
-### Dr. Alistair Croft — Chief Technology Officer & Principal Architect
-Specializing in distributed systems architecture, database optimization, sub-second web performance, and enterprise security posture. Over 15 years leading engineering teams across FinTech, SaaS, and high-concurrency transactional systems.
-
-### Sarah Chen — VP of Growth Marketing & Conversion Science
-Pioneering full-funnel customer acquisition models, algorithmic search optimization, and multi-channel attribution frameworks. Oversees multi-million dollar annual ad spend across Google Ads, Meta Ads Manager, and programmatic networks.
-
-### David Montgomery — Director of Brand Architecture & Experience Design
-Championing conversion-centered interface design, design systems, and cohesive enterprise visual narratives. Over a decade engineering interactive web experiences and marketplace storefront transformations.
-
----
-
-## 05 // Elevate Your Digital Capabilities
+## Elevate Your Digital Capabilities
 Schedule an introductory discovery call with our tech leads to discuss your web development, digital marketing, or branding requirements.
-- **Direct Consultation**: [Schedule a Project Consultation]({$baseUrl}/contact.php)
-- **Complimentary Diagnostic**: [Request Free Digital Audit]({$baseUrl}/audit.php)
-- **Practice Hub**: [Explore IT Services & Practice Areas]({$baseUrl}/company)
+- **Direct Consultation**: [Schedule a Project Consultation]({$baseUrl}/contact)
+- **Complimentary Diagnostic**: [Request Free Digital Audit]({$baseUrl}/audit)
+- **Practice Hub**: [Explore IT Services & Practice Areas]({$baseUrl}/services)
 
 ---
 *Maintained by {$appName} Corporate Communications.*
@@ -995,8 +974,8 @@ MD;
 > Whether you need a custom high-performance web application, a full-funnel digital marketing campaign, an Amazon storefront overhaul, or ongoing cloud infrastructure support, our senior technical teams are ready to collaborate.
 
 ## Engagement Information & Digital Resources
-- **Canonical Web URL**: [{$baseUrl}/contact.php]({$baseUrl}/contact.php)
-- **Clean Markdown URL**: [{$baseUrl}/contact.php.md]({$baseUrl}/contact.php.md)
+- **Canonical Web URL**: [{$baseUrl}/contact]({$baseUrl}/contact)
+- **Clean Markdown URL**: [{$baseUrl}/contact.md]({$baseUrl}/contact.md)
 - **Central Markdown URL**: [{$baseUrl}/md/contact.md]({$baseUrl}/md/contact.md)
 - **Master Markdown Index**: [{$baseUrl}/md]({$baseUrl}/md)
 - **Direct Advisory Phone**: {$phone}
@@ -1042,7 +1021,7 @@ When you engage BusinessDoctor, you speak directly with experienced software eng
 - **Headquarters**: {$hq}
 - **Advisory Direct Line**: {$phone}
 - **General & Scoping Inquiries**: [{$email}](mailto:{$email})
-- **Technical Support Desk**: [support@businessdoctor.com](mailto:support@businessdoctor.com)
+- **Technical Support Desk**: [{$email}](mailto:{$email})
 - **Operating Hours**: Monday through Friday, 09:00 – 19:00 IST / 24/7/365 Emergency Monitoring for Enterprise Clients with Active SLAs.
 
 ---
@@ -1063,8 +1042,8 @@ MD;
 > Discover technical bottlenecks, page speed issues, and SEO gaps holding back your online business. Submit your domain to receive real live telemetry analysis and a customized project proposal within 24 hours.
 
 ## Diagnostic Resource Information
-- **Canonical Web URL**: [{$baseUrl}/audit.php]({$baseUrl}/audit.php)
-- **Clean Markdown URL**: [{$baseUrl}/audit.php.md]({$baseUrl}/audit.php.md)
+- **Canonical Web URL**: [{$baseUrl}/audit]({$baseUrl}/audit)
+- **Clean Markdown URL**: [{$baseUrl}/audit.md]({$baseUrl}/audit.md)
 - **Central Markdown URL**: [{$baseUrl}/md/audit.md]({$baseUrl}/md/audit.md)
 - **Master Markdown Index**: [{$baseUrl}/md]({$baseUrl}/md)
 - **Audit Turnaround SLA**: Guaranteed delivery of full report to corporate email within 24 hours.
@@ -1121,9 +1100,9 @@ To initiate an automated live telemetry scan and detailed manual engineering rev
 ---
 
 ## 04 // Next Steps
-- **Submit Audit Request**: [Request Free Digital Audit Online]({$baseUrl}/audit.php)
-- **Schedule Live Discovery Call**: [Contact Tech Leads]({$baseUrl}/contact.php)
-- **Explore All IT Disciplines**: [Services Overview]({$baseUrl}/company)
+- **Submit Audit Request**: [Request Free Digital Audit Online]({$baseUrl}/audit)
+- **Schedule Live Discovery Call**: [Contact Tech Leads]({$baseUrl}/contact)
+- **Explore All IT Disciplines**: [Services Overview]({$baseUrl}/services)
 
 ---
 *Maintained by {$appName} Diagnostic Practice.*
@@ -1132,13 +1111,13 @@ MD;
             case 'services':
                 $services = self::getActiveServices();
                 $sLines = [];
-                $sLines[] = "# Full-Stack Technology & Digital Growth Disciplines";
+                $sLines[] = "# Top Digital Marketing company in Delhi NCR";
                 $sLines[] = "";
-                $sLines[] = "> We engineer high-performance web software, manage profitable paid acquisition portfolios, and build distinctive brand architectures. Ten specialized disciplines operating under one accountable standard.";
+                $sLines[] = "> We offer a full-suite of digital marketing and IT services in Delhi NCR. Ten specialized disciplines built to solve complex business bottlenecks, capture qualified pipeline, and deliver measurable revenue outcomes.";
                 $sLines[] = "";
                 $sLines[] = "## Hub Information & Digital Resources";
-                $sLines[] = "- **Canonical Web URL**: [{$baseUrl}/company]({$baseUrl}/company)";
-                $sLines[] = "- **Clean Markdown URL**: [{$baseUrl}/company.md]({$baseUrl}/company.md)";
+                $sLines[] = "- **Canonical Web URL**: [{$baseUrl}/services]({$baseUrl}/services)";
+                $sLines[] = "- **Clean Markdown URL**: [{$baseUrl}/services.md]({$baseUrl}/services.md)";
                 $sLines[] = "- **Central Markdown URL**: [{$baseUrl}/md/services.md]({$baseUrl}/md/services.md)";
                 $sLines[] = "- **Master Markdown Index**: [{$baseUrl}/md]({$baseUrl}/md)";
                 $sLines[] = "- **Total Integrated Disciplines**: " . count($services) . " specialized practices";
@@ -1154,10 +1133,10 @@ MD;
                     $tagline = $s['tagline'] ?? '';
                     $summary = $s['summary'] ?? '';
                     $description = $s['description'] ?? '';
-                    $webUrl = getServiceUrl($slug);
-                    $cleanMdUrl = getMarkdownUrl($webUrl);
+                    $webUrl = "{$baseUrl}/service/{$slug}";
+                    $cleanMdUrl = "{$baseUrl}/service/{$slug}.md";
                     $centralMdUrl = "{$baseUrl}/md/services/{$slug}.md";
-                    $consultUrl = "{$baseUrl}/contact.php?service=" . urlencode($name);
+                    $consultUrl = "{$baseUrl}/contact?service=" . urlencode($name);
 
                     $sLines[] = "### Discipline // {$num}: {$name}";
                     $sLines[] = "> *{$tagline}*";
@@ -1197,8 +1176,8 @@ MD;
 
                 $sLines[] = "## Need a Custom IT or Marketing Solution?";
                 $sLines[] = "Every enterprise challenge is unique. We configure bespoke multi-disciplinary teams tailored to your specific technical architecture, growth bottlenecks, and commercial objectives.";
-                $sLines[] = "- [Schedule Project Consultation]({$baseUrl}/contact.php)";
-                $sLines[] = "- [Request Free Digital Audit]({$baseUrl}/audit.php)";
+                $sLines[] = "- [Schedule Project Consultation]({$baseUrl}/contact)";
+                $sLines[] = "- [Request Free Digital Audit]({$baseUrl}/audit)";
                 $sLines[] = "";
                 $sLines[] = "---";
                 $sLines[] = "*Delivered by [BusinessDoctor]({$baseUrl}) Technology Practice.*";
@@ -1267,8 +1246,8 @@ MD;
                 $cLines[] = "> Measurable outcomes, revenue acceleration, and architectural turnarounds for enterprise clients across FinTech, D2C Apparel, and Multichannel Retail.";
                 $cLines[] = "";
                 $cLines[] = "## Case Studies Index & Digital Resources";
-                $cLines[] = "- **Canonical Web URL**: [{$baseUrl}/case-studies.php]({$baseUrl}/case-studies.php)";
-                $cLines[] = "- **Clean Markdown URL**: [{$baseUrl}/case-studies.php.md]({$baseUrl}/case-studies.php.md)";
+                $cLines[] = "- **Canonical Web URL**: [{$baseUrl}/case-studies]({$baseUrl}/case-studies)";
+                $cLines[] = "- **Clean Markdown URL**: [{$baseUrl}/case-studies.md]({$baseUrl}/case-studies.md)";
                 $cLines[] = "- **Central Markdown URL**: [{$baseUrl}/md/case-studies.md]({$baseUrl}/md/case-studies.md)";
                 $cLines[] = "- **Master Markdown Index**: [{$baseUrl}/md]({$baseUrl}/md)";
                 $cLines[] = "- **Published Case Studies**: " . count($cases) . " documented client turnarounds";
@@ -1328,42 +1307,68 @@ MD;
 - **Clean Markdown URL**: [{$baseUrl}/.md]({$baseUrl}/.md)
 - **Central Markdown URL**: [{$baseUrl}/md/home.md]({$baseUrl}/md/home.md)
 - **Master Markdown Index**: [{$baseUrl}/md]({$baseUrl}/md)
-- **AI Agent Discovery**: [{$baseUrl}/llms.txt]({$baseUrl}/llms.txt) | [{$baseUrl}/llms.md]({$baseUrl}/llms.md)
+- **AI Agent Discovery**: [{$baseUrl}/llms.txt]({$baseUrl}/llms.txt)
 - **XML Sitemap**: [{$baseUrl}/sitemap.xml]({$baseUrl}/sitemap.xml)
 - **Primary Contact**: [{$email}](mailto:{$email}) | Phone: {$phone}
 - **Headquarters**: {$hq}
 
 ---
 
-## 01 // Core Architectural Pillars
-We engineer digital solutions across four primary pillars to ensure scalable, friction-free business execution:
-- **01 Custom Web & Software Engineering**: Sub-second load times, modular architecture, enterprise security standards, clean PHP 8+ and vanilla JS.
-- **02 Performance Marketing & SEO**: Conversion-focused paid campaigns across Google Ads & Meta, lower Customer Acquisition Cost (CAC), and sustainable organic rankings.
-- **03 E-Commerce & Marketplaces**: Amazon, Flipkart, and Shopify scale with Buy Box dominance, multi-channel feed automation, and review velocity.
-- **04 Cloud Infrastructure & IT**: High availability, proactive server monitoring, automated daily backups, and secure DevOps automation.
+## 01 // Portfolio Benchmark Targets & Operating Standards
+- **Global Latency / Speed Target**: `< 0.8s` (100% Core Web Vitals Benchmark)
+- **Client Portfolio ROAS**: `3.8x – 4.6x` (Audited Zero Ad Budget Waste)
+- **High-Availability SLA**: `99.98%` (Cloud Redundant Infrastructure)
+- **Marketplace Buy Box**: `94%+` (Amazon & Flipkart Brand Defense)
+- **Portfolio Outcomes**: 450+ Projects Delivered | \$48M+ Revenue Generated | 98.4% Client Retention | 3.8x Average ROAS
 
 ---
 
-## 02 // Performance Metric HUD
-- **99.9% Uptime SLA**: Fault-tolerant server configurations with automated edge failover and continuous health monitoring.
-- **< 1.2s Core Web Vitals**: Optimized Largest Contentful Paint (LCP) and zero Cumulative Layout Shift (CLS) on mobile devices.
-- **3.8x Average ROAS Uplift**: Full-funnel tracking with GA4, Meta Conversions API (CAPI), and high-converting landing pages.
-- **2-Hour Enterprise Response SLA**: Direct access to senior technology leads for rapid diagnostic troubleshooting and support.
+## 02 // Featured Capabilities (Digital Marketing Services in Delhi)
+Business Doctor is a full-service digital marketing company in Delhi NCR that provides you with the best digital marketing services, from web development, digital marketing and e-commerce management to cloud solutions. Our team provides you with suitable personalization strategies that help you to grow.
+
+### 01. Web and software development services
+Business Doctor is an Affordable Digital Marketing company in Delhi that provides digital marketing services. We build every website from scratch and custom software solutions according to your needs, creating secure, fast and easy to use digital solutions. Our services reflect your brand identity and make your brand remarkable.
+- **Core Deliverables**: Custom Website and Software Development; User-Friendly UI/UX Design; Mobile Friendly Development; Advanced Features and API Integration; Secure and Scalable Digital Solutions.
+- **Discipline Link**: [Web Development Practice]({$baseUrl}/service/web-development)
+
+### 02. Digital marketing, PPC and SEO services
+Better search engine optimization, digital marketing and performance ads can help your website rank and get you more leads, as we are an affordable digital marketing company in Delhi. Our team provides you with everything that makes your business recognisable, from improving Google search rankings to running targeted ad campaigns. Business Doctor’s team provides you with the best and affordable seo and digital marketing services in delhi NCR.
+- **Core Deliverables**: Effective Keyword Research and SEO; On-Page, Off-Page and Technical SEO Optimisation; Google Ads and PPC Campaign Management; Social Media and Paid Advertising; Lead Generation and Performance Tracking.
+- **Discipline Link**: [SEO & Digital Marketing Practice]({$baseUrl}/service/seo)
+
+### 03. UI/UX Design and Brand Identity
+Business doctors create attractive and user friendly websites and software that help your business grow and provide you with leads, so that you can reach quality customers. We customise every project to make your brand memorable and to provide users with the most seamless experience.
+- **Core Deliverables**: User Friendly UI/UX Design; Creative Websites; Logo and Brand Identity Design; Engaging Visual and Graphic Design; Consistent Brand Colours and Typography.
+- **Discipline Link**: [UI/UX & Graphic Design Practice]({$baseUrl}/service/graphic-design)
+
+### 04. E-Commerce and Marketplace Management Service
+Businessdoctor is the best digital marketing company in Delhi that helps businesses manage and grow their online stores across different platforms, from product listing and inventory management to order handling and sales tracking. Our team ensures a smooth shopping experience for customers and better business growth.
+- **Core Deliverables**: Online Store Management; Product Listing and Optimisation; Marketplace Account Management; Order and Inventory Management; Sales and Performance Tracking.
+- **Discipline Link**: [E-Commerce Management Practice]({$baseUrl}/service/ecommerce-management)
+
+### 05. Creative Production and Video Marketing
+Businessdoctor is the best online digital marketing company in Delhi. Our team creates interesting and engaging content that grabs the audience's attention. Your engaging Instagram reels, product photography, videography and more everything is our responsibility.
+- **Core Deliverables**: Promotional Video Creation; Social Media Reels and Shorts; Product Photography and Videography; UGC Video Production; Video Editing and Motion Graphics.
+- **Discipline Link**: [Creative Video Editing Practice]({$baseUrl}/service/video-editing)
+
+### 06. Cloud Solutions and IT Consulting
+We are the Affordable Digital Marketing company in Delhi that provides IT solutions and cloud services to your business that make your data safe and daily operations smooth. We are the Best digital marketing company in Delhi, helping with cloud setup, data management, security and technical support so that you can manage your business technology easily.
+- **Core Deliverables**: Cloud Storage and Data Management; Cloud Setup and Migration; Data Security and Backup Solutions; IT Infrastructure Management; Technical Support and System Monitoring.
+- **Discipline Link**: [All Services Overview]({$baseUrl}/services)
 
 ---
 
-## 03 // Engineered Capabilities Built for Enterprise Scale
-We provide 10 integrated practice disciplines operating under one accountable standard:
-1. **[SMO]({$baseUrl}/smo-company-in-delhi)**: Strategic profile optimization, bio conversion funnels, branded content templates, and improved social visibility.
-2. **[Google Business Profile Management]({$baseUrl}/google-business-profile-company-in-delhi)**: Complete GBP setup, Google Maps optimization, local search visibility, profile management, and review strategy.
-3. **[PPC / Paid Ads]({$baseUrl}/ppc-company-in-delhi)**: High-converting Google Search, Performance Max, Meta Ads, and LinkedIn B2B advertising campaigns.
-4. **[Ecommerce Management]({$baseUrl}/ecommerce-management-company-in-delhi)**: Amazon and Flipkart marketplace management, product listings, inventory optimization, A+ content, and marketplace growth.
-5. **[Graphic Design]({$baseUrl}/graphic-design-company-in-delhi)**: Corporate brand identity, creative graphics, marketing materials, social media creatives, and visual communication.
-6. **[SEO — Search Engine Optimization]({$baseUrl}/seo-company-in-delhi)**: Technical SEO, on-page optimization, keyword strategy, search visibility, organic traffic, and performance monitoring.
-7. **[Social Media Marketing]({$baseUrl}/social-media-marketing-company-in-delhi)**: Social media strategy, content planning, campaign management, audience engagement, and brand growth.
-8. **[Product Photography]({$baseUrl}/product-photography-company-in-delhi)**: Professional product photography, ecommerce product visuals, creative compositions, and conversion-focused imagery.
-9. **[Video Editing]({$baseUrl}/video-editing-company-in-delhi)**: Professional promotional videos, short-form content, Instagram Reels, YouTube Shorts, and brand videos.
-10. **[Web Development]({$baseUrl}/web-development-company-in-delhi)**: Fast, responsive business websites, custom web applications, performance optimization, and conversion-focused development.
+## 03 // 10 Integrated Practice Disciplines Built for Enterprise Scale
+1. **[SMO (Social Media Optimization)]({$baseUrl}/service/smo)**: Strategic profile optimization, bio conversion funnels, branded content templates, and social visibility.
+2. **[Google Business Profile Management]({$baseUrl}/service/google-business-profile)**: Complete GBP setup, Google Maps optimization, local search visibility, and review strategy.
+3. **[PPC / Paid Ads]({$baseUrl}/service/ppc-paid-ads)**: High-converting Google Search, Performance Max, Meta Ads, and LinkedIn B2B advertising campaigns.
+4. **[Ecommerce Management]({$baseUrl}/service/ecommerce-management)**: Amazon and Flipkart marketplace management, product listings, inventory optimization, A+ content, and marketplace growth.
+5. **[Graphic Design]({$baseUrl}/service/graphic-design)**: Corporate brand identity, creative graphics, marketing materials, social media creatives, and visual communication.
+6. **[SEO — Search Engine Optimization]({$baseUrl}/service/seo)**: Technical SEO, on-page optimization, keyword strategy, search visibility, organic traffic, and performance monitoring.
+7. **[Social Media Marketing]({$baseUrl}/service/social-media-marketing)**: Social media strategy, content planning, campaign management, audience engagement, and brand growth.
+8. **[Product Photography]({$baseUrl}/service/product-photography)**: Professional product photography, ecommerce product visuals, creative compositions, and conversion-focused imagery.
+9. **[Video Editing]({$baseUrl}/service/video-editing)**: Professional promotional videos, short-form content, Instagram Reels, YouTube Shorts, and brand videos.
+10. **[Web Development]({$baseUrl}/service/web-development)**: Fast, responsive business websites, custom web applications, performance optimization, and conversion-focused development.
 
 ---
 
@@ -1404,20 +1409,22 @@ Our 5-phase delivery lifecycle ensures predictable, high-impact results:
 
 ---
 
-## 07 // Built on Engineering Integrity & Measurable Accountability
-We hold our practice to rigorous operational commitments:
-- Guaranteed code quality and security standards (OWASP compliance).
-- Complete data privacy with strict confidentiality agreements (NDA).
-- Transparent fixed pricing with zero hidden surcharges or surprise billing.
+## 07 // Proven Outcomes: Real Business Growth with the Right Digital Marketing Strategy
+At Business Doctor, a trusted digital marketing company in Delhi, we provide everything from generating quality leads to increasing online visibility which helps your business grow.
+
+- **01. Faster Website Performance**: Business Doctor is a digital marketing company in Delhi. We design user friendly websites with faster performance. This makes the user experience better.
+- **02. Stronger Online Visibility**: We provide the best seo service in delhi that improve your business's online visibility. Good online visibility will help you to get more leads and quality customers.
+- **03. Better Lead Generation**: Our team helps you to get quality leads that help your business to grow and turn enquiries into real potential customers. Our goal is to help you build a strong customer base and achieve long term success.
+- **04. Zero Ad Waste Guarantee**: Our goal is maximum utilisation of your advertising budget and to reduce unnecessary ad spending. We make sure that your ad reaches the right audience through smart, data driven strategies and continuous campaigns.
 
 ---
 
 ## 08 // Real Results: Documented Enterprise Case Studies
-- **[FinTech SaaS Funnel Resuscitation]({$baseUrl}/case-study-detail.php?slug=fintech-saas-funnel-resuscitation)**: Replaced a broken 7-step onboarding process with asynchronous micro-auth and Stripe vaulting.
+- **[FinTech SaaS Funnel Resuscitation]({$baseUrl}/case-studies/fintech-saas-funnel-resuscitation)**: Replaced a broken 7-step onboarding process with asynchronous micro-auth and Stripe vaulting.
   - *Metric Shift*: `1.2% Conversion` → `4.8% Conversion (+312% pipeline lift)`
-- **[D2C Apparel Vital Infrastructure Overhaul]({$baseUrl}/case-study-detail.php?slug=d2c-apparel-vital-infrastructure-overhaul)**: Re-platformed a slow Shopify store into a headless React PWA with Redis inventory locking.
+- **[D2C Apparel Vital Infrastructure Overhaul]({$baseUrl}/case-studies/d2c-apparel-vital-infrastructure-overhaul)**: Re-platformed a slow Shopify store into a headless React PWA with Redis inventory locking.
   - *Metric Shift*: `4.6s Page Load` → `0.78s Page Load (18,500 peak transactions/min)`
-- **[Multichannel Retail Marketplace Dominance]({$baseUrl}/case-study-detail.php?slug=multichannel-retail-marketplace-dominance)**: Unified 48,000 SKUs across Amazon, Walmart, and eBay with an algorithmic dynamic repricing bot.
+- **[Multichannel Retail Marketplace Dominance]({$baseUrl}/case-studies/multichannel-retail-marketplace-dominance)**: Unified 48,000 SKUs across Amazon, Walmart, and eBay with an algorithmic dynamic repricing bot.
   - *Metric Shift*: `22% Buy Box Share` → `84% Buy Box Share (+$2.1M monthly GMV)`
 
 ---
@@ -1434,33 +1441,30 @@ We deploy battle-tested enterprise technologies:
 
 ## 10 // Engineering Architecture & Digital Growth Analysis
 Unsure why your website is slow, or why your ad spend isn't producing adequate ROAS? Submit your domain for a complimentary 24-hour diagnostic audit covering server latency, Core Web Vitals, and conversion funnel friction.
-- [Request Free Digital Audit]({$baseUrl}/audit.php)
+- [Request Free Digital Audit]({$baseUrl}/audit)
 
 ---
 
-## 11 // Frequently Asked Questions About BusinessDoctor Advisory & Engineering
+## 11 // Frequently Asked Questions About BusinessDoctor Services
 
-### What core services does BusinessDoctor provide?
-BusinessDoctor delivers enterprise full-stack software development, performance digital marketing and SEO, UI/UX architecture, e-commerce marketplace scaling, commercial creative video production, and cloud IT infrastructure consulting.
+### How do I choose the Best Digital Marketing company for My Business?
+Choosing a digital marketing company will depend on your goals, budget and target audience. You want to find an company that will understand your needs and provide the correct services with a clear strategy to help your business grow.
 
-### How does BusinessDoctor conduct digital architecture audits?
-Our senior technical architects perform deep diagnostic audits across four critical vectors: software engineering latency, digital ad spend ROI and CAC leakage, enterprise systems resilience, and brand identity conversion trust.
+### What digital marketing services does BusinessDoctor offer?
+BusinessDoctor offers digital marketing services including SEO, social media marketing, paid advertising, content marketing and website development.
 
-### Can BusinessDoctor resuscitate failing enterprise web projects?
-Yes. We specialize in turn-around engineering for distressed codebases, slow legacy web applications, broken checkout funnels, and high-traffic transactional platforms facing scalability bottlenecks.
+### How can digital marketing help My Business grow?
+Digital marketing can help your business gain more visibility online. It can improve your website traffic, create brand awareness, lead generation and increase sales.
 
-### How do your engagement models and pricing work?
-We offer flexible engagement models tailored to client needs: fixed-scope sprint deliverables with defined milestones and pricing, ongoing dedicated engineering/marketing retainers, and specialized technical diagnostic audits.
-
-### Where does BusinessDoctor operate?
-BusinessDoctor operates globally with distributed engineering leadership and principal consultants headquartered in our Noida, India innovation corridor.
+### How long will it take my digital marketing to deliver results?
+The amount of time that it takes to deliver results will depend on your goals. Paid advertising can provide fast results with increased traffic and lead generation. SEO usually takes several months to see any real improvements.
 
 ---
 
 ## 12 // Ready to Move Your Business Beyond Limitations?
-- **Schedule Discovery Consultation**: [Contact Practice Leads]({$baseUrl}/contact.php)
-- **Complimentary Diagnostic**: [Request Free Digital Audit]({$baseUrl}/audit.php)
-- **Review Service Disciplines**: [Explore All Practices]({$baseUrl}/company)
+- **Schedule Discovery Consultation**: [Contact Practice Leads]({$baseUrl}/contact)
+- **Complimentary Diagnostic**: [Request Free Digital Audit]({$baseUrl}/audit)
+- **Review Service Disciplines**: [Explore All Practices]({$baseUrl}/services)
 
 ---
 *Maintained by {$appName} Enterprise Engineering.*
@@ -1489,7 +1493,6 @@ MD;
         $lines[] = "";
         $lines[] = "- **Canonical Website**: [{$baseUrl}]({$baseUrl})";
         $lines[] = "- **AI Discovery Manifest**: [{$baseUrl}/llms.txt]({$baseUrl}/llms.txt)";
-        $lines[] = "- **Comprehensive LLM Context**: [{$baseUrl}/llms.md]({$baseUrl}/llms.md)";
         $lines[] = "- **XML Sitemap**: [{$baseUrl}/sitemap.xml]({$baseUrl}/sitemap.xml)";
         $lines[] = "- **Last Synchronized**: " . date('Y-m-d H:i:s T');
         $lines[] = "";
@@ -1500,12 +1503,12 @@ MD;
         $lines[] = "## 1. Institutional & Diagnostic Documents";
         $lines[] = "";
         $lines[] = "- [Homepage Overview]({$baseUrl}/md/home.md) ([Clean URL]({$baseUrl}/.md) | [Web Page]({$baseUrl}/)): Enterprise digital practice overview.";
-        $lines[] = "- [Firm Profile & Leadership]({$baseUrl}/md/about.md) ([Clean URL]({$baseUrl}/about.php.md) | [Web Page]({$baseUrl}/about.php)): Engineering ethos and leadership profile.";
-        $lines[] = "- [Services Overview Hub]({$baseUrl}/md/services.md) ([Clean URL]({$baseUrl}/digital-marketing-company-in-delhi.md) | [Web Page]({$baseUrl}/digital-marketing-company-in-delhi)): Multi-disciplinary capability catalog.";
-        $lines[] = "- [Executive Advisory & Inquiries]({$baseUrl}/md/contact.md) ([Clean URL]({$baseUrl}/contact.php.md) | [Web Page]({$baseUrl}/contact.php)): Direct engagement and consulting channels.";
-        $lines[] = "- [Digital Diagnostic Audit Framework]({$baseUrl}/md/audit.md) ([Clean URL]({$baseUrl}/audit.php.md) | [Web Page]({$baseUrl}/audit.php)): Benchmarking performance, security, and CAC.";
+        $lines[] = "- [Firm Profile & Practice]({$baseUrl}/md/about.md) ([Clean URL]({$baseUrl}/about.md) | [Web Page]({$baseUrl}/about)): Digital marketing practice and engineering ethos.";
+        $lines[] = "- [Services Overview Hub]({$baseUrl}/md/services.md) ([Clean URL]({$baseUrl}/services.md) | [Web Page]({$baseUrl}/services)): Multi-disciplinary capability catalog.";
+        $lines[] = "- [Executive Advisory & Inquiries]({$baseUrl}/md/contact.md) ([Clean URL]({$baseUrl}/contact.md) | [Web Page]({$baseUrl}/contact)): Direct engagement and consulting channels.";
+        $lines[] = "- [Digital Diagnostic Audit Framework]({$baseUrl}/md/audit.md) ([Clean URL]({$baseUrl}/audit.md) | [Web Page]({$baseUrl}/audit)): Benchmarking performance, security, and CAC.";
         $lines[] = "- [Technical Blog & Perspectives Catalog]({$baseUrl}/md/insights.md) ([Clean URL]({$baseUrl}/blog.md) | [Web Page]({$baseUrl}/blog)): Index of published technical essays.";
-        $lines[] = "- [Enterprise Case Studies Catalog]({$baseUrl}/md/case-studies.md) ([Clean URL]({$baseUrl}/case-studies.php.md) | [Web Page]({$baseUrl}/case-studies.php)): Index of verified client turnarounds.";
+        $lines[] = "- [Enterprise Case Studies Catalog]({$baseUrl}/md/case-studies.md) ([Clean URL]({$baseUrl}/case-studies.md) | [Web Page]({$baseUrl}/case-studies)): Index of verified client turnarounds.";
         $lines[] = "";
 
         // 2. Services

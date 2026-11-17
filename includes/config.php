@@ -108,17 +108,21 @@ if (!empty($envAppUrl) && !($isLocalHost && str_contains($envAppUrl, 'demo.busin
     if ($host === 'demo.businesdoctor.com') {
         $protocol = 'https://';
     }
-    $scriptDir = dirname($_SERVER['SCRIPT_NAME'] ?? '');
-    $scriptDir = rtrim(str_replace('\\', '/', $scriptDir), '/');
+    if (php_sapi_name() === 'cli') {
+        $basePath = '';
+    } else {
+        $scriptDir = dirname($_SERVER['SCRIPT_NAME'] ?? '');
+        $scriptDir = rtrim(str_replace('\\', '/', $scriptDir), '/');
 
-    $parts = explode('/', trim($scriptDir, '/'));
-    if ($parts === ['.']) {
-        $parts = [];
+        $parts = explode('/', trim($scriptDir, '/'));
+        if ($parts === ['.']) {
+            $parts = [];
+        }
+        if (!empty($parts) && in_array(end($parts), ['admin', 'api', 'scratch', 'tests'], true)) {
+            array_pop($parts);
+        }
+        $basePath = empty($parts) ? '' : '/' . implode('/', $parts);
     }
-    if (!empty($parts) && in_array(end($parts), ['admin', 'api', 'scratch', 'tests'], true)) {
-        array_pop($parts);
-    }
-    $basePath = empty($parts) ? '' : '/' . implode('/', $parts);
     define('BASE_URL', $protocol . $host . $basePath);
 }
 define('APP_URL', BASE_URL);

@@ -238,11 +238,11 @@ function getPrimaryOrganizationSchema(string $baseUrl = ''): array
         return $cached;
     }
 
-    $baseUrl = rtrim($baseUrl ?: (defined('CANONICAL_BASE_URL') ? CANONICAL_BASE_URL : (defined('BASE_URL') ? BASE_URL : 'https://demo.businesdoctor.com')), '/');
-    $appName = 'BusinesDoctor';
-    $legalName = 'BusinesDoctor IT Solutions & Digital Services Private Limited';
-    $email = defined('APP_EMAIL') ? APP_EMAIL : 'sales@businesdoctor.com';
-    $phone = defined('APP_PHONE') ? APP_PHONE : '+1 (800) 492-3628';
+    $baseUrl = 'https://demo.businesdoctor.com';
+    $appName = 'BusinessDoctor';
+    $legalName = 'BusinessDoctor IT Solutions & Digital Services Private Limited';
+    $email = 'sales@businesdoctor.com';
+    $phone = '+1 (800) 492-3628';
 
     try {
         $pdo = Database::getConnection();
@@ -257,12 +257,18 @@ function getPrimaryOrganizationSchema(string $baseUrl = ''): array
                 '{{CANONICAL_URL}}' => $baseUrl . '/',
                 '{{ORGANIZATION_NAME}}' => $appName,
                 '{{ORGANIZATION_EMAIL}}' => $email,
-                '{{ORGANIZATION_ID}}' => $baseUrl . '/#organization'
+                '{{ORGANIZATION_ID}}' => $baseUrl . '/#organization',
+                'http://127.0.0.1:8000' => $baseUrl,
+                'http://localhost:8000' => $baseUrl,
+                'https://businessdoctor.com' => $baseUrl,
+                'http://businessdoctor.com' => $baseUrl
             ];
             $bound = str_replace(array_keys($replacements), array_values($replacements), $rawJson);
             $decoded = json_decode($bound, true);
             if (is_array($decoded) && ($decoded['@type'] ?? '') === 'Organization') {
+                $decoded['@context'] = 'https://schema.org';
                 $decoded['@id'] = $baseUrl . '/#organization';
+                $decoded['url'] = $baseUrl . '/';
                 $cached = $decoded;
                 return $cached;
             }
@@ -282,7 +288,7 @@ function getPrimaryOrganizationSchema(string $baseUrl = ''): array
             '@type' => 'ImageObject',
             'url' => $baseUrl . '/assets/img/logo.svg'
         ],
-        'description' => 'BusinesDoctor is an enterprise digital transformation, cloud architecture, and full-stack software development consulting firm.',
+        'description' => 'BusinessDoctor is an enterprise digital transformation, cloud architecture, and full-stack software development consulting firm.',
         'telephone' => $phone,
         'email' => $email,
         'address' => [
@@ -308,12 +314,14 @@ function getPrimaryOrganizationSchema(string $baseUrl = ''): array
  */
 function generateArticleSchemaGraph(array $article, string $baseUrl = ''): array
 {
-    $baseUrl = rtrim($baseUrl ?: (defined('CANONICAL_BASE_URL') ? CANONICAL_BASE_URL : (defined('BASE_URL') ? BASE_URL : 'https://demo.businesdoctor.com')), '/');
+    $baseUrl = 'https://demo.businesdoctor.com';
     $appName = defined('APP_NAME') ? APP_NAME : 'BusinessDoctor';
     $legalName = defined('APP_LEGAL_NAME') ? APP_LEGAL_NAME : 'BusinessDoctor IT Solutions & Digital Services Private Limited';
 
     $slug = $article['slug'] ?? '';
-    $articleUrl = !empty($article['canonical_url']) ? $article['canonical_url'] : ($baseUrl . '/blog/' . urlencode($slug));
+    $articleUrl = !empty($article['canonical_url']) 
+        ? preg_replace('#^https?://[^/]+#i', $baseUrl, (string)$article['canonical_url']) 
+        : ($baseUrl . '/blog/' . rawurlencode(trim($slug, '/')));
 
     $title = !empty($article['seo_title']) ? $article['seo_title'] : ($article['title'] ?? 'Insight Article');
     $description = !empty($article['seo_description']) ? $article['seo_description'] : (!empty($article['excerpt']) ? $article['excerpt'] : ($article['summary'] ?? ''));
@@ -330,6 +338,8 @@ function generateArticleSchemaGraph(array $article, string $baseUrl = ''): array
     if (!empty($featuredImg)) {
         if (!preg_match('/^https?:\/\//i', $featuredImg)) {
             $featuredImg = $baseUrl . '/' . ltrim($featuredImg, '/');
+        } else {
+            $featuredImg = preg_replace('#^https?://[^/]+#i', $baseUrl, $featuredImg);
         }
     } else {
         $featuredImg = $baseUrl . '/assets/img/og-preview.svg';
@@ -342,7 +352,7 @@ function generateArticleSchemaGraph(array $article, string $baseUrl = ''): array
     // 1. Organization Schema (Required: Primary Verified Authority Entity from Source of Truth)
     $organization = getPrimaryOrganizationSchema($baseUrl);
     $organization['@id'] = $baseUrl . '/#organization';
-    $organization['mainEntityOfPage'] = $articleUrl;
+    $organization['url'] = $baseUrl . '/';
 
     // 2. BreadcrumbList Schema (Required: Navigation Trail)
     $breadcrumbs = [
@@ -376,10 +386,7 @@ function generateArticleSchemaGraph(array $article, string $baseUrl = ''): array
         '@type' => 'Blog',
         'name' => 'Technical Blog & Strategic Frameworks — ' . $appName,
         'description' => 'Practical engineering blueprints, Core Web Vitals breakdowns, and conversion optimization strategies from our senior architects and digital strategists.',
-        'url' => $baseUrl . '/blog',
-        'publisher' => [
-            '@id' => $baseUrl . '/#organization'
-        ]
+        'url' => $baseUrl . '/blog'
     ];
 
     // 4. BlogPosting Schema (Additional Valid Structured Data)
@@ -408,9 +415,6 @@ function generateArticleSchemaGraph(array $article, string $baseUrl = ''): array
             '@type' => 'Person',
             'name' => $authorName,
             'jobTitle' => $authorTitle
-        ],
-        'publisher' => [
-            '@id' => $baseUrl . '/#organization'
         ]
     ];
     if (!empty($authorBio)) {
@@ -457,9 +461,19 @@ function renderPageSchemas(?string $pageKey = null, array $contextData = []): st
     }
 
     try {
-        $baseUrl = rtrim(defined('CANONICAL_BASE_URL') ? CANONICAL_BASE_URL : (defined('BASE_URL') ? BASE_URL : 'https://demo.businesdoctor.com'), '/');
+        $baseUrl = 'https://demo.businesdoctor.com';
         $appName = defined('APP_NAME') ? APP_NAME : 'BusinessDoctor';
         $output = '';
+
+        // 1. ALWAYS OUTPUT PRIMARY STANDALONE ORGANIZATION SCHEMA FIRST ON EVERY PAGE
+        $orgObj = getPrimaryOrganizationSchema($baseUrl);
+        $orgObj['@id'] = $baseUrl . '/#organization';
+        $orgObj['url'] = $baseUrl . '/';
+        $sigOrg = md5(json_encode($orgObj));
+        $renderedSchemas[$sigOrg] = true;
+        $prettyOrg = json_encode($orgObj, JSON_PRETTY_PRINT | JSON_UNESCAPED_SLASHES | JSON_UNESCAPED_UNICODE);
+        $output .= "\n  <!-- Schema.org JSON-LD: Organization (Independent Standalone Entity) -->\n";
+        $output .= "  <script type=\"application/ld+json\">\n" . $prettyOrg . "\n  </script>\n";
 
         // Handle Specialized Blog / Insight Detail Schema Logic
         if ($pageKey === 'insight-detail' && !empty($contextData['title'])) {
@@ -468,11 +482,18 @@ function renderPageSchemas(?string $pageKey = null, array $contextData = []): st
             if ($schemaMode === 'custom' && !empty($contextData['custom_schema_json'])) {
                 $decoded = json_decode((string)$contextData['custom_schema_json'], true);
                 if (is_array($decoded) && json_last_error() === JSON_ERROR_NONE) {
+                    $customJson = json_encode($decoded, JSON_UNESCAPED_SLASHES | JSON_UNESCAPED_UNICODE);
+                    $customJson = str_replace(
+                        ['http://127.0.0.1:8000', 'http://localhost:8000', 'https://businessdoctor.com', 'http://businessdoctor.com', 'https://demo.businessdoctor.com', 'http://demo.businessdoctor.com'],
+                        $baseUrl,
+                        $customJson
+                    );
+                    $decoded = json_decode($customJson, true);
                     $sig = md5(json_encode($decoded));
                     if (!isset($renderedSchemas[$sig])) {
                         $renderedSchemas[$sig] = true;
                         $pretty = json_encode($decoded, JSON_PRETTY_PRINT | JSON_UNESCAPED_SLASHES | JSON_UNESCAPED_UNICODE);
-                        $output .= "\n  <!-- Custom Schema.org JSON-LD (Option B: Editorial Custom) -->\n";
+                        $output .= "\n  <!-- Custom Schema.org JSON-LD (Editorial Custom) -->\n";
                         $output .= "  <script type=\"application/ld+json\">\n" . $pretty . "\n  </script>\n";
                         return $output;
                     }
@@ -482,6 +503,9 @@ function renderPageSchemas(?string $pageKey = null, array $contextData = []): st
             // Option A: Automatically Generated Rich Multi-Type Schema Graph
             $graph = generateArticleSchemaGraph($contextData, $baseUrl);
             foreach ($graph as $schemaType => $schemaObj) {
+                if ($schemaType === 'Organization' || ($schemaObj['@type'] ?? '') === 'Organization') {
+                    continue; // Standalone Organization is already printed as Block 1
+                }
                 $sig = md5(json_encode($schemaObj));
                 if (isset($renderedSchemas[$sig])) {
                     continue;
@@ -492,6 +516,11 @@ function renderPageSchemas(?string $pageKey = null, array $contextData = []): st
                 $output .= "  <script type=\"application/ld+json\">\n" . $pretty . "\n  </script>\n";
             }
 
+            $output = str_replace(
+                ['http://127.0.0.1:8000', 'http://localhost:8000', 'https://businessdoctor.com', 'http://businessdoctor.com', 'https://demo.businessdoctor.com', 'http://demo.businessdoctor.com'],
+                $baseUrl,
+                $output
+            );
             return $output;
         }
 
@@ -505,12 +534,16 @@ function renderPageSchemas(?string $pageKey = null, array $contextData = []): st
         $stmt->execute([$pageKey]);
         $schemas = $stmt->fetchAll(PDO::FETCH_ASSOC);
 
-        if (empty($schemas)) {
-            return '';
-        }
-
         // Build token replacement dictionary
-        $canonicalUrl = $GLOBALS['canonicalUrl'] ?? ($baseUrl . ($_SERVER['REQUEST_URI'] ?? '/'));
+        $rawReqUri = $_SERVER['REQUEST_URI'] ?? '/';
+        $canonicalPath = parse_url($rawReqUri, PHP_URL_PATH) ?: '/';
+        if ($pageKey === 'home') {
+            $canonicalPath = '/';
+        }
+        $canonicalUrl = $baseUrl . $canonicalPath;
+        if (!empty($GLOBALS['canonicalUrl'])) {
+            $canonicalUrl = preg_replace('#^https?://[^/]+#i', $baseUrl, (string)$GLOBALS['canonicalUrl']);
+        }
 
         $pageTitle = $GLOBALS['pageTitle'] ?? $appName;
         $pageDescription = $GLOBALS['pageDescription'] ?? '';
@@ -529,6 +562,8 @@ function renderPageSchemas(?string $pageKey = null, array $contextData = []): st
         if (!empty($featuredImg)) {
             if (!preg_match('/^https?:\/\//i', $featuredImg)) {
                 $featuredImg = $baseUrl . '/' . ltrim($featuredImg, '/');
+            } else {
+                $featuredImg = preg_replace('#^https?://[^/]+#i', $baseUrl, $featuredImg);
             }
         } else {
             $featuredImg = $baseUrl . '/assets/img/og-preview.svg';
@@ -539,7 +574,7 @@ function renderPageSchemas(?string $pageKey = null, array $contextData = []): st
         $replacements = [
             '{{BASE_URL}}' => $baseUrl,
             '{{ORGANIZATION_NAME}}' => 'BusinesDoctor',
-            '{{ORGANIZATION_EMAIL}}' => defined('APP_EMAIL') ? APP_EMAIL : 'sales@businesdoctor.com',
+            '{{ORGANIZATION_EMAIL}}' => 'sales@businesdoctor.com',
             '{{ORGANIZATION_ID}}' => $baseUrl . '/#organization',
             '{{PAGE_TITLE}}' => addslashes($pageTitle),
             '{{PAGE_DESCRIPTION}}' => addslashes($pageDescription),
@@ -553,6 +588,12 @@ function renderPageSchemas(?string $pageKey = null, array $contextData = []): st
             '{{CATEGORY}}' => addslashes($category),
             '{{SERVICES_URL}}' => $baseUrl . '/services',
             '{{BLOG_URL}}' => $baseUrl . '/blog',
+            'http://127.0.0.1:8000' => $baseUrl,
+            'http://localhost:8000' => $baseUrl,
+            'https://businessdoctor.com' => $baseUrl,
+            'http://businessdoctor.com' => $baseUrl,
+            'https://demo.businessdoctor.com' => $baseUrl,
+            'http://demo.businessdoctor.com' => $baseUrl,
             '/services.php' => '/services',
             '/insights.php' => '/blog',
             '/about.php' => '/about',
@@ -565,19 +606,33 @@ function renderPageSchemas(?string $pageKey = null, array $contextData = []): st
         ];
 
         $hasBreadcrumbs = false;
-        $hasOrganization = false;
         foreach ($schemas as $row) {
-            if (($row['schema_type'] ?? '') === 'BreadcrumbList') {
+            $schemaType = $row['schema_type'] ?? '';
+            if ($schemaType === 'BreadcrumbList') {
                 $hasBreadcrumbs = true;
             }
+            if ($schemaType === 'Organization') {
+                // Organization is already rendered at the very top as an independent entity!
+                continue;
+            }
+
             $rawJson = $row['schema_json'];
 
             // Replace dynamic tokens
             $boundJson = str_replace(array_keys($replacements), array_values($replacements), $rawJson);
+            $boundJson = str_replace(
+                ['http://127.0.0.1:8000', 'http://localhost:8000', 'https://businessdoctor.com', 'http://businessdoctor.com', 'https://demo.businessdoctor.com', 'http://demo.businessdoctor.com'],
+                $baseUrl,
+                $boundJson
+            );
 
             // Validate that result is 100% valid JSON
             $decoded = json_decode($boundJson, true);
             if (!is_array($decoded) || json_last_error() !== JSON_ERROR_NONE) {
+                continue;
+            }
+
+            if (($decoded['@type'] ?? '') === 'Organization') {
                 continue;
             }
 
@@ -589,7 +644,7 @@ function renderPageSchemas(?string $pageKey = null, array $contextData = []): st
                     $blogPosts = [];
                     foreach ($articles as $art) {
                         $artSlug = $art['slug'];
-                        $artUrl = $baseUrl . '/blog/' . urlencode($artSlug);
+                        $artUrl = $baseUrl . '/blog/' . rawurlencode(trim($artSlug, '/'));
                         $pubDate = date('c', strtotime((string)($art['published_at'] ?: $art['created_at'] ?: 'now')));
                         $modDate = date('c', strtotime((string)($art['updated_at'] ?: $pubDate)));
                         $desc = $art['excerpt'] ?: ($art['summary'] ?: '');
@@ -614,23 +669,8 @@ function renderPageSchemas(?string $pageKey = null, array $contextData = []): st
                 } catch (Throwable $e) {}
             }
 
-            // Enforce unified single Organization entity per page with stable @id
-            if (($row['schema_type'] ?? '') === 'Organization' || ($decoded['@type'] ?? '') === 'Organization') {
-                if ($hasOrganization) {
-                    // Prevent duplicate Organization blocks on the same page
-                    continue;
-                }
-                $hasOrganization = true;
-                $decoded['@id'] = $baseUrl . '/#organization';
-            } else {
-                // For non-Organization entities, normalize publisher/provider to @id reference
-                if (isset($decoded['publisher']) && is_array($decoded['publisher']) && !isset($decoded['publisher']['@id'])) {
-                    $decoded['publisher'] = ['@id' => $baseUrl . '/#organization'];
-                }
-                if (isset($decoded['provider']) && is_array($decoded['provider']) && !isset($decoded['provider']['@id'])) {
-                    $decoded['provider'] = ['@id' => $baseUrl . '/#organization'];
-                }
-            }
+            // Guarantee Organization is completely independent and never nested inside Service or other entities
+            unset($decoded['provider'], $decoded['publisher']);
 
             // Deduplicate by signature
             $signature = md5(json_encode($decoded));
@@ -643,19 +683,6 @@ function renderPageSchemas(?string $pageKey = null, array $contextData = []): st
 
             $output .= "\n  <!-- Schema.org JSON-LD: " . htmlspecialchars($row['schema_name']) . " (" . htmlspecialchars($row['schema_type']) . ") -->\n";
             $output .= "  <script type=\"application/ld+json\">\n" . $prettyJson . "\n  </script>\n";
-        }
-
-        // Auto-inject standalone Organization Schema if not declared in page_schemas
-        if (!$hasOrganization) {
-            $orgObj = getPrimaryOrganizationSchema($baseUrl);
-            $orgObj['@id'] = $baseUrl . '/#organization';
-            $sig = md5(json_encode($orgObj));
-            if (!isset($renderedSchemas[$sig])) {
-                $renderedSchemas[$sig] = true;
-                $prettyJson = json_encode($orgObj, JSON_PRETTY_PRINT | JSON_UNESCAPED_SLASHES | JSON_UNESCAPED_UNICODE);
-                $output .= "\n  <!-- Schema.org JSON-LD: Primary Enterprise Organization (Independent Entity) -->\n";
-                $output .= "  <script type=\"application/ld+json\">\n" . $prettyJson . "\n  </script>\n";
-            }
         }
 
         // Auto-inject BreadcrumbList for inner pages if not explicitly declared in page_schemas
@@ -754,6 +781,13 @@ function renderPageSchemas(?string $pageKey = null, array $contextData = []): st
                 }
             }
         }
+
+        // Final sanitation check: enforce https://demo.businesdoctor.com across all outputs
+        $output = str_replace(
+            ['http://127.0.0.1:8000', 'http://localhost:8000', 'https://businessdoctor.com', 'http://businessdoctor.com', 'https://demo.businessdoctor.com', 'http://demo.businessdoctor.com'],
+            $baseUrl,
+            $output
+        );
 
         return $output;
 

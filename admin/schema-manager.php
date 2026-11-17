@@ -719,14 +719,34 @@ require_once __DIR__ . '/includes/header.php';
       </div>
       <ul id="validationChecksList" style="list-style: none; padding: 0; margin: 0 0 1.5rem; font-size: 0.86rem;"></ul>
 
-      <div style="background: #081F38; border: 1px solid var(--adm-border); border-radius: 6px; padding: 1rem; font-size: 0.82rem; color: var(--adm-text-muted);">
-        <strong style="color: var(--adm-teal);">Google Rich Results Test:</strong>
-        <p style="margin: 0.35rem 0 0.75rem;">
-          You can test this page's live rendered structured data directly on Google's official Rich Results Test.
-        </p>
-        <a id="googleRichResultsBtn" href="https://search.google.com/test/rich-results" target="_blank" rel="noopener" class="btn-adm btn-adm-secondary btn-adm-sm" style="display: inline-flex; align-items: center; gap: 0.4rem;">
-          <span>Open Google Rich Results Test ↗</span>
-        </a>
+      <div style="display: flex; flex-direction: column; gap: 0.85rem;">
+        <!-- Schema.org Official Validator -->
+        <div style="background: rgba(0, 153, 219, 0.1); border: 1px solid rgba(0, 153, 219, 0.35); border-radius: 6px; padding: 1rem; font-size: 0.82rem; color: #E2E8F0;">
+          <div style="display: flex; align-items: center; justify-content: space-between; margin-bottom: 0.35rem;">
+            <strong style="color: #38BDF8; font-size: 0.9rem;">Official Schema.org Validator:</strong>
+            <span style="font-size: 0.72rem; padding: 0.15rem 0.45rem; background: rgba(56, 189, 248, 0.2); color: #38BDF8; border-radius: 4px; font-weight: 600;">Recommended for Organization</span>
+          </div>
+          <p style="margin: 0.35rem 0 0.75rem; color: #94A3B8; font-size: 0.8rem; line-height: 1.4;">
+            Tests all Schema.org entities including <strong>Organization</strong>, WebSite, WebPage, and LocalBusiness as standalone top-level items.
+          </p>
+          <a id="schemaOrgValidatorBtn" href="https://validator.schema.org/" target="_blank" rel="noopener" class="btn-adm btn-adm-primary btn-adm-sm" style="display: inline-flex; align-items: center; gap: 0.4rem; background: #0099DB; color: #FFFFFF; font-weight: 600;">
+            <span>Validate on Schema.org Validator ↗</span>
+          </a>
+        </div>
+
+        <!-- Google Rich Results Test -->
+        <div style="background: #081F38; border: 1px solid var(--adm-border); border-radius: 6px; padding: 1rem; font-size: 0.82rem; color: var(--adm-text-muted);">
+          <div style="display: flex; align-items: center; justify-content: space-between; margin-bottom: 0.35rem;">
+            <strong style="color: var(--adm-teal); font-size: 0.86rem;">Google Rich Results Test:</strong>
+            <span style="font-size: 0.72rem; padding: 0.15rem 0.45rem; background: rgba(148, 163, 184, 0.15); color: #94A3B8; border-radius: 4px;">Search Snippets Only</span>
+          </div>
+          <p style="margin: 0.35rem 0 0.75rem; color: var(--adm-text-muted); font-size: 0.8rem; line-height: 1.4;">
+            Tests search result enhancements (Articles, FAQs, Breadcrumbs). Google Rich Results explicitly ignores Organization markup by design.
+          </p>
+          <a id="googleRichResultsBtn" href="https://search.google.com/test/rich-results" target="_blank" rel="noopener" class="btn-adm btn-adm-secondary btn-adm-sm" style="display: inline-flex; align-items: center; gap: 0.4rem;">
+            <span>Open Google Rich Results Test ↗</span>
+          </a>
+        </div>
       </div>
     </div>
     <div class="adm-modal-footer">
@@ -789,7 +809,15 @@ function previewSchema(id) {
 
   document.getElementById('previewModalTitle').textContent = `Preview: ${schema.schema_name}`;
   try {
-    const parsed = JSON.parse(schema.schema_json);
+    let raw = schema.schema_json
+      .replaceAll('{{BASE_URL}}', 'https://demo.businesdoctor.com')
+      .replaceAll('{{ORGANIZATION_NAME}}', 'BusinesDoctor')
+      .replaceAll('{{ORGANIZATION_EMAIL}}', 'sales@businesdoctor.com')
+      .replaceAll('{{ORGANIZATION_ID}}', 'https://demo.businesdoctor.com/#organization')
+      .replaceAll('http://127.0.0.1:8000', 'https://demo.businesdoctor.com')
+      .replaceAll('http://localhost:8000', 'https://demo.businesdoctor.com')
+      .replaceAll('https://businessdoctor.com', 'https://demo.businesdoctor.com');
+    const parsed = JSON.parse(raw);
     document.getElementById('previewJsonOutput').textContent = JSON.stringify(parsed, null, 2);
   } catch (e) {
     document.getElementById('previewJsonOutput').textContent = schema.schema_json;
@@ -888,9 +916,10 @@ function validateSchema(id) {
     list.appendChild(li);
   });
 
-  // Setup Google Rich Results URL
-  const testUrl = 'https://search.google.com/test/rich-results?url=' + encodeURIComponent('https://demo.businesdoctor.com' + schema.page_url);
-  document.getElementById('googleRichResultsBtn').href = testUrl;
+  // Setup Validator URLs
+  const targetPageUrl = 'https://demo.businesdoctor.com' + schema.page_url;
+  document.getElementById('schemaOrgValidatorBtn').href = 'https://validator.schema.org/#url=' + encodeURIComponent(targetPageUrl);
+  document.getElementById('googleRichResultsBtn').href = 'https://search.google.com/test/rich-results?url=' + encodeURIComponent(targetPageUrl);
 
   openModal('validateSchemaModal');
 }

@@ -263,6 +263,9 @@ require_once __DIR__ . '/includes/header.php';
       </p>
     </div>
 
+    <!-- Dynamic Table of Contents -->
+    <nav id="page-toc-card" class="page-toc-card" style="display: none;" aria-label="Table of Contents"></nav>
+
     <!-- Article Content Stream -->
     <div class="article-editorial-body" style="font-size: 1.12rem; line-height: 1.85; color: var(--color-text);">
       <?= renderBlogContent($insight['content'] ?? '') ?>
@@ -345,4 +348,5 @@ require_once __DIR__ . '/includes/header.php';
   </div>
 </section>
 
+<script src="<?= getAssetUrl('assets/js/toc.js') ?>?v=<?= filemtime(__DIR__ . '/assets/js/toc.js') ?>"></script>
 <?php require_once __DIR__ . '/includes/footer.php'; ?>

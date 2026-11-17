@@ -3,8 +3,8 @@
 > Discover technical bottlenecks, page speed issues, and SEO gaps holding back your online business. Submit your domain to receive real live telemetry analysis and a customized project proposal within 24 hours.
 
 ## Diagnostic Resource Information
-- **Canonical Web URL**: [https://demo.businesdoctor.com/audit.php](https://demo.businesdoctor.com/audit.php)
-- **Clean Markdown URL**: [https://demo.businesdoctor.com/audit.php.md](https://demo.businesdoctor.com/audit.php.md)
+- **Canonical Web URL**: [https://demo.businesdoctor.com/audit](https://demo.businesdoctor.com/audit)
+- **Clean Markdown URL**: [https://demo.businesdoctor.com/audit.md](https://demo.businesdoctor.com/audit.md)
 - **Central Markdown URL**: [https://demo.businesdoctor.com/md/audit.md](https://demo.businesdoctor.com/md/audit.md)
 - **Master Markdown Index**: [https://demo.businesdoctor.com/md](https://demo.businesdoctor.com/md)
 - **Audit Turnaround SLA**: Guaranteed delivery of full report to corporate email within 24 hours.
@@ -61,9 +61,9 @@ To initiate an automated live telemetry scan and detailed manual engineering rev
 ---
 
 ## 04 // Next Steps
-- **Submit Audit Request**: [Request Free Digital Audit Online](https://demo.businesdoctor.com/audit.php)
-- **Schedule Live Discovery Call**: [Contact Tech Leads](https://demo.businesdoctor.com/contact.php)
-- **Explore All IT Disciplines**: [Services Overview](https://demo.businesdoctor.com/company)
+- **Submit Audit Request**: [Request Free Digital Audit Online](https://demo.businesdoctor.com/audit)
+- **Schedule Live Discovery Call**: [Contact Tech Leads](https://demo.businesdoctor.com/contact)
+- **Explore All IT Disciplines**: [Services Overview](https://demo.businesdoctor.com/services)
 
 ---
 *Maintained by BusinessDoctor Diagnostic Practice.*

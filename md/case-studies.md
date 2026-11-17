@@ -3,8 +3,8 @@
 > Measurable outcomes, revenue acceleration, and architectural turnarounds for enterprise clients across FinTech, D2C Apparel, and Multichannel Retail.
 
 ## Case Studies Index & Digital Resources
-- **Canonical Web URL**: [https://demo.businesdoctor.com/case-studies.php](https://demo.businesdoctor.com/case-studies.php)
-- **Clean Markdown URL**: [https://demo.businesdoctor.com/case-studies.php.md](https://demo.businesdoctor.com/case-studies.php.md)
+- **Canonical Web URL**: [https://demo.businesdoctor.com/case-studies](https://demo.businesdoctor.com/case-studies)
+- **Clean Markdown URL**: [https://demo.businesdoctor.com/case-studies.md](https://demo.businesdoctor.com/case-studies.md)
 - **Central Markdown URL**: [https://demo.businesdoctor.com/md/case-studies.md](https://demo.businesdoctor.com/md/case-studies.md)
 - **Master Markdown Index**: [https://demo.businesdoctor.com/md](https://demo.businesdoctor.com/md)
 - **Published Case Studies**: 3 documented client turnarounds

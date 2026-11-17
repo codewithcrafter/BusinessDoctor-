@@ -10,15 +10,17 @@ require_once __DIR__ . '/includes/config.php';
 require_once __DIR__ . '/includes/db.php';
 require_once __DIR__ . '/includes/functions.php';
 
-$pageTitle = 'About Us — BusinessDoctor Enterprise IT & Digital Services';
-$pageDescription = 'Learn how BusinessDoctor combines custom software engineering, high-ROI performance marketing, UI/UX design, and marketplace scaling to help enterprises dominate their markets.';
+$pageTitle = 'About our company / Business Doctor - Digital Marketing company in Delhi';
+$pageDescription = 'Business Doctor is a digital marketing company in Delhi that provides seo services in delhi , ppc services, social media marketing in Delhi, website development services and graphic design services in Delhi, which helps your business to grow and reach its full potential.';
 
 require_once __DIR__ . '/includes/header.php';
 ?>
 
 <div class="about-page">
 
-<!-- Page Header Hero -->
+<!-- ============================================================
+     PAGE HEADER HERO
+     ============================================================ -->
 <section class="section hero-enterprise about-hero" id="aboutHero">
   <div class="container text-center about-hero-container">
     <div class="eyebrow-badge">
@@ -26,11 +28,47 @@ require_once __DIR__ . '/includes/header.php';
       <span>ABOUT OUR COMPANY</span>
     </div>
     <h1 class="hero-headline-oversized about-hero-headline">
-      Engineering Technology. <br><span class="text-gradient-pine">Accelerating Scalable Growth.</span>
+      Business Doctor - <br><span class="text-gradient-pine">Digital Marketing company in Delhi</span>
     </h1>
-    <p class="hero-lead-text about-hero-lead">
-      We founded BusinessDoctor to provide modern businesses with a reliable, all-in-one IT and digital growth partner. We eliminate the friction of managing disconnected developers, ad agencies, and designers by bringing them together under one disciplined engineering practice.
-    </p>
+
+    <div class="about-hero-lead-box">
+      <p class="hero-lead-text about-hero-lead">
+        Business Doctor is a digital marketing company in Delhi that provides seo services in delhi , ppc services, social media marketing in Delhi, website development services and graphic design services in Delhi, which helps your business to grow and reach its full potential. We personalize every strategy according to your business needs. We aim to increase your brand visibility and get you quality leads.
+      </p>
+    </div>
+
+    <div class="about-hero-actions">
+      <a href="contact.php" class="btn btn-accent btn-lg">
+        <span>Schedule a Project Consultation</span>
+        <svg class="btn-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <line x1="5" y1="12" x2="19" y2="12"/>
+          <polyline points="12 5 19 12 12 19"/>
+        </svg>
+      </a>
+      <a href="services.php" class="btn btn-outline-gold btn-lg">
+        <span>Explore Our Services</span>
+      </a>
+    </div>
+
+    <!-- Hero Trust / Highlights Strip -->
+    <div class="about-hero-trust" aria-label="Key highlights">
+      <div class="about-trust-item">
+        <span class="about-trust-dot"></span>
+        <span>Transparent Weekly Reporting</span>
+      </div>
+      <div class="about-trust-item">
+        <span class="about-trust-dot"></span>
+        <span>Tailored Business Strategy</span>
+      </div>
+      <div class="about-trust-item">
+        <span class="about-trust-dot"></span>
+        <span>Full-Service Digital Delivery</span>
+      </div>
+      <div class="about-trust-item">
+        <span class="about-trust-dot"></span>
+        <span>Measurable Growth &amp; Leads</span>
+      </div>
+    </div>
   </div>
 </section>
 
@@ -44,77 +82,72 @@ require_once __DIR__ . '/includes/header.php';
         <span class="pill-dot"></span>
         <span>THE BUSINESSDOCTOR PHILOSOPHY</span>
       </div>
-      <h2 class="section-title" style="font-size: clamp(2.2rem, 3.8vw, 3.25rem); line-height: 1.15; margin-top: 0.75rem; margin-bottom: 1.25rem;">
-        Why We Call Ourselves BusinessDoctor
+      <h2 class="section-title">
+        Why Businesses Call BusinessDoctor the Best Digital Marketing Company in Delhi
       </h2>
       <p class="lead">
-        A clinical engineering approach to diagnosing digital friction, eliminating architecture bottlenecks, and prescribing sustainable enterprise growth.
+        We believe that every business has the potential to grow and we provide a full-service digital marketing company that helps your business grow.Our professional team helps you at every step from web development to lead generation. We don't make big promises and leave you in the middle, we provide you with weekly reports and updates on your business so that you can track your growth as well.
       </p>
     </div>
 
     <div class="philosophy-editorial-grid">
-      <!-- Block 1: Digital Friction & Symptoms -->
+      <!-- Block 1: Diagnostic Identification -->
       <article class="philosophy-editorial-block">
         <div class="philosophy-block-header">
-          <span class="philosophy-step-tag">01 // DIAGNOSTIC IDENTIFICATION</span>
+          <span class="philosophy-step-tag">
+            <span class="philosophy-step-dot"></span>
+            01 // DIAGNOSTIC IDENTIFICATION
+          </span>
           <div class="philosophy-block-icon" aria-hidden="true">
-            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
               <path d="M22 12h-4l-3 9L9 3l-3 9H2"/>
             </svg>
           </div>
         </div>
-        <h3 class="philosophy-block-title">The Symptoms of Digital Friction</h3>
+        <h3 class="philosophy-block-title">Challenges a Digital Marketing Company in Delhi Can Help Solve</h3>
         <p class="philosophy-block-text">
-          Every growing enterprise encounters digital friction: an <span class="highlight-teal">outdated website that repels prospective clients</span>, <span class="highlight-teal">slow server response times</span> that kill search engine rankings, <span class="highlight-teal">paid advertising campaigns that fail to convert</span>, or <span class="highlight-teal">marketplace listings that lose sales</span> to competitors.
+          Does your business have low lead generation, poor website performance, poor user experience and a low conversion rate? If these challenges are limiting your growth, you need the right strategy to grow your business from Business Doctor- a trusted digital marketing company in Delhi that helps your brand to get quality customers.
         </p>
-        <div class="philosophy-tags-strip">
-          <span class="philosophy-pill">Conversion Drop-off</span>
-          <span class="philosophy-pill">Latency Bottlenecks</span>
-          <span class="philosophy-pill">Ad Spend Waste</span>
-        </div>
       </article>
 
-      <!-- Block 2: Architectural Diagnosis & Care (Focal Block) -->
+      <!-- Block 2: The Clinical Diagnosis -->
       <article class="philosophy-editorial-block featured">
         <div class="philosophy-block-header">
-          <span class="philosophy-step-tag" style="color: #06B5F9;">02 // THE CLINICAL DIAGNOSIS</span>
-          <div class="philosophy-block-icon" style="background: rgba(6, 181, 249, 0.15); border-color: #06B5F9;" aria-hidden="true">
-            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <span class="philosophy-step-tag">
+            <span class="philosophy-step-dot"></span>
+            02 // THE CLINICAL DIAGNOSIS
+          </span>
+          <div class="philosophy-block-icon" aria-hidden="true">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
               <circle cx="12" cy="12" r="10"/>
               <line x1="12" y1="8" x2="12" y2="12"/>
               <line x1="12" y1="16" x2="12.01" y2="16"/>
             </svg>
           </div>
         </div>
-        <h3 class="philosophy-block-title">End-to-End Technical Care</h3>
+        <h3 class="philosophy-block-title">End-to-End Digital Marketing Services in Delhi</h3>
         <p class="philosophy-block-text">
-          Just as any complex system needs expert trouble-shooters to <span class="highlight-teal">diagnose root technical failures</span> and <span class="highlight-teal">prescribe robust engineering solutions</span>, <strong class="highlight-aqua">BusinessDoctor provides end-to-end technical care for your digital presence</strong>.
+          Business Doctor's experienced digital marketing team identifies the root cause of your low performance and makes a personalized solution plan that suits your business problem. We believe that every business needs a different approach to grow. Our professional team manages everything on-page, off-page, Website development and more.
         </p>
-        <div class="philosophy-tags-strip">
-          <span class="philosophy-pill" style="border-color: rgba(6, 181, 249, 0.4); color: #0099DB;">Root-Cause Diagnosis</span>
-          <span class="philosophy-pill" style="border-color: rgba(6, 181, 249, 0.4); color: #0099DB;">Systemic Prescription</span>
-        </div>
       </article>
 
-      <!-- Block 3: Disciplined Execution -->
+      <!-- Block 3: Measurable Execution -->
       <article class="philosophy-editorial-block">
         <div class="philosophy-block-header">
-          <span class="philosophy-step-tag">03 // MEASURABLE EXECUTION</span>
+          <span class="philosophy-step-tag">
+            <span class="philosophy-step-dot"></span>
+            03 // MEASURABLE EXECUTION
+          </span>
           <div class="philosophy-block-icon" aria-hidden="true">
-            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
               <polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/>
             </svg>
           </div>
         </div>
-        <h3 class="philosophy-block-title">Precision Engineering &amp; Scale</h3>
+        <h3 class="philosophy-block-title">Growth-Focused Digital Marketing Solutions in Delhi</h3>
         <p class="philosophy-block-text">
-          We don't sell superficial fixes or bloated templates. Our <span class="highlight-teal">software engineers</span>, <span class="highlight-teal">performance marketers</span>, and <span class="highlight-teal">UI/UX designers</span> analyze your technical infrastructure, rebuild broken user journeys, build <span class="highlight-teal">lightning-fast web applications</span>, and scale customer acquisition with <span class="highlight-aqua">data-backed precision</span>.
+          Once we identify the problem and create the plan, we implement it and follow up till we reach the desired result. As a full-service digital marketing company, we provide everything from developing user friendly websites to improving marketing campaigns, our aim is to deliver measurable results.
         </p>
-        <div class="philosophy-tags-strip">
-          <span class="philosophy-pill">Custom PHP 8+</span>
-          <span class="philosophy-pill">Sub-Second Load</span>
-          <span class="philosophy-pill">Data-Led Acquisition</span>
-        </div>
       </article>
     </div>
   </div>
@@ -128,13 +161,13 @@ require_once __DIR__ . '/includes/header.php';
     <div class="section-header text-center">
       <div class="eyebrow-badge">
         <span class="pill-dot"></span>
-        <span>OUR OPERATING STANDARDS</span>
+        <span>OUR COMMITMENTS</span>
       </div>
-      <h2 class="section-title" style="font-size: clamp(2.2rem, 3.8vw, 3.25rem); line-height: 1.15; margin-top: 0.75rem; margin-bottom: 1.25rem;">
-        Four Commitments We Stand By
+      <h2 class="section-title">
+        Four Commitments We Stand By as a Digital Marketing Company
       </h2>
       <p class="lead">
-        Non-negotiable architectural benchmarks and accountability standards engineered into every client partnership.
+        As a Digital Marketing company in Delhi, we believe that successful partnership is built on trust, accountability, engineering excellence and transparency. We follow our four non-negotiable commitments to make sure that every business achieves its full potential.
       </p>
     </div>
 
@@ -152,7 +185,7 @@ require_once __DIR__ . '/includes/header.php';
         </div>
         <h3 class="commitment-title">Clean, Framework-Free Code</h3>
         <p class="commitment-desc">
-          We build custom, lightweight web applications that load in under 1 second with 100% Core Web Vitals compliance.
+          Business Doctor, a trusted digital marketing company in Delhi focuses on clean coding, which avoids unnecessary heavy frameworks and makes websites fast, effective and user-friendly providing users with a smooth and seamless experience and helping to make your business recognisable.
         </p>
         <div class="commitment-card-accent"></div>
       </article>
@@ -171,7 +204,7 @@ require_once __DIR__ . '/includes/header.php';
         </div>
         <h3 class="commitment-title">Measurable Commercial ROI</h3>
         <p class="commitment-desc">
-          Every digital marketing campaign, SEO sprint, and design update is measured by real business KPIs: qualified leads and revenue.
+          Business Doctor is a professional digital marketing company. Our team doesn't just focus on improving website marketing,we identify the gaps of your business that are holding it back and work on them so that you get quality leads. We also track how many leads, sales, and conversions you are getting.
         </p>
         <div class="commitment-card-accent"></div>
       </article>
@@ -191,7 +224,7 @@ require_once __DIR__ . '/includes/header.php';
         </div>
         <h3 class="commitment-title">Integrated End-to-End Delivery</h3>
         <p class="commitment-desc">
-          Developers, UI/UX designers, copywriters, and media buyers collaborate under one unified project management team.
+          BusinessDoctor, a digital marketing company in Delhi provides full services in digital marketing from website development to digital marketing so that you get all services on one platform.
         </p>
         <div class="commitment-card-accent"></div>
       </article>
@@ -208,7 +241,7 @@ require_once __DIR__ . '/includes/header.php';
         </div>
         <h3 class="commitment-title">Long-Term Partnership &amp; Support</h3>
         <p class="commitment-desc">
-          We provide 24/7 uptime monitoring, security patching, and ongoing growth optimization post-launch.
+          We don't just believe in making a website we believe in building long term business relationships. We monitor your business’s regular performance, improve the strategy according to needs and support you at every step so that your business can grow continuously.
         </p>
         <div class="commitment-card-accent"></div>
       </article>
@@ -218,7 +251,6 @@ require_once __DIR__ . '/includes/header.php';
 
 <!-- ============================================================
      OUR PURPOSE & DIRECTION: MISSION & VISION
-     Integrated with Horizontal Business Statistics Strip
      ============================================================ -->
 <section class="section mission-vision-section" id="missionVision" aria-label="Mission and Vision">
   <div class="container">
@@ -228,30 +260,18 @@ require_once __DIR__ . '/includes/header.php';
         <span class="pill-dot"></span>
         <span>OUR PURPOSE &amp; DIRECTION</span>
       </div>
-      <h2 class="section-title" style="font-size: clamp(2.2rem, 3.8vw, 3.25rem); line-height: 1.15; margin-top: 0.75rem; margin-bottom: 1.25rem;">
-        Driven by Purpose. <span class="text-gradient-pine">Defined by Results.</span>
+      <h2 class="section-title">
+        Business Growth Through <span class="text-gradient-pine">Digital Marketing Solutions</span>
       </h2>
       <p class="lead">
-        We partner with forward-thinking enterprises to architect reliable digital infrastructure and high-velocity growth systems grounded in technical rigor and measurable commercial impact.
+        At BusinessDoctor, we help businesses grow through a strategic digital marketing plan and innovative technology. As a digital marketing expert in Delhi, we focus on improving online visibility, generating quality leads, improving user experiences and increasing conversions.
       </p>
     </div>
 
     <!-- Mission & Vision 2-Column Grid -->
     <div class="mission-vision-grid">
-      <!-- Panel 1: OUR MISSION (Deep Emerald Background) -->
+      <!-- Panel 1: OUR MISSION -->
       <div class="mv-panel mv-panel-mission">
-        <!-- Abstract Engineering Background SVG Pattern -->
-        <div class="mv-pattern-bg" aria-hidden="true">
-          <svg width="340" height="340" viewBox="0 0 340 340" fill="none" xmlns="http://www.w3.org/2000/svg">
-            <circle cx="170" cy="170" r="130" stroke="rgba(161, 126, 145, 0.14)" stroke-width="1.2" stroke-dasharray="4 4"/>
-            <circle cx="170" cy="170" r="85" stroke="rgba(255, 255, 255, 0.08)" stroke-width="1"/>
-            <circle cx="170" cy="170" r="40" stroke="rgba(161, 126, 145, 0.2)" stroke-width="1.5"/>
-            <line x1="40" y1="170" x2="300" y2="170" stroke="rgba(161, 126, 145, 0.12)" stroke-width="1"/>
-            <line x1="170" y1="40" x2="170" y2="300" stroke="rgba(161, 126, 145, 0.12)" stroke-width="1"/>
-            <path d="M120 120 L220 220 M220 120 L120 220" stroke="rgba(255, 255, 255, 0.06)" stroke-width="1"/>
-          </svg>
-        </div>
-
         <div class="mv-panel-header">
           <div class="mv-icon-badge mv-icon-emerald">
             <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2">
@@ -262,120 +282,44 @@ require_once __DIR__ . '/includes/header.php';
         </div>
 
         <h3 class="mv-heading mv-heading-light">
-          Engineering Reliable Digital Solutions Built for Enduring Enterprise Scale
+          Digital Marketing Solutions for Business Growth
         </h3>
 
         <p class="mv-statement mv-statement-light">
-          "To engineer reliable digital solutions that simplify business operations, strengthen performance, and accelerate sustainable growth."
+          Business Doctor's mission is to overcome the challenges that your business is facing by providing the right strategy so that you get potential customers. Through transparency and technical excellence, we want to create impact and make your brand unforgettable.
         </p>
-
-        <div class="mv-pillars">
-          <span class="mv-pillar-tag">Operational Simplicity</span>
-          <span class="mv-pillar-tag">Performance SLAs</span>
-          <span class="mv-pillar-tag">Sustainable Scale</span>
-        </div>
       </div>
 
-      <!-- Panel 2: OUR VISION (Deep Teal Background) -->
+      <!-- Panel 2: OUR VISION -->
       <div class="mv-panel mv-panel-vision">
-        <!-- Future-Focused Geometric Background Pattern -->
-        <div class="mv-pattern-bg" aria-hidden="true">
-          <svg width="340" height="340" viewBox="0 0 340 340" fill="none" xmlns="http://www.w3.org/2000/svg">
-            <polygon points="170,30 290,100 290,240 170,310 50,240 50,100" stroke="rgba(6, 181, 249, 0.35)" stroke-width="1.2" stroke-dasharray="6 4"/>
-            <polygon points="170,75 250,125 250,215 170,265 90,215 90,125" stroke="rgba(6, 181, 249, 0.15)" stroke-width="1"/>
-            <line x1="170" y1="30" x2="170" y2="310" stroke="rgba(6, 181, 249, 0.10)" stroke-width="1"/>
-            <line x1="50" y1="170" x2="290" y2="170" stroke="rgba(0, 153, 219, 0.25)" stroke-width="1"/>
-            <circle cx="170" cy="170" r="14" fill="rgba(6, 181, 249, 0.10)" stroke="#0099DB" stroke-width="1.5"/>
-          </svg>
-        </div>
-
         <div class="mv-panel-header">
-          <div class="mv-icon-badge mv-icon-ivory">
+          <div class="mv-icon-badge mv-icon-emerald">
             <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2">
               <circle cx="12" cy="12" r="10"/>
               <path d="M12 2a14.5 14.5 0 0 0 0 20 14.5 14.5 0 0 0 0-20"/>
               <path d="M2 12h20"/>
             </svg>
           </div>
-          <span class="mv-eyebrow mv-eyebrow-dark">OUR VISION</span>
+          <span class="mv-eyebrow">OUR VISION</span>
         </div>
 
-        <h3 class="mv-heading mv-heading-dark">
-          The Trusted Digital Partner Combining Technical Precision with Real Commercial Impact
+        <h3 class="mv-heading mv-heading-light">
+          Trusted Digital Marketing company for Business Growth
         </h3>
 
-        <p class="mv-statement mv-statement-dark">
-          "To become a trusted technology and digital growth partner for businesses by combining engineering excellence, innovation, and measurable outcomes."
+        <p class="mv-statement mv-statement-light">
+          Business Doctors is a trusted digital marketing company in Delhi. Our vision is to be a digital marketing partner for businesses to empower businesses with innovative digital strategies, advanced technologies, lead generation and sustainable growth. We want to provide solutions for your digital challenges, so that you can build a strong online presence.
         </p>
-
-        <div class="mv-pillars">
-          <span class="mv-pillar-tag mv-pillar-dark">Engineering Excellence</span>
-          <span class="mv-pillar-tag mv-pillar-dark">Applied Innovation</span>
-          <span class="mv-pillar-tag mv-pillar-dark">Audited ROI</span>
-        </div>
       </div>
     </div>
 
   </div>
 </section>
 
-<!-- Leadership Team -->
-<section class="section" style="background-color: var(--color-bg);">
-  <div class="container">
-    <div class="section-header text-center">
-      <div class="eyebrow-badge">
-        <span class="pill-dot"></span>
-        <span>EXPERIENCED LEADERSHIP</span>
-      </div>
-      <h2 class="section-title" style="font-size: clamp(2rem, 3.5vw, 3rem);">Leadership &amp; Technology Directors</h2>
-      <p class="lead">Experienced software architects, digital marketing directors, and creative strategists leading your enterprise projects.</p>
-    </div>
-
-    <div class="cases-editorial-grid">
-      <div class="case-editorial-card" style="padding: 2.75rem 2.25rem;">
-        <div style="width: 60px; height: 60px; border-radius: var(--radius-md); background: var(--color-primary); color: var(--color-accent); font-family: var(--font-display); font-size: 1.35rem; font-weight: 800; display: flex; align-items: center; justify-content: center; margin-bottom: 1.5rem; border: 1px solid rgba(161, 126, 145, 0.3);">
-          HC
-        </div>
-        <h3 style="font-size: 1.3rem; margin-bottom: 0.25rem; color: var(--color-text);">Dr. Harrison Croft</h3>
-        <div style="font-family: var(--font-mono); font-size: 0.76rem; color: #06B5F9; font-weight: 700; margin-bottom: 1.25rem; text-transform: uppercase; letter-spacing: 0.08em;">
-          MANAGING PARTNER &amp; CHIEF SOLUTIONS OFFICER
-        </div>
-        <p style="font-size: 0.92rem; color: var(--color-text-muted); line-height: 1.65;">
-          18+ years leading enterprise digital transformation, software delivery, and performance marketing portfolios for global corporations and high-growth ventures.
-        </p>
-      </div>
-
-      <div class="case-editorial-card" style="padding: 2.75rem 2.25rem;">
-        <div style="width: 60px; height: 60px; border-radius: var(--radius-md); background: var(--color-primary); color: var(--color-accent); font-family: var(--font-display); font-size: 1.35rem; font-weight: 800; display: flex; align-items: center; justify-content: center; margin-bottom: 1.5rem; border: 1px solid rgba(161, 126, 145, 0.3);">
-          KC
-        </div>
-        <h3 style="font-size: 1.3rem; margin-bottom: 0.25rem; color: var(--color-text);">Kirsten Chen</h3>
-        <div style="font-family: var(--font-mono); font-size: 0.76rem; color: #06B5F9; font-weight: 700; margin-bottom: 1.25rem; text-transform: uppercase; letter-spacing: 0.08em;">
-          VP OF ENGINEERING &amp; CLOUD ARCHITECTURE
-        </div>
-        <p style="font-size: 0.92rem; color: var(--color-text-muted); line-height: 1.65;">
-          Senior full-stack systems engineer specializing in high-performance web architecture, custom database management, cloud hosting, and API integrations.
-        </p>
-      </div>
-
-      <div class="case-editorial-card" style="padding: 2.75rem 2.25rem;">
-        <div style="width: 60px; height: 60px; border-radius: var(--radius-md); background: var(--color-primary); color: var(--color-accent); font-family: var(--font-display); font-size: 1.35rem; font-weight: 800; display: flex; align-items: center; justify-content: center; margin-bottom: 1.5rem; border: 1px solid rgba(161, 126, 145, 0.3);">
-          JM
-        </div>
-        <h3 style="font-size: 1.3rem; margin-bottom: 0.25rem; color: var(--color-text);">Julian Montgomery</h3>
-        <div style="font-family: var(--font-mono); font-size: 0.76rem; color: #06B5F9; font-weight: 700; margin-bottom: 1.25rem; text-transform: uppercase; letter-spacing: 0.08em;">
-          HEAD OF UI/UX DESIGN &amp; BRAND ARCHITECTURE
-        </div>
-        <p style="font-size: 0.92rem; color: var(--color-text-muted); line-height: 1.65;">
-          Creative director leading user experience architecture, design systems, modern vector branding, and conversion-focused digital interfaces.
-        </p>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- Call to Action -->
-<section class="section" style="background: var(--color-surface); padding-top: 2rem;">
+<!-- ============================================================
+     CALL TO ACTION (CLOSING SECTION)
+     ============================================================ -->
+<section class="section about-closing-section">
   <div class="container text-center">
     <div class="enterprise-closing-cta">
       <div class="closing-cta-content">
@@ -394,6 +338,13 @@ require_once __DIR__ . '/includes/header.php';
           <a href="audit.php" class="btn btn-outline-gold btn-lg">
             <span>Request Free Digital Audit</span>
           </a>
+        </div>
+        <div class="about-closing-meta">
+          <span>Direct Advisory: <?= defined('APP_PHONE') ? e(APP_PHONE) : '+91 99994 48988' ?></span>
+          <span class="meta-separator">•</span>
+          <span>Official Email: <?= defined('APP_EMAIL') ? e(APP_EMAIL) : 'contact@businessdoctor.com' ?></span>
+          <span class="meta-separator">•</span>
+          <span>Response SLA: Within 2 Business Hours</span>
         </div>
       </div>
     </div>

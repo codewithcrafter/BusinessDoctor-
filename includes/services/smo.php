@@ -21,24 +21,25 @@ $consultationUrl = appUrl('contact.php?service=' . urlencode($serviceName));
       <div class="srv-col-12 srv-col-lg-6">
         <div class="srv-eyebrow">
           <span class="srv-eyebrow-dot"></span>
-          <span>PROFILE ARCHITECTURE & ORGANIC CONVERSION FUNNELS</span>
+          <span>SOCIAL MEDIA OPTIMIZATION &bull; DELHI</span>
         </div>
         <h1 class="srv-hero-title">
-          Transforming Social Profiles into <br><span class="text-brand">High-Converting Discovery Engines</span>
+          SMO Company in Delhi <br><span class="text-brand">That Turns Social Reach into Qualified Leads</span>
         </h1>
         <p class="srv-hero-desc">
-          We engineer high-converting social media profile architectures across Instagram, LinkedIn, Facebook, and YouTube: bio funnels, branded highlight structures, algorithmic keyword placement, and cross-platform link systems.
+          We optimize your profiles, content and community so the right customers find you, trust you and enquire. BusinessDoctor is a Delhi-based SMO company built around measurable engagement, not vanity followers.
         </p>
 
         <div class="srv-hero-actions">
           <a href="<?= e($consultationUrl) ?>" class="btn-srv-primary">
-            <span>Get a Free Consultation</span>
+            <span>Get a Free SMO Audit</span>
             <svg class="btn-srv-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
-              <line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/>
+              <line x1="5" y1="12" x2="19" y2="12"/>
+              <polyline points="12 5 19 12 12 19"/>
             </svg>
           </a>
           <a href="#services-list" class="btn-srv-secondary">
-            <span>Explore Scope</span>
+            <span>Explore Our Services</span>
             <svg class="btn-srv-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
               <polyline points="6 9 12 15 18 9"/>
             </svg>
@@ -47,20 +48,20 @@ $consultationUrl = appUrl('contact.php?service=' . urlencode($serviceName));
 
         <div class="srv-hero-stats">
           <div class="srv-hero-stat-item">
-            <span class="srv-hero-stat-val">+140%</span>
-            <span class="srv-hero-stat-lbl">Bio CTR Lift</span>
+            <span class="srv-hero-stat-val">150+</span>
+            <span class="srv-hero-stat-lbl">Profiles Optimized</span>
           </div>
           <div class="srv-hero-stat-item">
-            <span class="srv-hero-stat-val">100%</span>
-            <span class="srv-hero-stat-lbl">Brand Consistency</span>
+            <span class="srv-hero-stat-val">6</span>
+            <span class="srv-hero-stat-lbl">Platforms Managed</span>
           </div>
           <div class="srv-hero-stat-item">
-            <span class="srv-hero-stat-val">4.5x</span>
-            <span class="srv-hero-stat-lbl">Organic Discovery</span>
+            <span class="srv-hero-stat-val">90 Days</span>
+            <span class="srv-hero-stat-lbl">Growth Roadmap</span>
           </div>
           <div class="srv-hero-stat-item">
-            <span class="srv-hero-stat-val">0</span>
-            <span class="srv-hero-stat-lbl">Wasted Traffic Leaks</span>
+            <span class="srv-hero-stat-val">24 Hrs</span>
+            <span class="srv-hero-stat-lbl">Free Audit Turnaround</span>
           </div>
         </div>
       </div>
@@ -75,31 +76,22 @@ $consultationUrl = appUrl('contact.php?service=' . urlencode($serviceName));
               <path d="M60 0V440M120 0V440M180 0V440M240 0V440M300 0V440M360 0V440M420 0V440M480 0V440M540 0V440" stroke="#06B5F9" stroke-opacity="0.08"/>
               <rect width="600" height="40" rx="14" fill="#0A223B"/>
               <circle cx="28" cy="20" r="5" fill="#F87171"/><circle cx="46" cy="20" r="5" fill="#FBBF24"/><circle cx="64" cy="20" r="5" fill="#34D399"/>
-              <text x="90" y="24" fill="#8FA3B8" font-family="monospace" font-size="11" font-weight="600">businessdoctor.internal :: telemetry-engine.v2</text>
-              
-              <!-- Top Cards: Discipline & Audit Quality with clear separation -->
-              <rect x="40" y="65" width="245" height="98" rx="8" fill="#0D2644" stroke="#06B5F9" stroke-width="1.5" stroke-opacity="0.4"/>
-              <text x="56" y="90" fill="#06B5F9" font-family="monospace" font-size="11" font-weight="bold">// DISCIPLINE // 01</text>
-              <text x="56" y="112" fill="#F5F7FA" font-family="sans-serif" font-size="13" font-weight="bold">SMO Optimization</text>
-              <text x="56" y="130" fill="#06B5F9" font-family="sans-serif" font-size="11" font-weight="600">Social Media Engineering</text>
-              <text x="56" y="148" fill="#8FA3B8" font-family="monospace" font-size="10">Active Execution &bull; Calibrated</text>
-
-              <line x1="285" y1="114" x2="315" y2="114" stroke="#06B5F9" stroke-width="2" stroke-dasharray="3 3"/>
-
-              <rect x="315" y="65" width="245" height="98" rx="8" fill="#0D2644" stroke="#06B5F9" stroke-width="1.5" stroke-opacity="0.4"/>
-              <text x="330" y="90" fill="#06B5F9" font-family="monospace" font-size="11" font-weight="bold">// AUDIT &amp; QUALITY</text>
-              <text x="330" y="112" fill="#F5F7FA" font-family="sans-serif" font-size="13" font-weight="bold">Enterprise SLA Standards</text>
-              <text x="330" y="130" fill="#34D399" font-family="sans-serif" font-size="11" font-weight="600">Continuous Accountability</text>
-              <text x="330" y="148" fill="#8FA3B8" font-family="monospace" font-size="10">Audited Portfolio Benchmarks</text>
-
-              <!-- Terminal Panel: Balanced spacing and alignment -->
-              <rect x="40" y="180" width="520" height="225" rx="10" fill="#051424" stroke="#06B5F9" stroke-width="1" stroke-opacity="0.3"/>
-              <text x="65" y="215" fill="#34D399" font-family="monospace" font-size="12" font-weight="bold">$ execute --benchmark smo</text>
-              <text x="65" y="245" fill="#F5F7FA" font-family="monospace" font-size="11">&gt; 200 OK &bull; [Status: Calibrated] [Throughput: High]</text>
-              <text x="65" y="275" fill="#8FA3B8" font-family="monospace" font-size="11">&gt; Core Standard: Zero Fluff, Measurable Business ROI</text>
-              <text x="65" y="305" fill="#06B5F9" font-family="monospace" font-size="11">&gt; Verification Protocol: 100% Quality Assurance</text>
-              <text x="65" y="335" fill="#B8C7D9" font-family="monospace" font-size="11">&gt; Operational Readiness: Verified</text>
-              <text x="65" y="365" fill="#34D399" font-family="monospace" font-size="11">&gt; All Systems Active</text>
+              <text x="90" y="24" fill="#8FA3B8" font-family="monospace" font-size="11" font-weight="600">businessdoctor.smo :: organic-growth-funnel</text>
+              <rect x="40" y="65" width="520" height="150" rx="10" fill="#030E1A" stroke="#06B5F9" stroke-width="1.5" stroke-opacity="0.4"/>
+              <text x="65" y="100" fill="#06B5F9" font-family="monospace" font-size="12" font-weight="bold">// ORGANIC SOCIAL REACH &amp; PROFILE ENGAGEMENT</text>
+              <path d="M 65 175 L 145 135 L 235 155 L 325 105 L 415 125 L 520 70" stroke="#34D399" stroke-width="3" fill="none"/>
+              <circle cx="520" cy="70" r="5" fill="#34D399"/>
+              <text x="430" y="60" fill="#34D399" font-family="sans-serif" font-size="13" font-weight="bold">3x Reach Lift</text>
+              <rect x="40" y="235" width="250" height="170" rx="8" fill="#0D2644" stroke="#06B5F9" stroke-opacity="0.3"/>
+              <text x="60" y="265" fill="#06B5F9" font-family="monospace" font-size="11" font-weight="bold">// PROFILE OPTIMIZATION</text>
+              <text x="60" y="305" fill="#34D399" font-family="sans-serif" font-size="28" font-weight="900">92%</text>
+              <text x="60" y="330" fill="#B8C7D9" font-family="sans-serif" font-size="12">Profile Completeness</text>
+              <text x="60" y="365" fill="#ffffff" font-family="sans-serif" font-size="13" font-weight="600">Bio Funnel &bull; Link-in-Bio Sync</text>
+              <rect x="310" y="235" width="250" height="170" rx="8" fill="#0D2644" stroke="#06B5F9" stroke-opacity="0.3"/>
+              <text x="330" y="265" fill="#06B5F9" font-family="monospace" font-size="11" font-weight="bold">// ENGAGEMENT RATE</text>
+              <text x="330" y="305" fill="#06B5F9" font-family="sans-serif" font-size="28" font-weight="900">+40%</text>
+              <text x="330" y="330" fill="#B8C7D9" font-family="sans-serif" font-size="12">Engagement Rate Lift</text>
+              <text x="330" y="365" fill="#34D399" font-family="sans-serif" font-size="13" font-weight="600">Organic Enquiries &bull; 100% Ownership</text>
             </svg>
           </div>
         </div>
@@ -109,7 +101,69 @@ $consultationUrl = appUrl('contact.php?service=' . urlencode($serviceName));
 </section>
 
 <!-- ============================================================
-     SECTION 2 — SERVICE INTRODUCTION
+     KEY TAKEAWAYS & EXECUTIVE SUMMARY
+     ============================================================ -->
+<section class="srv-section srv-section-takeaways" style="padding-top: 0; padding-bottom: 2.5rem;">
+  <div class="srv-container">
+    <div class="srv-key-takeaways">
+      <div class="srv-takeaways-header">
+        <div class="srv-takeaways-kicker">
+          <svg class="srv-takeaways-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"/></svg>
+          <span>KEY TAKEAWAYS AT A GLANCE</span>
+        </div>
+        <span class="srv-takeaways-pill">Core Execution Highlights</span>
+      </div>
+      <p style="color: var(--color-text-muted); margin-bottom: 1.5rem; font-size: 0.95rem;">
+        A good SMO company in Delhi improves profile quality, content relevance and community response together, so social traffic converts into enquiries.
+      </p>
+      <div class="srv-takeaways-grid">
+        <div class="srv-takeaway-card">
+          <div class="srv-takeaway-top">
+            <span class="srv-takeaway-val">3x</span>
+            <div class="srv-takeaway-badge">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
+            </div>
+          </div>
+          <span class="srv-takeaway-label">Average Reach Growth</span>
+          <p class="srv-takeaway-desc">Average reach growth in the first 90 days</p>
+        </div>
+        <div class="srv-takeaway-card">
+          <div class="srv-takeaway-top">
+            <span class="srv-takeaway-val">+40%</span>
+            <div class="srv-takeaway-badge">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
+            </div>
+          </div>
+          <span class="srv-takeaway-label">Engagement Lift</span>
+          <p class="srv-takeaway-desc">Engagement rate lift after profile and content fixes</p>
+        </div>
+        <div class="srv-takeaway-card">
+          <div class="srv-takeaway-top">
+            <span class="srv-takeaway-val">-25%</span>
+            <div class="srv-takeaway-badge">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
+            </div>
+          </div>
+          <span class="srv-takeaway-label">Lower Cost Per Lead</span>
+          <p class="srv-takeaway-desc">Lower cost per lead from organic social</p>
+        </div>
+        <div class="srv-takeaway-card">
+          <div class="srv-takeaway-top">
+            <span class="srv-takeaway-val">100%</span>
+            <div class="srv-takeaway-badge">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
+            </div>
+          </div>
+          <span class="srv-takeaway-label">Full Ownership</span>
+          <p class="srv-takeaway-desc">Account ownership stays with you</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============================================================
+     SECTION 2 — PROBLEM TO SOLUTION
      ============================================================ -->
 <section class="srv-section srv-bg-surface" id="introduction">
   <div class="srv-container">
@@ -117,49 +171,42 @@ $consultationUrl = appUrl('contact.php?service=' . urlencode($serviceName));
       <div class="srv-col-12 srv-col-lg-6">
         <div class="srv-badge mb-3">
           <span class="srv-badge-dot"></span>
-          <span>PROFILE CONVERSION PHILOSOPHY</span>
+          <span>PROBLEM TO SOLUTION</span>
         </div>
         <h2 class="srv-section-title">
-          Why Your Social Media Bio is Your <span class="text-brand">Most Wasted Landing Page</span>
+          From Scattered Posting to a <span class="text-brand">Predictable Social Lead Engine</span>
         </h2>
         <p class="srv-section-subtitle mb-4">
-          Every month, hundreds or thousands of prospective clients visit your Instagram, LinkedIn, and Facebook profiles. If your bio is vague, your link-in-bio is broken or cluttered, and your story highlights are disorganized, that high-intent traffic bounces instantly.
-        </p>
-        <p class="srv-card-desc mb-4">
-          At BusinessDoctor, we treat every social profile as an engineered conversion funnel. We optimize headline hooks, build clean link hierarchies, design on-brand story highlight covers, and embed high-intent search keywords so platforms recommend your brand automatically.
+          Many Delhi businesses post daily and still get no enquiries. The reason is rarely effort. Profiles are half-complete, content ignores what the audience searches for, and comments go unanswered. A specialist SMO company in Delhi fixes these gaps in order, so every post supports a business goal.
         </p>
 
         <div class="srv-feature-list mb-4">
-                    <div class="srv-feature-item">
+          <div class="srv-feature-item">
             <svg class="srv-check-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
             <div>
-              <strong class="text-white">Direct Conversion Funnels:</strong> 
-              <span class="text-secondary">Turn profile visits into email subscribers, call bookings, and qualified leads.</span>
+              <strong class="text-white">Profile and Bio Optimization:</strong> 
+              <span class="text-secondary">Complete, keyword-aware profiles with clear offers, links and call-to-action buttons.</span>
             </div>
-          </div>          <div class="srv-feature-item">
+          </div>
+          <div class="srv-feature-item">
             <svg class="srv-check-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
             <div>
-              <strong class="text-white">Social SEO Indexation:</strong> 
-              <span class="text-secondary">Optimize profile names, handles, and bios for in-app search engines and Google indexation.</span>
+              <strong class="text-white">Content-to-Conversion Funnel:</strong> 
+              <span class="text-secondary">Posts planned around awareness, trust and enquiry, each with one clear next step.</span>
             </div>
-          </div>          <div class="srv-feature-item">
+          </div>
+          <div class="srv-feature-item">
             <svg class="srv-check-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
             <div>
-              <strong class="text-white">Unified Brand Aesthetics:</strong> 
-              <span class="text-secondary">Deliver consistent typography, palette tokens, and highlight icons across every touchpoint.</span>
-            </div>
-          </div>          <div class="srv-feature-item">
-            <svg class="srv-check-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
-            <div>
-              <strong class="text-white">Cross-Platform Link Architecture:</strong> 
-              <span class="text-secondary">Fast-loading, tracked link hubs that direct visitors to high-margin service offerings.</span>
+              <strong class="text-white">Community and Social Proof:</strong> 
+              <span class="text-secondary">Fast replies, reviews and user content that build credibility.</span>
             </div>
           </div>
         </div>
 
         <div class="pt-2">
           <a href="<?= e($consultationUrl) ?>" class="btn-srv-primary">
-            <span>Schedule Diagnostic Call</span>
+            <span>Schedule a Free SMO Audit</span>
             <svg class="btn-srv-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
           </a>
         </div>
@@ -168,121 +215,45 @@ $consultationUrl = appUrl('contact.php?service=' . urlencode($serviceName));
       <div class="srv-col-12 srv-col-lg-6 mt-4 mt-lg-0">
         <div class="srv-hud-card">
           <div class="srv-hud-header">
-            <span class="srv-hud-title">PROFILE OPTIMIZATION TELEMETRY</span>
+            <span class="srv-hud-title">SOCIAL GROWTH DIAGNOSTICS</span>
             <span class="srv-hud-status">
               <span class="srv-hud-pulse"></span>
-              SYSTEM STATUS: OPTIMAL
+              DIAGNOSTICS ACTIVE
             </span>
           </div>
           <div class="srv-hud-body">
             <p class="srv-card-desc mb-4">
-              Real-time telemetry tracking performance velocity, conversion attribution, and brand authority.
+              Real-time profile performance diagnostics and content health monitoring across target channels.
             </p>
             <div class="srv-hud-metrics">
-                            <div class="srv-hud-metric-box">
-                <div class="srv-hud-metric-num">6.4%</div>
-                <div class="srv-hud-metric-label">Avg Bio Click-Through</div>
-              </div>              <div class="srv-hud-metric-box">
-                <div class="srv-hud-metric-num">100%</div>
-                <div class="srv-hud-metric-label">Search Discoverability</div>
-              </div>              <div class="srv-hud-metric-box">
-                <div class="srv-hud-metric-num"><0.5s</div>
-                <div class="srv-hud-metric-label">Link Hub Load Time</div>
-              </div>              <div class="srv-hud-metric-box">
-                <div class="srv-hud-metric-num">+85%</div>
-                <div class="srv-hud-metric-label">Profile Retention Rate</div>
+              <div class="srv-hud-metric-box">
+                <div class="srv-hud-metric-num">92%</div>
+                <div class="srv-hud-metric-label">Profile Completeness</div>
+              </div>
+              <div class="srv-hud-metric-box">
+                <div class="srv-hud-metric-num">4.6%</div>
+                <div class="srv-hud-metric-label">Engagement Rate</div>
+              </div>
+              <div class="srv-hud-metric-box">
+                <div class="srv-hud-metric-num">26/mo</div>
+                <div class="srv-hud-metric-label">Posting Consistency</div>
+              </div>
+              <div class="srv-hud-metric-box">
+                <div class="srv-hud-metric-num">2.8%</div>
+                <div class="srv-hud-metric-label">Link Click-Through</div>
               </div>
             </div>
             <div class="srv-hud-tag-list mt-3">
-              <span class="srv-tool-badge">Instagram Graph</span>
-<span class="srv-tool-badge">LinkedIn Pulse</span>
-<span class="srv-tool-badge">Figma Tokens</span>
-<span class="srv-tool-badge">Google Analytics 4</span>
-<span class="srv-tool-badge">Bitly Enterprise</span>
-<span class="srv-tool-badge">Linktree Pro</span>
-
+              <span class="srv-tool-badge">Instagram</span>
+              <span class="srv-tool-badge">LinkedIn</span>
+              <span class="srv-tool-badge">Facebook</span>
+              <span class="srv-tool-badge">YouTube</span>
+              <span class="srv-tool-badge">X</span>
+              <span class="srv-tool-badge">Pinterest</span>
             </div>
           </div>
         </div>
       </div>
-    </div>
-  </div>
-</section>
-
-<!-- ============================================================
-     SECTION 3 — PROBLEMS WE SOLVE
-     ============================================================ -->
-<section class="srv-section" id="pain-points">
-  <div class="srv-container">
-    <div class="srv-section-header text-center">
-      <div class="srv-badge">
-        <span class="srv-badge-dot"></span>
-        <span>CHALLENGES SOLVED</span>
-      </div>
-      <h2 class="srv-section-title">
-        Eliminating Hidden <span class="text-brand">Social Profile Conversion Leaks</span>
-      </h2>
-      <p class="srv-section-subtitle">
-        Common social profile oversights that drain revenue and weaken enterprise credibility.
-      </p>
-    </div>
-
-    <div class="srv-grid srv-grid-3">
-      <div class="srv-card">
-        <div class="srv-card-icon-wrap">
-          <div class="srv-icon-box">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><circle cx="12" cy="12" r="6"/><circle cx="12" cy="12" r="2"/></svg>
-          </div>
-        </div>
-        <h3 class="srv-card-title text-white">Unclear Value Proposition</h3>
-        <p class="srv-card-desc">Visitors cannot determine what your company does or why they should care within the critical first three seconds.</p>
-      </div>
-      <div class="srv-card">
-        <div class="srv-card-icon-wrap">
-          <div class="srv-icon-box">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="18" r="3"/><circle cx="6" cy="6" r="3"/><circle cx="18" cy="6" r="3"/><path d="M18 9v1a2 2 0 0 1-2 2H8a2 2 0 0 1-2-2V9"/><path d="M12 12v3"/></svg>
-          </div>
-        </div>
-        <h3 class="srv-card-title text-white">Cluttered Link Directories</h3>
-        <p class="srv-card-desc">Sending traffic to a link tree with 15 confusing buttons causes analysis paralysis and high bounce rates.</p>
-      </div>
-      <div class="srv-card">
-        <div class="srv-card-icon-wrap">
-          <div class="srv-icon-box">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="13.5" cy="6.5" r=".5" fill="currentColor"/><circle cx="17.5" cy="10.5" r=".5" fill="currentColor"/><circle cx="8.5" cy="7.5" r=".5" fill="currentColor"/><circle cx="6.5" cy="12.5" r=".5" fill="currentColor"/><path d="M12 2C6.5 2 2 6.5 2 12s4.5 10 10 10c.926 0 1.648-.746 1.648-1.688 0-.437-.18-.835-.437-1.125-.29-.289-.438-.652-.438-1.125a1.64 1.64 0 0 1 1.668-1.668h1.996c3.051 0 5.555-2.503 5.555-5.554C21.965 6.012 17.461 2 12 2z"/></svg>
-          </div>
-        </div>
-        <h3 class="srv-card-title text-white">Inconsistent Visual Identity</h3>
-        <p class="srv-card-desc">Mismatched logos, amateur highlight covers, and random color schemes damage enterprise trust.</p>
-      </div>
-      <div class="srv-card">
-        <div class="srv-card-icon-wrap">
-          <div class="srv-icon-box">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
-          </div>
-        </div>
-        <h3 class="srv-card-title text-white">Zero Social Search Visibility</h3>
-        <p class="srv-card-desc">Failing to include high-intent category keywords prevents the algorithm from recommending your profile.</p>
-      </div>
-      <div class="srv-card">
-        <div class="srv-card-icon-wrap">
-          <div class="srv-icon-box">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/><path d="M14.05 2a9 9 0 0 1 8 7.94"/><path d="M14.05 6A5 5 0 0 1 18 10"/></svg>
-          </div>
-        </div>
-        <h3 class="srv-card-title text-white">Outdated Contact Channels</h3>
-        <p class="srv-card-desc">Broken action buttons, disconnected WhatsApp links, and inactive email endpoints lead to lost customer inquiries.</p>
-      </div>
-      <div class="srv-card">
-        <div class="srv-card-icon-wrap">
-          <div class="srv-icon-box">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="8" r="7"/><polyline points="8.21 13.89 7 23 12 20 17 23 15.79 13.88"/></svg>
-          </div>
-        </div>
-        <h3 class="srv-card-title text-white">Lack of Social Proof Highlights</h3>
-        <p class="srv-card-desc">Failing to pin client testimonials, case studies, and certifications in persistent highlights kills conversions.</p>
-      </div>
-    </div>
     </div>
   </div>
 </section>
@@ -295,129 +266,246 @@ $consultationUrl = appUrl('contact.php?service=' . urlencode($serviceName));
     <div class="srv-section-header text-center">
       <div class="srv-badge">
         <span class="srv-badge-dot"></span>
-        <span>COMPREHENSIVE SCOPE</span>
+        <span>OUR SERVICES</span>
       </div>
       <h2 class="srv-section-title">
-        Comprehensive <span class="text-brand">SMO Deliverables & Scope</span>
+        Social Media Optimization Services in Delhi <span class="text-brand">Built for Business Growth</span>
       </h2>
       <p class="srv-section-subtitle">
-        End-to-end technical and visual optimization across all corporate social profiles.
+        Every service is planned around enquiries and sales, not likes alone.
       </p>
     </div>
 
-    <div class="srv-grid srv-grid-3">
+    <div class="srv-grid-3">
+      <!-- Service Card 1 -->
       <div class="srv-card">
-        <div class="srv-card-icon-wrap">
-          <div class="srv-icon-box">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><polyline points="16 11 18 13 22 9"/></svg>
-          </div>
+        <div class="srv-card-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
         </div>
-        <h3 class="srv-card-title text-white">Social Profile &amp; Bio Audit</h3>
-        <p class="srv-card-desc">Complete structural review of all brand profiles across Instagram, LinkedIn, Facebook, and YouTube.</p>
-        <ul style="list-style: none; padding: 0; margin: 1rem 0 0; display: flex; flex-direction: column; gap: 0.5rem; font-size: 0.85rem; color: #B8C7D9;"><li style="display: flex; gap: 0.5rem; align-items: flex-start;"><span style="color: #06B5F9;">&bull;</span><span>Competitor benchmark comparison</span></li><li style="display: flex; gap: 0.5rem; align-items: flex-start;"><span style="color: #06B5F9;">&bull;</span><span>Audience drop-off identification</span></li><li style="display: flex; gap: 0.5rem; align-items: flex-start;"><span style="color: #06B5F9;">&bull;</span><span>Action button verification</span></li></ul>
-      </div>
-      <div class="srv-card">
-        <div class="srv-card-icon-wrap">
-          <div class="srv-icon-box">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 17H7A5 5 0 0 1 7 7h2"/><path d="M15 7h2a5 5 0 1 1 0 10h-2"/><line x1="8" y1="12" x2="16" y2="12"/></svg>
-          </div>
+        <h3 class="srv-card-title">Social Media Profile Optimization</h3>
+        <p class="srv-card-desc">Bio and handle keyword fit; Highlights and pinned posts; Link-in-bio and CTA setup; Brand consistency across platforms.</p>
+        <ul class="srv-card-list">
+          <li>Bio and handle keyword fit</li>
+          <li>Highlights and pinned posts</li>
+          <li>Link-in-bio and CTA setup</li>
+          <li>Brand consistency across platforms</li>
+        </ul>
+        <div class="srv-sector-outcome mt-3">
+          <span class="srv-outcome-badge">Business Value</span>
+          <span>More profile visits turn into clicks and enquiries.</span>
         </div>
-        <h3 class="srv-card-title text-white">Bio Funnel &amp; Link Architecture</h3>
-        <p class="srv-card-desc">Engineered bio copywriting and custom, high-speed tracked link hubs tailored for conversion.</p>
-        <ul style="list-style: none; padding: 0; margin: 1rem 0 0; display: flex; flex-direction: column; gap: 0.5rem; font-size: 0.85rem; color: #B8C7D9;"><li style="display: flex; gap: 0.5rem; align-items: flex-start;"><span style="color: #06B5F9;">&bull;</span><span>Targeted CTA hook writing</span></li><li style="display: flex; gap: 0.5rem; align-items: flex-start;"><span style="color: #06B5F9;">&bull;</span><span>Custom tracked URL parameters</span></li><li style="display: flex; gap: 0.5rem; align-items: flex-start;"><span style="color: #06B5F9;">&bull;</span><span>Mobile-first loading experience</span></li></ul>
-      </div>
-      <div class="srv-card">
-        <div class="srv-card-icon-wrap">
-          <div class="srv-icon-box">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="m12 3-1.912 5.813a2 2 0 0 1-1.275 1.275L3 12l5.813 1.912a2 2 0 0 1 1.275 1.275L12 21l1.912-5.813a2 2 0 0 1 1.275-1.275L21 12l-5.813-1.912a2 2 0 0 1-1.275-1.275L12 3Z"/><path d="M5 3v4"/><path d="M19 17v4"/><path d="M3 5h4"/><path d="M17 19h4"/></svg>
-          </div>
+        <div class="mt-3">
+          <a href="<?= e($consultationUrl) ?>" class="text-brand" style="font-weight: 600; font-size: 0.9rem;">Inquire About This Service &rarr;</a>
         </div>
-        <h3 class="srv-card-title text-white">Branded Story Highlight System</h3>
-        <p class="srv-card-desc">Custom-designed highlight cover icons and curated evergreen story slides that showcase credibility.</p>
-        <ul style="list-style: none; padding: 0; margin: 1rem 0 0; display: flex; flex-direction: column; gap: 0.5rem; font-size: 0.85rem; color: #B8C7D9;"><li style="display: flex; gap: 0.5rem; align-items: flex-start;"><span style="color: #06B5F9;">&bull;</span><span>Testimonials &amp; case studies highlight</span></li><li style="display: flex; gap: 0.5rem; align-items: flex-start;"><span style="color: #06B5F9;">&bull;</span><span>Services &amp; pricing overview</span></li><li style="display: flex; gap: 0.5rem; align-items: flex-start;"><span style="color: #06B5F9;">&bull;</span><span>Team &amp; corporate culture</span></li></ul>
       </div>
-      <div class="srv-card">
-        <div class="srv-card-icon-wrap">
-          <div class="srv-icon-box">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="4" y1="9" x2="20" y2="9"/><line x1="4" y1="15" x2="20" y2="15"/><line x1="10" y1="3" x2="8" y2="21"/><line x1="16" y1="3" x2="14" y2="21"/></svg>
-          </div>
-        </div>
-        <h3 class="srv-card-title text-white">Social SEO &amp; Keyword Silos</h3>
-        <p class="srv-card-desc">Placement of primary and secondary category keywords inside names, bios, and alt text.</p>
-        <ul style="list-style: none; padding: 0; margin: 1rem 0 0; display: flex; flex-direction: column; gap: 0.5rem; font-size: 0.85rem; color: #B8C7D9;"><li style="display: flex; gap: 0.5rem; align-items: flex-start;"><span style="color: #06B5F9;">&bull;</span><span>In-app search algorithmic rank</span></li><li style="display: flex; gap: 0.5rem; align-items: flex-start;"><span style="color: #06B5F9;">&bull;</span><span>Google SERP social snippet indexing</span></li><li style="display: flex; gap: 0.5rem; align-items: flex-start;"><span style="color: #06B5F9;">&bull;</span><span>Hashtag architecture blueprints</span></li></ul>
-      </div>
-      <div class="srv-card">
-        <div class="srv-card-icon-wrap">
-          <div class="srv-icon-box">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect width="7" height="7" x="3" y="3" rx="1"/><rect width="7" height="7" x="14" y="3" rx="1"/><rect width="7" height="7" x="14" y="14" rx="1"/><rect width="7" height="7" x="3" y="14" rx="1"/></svg>
-          </div>
-        </div>
-        <h3 class="srv-card-title text-white">Visual Grid &amp; Template Standards</h3>
-        <p class="srv-card-desc">Standardized visual assets including profile headers, avatars, and pinned banner templates.</p>
-        <ul style="list-style: none; padding: 0; margin: 1rem 0 0; display: flex; flex-direction: column; gap: 0.5rem; font-size: 0.85rem; color: #B8C7D9;"><li style="display: flex; gap: 0.5rem; align-items: flex-start;"><span style="color: #06B5F9;">&bull;</span><span>LinkedIn company banner graphics</span></li><li style="display: flex; gap: 0.5rem; align-items: flex-start;"><span style="color: #06B5F9;">&bull;</span><span>YouTube channel art &amp; watermark</span></li><li style="display: flex; gap: 0.5rem; align-items: flex-start;"><span style="color: #06B5F9;">&bull;</span><span>Standardized color &amp; font tokens</span></li></ul>
-      </div>
-      <div class="srv-card">
-        <div class="srv-card-icon-wrap">
-          <div class="srv-icon-box">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="m3 21 1.9-5.7a8.5 8.5 0 1 1 3.8 3.8z"/></svg>
-          </div>
-        </div>
-        <h3 class="srv-card-title text-white">Engagement &amp; Conversion Protocols</h3>
-        <p class="srv-card-desc">Guidelines for pinned posts, direct message greeting automation, and outbound profile engagement.</p>
-        <ul style="list-style: none; padding: 0; margin: 1rem 0 0; display: flex; flex-direction: column; gap: 0.5rem; font-size: 0.85rem; color: #B8C7D9;"><li style="display: flex; gap: 0.5rem; align-items: flex-start;"><span style="color: #06B5F9;">&bull;</span><span>Pinned post conversion sequencing</span></li><li style="display: flex; gap: 0.5rem; align-items: flex-start;"><span style="color: #06B5F9;">&bull;</span><span>Automated DM response scripts</span></li><li style="display: flex; gap: 0.5rem; align-items: flex-start;"><span style="color: #06B5F9;">&bull;</span><span>Monthly profile performance review</span></li></ul>
-      </div>
-    </div>
 
+      <!-- Service Card 2 -->
+      <div class="srv-card">
+        <div class="srv-card-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
+        </div>
+        <h3 class="srv-card-title">Content Strategy and Calendar</h3>
+        <p class="srv-card-desc">Monthly content pillars; Reels, carousels and posts; Festival and trend planning; Brand-voice guidelines.</p>
+        <ul class="srv-card-list">
+          <li>Monthly content pillars</li>
+          <li>Reels, carousels and posts</li>
+          <li>Festival and trend planning</li>
+          <li>Brand-voice guidelines</li>
+        </ul>
+        <div class="srv-sector-outcome mt-3">
+          <span class="srv-outcome-badge">Business Value</span>
+          <span>Steady, on-brand content that keeps your audience coming back.</span>
+        </div>
+        <div class="mt-3">
+          <a href="<?= e($consultationUrl) ?>" class="text-brand" style="font-weight: 600; font-size: 0.9rem;">Inquire About This Service &rarr;</a>
+        </div>
+      </div>
+
+      <!-- Service Card 3 -->
+      <div class="srv-card">
+        <div class="srv-card-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="4" y1="9" x2="20" y2="9"/><line x1="4" y1="15" x2="20" y2="15"/><line x1="10" y1="3" x2="8" y2="21"/><line x1="16" y1="3" x2="14" y2="21"/></svg>
+        </div>
+        <h3 class="srv-card-title">Social SEO, Hashtags and Keywords</h3>
+        <p class="srv-card-desc">Keyword research for each platform; Hashtag sets by topic; Alt text and caption optimization; Search-friendly video titles.</p>
+        <ul class="srv-card-list">
+          <li>Keyword research for each platform</li>
+          <li>Hashtag sets by topic</li>
+          <li>Alt text and caption optimization</li>
+          <li>Search-friendly video titles</li>
+        </ul>
+        <div class="srv-sector-outcome mt-3">
+          <span class="srv-outcome-badge">Business Value</span>
+          <span>Your content appears when customers search inside social apps.</span>
+        </div>
+        <div class="mt-3">
+          <a href="<?= e($consultationUrl) ?>" class="text-brand" style="font-weight: 600; font-size: 0.9rem;">Inquire About This Service &rarr;</a>
+        </div>
+      </div>
+
+      <!-- Service Card 4 -->
+      <div class="srv-card">
+        <div class="srv-card-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z"/></svg>
+        </div>
+        <h3 class="srv-card-title">Community Management and Engagement</h3>
+        <p class="srv-card-desc">Comment and DM replies; Audience Q&A posts; Reputation monitoring; Lead hand-off to your sales team.</p>
+        <ul class="srv-card-list">
+          <li>Comment and DM replies</li>
+          <li>Audience Q&A posts</li>
+          <li>Reputation monitoring</li>
+          <li>Lead hand-off to your sales team</li>
+        </ul>
+        <div class="srv-sector-outcome mt-3">
+          <span class="srv-outcome-badge">Business Value</span>
+          <span>Faster responses build trust and shorten the buying decision.</span>
+        </div>
+        <div class="mt-3">
+          <a href="<?= e($consultationUrl) ?>" class="text-brand" style="font-weight: 600; font-size: 0.9rem;">Inquire About This Service &rarr;</a>
+        </div>
+      </div>
+
+      <!-- Service Card 5 -->
+      <div class="srv-card">
+        <div class="srv-card-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
+        </div>
+        <h3 class="srv-card-title">Influencer and Collaboration Outreach</h3>
+        <p class="srv-card-desc">Micro-influencer shortlisting; Outreach and brief writing; Collaboration tracking; Content reuse rights.</p>
+        <ul class="srv-card-list">
+          <li>Micro-influencer shortlisting</li>
+          <li>Outreach and brief writing</li>
+          <li>Collaboration tracking</li>
+          <li>Content reuse rights</li>
+        </ul>
+        <div class="srv-sector-outcome mt-3">
+          <span class="srv-outcome-badge">Business Value</span>
+          <span>Borrowed audiences bring qualified traffic at lower cost.</span>
+        </div>
+        <div class="mt-3">
+          <a href="<?= e($consultationUrl) ?>" class="text-brand" style="font-weight: 600; font-size: 0.9rem;">Inquire About This Service &rarr;</a>
+        </div>
+      </div>
+
+      <!-- Service Card 6 -->
+      <div class="srv-card">
+        <div class="srv-card-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="23 6 13.5 15.5 8.5 10.5 1 18"/><polyline points="17 6 23 6 23 12"/></svg>
+        </div>
+        <h3 class="srv-card-title">Analytics and Monthly Reporting</h3>
+        <p class="srv-card-desc">Reach, engagement and click tracking; Competitor benchmarking; Best-time and best-format insights; Clear action list each month.</p>
+        <ul class="srv-card-list">
+          <li>Reach, engagement and click tracking</li>
+          <li>Competitor benchmarking</li>
+          <li>Best-time and best-format insights</li>
+          <li>Clear action list each month</li>
+        </ul>
+        <div class="srv-sector-outcome mt-3">
+          <span class="srv-outcome-badge">Business Value</span>
+          <span>You see exactly what worked and where to invest next.</span>
+        </div>
+        <div class="mt-3">
+          <a href="<?= e($consultationUrl) ?>" class="text-brand" style="font-weight: 600; font-size: 0.9rem;">Inquire About This Service &rarr;</a>
+        </div>
+      </div>
     </div>
   </div>
 </section>
 
 <!-- ============================================================
-     SECTION 5 — STEP-BY-STEP PROCESS
+     SECTION 5 — 6-PHASE PROCESS
      ============================================================ -->
 <section class="srv-section" id="process">
   <div class="srv-container">
     <div class="srv-section-header text-center">
       <div class="srv-badge">
         <span class="srv-badge-dot"></span>
-        <span>EXECUTION FRAMEWORK</span>
+        <span>PREDICTABLE EXECUTION TIMELINE</span>
       </div>
       <h2 class="srv-section-title">
-        How We Work: <span class="text-brand">Structured &amp; Accountable</span>
+        The 6-Phase Framework Behind Our <span class="text-brand">SMO Services in Delhi</span>
       </h2>
       <p class="srv-section-subtitle">
-        From baseline diagnostic audit to scaled execution, our structured workflow eliminates guesswork and delivers predictable results.
+        Our SMO company in Delhi works to this plan so you always know what happens next.
       </p>
     </div>
 
-    <div class="srv-process-grid">
-            <div class="srv-process-card">
-        <div class="srv-process-num">01</div>
-        <h3 class="srv-process-title">Profile Discovery & Audit</h3>
-        <p class="srv-process-desc">We benchmark existing profiles, track bounce patterns, and identify missing SEO keywords and conversion leaks.</p>
-        <div style="font-family: var(--font-mono); font-size: 0.78rem; color: #06B5F9; font-weight: 700; margin-top: 1rem;">
-          MILESTONE: Comprehensive Profile Audit Report
+    <div class="srv-process-timeline">
+      <!-- Step 1 -->
+      <div class="srv-process-step">
+        <div class="srv-step-number">01</div>
+        <div class="srv-step-content">
+          <h3 class="srv-step-title">Phase 01 (Weeks 1 to 2): Audit and Benchmarking</h3>
+          <p class="srv-step-desc">Profile audit; Competitor review; Audience research.</p>
+          <div class="srv-step-deliverables">
+            <span class="srv-deliverable-label">Key Deliverables:</span>
+            <span>Profile audit; Competitor review; Audience research &bull; Milestone: Audit report shared</span>
+          </div>
         </div>
-      </div>      <div class="srv-process-card">
-        <div class="srv-process-num">02</div>
-        <h3 class="srv-process-title">Bio Copywriting & Architecture</h3>
-        <p class="srv-process-desc">We craft sharp, benefit-driven bios, restructure action buttons, and build custom mobile-responsive link trees.</p>
-        <div style="font-family: var(--font-mono); font-size: 0.78rem; color: #06B5F9; font-weight: 700; margin-top: 1rem;">
-          MILESTONE: Approved Bio & Link Matrix
+      </div>
+
+      <!-- Step 2 -->
+      <div class="srv-process-step">
+        <div class="srv-step-number">02</div>
+        <div class="srv-step-content">
+          <h3 class="srv-step-title">Phase 02 (Weeks 2 to 3): Strategy and Content Pillars</h3>
+          <p class="srv-step-desc">Goal setting; Content pillars; Platform priority list.</p>
+          <div class="srv-step-deliverables">
+            <span class="srv-deliverable-label">Key Deliverables:</span>
+            <span>Goal setting; Content pillars; Platform priority list &bull; Milestone: Strategy approved</span>
+          </div>
         </div>
-      </div>      <div class="srv-process-card">
-        <div class="srv-process-num">03</div>
-        <h3 class="srv-process-title">Visual Asset Production</h3>
-        <p class="srv-process-desc">Our design division produces cohesive highlight icons, corporate banners, and pinned post graphics.</p>
-        <div style="font-family: var(--font-mono); font-size: 0.78rem; color: #06B5F9; font-weight: 700; margin-top: 1rem;">
-          MILESTONE: Complete Asset Delivery Pack
+      </div>
+
+      <!-- Step 3 -->
+      <div class="srv-process-step">
+        <div class="srv-step-number">03</div>
+        <div class="srv-step-content">
+          <h3 class="srv-step-title">Phase 03 (Weeks 3 to 4): Profile and Asset Setup</h3>
+          <p class="srv-step-desc">Optimized bios and links; Highlights and cover designs; Hashtag and keyword library.</p>
+          <div class="srv-step-deliverables">
+            <span class="srv-deliverable-label">Key Deliverables:</span>
+            <span>Optimized bios and links; Highlights and cover designs; Hashtag and keyword library &bull; Milestone: Profiles live</span>
+          </div>
         </div>
-      </div>      <div class="srv-process-card">
-        <div class="srv-process-num">04</div>
-        <h3 class="srv-process-title">Implementation & Indexing</h3>
-        <p class="srv-process-desc">We roll out all updates across platforms, test tracking parameters, and verify search discoverability.</p>
-        <div style="font-family: var(--font-mono); font-size: 0.78rem; color: #06B5F9; font-weight: 700; margin-top: 1rem;">
-          MILESTONE: Full Live Deployment & Review
+      </div>
+
+      <!-- Step 4 -->
+      <div class="srv-process-step">
+        <div class="srv-step-number">04</div>
+        <div class="srv-step-content">
+          <h3 class="srv-step-title">Phase 04 (Weeks 4 to 8): Publishing and Engagement</h3>
+          <p class="srv-step-desc">Daily posting; Community replies; Collaboration outreach.</p>
+          <div class="srv-step-deliverables">
+            <span class="srv-deliverable-label">Key Deliverables:</span>
+            <span>Daily posting; Community replies; Collaboration outreach &bull; Milestone: First 30-day cycle done</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Step 5 -->
+      <div class="srv-process-step">
+        <div class="srv-step-number">05</div>
+        <div class="srv-step-content">
+          <h3 class="srv-step-title">Phase 05 (Weeks 8 to 10): Testing and Optimization</h3>
+          <p class="srv-step-desc">Format and timing tests; Caption and CTA tests; Underperformer clean-up.</p>
+          <div class="srv-step-deliverables">
+            <span class="srv-deliverable-label">Key Deliverables:</span>
+            <span>Format and timing tests; Caption and CTA tests; Underperformer clean-up &bull; Milestone: Winning formats found</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Step 6 -->
+      <div class="srv-process-step">
+        <div class="srv-step-number">06</div>
+        <div class="srv-step-content">
+          <h3 class="srv-step-title">Phase 06 (Weeks 10 to 12): Reporting and Scale</h3>
+          <p class="srv-step-desc">Performance dashboard; Review call; Next-quarter roadmap.</p>
+          <div class="srv-step-deliverables">
+            <span class="srv-deliverable-label">Key Deliverables:</span>
+            <span>Performance dashboard; Review call; Next-quarter roadmap &bull; Milestone: Scale plan approved</span>
+          </div>
         </div>
       </div>
     </div>
@@ -425,82 +513,176 @@ $consultationUrl = appUrl('contact.php?service=' . urlencode($serviceName));
 </section>
 
 <!-- ============================================================
-     SECTION 6 — TOOLS & TECHNOLOGY
+     SECTION 6 — WHY CHOOSE US
      ============================================================ -->
-<section class="srv-section srv-bg-surface" id="technology">
+<section class="srv-section srv-bg-surface" id="why-choose-us">
   <div class="srv-container">
     <div class="srv-section-header text-center">
       <div class="srv-badge">
         <span class="srv-badge-dot"></span>
-        <span>TOOLING &amp; INFRASTRUCTURE</span>
+        <span>COMPETITIVE ADVANTAGE</span>
       </div>
       <h2 class="srv-section-title">
-        Enterprise-Grade <span class="text-brand">Tools &amp; Technology Stack</span>
+        Why Brands Choose BusinessDoctor as Their <span class="text-brand">SMO Company in Delhi</span>
       </h2>
       <p class="srv-section-subtitle">
-        We utilize industry-standard platforms, diagnostic software, and proprietary telemetry tools to ensure flawless execution.
+        We connect social media activity with business goals and report honestly on both.
       </p>
     </div>
 
-    <div class="srv-grid srv-grid-3">
-      <div class="srv-card"><h4 style="font-size: 1.1rem; color: #fff; margin-bottom: 1rem; border-bottom: 1px solid rgba(6,181,249,0.2); padding-bottom: 0.5rem;">Profile Analytics & Audit</h4><div style="display: flex; flex-wrap: wrap; gap: 0.5rem;"><span class="srv-tool-badge">Sprout Social</span><span class="srv-tool-badge">Iconosquare</span><span class="srv-tool-badge">Meta Business Suite</span><span class="srv-tool-badge">LinkedIn Analytics</span></div></div>
-<div class="srv-card"><h4 style="font-size: 1.1rem; color: #fff; margin-bottom: 1rem; border-bottom: 1px solid rgba(6,181,249,0.2); padding-bottom: 0.5rem;">Visual Asset Design</h4><div style="display: flex; flex-wrap: wrap; gap: 0.5rem;"><span class="srv-tool-badge">Figma</span><span class="srv-tool-badge">Adobe Illustrator</span><span class="srv-tool-badge">Photoshop</span><span class="srv-tool-badge">Canva Enterprise</span></div></div>
-<div class="srv-card"><h4 style="font-size: 1.1rem; color: #fff; margin-bottom: 1rem; border-bottom: 1px solid rgba(6,181,249,0.2); padding-bottom: 0.5rem;">Link Hubs & Attribution</h4><div style="display: flex; flex-wrap: wrap; gap: 0.5rem;"><span class="srv-tool-badge">Google Tag Manager</span><span class="srv-tool-badge">GA4 UTMs</span><span class="srv-tool-badge">Bitly Pro</span><span class="srv-tool-badge">Custom Web Funnel</span></div></div>
+    <div class="srv-grid-3">
+      <div class="srv-benefit-card">
+        <div class="srv-benefit-badge">Reports built on leads</div>
+        <h3 class="srv-benefit-title">Zero Vanity Metrics</h3>
+        <p class="srv-benefit-desc">We track enquiries, clicks and conversions, not just followers and likes.</p>
+      </div>
 
+      <div class="srv-benefit-card">
+        <div class="srv-benefit-badge">Full admin access for you</div>
+        <h3 class="srv-benefit-title">100% Account Ownership</h3>
+        <p class="srv-benefit-desc">Every page, password and asset stays with you. We work as your team, not as a gatekeeper.</p>
+      </div>
+
+      <div class="srv-benefit-card">
+        <div class="srv-benefit-badge">No outsourced content</div>
+        <h3 class="srv-benefit-title">In-House Specialists</h3>
+        <p class="srv-benefit-desc">Strategists, designers, writers and video editors work under one roof.</p>
+      </div>
+
+      <div class="srv-benefit-card">
+        <div class="srv-benefit-badge">Local and national campaigns</div>
+        <h3 class="srv-benefit-title">Delhi-Market Insight</h3>
+        <p class="srv-benefit-desc">We understand local buying habits, festivals and the competition in your city.</p>
+      </div>
+
+      <div class="srv-benefit-card">
+        <div class="srv-benefit-badge">Quality checked twice</div>
+        <h3 class="srv-benefit-title">Senior Review on Every Plan</h3>
+        <p class="srv-benefit-desc">A senior strategist reviews each monthly plan before it goes live.</p>
+      </div>
+
+      <div class="srv-benefit-card">
+        <div class="srv-benefit-badge">Weekly creative delivery</div>
+        <h3 class="srv-benefit-title">Fast Creative Turnaround</h3>
+        <p class="srv-benefit-desc">Posts, reels and carousels move from brief to approval quickly.</p>
+      </div>
     </div>
   </div>
 </section>
 
 <!-- ============================================================
-     SECTION 7 — INDUSTRY USE CASES
+     SECTION 7 — TECHNOLOGIES & TOOLS
      ============================================================ -->
-<section class="srv-section" id="use-cases">
+<section class="srv-section" id="technologies">
   <div class="srv-container">
     <div class="srv-section-header text-center">
       <div class="srv-badge">
         <span class="srv-badge-dot"></span>
-        <span>PRACTICAL APPLICATIONS</span>
+        <span>TOOLS TO BE EXACT</span>
       </div>
       <h2 class="srv-section-title">
-        Tailored Strategies Across <span class="text-brand">Diverse Industries</span>
+        Tools Behind Our <span class="text-brand">Social Media Optimization Company Workflow</span>
       </h2>
       <p class="srv-section-subtitle">
-        Discover how our SMO — Social Media Optimization discipline drives measurable outcomes across key vertical markets.
+        We choose tools for accuracy, speed and clear reporting.
       </p>
     </div>
 
-    <div class="srv-grid srv-grid-2">
-            <div class="srv-card">
-        <span class="srv-badge mb-2"><span>B2B Professional Services</span></span>
-        <h3 class="srv-card-title text-white">LinkedIn Executive Profile Overhaul</h3>
-        <p class="srv-card-desc mb-3">Optimized corporate and leadership profiles to attract high-ticket enterprise contracts and speaking inquiries.</p>
-        <div style="border-top: 1px solid rgba(255,255,255,0.08); padding-top: 0.75rem; display: flex; justify-content: space-between; align-items: center; font-size: 0.85rem;">
-          <span style="color: #8FA3B8;">Outcome:</span>
-          <span style="color: #34D399; font-family: var(--font-mono); font-weight: 700;">+210% Inbound Inquiries</span>
+    <div class="srv-grid-4">
+      <div class="srv-tech-category">
+        <h3 class="srv-tech-cat-title">Publishing and Scheduling</h3>
+        <ul class="srv-tech-list">
+          <li>Meta Business Suite (Facebook and Instagram)</li>
+          <li>Buffer (cross-platform scheduling)</li>
+          <li>Hootsuite (team approvals)</li>
+        </ul>
+      </div>
+
+      <div class="srv-tech-category">
+        <h3 class="srv-tech-cat-title">Analytics and Reporting</h3>
+        <ul class="srv-tech-list">
+          <li>Google Analytics 4 (social traffic)</li>
+          <li>Looker Studio (client dashboards)</li>
+          <li>Native platform insights</li>
+        </ul>
+      </div>
+
+      <div class="srv-tech-category">
+        <h3 class="srv-tech-cat-title">Design and Creative</h3>
+        <ul class="srv-tech-list">
+          <li>Canva (quick posts)</li>
+          <li>Adobe Photoshop (custom visuals)</li>
+          <li>CapCut (short video edits)</li>
+        </ul>
+      </div>
+
+      <div class="srv-tech-category">
+        <h3 class="srv-tech-cat-title">Social SEO and Research</h3>
+        <ul class="srv-tech-list">
+          <li>SEMrush (keyword and competitor data)</li>
+          <li>Ahrefs (content gaps)</li>
+          <li>Google Trends (topic timing)</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============================================================
+     SECTION 8 — INDUSTRY SECTORS
+     ============================================================ -->
+<section class="srv-section srv-bg-surface" id="industry-use-cases">
+  <div class="srv-container">
+    <div class="srv-section-header text-center">
+      <div class="srv-badge">
+        <span class="srv-badge-dot"></span>
+        <span>INDUSTRY SPECIALIZATION</span>
+      </div>
+      <h2 class="srv-section-title">
+        Tailored SMO Services for <span class="text-brand">High-Growth Sectors</span>
+      </h2>
+      <p class="srv-section-subtitle">
+        Each industry needs its own tone, content type and platform mix.
+      </p>
+    </div>
+
+    <div class="srv-grid-3">
+      <div class="srv-card">
+        <div class="srv-benefit-badge mb-2">E-COMMERCE</div>
+        <h3 class="srv-card-title">D2C and Online Retail Brands</h3>
+        <p class="srv-card-desc">Product reels, user content and shoppable posts that move followers toward the checkout page.</p>
+        <div class="srv-sector-outcome">
+          <span class="srv-outcome-badge">Result</span>
+          <span>Higher social-to-cart clicks</span>
         </div>
-      </div>      <div class="srv-card">
-        <span class="srv-badge mb-2"><span>E-Commerce Brands</span></span>
-        <h3 class="srv-card-title text-white">Instagram Bio & Highlight Funnel</h3>
-        <p class="srv-card-desc mb-3">Streamlined link-in-bio architecture with direct product category routing and customer review highlights.</p>
-        <div style="border-top: 1px solid rgba(255,255,255,0.08); padding-top: 0.75rem; display: flex; justify-content: space-between; align-items: center; font-size: 0.85rem;">
-          <span style="color: #8FA3B8;">Outcome:</span>
-          <span style="color: #34D399; font-family: var(--font-mono); font-weight: 700;">+38% Storefront Conversion</span>
+        <div class="mt-3">
+          <a href="<?= e($consultationUrl) ?>" class="text-brand" style="font-weight: 600; font-size: 0.9rem;">Explore This Sector &rarr;</a>
         </div>
-      </div>      <div class="srv-card">
-        <span class="srv-badge mb-2"><span>SaaS Technology</span></span>
-        <h3 class="srv-card-title text-white">Multi-Platform Authority Architecture</h3>
-        <p class="srv-card-desc mb-3">Standardized technical social profiles across Twitter, YouTube, and LinkedIn for a fast-growing software firm.</p>
-        <div style="border-top: 1px solid rgba(255,255,255,0.08); padding-top: 0.75rem; display: flex; justify-content: space-between; align-items: center; font-size: 0.85rem;">
-          <span style="color: #8FA3B8;">Outcome:</span>
-          <span style="color: #34D399; font-family: var(--font-mono); font-weight: 700;">4x Demo Bookings from Social</span>
+      </div>
+
+      <div class="srv-card">
+        <div class="srv-benefit-badge mb-2">EDUCATION</div>
+        <h3 class="srv-card-title">Coaching Institutes and Colleges</h3>
+        <p class="srv-card-desc">Faculty videos, result stories and admission-season campaigns that bring parent and student enquiries.</p>
+        <div class="srv-sector-outcome">
+          <span class="srv-outcome-badge">Result</span>
+          <span>More admission enquiries</span>
         </div>
-      </div>      <div class="srv-card">
-        <span class="srv-badge mb-2"><span>Healthcare & Wellness</span></span>
-        <h3 class="srv-card-title text-white">Trust-Focused Clinic Optimization</h3>
-        <p class="srv-card-desc mb-3">Organized patient testimonials, doctor credentials, and direct appointment booking buttons in highlights.</p>
-        <div style="border-top: 1px solid rgba(255,255,255,0.08); padding-top: 0.75rem; display: flex; justify-content: space-between; align-items: center; font-size: 0.85rem;">
-          <span style="color: #8FA3B8;">Outcome:</span>
-          <span style="color: #34D399; font-family: var(--font-mono); font-weight: 700;">+85% Appointment Actions</span>
+        <div class="mt-3">
+          <a href="<?= e($consultationUrl) ?>" class="text-brand" style="font-weight: 600; font-size: 0.9rem;">Explore This Sector &rarr;</a>
+        </div>
+      </div>
+
+      <div class="srv-card">
+        <div class="srv-benefit-badge mb-2">HEALTHCARE</div>
+        <h3 class="srv-card-title">Clinics and Wellness Brands</h3>
+        <p class="srv-card-desc">Patient education posts, doctor profiles and review highlights that build trust within compliance rules.</p>
+        <div class="srv-sector-outcome">
+          <span class="srv-outcome-badge">Result</span>
+          <span>More appointment requests</span>
+        </div>
+        <div class="mt-3">
+          <a href="<?= e($consultationUrl) ?>" class="text-brand" style="font-weight: 600; font-size: 0.9rem;">Explore This Sector &rarr;</a>
         </div>
       </div>
     </div>
@@ -508,9 +690,9 @@ $consultationUrl = appUrl('contact.php?service=' . urlencode($serviceName));
 </section>
 
 <!-- ============================================================
-     SECTION 8 — INTERACTIVE FAQ ACCORDION
+     SECTION 9 — FREQUENTLY ASKED QUESTIONS
      ============================================================ -->
-<section class="srv-section srv-bg-surface" id="faq">
+<section class="srv-section" id="faq">
   <div class="srv-container">
     <div class="srv-section-header text-center">
       <div class="srv-badge">
@@ -518,92 +700,82 @@ $consultationUrl = appUrl('contact.php?service=' . urlencode($serviceName));
         <span>FREQUENTLY ASKED QUESTIONS</span>
       </div>
       <h2 class="srv-section-title">
-        Common Questions About <span class="text-brand">SMO — Social Media Optimization</span>
+        Common Questions About Hiring an <span class="text-brand">SMO Company in Delhi</span>
       </h2>
       <p class="srv-section-subtitle">
-        Clear answers about our methodology, timelines, deliverables, SLAs, and commercial engagement terms.
+        Straight answers on timelines, budgets, platforms and reporting.
       </p>
     </div>
 
     <div class="srv-faq-container">
-            <div class="srv-faq-item">
-        <button type="button" class="srv-faq-btn" aria-expanded="false" aria-controls="faq-ans-0">
-          <span class="srv-faq-question">What is the difference between SMO and SMM?</span>
-          <span class="srv-faq-icon" aria-hidden="true">+</span>
-        </button>
-        <div id="faq-ans-0" class="srv-faq-panel">
-          <div class="srv-faq-content">
-            <p>SMO (Social Media Optimization) focuses on the structural architecture, searchability, bio copywriting, and conversion funnels of your profiles. SMM (Social Media Marketing) focuses on ongoing content creation, publishing schedules, community engagement, and paid ad boosts.</p>
-          </div>
-        </div>
-      </div>      <div class="srv-faq-item">
+      <div class="srv-faq-item">
         <button type="button" class="srv-faq-btn" aria-expanded="false" aria-controls="faq-ans-1">
-          <span class="srv-faq-question">Which social platforms do you optimize?</span>
+          <span class="srv-faq-question">How quickly can I see results from social media optimization?</span>
           <span class="srv-faq-icon" aria-hidden="true">+</span>
         </button>
-        <div id="faq-ans-1" class="srv-faq-panel" >
+        <div id="faq-ans-1" class="srv-faq-panel">
           <div class="srv-faq-content">
-            <p>We optimize profiles across Instagram, LinkedIn (Company &amp; Personal), Facebook, YouTube, X (Twitter), and TikTok.</p>
+            <p>Profile fixes show effect within 2 to 4 weeks as visits and clicks improve. Steady growth in reach, engagement and enquiries usually builds over 90 days of consistent work.</p>
           </div>
         </div>
-      </div>      <div class="srv-faq-item">
+      </div>
+
+      <div class="srv-faq-item">
         <button type="button" class="srv-faq-btn" aria-expanded="false" aria-controls="faq-ans-2">
-          <span class="srv-faq-question">How long does a complete SMO overhaul take?</span>
+          <span class="srv-faq-question">What is the difference between SMO and social media marketing?</span>
           <span class="srv-faq-icon" aria-hidden="true">+</span>
         </button>
-        <div id="faq-ans-2" class="srv-faq-panel" >
+        <div id="faq-ans-2" class="srv-faq-panel">
           <div class="srv-faq-content">
-            <p>A typical multi-platform SMO implementation takes 2 to 3 weeks from kickoff to final live deployment, including asset design and testing.</p>
+            <p>SMO improves your organic presence: profiles, content, hashtags and engagement. A social media marketing company in Delhi also runs paid campaigns. We offer both, and SMO is the right base before you spend on ads.</p>
           </div>
         </div>
-      </div>      <div class="srv-faq-item">
+      </div>
+
+      <div class="srv-faq-item">
         <button type="button" class="srv-faq-btn" aria-expanded="false" aria-controls="faq-ans-3">
-          <span class="srv-faq-question">Do you design custom highlight covers and banner graphics?</span>
+          <span class="srv-faq-question">Which platforms does your SMO company in Delhi manage?</span>
           <span class="srv-faq-icon" aria-hidden="true">+</span>
         </button>
-        <div id="faq-ans-3" class="srv-faq-panel" >
+        <div id="faq-ans-3" class="srv-faq-panel">
           <div class="srv-faq-content">
-            <p>Yes. Every SMO package includes custom vector highlight icons, LinkedIn corporate banners, YouTube channel headers, and branded pinned graphics.</p>
+            <p>We manage Instagram, Facebook, LinkedIn, YouTube, X and Pinterest. We recommend the two or three platforms where your customers are most active instead of spreading effort thin.</p>
           </div>
         </div>
-      </div>      <div class="srv-faq-item">
+      </div>
+
+      <div class="srv-faq-item">
         <button type="button" class="srv-faq-btn" aria-expanded="false" aria-controls="faq-ans-4">
-          <span class="srv-faq-question">Will SMO help our profiles rank in Google search results?</span>
+          <span class="srv-faq-question">Do I keep ownership of my accounts and content?</span>
           <span class="srv-faq-icon" aria-hidden="true">+</span>
         </button>
-        <div id="faq-ans-4" class="srv-faq-panel" >
+        <div id="faq-ans-4" class="srv-faq-panel">
           <div class="srv-faq-content">
-            <p>Yes. By aligning your profile names, usernames, and bios with high-intent keywords, Google frequently indexes and displays your social channels for brand and category searches.</p>
+            <p>Yes. All accounts, passwords and creative files stay in your name. We work through admin access, which you can change at any time.</p>
           </div>
         </div>
-      </div>      <div class="srv-faq-item">
+      </div>
+
+      <div class="srv-faq-item">
         <button type="button" class="srv-faq-btn" aria-expanded="false" aria-controls="faq-ans-5">
-          <span class="srv-faq-question">Can you build a custom link-in-bio landing page on our domain?</span>
+          <span class="srv-faq-question">What monthly budget do I need for SMO services in Delhi?</span>
           <span class="srv-faq-icon" aria-hidden="true">+</span>
         </button>
-        <div id="faq-ans-5" class="srv-faq-panel" >
+        <div id="faq-ans-5" class="srv-faq-panel">
           <div class="srv-faq-content">
-            <p>Yes. We recommend and frequently build custom lightweight mobile landing pages directly on your domain (e.g., yourdomain.com/links) for maximum SEO benefit and tracking accuracy.</p>
+            <p>Cost depends on the number of platforms, posting frequency and video needs. After a free audit we share a clear, fixed-scope quote with no hidden charges.</p>
           </div>
         </div>
-      </div>      <div class="srv-faq-item">
+      </div>
+
+      <div class="srv-faq-item">
         <button type="button" class="srv-faq-btn" aria-expanded="false" aria-controls="faq-ans-6">
-          <span class="srv-faq-question">Do you provide guidelines for pinned posts?</span>
+          <span class="srv-faq-question">How often will I receive reports and updates?</span>
           <span class="srv-faq-icon" aria-hidden="true">+</span>
         </button>
-        <div id="faq-ans-6" class="srv-faq-panel" >
+        <div id="faq-ans-6" class="srv-faq-panel">
           <div class="srv-faq-content">
-            <p>Yes. We design and script the exact 3 pinned posts every profile needs: 1) What We Do, 2) Social Proof / Case Study, and 3) How to Work With Us.</p>
-          </div>
-        </div>
-      </div>      <div class="srv-faq-item">
-        <button type="button" class="srv-faq-btn" aria-expanded="false" aria-controls="faq-ans-7">
-          <span class="srv-faq-question">What happens after the profiles are optimized?</span>
-          <span class="srv-faq-icon" aria-hidden="true">+</span>
-        </button>
-        <div id="faq-ans-7" class="srv-faq-panel" >
-          <div class="srv-faq-content">
-            <p>We provide ongoing monthly performance tracking and quarterly profile refresh audits to align with platform algorithm changes and new service launches.</p>
+            <p>You receive a weekly progress note and a detailed monthly report covering reach, engagement, clicks and leads, followed by a review call.</p>
           </div>
         </div>
       </div>
@@ -612,7 +784,7 @@ $consultationUrl = appUrl('contact.php?service=' . urlencode($serviceName));
 </section>
 
 <!-- ============================================================
-     SECTION 9 — FINAL CONVERSION CTA
+     SECTION 10 — FINAL CONVERSION CTA
      ============================================================ -->
 <section class="srv-section srv-cta-section" id="cta">
   <div class="srv-container">
@@ -626,14 +798,14 @@ $consultationUrl = appUrl('contact.php?service=' . urlencode($serviceName));
               <span>TAKE THE NEXT STEP</span>
             </div>
             <h2 class="srv-cta-title">
-              Ready to Turn Social Visits into <span class="text-brand">Paying Customers?</span>
+              Ready to Work with a Result-Driven <span class="text-brand">SMO Company in Delhi?</span>
             </h2>
             <p class="srv-cta-lead">
-              Schedule a discovery session with our SMO architects. We will conduct a live audit of your current social profiles and deliver an actionable conversion blueprint.
+              Share your brand details and goals. We will send a free social media audit with clear next steps within 24 hours.
             </p>
             <div class="srv-cta-actions" style="justify-content: flex-start; margin-bottom: 2rem;">
               <a href="<?= e($consultationUrl) ?>" class="btn-srv-primary btn-srv-lg">
-                <span>Get a Free Consultation</span>
+                <span>Book Your Free SMO Audit</span>
                 <svg class="btn-srv-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
               </a>
               <a href="<?= appUrl('audit.php') ?>" class="btn-srv-secondary btn-srv-lg">
@@ -641,6 +813,9 @@ $consultationUrl = appUrl('contact.php?service=' . urlencode($serviceName));
                 <svg class="btn-srv-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="9 18 15 12 9 6"/></svg>
               </a>
             </div>
+            <p style="color: var(--color-accent); font-size: 0.88rem; margin-bottom: 1.5rem; font-weight: 500;">
+              No contract. No obligation. Your audit is yours to keep.
+            </p>
             <div class="srv-cta-contact-meta" style="justify-content: flex-start; border-top: 1px solid rgba(6, 181, 249, 0.15); padding-top: 1.5rem;">
               <div class="srv-meta-item">
                 <svg class="srv-meta-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
@@ -659,26 +834,26 @@ $consultationUrl = appUrl('contact.php?service=' . urlencode($serviceName));
           <div>
             <div class="srv-quick-form-card">
               <div class="srv-form-header">
-                <h3 class="srv-form-title">Request Practice Consultation</h3>
-                <p class="srv-form-subtitle">Direct consultation with senior SMO — Social Media Optimization strategists.</p>
+                <h3 class="srv-form-title">Request Technical Consultation</h3>
+                <p class="srv-form-subtitle">Direct consultation with senior SMO growth architects.</p>
               </div>
               <form action="<?= appUrl('contact.php') ?>" method="GET" class="srv-quick-form">
                 <input type="hidden" name="service" value="<?= e($serviceName) ?>">
                 <div class="srv-form-group">
-                  <label class="srv-form-label" for="quick_name_smo.php">Your Full Name</label>
-                  <input type="text" id="quick_name_smo.php" name="name" required class="srv-form-input" placeholder="e.g. Sarah Jenkins">
+                  <label class="srv-form-label" for="quick_name_smo">Your Full Name</label>
+                  <input type="text" id="quick_name_smo" name="name" required class="srv-form-input" placeholder="e.g. Sarah Jenkins">
                 </div>
                 <div class="srv-form-group">
-                  <label class="srv-form-label" for="quick_email_smo.php">Work Email</label>
-                  <input type="email" id="quick_email_smo.php" name="email" required class="srv-form-input" placeholder="e.g. sarah@enterprise.com">
+                  <label class="srv-form-label" for="quick_email_smo">Work Email</label>
+                  <input type="email" id="quick_email_smo" name="email" required class="srv-form-input" placeholder="e.g. sarah@enterprise.com">
                 </div>
                 <div class="srv-form-group">
-                  <label class="srv-form-label" for="quick_company_smo.php">Company / Domain</label>
-                  <input type="text" id="quick_company_smo.php" name="company" class="srv-form-input" placeholder="e.g. Enterprise Corp (enterprise.com)">
+                  <label class="srv-form-label" for="quick_company_smo">Company / Domain</label>
+                  <input type="text" id="quick_company_smo" name="company" class="srv-form-input" placeholder="e.g. Enterprise Corp (enterprise.com)">
                 </div>
                 <div class="srv-form-group">
-                  <label class="srv-form-label" for="quick_notes_smo.php">Project Scope &amp; Goals</label>
-                  <textarea id="quick_notes_smo.php" name="notes" rows="2" class="srv-form-textarea" placeholder="Briefly describe your objectives, challenges, or current growth bottlenecks..."></textarea>
+                  <label class="srv-form-label" for="quick_notes_smo">Project Scope &amp; Objectives</label>
+                  <textarea id="quick_notes_smo" name="notes" rows="2" class="srv-form-textarea" placeholder="Briefly describe your social channels, audience targets, or growth goals..."></textarea>
                 </div>
                 <button type="submit" class="srv-form-submit">
                   <span>Send Consultation Request</span>

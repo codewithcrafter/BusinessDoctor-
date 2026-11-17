@@ -256,19 +256,18 @@ require_once __DIR__ . '/includes/header.php';
      ============================================================ -->
 <section id="capabilities" class="section">
   <div class="container">
-    <div class="section-header text-center">
+    <div class="section-header text-center home-section-header">
       <div class="eyebrow-badge">
         <span class="pill-dot"></span>
         <span>FEATURED CAPABILITIES</span>
       </div>
-      <h2 class="section-title" style="font-size: clamp(2rem, 3.5vw, 3rem);">Digital Marketing Services in Delhi
-        Designed to Grow Your Business
+      <h2 class="section-title">
+        Digital Marketing Services in Delhi <span class="text-gradient-pine">Designed to Grow Your Business</span>
       </h2>
       <p class="lead">
         Business Doctor is a full-service digital marketing company in Delhi NCR that provides you with the best digital
         marketing services, from web development, digital marketing and e-commerce management to cloud solutions. Our
         team provides you with suitable personalization strategies that help you to grow.
-
       </p>
     </div>
 
@@ -475,13 +474,14 @@ require_once __DIR__ . '/includes/header.php';
      ============================================================ -->
 <section class="section transformation-section">
   <div class="container">
-    <div class="section-header text-center">
+    <div class="section-header text-center home-section-header">
       <div class="eyebrow-badge">
         <span class="pill-dot"></span>
         <span>BUSINESS TRANSFORMATION</span>
       </div>
-      <h2 class="section-title" style="font-size: clamp(2rem, 3.5vw, 3rem);">A digital marketing company &amp;
-        that simplifies business growth</h2>
+      <h2 class="section-title">
+        A digital marketing company &amp; <span class="text-gradient-pine">that simplifies business growth</span>
+      </h2>
       <p class="lead">
         In today's competitive world, every business faces challenges such as low online visibility, low leads and more.
         BusinessDoctor understands your business’s challenges and offers solutions that fit your needs. BusinessDoctor
@@ -587,13 +587,15 @@ require_once __DIR__ . '/includes/header.php';
      ============================================================ -->
 <section class="section benefits-section" id="benefitsSection">
   <div class="container">
-    <div class="section-header text-center">
+    <div class="section-header text-center home-section-header">
       <div class="eyebrow-badge">
         <span class="pill-dot"></span>
         <span>BUSINESS IMPACT</span>
       </div>
-      <h2 class="section-title">Why Businesses Choose BusinessDoctor as Best Digital Marketing company in Delhi</h2>
-      <p class="lead" style="max-width: 760px; margin: 0 auto;">
+      <h2 class="section-title">
+        Why Businesses Choose BusinessDoctor as <span class="text-gradient-pine">Best Digital Marketing company in Delhi</span>
+      </h2>
+      <p class="lead">
         BusinessDoctor is a full-service digital marketing company. We believe that every business has the potential to
         grow and we provide them with complete business solutions like a strong online presence, quality lead
         generation, better brand visibility and more leads, which help them to grow their business better. Our goal is
@@ -1040,64 +1042,75 @@ require_once __DIR__ . '/includes/header.php';
                 </linearGradient>
               </defs>
 
-              <rect x="30" y="16" width="480" height="36" rx="6" fill="#071A2C" stroke="rgba(6, 181, 249, 0.3)"
+              <!-- Stage 1: Visitors -->
+              <rect x="30" y="12" width="480" height="32" rx="6" fill="#071A2C" stroke="rgba(6, 181, 249, 0.3)"
                 stroke-width="1.2" />
-              <rect x="30" y="16" width="476" height="36" rx="6" fill="url(#cfGrad)" fill-opacity="0.25" />
-              <text x="44" y="39" fill="#F4F8FC" font-size="11.5" font-family="var(--font-display)" font-weight="700">1.
+              <rect x="30" y="12" width="476" height="32" rx="6" fill="url(#cfGrad)" fill-opacity="0.25" />
+              <text x="44" y="32" fill="#F4F8FC" font-size="11.5" font-family="var(--font-display)" font-weight="700">1.
                 VISITORS</text>
-              <text x="448" y="39" fill="#0099DB" font-size="11.5" font-family="var(--font-mono)" font-weight="700"
+              <text x="448" y="32" fill="#0099DB" font-size="11.5" font-family="var(--font-mono)" font-weight="700"
                 text-anchor="end">10,000</text>
-              <text x="496" y="39" fill="#AABBCB" font-size="11" font-family="var(--font-mono)"
+              <text x="496" y="32" fill="#AABBCB" font-size="11" font-family="var(--font-mono)"
                 text-anchor="end">100%</text>
 
-              <text x="270" y="60" fill="#8297AA" font-size="9" font-family="var(--font-mono)" text-anchor="middle">▼
-                -36% (High-intent discovery filter)</text>
+              <!-- Drop-off 1 -->
+              <text x="270" y="55" fill="#8297AA" font-size="9" font-family="var(--font-mono)" text-anchor="middle"
+                dominant-baseline="middle">▼ -36% (High-intent discovery filter)</text>
 
-              <rect x="65" y="66" width="410" height="36" rx="6" fill="#071A2C" stroke="rgba(6, 181, 249, 0.35)"
+              <!-- Stage 2: Product/Service Views -->
+              <rect x="65" y="64" width="410" height="32" rx="6" fill="#071A2C" stroke="rgba(6, 181, 249, 0.35)"
                 stroke-width="1.2" />
-              <rect x="65" y="66" width="310" height="36" rx="6" fill="url(#cfGrad)" fill-opacity="0.35" />
-              <text x="79" y="89" fill="#F4F8FC" font-size="11.5" font-family="var(--font-display)" font-weight="700">2.
+              <rect x="65" y="64" width="310" height="32" rx="6" fill="url(#cfGrad)" fill-opacity="0.3" />
+              <text x="79" y="84" fill="#F4F8FC" font-size="11.5" font-family="var(--font-display)" font-weight="700">2.
                 PRODUCT/SERVICE VIEWS</text>
-              <text x="414" y="89" fill="#0099DB" font-size="11.5" font-family="var(--font-mono)" font-weight="700"
+              <text x="413" y="84" fill="#0099DB" font-size="11.5" font-family="var(--font-mono)" font-weight="700"
                 text-anchor="end">6,400</text>
-              <text x="461" y="89" fill="#AABBCB" font-size="11" font-family="var(--font-mono)"
+              <text x="461" y="84" fill="#AABBCB" font-size="11" font-family="var(--font-mono)"
                 text-anchor="end">64%</text>
 
-              <text x="270" y="110" fill="#8297AA" font-size="9" font-family="var(--font-mono)" text-anchor="middle">▼
-                -30% (Solution alignment evaluation)</text>
+              <!-- Drop-off 2 -->
+              <text x="270" y="106" fill="#8297AA" font-size="9" font-family="var(--font-mono)" text-anchor="middle"
+                dominant-baseline="middle">▼ -30% (Solution alignment evaluation)</text>
 
-              <rect x="100" y="116" width="340" height="36" rx="6" fill="#071A2C" stroke="rgba(6, 181, 249, 0.45)"
+              <!-- Stage 3: Enquiries -->
+              <rect x="100" y="116" width="340" height="32" rx="6" fill="#071A2C" stroke="rgba(6, 181, 249, 0.45)"
                 stroke-width="1.2" />
-              <rect x="100" y="116" width="190" height="36" rx="6" fill="url(#cfGrad)" fill-opacity="0.5" />
-              <text x="114" y="139" fill="#F4F8FC" font-size="11.5" font-family="var(--font-display)" font-weight="700">3.
+              <rect x="100" y="116" width="190" height="32" rx="6" fill="url(#cfGrad)" fill-opacity="0.35" />
+              <text x="114" y="136" fill="#F4F8FC" font-size="11.5" font-family="var(--font-display)" font-weight="700">3.
                 ENQUIRIES</text>
-              <text x="378" y="139" fill="#0099DB" font-size="11.5" font-family="var(--font-mono)" font-weight="700"
+              <text x="378" y="136" fill="#0099DB" font-size="11.5" font-family="var(--font-mono)" font-weight="700"
                 text-anchor="end">3,400</text>
-              <text x="426" y="139" fill="#AABBCB" font-size="11" font-family="var(--font-mono)"
+              <text x="426" y="136" fill="#AABBCB" font-size="11" font-family="var(--font-mono)"
                 text-anchor="end">34%</text>
 
-              <text x="270" y="160" fill="#8297AA" font-size="9" font-family="var(--font-mono)" text-anchor="middle">▼
-                -16% (Scope and qualification fit)</text>
+              <!-- Drop-off 3 -->
+              <text x="270" y="158" fill="#8297AA" font-size="9" font-family="var(--font-mono)" text-anchor="middle"
+                dominant-baseline="middle">▼ -16% (Scope and qualification fit)</text>
 
-              <rect x="135" y="166" width="270" height="36" rx="6" fill="#071A2C" stroke="rgba(6, 181, 249, 0.55)"
+              <!-- Stage 4: Qualified Leads -->
+              <rect x="135" y="168" width="270" height="32" rx="6" fill="#071A2C" stroke="rgba(6, 181, 249, 0.55)"
                 stroke-width="1.2" />
-              <rect x="135" y="166" width="125" height="36" rx="6" fill="url(#cfGrad)" fill-opacity="0.65" />
-              <text x="149" y="189" fill="#F4F8FC" font-size="11" font-family="var(--font-display)" font-weight="700">4.
+              <rect x="135" y="168" width="125" height="32" rx="6" fill="url(#cfGrad)" fill-opacity="0.4" />
+              <text x="149" y="188" fill="#F4F8FC" font-size="11" font-family="var(--font-display)" font-weight="700">4.
                 QUALIFIED LEADS</text>
-              <text x="344" y="189" fill="#0099DB" font-size="11.5" font-family="var(--font-mono)" font-weight="700"
+              <text x="343" y="188" fill="#0099DB" font-size="11.5" font-family="var(--font-mono)" font-weight="700"
                 text-anchor="end">1,800</text>
-              <text x="391" y="189" fill="#AABBCB" font-size="11" font-family="var(--font-mono)"
+              <text x="391" y="188" fill="#AABBCB" font-size="11" font-family="var(--font-mono)"
                 text-anchor="end">18%</text>
 
-              <text x="270" y="210" fill="#8297AA" font-size="9" font-family="var(--font-mono)" text-anchor="middle">▼
-                -9.8% (Commercial commitment)</text>
+              <!-- Drop-off 4 -->
+              <text x="270" y="210" fill="#8297AA" font-size="9" font-family="var(--font-mono)" text-anchor="middle"
+                dominant-baseline="middle">▼ -9.8% (Commercial commitment)</text>
 
-              <rect x="165" y="216" width="210" height="38" rx="8" fill="#071A2C" stroke="#06B5F9" stroke-width="1.6" />
-              <rect x="165" y="216" width="210" height="38" rx="8" fill="#06B5F9" fill-opacity="0.2" />
-              <text x="178" y="240" fill="#0099DB" font-size="11" font-family="var(--font-display)" font-weight="800">5.
+              <!-- Stage 5: Conversions -->
+              <rect x="155" y="220" width="230" height="34" rx="8" fill="#071A2C" stroke="#06B5F9" stroke-width="1.6" />
+              <rect x="155" y="220" width="230" height="34" rx="8" fill="#06B5F9" fill-opacity="0.18" />
+              <text x="169" y="241" fill="#0099DB" font-size="11" font-family="var(--font-display)" font-weight="800">5.
                 CONVERSIONS</text>
-              <text x="362" y="240" fill="#06B5F9" font-size="11.5" font-family="var(--font-mono)" font-weight="800"
-                text-anchor="end">820 (8.2%)</text>
+              <text x="323" y="241" fill="#06B5F9" font-size="11.5" font-family="var(--font-mono)" font-weight="800"
+                text-anchor="end">820</text>
+              <text x="371" y="241" fill="#06B5F9" font-size="11" font-family="var(--font-mono)" font-weight="800"
+                text-anchor="end">8.2%</text>
             </svg>
           </div>
         </div>
@@ -1126,10 +1139,10 @@ require_once __DIR__ . '/includes/header.php';
           <span class="pill-dot"></span>
           <span>OUR APPROACH</span>
         </div>
-        <h2 class="section-title"
-          style="font-size: clamp(2.2rem, 3.8vw, 3.25rem); line-height: 1.15; margin-bottom: 1rem;">A strong approach
-          &amp; for business growth</h2>
-        <p class="lead" style="margin-bottom: 0;">
+        <h2 class="section-title">
+          A strong approach &amp; <span class="text-gradient-pine">for business growth</span>
+        </h2>
+        <p class="lead">
           We work according to what you need and what your brand needs. We inspect your business, customise a plan and
           monitor it until it reaches its full potential.
         </p>
@@ -1200,8 +1213,10 @@ require_once __DIR__ . '/includes/header.php';
             <div class="stage-card-meta">
               <span class="stage-phase-tag">PHASE 01 // ARCHITECTURAL AUDIT</span>
             </div>
-            <span class="approach-num">01</span>
-            <h3 class="approach-title">Discover </h3>
+            <div class="stage-title-row" style="display: flex; align-items: center; gap: 0.85rem; margin-bottom: 0.85rem;">
+              <span class="approach-num" style="margin-bottom: 0; line-height: 1; flex-shrink: 0;">01</span>
+              <h3 class="approach-title" style="margin-bottom: 0; line-height: 1.2;">Discover</h3>
+            </div>
             <p class="approach-desc">
               We start with understanding your goals, business needs, target audience and challenges. It helps us to
               create a strategy for your business.
@@ -1220,8 +1235,10 @@ require_once __DIR__ . '/includes/header.php';
             <div class="stage-card-meta">
               <span class="stage-phase-tag">PHASE 02 // SYSTEMS ARCHITECTURE</span>
             </div>
-            <span class="approach-num">02</span>
-            <h3 class="approach-title">Strategies </h3>
+            <div class="stage-title-row" style="display: flex; align-items: center; gap: 0.85rem; margin-bottom: 0.85rem;">
+              <span class="approach-num" style="margin-bottom: 0; line-height: 1; flex-shrink: 0;">02</span>
+              <h3 class="approach-title" style="margin-bottom: 0; line-height: 1.2;">Strategies</h3>
+            </div>
             <p class="approach-desc">
               Strategies are the main foundation of the growth journey. We customize every strategy while keeping your
               needs and goals in mind.
@@ -1240,8 +1257,10 @@ require_once __DIR__ . '/includes/header.php';
             <div class="stage-card-meta">
               <span class="stage-phase-tag">PHASE 03 // FULL-STACK BUILD</span>
             </div>
-            <span class="approach-num">03</span>
-            <h3 class="approach-title">Engineer </h3>
+            <div class="stage-title-row" style="display: flex; align-items: center; gap: 0.85rem; margin-bottom: 0.85rem;">
+              <span class="approach-num" style="margin-bottom: 0; line-height: 1; flex-shrink: 0;">03</span>
+              <h3 class="approach-title" style="margin-bottom: 0; line-height: 1.2;">Engineer</h3>
+            </div>
             <p class="approach-desc">
               Execute the plan with seo, ads, website development and more so that you can achieve your business goal.
             </p>
@@ -1259,8 +1278,10 @@ require_once __DIR__ . '/includes/header.php';
             <div class="stage-card-meta">
               <span class="stage-phase-tag">PHASE 04 // PERFORMANCE &amp; ROAS</span>
             </div>
-            <span class="approach-num">04</span>
-            <h3 class="approach-title">Optimization </h3>
+            <div class="stage-title-row" style="display: flex; align-items: center; gap: 0.85rem; margin-bottom: 0.85rem;">
+              <span class="approach-num" style="margin-bottom: 0; line-height: 1; flex-shrink: 0;">04</span>
+              <h3 class="approach-title" style="margin-bottom: 0; line-height: 1.2;">Optimization</h3>
+            </div>
             <p class="approach-desc">
               At Businessdoctor, after executing the strategy, we optimise performance. We find out what is working well
               and where we need necessary changes
@@ -1279,8 +1300,10 @@ require_once __DIR__ . '/includes/header.php';
             <div class="stage-card-meta">
               <span class="stage-phase-tag">PHASE 05 // SCALE &amp; RETENTION</span>
             </div>
-            <span class="approach-num">05</span>
-            <h3 class="approach-title">Grow</h3>
+            <div class="stage-title-row" style="display: flex; align-items: center; gap: 0.85rem; margin-bottom: 0.85rem;">
+              <span class="approach-num" style="margin-bottom: 0; line-height: 1; flex-shrink: 0;">05</span>
+              <h3 class="approach-title" style="margin-bottom: 0; line-height: 1.2;">Grow</h3>
+            </div>
             <p class="approach-desc">
               At Businessdoctor, we focus on taking your business to the next level. Our team focuses on building your
               online presence more strongly.
@@ -1297,306 +1320,100 @@ require_once __DIR__ . '/includes/header.php';
 </section>
 
 <!-- ============================================================
-     6. PROVEN OUTCOMES (STANDARDS & ACCOUNTABILITY TIMELINE)
+     6. PROVEN OUTCOMES (STANDARDS & ACCOUNTABILITY)
      ============================================================ -->
 <section class="section accountability-section" id="accountability">
-  <!-- Background Ambient & Decorative Layers -->
-  <div class="accountability-bg-layer" aria-hidden="true">
-    <div class="accountability-ambient-glow glow-left"></div>
-    <div class="accountability-ambient-glow glow-right"></div>
-    <svg class="accountability-wave-lines" viewBox="0 0 1440 600" fill="none" preserveAspectRatio="none">
-      <path d="M-100,200 C300,50 600,350 1100,120 C1300,30 1500,250 1600,200" stroke="rgba(87, 64, 84, 0.08)"
-        stroke-width="1.5" stroke-dasharray="6 6" />
-      <path d="M-100,320 C250,180 750,420 1200,240 C1400,160 1550,300 1600,280" stroke="rgba(161, 126, 145, 0.12)"
-        stroke-width="1.5" />
-      <path d="M-50,450 C350,300 850,550 1350,380 C1500,320 1600,400 1650,390" stroke="rgba(87, 64, 84, 0.06)"
-        stroke-width="1" />
-    </svg>
-    <div class="accountability-corner-accent top-left"></div>
-    <div class="accountability-corner-accent bottom-right"></div>
-  </div>
-
   <div class="container" style="position: relative; z-index: 2;">
     <!-- Section Header -->
-    <div class="accountability-header">
+    <div class="section-header text-center home-section-header">
       <div class="eyebrow-badge">
         <span class="pill-dot"></span>
         <span>PROVEN OUTCOMES</span>
       </div>
-      <h2 class="accountability-title">
-        Real Business Growth with &amp; <span class="title-accent">the Right Digital Marketing Strategy.</span>
+      <h2 class="section-title">
+        Real Business Growth with &amp; <span class="text-gradient-pine">the Right Digital Marketing Strategy.</span>
       </h2>
-      <p class="accountability-desc">
+      <p class="lead">
         At Business Doctor, a trusted digital marketing company in Delhi, we provide everything from generating quality
         leads to increasing online visibility which helps your business grow.
       </p>
     </div>
 
     <!-- 4 Feature Cards Grid -->
-    <div class="accountability-grid">
+    <div class="proven-outcomes-grid">
 
-      <!-- Card 01: Framework-Free Speed -->
-      <article class="accountability-card">
-        <div class="accountability-card-visual">
-          <div class="visual-tag">SUB-SECOND SLA</div>
-          <div class="visual-number">01</div>
-          <svg class="visual-artwork" viewBox="0 0 340 195" fill="none" xmlns="http://www.w3.org/2000/svg"
-            aria-hidden="true">
-            <defs>
-              <radialGradient id="cardGlow1" cx="50%" cy="50%" r="50%">
-                <stop offset="0%" stop-color="#0A223B" stop-opacity="0.45" />
-                <stop offset="100%" stop-color="#0A1D35" stop-opacity="0" />
-              </radialGradient>
-              <linearGradient id="goldAcc1" x1="0%" y1="0%" x2="100%" y2="100%">
-                <stop offset="0%" stop-color="#0099DB" />
-                <stop offset="100%" stop-color="#06B5F9" />
-              </linearGradient>
-            </defs>
-            <rect width="340" height="195" fill="url(#cardGlow1)" />
-            <text x="20" y="58" fill="rgba(6, 181, 249, 0.35)" font-size="8.5" font-family="monospace">&lt;?php
-              declare(strict_types=1);</text>
-            <text x="20" y="74" fill="rgba(0, 153, 219, 0.25)" font-size="8.5" font-family="monospace">const LATENCY =
-              '0.38s'; // 0MB BLOAT</text>
-            <text x="20" y="90" fill="rgba(6, 181, 249, 0.3)" font-size="8.5" font-family="monospace">return new
-              EnterpriseResponse();</text>
-            <circle cx="170" cy="115" r="46" stroke="rgba(6, 181, 249, 0.3)" stroke-width="1.5"
-              stroke-dasharray="4 4" />
-            <circle cx="170" cy="115" r="36" fill="#071A2C" stroke="rgba(6, 181, 249, 0.45)" stroke-width="1.5" />
-            <polyline points="154,106 144,115 154,124" stroke="url(#goldAcc1)" stroke-width="2.5" stroke-linecap="round"
-              stroke-linejoin="round" />
-            <polyline points="186,106 196,115 186,124" stroke="url(#goldAcc1)" stroke-width="2.5" stroke-linecap="round"
-              stroke-linejoin="round" />
-            <line x1="174" y1="102" x2="166" y2="128" stroke="url(#goldAcc1)" stroke-width="2.5"
-              stroke-linecap="round" />
-            <path d="M 130 120 A 45 45 0 0 1 210 120" stroke="url(#goldAcc1)" stroke-width="3" stroke-linecap="round"
-              stroke-dasharray="70 120" />
-            <rect x="132" y="166" width="76" height="18" rx="9" fill="rgba(10, 34, 59, 0.55)"
-              stroke="rgba(6, 181, 249, 0.4)" />
-            <text x="170" y="178.5" fill="#0099DB" font-size="7.5" font-family="monospace" font-weight="700"
-              text-anchor="middle">&lt; 0.4s NATIVE</text>
-          </svg>
-        </div>
-        <div class="accountability-card-body">
-          <h4 class="accountability-card-title">Faster Website Performance</h4>
-          <p class="accountability-card-desc">
-            Business Doctor is a digital marketing company in Delhi. We design user friendly websites with faster
-            performance. This makes the user experience better.
-          </p>
-          <div class="accountability-card-footer">
-            <span class="accountability-micro-badge">Vanilla Stack</span>
-            <div class="accountability-arrow-btn" aria-hidden="true">
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2">
-                <line x1="5" y1="12" x2="19" y2="12"></line>
-                <polyline points="12 5 19 12 12 19"></polyline>
-              </svg>
-            </div>
+      <!-- Card 01 -->
+      <article class="proven-outcome-card">
+        <div class="poc-card-top">
+          <span class="poc-num">01</span>
+          <div class="poc-icon-wrap" aria-hidden="true">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z"/>
+            </svg>
           </div>
-          <div class="accountability-card-bottom-accent"></div>
         </div>
+        <h3 class="poc-title">Faster Website Performance</h3>
+        <p class="poc-desc">
+          Business Doctor is a digital marketing company in Delhi. We design user friendly websites with faster
+          performance. This makes the user experience better.
+        </p>
       </article>
 
-      <!-- Card 02: Ironclad Security -->
-      <article class="accountability-card">
-        <div class="accountability-card-visual">
-          <div class="visual-tag">ZERO-TRUST SEC</div>
-          <div class="visual-number">02</div>
-          <svg class="visual-artwork" viewBox="0 0 340 195" fill="none" xmlns="http://www.w3.org/2000/svg"
-            aria-hidden="true">
-            <defs>
-              <radialGradient id="cardGlow2" cx="50%" cy="50%" r="50%">
-                <stop offset="0%" stop-color="#0A223B" stop-opacity="0.45" />
-                <stop offset="100%" stop-color="#0A1D35" stop-opacity="0" />
-              </radialGradient>
-              <linearGradient id="goldAcc2" x1="0%" y1="0%" x2="100%" y2="100%">
-                <stop offset="0%" stop-color="#0099DB" />
-                <stop offset="100%" stop-color="#06B5F9" />
-              </linearGradient>
-            </defs>
-            <rect width="340" height="195" fill="url(#cardGlow2)" />
-            <circle cx="170" cy="115" r="60" stroke="rgba(6, 181, 249, 0.2)" stroke-width="1" />
-            <circle cx="170" cy="115" r="44" stroke="rgba(6, 181, 249, 0.35)" stroke-width="1.2"
-              stroke-dasharray="3 3" />
-            <line x1="170" y1="45" x2="170" y2="185" stroke="rgba(6, 181, 249, 0.2)" stroke-width="1"
-              stroke-dasharray="2 4" />
-            <line x1="100" y1="115" x2="240" y2="115" stroke="rgba(6, 181, 249, 0.2)" stroke-width="1"
-              stroke-dasharray="2 4" />
-            <circle cx="108" cy="115" r="9" fill="#071A2C" stroke="rgba(6, 181, 249, 0.7)" stroke-width="1.5" />
-            <path d="M105 115 l2 2 l4 -4" stroke="#06B5F9" stroke-width="1.5" fill="none" stroke-linecap="round" />
-            <circle cx="232" cy="115" r="9" fill="#071A2C" stroke="rgba(6, 181, 249, 0.7)" stroke-width="1.5" />
-            <path d="M229 115 l2 2 l4 -4" stroke="#06B5F9" stroke-width="1.5" fill="none" stroke-linecap="round" />
-            <path d="M170 82 L196 93 V120 C196 137 170 148 170 148 C170 148 144 137 144 120 V93 Z" fill="#071A2C"
-              stroke="url(#goldAcc2)" stroke-width="2.2" stroke-linejoin="round" />
-            <rect x="162" y="112" width="16" height="14" rx="3" fill="url(#goldAcc2)" />
-            <path d="M165 112 V106 a5 5 0 0 1 10 0 v6" fill="none" stroke="url(#goldAcc2)" stroke-width="2.2"
-              stroke-linecap="round" />
-            <circle cx="170" cy="118" r="1.8" fill="#071A2C" />
-            <line x1="170" y1="119.5" x2="170" y2="123" stroke="#071A2C" stroke-width="1.5" stroke-linecap="round" />
-            <rect x="122" y="166" width="96" height="18" rx="9" fill="rgba(10, 34, 59, 0.55)"
-              stroke="rgba(6, 181, 249, 0.4)" />
-            <text x="170" y="178.5" fill="#0099DB" font-size="7.5" font-family="monospace" font-weight="700"
-              text-anchor="middle">CSRF // RATE-LIMITED</text>
-          </svg>
-        </div>
-        <div class="accountability-card-body">
-          <h4 class="accountability-card-title">Stronger Online Visibility</h4>
-          <p class="accountability-card-desc">
-            We provide the best seo service in delhi that improve your business's online visibility. Good online
-            visibility will help you to get more leads and quality customers.
-          </p>
-          <div class="accountability-card-footer">
-            <span class="accountability-micro-badge">Enterprise Defense</span>
-            <div class="accountability-arrow-btn" aria-hidden="true">
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2">
-                <line x1="5" y1="12" x2="19" y2="12"></line>
-                <polyline points="12 5 19 12 12 19"></polyline>
-              </svg>
-            </div>
+      <!-- Card 02 -->
+      <article class="proven-outcome-card">
+        <div class="poc-card-top">
+          <span class="poc-num">02</span>
+          <div class="poc-icon-wrap" aria-hidden="true">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <circle cx="12" cy="12" r="10"/>
+              <line x1="2" y1="12" x2="22" y2="12"/>
+              <path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/>
+            </svg>
           </div>
-          <div class="accountability-card-bottom-accent"></div>
         </div>
+        <h3 class="poc-title">Stronger Online Visibility</h3>
+        <p class="poc-desc">
+          We provide the best seo service in delhi that improve your business's online visibility. Good online
+          visibility will help you to get more leads and quality customers.
+        </p>
       </article>
 
-      <!-- Card 03: Zero Ad Waste Guarantee -->
-      <article class="accountability-card">
-        <div class="accountability-card-visual">
-          <div class="visual-tag">VERIFIED MARGINS</div>
-          <div class="visual-number">03</div>
-          <svg class="visual-artwork" viewBox="0 0 340 195" fill="none" xmlns="http://www.w3.org/2000/svg"
-            aria-hidden="true">
-            <defs>
-              <radialGradient id="cardGlow3" cx="50%" cy="50%" r="50%">
-                <stop offset="0%" stop-color="#0A223B" stop-opacity="0.45" />
-                <stop offset="100%" stop-color="#0A1D35" stop-opacity="0" />
-              </radialGradient>
-              <linearGradient id="goldAcc3" x1="0%" y1="0%" x2="100%" y2="100%">
-                <stop offset="0%" stop-color="#0099DB" />
-                <stop offset="100%" stop-color="#06B5F9" />
-              </linearGradient>
-              <linearGradient id="chartGrad" x1="0%" y1="0%" x2="0%" y2="100%">
-                <stop offset="0%" stop-color="#06B5F9" stop-opacity="0.35" />
-                <stop offset="100%" stop-color="#0A223B" stop-opacity="0.05" />
-              </linearGradient>
-            </defs>
-            <rect width="340" height="195" fill="url(#cardGlow3)" />
-            <line x1="30" y1="85" x2="310" y2="85" stroke="rgba(6, 181, 249, 0.18)" stroke-width="1" />
-            <line x1="30" y1="120" x2="310" y2="120" stroke="rgba(6, 181, 249, 0.18)" stroke-width="1" />
-            <line x1="30" y1="150" x2="310" y2="150" stroke="rgba(6, 181, 249, 0.25)" stroke-width="1" />
-            <rect x="55" y="125" width="14" height="25" rx="3" fill="#0A223B" opacity="0.6" />
-            <rect x="85" y="110" width="14" height="40" rx="3" fill="#0A223B" opacity="0.75" />
-            <rect x="115" y="92" width="14" height="58" rx="3" fill="#0A223B" opacity="0.9" />
-            <rect x="210" y="80" width="14" height="70" rx="3" fill="#0A223B" opacity="0.85" />
-            <rect x="240" y="65" width="14" height="85" rx="3" fill="url(#goldAcc3)" />
-            <rect x="270" y="52" width="14" height="98" rx="3" fill="url(#goldAcc3)" />
-            <path d="M 55 125 Q 115 105 160 88 T 280 48 L 280 150 L 55 150 Z" fill="url(#chartGrad)" />
-            <path d="M 55 125 Q 115 105 160 88 T 280 48" stroke="url(#goldAcc3)" stroke-width="2.5"
-              stroke-linecap="round" />
-            <circle cx="165" cy="105" r="28" fill="#071A2C" stroke="url(#goldAcc3)" stroke-width="2" />
-            <path d="M165 91 v28 M172 96 h-10 a5 5 0 0 0 0 10 h7 a5 5 0 0 1 0 10 h-11" stroke="url(#goldAcc3)"
-              stroke-width="2.8" stroke-linecap="round" fill="none" />
-            <rect x="125" y="166" width="90" height="18" rx="9" fill="rgba(10, 34, 59, 0.55)"
-              stroke="rgba(6, 181, 249, 0.4)" />
-            <text x="170" y="178.5" fill="#0099DB" font-size="7.5" font-family="monospace" font-weight="700"
-              text-anchor="middle">ROAS OPTIMIZED</text>
-          </svg>
-        </div>
-        <div class="accountability-card-body">
-          <h4 class="accountability-card-title">Better Lead Generation</h4>
-          <p class="accountability-card-desc">
-            Our team helps you to get quality leads that help your business to grow and turn enquiries into real
-            potential customers. Our goal is to help you build a strong customer base and achieve long term success.
-          </p>
-          <div class="accountability-card-footer">
-            <span class="accountability-micro-badge">Audited Capital</span>
-            <div class="accountability-arrow-btn" aria-hidden="true">
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2">
-                <line x1="5" y1="12" x2="19" y2="12"></line>
-                <polyline points="12 5 19 12 12 19"></polyline>
-              </svg>
-            </div>
+      <!-- Card 03 -->
+      <article class="proven-outcome-card">
+        <div class="poc-card-top">
+          <span class="poc-num">03</span>
+          <div class="poc-icon-wrap" aria-hidden="true">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <line x1="18" y1="20" x2="18" y2="10"/>
+              <line x1="12" y1="20" x2="12" y2="4"/>
+              <line x1="6" y1="20" x2="6" y2="14"/>
+            </svg>
           </div>
-          <div class="accountability-card-bottom-accent"></div>
         </div>
+        <h3 class="poc-title">Better Lead Generation</h3>
+        <p class="poc-desc">
+          Our team helps you to get quality leads that help your business to grow and turn enquiries into real
+          potential customers. Our goal is to help you build a strong customer base and achieve long term success.
+        </p>
       </article>
 
-      <!-- Card 04: Dedicated Tech Leads -->
-      <article class="accountability-card">
-        <div class="accountability-card-visual">
-          <div class="visual-tag">LEAD ARCHITECTS</div>
-          <div class="visual-number">04</div>
-          <svg class="visual-artwork" viewBox="0 0 340 195" fill="none" xmlns="http://www.w3.org/2000/svg"
-            aria-hidden="true">
-            <defs>
-              <radialGradient id="cardGlow4" cx="50%" cy="50%" r="50%">
-                <stop offset="0%" stop-color="#0A223B" stop-opacity="0.45" />
-                <stop offset="100%" stop-color="#0A1D35" stop-opacity="0" />
-              </radialGradient>
-              <linearGradient id="goldAcc4" x1="0%" y1="0%" x2="100%" y2="100%">
-                <stop offset="0%" stop-color="#0099DB" />
-                <stop offset="100%" stop-color="#06B5F9" />
-              </linearGradient>
-            </defs>
-            <rect width="340" height="195" fill="url(#cardGlow4)" />
-            <line x1="80" y1="140" x2="170" y2="90" stroke="rgba(6, 181, 249, 0.35)" stroke-width="1.5"
-              stroke-dasharray="3 3" />
-            <line x1="260" y1="140" x2="170" y2="90" stroke="rgba(6, 181, 249, 0.35)" stroke-width="1.5"
-              stroke-dasharray="3 3" />
-            <line x1="170" y1="90" x2="170" y2="45" stroke="rgba(0, 153, 219, 0.4)" stroke-width="1.5" />
-            <rect x="65" y="130" width="30" height="20" rx="4" fill="#071A2C" stroke="rgba(6, 181, 249, 0.5)"
-              stroke-width="1.2" />
-            <circle cx="80" cy="140" r="3" fill="#0099DB" />
-            <rect x="245" y="130" width="30" height="20" rx="4" fill="#071A2C" stroke="rgba(6, 181, 249, 0.5)"
-              stroke-width="1.2" />
-            <circle cx="260" cy="140" r="3" fill="#0099DB" />
-            <circle cx="170" cy="105" r="34" fill="#071A2C" stroke="url(#goldAcc4)" stroke-width="2" />
-            <path d="M158 91 L164 96 L170 88 L176 96 L182 91 L180 100 H160 Z" fill="url(#goldAcc4)" />
-            <circle cx="170" cy="107" r="7" stroke="url(#goldAcc4)" stroke-width="2" fill="none" />
-            <path d="M157 125 C157 117 163 115 170 115 C177 115 183 117 183 125" stroke="url(#goldAcc4)"
-              stroke-width="2" fill="none" stroke-linecap="round" />
-            <rect x="122" y="166" width="96" height="18" rx="9" fill="rgba(10, 34, 59, 0.55)"
-              stroke="rgba(6, 181, 249, 0.4)" />
-            <text x="170" y="178.5" fill="#0099DB" font-size="7.5" font-family="monospace" font-weight="700"
-              text-anchor="middle">NO ACCOUNT JUNIORS</text>
-          </svg>
-        </div>
-        <div class="accountability-card-body">
-          <h4 class="accountability-card-title">Zero Ad Waste Guarantee</h4>
-          <p class="accountability-card-desc">
-            Our goal is maximum utilisation of your advertising budget and to reduce unnecessary ad spending. We make
-            sure that your ad reaches the right audience through smart, data driven strategies and continuous campaigns.
-          </p>
-          <div class="accountability-card-footer">
-            <span class="accountability-micro-badge">Principal Architects</span>
-            <div class="accountability-arrow-btn" aria-hidden="true">
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2">
-                <line x1="5" y1="12" x2="19" y2="12"></line>
-                <polyline points="12 5 19 12 12 19"></polyline>
-              </svg>
-            </div>
+      <!-- Card 04 -->
+      <article class="proven-outcome-card">
+        <div class="poc-card-top">
+          <span class="poc-num">04</span>
+          <div class="poc-icon-wrap" aria-hidden="true">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/>
+            </svg>
           </div>
-          <div class="accountability-card-bottom-accent"></div>
         </div>
+        <h3 class="poc-title">Zero Ad Waste Guarantee</h3>
+        <p class="poc-desc">
+          Our goal is maximum utilisation of your advertising budget and to reduce unnecessary ad spending. We make
+          sure that your ad reaches the right audience through smart, data driven strategies and continuous campaigns.
+        </p>
       </article>
 
-    </div>
-
-    <!-- Decorative Connector Line & Markers -->
-    <div class="accountability-connector-strip" aria-hidden="true">
-      <div class="connector-marker">
-        <span class="marker-dot"></span>
-        <span class="marker-label"><span class="marker-num">01 //</span> High-Velocity SLA</span>
-      </div>
-      <div class="connector-marker">
-        <span class="marker-dot"></span>
-        <span class="marker-label"><span class="marker-num">02 //</span> Enterprise Defense</span>
-      </div>
-      <div class="connector-marker">
-        <span class="marker-dot"></span>
-        <span class="marker-label"><span class="marker-num">03 //</span> Audited Capital</span>
-      </div>
-      <div class="connector-marker">
-        <span class="marker-dot"></span>
-        <span class="marker-label"><span class="marker-num">04 //</span> Strategic Direction</span>
-      </div>
     </div>
 
   </div>
@@ -1607,13 +1424,15 @@ require_once __DIR__ . '/includes/header.php';
      ============================================================ -->
 <section class="section real-results-section" id="realResultsSection">
   <div class="container">
-    <div class="section-header text-center">
+    <div class="section-header text-center home-section-header">
       <div class="eyebrow-badge">
         <span class="pill-dot"></span>
         <span>PROOF OF WORK</span>
       </div>
-      <h2 class="section-title"> Real Client Stories and Digital Business Success Experiences</h2>
-      <p class="lead" style="max-width: 760px; margin: 0 auto;">
+      <h2 class="section-title">
+        Real Client Stories and <span class="text-gradient-pine">Digital Business Success Experiences</span>
+      </h2>
+      <p class="lead">
         Explore how BusinessDoctor Online Marketing company in Delhi combines engineering, marketing and digital
         strategy to solve business challenges and deliver measurable outcomes. Our professional team helps your business
         to reach its full potential.
@@ -1623,45 +1442,73 @@ require_once __DIR__ . '/includes/header.php';
     <div class="results-cards-grid">
       <?php if (!empty($featuredCases)): ?>
         <?php foreach ($featuredCases as $case): ?>
-          <article class="result-card">
-            <!-- 1. Industry Badge & 2. Client/Project Title -->
-            <div class="result-card-header">
-              <span class="result-industry-badge"><?= e($case['client_industry']) ?></span>
-              <h3 class="result-card-title"><?= e($case['title']) ?></h3>
+          <article class="result-card-v2">
+            <!-- Header: Industry & Verified Case -->
+            <div class="rc-header">
+              <span class="rc-industry-pill">
+                <span class="rc-pill-dot"></span>
+                <?= e($case['client_industry']) ?>
+              </span>
+              <span class="rc-badge-verified">
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+                  <polyline points="20 6 9 17 4 12"/>
+                </svg>
+                Verified Case
+              </span>
             </div>
 
-            <div class="result-card-body">
-              <!-- 3. Business Challenge -->
-              <div class="result-meta-block">
-                <div class="result-meta-label">Business Challenge</div>
-                <p class="result-card-text"><?= e($case['challenge']) ?></p>
-              </div>
+            <!-- Title -->
+            <h3 class="rc-title"><?= e($case['title']) ?></h3>
 
-              <!-- 4. Solution Delivered -->
-              <div class="result-meta-block">
-                <div class="result-meta-label">Solution Delivered</div>
-                <p class="result-card-text"><?= e($case['prescription']) ?></p>
+            <!-- Metric Spotlight Banner -->
+            <div class="rc-metric-spotlight">
+              <div class="rc-metric-top">
+                <span class="rc-metric-label"><?= e($case['metric_label']) ?></span>
+                <span class="rc-metric-growth-tag">Turnaround</span>
               </div>
-
-              <!-- 5. Performance Metrics -->
-              <div class="result-metric-banner">
-                <div class="result-metric-label"><?= e($case['metric_label']) ?></div>
-                <div class="result-outcome-stat"><?= e($case['outcome_metric']) ?></div>
-                <div class="result-baseline-stat">Baseline: <?= e($case['baseline_metric']) ?></div>
-              </div>
-
-              <!-- 6. Short Outcome Summary -->
-              <div class="result-meta-block">
-                <div class="result-meta-label">Outcome Verified</div>
-                <p class="result-outcome-summary"><?= e($case['result_description']) ?></p>
+              <div class="rc-metric-value"><?= e($case['outcome_metric']) ?></div>
+              <div class="rc-baseline-row">
+                <span>Baseline:</span>
+                <span class="rc-baseline-val"><?= e($case['baseline_metric']) ?></span>
               </div>
             </div>
 
-            <!-- 7. View Case Study Link -->
-            <div class="result-card-footer">
-              <a href="case-study-detail.php?slug=<?= urlencode($case['slug']) ?>" class="result-card-action">
+            <!-- Challenge & Solution Stack -->
+            <div class="rc-meta-stack">
+              <div class="rc-meta-item">
+                <div class="rc-meta-heading">
+                  <span class="rc-meta-bullet red"></span>
+                  <span>Business Challenge</span>
+                </div>
+                <p class="rc-meta-text"><?= e($case['challenge']) ?></p>
+              </div>
+
+              <div class="rc-meta-item">
+                <div class="rc-meta-heading">
+                  <span class="rc-meta-bullet cyan"></span>
+                  <span>Solution Delivered</span>
+                </div>
+                <p class="rc-meta-text"><?= e($case['prescription']) ?></p>
+              </div>
+            </div>
+
+            <!-- Outcome Verified Callout -->
+            <div class="rc-outcome-callout">
+              <div class="rc-outcome-header">
+                <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+                  <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/>
+                  <polyline points="22 4 12 14.01 9 11.01"/>
+                </svg>
+                <span>Outcome Verified</span>
+              </div>
+              <p class="rc-outcome-text"><?= e($case['result_description']) ?></p>
+            </div>
+
+            <!-- Footer Link -->
+            <div class="rc-footer">
+              <a href="case-study-detail.php?slug=<?= urlencode($case['slug']) ?>" class="rc-action-btn">
                 <span>View Full Case Study</span>
-                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2">
                   <line x1="5" y1="12" x2="19" y2="12" />
                   <polyline points="12 5 19 12 12 19" />
                 </svg>
@@ -1947,73 +1794,110 @@ require_once __DIR__ . '/includes/header.php';
 <!-- ============================================================
      9. INSIGHTS & PERSPECTIVES EDITORIAL
      ============================================================ -->
-<section class="section" id="insightsSection"
-  style="background: var(--color-bg); border-top: 1px solid var(--color-slate-200);">
+<section class="section home-insights-section" id="insightsSection">
   <div class="container">
-    <div class="section-header text-center">
+    <div class="section-header text-center home-section-header">
       <div class="eyebrow-badge">
         <span class="pill-dot"></span>
         <span>ENGINEERING PERSPECTIVES &amp; BLOG</span>
       </div>
-      <h2 class="section-title" style="font-size: clamp(2rem, 3.5vw, 3rem);">Digital Marketing, Technology &amp;
-        Business Growth Insights</h2>
+      <h2 class="section-title">
+        Digital Marketing, Technology &amp; <span class="text-gradient-pine">Business Growth Insights</span>
+      </h2>
       <p class="lead">
         At Business Doctor, we focus on modern technology and smart digital solutions that improve your brand's online
         visibility and website performance and help the sustainable growth of your business.
       </p>
     </div>
 
-    <div class="insights-editorial-grid">
+    <div class="home-insights-showcase">
       <?php if (!empty($insightsList)): ?>
-        <?php $leadPost = $insightsList[0];
-        $subPosts = array_slice($insightsList, 1); ?>
+        <?php 
+          $leadPost = $insightsList[0];
+          $subPosts = array_slice($insightsList, 1);
+        ?>
 
-        <!-- Lead Featured Article -->
-        <article class="insight-lead-card">
-          <div>
-            <div class="insight-meta-strip">
-              <span class="insight-category-badge"><?= e($leadPost['category']) ?></span>
-              <span>•</span>
-              <span><?= e($leadPost['reading_time']) ?></span>
-            </div>
-            <h3 class="insight-lead-title"><?= e($leadPost['title']) ?></h3>
-            <p class="insight-lead-summary"><?= e($leadPost['summary']) ?></p>
+        <!-- Featured Lead Perspective Card -->
+        <article class="hi-featured-card">
+          <div class="hi-card-badge-row">
+            <span class="hi-category-pill"><?= e($leadPost['category']) ?></span>
+            <span class="hi-read-time">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <circle cx="12" cy="12" r="10"/>
+                <polyline points="12 6 12 12 16 14"/>
+              </svg>
+              <?= e($leadPost['reading_time']) ?>
+            </span>
+            <span class="hi-featured-pill">Featured Perspective</span>
           </div>
 
-          <div>
-            <div class="insight-author-bar">
-              <div class="insight-author-info">
-                <div class="insight-author-name"><?= e($leadPost['author_name']) ?></div>
-                <div class="insight-author-title"><?= e($leadPost['author_title']) ?></div>
+          <h3 class="hi-featured-title">
+            <a href="<?= getBlogUrl($leadPost['slug']) ?>"><?= e($leadPost['title']) ?></a>
+          </h3>
+
+          <p class="hi-featured-summary"><?= e($leadPost['summary']) ?></p>
+
+          <div class="hi-author-footer">
+            <div class="hi-author-profile">
+              <div class="hi-author-avatar" aria-hidden="true">
+                <?= strtoupper(substr($leadPost['author_name'] ?: 'BD', 0, 2)) ?>
               </div>
-              <a href="<?= getBlogUrl($leadPost['slug']) ?>" class="btn btn-primary btn-sm">
-                <span>Read Blog</span>
-                <svg class="btn-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                  <line x1="5" y1="12" x2="19" y2="12" />
-                  <polyline points="12 5 19 12 12 19" />
-                </svg>
-              </a>
+              <div class="hi-author-meta">
+                <span class="hi-author-name"><?= e($leadPost['author_name']) ?></span>
+                <span class="hi-author-role"><?= e($leadPost['author_title']) ?></span>
+              </div>
             </div>
+
+            <a href="<?= getBlogUrl($leadPost['slug']) ?>" class="btn btn-accent btn-sm">
+              <span>Read Blog</span>
+              <svg class="btn-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <line x1="5" y1="12" x2="19" y2="12" />
+                <polyline points="12 5 19 12 12 19" />
+              </svg>
+            </a>
           </div>
         </article>
 
-        <!-- Companion Articles Column -->
-        <div class="insights-list-col">
+        <!-- Companion Articles Stack -->
+        <div class="hi-companion-stack">
           <?php foreach ($subPosts as $post): ?>
-            <a href="<?= getBlogUrl($post['slug']) ?>" class="insight-compact-card">
-              <div class="insight-meta-strip">
-                <span class="insight-category-badge"><?= e($post['category']) ?></span>
-                <span>•</span>
-                <span><?= e($post['reading_time']) ?></span>
+            <article class="hi-companion-card">
+              <div class="hi-card-badge-row">
+                <span class="hi-category-pill"><?= e($post['category']) ?></span>
+                <span class="hi-read-time">
+                  <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <circle cx="12" cy="12" r="10"/>
+                    <polyline points="12 6 12 12 16 14"/>
+                  </svg>
+                  <?= e($post['reading_time']) ?>
+                </span>
               </div>
-              <h4 class="insight-compact-title"><?= e($post['title']) ?></h4>
-              <p class="insight-compact-summary"><?= e($post['summary']) ?></p>
-              <div class="insight-read-perspective"
-                style="margin-top: 1.25rem; font-family: var(--font-display); font-size: 0.88rem; font-weight: 700; color: #06B5F9; display: flex; align-items: center; gap: 0.35rem;">
-                <span>Read Blog</span>
-                <span>&rarr;</span>
+
+              <h4 class="hi-companion-title">
+                <a href="<?= getBlogUrl($post['slug']) ?>"><?= e($post['title']) ?></a>
+              </h4>
+
+              <p class="hi-companion-summary"><?= e($post['summary']) ?></p>
+
+              <div class="hi-companion-footer">
+                <div class="hi-author-inline">
+                  <span class="hi-author-dot"></span>
+                  <span class="hi-author-name"><?= e($post['author_name']) ?></span>
+                  <?php if (!empty($post['author_title'])): ?>
+                    <span class="hi-author-sep">•</span>
+                    <span class="hi-author-role"><?= e($post['author_title']) ?></span>
+                  <?php endif; ?>
+                </div>
+
+                <a href="<?= getBlogUrl($post['slug']) ?>" class="hi-read-link">
+                  <span>Read Blog</span>
+                  <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+                    <line x1="5" y1="12" x2="19" y2="12" />
+                    <polyline points="12 5 19 12 12 19" />
+                  </svg>
+                </a>
               </div>
-            </a>
+            </article>
           <?php endforeach; ?>
         </div>
       <?php else: ?>
@@ -2022,11 +1906,10 @@ require_once __DIR__ . '/includes/header.php';
     </div>
 
     <!-- View All Blogs CTA -->
-    <div style="text-align: center; margin-top: 2.75rem;">
-      <a href="<?= getBlogListingUrl() ?>" class="btn btn-secondary btn-md"
-        style="display: inline-flex; align-items: center; gap: 0.5rem;">
-        <span>View All Blogs</span>
-        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" width="16" height="16" stroke-width="2">
+    <div class="home-insights-cta text-center">
+      <a href="<?= getBlogListingUrl() ?>" class="btn btn-secondary btn-lg">
+        <span>View All Blogs &amp; Insights</span>
+        <svg class="btn-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
           <line x1="5" y1="12" x2="19" y2="12" />
           <polyline points="12 5 19 12 12 19" />
         </svg>
@@ -2038,88 +1921,84 @@ require_once __DIR__ . '/includes/header.php';
 <!-- ============================================================
      7.5. FREQUENTLY ASKED QUESTIONS (HOMEPAGE FAQ ACCORDION)
      ============================================================ -->
-<section id="faq" class="section" style="background: var(--color-surface); border-top: 1px solid var(--color-border);">
+<section id="faq" class="section home-faq-section">
   <div class="container">
-    <div class="section-header text-center" style="max-width: 840px; margin: 0 auto 3rem;">
+    <div class="section-header text-center home-section-header">
       <div class="eyebrow-badge">
         <span class="pill-dot"></span>
         <span>FREQUENTLY ASKED QUESTIONS</span>
       </div>
-      <h2 class="section-title" style="font-size: clamp(2rem, 3.5vw, 2.75rem);">
-        Frequently Asked Questions About BusinessDoctor Advisory &amp; Engineering
+      <h2 class="section-title">
+        Frequently Asked Questions About <span class="text-gradient-pine">BusinessDoctor Services</span>
       </h2>
-      <p class="lead" style="font-size: 1.05rem; color: var(--color-text-muted);">
-        Clear answers on our enterprise technology consulting, digital architecture audits, global service delivery, and
-        turnaround methodology.
+      <p class="lead">
+        Clear answers on our digital marketing strategy, web performance engineering, SEO growth, and advertising ROI.
       </p>
     </div>
 
-    <div class="faq-accordion-grid"
-      style="max-width: 900px; margin: 0 auto; display: flex; flex-direction: column; gap: 1.25rem;">
+    <div class="srv-faq-container home-faq-container">
       <!-- FAQ Item 1 -->
-      <div class="card faq-card"
-        style="padding: 1.75rem 2rem; border-radius: var(--radius-md); border: 1px solid var(--color-border); background: var(--color-card-bg, #0A192F);">
-        <h3 class="faq-question"
-          style="font-size: 1.2rem; font-weight: 700; color: #FFFFFF; margin-bottom: 0.65rem; display: flex; align-items: center; gap: 0.75rem;">
-          <span
-            style="display: inline-flex; width: 28px; height: 28px; border-radius: 50%; background: rgba(6, 181, 249, 0.15); color: #06B5F9; font-size: 0.85rem; font-family: var(--font-mono); align-items: center; justify-content: center; flex-shrink: 0;">01</span>
-          <span> How do I choose the Best Digital Marketing company for My Business?</span>
-        </h3>
-        <p class="faq-answer"
-          style="font-size: 0.95rem; color: var(--color-text-muted); line-height: 1.65; margin: 0; padding-left: 2.5rem;">
-          Choosing a digital marketing company will depend on your goals, budget and target audience. You want to find
-          an company that will understand your needs and provide the correct services with a clear strategy to help your
-          business grow.
-        </p>
+      <div class="srv-faq-item">
+        <button type="button" class="srv-faq-btn" aria-expanded="false" aria-controls="faq-ans-1">
+          <span class="srv-faq-question-wrap">
+            <span class="srv-faq-num">01</span>
+            <span class="srv-faq-question-text">How do I choose the Best Digital Marketing company for My Business?</span>
+          </span>
+          <span class="srv-faq-icon" aria-hidden="true">+</span>
+        </button>
+        <div id="faq-ans-1" class="srv-faq-panel">
+          <div class="srv-faq-content">
+            <p>Choosing a digital marketing company will depend on your goals, budget and target audience. You want to find an company that will understand your needs and provide the correct services with a clear strategy to help your business grow.</p>
+          </div>
+        </div>
       </div>
 
       <!-- FAQ Item 2 -->
-      <div class="card faq-card"
-        style="padding: 1.75rem 2rem; border-radius: var(--radius-md); border: 1px solid var(--color-border); background: var(--color-card-bg, #0A192F);">
-        <h3 class="faq-question"
-          style="font-size: 1.2rem; font-weight: 700; color: #FFFFFF; margin-bottom: 0.65rem; display: flex; align-items: center; gap: 0.75rem;">
-          <span
-            style="display: inline-flex; width: 28px; height: 28px; border-radius: 50%; background: rgba(6, 181, 249, 0.15); color: #06B5F9; font-size: 0.85rem; font-family: var(--font-mono); align-items: center; justify-content: center; flex-shrink: 0;">02</span>
-          <span>What digital marketing services does BusinessDoctor offer?</span>
-        </h3>
-        <p class="faq-answer"
-          style="font-size: 0.95rem; color: var(--color-text-muted); line-height: 1.65; margin: 0; padding-left: 2.5rem;">
-          BusinessDoctor offers digital marketing services including SEO, social media marketing, paid advertising,
-          content marketing and website development.
-        </p>
+      <div class="srv-faq-item">
+        <button type="button" class="srv-faq-btn" aria-expanded="false" aria-controls="faq-ans-2">
+          <span class="srv-faq-question-wrap">
+            <span class="srv-faq-num">02</span>
+            <span class="srv-faq-question-text">What digital marketing services does BusinessDoctor offer?</span>
+          </span>
+          <span class="srv-faq-icon" aria-hidden="true">+</span>
+        </button>
+        <div id="faq-ans-2" class="srv-faq-panel">
+          <div class="srv-faq-content">
+            <p>BusinessDoctor offers digital marketing services including SEO, social media marketing, paid advertising, content marketing and website development.</p>
+          </div>
+        </div>
       </div>
 
       <!-- FAQ Item 3 -->
-      <div class="card faq-card"
-        style="padding: 1.75rem 2rem; border-radius: var(--radius-md); border: 1px solid var(--color-border); background: var(--color-card-bg, #0A192F);">
-        <h3 class="faq-question"
-          style="font-size: 1.2rem; font-weight: 700; color: #FFFFFF; margin-bottom: 0.65rem; display: flex; align-items: center; gap: 0.75rem;">
-          <span
-            style="display: inline-flex; width: 28px; height: 28px; border-radius: 50%; background: rgba(6, 181, 249, 0.15); color: #06B5F9; font-size: 0.85rem; font-family: var(--font-mono); align-items: center; justify-content: center; flex-shrink: 0;">03</span>
-          <span>How can digital marketing help My Business grow?</span>
-        </h3>
-        <p class="faq-answer"
-          style="font-size: 0.95rem; color: var(--color-text-muted); line-height: 1.65; margin: 0; padding-left: 2.5rem;">
-          Digital marketing can help your business gain more visibility online. It can improve your website traffic,
-          create brand awareness, lead generation and increase sales.
-        </p>
+      <div class="srv-faq-item">
+        <button type="button" class="srv-faq-btn" aria-expanded="false" aria-controls="faq-ans-3">
+          <span class="srv-faq-question-wrap">
+            <span class="srv-faq-num">03</span>
+            <span class="srv-faq-question-text">How can digital marketing help My Business grow?</span>
+          </span>
+          <span class="srv-faq-icon" aria-hidden="true">+</span>
+        </button>
+        <div id="faq-ans-3" class="srv-faq-panel">
+          <div class="srv-faq-content">
+            <p>Digital marketing can help your business gain more visibility online. It can improve your website traffic, create brand awareness, lead generation and increase sales.</p>
+          </div>
+        </div>
       </div>
 
       <!-- FAQ Item 4 -->
-      <div class="card faq-card"
-        style="padding: 1.75rem 2rem; border-radius: var(--radius-md); border: 1px solid var(--color-border); background: var(--color-card-bg, #0A192F);">
-        <h3 class="faq-question"
-          style="font-size: 1.2rem; font-weight: 700; color: #FFFFFF; margin-bottom: 0.65rem; display: flex; align-items: center; gap: 0.75rem;">
-          <span
-            style="display: inline-flex; width: 28px; height: 28px; border-radius: 50%; background: rgba(6, 181, 249, 0.15); color: #06B5F9; font-size: 0.85rem; font-family: var(--font-mono); align-items: center; justify-content: center; flex-shrink: 0;">04</span>
-          <span>How long will it take my digital marketing to deliver results?</span>
-        </h3>
-        <p class="faq-answer"
-          style="font-size: 0.95rem; color: var(--color-text-muted); line-height: 1.65; margin: 0; padding-left: 2.5rem;">
-          The amount of time that it takes to deliver results will depend on your goals. Paid advertising can provide
-          fast results with increased traffic and lead generation. SEO usually takes several months to see any real
-          improvements.
-        </p>
+      <div class="srv-faq-item">
+        <button type="button" class="srv-faq-btn" aria-expanded="false" aria-controls="faq-ans-4">
+          <span class="srv-faq-question-wrap">
+            <span class="srv-faq-num">04</span>
+            <span class="srv-faq-question-text">How long will it take my digital marketing to deliver results?</span>
+          </span>
+          <span class="srv-faq-icon" aria-hidden="true">+</span>
+        </button>
+        <div id="faq-ans-4" class="srv-faq-panel">
+          <div class="srv-faq-content">
+            <p>The amount of time that it takes to deliver results will depend on your goals. Paid advertising can provide fast results with increased traffic and lead generation. SEO usually takes several months to see any real improvements.</p>
+          </div>
+        </div>
       </div>
     </div>
   </div>
@@ -2158,36 +2037,5 @@ require_once __DIR__ . '/includes/header.php';
     </div>
   </div>
 </section>
-
-<!-- ============================================================
-     FIXED FLOATING CONTACT ICONS (HOMEPAGE ONLY)
-     ============================================================ -->
-<aside class="floating-contact-widget" aria-label="Quick Contact Channels"
-  style="position: fixed; bottom: max(24px, env(safe-area-inset-bottom, 24px)); right: max(24px, env(safe-area-inset-right, 24px)); z-index: 990; display: flex; flex-direction: column; gap: 12px; pointer-events: none;">
-
-  <!-- Direct Call Floating Action -->
-  <a href="tel:<?= htmlspecialchars(APP_CALL_NUMBER) ?>" class="floating-contact-btn floating-call-btn"
-    aria-label="Call BusinessDoctor at <?= htmlspecialchars(APP_PHONE) ?>"
-    title="Call BusinessDoctor (<?= htmlspecialchars(APP_PHONE) ?>)"
-    style="pointer-events: auto; width: 52px; height: 52px; border-radius: 50%; background: #06B5F9; color: #061326; display: flex; align-items: center; justify-content: center; box-shadow: 0 4px 18px rgba(6, 181, 249, 0.45); transition: transform 0.2s ease, box-shadow 0.2s ease; text-decoration: none;">
-    <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"
-      stroke-linecap="round" stroke-linejoin="round">
-      <path
-        d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z">
-      </path>
-    </svg>
-  </a>
-
-  <!-- WhatsApp Floating Action -->
-  <a href="https://wa.me/<?= htmlspecialchars(APP_WHATSAPP_NUMBER) ?>?text=<?= urlencode(APP_WHATSAPP_MESSAGE) ?>"
-    target="_blank" rel="noopener noreferrer" class="floating-contact-btn floating-wa-btn"
-    aria-label="Chat with BusinessDoctor on WhatsApp" title="Chat on WhatsApp"
-    style="pointer-events: auto; width: 52px; height: 52px; border-radius: 50%; background: #25D366; color: #ffffff; display: flex; align-items: center; justify-content: center; box-shadow: 0 4px 18px rgba(37, 211, 102, 0.45); transition: transform 0.2s ease, box-shadow 0.2s ease; text-decoration: none;">
-    <svg width="25" height="25" viewBox="0 0 24 24" fill="currentColor">
-      <path
-        d="M12.04 2C6.58 2 2.13 6.45 2.13 11.91C2.13 13.66 2.59 15.36 3.45 16.86L2.05 22L7.3 20.62C8.75 21.41 10.38 21.83 12.04 21.83C17.5 21.83 21.95 17.38 21.95 11.92C21.95 9.27 20.92 6.78 19.05 4.91C17.18 3.03 14.69 2 12.04 2M12.05 3.67C14.25 3.67 16.31 4.53 17.87 6.09C19.42 7.65 20.28 9.72 20.28 11.92C20.28 16.46 16.58 20.15 12.04 20.15C10.56 20.15 9.11 19.76 7.85 19L7.55 18.83L4.43 19.65L5.26 16.61L5.06 16.29C4.24 15 3.8 13.47 3.8 11.91C3.81 7.37 7.5 3.67 12.05 3.67M9.53 7.34C9.36 7.34 9.09 7.4 8.87 7.65C8.65 7.89 8.02 8.48 8.02 9.71C8.02 10.94 8.91 12.13 9.03 12.29C9.15 12.46 10.8 15.01 13.32 16.1C13.92 16.36 14.39 16.51 14.75 16.63C15.35 16.82 15.9 16.79 16.34 16.73C16.82 16.66 17.82 16.12 18.03 15.54C18.24 14.95 18.24 14.45 18.18 14.35C18.12 14.24 17.95 14.18 17.7 14.05C17.44 13.93 16.19 13.31 15.96 13.23C15.73 13.14 15.56 13.1 15.4 13.35C15.23 13.6 14.76 14.18 14.61 14.35C14.46 14.52 14.31 14.54 14.06 14.42C13.8 14.29 13 14.03 12.04 13.17C11.3 12.5 10.79 11.68 10.65 11.43C10.5 11.18 10.63 11.04 10.76 10.92C10.88 10.8 11.02 10.61 11.16 10.45C11.3 10.28 11.34 10.16 11.43 9.99C11.51 9.83 11.47 9.68 11.41 9.56C11.34 9.44 10.85 8.24 10.64 7.74C10.44 7.26 10.24 7.32 10.09 7.32C9.94 7.32 9.77 7.34 9.53 7.34Z" />
-    </svg>
-  </a>
-</aside>
 
 <?php require_once __DIR__ . '/includes/footer.php'; ?>

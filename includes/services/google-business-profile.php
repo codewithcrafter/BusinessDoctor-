@@ -21,46 +21,67 @@ $consultationUrl = appUrl('contact.php?service=' . urlencode($serviceName));
       <div class="srv-col-12 srv-col-lg-6">
         <div class="srv-eyebrow">
           <span class="srv-eyebrow-dot"></span>
-          <span>LOCAL 3-PACK DOMINANCE & MAPS SEARCH</span>
+          <span>GOOGLE BUSINESS PROFILE MANAGEMENT COMPANY IN DELHI</span>
         </div>
         <h1 class="srv-hero-title">
-          Dominating Local Search & <br><span class="text-brand">Google Maps 3-Pack Rankings</span>
+          Google Business Profile Management Company in Delhi <br><span class="text-brand">for More Calls, Directions and Local Leads</span>
         </h1>
         <p class="srv-hero-desc">
-          Capture high-intent local buyers at the exact moment they search for your services. We deliver systematic Google Business Profile optimization, localized weekly posting, geotagged media distribution, automated review acceleration, and citation consistency.
+          We manage your Google Business Profile including setting up your profile, managing your reviews, posts and monthly reports. We work with local retailers, clinics, restaurants and multi-branch brands throughout Delhi NCR. If you're looking for a Google Business Profile management company in Delhi that can track genuine calls and visits, simply send us your profile link and we'll provide a free audit.
         </p>
 
         <div class="srv-hero-actions">
           <a href="<?= e($consultationUrl) ?>" class="btn-srv-primary">
-            <span>Get a Free Consultation</span>
+            <span>Get a Free Audit &amp; Quote</span>
             <svg class="btn-srv-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
-              <line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/>
+              <line x1="5" y1="12" x2="19" y2="12"/>
+              <polyline points="12 5 19 12 12 19"/>
             </svg>
           </a>
           <a href="#services-list" class="btn-srv-secondary">
-            <span>Explore Scope</span>
+            <span>Explore Services</span>
             <svg class="btn-srv-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
               <polyline points="6 9 12 15 18 9"/>
             </svg>
           </a>
         </div>
 
-        <div class="srv-hero-stats">
-          <div class="srv-hero-stat-item">
-            <span class="srv-hero-stat-val">Top 3</span>
-            <span class="srv-hero-stat-lbl">Map Pack Ranking</span>
+        <div class="srv-hero-propositions">
+          <div class="srv-hero-prop-card">
+            <div class="srv-hero-prop-icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+            </div>
+            <div class="srv-hero-prop-content">
+              <span class="srv-hero-prop-val">Locations</span>
+              <span class="srv-hero-prop-lbl">Profiles Managed: Single and multi-location</span>
+            </div>
           </div>
-          <div class="srv-hero-stat-item">
-            <span class="srv-hero-stat-val">+180%</span>
-            <span class="srv-hero-stat-lbl">Calls & Directions</span>
+          <div class="srv-hero-prop-card">
+            <div class="srv-hero-prop-icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
+            </div>
+            <div class="srv-hero-prop-content">
+              <span class="srv-hero-prop-val">Monthly</span>
+              <span class="srv-hero-prop-lbl">Reporting: Every month</span>
+            </div>
           </div>
-          <div class="srv-hero-stat-item">
-            <span class="srv-hero-stat-val">100%</span>
-            <span class="srv-hero-stat-lbl">Profile Verification</span>
+          <div class="srv-hero-prop-card">
+            <div class="srv-hero-prop-icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="11" width="18" height="11" rx="2" ry="2"/><path d="M7 11V7a5 5 0 0 1 9.9-1"/></svg>
+            </div>
+            <div class="srv-hero-prop-content">
+              <span class="srv-hero-prop-val">No Lock In</span>
+              <span class="srv-hero-prop-lbl">Contract: No lock in</span>
+            </div>
           </div>
-          <div class="srv-hero-stat-item">
-            <span class="srv-hero-stat-val">Weekly</span>
-            <span class="srv-hero-stat-lbl">Geotagged Updates</span>
+          <div class="srv-hero-prop-card">
+            <div class="srv-hero-prop-icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+            </div>
+            <div class="srv-hero-prop-content">
+              <span class="srv-hero-prop-val">100%</span>
+              <span class="srv-hero-prop-lbl">Ownership: Stays with you</span>
+            </div>
           </div>
         </div>
       </div>
@@ -75,31 +96,22 @@ $consultationUrl = appUrl('contact.php?service=' . urlencode($serviceName));
               <path d="M60 0V440M120 0V440M180 0V440M240 0V440M300 0V440M360 0V440M420 0V440M480 0V440M540 0V440" stroke="#06B5F9" stroke-opacity="0.08"/>
               <rect width="600" height="40" rx="14" fill="#0A223B"/>
               <circle cx="28" cy="20" r="5" fill="#F87171"/><circle cx="46" cy="20" r="5" fill="#FBBF24"/><circle cx="64" cy="20" r="5" fill="#34D399"/>
-              <text x="90" y="24" fill="#8FA3B8" font-family="monospace" font-size="11" font-weight="600">businessdoctor.internal :: telemetry-engine.v2</text>
-              
-              <!-- Top Cards: Discipline & Audit Quality with clear separation -->
-              <rect x="40" y="65" width="245" height="98" rx="8" fill="#0D2644" stroke="#06B5F9" stroke-width="1.5" stroke-opacity="0.4"/>
-              <text x="56" y="90" fill="#06B5F9" font-family="monospace" font-size="11" font-weight="bold">// DISCIPLINE // 02</text>
-              <text x="56" y="112" fill="#F5F7FA" font-family="sans-serif" font-size="13" font-weight="bold">Google Business Profile</text>
-              <text x="56" y="130" fill="#06B5F9" font-family="sans-serif" font-size="11" font-weight="600">Local Search &amp; Map Pack</text>
-              <text x="56" y="148" fill="#8FA3B8" font-family="monospace" font-size="10">Active Execution &bull; Calibrated</text>
-
-              <line x1="285" y1="114" x2="315" y2="114" stroke="#06B5F9" stroke-width="2" stroke-dasharray="3 3"/>
-
-              <rect x="315" y="65" width="245" height="98" rx="8" fill="#0D2644" stroke="#06B5F9" stroke-width="1.5" stroke-opacity="0.4"/>
-              <text x="330" y="90" fill="#06B5F9" font-family="monospace" font-size="11" font-weight="bold">// AUDIT &amp; QUALITY</text>
-              <text x="330" y="112" fill="#F5F7FA" font-family="sans-serif" font-size="13" font-weight="bold">Enterprise SLA Standards</text>
-              <text x="330" y="130" fill="#34D399" font-family="sans-serif" font-size="11" font-weight="600">Review Velocity &bull; 100% NAP</text>
-              <text x="330" y="148" fill="#8FA3B8" font-family="monospace" font-size="10">Audited Map Pack Growth</text>
-
-              <!-- Terminal Panel: Balanced spacing and alignment -->
-              <rect x="40" y="180" width="520" height="225" rx="10" fill="#051424" stroke="#06B5F9" stroke-width="1" stroke-opacity="0.3"/>
-              <text x="65" y="215" fill="#34D399" font-family="monospace" font-size="12" font-weight="bold">$ execute --benchmark gbp-audit</text>
-              <text x="65" y="245" fill="#F5F7FA" font-family="monospace" font-size="11">&gt; 200 OK &bull; [Status: Calibrated] [Throughput: High]</text>
-              <text x="65" y="275" fill="#8FA3B8" font-family="monospace" font-size="11">&gt; Core Standard: Top 3 Map Pack Optimization</text>
-              <text x="65" y="305" fill="#06B5F9" font-family="monospace" font-size="11">&gt; Geotagged Media: 100% Scheduled Pipeline</text>
-              <text x="65" y="335" fill="#B8C7D9" font-family="monospace" font-size="11">&gt; Spam Defense: Active Monitoring</text>
-              <text x="65" y="365" fill="#34D399" font-family="monospace" font-size="11">&gt; All Systems Active</text>
+              <text x="90" y="24" fill="#8FA3B8" font-family="monospace" font-size="11" font-weight="600">businessdoctor.maps :: local-pack-engine</text>
+              <rect x="40" y="65" width="520" height="150" rx="10" fill="#030E1A" stroke="#06B5F9" stroke-width="1.5" stroke-opacity="0.4"/>
+              <text x="65" y="100" fill="#06B5F9" font-family="monospace" font-size="12" font-weight="bold">// GOOGLE MAPS 3-PACK RANKING TRAJECTORY</text>
+              <path d="M 65 175 L 140 145 L 230 160 L 320 115 L 410 130 L 520 75" stroke="#34D399" stroke-width="3" fill="none"/>
+              <circle cx="520" cy="75" r="5" fill="#34D399"/>
+              <text x="430" y="65" fill="#34D399" font-family="sans-serif" font-size="13" font-weight="bold">Top 3 Maps Rank</text>
+              <rect x="40" y="235" width="250" height="170" rx="8" fill="#0D2644" stroke="#06B5F9" stroke-opacity="0.3"/>
+              <text x="60" y="265" fill="#06B5F9" font-family="monospace" font-size="11" font-weight="bold">// CALL CONVERSIONS</text>
+              <text x="60" y="305" fill="#34D399" font-family="sans-serif" font-size="28" font-weight="900">Direct Calls</text>
+              <text x="60" y="330" fill="#B8C7D9" font-family="sans-serif" font-size="12">Phone Calls &bull; Direction Requests</text>
+              <text x="60" y="365" fill="#ffffff" font-family="sans-serif" font-size="13" font-weight="600">Monthly Performance Tracking</text>
+              <rect x="310" y="235" width="250" height="170" rx="8" fill="#0D2644" stroke="#06B5F9" stroke-opacity="0.3"/>
+              <text x="330" y="265" fill="#06B5F9" font-family="monospace" font-size="11" font-weight="bold">// REVIEW REPUTATION</text>
+              <text x="330" y="305" fill="#06B5F9" font-family="sans-serif" font-size="28" font-weight="900">100%</text>
+              <text x="330" y="330" fill="#B8C7D9" font-family="sans-serif" font-size="12">Review Replies &bull; QR Setup</text>
+              <text x="330" y="365" fill="#34D399" font-family="sans-serif" font-size="13" font-weight="600">Full Profile Ownership Stays With You</text>
             </svg>
           </div>
         </div>
@@ -109,7 +121,66 @@ $consultationUrl = appUrl('contact.php?service=' . urlencode($serviceName));
 </section>
 
 <!-- ============================================================
-     SECTION 2 — SERVICE INTRODUCTION
+     KEY TAKEAWAYS & EXECUTIVE SUMMARY
+     ============================================================ -->
+<section class="srv-section srv-section-takeaways" style="padding-top: 0; padding-bottom: 2.5rem;">
+  <div class="srv-container">
+    <div class="srv-key-takeaways">
+      <div class="srv-takeaways-header">
+        <div class="srv-takeaways-kicker">
+          <svg class="srv-takeaways-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"/></svg>
+          <span>Why Brands Hire BusinessDoctor as Their Google Business Profile Management Company in Delhi</span>
+        </div>
+        <span class="srv-takeaways-pill">Core Execution Highlights</span>
+      </div>
+      <div class="srv-takeaways-grid">
+        <div class="srv-takeaway-card">
+          <div class="srv-takeaway-top">
+            <span class="srv-takeaway-val">Calls</span>
+            <div class="srv-takeaway-badge">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
+            </div>
+          </div>
+          <span class="srv-takeaway-label">Call First Reporting</span>
+          <p class="srv-takeaway-desc">You see calls, direction requests and website clicks, not just views.</p>
+        </div>
+        <div class="srv-takeaway-card">
+          <div class="srv-takeaway-top">
+            <span class="srv-takeaway-val">Included</span>
+            <div class="srv-takeaway-badge">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
+            </div>
+          </div>
+          <span class="srv-takeaway-label">Review Management Included</span>
+          <p class="srv-takeaway-desc">We reply to reviews and help you collect new ones.</p>
+        </div>
+        <div class="srv-takeaway-card">
+          <div class="srv-takeaway-top">
+            <span class="srv-takeaway-val">No Lock-In</span>
+            <div class="srv-takeaway-badge">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
+            </div>
+          </div>
+          <span class="srv-takeaway-label">No Lock In Contracts</span>
+          <p class="srv-takeaway-desc">You stay because the work is good, not because you signed a long deal.</p>
+        </div>
+        <div class="srv-takeaway-card">
+          <div class="srv-takeaway-top">
+            <span class="srv-takeaway-val">1-on-1</span>
+            <div class="srv-takeaway-badge">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
+            </div>
+          </div>
+          <span class="srv-takeaway-label">Dedicated Profile Manager</span>
+          <p class="srv-takeaway-desc">One person knows your profile and responds to your messages.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============================================================
+     SECTION 2 — SERVICE INTRODUCTION & PHILOSOPHY
      ============================================================ -->
 <section class="srv-section srv-bg-surface" id="introduction">
   <div class="srv-container">
@@ -117,49 +188,52 @@ $consultationUrl = appUrl('contact.php?service=' . urlencode($serviceName));
       <div class="srv-col-12 srv-col-lg-6">
         <div class="srv-badge mb-3">
           <span class="srv-badge-dot"></span>
-          <span>LOCAL DISCOVERY ENGINE</span>
+          <span>DIRECT LOCAL IMPACT</span>
         </div>
         <h2 class="srv-section-title">
-          Why Over 70% of Local Buying Decisions <span class="text-brand">Happen in the Google 3-Pack</span>
+          Hire a Google Business Profile Management Company in Delhi <span class="text-brand">Built for Direct Local Impact</span>
         </h2>
         <p class="srv-section-subtitle mb-4">
-          When potential customers search for services in your area, Google displays the Local 3-Pack before organic search results. If your profile is poorly optimized, lacks weekly activity, or has stagnant reviews, your competitors capture all the phone calls and direction requests.
+          By hiring us as your Google Business Profile management company in Delhi, you receive a single dedicated manager. Your profile will be fully cleaned up, you'll have regular posts, responses to reviews and a monthly report. We begin by doing a free audit.
         </p>
         <p class="srv-card-desc mb-4">
-          At BusinessDoctor, we actively manage and defend your Google Business Profile. From secondary category selection and high-resolution geotagged photo uploads to weekly product updates and review acceleration workflows, we establish undisputed local authority.
+          We link your profile to your website, review system and call tracking so that those finding you on the map will actually call or visit. This is what a good Google Maps ranking company in Delhi should offer.
         </p>
 
         <div class="srv-feature-list mb-4">
-                    <div class="srv-feature-item">
+          <div class="srv-feature-item">
             <svg class="srv-check-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
             <div>
-              <strong class="text-white">Local 3-Pack Dominance:</strong> 
-              <span class="text-secondary">Rank in the top 3 map results for competitive commercial keywords within your service territory.</span>
+              <strong class="text-white">Profile Setup and Verification:</strong> 
+              <span class="text-secondary">A clean, verified profile from day one.</span>
             </div>
-          </div>          <div class="srv-feature-item">
+          </div>
+          <div class="srv-feature-item">
             <svg class="srv-check-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
             <div>
-              <strong class="text-white">Automated Review Velocity:</strong> 
-              <span class="text-secondary">Ethical, high-conversion review request systems that steadily build 5-star customer feedback.</span>
+              <strong class="text-white">Optimization and Map Ranking:</strong> 
+              <span class="text-secondary">Every section filled with what buyers search for.</span>
             </div>
-          </div>          <div class="srv-feature-item">
+          </div>
+          <div class="srv-feature-item">
             <svg class="srv-check-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
             <div>
-              <strong class="text-white">Geotagged Visual Content:</strong> 
-              <span class="text-secondary">Professional image distribution embedded with precise EXIF geotag coordinates to strengthen geographic signals.</span>
+              <strong class="text-white">Review Management:</strong> 
+              <span class="text-secondary">Replies and a simple way to collect more reviews.</span>
             </div>
-          </div>          <div class="srv-feature-item">
+          </div>
+          <div class="srv-feature-item">
             <svg class="srv-check-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
             <div>
-              <strong class="text-white">Weekly Localized Offers & Posts:</strong> 
-              <span class="text-secondary">Regular publishing of Google Posts, event announcements, and product cards that increase search CTR.</span>
+              <strong class="text-white">Post and Offer Management:</strong> 
+              <span class="text-secondary">Fresh updates on a fixed schedule.</span>
             </div>
           </div>
         </div>
 
         <div class="pt-2">
           <a href="<?= e($consultationUrl) ?>" class="btn-srv-primary">
-            <span>Schedule Diagnostic Call</span>
+            <span>Get a Free Audit &amp; Quote</span>
             <svg class="btn-srv-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
           </a>
         </div>
@@ -168,90 +242,44 @@ $consultationUrl = appUrl('contact.php?service=' . urlencode($serviceName));
       <div class="srv-col-12 srv-col-lg-6 mt-4 mt-lg-0">
         <div class="srv-hud-card">
           <div class="srv-hud-header">
-            <span class="srv-hud-title">LOCAL SEARCH GEO-TELEMETRY</span>
+            <span class="srv-hud-title">LOCAL DISCOVERY TELEMETRY</span>
             <span class="srv-hud-status">
               <span class="srv-hud-pulse"></span>
-              SYSTEM STATUS: OPTIMAL
+              MAPS 3-PACK ACTIVE
             </span>
           </div>
           <div class="srv-hud-body">
             <p class="srv-card-desc mb-4">
-              Real-time telemetry tracking performance velocity, conversion attribution, and brand authority.
+              Real-time local ranking telemetry tracking Google Maps visibility, phone calls, and customer direction requests.
             </p>
             <div class="srv-hud-metrics">
-                            <div class="srv-hud-metric-box">
-                <div class="srv-hud-metric-num">#1-#3</div>
-                <div class="srv-hud-metric-label">Core Radius Rank</div>
-              </div>              <div class="srv-hud-metric-box">
-                <div class="srv-hud-metric-num">4.8★</div>
-                <div class="srv-hud-metric-label">Target Review Rating</div>
-              </div>              <div class="srv-hud-metric-box">
-                <div class="srv-hud-metric-num">+220%</div>
-                <div class="srv-hud-metric-label">Search Views Lift</div>
-              </div>              <div class="srv-hud-metric-box">
+              <div class="srv-hud-metric-box">
+                <div class="srv-hud-metric-num">Top 3</div>
+                <div class="srv-hud-metric-label">Target Map Pack</div>
+              </div>
+              <div class="srv-hud-metric-box">
+                <div class="srv-hud-metric-num">High</div>
+                <div class="srv-hud-metric-label">Call &amp; Direction Lift</div>
+              </div>
+              <div class="srv-hud-metric-box">
                 <div class="srv-hud-metric-num">100%</div>
-                <div class="srv-hud-metric-label">NAP Consistency</div>
+                <div class="srv-hud-metric-label">Verified Profile</div>
+              </div>
+              <div class="srv-hud-metric-box">
+                <div class="srv-hud-metric-num">Weekly</div>
+                <div class="srv-hud-metric-label">Updates &amp; Posts</div>
               </div>
             </div>
             <div class="srv-hud-tag-list mt-3">
-              <span class="srv-tool-badge">Google Business API</span>
-<span class="srv-tool-badge">BrightLocal</span>
-<span class="srv-tool-badge">Whitespark</span>
-<span class="srv-tool-badge">PlePer Local</span>
-<span class="srv-tool-badge">GeoImgr</span>
-<span class="srv-tool-badge">Local Viking</span>
-
+              <span class="srv-tool-badge">Profile Setup</span>
+              <span class="srv-tool-badge">Maps Ranking</span>
+              <span class="srv-tool-badge">Review Replies</span>
+              <span class="srv-tool-badge">Local Citations</span>
+              <span class="srv-tool-badge">Q&amp;A Management</span>
+              <span class="srv-tool-badge">Multi-Location</span>
             </div>
           </div>
         </div>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- ============================================================
-     SECTION 3 — PROBLEMS WE SOLVE
-     ============================================================ -->
-<section class="srv-section" id="pain-points">
-  <div class="srv-container">
-    <div class="srv-section-header text-center">
-      <div class="srv-badge">
-        <span class="srv-badge-dot"></span>
-        <span>CHALLENGES SOLVED</span>
-      </div>
-      <h2 class="srv-section-title">
-        Overcoming Critical <span class="text-brand">Local Visibility Roadblocks</span>
-      </h2>
-      <p class="srv-section-subtitle">
-        Common issues that cause Google Maps to suppress your local business listing.
-      </p>
-    </div>
-
-    <div class="srv-grid srv-grid-3">
-            <div class="srv-card">
-        <div class="srv-card-icon-wrap"><div class="srv-icon-box" style="color: #F87171; background: rgba(248, 113, 113, 0.12); border-color: rgba(248, 113, 113, 0.25);"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg></div><span class="srv-card-index">01</span></div>
-        <h3 class="srv-card-title text-white">Invisible on Google Maps</h3>
-        <p class="srv-card-desc">Falling outside the top 3 results means more than 80% of local customers never discover your location.</p>
-      </div>      <div class="srv-card">
-        <div class="srv-card-icon-wrap"><div class="srv-icon-box" style="color: #F87171; background: rgba(248, 113, 113, 0.12); border-color: rgba(248, 113, 113, 0.25);"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg></div><span class="srv-card-index">02</span></div>
-        <h3 class="srv-card-title text-white">Stagnant or Low Review Count</h3>
-        <p class="srv-card-desc">Profiles with fewer than 20 reviews or stagnant recent feedback lose credibility to aggressive competitors.</p>
-      </div>      <div class="srv-card">
-        <div class="srv-card-icon-wrap"><div class="srv-icon-box" style="color: #F87171; background: rgba(248, 113, 113, 0.12); border-color: rgba(248, 113, 113, 0.25);"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="12"/><line x1="12" y1="16" x2="12.01" y2="16"/></svg></div><span class="srv-card-index">03</span></div>
-        <h3 class="srv-card-title text-white">Inconsistent NAP Citations</h3>
-        <p class="srv-card-desc">Mismatched Name, Address, and Phone numbers across directories confuse Google's verification algorithms.</p>
-      </div>      <div class="srv-card">
-        <div class="srv-card-icon-wrap"><div class="srv-icon-box" style="color: #F87171; background: rgba(248, 113, 113, 0.12); border-color: rgba(248, 113, 113, 0.25);"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20.59 13.41l-7.17 7.17a2 2 0 0 1-2.83 0L2 12V2h10l8.59 8.59a2 2 0 0 1 0 2.82z"/><line x1="7" y1="7" x2="7.01" y2="7"/></svg></div><span class="srv-card-index">04</span></div>
-        <h3 class="srv-card-title text-white">Incorrect Primary Category</h3>
-        <p class="srv-card-desc">Choosing the wrong primary category immediately disqualifies your profile from ranking for core high-intent queries.</p>
-      </div>      <div class="srv-card">
-        <div class="srv-card-icon-wrap"><div class="srv-icon-box" style="color: #F87171; background: rgba(248, 113, 113, 0.12); border-color: rgba(248, 113, 113, 0.25);"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg></div><span class="srv-card-index">05</span></div>
-        <h3 class="srv-card-title text-white">Zero Weekly Updates</h3>
-        <p class="srv-card-desc">Google rewards active profiles; abandoned profiles with no recent posts suffer gradual ranking decay.</p>
-      </div>      <div class="srv-card">
-        <div class="srv-card-icon-wrap"><div class="srv-icon-box" style="color: #F87171; background: rgba(248, 113, 113, 0.12); border-color: rgba(248, 113, 113, 0.25);"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg></div><span class="srv-card-index">06</span></div>
-        <h3 class="srv-card-title text-white">Unanswered Negative Reviews</h3>
-        <p class="srv-card-desc">Leaving negative reviews unaddressed damages brand reputation and reduces prospective customer conversion.</p>
       </div>
     </div>
   </div>
@@ -265,98 +293,228 @@ $consultationUrl = appUrl('contact.php?service=' . urlencode($serviceName));
     <div class="srv-section-header text-center">
       <div class="srv-badge">
         <span class="srv-badge-dot"></span>
-        <span>COMPREHENSIVE SCOPE</span>
+        <span>WHAT WE OFFER</span>
       </div>
       <h2 class="srv-section-title">
-        Full-Service <span class="text-brand">GBP Management Scope</span>
+        Google Business Profile Management Services <span class="text-brand">From a Professional Company in Delhi</span>
       </h2>
       <p class="srv-section-subtitle">
-        Systematic management designed to generate consistent local phone calls, visits, and inquiries.
+        Comprehensive local optimization designed to drive real calls, store visits, and local map-pack dominance.
       </p>
     </div>
 
-    <div class="srv-grid srv-grid-3">
-            <div class="srv-card">
-        <div class="srv-card-icon-wrap"><div class="srv-icon-box"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="4" y1="21" x2="4" y2="14"/><line x1="4" y1="10" x2="4" y2="3"/><line x1="12" y1="21" x2="12" y2="12"/><line x1="12" y1="8" x2="12" y2="3"/><line x1="20" y1="21" x2="20" y2="16"/><line x1="20" y1="12" x2="20" y2="3"/><line x1="1" y1="14" x2="7" y2="14"/><line x1="9" y1="8" x2="15" y2="8"/><line x1="17" y1="16" x2="23" y2="16"/></svg></div></div>
-        <h3 class="srv-card-title text-white">Comprehensive Profile Optimization</h3>
-        <p class="srv-card-desc">Audit and setup of primary and secondary categories, service areas, business hours, and keyword-rich descriptions.</p>
-        <ul style="list-style: none; padding: 0; margin: 1rem 0 0; display: flex; flex-direction: column; gap: 0.5rem; font-size: 0.85rem; color: #B8C7D9;"><li style="display: flex; gap: 0.5rem; align-items: flex-start;"><span style="color: #06B5F9;">&bull;</span><span>Primary & secondary category mapping</span></li><li style="display: flex; gap: 0.5rem; align-items: flex-start;"><span style="color: #06B5F9;">&bull;</span><span>Complete service menu itemization</span></li><li style="display: flex; gap: 0.5rem; align-items: flex-start;"><span style="color: #06B5F9;">&bull;</span><span>Attributes & accessibility tags</span></li></ul></div>
+    <div class="srv-grid-3">
+      <!-- Service Card 1 -->
       <div class="srv-card">
-        <div class="srv-card-icon-wrap"><div class="srv-icon-box"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polygon points="11 5 6 9 2 9 2 15 6 15 11 19 11 5"/><path d="M19.07 4.93a10 10 0 0 1 0 14.14M15.54 8.46a5 5 0 0 1 0 7.07"/></svg></div></div>
-        <h3 class="srv-card-title text-white">Weekly Google Posts & Offers</h3>
-        <p class="srv-card-desc">Creation and publishing of high-converting Google updates featuring custom graphics and localized copy.</p>
-        <ul style="list-style: none; padding: 0; margin: 1rem 0 0; display: flex; flex-direction: column; gap: 0.5rem; font-size: 0.85rem; color: #B8C7D9;"><li style="display: flex; gap: 0.5rem; align-items: flex-start;"><span style="color: #06B5F9;">&bull;</span><span>Call-to-action buttons (Call, Book)</span></li><li style="display: flex; gap: 0.5rem; align-items: flex-start;"><span style="color: #06B5F9;">&bull;</span><span>Special promotional offers & events</span></li><li style="display: flex; gap: 0.5rem; align-items: flex-start;"><span style="color: #06B5F9;">&bull;</span><span>Product showcase spotlighting</span></li></ul></div>
-      <div class="srv-card">
-        <div class="srv-card-icon-wrap"><div class="srv-icon-box"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M23 19a2 2 0 0 1-2 2H3a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h4l2-3h6l2 3h4a2 2 0 0 1 2 2z"/><circle cx="12" cy="13" r="4"/></svg></div></div>
-        <h3 class="srv-card-title text-white">Geotagged Photo & Video Distribution</h3>
-        <p class="srv-card-desc">Uploading optimized commercial photos with calibrated EXIF metadata, geotags, and descriptive alt text.</p>
-        <ul style="list-style: none; padding: 0; margin: 1rem 0 0; display: flex; flex-direction: column; gap: 0.5rem; font-size: 0.85rem; color: #B8C7D9;"><li style="display: flex; gap: 0.5rem; align-items: flex-start;"><span style="color: #06B5F9;">&bull;</span><span>Exterior, interior, and team photos</span></li><li style="display: flex; gap: 0.5rem; align-items: flex-start;"><span style="color: #06B5F9;">&bull;</span><span>EXIF latitude/longitude embedding</span></li><li style="display: flex; gap: 0.5rem; align-items: flex-start;"><span style="color: #06B5F9;">&bull;</span><span>High-resolution webp/jpeg formats</span></li></ul></div>
-      <div class="srv-card">
-        <div class="srv-card-icon-wrap"><div class="srv-icon-box"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg></div></div>
-        <h3 class="srv-card-title text-white">Review Acceleration & Management</h3>
-        <p class="srv-card-desc">Implementing automated review request funnels and responding professionally to all customer reviews within 24 hours.</p>
-        <ul style="list-style: none; padding: 0; margin: 1rem 0 0; display: flex; flex-direction: column; gap: 0.5rem; font-size: 0.85rem; color: #B8C7D9;"><li style="display: flex; gap: 0.5rem; align-items: flex-start;"><span style="color: #06B5F9;">&bull;</span><span>Custom review link QR codes & SMS</span></li><li style="display: flex; gap: 0.5rem; align-items: flex-start;"><span style="color: #06B5F9;">&bull;</span><span>Professional sentiment responses</span></li><li style="display: flex; gap: 0.5rem; align-items: flex-start;"><span style="color: #06B5F9;">&bull;</span><span>Negative feedback de-escalation</span></li></ul></div>
-      <div class="srv-card">
-        <div class="srv-card-icon-wrap"><div class="srv-icon-box"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="18" cy="5" r="3"/><circle cx="6" cy="12" r="3"/><circle cx="18" cy="19" r="3"/><line x1="8.59" y1="13.51" x2="15.42" y2="17.49"/><line x1="15.41" y1="6.51" x2="8.59" y2="10.49"/></svg></div></div>
-        <h3 class="srv-card-title text-white">Local Citation Building & NAP Cleanup</h3>
-        <p class="srv-card-desc">Building and maintaining accurate business citations across top local business directories and aggregators.</p>
-        <ul style="list-style: none; padding: 0; margin: 1rem 0 0; display: flex; flex-direction: column; gap: 0.5rem; font-size: 0.85rem; color: #B8C7D9;"><li style="display: flex; gap: 0.5rem; align-items: flex-start;"><span style="color: #06B5F9;">&bull;</span><span>Top 50 local citation submissions</span></li><li style="display: flex; gap: 0.5rem; align-items: flex-start;"><span style="color: #06B5F9;">&bull;</span><span>Duplicate listing suppression</span></li><li style="display: flex; gap: 0.5rem; align-items: flex-start;"><span style="color: #06B5F9;">&bull;</span><span>Periodic citation health audits</span></li></ul></div>
-      <div class="srv-card">
-        <div class="srv-card-icon-wrap"><div class="srv-icon-box"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><polygon points="16.24 7.76 14.12 14.12 7.76 16.24 9.88 9.88 16.24 7.76"/></svg></div></div>
-        <h3 class="srv-card-title text-white">Geo-Grid Heatmap Reporting</h3>
-        <p class="srv-card-desc">Monthly ranking visualization across a 5x5 to 13x13 geographic grid showing exact map positions by neighborhood.</p>
-        <ul style="list-style: none; padding: 0; margin: 1rem 0 0; display: flex; flex-direction: column; gap: 0.5rem; font-size: 0.85rem; color: #B8C7D9;"><li style="display: flex; gap: 0.5rem; align-items: flex-start;"><span style="color: #06B5F9;">&bull;</span><span>Visual geo-grid ranking maps</span></li><li style="display: flex; gap: 0.5rem; align-items: flex-start;"><span style="color: #06B5F9;">&bull;</span><span>Competitor rank movement tracking</span></li><li style="display: flex; gap: 0.5rem; align-items: flex-start;"><span style="color: #06B5F9;">&bull;</span><span>Calls and directions telemetry</span></li></ul></div>
+        <div class="srv-card-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22s-8-4.5-8-11.8A8 8 0 0 1 12 2a8 8 0 0 1 8 8.2c0 7.3-8 11.8-8 11.8z"/><circle cx="12" cy="10" r="3"/></svg>
+        </div>
+        <h3 class="srv-card-title">Google Business Profile Setup and Verification Company in Delhi</h3>
+        <p class="srv-card-desc">We create your profile, or take over your old one, and get it verified without the usual back and forth. Everything is set up cleanly from day one.</p>
+        <ul class="srv-card-list">
+          <li>Profile creation</li>
+          <li>Right category selection</li>
+          <li>Verification support</li>
+          <li>NAP consistency</li>
+        </ul>
+        <div class="srv-sector-outcome mt-3">
+          <span class="srv-outcome-badge">Business Value</span>
+          <span>A verified, correct profile that Google can trust.</span>
+        </div>
+      </div>
 
+      <!-- Service Card 2 -->
+      <div class="srv-card">
+        <div class="srv-card-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+        </div>
+        <h3 class="srv-card-title">GMB Optimization Company for Local Maps Ranking</h3>
+        <p class="srv-card-desc">We fill every part of your profile with the details customers search for, so Google knows exactly what you do and where you are.</p>
+        <ul class="srv-card-list">
+          <li>Business description</li>
+          <li>Services and products list</li>
+          <li>Attributes</li>
+          <li>Q&amp;A setup</li>
+        </ul>
+        <div class="srv-sector-outcome mt-3">
+          <span class="srv-outcome-badge">Business Value</span>
+          <span>Your business shows up in more searches near you.</span>
+        </div>
+      </div>
+
+      <!-- Service Card 3 -->
+      <div class="srv-card">
+        <div class="srv-card-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z"/></svg>
+        </div>
+        <h3 class="srv-card-title">Review Management and Reply Handling for Local Businesses</h3>
+        <p class="srv-card-desc">We give happy customers an easy way to leave a review, and we reply to every review in your own voice.</p>
+        <ul class="srv-card-list">
+          <li>Review link and QR code</li>
+          <li>Reply drafting</li>
+          <li>Negative review response</li>
+          <li>Review reporting</li>
+        </ul>
+        <div class="srv-sector-outcome mt-3">
+          <span class="srv-outcome-badge">Business Value</span>
+          <span>More trust before a customer even picks up the phone.</span>
+        </div>
+      </div>
+
+      <!-- Service Card 4 -->
+      <div class="srv-card">
+        <div class="srv-card-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="18" height="18" rx="2" ry="2"/><circle cx="8.5" cy="8.5" r="1.5"/><polyline points="21 15 16 10 5 21"/></svg>
+        </div>
+        <h3 class="srv-card-title">Posts, Photos and Offers Management for Google Profiles</h3>
+        <p class="srv-card-desc">A profile that gets updated looks alive. We post and upload on a fixed schedule so you never have to remember.</p>
+        <ul class="srv-card-list">
+          <li>Weekly posts</li>
+          <li>Offer updates</li>
+          <li>Photo uploads</li>
+          <li>Event listings</li>
+        </ul>
+        <div class="srv-sector-outcome mt-3">
+          <span class="srv-outcome-badge">Business Value</span>
+          <span>More reasons for people to click, call or visit.</span>
+        </div>
+      </div>
+
+      <!-- Service Card 5 -->
+      <div class="srv-card">
+        <div class="srv-card-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+        </div>
+        <h3 class="srv-card-title">Multi Location Google Business Profile Management for Chains</h3>
+        <p class="srv-card-desc">Running ten branches should not mean ten headaches. We manage every location from one plan and one dashboard.</p>
+        <ul class="srv-card-list">
+          <li>Location wise profiles</li>
+          <li>Bulk updates</li>
+          <li>Local landing pages</li>
+          <li>Central dashboard</li>
+        </ul>
+        <div class="srv-sector-outcome mt-3">
+          <span class="srv-outcome-badge">Business Value</span>
+          <span>Every branch stays accurate and easy to find.</span>
+        </div>
+      </div>
+
+      <!-- Service Card 6 -->
+      <div class="srv-card">
+        <div class="srv-card-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
+        </div>
+        <h3 class="srv-card-title">Monthly Google Business Profile Management Packages</h3>
+        <p class="srv-card-desc">A fixed monthly plan with clear work and a clear price. You always know what we do each month.</p>
+        <ul class="srv-card-list">
+          <li>Fixed monthly scope</li>
+          <li>Monthly reports</li>
+          <li>Regular review call</li>
+          <li>No lock in</li>
+        </ul>
+        <div class="srv-sector-outcome mt-3">
+          <span class="srv-outcome-badge">Business Value</span>
+          <span>A predictable cost and no surprise bills.</span>
+        </div>
+      </div>
     </div>
   </div>
 </section>
 
 <!-- ============================================================
-     SECTION 5 — STEP-BY-STEP PROCESS
+     SECTION 5 — 6-PHASE PROCESS
      ============================================================ -->
 <section class="srv-section" id="process">
   <div class="srv-container">
     <div class="srv-section-header text-center">
       <div class="srv-badge">
         <span class="srv-badge-dot"></span>
-        <span>EXECUTION FRAMEWORK</span>
+        <span>OUR PROCESS</span>
       </div>
       <h2 class="srv-section-title">
-        How We Work: <span class="text-brand">Structured &amp; Accountable</span>
+        6 Phase Google Business <span class="text-brand">Profile Process</span>
       </h2>
       <p class="srv-section-subtitle">
-        From baseline diagnostic audit to scaled execution, our structured workflow eliminates guesswork and delivers predictable results.
+        How we transform your local map presence from unverified or incomplete to a top-ranking lead engine.
       </p>
     </div>
 
-    <div class="srv-process-grid">
-            <div class="srv-process-card">
-        <div class="srv-process-num">01</div>
-        <h3 class="srv-process-title">Verification & Baseline Audit</h3>
-        <p class="srv-process-desc">We audit your profile health, verify ownership, and benchmark your current ranking across local radius coordinates.</p>
-        <div style="font-family: var(--font-mono); font-size: 0.78rem; color: #06B5F9; font-weight: 700; margin-top: 1rem;">
-          MILESTONE: Geo-Grid Baseline Benchmark
+    <div class="srv-process-timeline">
+      <!-- Step 1 -->
+      <div class="srv-process-step">
+        <div class="srv-step-number">01</div>
+        <div class="srv-step-content">
+          <h3 class="srv-step-title">1. Profile and Listing Audit</h3>
+          <p class="srv-step-desc">We audit all elements of your profile, listings and top local competitors. This will leave you with a clear overview of what needs to be done.</p>
+          <div class="srv-step-deliverables">
+            <span class="srv-deliverable-label">Key Deliverables:</span>
+            <span>Audit Report, NAP Sheet, Competitor Gap List.</span>
+          </div>
         </div>
-      </div>      <div class="srv-process-card">
-        <div class="srv-process-num">02</div>
-        <h3 class="srv-process-title">Category & Listing Optimization</h3>
-        <p class="srv-process-desc">We align primary and secondary categories, write keyword-rich service descriptions, and configure direct action links.</p>
-        <div style="font-family: var(--font-mono); font-size: 0.78rem; color: #06B5F9; font-weight: 700; margin-top: 1rem;">
-          MILESTONE: 100% Profile Completeness
+      </div>
+
+      <!-- Step 2 -->
+      <div class="srv-process-step">
+        <div class="srv-step-number">02</div>
+        <div class="srv-step-content">
+          <h3 class="srv-step-title">2. Keyword and Category Planning</h3>
+          <p class="srv-step-desc">Here we will show you what keywords people are using to search for your business. We will also show you what types your business should be in.</p>
+          <div class="srv-step-deliverables">
+            <span class="srv-deliverable-label">Key Deliverables:</span>
+            <span>Category list, Local Keyword Map, Services list.</span>
+          </div>
         </div>
-      </div>      <div class="srv-process-card">
-        <div class="srv-process-num">03</div>
-        <h3 class="srv-process-title">Geotagged Media & Content Engine</h3>
-        <p class="srv-process-desc">We begin weekly localized posting, upload EXIF-calibrated photography, and launch the review generation funnel.</p>
-        <div style="font-family: var(--font-mono); font-size: 0.78rem; color: #06B5F9; font-weight: 700; margin-top: 1rem;">
-          MILESTONE: Active Weekly Operations
+      </div>
+
+      <!-- Step 3 -->
+      <div class="srv-process-step">
+        <div class="srv-step-number">03</div>
+        <div class="srv-step-content">
+          <h3 class="srv-step-title">3. Profile Optimization</h3>
+          <p class="srv-step-desc">All sections of your profile will be optimised by us. We will also add relevant images.</p>
+          <div class="srv-step-deliverables">
+            <span class="srv-deliverable-label">Key Deliverables:</span>
+            <span>Optimised description, Attributes and Services, Images and Logo.</span>
+          </div>
         </div>
-      </div>      <div class="srv-process-card">
-        <div class="srv-process-num">04</div>
-        <h3 class="srv-process-title">Citation Sync & Local Defense</h3>
-        <p class="srv-process-desc">We synchronize NAP data across primary directories and monitor rankings continuously against local competitors.</p>
-        <div style="font-family: var(--font-mono); font-size: 0.78rem; color: #06B5F9; font-weight: 700; margin-top: 1rem;">
-          MILESTONE: 3-Pack Rank Dominance
+      </div>
+
+      <!-- Step 4 -->
+      <div class="srv-process-step">
+        <div class="srv-step-number">04</div>
+        <div class="srv-step-content">
+          <h3 class="srv-step-title">4. Content and Review Setup</h3>
+          <p class="srv-step-desc">We will create a content strategy to make it easy for clients to leave reviews.</p>
+          <div class="srv-step-deliverables">
+            <span class="srv-deliverable-label">Key Deliverables:</span>
+            <span>Content calendar, Review link and QR Code, Response templates.</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Step 5 -->
+      <div class="srv-process-step">
+        <div class="srv-step-number">05</div>
+        <div class="srv-step-content">
+          <h3 class="srv-step-title">5. Ranking and Growth</h3>
+          <p class="srv-step-desc">Every week we will post content, respond to queries, correct any listing errors and monitor your ranking.</p>
+          <div class="srv-step-deliverables">
+            <span class="srv-deliverable-label">Key Deliverables:</span>
+            <span>Weekly updates, Q&amp;A and offer posts, Clean citations.</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Step 6 -->
+      <div class="srv-process-step">
+        <div class="srv-step-number">06</div>
+        <div class="srv-step-content">
+          <h3 class="srv-step-title">6. Reporting and Review</h3>
+          <p class="srv-step-desc">Once a month we will show you how your calls, directions and clicks have changed. We will then plan what we are going to do next month.</p>
+          <div class="srv-step-deliverables">
+            <span class="srv-deliverable-label">Key Deliverables:</span>
+            <span>Live dashboard, Monthly report, Strategy call.</span>
+          </div>
         </div>
       </div>
     </div>
@@ -364,185 +522,312 @@ $consultationUrl = appUrl('contact.php?service=' . urlencode($serviceName));
 </section>
 
 <!-- ============================================================
-     SECTION 6 — TOOLS & TECHNOLOGY
+     SECTION 6 — WHY CHOOSE US
      ============================================================ -->
-<section class="srv-section srv-bg-surface" id="technology">
+<section class="srv-section srv-bg-surface" id="why-choose-us">
   <div class="srv-container">
     <div class="srv-section-header text-center">
       <div class="srv-badge">
         <span class="srv-badge-dot"></span>
-        <span>TOOLING &amp; INFRASTRUCTURE</span>
+        <span>WHY CHOOSE US</span>
       </div>
       <h2 class="srv-section-title">
-        Enterprise-Grade <span class="text-brand">Tools &amp; Technology Stack</span>
+        Why Leading Brands Choose BusinessDoctor as Their <span class="text-brand">Google Business Profile Management Company in Delhi</span>
       </h2>
       <p class="srv-section-subtitle">
-        We utilize industry-standard platforms, diagnostic software, and proprietary telemetry tools to ensure flawless execution.
+        Dedicated profile management focused on phone calls, direction requests, and local customer acquisition.
       </p>
     </div>
 
-    <div class="srv-grid srv-grid-3">
-      <div class="srv-card"><h4 style="font-size: 1.1rem; color: #fff; margin-bottom: 1rem; border-bottom: 1px solid rgba(6,181,249,0.2); padding-bottom: 0.5rem;">Local Rank Tracking</h4><div style="display: flex; flex-wrap: wrap; gap: 0.5rem;"><span class="srv-tool-badge">Local Viking</span><span class="srv-tool-badge">PlePer</span><span class="srv-tool-badge">BrightLocal</span><span class="srv-tool-badge">Whitespark</span></div></div>
-<div class="srv-card"><h4 style="font-size: 1.1rem; color: #fff; margin-bottom: 1rem; border-bottom: 1px solid rgba(6,181,249,0.2); padding-bottom: 0.5rem;">Media & Geotagging</h4><div style="display: flex; flex-wrap: wrap; gap: 0.5rem;"><span class="srv-tool-badge">GeoImgr</span><span class="srv-tool-badge">Adobe Lightroom</span><span class="srv-tool-badge">Capture One</span><span class="srv-tool-badge">ExifTool</span></div></div>
-<div class="srv-card"><h4 style="font-size: 1.1rem; color: #fff; margin-bottom: 1rem; border-bottom: 1px solid rgba(6,181,249,0.2); padding-bottom: 0.5rem;">Citation Networks</h4><div style="display: flex; flex-wrap: wrap; gap: 0.5rem;"><span class="srv-tool-badge">Data Axle</span><span class="srv-tool-badge">Yelp</span><span class="srv-tool-badge">Bing Places</span><span class="srv-tool-badge">Apple Business Connect</span></div></div>
-
-    </div>
-  </div>
-</section>
-
-<!-- ============================================================
-     SECTION 7 — INDUSTRY USE CASES
-     ============================================================ -->
-<section class="srv-section" id="use-cases">
-  <div class="srv-container">
-    <div class="srv-section-header text-center">
-      <div class="srv-badge">
-        <span class="srv-badge-dot"></span>
-        <span>PRACTICAL APPLICATIONS</span>
+    <div class="srv-grid-3">
+      <div class="srv-benefit-card">
+        <div class="srv-benefit-badge">Calls &amp; Directions | Dedicated Manager</div>
+        <h3 class="srv-benefit-title">Call-First Account Managers</h3>
+        <p class="srv-benefit-desc">Your manager tracks calls, directions and website clicks. As a Google Business Profile management company in Delhi, we care about your phone ringing, not just views.</p>
       </div>
-      <h2 class="srv-section-title">
-        Tailored Strategies Across <span class="text-brand">Diverse Industries</span>
-      </h2>
-      <p class="srv-section-subtitle">
-        Discover how our Google Business Profile Management discipline drives measurable outcomes across key vertical markets.
-      </p>
-    </div>
 
-    <div class="srv-grid srv-grid-2">
-            <div class="srv-card">
-        <span class="srv-badge mb-2"><span>Multi-Location Retail</span></span>
-        <h3 class="srv-card-title text-white">Regional Chain 3-Pack Optimization</h3>
-        <p class="srv-card-desc mb-3">Synchronized 12 store profiles across 3 cities with automated review capture and localized offers.</p>
-        <div style="border-top: 1px solid rgba(255,255,255,0.08); padding-top: 0.75rem; display: flex; justify-content: space-between; align-items: center; font-size: 0.85rem;">
-          <span style="color: #8FA3B8;">Outcome:</span>
-          <span style="color: #34D399; font-family: var(--font-mono); font-weight: 700;">+145% Store Visits</span>
-        </div>
-      </div>      <div class="srv-card">
-        <span class="srv-badge mb-2"><span>Professional Law Firm</span></span>
-        <h3 class="srv-card-title text-white">High-Intent Legal Search Dominance</h3>
-        <p class="srv-card-desc mb-3">Ranked #1 on Google Maps for competitive corporate litigation terms in downtown business district.</p>
-        <div style="border-top: 1px solid rgba(255,255,255,0.08); padding-top: 0.75rem; display: flex; justify-content: space-between; align-items: center; font-size: 0.85rem;">
-          <span style="color: #8FA3B8;">Outcome:</span>
-          <span style="color: #34D399; font-family: var(--font-mono); font-weight: 700;">3x Inbound Case Calls</span>
-        </div>
-      </div>      <div class="srv-card">
-        <span class="srv-badge mb-2"><span>Healthcare Clinics</span></span>
-        <h3 class="srv-card-title text-white">Medical Center Patient Acquisition</h3>
-        <p class="srv-card-desc mb-3">Standardized clinic hours, doctor profiles, and built over 250 verified 5-star patient reviews.</p>
-        <div style="border-top: 1px solid rgba(255,255,255,0.08); padding-top: 0.75rem; display: flex; justify-content: space-between; align-items: center; font-size: 0.85rem;">
-          <span style="color: #8FA3B8;">Outcome:</span>
-          <span style="color: #34D399; font-family: var(--font-mono); font-weight: 700;">+92% Appointment Bookings</span>
-        </div>
-      </div>      <div class="srv-card">
-        <span class="srv-badge mb-2"><span>Commercial B2B Services</span></span>
-        <h3 class="srv-card-title text-white">Industrial Service Provider Expansion</h3>
-        <p class="srv-card-desc mb-3">Expanded ranking radius from 3 km to 25 km across metropolitan industrial zones.</p>
-        <div style="border-top: 1px solid rgba(255,255,255,0.08); padding-top: 0.75rem; display: flex; justify-content: space-between; align-items: center; font-size: 0.85rem;">
-          <span style="color: #8FA3B8;">Outcome:</span>
-          <span style="color: #34D399; font-family: var(--font-mono); font-weight: 700;">+180% Request-a-Quote Actions</span>
-        </div>
+      <div class="srv-benefit-card">
+        <div class="srv-benefit-badge">Reputation Ready | Faster Responses</div>
+        <h3 class="srv-benefit-title">Review Reply System Included</h3>
+        <p class="srv-benefit-desc">Every review gets a reply written in your voice. We also give you a simple way to collect more of them.</p>
+      </div>
+
+      <div class="srv-benefit-card">
+        <div class="srv-benefit-badge">Suspension Protection | Guideline Compliant</div>
+        <h3 class="srv-benefit-title">Policy-Safe Profile Handling</h3>
+        <p class="srv-benefit-desc">We follow Google’s rules on business names, categories and content, so your profile stays in good standing.</p>
+      </div>
+
+      <div class="srv-benefit-card">
+        <div class="srv-benefit-badge">Real-Time Reporting | Full Access</div>
+        <h3 class="srv-benefit-title">Transparent Live Dashboards</h3>
+        <p class="srv-benefit-desc">Open your dashboard any time and see what we did and what changed.</p>
+      </div>
+
+      <div class="srv-benefit-card">
+        <div class="srv-benefit-badge">100% Ownership | No Lock-In</div>
+        <h3 class="srv-benefit-title">Profile Ownership Stays With You</h3>
+        <p class="srv-benefit-desc">Your profile is always in your name. If you ever leave, you take everything with you.</p>
+      </div>
+
+      <div class="srv-benefit-card">
+        <div class="srv-benefit-badge">End-to-End | Complete Local Scope</div>
+        <h3 class="srv-benefit-title">Full Digital Team Under One Roof</h3>
+        <p class="srv-benefit-desc">Need a website fix or ads along with your profile? Our design, SEO and ads people work as one team.</p>
       </div>
     </div>
   </div>
 </section>
 
 <!-- ============================================================
-     SECTION 8 — INTERACTIVE FAQ ACCORDION
+     SECTION 7 — TECHNOLOGIES & TOOLS
      ============================================================ -->
-<section class="srv-section srv-bg-surface" id="faq">
+<section class="srv-section" id="technologies">
   <div class="srv-container">
     <div class="srv-section-header text-center">
       <div class="srv-badge">
         <span class="srv-badge-dot"></span>
-        <span>FREQUENTLY ASKED QUESTIONS</span>
+        <span>TOOL STACK</span>
       </div>
       <h2 class="srv-section-title">
-        Common Questions About <span class="text-brand">Google Business Profile Management</span>
+        Professional Tools Our Google Business Profile <span class="text-brand">Management Company in Delhi Uses</span>
       </h2>
       <p class="srv-section-subtitle">
-        Clear answers about our methodology, timelines, deliverables, SLAs, and commercial engagement terms.
+        We use these tools to fix your listings, track your rankings and report your numbers.
+      </p>
+    </div>
+
+    <div class="srv-grid-4">
+      <div class="srv-tech-category">
+        <h3 class="srv-tech-cat-title">Profile &amp; Listing</h3>
+        <ul class="srv-tech-list">
+          <li><strong>Google Business Profile Manager:</strong> edit and manage profile</li>
+          <li><strong>Google Maps:</strong> check map visibility</li>
+          <li><strong>Bing Places:</strong> manage Bing listing</li>
+          <li><strong>Apple Business Connect:</strong> manage Apple Maps listing</li>
+        </ul>
+      </div>
+
+      <div class="srv-tech-category">
+        <h3 class="srv-tech-cat-title">Rank &amp; Citation Tracking</h3>
+        <ul class="srv-tech-list">
+          <li><strong>BrightLocal:</strong> track local rankings, citations</li>
+          <li><strong>Local Falcon:</strong> map grid rank check</li>
+          <li><strong>Whitespark:</strong> build and clean citations</li>
+          <li><strong>Semrush:</strong> keyword and competitor research</li>
+        </ul>
+      </div>
+
+      <div class="srv-tech-category">
+        <h3 class="srv-tech-cat-title">Tracking &amp; Analytics</h3>
+        <ul class="srv-tech-list">
+          <li><strong>GA4:</strong> track website visits, leads</li>
+          <li><strong>Google Search Console:</strong> monitor search performance</li>
+          <li><strong>Google Tag Manager:</strong> set up tracking tags</li>
+          <li><strong>Call Tracking:</strong> count calls from profile</li>
+        </ul>
+      </div>
+
+      <div class="srv-tech-category">
+        <h3 class="srv-tech-cat-title">Reporting &amp; Reviews</h3>
+        <ul class="srv-tech-list">
+          <li><strong>Looker Studio:</strong> build live dashboards</li>
+          <li><strong>Review Request Links:</strong> collect customer reviews easily</li>
+          <li><strong>QR Codes:</strong> get reviews in-store</li>
+          <li><strong>CRM Integration:</strong> sync leads automatically</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============================================================
+     SECTION 8 — INDUSTRY SECTORS
+     ============================================================ -->
+<section class="srv-section srv-bg-surface" id="industry-use-cases">
+  <div class="srv-container">
+    <div class="srv-section-header text-center">
+      <div class="srv-badge">
+        <span class="srv-badge-dot"></span>
+        <span>LOCAL SECTORS</span>
+      </div>
+      <h2 class="srv-section-title">
+        Google Business Profile Management Company in Delhi for <span class="text-brand">Local-Intent Sectors</span>
+      </h2>
+      <p class="srv-section-subtitle">
+        Tailored local visibility systems engineered for multi-location and local-service businesses.
+      </p>
+    </div>
+
+    <div class="srv-grid-3">
+      <div class="srv-card">
+        <h3 class="srv-card-title">Restaurants &amp; Cafes</h3>
+        <p class="srv-card-desc"><strong>Google Profile Management for Restaurants &amp; Cafes:</strong> Menu, photos, timings and offers kept fresh so hungry people find you first.</p>
+        <div class="srv-sector-outcome">
+          <span class="srv-outcome-badge">Primary Outcome</span>
+          <span>More direction requests</span>
+        </div>
+      </div>
+
+      <div class="srv-card">
+        <h3 class="srv-card-title">Clinics &amp; Hospitals</h3>
+        <p class="srv-card-desc"><strong>Google Profile Management for Clinics &amp; Hospitals:</strong> Services, doctor details and reviews set up so patients trust you before they call.</p>
+        <div class="srv-sector-outcome">
+          <span class="srv-outcome-badge">Primary Outcome</span>
+          <span>Quality appointment calls</span>
+        </div>
+      </div>
+
+      <div class="srv-card">
+        <h3 class="srv-card-title">Retail &amp; Showrooms</h3>
+        <p class="srv-card-desc"><strong>Google Profile Management for Retail &amp; Showrooms:</strong> Store timings, product photos and offers that bring people through your door.</p>
+        <div class="srv-sector-outcome">
+          <span class="srv-outcome-badge">Primary Outcome</span>
+          <span>More store visits</span>
+        </div>
+      </div>
+
+      <div class="srv-card">
+        <h3 class="srv-card-title">Real Estate Projects</h3>
+        <p class="srv-card-desc"><strong>Google Profile Management for Real Estate Projects:</strong> Project details, photos and enquiry links that turn a search into a site visit.</p>
+        <div class="srv-sector-outcome">
+          <span class="srv-outcome-badge">Primary Outcome</span>
+          <span>More site visit enquiries</span>
+        </div>
+      </div>
+
+      <div class="srv-card">
+        <h3 class="srv-card-title">Salons &amp; Wellness Centres</h3>
+        <p class="srv-card-desc"><strong>Google Profile Management for Salons &amp; Wellness Centres:</strong> Service lists, price ranges and booking links ready on your profile.</p>
+        <div class="srv-sector-outcome">
+          <span class="srv-outcome-badge">Primary Outcome</span>
+          <span>More bookings</span>
+        </div>
+      </div>
+
+      <div class="srv-card">
+        <h3 class="srv-card-title">Education &amp; Coaching</h3>
+        <p class="srv-card-desc"><strong>Google Profile Management for Education &amp; Coaching:</strong> Courses, results and student reviews placed in one clear profile.</p>
+        <div class="srv-sector-outcome">
+          <span class="srv-outcome-badge">Primary Outcome</span>
+          <span>More admission enquiries</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============================================================
+     SECTION 9 — FREQUENTLY ASKED QUESTIONS
+     ============================================================ -->
+<section class="srv-section" id="faq">
+  <div class="srv-container">
+    <div class="srv-section-header text-center">
+      <div class="srv-badge">
+        <span class="srv-badge-dot"></span>
+        <span>QUESTIONS &amp; ANSWERS</span>
+      </div>
+      <h2 class="srv-section-title">
+        Hiring a Google Business Profile Management Company in Delhi: <span class="text-brand">Your Questions Answered</span>
+      </h2>
+      <p class="srv-section-subtitle">
+        Everything you need to know about our GBP management, multi-location support, verification, and monthly reporting.
       </p>
     </div>
 
     <div class="srv-faq-container">
-            <div class="srv-faq-item">
-        <button type="button" class="srv-faq-btn" aria-expanded="false" aria-controls="faq-ans-0">
-          <span class="srv-faq-question">How long does it take to rank in the Google 3-Pack?</span>
-          <span class="srv-faq-icon" aria-hidden="true">+</span>
-        </button>
-        <div id="faq-ans-0" class="srv-faq-panel">
-          <div class="srv-faq-content">
-            <p>Most businesses see noticeable ranking improvements within 30 to 60 days. Highly competitive metropolitan categories typically take 90 days of consistent activity and citation building to achieve stable top 3 positions.</p>
-          </div>
-        </div>
-      </div>      <div class="srv-faq-item">
+      <div class="srv-faq-item">
         <button type="button" class="srv-faq-btn" aria-expanded="false" aria-controls="faq-ans-1">
-          <span class="srv-faq-question">Can you help if our Google Business Profile is suspended?</span>
+          <span class="srv-faq-question">How much does a Google Business Profile management company in Delhi charge?</span>
           <span class="srv-faq-icon" aria-hidden="true">+</span>
         </button>
-        <div id="faq-ans-1" class="srv-faq-panel" >
+        <div id="faq-ans-1" class="srv-faq-panel">
           <div class="srv-faq-content">
-            <p>Yes. We specialize in reinstatement appeals. We audit your documentation, address policy violations, and submit compliant reinstatement requests to Google support.</p>
+            <p>Fees depend on how many locations you have and the work needed each month. We give a fixed monthly quote after a free audit. Share your requirement for a quote.</p>
           </div>
         </div>
-      </div>      <div class="srv-faq-item">
+      </div>
+
+      <div class="srv-faq-item">
         <button type="button" class="srv-faq-btn" aria-expanded="false" aria-controls="faq-ans-2">
-          <span class="srv-faq-question">How do you generate genuine Google reviews?</span>
+          <span class="srv-faq-question">How do I hire BusinessDoctor as my Google Business Profile management company in delhi?</span>
           <span class="srv-faq-icon" aria-hidden="true">+</span>
         </button>
-        <div id="faq-ans-2" class="srv-faq-panel" >
+        <div id="faq-ans-2" class="srv-faq-panel">
           <div class="srv-faq-content">
-            <p>We provide automated review collection funnels via SMS, email, and on-site QR codes that make leaving a review effortless for satisfied customers. We never use fake reviews or violating incentives.</p>
+            <p>Send us your profile link and your goal. We do a free audit and share a quote, so a Google Business Profile management company in Delhi starts with facts. Share your requirement for a quote.</p>
           </div>
         </div>
-      </div>      <div class="srv-faq-item">
+      </div>
+
+      <div class="srv-faq-item">
         <button type="button" class="srv-faq-btn" aria-expanded="false" aria-controls="faq-ans-3">
-          <span class="srv-faq-question">What is geo-grid rank tracking?</span>
+          <span class="srv-faq-question">What does your Google Business Profile management package include?</span>
           <span class="srv-faq-icon" aria-hidden="true">+</span>
         </button>
-        <div id="faq-ans-3" class="srv-faq-panel" >
+        <div id="faq-ans-3" class="srv-faq-panel">
           <div class="srv-faq-content">
-            <p>Geo-grid tracking places a virtual grid over your city (e.g., every 1 km) and checks where your business ranks on Google Maps from each specific geographic node. This reveals exact areas where you dominate or need improvement.</p>
+            <p>Our Google Business Profile management company in Delhi covers profile optimization, weekly posts, review replies, listing fixes, a monthly report and a regular call. Share your requirement for a quote.</p>
           </div>
         </div>
-      </div>      <div class="srv-faq-item">
+      </div>
+
+      <div class="srv-faq-item">
         <button type="button" class="srv-faq-btn" aria-expanded="false" aria-controls="faq-ans-4">
-          <span class="srv-faq-question">Why are geotagged photos important for GBP?</span>
+          <span class="srv-faq-question">Can you handle profile verification or a suspended profile?</span>
           <span class="srv-faq-icon" aria-hidden="true">+</span>
         </button>
-        <div id="faq-ans-4" class="srv-faq-panel" >
+        <div id="faq-ans-4" class="srv-faq-panel">
           <div class="srv-faq-content">
-            <p>Geotagged photos contain embedded GPS coordinates that signal to Google that authentic work was completed at that exact physical location, strengthening your local relevance.</p>
+            <p>Yes, we help with verification and with appeals for suspended profiles. We cannot promise Google’s decision, but we do the work properly. Share your requirement for a quote.</p>
           </div>
         </div>
-      </div>      <div class="srv-faq-item">
+      </div>
+
+      <div class="srv-faq-item">
         <button type="button" class="srv-faq-btn" aria-expanded="false" aria-controls="faq-ans-5">
-          <span class="srv-faq-question">How often do you publish Google Posts?</span>
+          <span class="srv-faq-question">Do you manage multiple business locations?</span>
           <span class="srv-faq-icon" aria-hidden="true">+</span>
         </button>
-        <div id="faq-ans-5" class="srv-faq-panel" >
+        <div id="faq-ans-5" class="srv-faq-panel">
           <div class="srv-faq-content">
-            <p>We publish 1 to 2 high-quality Google updates every week, featuring professional graphics, clear value propositions, and direct call-to-action buttons.</p>
+            <p>Yes. As a Google Business Profile management company in Delhi, we manage all your branches from one plan and one dashboard. Share your requirement for a quote.</p>
           </div>
         </div>
-      </div>      <div class="srv-faq-item">
+      </div>
+
+      <div class="srv-faq-item">
         <button type="button" class="srv-faq-btn" aria-expanded="false" aria-controls="faq-ans-6">
-          <span class="srv-faq-question">Do you handle multiple locations?</span>
+          <span class="srv-faq-question">How soon can you start after onboarding?</span>
           <span class="srv-faq-icon" aria-hidden="true">+</span>
         </button>
-        <div id="faq-ans-6" class="srv-faq-panel" >
+        <div id="faq-ans-6" class="srv-faq-panel">
           <div class="srv-faq-content">
-            <p>Yes. We manage multi-location Google Business Profile portfolios with centralized reporting, standardized branding, and unique localized content per branch.</p>
+            <p>Once we get access to your profile, we begin with the audit and the first fixes. Share your requirements and we will confirm a start date.</p>
           </div>
         </div>
-      </div>      <div class="srv-faq-item">
+      </div>
+
+      <div class="srv-faq-item">
         <button type="button" class="srv-faq-btn" aria-expanded="false" aria-controls="faq-ans-7">
-          <span class="srv-faq-question">How do you respond to negative reviews?</span>
+          <span class="srv-faq-question">How often do I receive performance reports?</span>
           <span class="srv-faq-icon" aria-hidden="true">+</span>
         </button>
-        <div id="faq-ans-7" class="srv-faq-panel" >
+        <div id="faq-ans-7" class="srv-faq-panel">
           <div class="srv-faq-content">
-            <p>We draft professional, empathetic, and de-escalating responses for your approval within 24 hours, taking difficult conversations offline while demonstrating accountability to future prospective buyers.</p>
+            <p>You get a report every month and can open your live dashboard any time. We also keep a regular call to go through it. Share your requirement for a quote.</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="srv-faq-item">
+        <button type="button" class="srv-faq-btn" aria-expanded="false" aria-controls="faq-ans-8">
+          <span class="srv-faq-question">Do I keep ownership of my Google Business Profile?</span>
+          <span class="srv-faq-icon" aria-hidden="true">+</span>
+        </button>
+        <div id="faq-ans-8" class="srv-faq-panel">
+          <div class="srv-faq-content">
+            <p>Yes, always. Even with a Google Business Profile management company in Delhi like us, the profile stays in your name and you remain the owner. Share your requirement for a quote.</p>
           </div>
         </div>
       </div>
@@ -551,7 +836,7 @@ $consultationUrl = appUrl('contact.php?service=' . urlencode($serviceName));
 </section>
 
 <!-- ============================================================
-     SECTION 9 — FINAL CONVERSION CTA
+     SECTION 10 — FINAL CONVERSION CTA
      ============================================================ -->
 <section class="srv-section srv-cta-section" id="cta">
   <div class="srv-container">
@@ -565,18 +850,18 @@ $consultationUrl = appUrl('contact.php?service=' . urlencode($serviceName));
               <span>TAKE THE NEXT STEP</span>
             </div>
             <h2 class="srv-cta-title">
-              Ready to Dominate <span class="text-brand">Local Google Search?</span>
+              Ready for More Local Calls, Directions and <span class="text-brand">Walk-In Customers?</span>
             </h2>
             <p class="srv-cta-lead">
-              Request a free Local 3-Pack Audit. We will analyze your Google Business Profile, run a geo-grid rank scan, and show you exactly where competitors are outranking you.
+              If you're looking for a Google Business Profile management company in Delhi that can track genuine calls and visits, simply send us your profile link and we'll provide a free audit.
             </p>
             <div class="srv-cta-actions" style="justify-content: flex-start; margin-bottom: 2rem;">
               <a href="<?= e($consultationUrl) ?>" class="btn-srv-primary btn-srv-lg">
-                <span>Get a Free Consultation</span>
+                <span>Get a Free Audit &amp; Quote</span>
                 <svg class="btn-srv-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
               </a>
               <a href="<?= appUrl('audit.php') ?>" class="btn-srv-secondary btn-srv-lg">
-                <span>Request Digital Audit</span>
+                <span>Request Local Audit</span>
                 <svg class="btn-srv-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="9 18 15 12 9 6"/></svg>
               </a>
             </div>
@@ -598,26 +883,26 @@ $consultationUrl = appUrl('contact.php?service=' . urlencode($serviceName));
           <div>
             <div class="srv-quick-form-card">
               <div class="srv-form-header">
-                <h3 class="srv-form-title">Request Practice Consultation</h3>
-                <p class="srv-form-subtitle">Direct consultation with senior Google Business Profile Management strategists.</p>
+                <h3 class="srv-form-title">Request Local Map Consultation</h3>
+                <p class="srv-form-subtitle">Direct consultation with senior local SEO strategists.</p>
               </div>
               <form action="<?= appUrl('contact.php') ?>" method="GET" class="srv-quick-form">
                 <input type="hidden" name="service" value="<?= e($serviceName) ?>">
                 <div class="srv-form-group">
-                  <label class="srv-form-label" for="quick_name_google-business-profile.php">Your Full Name</label>
-                  <input type="text" id="quick_name_google-business-profile.php" name="name" required class="srv-form-input" placeholder="e.g. Sarah Jenkins">
+                  <label class="srv-form-label" for="quick_name_google-business-profile">Your Full Name</label>
+                  <input type="text" id="quick_name_google-business-profile" name="name" required class="srv-form-input" placeholder="e.g. Sarah Jenkins">
                 </div>
                 <div class="srv-form-group">
-                  <label class="srv-form-label" for="quick_email_google-business-profile.php">Work Email</label>
-                  <input type="email" id="quick_email_google-business-profile.php" name="email" required class="srv-form-input" placeholder="e.g. sarah@enterprise.com">
+                  <label class="srv-form-label" for="quick_email_google-business-profile">Work Email</label>
+                  <input type="email" id="quick_email_google-business-profile" name="email" required class="srv-form-input" placeholder="e.g. sarah@enterprise.com">
                 </div>
                 <div class="srv-form-group">
-                  <label class="srv-form-label" for="quick_company_google-business-profile.php">Company / Domain</label>
-                  <input type="text" id="quick_company_google-business-profile.php" name="company" class="srv-form-input" placeholder="e.g. Enterprise Corp (enterprise.com)">
+                  <label class="srv-form-label" for="quick_company_google-business-profile">Company / Location</label>
+                  <input type="text" id="quick_company_google-business-profile" name="company" class="srv-form-input" placeholder="e.g. Clinic / Retail Store (Delhi)">
                 </div>
                 <div class="srv-form-group">
-                  <label class="srv-form-label" for="quick_notes_google-business-profile.php">Project Scope &amp; Goals</label>
-                  <textarea id="quick_notes_google-business-profile.php" name="notes" rows="2" class="srv-form-textarea" placeholder="Briefly describe your objectives, challenges, or current growth bottlenecks..."></textarea>
+                  <label class="srv-form-label" for="quick_notes_google-business-profile">Profile Link &amp; Goals</label>
+                  <textarea id="quick_notes_google-business-profile" name="notes" rows="2" class="srv-form-textarea" placeholder="Paste your Google Maps link or describe your local locations..."></textarea>
                 </div>
                 <button type="submit" class="srv-form-submit">
                   <span>Send Consultation Request</span>

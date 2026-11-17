@@ -1,6 +1,6 @@
 <?php
 /**
- * BusinessDoctor Service Detail View — Digital Marketing & SEO
+ * BusinessDoctor Service Detail View — SEO — Search Engine Optimization
  * Discipline 06 — Full-Width Modern Enterprise Landing Page
  * Brand Color: #06B5F9
  */
@@ -21,18 +21,13 @@ $consultationUrl = appUrl('contact.php?service=' . urlencode($serviceName));
       <div class="srv-col-12 srv-col-lg-6">
         <div class="srv-eyebrow">
           <span class="srv-eyebrow-dot"></span>
-          <span>PERFORMANCE MARKETING &amp; TECHNICAL SEO</span>
+          <span>SEO COMPANY IN DELHI</span>
         </div>
         <h1 class="srv-hero-title">
-          Smarter Strategies <br><span class="text-brand">Stronger Results &amp; </span>
+          SEO Company in Delhi <br><span class="text-brand">- Smarter Strategies, Stronger Results</span>
         </h1>
         <p class="srv-hero-desc">
-          Boost your online presence and improve the search visibility of your business with a reliable SEO company in
-          Delhi. At Business Doctor, we deliver skilled seo services in Delhi that help your business achieve consistent
-          growth and attract suitable traffic. We build our seo strategy according to your business goals and the
-          specific audience you want to target, and generate organic traffic. At Business Doctor, we offer a complete
-          Seo solution for your business, including technical seo, on page seo, off page seo, local seo service, keyword
-          strategy, and quality link building that help your business grow and build a strong online presence.
+          Boost your online presence and improve the search visibility of your business with a reliable SEO company in Delhi. At Business Doctor, we deliver skilled seo services in Delhi that help your business achieve consistent growth and attract suitable traffic. We build our seo strategy according to your business goals and the specific audience you want to target, and generate organic traffic. At Business Doctor, we offer a complete Seo solution for your business, including technical seo, on page seo, off page seo, local seo service, keyword strategy, and quality link building that help your business grow and build a strong online presence.
         </p>
 
         <div class="srv-hero-actions">
@@ -54,19 +49,19 @@ $consultationUrl = appUrl('contact.php?service=' . urlencode($serviceName));
         <div class="srv-hero-stats">
           <div class="srv-hero-stat-item">
             <span class="srv-hero-stat-val">3.8x</span>
-            <span class="srv-hero-stat-lbl">Average organic traffic growth in 6 months</span>
+            <span class="srv-hero-stat-lbl">Organic Traffic Growth</span>
           </div>
           <div class="srv-hero-stat-item">
-            <span class="srv-hero-stat-val">120+ </span>
-            <span class="srv-hero-stat-lbl">Keywords ranking on page one</span>
+            <span class="srv-hero-stat-val">50+</span>
+            <span class="srv-hero-stat-lbl">Keywords on Page 1</span>
           </div>
           <div class="srv-hero-stat-item">
-            <span class="srv-hero-stat-val">100% </span>
-            <span class="srv-hero-stat-lbl">Transparent monthly reporting</span>
+            <span class="srv-hero-stat-val">62%</span>
+            <span class="srv-hero-stat-lbl">Lower Cost per Lead</span>
           </div>
           <div class="srv-hero-stat-item">
-            <span class="srv-hero-stat-val">90 days </span>
-            <span class="srv-hero-stat-lbl">Typical time to visible ranking movement</span>
+            <span class="srv-hero-stat-val">90 Days</span>
+            <span class="srv-hero-stat-lbl">to First Results</span>
           </div>
         </div>
       </div>
@@ -92,26 +87,21 @@ $consultationUrl = appUrl('contact.php?service=' . urlencode($serviceName));
               <!-- Metrics Cards -->
               <rect x="40" y="65" width="245" height="100" rx="8" fill="#0D2644" stroke="#06B5F9" stroke-width="1.5"
                 stroke-opacity="0.4" />
-              <text x="56" y="90" fill="#06B5F9" font-family="monospace" font-size="11" font-weight="bold">// PAID MEDIA
-                ROAS</text>
-              <text x="56" y="122" fill="#34D399" font-family="sans-serif" font-size="26" font-weight="900">4.82x</text>
-              <text x="56" y="146" fill="#B8C7D9" font-family="monospace" font-size="10">Target: &gt; 3.50x &bull; +42%
-                YoY</text>
+              <text x="56" y="90" fill="#06B5F9" font-family="monospace" font-size="11" font-weight="bold">// ORGANIC GROWTH</text>
+              <text x="56" y="122" fill="#34D399" font-family="sans-serif" font-size="26" font-weight="900">3.8x</text>
+              <text x="56" y="146" fill="#B8C7D9" font-family="monospace" font-size="10">Target: &gt; 3.0x &bull; 90 Days</text>
 
               <rect x="315" y="65" width="245" height="100" rx="8" fill="#0D2644" stroke="#06B5F9" stroke-width="1.5"
                 stroke-opacity="0.4" />
-              <text x="330" y="90" fill="#06B5F9" font-family="monospace" font-size="11" font-weight="bold">// BLENDED
-                CAC REDUCTION</text>
+              <text x="330" y="90" fill="#06B5F9" font-family="monospace" font-size="11" font-weight="bold">// PAGE 1 RANKINGS</text>
               <text x="330" y="122" fill="#06B5F9" font-family="sans-serif" font-size="26"
-                font-weight="900">-38.4%</text>
-              <text x="330" y="146" fill="#B8C7D9" font-family="monospace" font-size="10">CPL &bull; Qualified Intent
-                Volume</text>
+                font-weight="900">120+</text>
+              <text x="330" y="146" fill="#B8C7D9" font-family="monospace" font-size="10">High Commercial Intent Keywords</text>
 
               <!-- Interactive Chart Area -->
               <rect x="40" y="178" width="520" height="228" rx="10" fill="#0A2038" stroke="#06B5F9" stroke-width="1"
                 stroke-opacity="0.25" />
-              <text x="58" y="206" fill="#F5F7FA" font-family="sans-serif" font-size="12" font-weight="bold">Conversion
-                Funnel &amp; Revenue Velocity</text>
+              <text x="58" y="206" fill="#F5F7FA" font-family="sans-serif" font-size="12" font-weight="bold">Search Visibility &amp; Organic Ranking Velocity</text>
 
               <!-- Live Telemetry Badge -->
               <rect x="430" y="193" width="112" height="19" rx="4" fill="#061A2E" stroke="#06B5F9" stroke-width="0.8"
@@ -122,7 +112,7 @@ $consultationUrl = appUrl('contact.php?service=' . urlencode($serviceName));
 
               <!-- Curve Trend Area Fill -->
               <path d="M60 340 C 140 330, 220 285, 300 265 C 370 248, 440 238, 515 235 L 515 375 L 60 375 Z"
-                fill="url(#grad1)" opacity="0.22" />
+                fill="url(#grad1_seo)" opacity="0.22" />
 
               <!-- Curve Trend Stroke -->
               <path d="M60 340 C 140 330, 220 285, 300 265 C 370 248, 440 238, 515 235" stroke="#06B5F9"
@@ -131,25 +121,21 @@ $consultationUrl = appUrl('contact.php?service=' . urlencode($serviceName));
               <!-- Secondary dashed baseline -->
               <path d="M60 355 C 160 355, 320 350, 515 345" stroke="#8FA3B8" stroke-width="1.8" stroke-dasharray="4 4"
                 fill="none" stroke-opacity="0.6" />
-              <text x="350" y="338" fill="#8FA3B8" font-family="monospace" font-size="9.5" font-weight="600">Legacy
-                Baseline</text>
+              <text x="350" y="338" fill="#8FA3B8" font-family="monospace" font-size="9.5" font-weight="600">Legacy Baseline</text>
 
               <!-- Data Points -->
               <circle cx="300" cy="265" r="4.5" fill="#06B5F9" stroke="#ffffff" stroke-width="2" />
               <circle cx="515" cy="235" r="5.5" fill="#34D399" stroke="#ffffff" stroke-width="2" />
 
-              <!-- +148% REV Badge with clean dedicated spacing -->
+              <!-- +180% LEADS Badge -->
               <rect x="420" y="252" width="105" height="23" rx="4" fill="#0D2644" stroke="#34D399" stroke-width="1"
                 stroke-opacity="0.7" />
-              <text x="435" y="267.5" fill="#34D399" font-family="monospace" font-size="10.5" font-weight="bold">+148%
-                REV</text>
+              <text x="435" y="267.5" fill="#34D399" font-family="monospace" font-size="10.5" font-weight="bold">+180% LEADS</text>
 
-              <!-- Bottom Audited Label with clear margins -->
-              <text x="58" y="390" fill="#8FA3B8" font-family="monospace" font-size="9.5">Audited Blended CAC &bull;
-                Attribution Multi-Touch Model</text>
+              <text x="58" y="390" fill="#8FA3B8" font-family="monospace" font-size="9.5">Audited Organic Visibility &bull; Google Search Console &amp; GA4 Telemetry</text>
 
               <defs>
-                <linearGradient id="grad1" x1="0" y1="0" x2="0" y2="1">
+                <linearGradient id="grad1_seo" x1="0" y1="0" x2="0" y2="1">
                   <stop offset="0%" stop-color="#06B5F9" />
                   <stop offset="100%" stop-color="#071A2C" stop-opacity="0" />
                 </linearGradient>
@@ -163,7 +149,7 @@ $consultationUrl = appUrl('contact.php?service=' . urlencode($serviceName));
 </section>
 
 <!-- ============================================================
-     KEY TAKEAWAYS & EXECUTIVE SUMMARY (Reference Feature B)
+     KEY TAKEAWAYS & EXECUTIVE SUMMARY
      ============================================================ -->
 <section class="srv-section srv-section-takeaways" style="padding-top: 0; padding-bottom: 2.5rem;">
   <div class="srv-container">
@@ -173,46 +159,32 @@ $consultationUrl = appUrl('contact.php?service=' . urlencode($serviceName));
           <svg class="srv-takeaways-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
             <path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5" />
           </svg>
-          <span>KEY TAKEAWAYS &bull; AT A GLANCE</span>
+          <span>KEY TAKEAWAYS</span>
         </div>
         <span class="srv-takeaways-pill">Core Execution Highlights</span>
       </div>
       <div class="srv-takeaways-grid">
         <div class="srv-takeaway-card">
           <div class="srv-takeaway-top">
-            <span class="srv-takeaway-val">4.2x</span>
+            <span class="srv-takeaway-val">3.8x</span>
             <div class="srv-takeaway-badge">
               <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
                 <polyline points="20 6 9 17 4 12" />
               </svg>
             </div>
           </div>
-          <span class="srv-takeaway-label">Average Client ROAS</span>
-          <p class="srv-takeaway-desc">Verified benchmark engineered across production client deployments.</p>
+          <span class="srv-takeaway-label">Average organic traffic growth in 6 months</span>
         </div>
         <div class="srv-takeaway-card">
           <div class="srv-takeaway-top">
-            <span class="srv-takeaway-val">-38%</span>
+            <span class="srv-takeaway-val">120+</span>
             <div class="srv-takeaway-badge">
               <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
                 <polyline points="20 6 9 17 4 12" />
               </svg>
             </div>
           </div>
-          <span class="srv-takeaway-label">Customer Acquisition Cost</span>
-          <p class="srv-takeaway-desc">Verified benchmark engineered across production client deployments.</p>
-        </div>
-        <div class="srv-takeaway-card">
-          <div class="srv-takeaway-top">
-            <span class="srv-takeaway-val">+215%</span>
-            <div class="srv-takeaway-badge">
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
-                <polyline points="20 6 9 17 4 12" />
-              </svg>
-            </div>
-          </div>
-          <span class="srv-takeaway-label">Organic Search Traffic</span>
-          <p class="srv-takeaway-desc">Verified benchmark engineered across production client deployments.</p>
+          <span class="srv-takeaway-label">Keywords ranking on page one</span>
         </div>
         <div class="srv-takeaway-card">
           <div class="srv-takeaway-top">
@@ -223,8 +195,18 @@ $consultationUrl = appUrl('contact.php?service=' . urlencode($serviceName));
               </svg>
             </div>
           </div>
-          <span class="srv-takeaway-label">First-Party Tracking SLA</span>
-          <p class="srv-takeaway-desc">Verified benchmark engineered across production client deployments.</p>
+          <span class="srv-takeaway-label">Transparent monthly reporting</span>
+        </div>
+        <div class="srv-takeaway-card">
+          <div class="srv-takeaway-top">
+            <span class="srv-takeaway-val">90 days</span>
+            <div class="srv-takeaway-badge">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+                <polyline points="20 6 9 17 4 12" />
+              </svg>
+            </div>
+          </div>
+          <span class="srv-takeaway-label">Typical time to visible ranking movement</span>
         </div>
       </div>
     </div>
@@ -232,7 +214,7 @@ $consultationUrl = appUrl('contact.php?service=' . urlencode($serviceName));
 </section>
 
 <!-- ============================================================
-     SECTION 2 — SERVICE INTRODUCTION
+     SECTION 2 — SERVICE INTRODUCTION / PHILOSOPHY
      ============================================================ -->
 <section class="srv-section srv-bg-surface" id="introduction">
   <div class="srv-container">
@@ -246,13 +228,10 @@ $consultationUrl = appUrl('contact.php?service=' . urlencode($serviceName));
           Convert your Search Visibility <span class="text-brand">into Real Revenue</span>
         </h2>
         <p class="srv-section-subtitle mb-4">
-          Many companies will invest in an SEO company in Delhi however often the results are reports based around
-          impressions and traffic only, with little real enquiry. With our focus on helping your business grow, we’ll
-          identify your revenue goals and create a strategy that targets the right keywords, landing pages and authority
-          signals.
+          Many companies will invest in an SEO company in Delhi however often the results are reports based around impressions and traffic only, with little real enquiry. With our focus on helping your business grow, we’ll identify your revenue goals and create a strategy that targets the right keywords, landing pages and authority signals.
+        </p>
         <p class="srv-card-desc mb-4">
-          The Digital landscape is very competitive in Delhi, with many businesses competing for positions across
-          hundreds of search terms. In order to rank well in search engines you need
+          The Digital landscape is very competitive in Delhi, with many businesses competing for positions across hundreds of search terms. In order to rank well in search engines you need
         </p>
 
         <div class="srv-feature-list mb-4">
@@ -261,9 +240,8 @@ $consultationUrl = appUrl('contact.php?service=' . urlencode($serviceName));
               <polyline points="20 6 9 17 4 12" />
             </svg>
             <div>
-              <strong class="text-white">Technical SEO &amp;–</strong>
-              <span class="text-secondary"> We fix every issue that stops your website from crawling and indexing
-                properly. We also optimise your website speed and improve your technical SEO.</span>
+              <strong class="text-white">Technical SEO –</strong>
+              <span class="text-secondary"> We fix every issue that stops your website from crawling and indexing properly. We also optimise your website speed and improve your technical SEO.</span>
             </div>
           </div>
           <div class="srv-feature-item">
@@ -271,9 +249,8 @@ $consultationUrl = appUrl('contact.php?service=' . urlencode($serviceName));
               <polyline points="20 6 9 17 4 12" />
             </svg>
             <div>
-              <strong class="text-white">Commercial &amp;Transactional Keywords –</strong>
-              <span class="text-secondary">We focus on driving traffic through keywords searches that help your business
-                to reach people searching for your products or services.</span>
+              <strong class="text-white">Commercial and Transactional Keywords –</strong>
+              <span class="text-secondary"> We focus on driving traffic through keywords searches that help your business to reach people searching for your products or services.</span>
             </div>
           </div>
           <div class="srv-feature-item">
@@ -282,15 +259,7 @@ $consultationUrl = appUrl('contact.php?service=' . urlencode($serviceName));
             </svg>
             <div>
               <strong class="text-white">Local and National Visibility –</strong>
-              <span class="text-secondary"> We also work on improving your visibility in Delhi NCR (Gurugram & Noida)
-                and provide opportunities to reach your business to the right audiences.</span>
-            </div>
-          </div>
-          <div class="srv-feature-item">
-            <svg class="srv-check-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
-              <polyline points="20 6 9 17 4 12" />
-            </svg>
-            <div>
+              <span class="text-secondary"> We also work on improving your visibility in Delhi NCR (Gurugram &amp; Noida) and provide opportunities to reach your business to the right audiences.</span>
             </div>
           </div>
         </div>
@@ -317,7 +286,7 @@ $consultationUrl = appUrl('contact.php?service=' . urlencode($serviceName));
           </div>
           <div class="srv-hud-body">
             <p class="srv-card-desc mb-4">
-              Real-time telemetry measuring crawl depth, paid ad auction efficiency, and conversion rate velocity.
+              Real-time telemetry measuring crawl depth, search visibility, and conversion rate velocity.
             </p>
             <div class="srv-hud-metrics">
               <div class="srv-hud-metric-box">
@@ -330,19 +299,19 @@ $consultationUrl = appUrl('contact.php?service=' . urlencode($serviceName));
               </div>
               <div class="srv-hud-metric-box">
                 <div class="srv-hud-metric-num">+180%</div>
-                <div class="srv-hud-metric-label">Qualified Leads </div>
+                <div class="srv-hud-metric-label">Qualified Leads</div>
               </div>
               <div class="srv-hud-metric-box">
                 <div class="srv-hud-metric-num">38%</div>
-                <div class="srv-hud-metric-label"> Bounce Rate</div>
+                <div class="srv-hud-metric-label">Bounce Rate</div>
               </div>
             </div>
             <div class="srv-hud-tag-list mt-3">
-              <span class="srv-tool-badge">Google Ads</span>
-              <span class="srv-tool-badge">Meta CAPI</span>
+              <span class="srv-tool-badge">Google Search Console</span>
               <span class="srv-tool-badge">Ahrefs</span>
+              <span class="srv-tool-badge">SEMrush</span>
               <span class="srv-tool-badge">Screaming Frog</span>
-              <span class="srv-tool-badge">GA4 Server-Side</span>
+              <span class="srv-tool-badge">GA4</span>
               <span class="srv-tool-badge">Looker Studio</span>
             </div>
           </div>
@@ -353,7 +322,7 @@ $consultationUrl = appUrl('contact.php?service=' . urlencode($serviceName));
 </section>
 
 <!-- ============================================================
-     SECTION 4 — OUR SERVICES / WHAT WE OFFER
+     SECTION 4 — OUR SERVICES / WHAT WE OFFER (6 CARDS)
      ============================================================ -->
 <section class="srv-section srv-bg-surface" id="services-list">
   <div class="srv-container">
@@ -366,12 +335,12 @@ $consultationUrl = appUrl('contact.php?service=' . urlencode($serviceName));
         Specialized SEO Services in Delhi <span class="text-brand">Built to Grow Your Business</span>
       </h2>
       <p class="srv-section-subtitle">
-        Every SEO solution is designed by a professional SEO company in Delhi helps to improve your website search
-        visibility, attract qualified traffic, and drive measurable business growth.
+        Every SEO solution is designed by a professional SEO company in Delhi helps to improve your website search visibility, attract qualified traffic, and drive measurable business growth.
       </p>
     </div>
 
     <div class="srv-grid srv-grid-3">
+      <!-- Card 1 -->
       <div class="srv-card">
         <div class="srv-card-icon-wrap">
           <div class="srv-icon-box"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
@@ -379,9 +348,8 @@ $consultationUrl = appUrl('contact.php?service=' . urlencode($serviceName));
               <line x1="21" y1="21" x2="16.65" y2="16.65" />
             </svg></div>
         </div>
-        <h3 class="srv-card-title">Technical SEO &amp; & Site Audit </h3>
-        <p class="srv-card-desc">Through technical SEO, we help your business to build a solid base for your website. To
-          do this, we will carry out a full technical SEO audit to find any issues on your website.</p>
+        <h3 class="srv-card-title">Technical SEO &amp; Site Audit</h3>
+        <p class="srv-card-desc">Through technical SEO, we help your business to build a solid base for your website. To do this, we will carry out a full technical SEO audit to find any issues on your website.</p>
         <div class="srv-feature-list mb-3">
           <div class="srv-feature-item">
             <svg class="srv-check-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
@@ -393,21 +361,21 @@ $consultationUrl = appUrl('contact.php?service=' . urlencode($serviceName));
             <svg class="srv-check-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
               <polyline points="20 6 9 17 4 12" />
             </svg>
-            <span>Core Web &amp; Vitals improvement</span>
+            <span>Core Web Vitals improvement</span>
           </div>
           <div class="srv-feature-item">
             <svg class="srv-check-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
               <polyline points="20 6 9 17 4 12" />
             </svg>
-            <span>Schema markup implementation </span>
+            <span>Schema markup implementation</span>
           </div>
         </div>
         <div class="srv-benefit-badge">
           <span class="text-secondary">Business Value:</span>
-          <strong class="text-white"> A faster, crawlable site that ranks more pages.</strong>
+          <strong class="text-white">A faster, crawlable site that ranks more pages.</strong>
         </div>
         <div class="pt-3">
-          <a href="<?= appUrl('contact.php?service=' . urlencode($serviceName) . '&capability=' . urlencode('Technical SEO & Crawl Optimization')) ?>"
+          <a href="<?= appUrl('contact.php?service=' . urlencode($serviceName) . '&capability=' . urlencode('Technical SEO & Site Audit')) ?>"
             class="srv-link-action">
             <span>Inquire About This Service</span>
             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
@@ -417,6 +385,8 @@ $consultationUrl = appUrl('contact.php?service=' . urlencode($serviceName));
           </a>
         </div>
       </div>
+
+      <!-- Card 2 -->
       <div class="srv-card">
         <div class="srv-card-icon-wrap">
           <div class="srv-icon-box"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
@@ -425,9 +395,8 @@ $consultationUrl = appUrl('contact.php?service=' . urlencode($serviceName));
               <circle cx="12" cy="12" r="2" />
             </svg></div>
         </div>
-        <h3 class="srv-card-title">Local SEO &amp; Services in Delhi</h3>
-        <p class="srv-card-desc">Your next customer could be just down the road, searching on their phone. We optimise
-          your Google Business Profile, use local keywords, and manage your business listings.</p>
+        <h3 class="srv-card-title">Local SEO Services in Delhi</h3>
+        <p class="srv-card-desc">Your next customer could be just down the road, searching on their phone. We optimise your Google Business Profile, use local keywords, and manage your business listings.</p>
         <div class="srv-feature-list mb-3">
           <div class="srv-feature-item">
             <svg class="srv-check-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
@@ -449,11 +418,11 @@ $consultationUrl = appUrl('contact.php?service=' . urlencode($serviceName));
           </div>
         </div>
         <div class="srv-benefit-badge">
-          <span class="text-secondary">Business Value: </span>
+          <span class="text-secondary">Business Value:</span>
           <strong class="text-white">More calls, walk-ins, and direction requests.</strong>
         </div>
         <div class="pt-3">
-          <a href="<?= appUrl('contact.php?service=' . urlencode($serviceName) . '&capability=' . urlencode('High-Intent Google Ads & Search Marketing')) ?>"
+          <a href="<?= appUrl('contact.php?service=' . urlencode($serviceName) . '&capability=' . urlencode('Local SEO Services in Delhi')) ?>"
             class="srv-link-action">
             <span>Inquire About This Service</span>
             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
@@ -463,6 +432,8 @@ $consultationUrl = appUrl('contact.php?service=' . urlencode($serviceName));
           </a>
         </div>
       </div>
+
+      <!-- Card 3 -->
       <div class="srv-card">
         <div class="srv-card-icon-wrap">
           <div class="srv-icon-box"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
@@ -471,41 +442,34 @@ $consultationUrl = appUrl('contact.php?service=' . urlencode($serviceName));
               <line x1="6" y1="20" x2="6" y2="14" />
             </svg></div>
         </div>
-        <h3 class="srv-card-title"> ​On-Page SEO Services </h3>
-        <p class="srv-card-desc">By on page Seo, your website content will be optimized and made for both seo friendly
-          as well as user friendly.</p>
+        <h3 class="srv-card-title">On-Page SEO Services</h3>
+        <p class="srv-card-desc">By on page Seo, your website content will be optimized and made for both seo friendly as well as user friendly.</p>
         <div class="srv-feature-list mb-3">
           <div class="srv-feature-item">
             <svg class="srv-check-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
               <polyline points="20 6 9 17 4 12" />
             </svg>
-            <span>Creative Fatigue Rotation Strategy</span>
+            <span>Keywords and meta titles improving</span>
           </div>
           <div class="srv-feature-item">
             <svg class="srv-check-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
               <polyline points="20 6 9 17 4 12" />
             </svg>
-            <span>Lookalike &amp; First-Party Custom Audiences</span>
+            <span>meta descriptions, headings, and image alt text</span>
           </div>
           <div class="srv-feature-item">
             <svg class="srv-check-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
               <polyline points="20 6 9 17 4 12" />
             </svg>
-            <span>Meta Advantage+ Bid Structuring</span>
-          </div>
-          <div class="srv-feature-item">
-            <svg class="srv-check-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
-              <polyline points="20 6 9 17 4 12" />
-            </svg>
-            <span>Cross-Platform Retargeting Sequences</span>
+            <span>Quality internal linking through different pages of the website</span>
           </div>
         </div>
         <div class="srv-benefit-badge">
-          <span class="text-secondary">BUSINESS VALUE:</span>
-          <strong class="text-white">Lower customer acquisition cost through scalable creative testing.</strong>
+          <span class="text-secondary">Business Value:</span>
+          <strong class="text-white">Improve website visibility in search engine</strong>
         </div>
         <div class="pt-3">
-          <a href="<?= appUrl('contact.php?service=' . urlencode($serviceName) . '&capability=' . urlencode('Paid Social & Meta Performance Scaling')) ?>"
+          <a href="<?= appUrl('contact.php?service=' . urlencode($serviceName) . '&capability=' . urlencode('On-Page SEO Services')) ?>"
             class="srv-link-action">
             <span>Inquire About This Service</span>
             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
@@ -515,48 +479,42 @@ $consultationUrl = appUrl('contact.php?service=' . urlencode($serviceName));
           </a>
         </div>
       </div>
+
+      <!-- Card 4 -->
       <div class="srv-card">
         <div class="srv-card-icon-wrap">
           <div class="srv-icon-box"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
               <polygon points="22 3 2 3 10 12.46 10 19 14 21 14 12.46 22 3" />
             </svg></div>
         </div>
-        <h3 class="srv-card-title">Conversion Rate Optimization (CRO)</h3>
-        <p class="srv-card-desc">Systematic qualitative and quantitative experimentation on your key landing pages to
-          maximize the percentage of visitors who become customers.</p>
+        <h3 class="srv-card-title">E-commerce &amp; Enterprise SEO</h3>
+        <p class="srv-card-desc">No matter how great your product is, it won’t matter if your customers can’t find it. We optimise your product and category pages.</p>
         <div class="srv-feature-list mb-3">
           <div class="srv-feature-item">
             <svg class="srv-check-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
               <polyline points="20 6 9 17 4 12" />
             </svg>
-            <span>Heatmap &amp; Session Recording Audits</span>
+            <span>Category and product page optimization</span>
           </div>
           <div class="srv-feature-item">
             <svg class="srv-check-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
               <polyline points="20 6 9 17 4 12" />
             </svg>
-            <span>A/B Multivariate Headline &amp; Layout Testing</span>
+            <span>Faceted navigation handling</span>
           </div>
           <div class="srv-feature-item">
             <svg class="srv-check-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
               <polyline points="20 6 9 17 4 12" />
             </svg>
-            <span>Frictionless Mobile-First Form Design</span>
-          </div>
-          <div class="srv-feature-item">
-            <svg class="srv-check-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
-              <polyline points="20 6 9 17 4 12" />
-            </svg>
-            <span>Psychological Social Proof Placements</span>
+            <span>Programmatic page templates</span>
           </div>
         </div>
         <div class="srv-benefit-badge">
-          <span class="text-secondary">BUSINESS VALUE:</span>
-          <strong class="text-white">Double your lead volume without increasing your ad spend by a single
-            dollar.</strong>
+          <span class="text-secondary">Business Value:</span>
+          <strong class="text-white">Revenue growth without adding ad spend.</strong>
         </div>
         <div class="pt-3">
-          <a href="<?= appUrl('contact.php?service=' . urlencode($serviceName) . '&capability=' . urlencode('Conversion Rate Optimization (CRO)')) ?>"
+          <a href="<?= appUrl('contact.php?service=' . urlencode($serviceName) . '&capability=' . urlencode('E-commerce & Enterprise SEO')) ?>"
             class="srv-link-action">
             <span>Inquire About This Service</span>
             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
@@ -566,6 +524,8 @@ $consultationUrl = appUrl('contact.php?service=' . urlencode($serviceName));
           </a>
         </div>
       </div>
+
+      <!-- Card 5 -->
       <div class="srv-card">
         <div class="srv-card-icon-wrap">
           <div class="srv-icon-box"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
@@ -573,41 +533,34 @@ $consultationUrl = appUrl('contact.php?service=' . urlencode($serviceName));
               <polyline points="8 6 2 12 8 18" />
             </svg></div>
         </div>
-        <h3 class="srv-card-title">Server-Side Tracking &amp; Full Attribution</h3>
-        <p class="srv-card-desc">First-party data infrastructure that circumvents ad blockers, Safari ITP, and browser
-          restrictions to feed clean conversion signals to ad networks.</p>
+        <h3 class="srv-card-title">Off-Page SEO Services</h3>
+        <p class="srv-card-desc">A strong online authority helps to establish credibility and increase position within the search engine results.</p>
         <div class="srv-feature-list mb-3">
           <div class="srv-feature-item">
             <svg class="srv-check-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
               <polyline points="20 6 9 17 4 12" />
             </svg>
-            <span>Server-Side Google Tag Manager (sGTM)</span>
+            <span>Quality link building</span>
           </div>
           <div class="srv-feature-item">
             <svg class="srv-check-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
               <polyline points="20 6 9 17 4 12" />
             </svg>
-            <span>Meta CAPI &amp; Google Offline Conversions</span>
+            <span>Improving website trustworthiness to Google</span>
           </div>
           <div class="srv-feature-item">
             <svg class="srv-check-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
               <polyline points="20 6 9 17 4 12" />
             </svg>
-            <span>Multi-Touch Attribution Modeling</span>
-          </div>
-          <div class="srv-feature-item">
-            <svg class="srv-check-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
-              <polyline points="20 6 9 17 4 12" />
-            </svg>
-            <span>CRM Closed-Loop Revenue Sync</span>
+            <span>Studying your competitors and creating a strategy</span>
           </div>
         </div>
         <div class="srv-benefit-badge">
-          <span class="text-secondary">BUSINESS VALUE:</span>
-          <strong class="text-white">Algorithms optimize for actual revenue instead of low-value vanity clicks.</strong>
+          <span class="text-secondary">Business Value:</span>
+          <strong class="text-white">Building high domain authority of website</strong>
         </div>
         <div class="pt-3">
-          <a href="<?= appUrl('contact.php?service=' . urlencode($serviceName) . '&capability=' . urlencode('Server-Side Tracking & Full Attribution')) ?>"
+          <a href="<?= appUrl('contact.php?service=' . urlencode($serviceName) . '&capability=' . urlencode('Off-Page SEO Services')) ?>"
             class="srv-link-action">
             <span>Inquire About This Service</span>
             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
@@ -617,6 +570,8 @@ $consultationUrl = appUrl('contact.php?service=' . urlencode($serviceName));
           </a>
         </div>
       </div>
+
+      <!-- Card 6 -->
       <div class="srv-card">
         <div class="srv-card-icon-wrap">
           <div class="srv-icon-box"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
@@ -625,41 +580,34 @@ $consultationUrl = appUrl('contact.php?service=' . urlencode($serviceName));
               <polyline points="2 12 12 17 22 12" />
             </svg></div>
         </div>
-        <h3 class="srv-card-title">Topical Authority &amp; Content Strategy</h3>
-        <p class="srv-card-desc">Comprehensive content ecosystems designed around thematic clusters that position your
-          brand as the undeniable authority in your industry.</p>
+        <h3 class="srv-card-title">SEO Content Optimisation</h3>
+        <p class="srv-card-desc">Improve the content on your website, including your service page content. Also add keywords naturally and ensure every page is relevant.</p>
         <div class="srv-feature-list mb-3">
           <div class="srv-feature-item">
             <svg class="srv-check-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
               <polyline points="20 6 9 17 4 12" />
             </svg>
-            <span>Semantic Search Intent Mapping</span>
+            <span>Update old content to relevant content</span>
           </div>
           <div class="srv-feature-item">
             <svg class="srv-check-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
               <polyline points="20 6 9 17 4 12" />
             </svg>
-            <span>In-Depth Research Reports &amp; Whitepapers</span>
+            <span>relevant internal links building</span>
           </div>
           <div class="srv-feature-item">
             <svg class="srv-check-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
               <polyline points="20 6 9 17 4 12" />
             </svg>
-            <span>Programmatic Content Architecture</span>
-          </div>
-          <div class="srv-feature-item">
-            <svg class="srv-check-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
-              <polyline points="20 6 9 17 4 12" />
-            </svg>
-            <span>High-Authority Backlink Acquisition</span>
+            <span>Seo friendly content</span>
           </div>
         </div>
         <div class="srv-benefit-badge">
-          <span class="text-secondary">BUSINESS VALUE:</span>
-          <strong class="text-white">Sustained organic traffic moat that competitors cannot easily duplicate.</strong>
+          <span class="text-secondary">Business Value:</span>
+          <strong class="text-white">Relevant content for users</strong>
         </div>
         <div class="pt-3">
-          <a href="<?= appUrl('contact.php?service=' . urlencode($serviceName) . '&capability=' . urlencode('Topical Authority & Content Strategy')) ?>"
+          <a href="<?= appUrl('contact.php?service=' . urlencode($serviceName) . '&capability=' . urlencode('SEO Content Optimisation')) ?>"
             class="srv-link-action">
             <span>Inquire About This Service</span>
             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
@@ -674,7 +622,7 @@ $consultationUrl = appUrl('contact.php?service=' . urlencode($serviceName));
 </section>
 
 <!-- ============================================================
-     SECTION 5 — OUR PROCESS
+     SECTION 5 — OUR PROCESS (6 PHASES)
      ============================================================ -->
 <section class="srv-section" id="process">
   <div class="srv-container">
@@ -684,111 +632,97 @@ $consultationUrl = appUrl('contact.php?service=' . urlencode($serviceName));
         <span>STRUCTURED EXECUTION TIMELINE</span>
       </div>
       <h2 class="srv-section-title">
-        The 6-Phase Engineering &amp; Delivery <span class="text-brand">Framework</span>
+        How Our SEO Company in Delhi <span class="text-brand">Delivers Results in 6 Phases</span>
       </h2>
       <p class="srv-section-subtitle">
-        Predictable milestones, rigorous testing checkpoints, and full visibility at every stage of the project
-        lifecycle.
+        A clear process so you always know what happens next.
       </p>
     </div>
 
     <div class="srv-process-nav" role="tablist" aria-label="Process Milestones">
-      <button type="button" class="srv-process-pill is-active" data-step="01"><span class="srv-pill-num">1</span> Phase
-        01</button>
-      <button type="button" class="srv-process-pill" data-step="02"><span class="srv-pill-num">2</span> Phase
-        02</button>
-      <button type="button" class="srv-process-pill" data-step="03"><span class="srv-pill-num">3</span> Phase
-        03</button>
-      <button type="button" class="srv-process-pill" data-step="04"><span class="srv-pill-num">4</span> Phase
-        04</button>
-      <button type="button" class="srv-process-pill" data-step="05"><span class="srv-pill-num">5</span> Phase
-        05</button>
-      <button type="button" class="srv-process-pill" data-step="06"><span class="srv-pill-num">6</span> Phase
-        06</button>
+      <button type="button" class="srv-process-pill is-active" data-step="01"><span class="srv-pill-num">1</span> Phase 01</button>
+      <button type="button" class="srv-process-pill" data-step="02"><span class="srv-pill-num">2</span> Phase 02</button>
+      <button type="button" class="srv-process-pill" data-step="03"><span class="srv-pill-num">3</span> Phase 03</button>
+      <button type="button" class="srv-process-pill" data-step="04"><span class="srv-pill-num">4</span> Phase 04</button>
+      <button type="button" class="srv-process-pill" data-step="05"><span class="srv-pill-num">5</span> Phase 05</button>
+      <button type="button" class="srv-process-pill" data-step="06"><span class="srv-pill-num">6</span> Phase 06</button>
     </div>
 
     <div class="srv-process-timeline">
       <div class="srv-process-card" data-step="01">
-        <div class="srv-phase-badge">PHASE 01 &bull; WEEKS 1–2</div>
-        <h3 class="srv-process-title">Technical Audit &amp; Tracking Calibration</h3>
-        <p class="srv-card-desc mb-3">We perform exhaustive crawl audits, review historical ad accounts, and deploy
-          server-side tracking tags to establish an unshakeable data foundation.</p>
+        <div class="srv-phase-badge">PHASE 01 &bull; TIMELINE: WEEK 1–2</div>
+        <h3 class="srv-process-title">01. Audit &amp; Discovery</h3>
+        <p class="srv-card-desc mb-3">As a seo company in delhi, We build our strategy by auditing your website current SEO performance, technical health, existing rankings, and your business competitor gaps. This helps us to identify improvement areas and opportunities for your business growth.</p>
         <div class="srv-process-deliverable">
-          <span class="srv-deliverable-lbl">KEY DELIVERABLES:</span>
+          <span class="srv-deliverable-lbl">DELIVERABLES:</span>
           <ul class="srv-bullet-list">
-            <li>Full Technical SEO Health Audit</li>
-            <li>Tracking &amp; Pixel Verification Report</li>
-            <li>Competitor Keyword &amp; Ad Spy Intelligence</li>
+            <li>Technical SEO Audit</li>
+            <li>Competitor Analysis Report</li>
           </ul>
         </div>
       </div>
+
       <div class="srv-process-card" data-step="02">
-        <div class="srv-phase-badge">PHASE 02 &bull; WEEKS 2–3</div>
-        <h3 class="srv-process-title">Audience Mapping &amp; Campaign Architecture</h3>
-        <p class="srv-card-desc mb-3">We build the campaign structures, segment buyer personas, identify high-intent
-          keyword clusters, and draft high-converting ad copy.</p>
+        <div class="srv-phase-badge">PHASE 02 &bull; TIMELINE: WEEK 2–3</div>
+        <h3 class="srv-process-title">02. Keyword &amp; Strategy</h3>
+        <p class="srv-card-desc mb-3">We carry out keyword research to identify high volume and high relevance keywords. Our team also create an overall keyword strategy ensuring keywords are optimised for search intent and to attract your target audiences.</p>
         <div class="srv-process-deliverable">
-          <span class="srv-deliverable-lbl">KEY DELIVERABLES:</span>
+          <span class="srv-deliverable-lbl">DELIVERABLES:</span>
           <ul class="srv-bullet-list">
-            <li>Google &amp; Meta Campaign Structure Plan</li>
-            <li>Ad Copy &amp; Creative Testing Matrix</li>
-            <li>Negative Keyword Blacklists</li>
+            <li>Keyword Mapping</li>
+            <li>6-Month SEO Roadmap</li>
           </ul>
         </div>
       </div>
+
       <div class="srv-process-card" data-step="03">
-        <div class="srv-phase-badge">PHASE 03 &bull; WEEKS 3–4</div>
-        <h3 class="srv-process-title">Landing Page CRO &amp; Asset Deployment</h3>
-        <p class="srv-card-desc mb-3">We design and engineer bespoke, lightning-fast landing pages with optimized copy,
-          clear value propositions, and frictionless lead capture forms.</p>
+        <div class="srv-phase-badge">PHASE 03 &bull; TIMEFRAME: WEEKS 3-6</div>
+        <h3 class="srv-process-title">03) Technical SEO Fixes</h3>
+        <p class="srv-card-desc mb-3">We fix all issues on your website that could be impacting your overall performance.</p>
         <div class="srv-process-deliverable">
-          <span class="srv-deliverable-lbl">KEY DELIVERABLES:</span>
+          <span class="srv-deliverable-lbl">DELIVERABLES:</span>
           <ul class="srv-bullet-list">
-            <li>High-Converting Landing Pages</li>
-            <li>Mobile-Responsive Form Integrations</li>
-            <li>Core Web Vitals Verification</li>
+            <li>Fixing technical issues on your website</li>
+            <li>Schema Markup</li>
           </ul>
         </div>
       </div>
+
       <div class="srv-process-card" data-step="04">
-        <div class="srv-phase-badge">PHASE 04 &bull; WEEKS 4–6</div>
-        <h3 class="srv-process-title">Campaign Launch &amp; Initial Bidding Calibration</h3>
-        <p class="srv-card-desc mb-3">We launch campaigns under strict manual and algorithmic guardrails, monitoring
-          search query reports and real-time impression share daily.</p>
+        <div class="srv-phase-badge">PHASE 04 &bull; TIMEFRAME: MONTHS 2-4</div>
+        <h3 class="srv-process-title">04) Content and On Page SEO</h3>
+        <p class="srv-card-desc mb-3">Optimise existing landing pages and create new pages for your business website, with relevant content that centred around target keywords.</p>
         <div class="srv-process-deliverable">
-          <span class="srv-deliverable-lbl">KEY DELIVERABLES:</span>
+          <span class="srv-deliverable-lbl">DELIVERABLES:</span>
           <ul class="srv-bullet-list">
-            <li>Controlled Budget Rollout</li>
-            <li>Search Query Cleansing &amp; Negative Filtering</li>
-            <li>Initial Bid &amp; ROAS Baseline Tuning</li>
+            <li>Optimised Website Pages</li>
+            <li>New SEO Content</li>
           </ul>
         </div>
       </div>
+
       <div class="srv-process-card" data-step="05">
-        <div class="srv-phase-badge">PHASE 05 &bull; WEEKS 6–10</div>
-        <h3 class="srv-process-title">Multivariate Testing &amp; Creative Iteration</h3>
-        <p class="srv-card-desc mb-3">We systematically test new ad creatives, landing page variations, and bid
-          strategies to lower CPA and discover winning combinations.</p>
+        <div class="srv-phase-badge">PHASE 05 &bull; TIMEFRAME: MONTHS 2-6</div>
+        <h3 class="srv-process-title">05) Link Building</h3>
+        <p class="srv-card-desc mb-3">Build your websites authority by gaining backlinks from relevant sources and building trustworthiness with Google.</p>
         <div class="srv-process-deliverable">
-          <span class="srv-deliverable-lbl">KEY DELIVERABLES:</span>
+          <span class="srv-deliverable-lbl">DELIVERABLES:</span>
           <ul class="srv-bullet-list">
-            <li>A/B Test Statistical Significance Reports</li>
-            <li>Creative Fatigue Replacements</li>
-            <li>Audience Expansion Scenarios</li>
+            <li>Quality Backlinks</li>
+            <li>Monthly Link Building Report</li>
           </ul>
         </div>
       </div>
+
       <div class="srv-process-card" data-step="06">
-        <div class="srv-phase-badge">PHASE 06 &bull; ONGOING</div>
-        <h3 class="srv-process-title">Budget Scaling &amp; Executive BI Dashboards</h3>
-        <p class="srv-card-desc mb-3">We scale profitable ad sets, optimize for downstream customer LTV, and provide
-          real-time Looker Studio dashboards for executive stakeholders.</p>
+        <div class="srv-phase-badge">PHASE 06 &bull; TIMELINE: ONGOING</div>
+        <h3 class="srv-process-title">06) Reporting</h3>
+        <p class="srv-card-desc mb-3">We continually monitor your targeted keywords, organic traffic and conversions to gain an understanding of how your campaign is performing. We then fine tune your strategy and identify new opportunities to grow.</p>
         <div class="srv-process-deliverable">
-          <span class="srv-deliverable-lbl">KEY DELIVERABLES:</span>
+          <span class="srv-deliverable-lbl">DELIVERABLES:</span>
           <ul class="srv-bullet-list">
-            <li>Live Looker Studio Executive Dashboard</li>
-            <li>Bi-Weekly Strategy Calibration Calls</li>
-            <li>Quarterly Growth Roadmap</li>
+            <li>Monthly Performance Dashboard</li>
+            <li>Growth Plan</li>
           </ul>
         </div>
       </div>
@@ -797,7 +731,7 @@ $consultationUrl = appUrl('contact.php?service=' . urlencode($serviceName));
 </section>
 
 <!-- ============================================================
-     SECTION 6 — WHY CHOOSE BUSINESSDOCTOR
+     SECTION 6 — WHY CHOOSE BUSINESSDOCTOR (6 CARDS)
      ============================================================ -->
 <section class="srv-section srv-bg-surface" id="why-choose-us">
   <div class="srv-container">
@@ -807,11 +741,10 @@ $consultationUrl = appUrl('contact.php?service=' . urlencode($serviceName));
         <span>COMPETITIVE ADVANTAGE</span>
       </div>
       <h2 class="srv-section-title">
-        Why Leading Companies Partner with <span class="text-brand">BusinessDoctor</span>
+        Why Businesses Choose BusinessDoctor <span class="text-brand">As Their SEO Company In Delhi</span>
       </h2>
       <p class="srv-section-subtitle">
-        We bridge the gap between business strategy and deep technical execution, providing senior expertise without
-        agency bloat.
+        Choosing an SEO company in delhi can sometimes be confusing but at Business Doctor, we provide services that focus on delivering results based around your business.
       </p>
     </div>
 
@@ -821,24 +754,20 @@ $consultationUrl = appUrl('contact.php?service=' . urlencode($serviceName));
             <line x1="12" y1="1" x2="12" y2="23" />
             <path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6" />
           </svg></div>
-        <h3 class="srv-card-title">Zero Vanity Metrics</h3>
-        <p class="srv-card-desc">We don’t celebrate clicks, impressions, or generic traffic. We report on pipeline
-          value, closed revenue, ROAS, and customer acquisition cost.</p>
+        <h3 class="srv-card-title">01. Real result</h3>
+        <p class="srv-card-desc">We focus on result driving real results to generate quality leads, conversions and more revenue for your business.</p>
         <div class="srv-metric-highlight mt-2">
-          <span class="text-brand font-mono font-bold">ROAS &amp; CAC</span>
-          <span class="text-muted text-sm ms-2">Core Success Metrics</span>
+          <span class="text-brand font-mono font-bold">Business Focused</span>
         </div>
       </div>
       <div class="srv-card">
         <div class="srv-icon-box mb-3"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
             <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z" />
           </svg></div>
-        <h3 class="srv-card-title">100% Account Ownership</h3>
-        <p class="srv-card-desc">You own all ad accounts, pixels, tracking tags, and creative assets. If we ever part
-          ways, your historical data and account learnings stay yours.</p>
+        <h3 class="srv-card-title">02. Transparent</h3>
+        <p class="srv-card-desc">Your website, analytics, SEO reports and assets will always be 100% owned by you with full transparency at every stage.</p>
         <div class="srv-metric-highlight mt-2">
-          <span class="text-brand font-mono font-bold">100%</span>
-          <span class="text-muted text-sm ms-2">Client Owned Assets</span>
+          <span class="text-brand font-mono font-bold">100% Owned</span>
         </div>
       </div>
       <div class="srv-card">
@@ -846,12 +775,10 @@ $consultationUrl = appUrl('contact.php?service=' . urlencode($serviceName));
             <polyline points="16 18 22 12 16 6" />
             <polyline points="8 6 2 12 8 18" />
           </svg></div>
-        <h3 class="srv-card-title">In-House Technical Engineering</h3>
-        <p class="srv-card-desc">Our marketers work side-by-side with senior developers, enabling us to fix complex site
-          code, Core Web Vitals, and tracking APIs in hours.</p>
+        <h3 class="srv-card-title">03. Strategic</h3>
+        <p class="srv-card-desc">Every campaign will be managed by expert SEO Strategists to ensure all decisions are made with your best interest at heart and a strategy is in place to drive growth.</p>
         <div class="srv-metric-highlight mt-2">
-          <span class="text-brand font-mono font-bold">&lt; 24h</span>
-          <span class="text-muted text-sm ms-2">Technical Turnaround</span>
+          <span class="text-brand font-mono font-bold">Expertly Managed</span>
         </div>
       </div>
       <div class="srv-card">
@@ -860,12 +787,10 @@ $consultationUrl = appUrl('contact.php?service=' . urlencode($serviceName));
             <circle cx="12" cy="12" r="6" />
             <circle cx="12" cy="12" r="2" />
           </svg></div>
-        <h3 class="srv-card-title">First-Party Server-Side Data</h3>
-        <p class="srv-card-desc">We bypass browser tracking restrictions with bulletproof server-side architectures,
-          giving ad algorithms 30% more signal accuracy.</p>
+        <h3 class="srv-card-title">04. White Hat</h3>
+        <p class="srv-card-desc">We focus on driving ethical SEO strategies, quality backlinks and fully optimised SEO.</p>
         <div class="srv-metric-highlight mt-2">
-          <span class="text-brand font-mono font-bold">+30%</span>
-          <span class="text-muted text-sm ms-2">More Signal Accuracy</span>
+          <span class="text-brand font-mono font-bold">Google Friendly</span>
         </div>
       </div>
       <div class="srv-card">
@@ -874,24 +799,20 @@ $consultationUrl = appUrl('contact.php?service=' . urlencode($serviceName));
             <line x1="12" y1="20" x2="12" y2="4" />
             <line x1="6" y1="20" x2="6" y2="14" />
           </svg></div>
-        <h3 class="srv-card-title">Senior Media Buyers Only</h3>
-        <p class="srv-card-desc">Your campaigns are managed directly by seasoned growth practitioners with multi-million
-          dollar ad spend experience, never handed to junior interns.</p>
+        <h3 class="srv-card-title">05. Local Expertise</h3>
+        <p class="srv-card-desc">Being a professional seo company in delhi,With our knowledge of the competitive market in Delhi we can identify opportunities to improve your search presence within the area.</p>
         <div class="srv-metric-highlight mt-2">
-          <span class="text-brand font-mono font-bold">10+ Yrs</span>
-          <span class="text-muted text-sm ms-2">Average Strategist Experience</span>
+          <span class="text-brand font-mono font-bold">Focus On Delhi NCR</span>
         </div>
       </div>
       <div class="srv-card">
         <div class="srv-icon-box mb-3"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
             <polyline points="22 12 18 12 15 21 9 3 6 12 2 12" />
           </svg></div>
-        <h3 class="srv-card-title">Rapid Creative Rotation</h3>
-        <p class="srv-card-desc">We combat ad fatigue by continuously producing and testing fresh hooks, high-contrast
-          imagery, and persuasive video angles.</p>
+        <h3 class="srv-card-title">06. Flexible &amp; Affordable</h3>
+        <p class="srv-card-desc">As an seo company in delhi,We will create affordable SEO packages to fit around your business needs with no long term commitments.</p>
         <div class="srv-metric-highlight mt-2">
-          <span class="text-brand font-mono font-bold">Weekly</span>
-          <span class="text-muted text-sm ms-2">Fresh Creative Drops</span>
+          <span class="text-brand font-mono font-bold">No Long Term Commitments</span>
         </div>
       </div>
     </div>
@@ -899,122 +820,103 @@ $consultationUrl = appUrl('contact.php?service=' . urlencode($serviceName));
 </section>
 
 <!-- ============================================================
-     SECTION 7 — TECHNOLOGY & TOOLS WE USE
+     SECTION 7 — TECHNOLOGY & TOOLS WE USE (4 GROUPS)
      ============================================================ -->
 <section class="srv-section" id="technologies">
   <div class="srv-container">
     <div class="srv-section-header text-center">
       <div class="srv-badge">
         <span class="srv-badge-dot"></span>
-        <span>TOOLS TO BE USED</span>
+        <span>TOOLS TO WIN RANKINGS</span>
       </div>
       <h2 class="srv-section-title">
-        Tools to Be <span class="text-brand">Used</span>
+        Tools We Use to <span class="text-brand">Win Rankings</span>
       </h2>
       <p class="srv-section-subtitle">
-        We select battle-tested, high-performance tooling suited for scale, reliability, and seamless ongoing
-        maintenance.
+        As a leading seo company in Delhi,We use advanced SEO tools to analyse websites, track performance, identify opportunities and build strategies backed by accurate data.
       </p>
     </div>
 
     <div class="srv-tech-grid">
-      <div class="srv-tech-category">
-        <h3 class="srv-tech-cat-title">Paid Advertising Networks</h3>
-        <div class="srv-tech-tags">
-          <div class="srv-tool-item">
-            <span class="srv-tool-dot"></span>
-            <span class="srv-tool-name">Google Ads</span>
-            <span class="srv-tool-role">Search &amp; PMax Bidding</span>
-          </div>
-          <div class="srv-tool-item">
-            <span class="srv-tool-dot"></span>
-            <span class="srv-tool-name">Meta Ads Manager</span>
-            <span class="srv-tool-role">IG &amp; FB Performance</span>
-          </div>
-          <div class="srv-tool-item">
-            <span class="srv-tool-dot"></span>
-            <span class="srv-tool-name">LinkedIn Campaign Mgr</span>
-            <span class="srv-tool-role">B2B ABM Targeting</span>
-          </div>
-          <div class="srv-tool-item">
-            <span class="srv-tool-dot"></span>
-            <span class="srv-tool-name">YouTube Ads</span>
-            <span class="srv-tool-role">High-Impact Video Reach</span>
-          </div>
-        </div>
-      </div>
+      <!-- CARD 1 -->
       <div class="srv-tech-category">
         <h3 class="srv-tech-cat-title">SEO &amp; Crawl Intelligence</h3>
         <div class="srv-tech-tags">
           <div class="srv-tool-item">
             <span class="srv-tool-dot"></span>
             <span class="srv-tool-name">Ahrefs</span>
-            <span class="srv-tool-role">Backlink &amp; Keyword Intel</span>
+            <span class="srv-tool-role">Backlink &amp; Keyword Research</span>
           </div>
           <div class="srv-tool-item">
             <span class="srv-tool-dot"></span>
             <span class="srv-tool-name">SEMrush</span>
-            <span class="srv-tool-role">Competitive Gap Analysis</span>
+            <span class="srv-tool-role">Competitor &amp; Keyword Analysis</span>
           </div>
           <div class="srv-tool-item">
             <span class="srv-tool-dot"></span>
             <span class="srv-tool-name">Screaming Frog</span>
-            <span class="srv-tool-role">Technical Spider Audits</span>
+            <span class="srv-tool-role">Technical Website Crawling</span>
           </div>
           <div class="srv-tool-item">
             <span class="srv-tool-dot"></span>
             <span class="srv-tool-name">Google Search Console</span>
-            <span class="srv-tool-role">Crawl &amp; Indexation Health</span>
+            <span class="srv-tool-role">Search Performance &amp; Indexing</span>
           </div>
         </div>
       </div>
+
+      <!-- CARD 2 -->
       <div class="srv-tech-category">
-        <h3 class="srv-tech-cat-title">Tracking &amp; Conversion Analytics</h3>
+        <h3 class="srv-tech-cat-title">Tracking &amp; Analytics</h3>
         <div class="srv-tech-tags">
           <div class="srv-tool-item">
             <span class="srv-tool-dot"></span>
             <span class="srv-tool-name">Google Analytics 4</span>
-            <span class="srv-tool-role">Multi-Touch Reporting</span>
-          </div>
-          <div class="srv-tool-item">
-            <span class="srv-tool-dot"></span>
-            <span class="srv-tool-name">Server-Side GTM</span>
-            <span class="srv-tool-role">First-Party Event Pipelines</span>
-          </div>
-          <div class="srv-tool-item">
-            <span class="srv-tool-dot"></span>
-            <span class="srv-tool-name">Meta CAPI</span>
-            <span class="srv-tool-role">Direct Server Conversion API</span>
+            <span class="srv-tool-role">Organic Traffic &amp; Conversion Tracking</span>
           </div>
           <div class="srv-tool-item">
             <span class="srv-tool-dot"></span>
             <span class="srv-tool-name">Looker Studio</span>
-            <span class="srv-tool-role">Real-Time BI Dashboards</span>
+            <span class="srv-tool-role">SEO Performance Dashboards</span>
+          </div>
+          <div class="srv-tool-item">
+            <span class="srv-tool-dot"></span>
+            <span class="srv-tool-name">Google Search Console</span>
+            <span class="srv-tool-role">Keyword &amp; Click Performance</span>
           </div>
         </div>
       </div>
+
+      <!-- CARD 3 -->
       <div class="srv-tech-category">
-        <h3 class="srv-tech-cat-title">CRO &amp; Behavioral Insights</h3>
+        <h3 class="srv-tech-cat-title">Website Performance</h3>
+        <div class="srv-tech-tags">
+          <div class="srv-tool-item">
+            <span class="srv-tool-dot"></span>
+            <span class="srv-tool-name">PageSpeed Insights</span>
+            <span class="srv-tool-role">Core Web Vitals &amp; Speed Analysis</span>
+          </div>
+          <div class="srv-tool-item">
+            <span class="srv-tool-dot"></span>
+            <span class="srv-tool-name">GTmetrix</span>
+            <span class="srv-tool-role">Website Loading Performance</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- CARD 4 -->
+      <div class="srv-tech-category">
+        <h3 class="srv-tech-cat-title">CRO &amp; Behavioural Insights</h3>
         <div class="srv-tech-tags">
           <div class="srv-tool-item">
             <span class="srv-tool-dot"></span>
             <span class="srv-tool-name">Hotjar</span>
-            <span class="srv-tool-role">Heatmaps &amp; Session Replays</span>
+            <span class="srv-tool-role">Heatmaps &amp; User Session Recordings</span>
           </div>
           <div class="srv-tool-item">
             <span class="srv-tool-dot"></span>
-            <span class="srv-tool-name">VWO / Optimizely</span>
-            <span class="srv-tool-role">Multivariate Split Testing</span>
-          </div>
-          <div class="srv-tool-item">
-            <span class="srv-tool-dot"></span>
-            <span class="srv-tool-name">HubSpot CRM</span>
-            <span class="srv-tool-role">Closed-Loop Pipeline Sync</span>
-          </div>
-          <div class="srv-tool-item">
-            <span class="srv-tool-dot"></span>
-            <span class="srv-tool-name">Unbounce</span>
-            <span class="srv-tool-role">Rapid Landing Page Prototyping</span>
+            <span class="srv-tool-name">Microsoft Clarity</span>
+            <span class="srv-tool-role">User Behaviour &amp; Interaction Analysis</span>
           </div>
         </div>
       </div>
@@ -1023,7 +925,7 @@ $consultationUrl = appUrl('contact.php?service=' . urlencode($serviceName));
 </section>
 
 <!-- ============================================================
-     SECTION 8 — INDUSTRY USE CASES
+     SECTION 8 — INDUSTRY USE CASES (6 CARDS)
      ============================================================ -->
 <section class="srv-section srv-bg-surface" id="industry-use-cases">
   <div class="srv-container">
@@ -1033,7 +935,7 @@ $consultationUrl = appUrl('contact.php?service=' . urlencode($serviceName));
         <span>INDUSTRY SPECIALIZATION</span>
       </div>
       <h2 class="srv-section-title">
-        Tailored Solutions for <span class="text-brand">High-Growth Sectors</span>
+        SEO Solutions Tailored to <span class="text-brand">Your Industry</span>
       </h2>
       <p class="srv-section-subtitle">
         We solve domain-specific compliance, performance, and workflow challenges across multiple complex industries.
@@ -1059,22 +961,7 @@ $consultationUrl = appUrl('contact.php?service=' . urlencode($serviceName));
       </div>
       <div class="srv-carousel-track">
 
-        <div class="srv-industry-card">
-          <div class="srv-industry-header">
-            <div class="srv-icon-box"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                <line x1="12" y1="1" x2="12" y2="23" />
-                <path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6" />
-              </svg></div>
-            <span class="srv-industry-tag">FINTECH &amp; BANKING</span>
-          </div>
-          <h3 class="srv-card-title">High-Trust Financial Acquisition Funnels</h3>
-          <p class="srv-card-desc">Navigating strict regulatory advertising policies while driving verified customer
-            accounts and institutional loan inquiries.</p>
-          <div class="srv-industry-outcome">
-            <span class="srv-deliverable-lbl">PRIMARY BUSINESS OUTCOME:</span>
-            <strong class="text-brand">42% Reduction in Cost Per Funded Account</strong>
-          </div>
-        </div>
+        <!-- Card 1 -->
         <div class="srv-industry-card">
           <div class="srv-industry-header">
             <div class="srv-icon-box"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
@@ -1082,14 +969,32 @@ $consultationUrl = appUrl('contact.php?service=' . urlencode($serviceName));
               </svg></div>
             <span class="srv-industry-tag">HEALTHCARE &amp; CLINICAL</span>
           </div>
-          <h3 class="srv-card-title">HIPAA-Compliant Patient Booking Growth</h3>
-          <p class="srv-card-desc">High-intent localized search campaigns paired with privacy-first analytics to book
-            qualified patient consultations.</p>
+          <h3 class="srv-card-title">Local SEO for Hospitals &amp; Clinics</h3>
+          <p class="srv-card-desc">Rank for “doctor near me” and treatment searches across Delhi NCR with optimised Google Business Profiles, service pages and review strategy.</p>
           <div class="srv-industry-outcome">
             <span class="srv-deliverable-lbl">PRIMARY BUSINESS OUTCOME:</span>
-            <strong class="text-brand">3.8x Growth in High-Value Procedure Inquiries</strong>
+            <strong class="text-brand">3.5x Growth in Patient Appointment Enquiries</strong>
           </div>
         </div>
+
+        <!-- Card 2 -->
+        <div class="srv-industry-card">
+          <div class="srv-industry-header">
+            <div class="srv-icon-box"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <circle cx="11" cy="11" r="8" />
+                <line x1="21" y1="21" x2="16.65" y2="16.65" />
+              </svg></div>
+            <span class="srv-industry-tag">REAL ESTATE &amp; INFRASTRUCTURE</span>
+          </div>
+          <h3 class="srv-card-title">High-Intent Property Lead Generation</h3>
+          <p class="srv-card-desc">Capture buyers searching by location, from Gurugram to Noida, with area-based landing pages and schema-ready project listings.</p>
+          <div class="srv-industry-outcome">
+            <span class="srv-deliverable-lbl">PRIMARY BUSINESS OUTCOME:</span>
+            <strong class="text-brand">+160% Qualified Site-Visit Enquiries</strong>
+          </div>
+        </div>
+
+        <!-- Card 3 -->
         <div class="srv-industry-card">
           <div class="srv-industry-header">
             <div class="srv-icon-box"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
@@ -1099,14 +1004,15 @@ $consultationUrl = appUrl('contact.php?service=' . urlencode($serviceName));
               </svg></div>
             <span class="srv-industry-tag">E-COMMERCE &amp; RETAIL</span>
           </div>
-          <h3 class="srv-card-title">Omnichannel Scaling &amp;amp; ROAS Optimization</h3>
-          <p class="srv-card-desc">Unified Google Shopping, Meta dynamic product ads, and technical catalog SEO driving
-            high-margin repeat purchases.</p>
+          <h3 class="srv-card-title">Catalogue SEO &amp; Organic Revenue Scaling</h3>
+          <p class="srv-card-desc">Optimise category pages, product schema and site speed so thousands of SKUs rank and convert without extra ad spend.</p>
           <div class="srv-industry-outcome">
             <span class="srv-deliverable-lbl">PRIMARY BUSINESS OUTCOME:</span>
-            <strong class="text-brand">4.6x Blended ROAS Across 12,000+ SKUs</strong>
+            <strong class="text-brand">+210% Organic Sales Across 5,000+ SKUs</strong>
           </div>
         </div>
+
+        <!-- Card 4 -->
         <div class="srv-industry-card">
           <div class="srv-industry-header">
             <div class="srv-icon-box"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
@@ -1114,32 +1020,33 @@ $consultationUrl = appUrl('contact.php?service=' . urlencode($serviceName));
                 <polyline points="2 17 12 22 22 17" />
                 <polyline points="2 12 12 17 22 12" />
               </svg></div>
-            <span class="srv-industry-tag">B2B SAAS &amp; ENTERPRISE</span>
+            <span class="srv-industry-tag">EDUCATION &amp; COACHING</span>
           </div>
-          <h3 class="srv-card-title">Account-Based Search &amp;amp; Qualified Demo Funnels</h3>
-          <p class="srv-card-desc">Targeting enterprise decision-makers searching for competitor alternatives and
-            specific software capabilities.</p>
+          <h3 class="srv-card-title">Admission-Focused Search Visibility</h3>
+          <p class="srv-card-desc">Dominate course, coaching and college searches in Delhi with intent-mapped content that fills seats during admission season.</p>
           <div class="srv-industry-outcome">
             <span class="srv-deliverable-lbl">PRIMARY BUSINESS OUTCOME:</span>
-            <strong class="text-brand">0 CAC with 4.6% Demo-to-Opportunity Conv</strong>
+            <strong class="text-brand">2.8x Increase in Admission Enquiries</strong>
           </div>
         </div>
+
+        <!-- Card 5 -->
         <div class="srv-industry-card">
           <div class="srv-industry-header">
             <div class="srv-icon-box"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                <circle cx="11" cy="11" r="8" />
-                <line x1="21" y1="21" x2="16.65" y2="16.65" />
+                <polygon points="22 3 2 3 10 12.46 10 19 14 21 14 12.46 22 3" />
               </svg></div>
-            <span class="srv-industry-tag">REAL ESTATE &amp; INFRASTRUCTURE</span>
+            <span class="srv-industry-tag">B2B SAAS &amp; MANUFACTURING</span>
           </div>
-          <h3 class="srv-card-title">High-Ticket Investor Lead Generation</h3>
-          <p class="srv-card-desc">Geo-targeted search and luxury visual campaigns connecting commercial developers with
-            accredited investors.</p>
+          <h3 class="srv-card-title">Authority-Led Inbound Demand</h3>
+          <p class="srv-card-desc">Rank for solution and “alternative to” searches that decision-makers use, backed by topical authority and quality backlinks.</p>
           <div class="srv-industry-outcome">
             <span class="srv-deliverable-lbl">PRIMARY BUSINESS OUTCOME:</span>
-            <strong class="text-brand">M+ in Verified Inbound Pipeline</strong>
+            <strong class="text-brand">4.2% Visitor-to-Demo Conversion Rate</strong>
           </div>
         </div>
+
+        <!-- Card 6 -->
         <div class="srv-industry-card">
           <div class="srv-industry-header">
             <div class="srv-icon-box"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
@@ -1147,9 +1054,8 @@ $consultationUrl = appUrl('contact.php?service=' . urlencode($serviceName));
               </svg></div>
             <span class="srv-industry-tag">PROFESSIONAL SERVICES</span>
           </div>
-          <h3 class="srv-card-title">Topical Authority &amp;amp; Consultative Inbound</h3>
-          <p class="srv-card-desc">Dominating high-relevance search queries to generate inbound retainers for corporate
-            law, tax, and consulting firms.</p>
+          <h3 class="srv-card-title">Consultative Inbound for Law, Tax &amp; Finance</h3>
+          <p class="srv-card-desc">Build trust and rankings for high-value queries so corporate law, CA and consulting firms receive steady inbound retainers.</p>
           <div class="srv-industry-outcome">
             <span class="srv-deliverable-lbl">PRIMARY BUSINESS OUTCOME:</span>
             <strong class="text-brand">+180% Organic Inbound Retainer Inquiries</strong>
@@ -1172,118 +1078,70 @@ $consultationUrl = appUrl('contact.php?service=' . urlencode($serviceName));
         <span>FREQUENTLY ASKED QUESTIONS</span>
       </div>
       <h2 class="srv-section-title">
-        Common Questions About <span class="text-brand">Digital Marketing &amp; SEO</span>
+        Frequently Asked Questions <span class="text-brand">About SEO in Delhi</span>
       </h2>
       <p class="srv-section-subtitle">
-        Everything you need to know about our scope, timeline, engineering standards, communication, and ongoing
-        support.
+        Everything you need to know about our scope, timeline, engineering standards, communication, and ongoing support.
       </p>
     </div>
 
     <div class="srv-faq-container">
       <div class="srv-faq-item">
         <button type="button" class="srv-faq-btn" aria-expanded="false" aria-controls="faq-ans-0">
-          <span class="srv-faq-question">How quickly can we expect to see results from technical SEO versus paid
-            advertising?</span>
+          <span class="srv-faq-question">1. How long does SEO take to get results?</span>
           <span class="srv-faq-icon" aria-hidden="true">+</span>
         </button>
         <div id="faq-ans-0" class="srv-faq-panel">
           <div class="srv-faq-content">
-            <p>Paid advertising campaigns (Google Search, Meta Ads) begin driving qualified traffic and conversion data
-              within 48 to 72 hours of launch. Technical SEO and organic authority building typically demonstrate
-              noticeable indexation and ranking velocity within 60 to 90 days, with exponential traffic and lead growth
-              compounding over 6 to 12 months.</p>
+            <p>Most of our clients will see changes in their rankings in 60-90days with us. Good consistent traffic will be seen after 4-6 months depending on the competition, keyword research and target audience.</p>
           </div>
         </div>
       </div>
+
       <div class="srv-faq-item">
         <button type="button" class="srv-faq-btn" aria-expanded="false" aria-controls="faq-ans-1">
-          <span class="srv-faq-question">Do you require long-term lock-in agency contracts?</span>
+          <span class="srv-faq-question">2. How much does an SEO company in Delhi cost?</span>
           <span class="srv-faq-icon" aria-hidden="true">+</span>
         </button>
         <div id="faq-ans-1" class="srv-faq-panel">
           <div class="srv-faq-content">
-            <p>No. We operate on transparent monthly retainers with clear deliverables, milestone checkpoints, and
-              30-day notice terms. We believe in earning our partnership every single month through measurable revenue
-              performance, not legal entrapment.</p>
+            <p>The price will depend on your goals, competition and how many pages your website has. As a transparent SEO company in Delhi we provide bespoke packages to help grow your business organically.</p>
           </div>
         </div>
       </div>
+
       <div class="srv-faq-item">
         <button type="button" class="srv-faq-btn" aria-expanded="false" aria-controls="faq-ans-2">
-          <span class="srv-faq-question">Who owns our ad accounts, tracking pixels, and creative assets?</span>
+          <span class="srv-faq-question">3. Can you guarantee top rankings?</span>
           <span class="srv-faq-icon" aria-hidden="true">+</span>
         </button>
         <div id="faq-ans-2" class="srv-faq-panel">
           <div class="srv-faq-content">
-            <p>You do—100%. We always work inside your own Google Ads, Meta Business Manager, and Google Cloud accounts.
-              If you ever decide to bring marketing in-house, all campaigns, audiences, historical learning data, and
-              creative files remain your property.</p>
+            <p>No SEO company in Delhi can guarantee rankings as Google Algorithm updates directly affect your website rankings. We can guarantee to provide you with a clear strategy, transparent reports and measurable progress.</p>
           </div>
         </div>
       </div>
+
       <div class="srv-faq-item">
         <button type="button" class="srv-faq-btn" aria-expanded="false" aria-controls="faq-ans-3">
-          <span class="srv-faq-question">How do you handle the tracking issues caused by Apple iOS 14+ and Safari
-            ITP?</span>
+          <span class="srv-faq-question">4. Do you do local SEO?</span>
           <span class="srv-faq-icon" aria-hidden="true">+</span>
         </button>
         <div id="faq-ans-3" class="srv-faq-panel">
           <div class="srv-faq-content">
-            <p>We engineer a custom first-party server-side tracking architecture using Server-Side Google Tag Manager
-              (sGTM) and Direct Meta Conversions API (CAPI). Events are routed through your own custom domain, bypassing
-              client-side ad blockers and providing ad algorithms with accurate conversion data.</p>
+            <p>Yes! As a full service SEO company in Delhi, we optimise your Google Business Profile, Local SEO and location pages to help boost your visibility in Delhi, Gurugram, Noida and surrounding areas.</p>
           </div>
         </div>
       </div>
+
       <div class="srv-faq-item">
         <button type="button" class="srv-faq-btn" aria-expanded="false" aria-controls="faq-ans-4">
-          <span class="srv-faq-question">What monthly advertising budget is required to work with BusinessDoctor?</span>
+          <span class="srv-faq-question">5. What is the difference between SEO and Google Ads?</span>
           <span class="srv-faq-icon" aria-hidden="true">+</span>
         </button>
         <div id="faq-ans-4" class="srv-faq-panel">
           <div class="srv-faq-content">
-            <p>We typically work with growth-stage and enterprise companies investing at least $3,000 to $50,000+ per
-              month in paid media. This level of spend ensures adequate statistical significance for rapid multivariate
-              testing and algorithmic bidding calibration.</p>
-          </div>
-        </div>
-      </div>
-      <div class="srv-faq-item">
-        <button type="button" class="srv-faq-btn" aria-expanded="false" aria-controls="faq-ans-5">
-          <span class="srv-faq-question">Do you build the landing pages or do we need our own development team?</span>
-          <span class="srv-faq-icon" aria-hidden="true">+</span>
-        </button>
-        <div id="faq-ans-5" class="srv-faq-panel">
-          <div class="srv-faq-content">
-            <p>We handle everything. Our in-house engineering team designs, writes, and develops high-converting,
-              sub-second landing pages optimized specifically for your target buyer persona and Core Web Vitals.</p>
-          </div>
-        </div>
-      </div>
-      <div class="srv-faq-item">
-        <button type="button" class="srv-faq-btn" aria-expanded="false" aria-controls="faq-ans-6">
-          <span class="srv-faq-question">How frequently will we receive performance updates and reports?</span>
-          <span class="srv-faq-icon" aria-hidden="true">+</span>
-        </button>
-        <div id="faq-ans-6" class="srv-faq-panel">
-          <div class="srv-faq-content">
-            <p>You receive continuous, 24/7 access to a custom Looker Studio executive dashboard syncing directly with
-              your ad accounts and CRM. In addition, we conduct bi-weekly strategy calls and deliver comprehensive
-              monthly performance and optimization roadmaps.</p>
-          </div>
-        </div>
-      </div>
-      <div class="srv-faq-item">
-        <button type="button" class="srv-faq-btn" aria-expanded="false" aria-controls="faq-ans-7">
-          <span class="srv-faq-question">How does your team ensure leads are qualified and not just spam?</span>
-          <span class="srv-faq-icon" aria-hidden="true">+</span>
-        </button>
-        <div id="faq-ans-7" class="srv-faq-panel">
-          <div class="srv-faq-content">
-            <p>We implement automated honeypot spam filters, work email verification, and conditional qualification
-              logic on all lead forms. Furthermore, we feed closed-won offline conversion data from your CRM back to
-              Google and Meta so the bidding algorithms optimize for paying customers, not empty form fills.</p>
+            <p>SEO provides you with long term organic traffic whereas Google Ads will provide you with instant rankings (but you will be paying for them). Often our SEO company in Delhi will include both to provide you with instant leads and long term growth.</p>
           </div>
         </div>
       </div>
@@ -1309,8 +1167,7 @@ $consultationUrl = appUrl('contact.php?service=' . urlencode($serviceName));
               Ready to Eliminate Ad Waste &amp; Scale <span class="text-brand">Profitable Acquisition?</span>
             </h2>
             <p class="srv-cta-lead">
-              Schedule a comprehensive growth diagnostic call. Our senior marketing architects will audit your current
-              ad accounts, technical SEO health, and conversion funnel.
+              Schedule a comprehensive growth diagnostic call. Our senior marketing architects will audit your current ad accounts, technical SEO health, and conversion funnel.
             </p>
             <div class="srv-cta-actions" style="justify-content: flex-start; margin-bottom: 2rem;">
               <a href="<?= e($consultationUrl) ?>" class="btn-srv-primary btn-srv-lg">
@@ -1399,6 +1256,5 @@ $consultationUrl = appUrl('contact.php?service=' . urlencode($serviceName));
         </div>
       </div>
     </div>
-  </div>
   </div>
 </section>
