@@ -58,6 +58,9 @@ AddType text/markdown .md
     # Handled BEFORE HTML/PHP rewrites and custom 404 handlers
     # ============================================================
 
+    # Block retired markdown files (/home.md, /md/home.md, /llms.md, /.md)
+    RewriteRule ^(?:home\.md|md/home\.md|llms\.md|\.md|index\.md|md/index\.md)$ - [R=404,L]
+
     # 1. Clean Markdown Gateway: /md or /md/
     RewriteRule ^md/?$ markdown-router.php [L,QSA]
     RewriteRule ^sitemap\.xml$ markdown-router.php [L,QSA]

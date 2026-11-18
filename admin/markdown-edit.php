@@ -17,12 +17,6 @@ $customRegistry = SeoSyncEngine::getCustomMarkdownRegistry();
 // ------------------------------------------------------------
 $knownFiles = [
     // Institutional
-    'md/home.md' => [
-        'category' => 'Institutional',
-        'title' => 'Homepage Overview',
-        'endpoint' => '/home.md',
-        'can_reset' => true,
-    ],
     'md/about.md' => [
         'category' => 'Institutional',
         'title' => 'Firm Profile & Practice (About)',
@@ -122,12 +116,12 @@ foreach (array_merge($allPhysical, $subPhysical) as $pPath) {
 // ------------------------------------------------------------
 // 2. Determine Currently Selected File
 // ------------------------------------------------------------
-$selectedFile = trim($_GET['file'] ?? $_POST['file'] ?? 'md/home.md');
+$selectedFile = trim($_GET['file'] ?? $_POST['file'] ?? 'md/about.md');
 $selectedFile = ltrim(str_replace('\\', '/', $selectedFile), '/');
 
 // Security check: must reside inside md/ and end with .md
 if (!str_starts_with($selectedFile, 'md/') || str_contains($selectedFile, '..') || !str_ends_with($selectedFile, '.md')) {
-    $selectedFile = 'md/home.md';
+    $selectedFile = 'md/about.md';
 }
 
 $fullFilePath = ROOT_PATH . '/' . $selectedFile;

@@ -38,15 +38,6 @@ $pagesInventory = [
     // Institutional
     [
         'section' => 'Institutional',
-        'title' => 'Homepage Overview',
-        'web_url' => '/',
-        'clean_md' => '/home.md',
-        'repo_file' => 'md/home.md',
-        'source' => 'filesystem: index.php',
-        'deps' => 'sitemap.xml, llms.txt',
-    ],
-    [
-        'section' => 'Institutional',
         'title' => 'About the Firm & Leadership',
         'web_url' => '/about',
         'clean_md' => '/about.md',
