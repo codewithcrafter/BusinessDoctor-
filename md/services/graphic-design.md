@@ -4,8 +4,8 @@
 
 ## Discipline Information
 - **Practice Area**: 05 Graphic Design
-- **Canonical Web URL**: [https://demo.businesdoctor.com/service/graphic-design](https://demo.businesdoctor.com/service/graphic-design)
-- **Clean Markdown URL**: [https://demo.businesdoctor.com/service/graphic-design.md](https://demo.businesdoctor.com/service/graphic-design.md)
+- **Canonical Web URL**: [https://demo.businesdoctor.com/graphic-design-company-in-delhi](https://demo.businesdoctor.com/graphic-design-company-in-delhi)
+- **Clean Markdown URL**: [https://demo.businesdoctor.com/graphic-design-company-in-delhi.md](https://demo.businesdoctor.com/graphic-design-company-in-delhi.md)
 - **Central Markdown URL**: [https://demo.businesdoctor.com/md/services/graphic-design.md](https://demo.businesdoctor.com/md/services/graphic-design.md)
 - **Direct Consultation**: [Schedule Practice Scope](https://demo.businesdoctor.com/contact?service=Graphic+Design)
 
@@ -25,18 +25,6 @@ Creative Design and Branding Agency
             Explore Our Services
 
           ](#services-list)
-
-            5-7 Days
-            Typical Logo Turnaround
-
-            6 Steps
-            Clear Design Process
-
-            100%
-            Original, Custom Artwork
-
-            All Formats
-            Print and Digital-Ready Files
 
           Key Takeaways at a Glance
 
@@ -439,7 +427,7 @@ Fill in the enquiry form or call us. We will understand your requirement, sugges
 
               ](https://demo.businesdoctor.com/audit)
 
-                +1 (800) 492-3628
+                +91 99994 48988
 
                 sales@businesdoctor.com
 

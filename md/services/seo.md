@@ -4,8 +4,8 @@
 
 ## Discipline Information
 - **Practice Area**: 06 SEO — Search Engine Optimization
-- **Canonical Web URL**: [https://demo.businesdoctor.com/service/seo](https://demo.businesdoctor.com/service/seo)
-- **Clean Markdown URL**: [https://demo.businesdoctor.com/service/seo.md](https://demo.businesdoctor.com/service/seo.md)
+- **Canonical Web URL**: [https://demo.businesdoctor.com/seo-services-in-delhi](https://demo.businesdoctor.com/seo-services-in-delhi)
+- **Clean Markdown URL**: [https://demo.businesdoctor.com/seo-services-in-delhi.md](https://demo.businesdoctor.com/seo-services-in-delhi.md)
 - **Central Markdown URL**: [https://demo.businesdoctor.com/md/services/seo.md](https://demo.businesdoctor.com/md/services/seo.md)
 - **Direct Consultation**: [Schedule Practice Scope](https://demo.businesdoctor.com/contact?service=SEO+%E2%80%94+Search+Engine+Optimization)
 
@@ -25,18 +25,6 @@ SEO COMPANY IN DELHI
             Explore Our Services
 
           ](#services-list)
-
-            3.8x
-            Organic Traffic Growth
-
-            50+
-            Keywords on Page 1
-
-            62%
-            Lower Cost per Lead
-
-            90 Days
-            to First Results
 
           KEY TAKEAWAYS
 
@@ -502,7 +490,7 @@ SEO provides you with long term organic traffic whereas Google Ads will provide 
 
               ](https://demo.businesdoctor.com/audit)
 
-                +1 (800) 492-3628
+                +91 99994 48988
 
                 sales@businesdoctor.com
 

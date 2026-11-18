@@ -9,7 +9,7 @@ declare(strict_types=1);
 
 $serviceName = 'Graphic Design';
 $serviceSlug = 'graphic-design';
-$consultationUrl = appUrl('contact.php?service=' . urlencode($serviceName));
+$consultationUrl = appUrl('contact?service=' . urlencode($serviceName));
 ?>
 
 <!-- ============================================================
@@ -44,25 +44,6 @@ $consultationUrl = appUrl('contact.php?service=' . urlencode($serviceName));
               <polyline points="6 9 12 15 18 9"/>
             </svg>
           </a>
-        </div>
-
-        <div class="srv-hero-stats">
-          <div class="srv-hero-stat-item">
-            <span class="srv-hero-stat-val">5-7 Days</span>
-            <span class="srv-hero-stat-lbl">Typical Logo Turnaround</span>
-          </div>
-          <div class="srv-hero-stat-item">
-            <span class="srv-hero-stat-val">6 Steps</span>
-            <span class="srv-hero-stat-lbl">Clear Design Process</span>
-          </div>
-          <div class="srv-hero-stat-item">
-            <span class="srv-hero-stat-val">100%</span>
-            <span class="srv-hero-stat-lbl">Original, Custom Artwork</span>
-          </div>
-          <div class="srv-hero-stat-item">
-            <span class="srv-hero-stat-val">All Formats</span>
-            <span class="srv-hero-stat-lbl">Print and Digital-Ready Files</span>
-          </div>
         </div>
       </div>
 
@@ -821,7 +802,7 @@ $consultationUrl = appUrl('contact.php?service=' . urlencode($serviceName));
                 <span>Book Your Free Consultation</span>
                 <svg class="btn-srv-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
               </a>
-              <a href="<?= appUrl('audit.php') ?>" class="btn-srv-secondary btn-srv-lg">
+              <a href="<?= appUrl('audit') ?>" class="btn-srv-secondary btn-srv-lg">
                 <span>Request Free Audit</span>
                 <svg class="btn-srv-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="9 18 15 12 9 6"/></svg>
               </a>
@@ -847,7 +828,7 @@ $consultationUrl = appUrl('contact.php?service=' . urlencode($serviceName));
                 <h3 class="srv-form-title">Request Design Consultation</h3>
                 <p class="srv-form-subtitle">Direct consultation with senior creative leads.</p>
               </div>
-              <form action="<?= appUrl('contact.php') ?>" method="GET" class="srv-quick-form">
+              <form action="<?= appUrl('contact') ?>" method="GET" class="srv-quick-form">
                 <input type="hidden" name="service" value="<?= e($serviceName) ?>">
                 <div class="srv-form-group">
                   <label class="srv-form-label" for="quick_name_graphic-design">Your Full Name</label>

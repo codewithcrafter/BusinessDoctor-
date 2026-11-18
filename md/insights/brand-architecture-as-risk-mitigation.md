@@ -6,7 +6,7 @@
 - **Category**: UI/UX & Branding
 - **Author**: Julian Montgomery (Head of UI/UX & Brand Design)
 - **Published Date**: 2026-11-02
-- **Last Modified**: 2026-11-13
+- **Last Modified**: 2026-11-18
 - **Reading Time**: 8 min read
 - **Canonical Web URL**: [https://demo.businesdoctor.com/blog/brand-architecture-as-risk-mitigation](https://demo.businesdoctor.com/blog/brand-architecture-as-risk-mitigation)
 - **Clean Markdown URL**: [https://demo.businesdoctor.com/blog/brand-architecture-as-risk-mitigation.md](https://demo.businesdoctor.com/blog/brand-architecture-as-risk-mitigation.md)

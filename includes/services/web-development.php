@@ -9,7 +9,7 @@ declare(strict_types=1);
 
 $serviceName = 'Web Development';
 $serviceSlug = 'web-development';
-$consultationUrl = appUrl('contact.php?service=' . urlencode($serviceName));
+$consultationUrl = appUrl('contact?service=' . urlencode($serviceName));
 ?>
 
 <!-- ============================================================
@@ -44,25 +44,6 @@ $consultationUrl = appUrl('contact.php?service=' . urlencode($serviceName));
               <polyline points="6 9 12 15 18 9"/>
             </svg>
           </a>
-        </div>
-
-        <div class="srv-hero-stats">
-          <div class="srv-hero-stat-item">
-            <span class="srv-hero-stat-val">No Bloat</span>
-            <span class="srv-hero-stat-lbl">No Extra Code: Simple &amp; lightweight</span>
-          </div>
-          <div class="srv-hero-stat-item">
-            <span class="srv-hero-stat-val">&lt; 1.0s</span>
-            <span class="srv-hero-stat-lbl">Fast Loading: Smooth user experience</span>
-          </div>
-          <div class="srv-hero-stat-item">
-            <span class="srv-hero-stat-val">OWASP</span>
-            <span class="srv-hero-stat-lbl">Strong Security: Secure coding methods</span>
-          </div>
-          <div class="srv-hero-stat-item">
-            <span class="srv-hero-stat-val">PHP 8+</span>
-            <span class="srv-hero-stat-lbl">Long-Lasting Code: Clean &amp; organised</span>
-          </div>
         </div>
       </div>
 
@@ -721,7 +702,7 @@ $consultationUrl = appUrl('contact.php?service=' . urlencode($serviceName));
                 <span>Get a Free Consultation</span>
                 <svg class="btn-srv-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
               </a>
-              <a href="<?= appUrl('audit.php') ?>" class="btn-srv-secondary btn-srv-lg">
+              <a href="<?= appUrl('audit') ?>" class="btn-srv-secondary btn-srv-lg">
                 <span>Request Technical Audit</span>
                 <svg class="btn-srv-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="9 18 15 12 9 6"/></svg>
               </a>
@@ -747,7 +728,7 @@ $consultationUrl = appUrl('contact.php?service=' . urlencode($serviceName));
                 <h3 class="srv-form-title">Request Technical Consultation</h3>
                 <p class="srv-form-subtitle">Direct consultation with senior enterprise architects.</p>
               </div>
-              <form action="<?= appUrl('contact.php') ?>" method="GET" class="srv-quick-form">
+              <form action="<?= appUrl('contact') ?>" method="GET" class="srv-quick-form">
                 <input type="hidden" name="service" value="<?= e($serviceName) ?>">
                 <div class="srv-form-group">
                   <label class="srv-form-label" for="quick_name_web-development">Your Full Name</label>

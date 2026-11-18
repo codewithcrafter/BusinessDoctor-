@@ -3,8 +3,8 @@
 $uri = parse_url($_SERVER['REQUEST_URI'], PHP_URL_PATH);
 $file = __DIR__ . $uri;
 
-// Block /md and retired /llms.md so NO markdown file is served
-if ($uri === '/md' || $uri === '/md/' || $uri === '/md/index' || $uri === '/md/index.php' || $uri === '/md/index.md' || $uri === '/llms.md') {
+// Block /md, /home.md, /md/home.md, /.md and retired /llms.md so NO markdown file is served
+if ($uri === '/md' || $uri === '/md/' || $uri === '/md/index' || $uri === '/md/index.php' || $uri === '/md/index.md' || $uri === '/llms.md' || $uri === '/home.md' || $uri === '/md/home.md' || $uri === '/.md' || $uri === '/home.php.md' || $uri === '/index.php.md' || $uri === '/index.md') {
     http_response_code(404);
     echo "404 Not Found";
     return true;
@@ -109,8 +109,8 @@ if ($uri !== '/' && file_exists($file) && !is_dir($file)) {
     return false; // serve directly
 }
 
-// 4. Standardized Service URLs: /service/{slug} -> service-detail.php?slug={slug}
-if (preg_match('#^/service/([a-zA-Z0-9_-]+)/?$#', $uri, $matches)) {
+// 4. Clean Canonical Individual Service URLs: /{slug}-company-in-delhi, /{slug}-services-in-delhi, /seo-services-in-delhi
+if (preg_match('#^/(seo-services-in-delhi|[a-zA-Z0-9_-]+-(?:company|services)-in-delhi)/?$#', $uri, $matches)) {
     require_once __DIR__ . '/includes/functions.php';
     $rawSlug = $matches[1];
     $targetUrl = getServiceUrl($rawSlug);
@@ -125,26 +125,11 @@ if (preg_match('#^/service/([a-zA-Z0-9_-]+)/?$#', $uri, $matches)) {
     return true;
 }
 
-// 5. Legacy Service 301 Permanent Redirects to /service/{slug} or /services
-// /{slug}-company-in-delhi -> /service/{slug}
-if (preg_match('#^/([a-zA-Z0-9_-]+)-company-in-delhi/?$#', $uri, $matches)) {
+// 5. Service 301 Permanent Redirects: /service/{slug}, /services/{slug}, /company/{slug} -> Canonical Root URL
+if (preg_match('#^/(?:service|services|company)/([a-zA-Z0-9_-]+)/?$#', $uri, $matches)) {
     require_once __DIR__ . '/includes/functions.php';
     $rawSlug = $matches[1];
-    $qs = !empty($_SERVER['QUERY_STRING']) ? '?' . $_SERVER['QUERY_STRING'] : '';
-    if ($rawSlug === 'digital-marketing') {
-        header("Location: /services" . $qs, true, 301);
-        return true;
-    }
     $targetUrl = getServiceUrl($rawSlug);
-    $targetPath = parse_url($targetUrl, PHP_URL_PATH);
-    header("Location: " . $targetPath . $qs, true, 301);
-    return true;
-}
-
-// /company/{slug} and /services/{slug} -> /service/{slug}
-if (preg_match('#^/(?:company|services)/([a-zA-Z0-9_-]+)/?$#', $uri, $matches)) {
-    require_once __DIR__ . '/includes/functions.php';
-    $targetUrl = getServiceUrl($matches[1]);
     $targetPath = parse_url($targetUrl, PHP_URL_PATH);
     $qs = !empty($_SERVER['QUERY_STRING']) ? '?' . $_SERVER['QUERY_STRING'] : '';
     header("Location: " . $targetPath . $qs, true, 301);

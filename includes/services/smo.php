@@ -9,7 +9,7 @@ declare(strict_types=1);
 
 $serviceName = 'SMO — Social Media Optimization';
 $serviceSlug = 'smo';
-$consultationUrl = appUrl('contact.php?service=' . urlencode($serviceName));
+$consultationUrl = appUrl('contact?service=' . urlencode($serviceName));
 ?>
 
 <!-- ============================================================
@@ -44,25 +44,6 @@ $consultationUrl = appUrl('contact.php?service=' . urlencode($serviceName));
               <polyline points="6 9 12 15 18 9"/>
             </svg>
           </a>
-        </div>
-
-        <div class="srv-hero-stats">
-          <div class="srv-hero-stat-item">
-            <span class="srv-hero-stat-val">150+</span>
-            <span class="srv-hero-stat-lbl">Profiles Optimized</span>
-          </div>
-          <div class="srv-hero-stat-item">
-            <span class="srv-hero-stat-val">6</span>
-            <span class="srv-hero-stat-lbl">Platforms Managed</span>
-          </div>
-          <div class="srv-hero-stat-item">
-            <span class="srv-hero-stat-val">90 Days</span>
-            <span class="srv-hero-stat-lbl">Growth Roadmap</span>
-          </div>
-          <div class="srv-hero-stat-item">
-            <span class="srv-hero-stat-val">24 Hrs</span>
-            <span class="srv-hero-stat-lbl">Free Audit Turnaround</span>
-          </div>
         </div>
       </div>
 
@@ -808,7 +789,7 @@ $consultationUrl = appUrl('contact.php?service=' . urlencode($serviceName));
                 <span>Book Your Free SMO Audit</span>
                 <svg class="btn-srv-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
               </a>
-              <a href="<?= appUrl('audit.php') ?>" class="btn-srv-secondary btn-srv-lg">
+              <a href="<?= appUrl('audit') ?>" class="btn-srv-secondary btn-srv-lg">
                 <span>Request Digital Audit</span>
                 <svg class="btn-srv-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="9 18 15 12 9 6"/></svg>
               </a>
@@ -837,7 +818,7 @@ $consultationUrl = appUrl('contact.php?service=' . urlencode($serviceName));
                 <h3 class="srv-form-title">Request Technical Consultation</h3>
                 <p class="srv-form-subtitle">Direct consultation with senior SMO growth architects.</p>
               </div>
-              <form action="<?= appUrl('contact.php') ?>" method="GET" class="srv-quick-form">
+              <form action="<?= appUrl('contact') ?>" method="GET" class="srv-quick-form">
                 <input type="hidden" name="service" value="<?= e($serviceName) ?>">
                 <div class="srv-form-group">
                   <label class="srv-form-label" for="quick_name_smo">Your Full Name</label>

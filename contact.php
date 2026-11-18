@@ -10,17 +10,42 @@ require_once __DIR__ . '/includes/config.php';
 require_once __DIR__ . '/includes/db.php';
 require_once __DIR__ . '/includes/functions.php';
 
+$inquiryService = trim((string)($_GET['service'] ?? ''));
+$inquiryCapability = trim((string)($_GET['capability'] ?? ''));
+
 $pageTitle = 'Executive Consultation & Inquiries — BusinessDoctor Enterprise IT';
 $pageDescription = 'Connect directly with BusinessDoctor software architects, digital marketing leads, and cloud engineers for custom web systems, performance SEO, or e-commerce scaling.';
+$pageHeading = 'Growth Breakthrough';
+$pageEyebrow = 'DIRECT ARCHITECTURAL CONSULTATION';
+$canonicalUrl = getBaseUrl() . '/contact';
 
-$preService = $_GET['service'] ?? 'Web & Custom Software Development';
+if ($inquiryService !== '') {
+    $preService = $inquiryService;
+    $canonicalParams = '?service=' . urlencode($inquiryService);
+    if ($inquiryCapability !== '') {
+        $canonicalParams .= '&capability=' . urlencode($inquiryCapability);
+        $pageHeading = $inquiryCapability;
+        $pageEyebrow = strtoupper($inquiryService) . ' // SPECIALIZED SCOPE';
+        $pageTitle = 'Inquire for ' . $inquiryCapability . ' (' . $inquiryService . ') — BusinessDoctor';
+        $pageDescription = 'Connect directly with senior practice leads for ' . $inquiryCapability . ' under ' . $inquiryService . '. Request a tailored technical proposal and consultation.';
+    } else {
+        $pageHeading = $inquiryService;
+        $pageEyebrow = 'PRACTICE ADVISORY // ' . strtoupper($inquiryService);
+        $pageTitle = 'Inquire for ' . $inquiryService . ' — BusinessDoctor Consultation';
+        $pageDescription = 'Schedule an executive strategy consultation for ' . $inquiryService . ' in Delhi NCR. Get direct architectural advice and custom scope estimates within 24 hours.';
+    }
+    $canonicalUrl = getBaseUrl() . '/contact' . $canonicalParams;
+} else {
+    $preService = 'Web & Custom Software Development';
+}
+
 $practices = getPracticeAreas();
 
 $schemaPageKey = 'contact';
 $schemaContextData = [
-    'title' => 'Contact Us & Executive Consultation',
+    'title' => $pageTitle,
     'summary' => $pageDescription,
-    'canonical_url' => getBaseUrl() . '/contact'
+    'canonical_url' => $canonicalUrl
 ];
 
 require_once __DIR__ . '/includes/header.php';
@@ -36,12 +61,17 @@ require_once __DIR__ . '/includes/header.php';
   <div class="container text-center" style="max-width: 920px; margin: 0 auto; position: relative; z-index: 1;">
     <div class="eyebrow-badge" style="margin-bottom: 1.25rem;">
       <span class="pill-dot"></span>
-      <span>DIRECT ARCHITECTURAL CONSULTATION</span>
+      <span><?= e($pageEyebrow) ?></span>
     </div>
     
     <h1 class="hero-headline-oversized" style="font-size: clamp(2.3rem, 4.5vw, 3.8rem); line-height: 1.15; margin-bottom: 1.25rem; font-weight: 800; letter-spacing: -0.02em;">
-      Let’s Engineer Your Next <br>
-      <span class="text-brand">Growth Breakthrough</span>
+      <?php if (!empty($inquiryService)): ?>
+        Consultation &amp; Scoping for <br>
+        <span class="text-brand"><?= e($pageHeading) ?></span>
+      <?php else: ?>
+        Let’s Engineer Your Next <br>
+        <span class="text-brand">Growth Breakthrough</span>
+      <?php endif; ?>
     </h1>
     
     <p class="hero-lead-text" style="max-width: 760px; margin: 0 auto 2.5rem; font-size: 1.1rem; line-height: 1.7; color: var(--color-text-muted);">

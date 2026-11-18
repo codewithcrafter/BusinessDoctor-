@@ -33,7 +33,7 @@
   <text x="1050" y="72" fill="#FDA4AF" font-size="10.5" font-weight="700" text-anchor="middle" letter-spacing="0.8">ILLUSTRATIVE PLACEHOLDER — ARCHITECTURAL SCHEMATIC</text>
 
   <!-- Titles -->
-  <text x="60" y="130" fill="#FFFFFF" font-size="28" font-weight="800" letter-spacing="-0.5">The Symptom Trap: Funnel Diagnostics & Capital Allocation</text>
+  <text x="60" y="130" fill="#FFFFFF" font-size="28" font-weight="800" letter-spacing="-0.5">The Symptom Trap: Funnel Diagnostics &amp; Capital Allocation</text>
   <text x="60" y="165" fill="#94A3B8" font-size="15" font-weight="500">Detailed analytical model demonstrating conversion bottleneck resolution prior to media scaling.</text>
 
   <!-- Diagram Visual Area -->

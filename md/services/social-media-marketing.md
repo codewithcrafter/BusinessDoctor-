@@ -4,8 +4,8 @@
 
 ## Discipline Information
 - **Practice Area**: 07 Social Media Marketing
-- **Canonical Web URL**: [https://demo.businesdoctor.com/service/social-media-marketing](https://demo.businesdoctor.com/service/social-media-marketing)
-- **Clean Markdown URL**: [https://demo.businesdoctor.com/service/social-media-marketing.md](https://demo.businesdoctor.com/service/social-media-marketing.md)
+- **Canonical Web URL**: [https://demo.businesdoctor.com/social-media-marketing-company-in-delhi](https://demo.businesdoctor.com/social-media-marketing-company-in-delhi)
+- **Clean Markdown URL**: [https://demo.businesdoctor.com/social-media-marketing-company-in-delhi.md](https://demo.businesdoctor.com/social-media-marketing-company-in-delhi.md)
 - **Central Markdown URL**: [https://demo.businesdoctor.com/md/services/social-media-marketing.md](https://demo.businesdoctor.com/md/services/social-media-marketing.md)
 - **Direct Consultation**: [Schedule Practice Scope](https://demo.businesdoctor.com/contact?service=Social+Media+Marketing)
 
@@ -25,18 +25,6 @@ Performance-Driven Social Media Marketing
             Explore Our Services
 
           ](#services-list)
-
-            3.6x
-            Average Campaign ROAS
-
-            -32%
-            Cost Per Lead
-
-            +180%
-            Organic Reach
-
-            100%
-            Transparent Reporting
 
           Key Takeaways at a Glance
 
@@ -477,7 +465,7 @@ Yes. We handle design, video, captions and hashtags. You only approve.
 
               Free audit • No obligation • Reply within 2 hours
 
-                +1 (800) 492-3628
+                +91 99994 48988
 
                 sales@businesdoctor.com
 

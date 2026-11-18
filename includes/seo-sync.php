@@ -632,8 +632,8 @@ class SeoSyncEngine
         $serviceName = $service['name'] ?? 'Practice Area';
         $serviceSlug = $slug;
         $consultationUrl = $baseUrl . '/contact?service=' . urlencode($serviceName);
-        $canonicalUrl = $baseUrl . '/service/' . $slug;
-        $cleanMdUrl = $baseUrl . '/service/' . $slug . '.md';
+        $canonicalUrl = getServiceUrl($slug);
+        $cleanMdUrl = getMarkdownUrl($canonicalUrl);
         $mdUrl = $baseUrl . '/md/services/' . urlencode($slug) . '.md';
 
         $bodyMd = '';
@@ -800,18 +800,22 @@ When submitting a project scope or proposal request, please prepare the followin
 1. **Primary Contact**: Full name, official corporate email, and direct telephone/WhatsApp number.
 2. **Company / Organization**: Corporate legal name and primary website domain.
 3. **Practice Area / Discipline**:
-   - Web & Custom Software Development
-   - Digital Marketing, Paid Ads & SEO
-   - UI/UX Design & Brand Identity
-   - E-Commerce & Marketplace Management
-   - Creative Production & Video Marketing
-   - Cloud Solutions & IT Consulting
-   - Comprehensive Website & Digital Audit
-4. **Estimated Budget Allocation**:
-   - \$5,000 – \$10,000 (Targeted diagnostic or single-discipline project)
-   - \$10,000 – \$25,000 (Complete web platform build or multi-channel growth sprint)
-   - \$25,000 – \$50,000 (Enterprise software overhaul or comprehensive re-platforming)
-   - \$50,000+ (Full digital transformation, bespoke SaaS engineering, or annual retainer)
+   - SEO Services in Delhi
+   - PPC Company in Delhi (Google & Meta Ads)
+   - Web Development Company in Delhi
+   - Social Media Marketing Company in Delhi
+   - SMO Company in Delhi (Social Media Optimization)
+   - E-Commerce Management Company in Delhi (Amazon/Flipkart/Shopify)
+   - Google Business Profile Company in Delhi (Local SEO)
+   - Graphic Design Company in Delhi
+   - Video Editing Company in Delhi (Reels & Commercials)
+   - Product Photography Company in Delhi (61MP Studio Captures)
+   - Comprehensive Technical Architecture & Digital Audit
+4. **Estimated Budget Allocation / Engagement Tier**:
+   - Targeted Diagnostic / Single Service Sprint
+   - Full Multi-Channel Growth Sprint
+   - Enterprise Modernization & Architecture Retainer
+   - Custom Enterprise Solution Scope
 5. **Project Overview & Objectives**: Key commercial targets, current operational bottlenecks, desired deliverables, and target launch timeline.
 
 ---
@@ -1309,7 +1313,7 @@ MD;
         // 1. Institutional
         $lines[] = "## 1. Institutional & Diagnostic Documents";
         $lines[] = "";
-        $lines[] = "- [Homepage Overview]({$baseUrl}/md/home.md) ([Clean URL]({$baseUrl}/home.md) | [Web Page]({$baseUrl}/)): Enterprise digital practice overview.";
+        $lines[] = "- [Homepage Overview]({$baseUrl}/): Enterprise digital practice overview.";
         $lines[] = "- [Firm Profile & Practice]({$baseUrl}/md/about.md) ([Clean URL]({$baseUrl}/about.md) | [Web Page]({$baseUrl}/about)): Digital marketing practice and engineering ethos.";
         $lines[] = "- [Services Overview Hub]({$baseUrl}/md/services.md) ([Clean URL]({$baseUrl}/services.md) | [Web Page]({$baseUrl}/services)): Multi-disciplinary capability catalog.";
         $lines[] = "- [Executive Advisory & Inquiries]({$baseUrl}/md/contact.md) ([Clean URL]({$baseUrl}/contact.md) | [Web Page]({$baseUrl}/contact)): Direct engagement and consulting channels.";
@@ -1450,7 +1454,7 @@ MD;
         $written = [];
         $purged = [];
 
-        // Purge legacy index.md and index.php in md/ if present
+        // Purge legacy index.md, index.php, and home.md in md/ and root if present
         $masterIndexPath = $mdBaseDir . '/index.md';
         if (file_exists($masterIndexPath)) {
             @unlink($masterIndexPath);
@@ -1461,9 +1465,18 @@ MD;
             @unlink($mdIndexPhp);
             $purged[] = 'md/index.php';
         }
+        $homeMdPath = $mdBaseDir . '/home.md';
+        if (file_exists($homeMdPath)) {
+            @unlink($homeMdPath);
+            $purged[] = 'md/home.md';
+        }
+        $rootHomeMd = ROOT_PATH . '/home.md';
+        if (file_exists($rootHomeMd)) {
+            @unlink($rootHomeMd);
+        }
 
-        // Static Pages & Section Catalogs
-        $staticDocs = ['about', 'contact', 'audit', 'home', 'services', 'insights', 'case-studies'];
+        // Static Pages & Section Catalogs (home.md excluded per user directive)
+        $staticDocs = ['about', 'contact', 'audit', 'services', 'insights', 'case-studies'];
         foreach ($staticDocs as $doc) {
             $rel = "md/{$doc}.md";
             if (self::isCustomMarkdown($rel)) {

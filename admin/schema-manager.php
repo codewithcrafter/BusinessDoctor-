@@ -102,13 +102,13 @@ $requiredMatrix = [
     ],
     'about' => [
         'name' => 'About Us',
-        'url' => '/about.php',
+        'url' => '/about',
         'required' => ['BreadcrumbList', 'AboutPage', 'Organization', 'Service'],
         'notes' => []
     ],
     'contact' => [
         'name' => 'Contact Us',
-        'url' => '/contact.php',
+        'url' => '/contact',
         'required' => ['Organization', 'WebPage', 'BreadcrumbList', 'ContactPage'],
         'notes' => []
     ],
@@ -126,25 +126,25 @@ $requiredMatrix = [
     ],
     'case-studies' => [
         'name' => 'Case Studies Listing',
-        'url' => '/case-studies.php',
+        'url' => '/case-studies',
         'required' => ['Organization', 'BreadcrumbList', 'Service'],
         'notes' => []
     ],
     'case-study-detail' => [
         'name' => 'Individual Case Study',
-        'url' => '/case-study-detail.php?slug={slug}',
+        'url' => '/case-studies/{slug}',
         'required' => ['Organization', 'BreadcrumbList', 'Article'],
         'notes' => []
     ],
     'service-detail' => [
         'name' => 'Individual Service',
-        'url' => '/{slug}-company-in-delhi',
+        'url' => '/seo-services-in-delhi | /{slug}-company-in-delhi',
         'required' => ['Organization', 'BreadcrumbList', 'Review', 'Service'],
         'notes' => ['Review' => 'DRAFT — CONTENT REQUIRED: Pending collection & verification of authentic client reviews']
     ],
     'diagnostic' => [
         'name' => 'Digital Audit',
-        'url' => '/audit.php',
+        'url' => '/audit',
         'required' => ['Organization', 'BreadcrumbList'],
         'notes' => []
     ]

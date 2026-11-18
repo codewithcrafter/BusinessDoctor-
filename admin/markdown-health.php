@@ -104,11 +104,13 @@ $pagesInventory = [
 // Add 10 Active Services
 $services = SeoSyncEngine::getActiveServices();
 foreach ($services as $slug => $s) {
+    $srvUrl = parse_url(getServiceUrl($slug), PHP_URL_PATH);
+    $srvMd = parse_url(getMarkdownUrl(getServiceUrl($slug)), PHP_URL_PATH);
     $pagesInventory[] = [
         'section' => 'Practice Discipline',
         'title' => ($s['number'] ?? '') . ' ' . ($s['name'] ?? $slug),
-        'web_url' => '/service/' . $slug,
-        'clean_md' => '/service/' . $slug . '.md',
+        'web_url' => $srvUrl,
+        'clean_md' => $srvMd,
         'repo_file' => 'md/services/' . $slug . '.md',
         'source' => 'services table (id: ' . ($s['id'] ?? $slug) . ')',
         'deps' => 'sitemap.xml, llms.txt, Schema',

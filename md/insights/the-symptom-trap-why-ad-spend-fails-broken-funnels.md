@@ -6,7 +6,7 @@
 - **Category**: Web & Digital Strategy
 - **Author**: Dr. Harrison Croft (Managing Partner & Chief Solutions Officer)
 - **Published Date**: 2026-11-02
-- **Last Modified**: 2026-11-13
+- **Last Modified**: 2026-11-18
 - **Reading Time**: 7 min read
 - **Canonical Web URL**: [https://demo.businesdoctor.com/blog/the-symptom-trap-why-ad-spend-fails-broken-funnels](https://demo.businesdoctor.com/blog/the-symptom-trap-why-ad-spend-fails-broken-funnels)
 - **Clean Markdown URL**: [https://demo.businesdoctor.com/blog/the-symptom-trap-why-ad-spend-fails-broken-funnels.md](https://demo.businesdoctor.com/blog/the-symptom-trap-why-ad-spend-fails-broken-funnels.md)

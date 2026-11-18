@@ -110,10 +110,10 @@ require_once __DIR__ . '/includes/header.php';
       </p>
 
       <div style="display: flex; justify-content: center; gap: 1.25rem; flex-wrap: wrap;">
-        <a href="case-studies.php" class="btn btn-secondary">
+        <a href="/case-studies" class="btn btn-secondary">
           <span>Review Similar Client Work</span>
         </a>
-        <a href="contact.php" class="btn btn-accent">
+        <a href="/contact" class="btn btn-accent">
           <span>Speak With a Tech Lead</span>
         </a>
       </div>

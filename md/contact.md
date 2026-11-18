@@ -7,7 +7,7 @@
 - **Clean Markdown URL**: [https://demo.businesdoctor.com/contact.md](https://demo.businesdoctor.com/contact.md)
 - **Central Markdown URL**: [https://demo.businesdoctor.com/md/contact.md](https://demo.businesdoctor.com/md/contact.md)
 - **Master Markdown Index**: [https://demo.businesdoctor.com/md](https://demo.businesdoctor.com/md)
-- **Direct Advisory Phone**: +1 (800) 492-3628
+- **Direct Advisory Phone**: +91 99994 48988
 - **Advisory & Scoping Email**: [sales@businesdoctor.com](mailto:sales@businesdoctor.com)
 - **Corporate Headquarters**: First Floor, Ram Dutt Enclave, B-16, Block D, Uttam Nagar East, Uttam Nagar, New Delhi, Delhi, 110059
 - **Guaranteed Response SLA**: Initial technical review and response within 2 business hours.
@@ -22,18 +22,22 @@ When submitting a project scope or proposal request, please prepare the followin
 1. **Primary Contact**: Full name, official corporate email, and direct telephone/WhatsApp number.
 2. **Company / Organization**: Corporate legal name and primary website domain.
 3. **Practice Area / Discipline**:
-   - Web & Custom Software Development
-   - Digital Marketing, Paid Ads & SEO
-   - UI/UX Design & Brand Identity
-   - E-Commerce & Marketplace Management
-   - Creative Production & Video Marketing
-   - Cloud Solutions & IT Consulting
-   - Comprehensive Website & Digital Audit
-4. **Estimated Budget Allocation**:
-   - $5,000 – $10,000 (Targeted diagnostic or single-discipline project)
-   - $10,000 – $25,000 (Complete web platform build or multi-channel growth sprint)
-   - $25,000 – $50,000 (Enterprise software overhaul or comprehensive re-platforming)
-   - $50,000+ (Full digital transformation, bespoke SaaS engineering, or annual retainer)
+   - SEO Services in Delhi
+   - PPC Company in Delhi (Google & Meta Ads)
+   - Web Development Company in Delhi
+   - Social Media Marketing Company in Delhi
+   - SMO Company in Delhi (Social Media Optimization)
+   - E-Commerce Management Company in Delhi (Amazon/Flipkart/Shopify)
+   - Google Business Profile Company in Delhi (Local SEO)
+   - Graphic Design Company in Delhi
+   - Video Editing Company in Delhi (Reels & Commercials)
+   - Product Photography Company in Delhi (61MP Studio Captures)
+   - Comprehensive Technical Architecture & Digital Audit
+4. **Estimated Budget Allocation / Engagement Tier**:
+   - Targeted Diagnostic / Single Service Sprint
+   - Full Multi-Channel Growth Sprint
+   - Enterprise Modernization & Architecture Retainer
+   - Custom Enterprise Solution Scope
 5. **Project Overview & Objectives**: Key commercial targets, current operational bottlenecks, desired deliverables, and target launch timeline.
 
 ---
@@ -48,7 +52,7 @@ When you engage BusinessDoctor, you speak directly with experienced software eng
 
 ## 03 // Physical Headquarters & Global Operational Coordinates
 - **Headquarters**: First Floor, Ram Dutt Enclave, B-16, Block D, Uttam Nagar East, Uttam Nagar, New Delhi, Delhi, 110059
-- **Advisory Direct Line**: +1 (800) 492-3628
+- **Advisory Direct Line**: +91 99994 48988
 - **General & Scoping Inquiries**: [sales@businesdoctor.com](mailto:sales@businesdoctor.com)
 - **Technical Support Desk**: [sales@businesdoctor.com](mailto:sales@businesdoctor.com)
 - **Operating Hours**: Monday through Friday, 09:00 – 19:00 IST / 24/7/365 Emergency Monitoring for Enterprise Clients with Active SLAs.

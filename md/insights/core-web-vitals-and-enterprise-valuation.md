@@ -6,7 +6,7 @@
 - **Category**: Web Development
 - **Author**: Kirsten Chen (VP of Engineering)
 - **Published Date**: 2026-11-02
-- **Last Modified**: 2026-11-13
+- **Last Modified**: 2026-11-18
 - **Reading Time**: 5 min read
 - **Canonical Web URL**: [https://demo.businesdoctor.com/blog/core-web-vitals-and-enterprise-valuation](https://demo.businesdoctor.com/blog/core-web-vitals-and-enterprise-valuation)
 - **Clean Markdown URL**: [https://demo.businesdoctor.com/blog/core-web-vitals-and-enterprise-valuation.md](https://demo.businesdoctor.com/blog/core-web-vitals-and-enterprise-valuation.md)

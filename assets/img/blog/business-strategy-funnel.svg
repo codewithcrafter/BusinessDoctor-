@@ -43,8 +43,8 @@
   <!-- Coordinate Axes -->
   <line x1="160" y1="550" x2="600" y2="550" stroke="#94A3B8" stroke-width="2" />
   <line x1="160" y1="550" x2="160" y2="310" stroke="#94A3B8" stroke-width="2" />
-  <text x="600" y="575" fill="#94A3B8" font-size="11" text-anchor="end">Page Load Speed (Seconds) &rarr;</text>
-  <text x="140" y="315" fill="#94A3B8" font-size="11" text-anchor="end">&uarr; Conversion Rate (%)</text>
+  <text x="600" y="575" fill="#94A3B8" font-size="11" text-anchor="end">Page Load Speed (Seconds) &#8594;</text>
+  <text x="140" y="315" fill="#94A3B8" font-size="11" text-anchor="end">&#8593; Conversion Rate (%)</text>
 
   <!-- Curve: High at 0.5s, dropping sharply after 2.0s -->
   <path d="M 180 340 Q 280 360, 360 440 T 560 535" fill="none" stroke="#10B981" stroke-width="3" />

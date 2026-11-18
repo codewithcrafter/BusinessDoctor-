@@ -109,9 +109,10 @@ try {
     }
 
     $organization = 'Website Lead';
-    $serviceInterest = 'Free Consultation';
-    $message = "Lead captured via Website Lead Popup\nPage: " . $sourceUrl . "\nSubmitted: " . date('Y-m-d H:i:s');
-    $leadSource = 'Website Popup';
+    $serviceInterest = !empty($_POST['service_interest']) ? trim((string)$_POST['service_interest']) : 'Free Consultation';
+    $sourceType = trim((string)($_POST['source'] ?? ''));
+    $leadSource = ($sourceType === 'blog_detail_sidebar') ? 'Blog Detail Sidebar' : 'Website Popup';
+    $message = "Lead captured via " . $leadSource . "\nPage: " . $sourceUrl . "\nSubmitted: " . date('Y-m-d H:i:s');
 
     if ($hasExtendedCols) {
         $stmt = $pdo->prepare("

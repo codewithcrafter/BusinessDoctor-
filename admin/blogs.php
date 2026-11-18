@@ -301,7 +301,7 @@ require_once __DIR__ . '/includes/header.php';
                   <!-- Thumbnail Image with Fallback -->
                   <div style="width: 68px; height: 48px; border-radius: 6px; overflow: hidden; background: #07172C; border: 1px solid var(--adm-border); flex-shrink: 0; display: flex; align-items: center; justify-content: center; position: relative;">
                     <?php if ($hasImage): ?>
-                      <img src="../<?= e($b['featured_image']) ?>" alt="<?= e($b['cover_image_alt'] ?: $b['title']) ?>" style="width: 100%; height: 100%; object-fit: cover;" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
+                      <img src="<?= getAssetUrl($b['featured_image']) ?>" alt="<?= e($b['cover_image_alt'] ?: $b['title']) ?>" style="width: 100%; height: 100%; object-fit: cover;" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
                       <div style="display: none; width: 100%; height: 100%; align-items: center; justify-content: center; background: rgba(6, 181, 249, 0.08); color: var(--adm-teal); font-family: var(--adm-font-mono); font-size: 0.72rem; font-weight: 700;">
                         DOC
                       </div>
@@ -333,6 +333,17 @@ require_once __DIR__ . '/includes/header.php';
                         .md ↗
                       </a>
                     </div>
+                    <?php if (!empty($b['tags'])): 
+                      $bTags = array_slice(array_filter(array_map('trim', explode(',', (string)$b['tags']))), 0, 4);
+                    ?>
+                      <div style="display: flex; gap: 0.35rem; flex-wrap: wrap; margin-top: 0.45rem;">
+                        <?php foreach ($bTags as $bt): ?>
+                          <span style="font-family: var(--adm-font-mono); font-size: 0.68rem; color: #38BDF8; background: rgba(56, 189, 248, 0.08); border: 1px solid rgba(56, 189, 248, 0.2); border-radius: 3px; padding: 0.1rem 0.4rem;">
+                            #<?= e($bt) ?>
+                          </span>
+                        <?php endforeach; ?>
+                      </div>
+                    <?php endif; ?>
                   </div>
                 </div>
               </td>

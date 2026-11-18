@@ -155,14 +155,14 @@ require_once __DIR__ . '/includes/header.php';
           Every business has different goals and we customise every project according to your needs because we believe that every business needs a different strategy to grow. Business Doctor is a digital marketing company in delhi that provides you with the best digital marketing services in delhi NCR
         </p>
         <div class="closing-cta-buttons">
-          <a href="<?= appUrl('contact.php') ?>" class="btn btn-primary btn-lg">
+          <a href="<?= appUrl('contact') ?>" class="btn btn-primary btn-lg">
             <span>Get a Project Consultation</span>
             <svg class="btn-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
               <line x1="5" y1="12" x2="19" y2="12"/>
               <polyline points="12 5 19 12 12 19"/>
             </svg>
           </a>
-          <a href="<?= appUrl('audit.php') ?>" class="btn btn-secondary btn-lg">
+          <a href="<?= appUrl('audit') ?>" class="btn btn-secondary btn-lg">
             <span>Request Free Technical Audit</span>
           </a>
         </div>

@@ -17,13 +17,20 @@ if ($reqPath === '/insights.php' || $reqPath === '/insights' || $reqPath === '/i
     exit;
 }
 
+$selectedCategory = trim($_GET['category'] ?? '');
+$searchQuery = trim($_GET['search'] ?? '');
+
 $pageTitle = 'Blog & Technical Perspectives — BusinessDoctor Enterprise IT';
 $pageDescription = 'Practical engineering blueprints, Core Web Vitals breakdowns, and conversion optimization strategies from our senior architects and digital strategists.';
 $canonicalUrl = getBlogListingUrl();
-$schemaPageKey = 'insights';
 
-$selectedCategory = trim($_GET['category'] ?? '');
-$searchQuery = trim($_GET['search'] ?? '');
+if ($selectedCategory !== '') {
+    $canonicalUrl = getBlogListingUrl() . '?category=' . urlencode($selectedCategory);
+    $pageTitle = e($selectedCategory) . ' Articles & Tech Perspectives — BusinessDoctor Blog';
+    $pageDescription = 'Explore in-depth engineering breakdowns, architecture guides, and digital growth frameworks for ' . e($selectedCategory) . ' from BusinessDoctor.';
+}
+
+$schemaPageKey = 'insights';
 
 $insights = [];
 $featured = null;
@@ -237,7 +244,7 @@ require_once __DIR__ . '/includes/header.php';
           <!-- Full-Width Visual Cover Container (Zero Inner Padding) -->
           <div class="blog-spotlight-media" style="position: relative; width: 100%; height: 100%; min-height: 320px; background: #071224; overflow: hidden; margin: 0; padding: 0; display: flex;">
             <a href="<?= $featUrl ?>" style="display: block; width: 100%; height: 100%; margin: 0; padding: 0; text-decoration: none;" aria-label="<?= e($featured['title']) ?>">
-              <img src="<?= getBlogAssetUrl($featImg) ?>" alt="<?= e($featAlt) ?>" style="display: block; width: 100%; height: 100%; object-fit: cover; aspect-ratio: 16 / 9; margin: 0; padding: 0; border: 0;">
+              <img src="<?= getBlogAssetUrl($featImg) ?>" alt="<?= e($featAlt) ?>" width="1280" height="720" style="display: block; width: 100%; height: 100%; object-fit: cover; aspect-ratio: 16 / 9; margin: 0; padding: 0; border: 0;">
             </a>
           </div>
 
@@ -256,9 +263,20 @@ require_once __DIR__ . '/includes/header.php';
                 <?= e($featured['title']) ?>
               </a>
             </h2>
-            <p style="font-size: 1.02rem; color: var(--color-text-muted); line-height: 1.7; margin-bottom: 1.75rem;">
+            <p style="font-size: 1.02rem; color: var(--color-text-muted); line-height: 1.7; margin-bottom: 1.25rem;">
               <?= e($featured['summary']) ?>
             </p>
+            <?php if (!empty($featured['tags'])): 
+              $featTags = array_slice(array_filter(array_map('trim', explode(',', (string)$featured['tags']))), 0, 4);
+            ?>
+              <div style="display: flex; gap: 0.45rem; flex-wrap: wrap; margin-bottom: 1.5rem;">
+                <?php foreach ($featTags as $ft): ?>
+                  <span style="font-family: var(--font-mono); font-size: 0.74rem; color: #06B5F9; background: rgba(6, 181, 249, 0.08); border: 1px solid rgba(6, 181, 249, 0.25); border-radius: 4px; padding: 0.15rem 0.5rem; font-weight: 600;">
+                    #<?= e($ft) ?>
+                  </span>
+                <?php endforeach; ?>
+              </div>
+            <?php endif; ?>
             <div style="display: flex; align-items: center; justify-content: space-between; border-top: 1px solid var(--color-slate-200); padding-top: 1.25rem; margin-top: auto; flex-wrap: wrap; gap: 1rem;">
               <div>
                 <div style="font-weight: 700; font-size: 0.95rem; color: var(--color-text);"><?= e($featured['author_name']) ?></div>
@@ -286,7 +304,7 @@ require_once __DIR__ . '/includes/header.php';
             <!-- Full-Width Featured Image (100% of Card Width, 16:9 Aspect Ratio, Zero Inner Padding) -->
             <div class="blog-card-media" style="position: relative; width: 100%; aspect-ratio: 16 / 9; background: #071224; margin: 0; padding: 0; overflow: hidden; display: block;">
               <a href="<?= $itemUrl ?>" style="display: block; width: 100%; height: 100%; margin: 0; padding: 0; text-decoration: none;" aria-label="<?= e($item['title']) ?>">
-                <img src="<?= getBlogAssetUrl($itemImg) ?>" alt="<?= e($itemAlt) ?>" style="display: block; width: 100%; height: 100%; aspect-ratio: 16 / 9; object-fit: cover; margin: 0; padding: 0; border: 0;" loading="lazy">
+                <img src="<?= getBlogAssetUrl($itemImg) ?>" alt="<?= e($itemAlt) ?>" width="1280" height="720" style="display: block; width: 100%; height: 100%; aspect-ratio: 16 / 9; object-fit: cover; margin: 0; padding: 0; border: 0;" loading="lazy">
               </a>
             </div>
 
@@ -309,9 +327,21 @@ require_once __DIR__ . '/includes/header.php';
                 </a>
               </h2>
 
-              <p style="font-size: 0.92rem; color: var(--color-text-muted); line-height: 1.6; margin-bottom: 1.5rem; flex-grow: 1;">
+              <p style="font-size: 0.92rem; color: var(--color-text-muted); line-height: 1.6; margin-bottom: 1.25rem; flex-grow: 1;">
                 <?= e(mb_strimwidth($item['summary'], 0, 150, '...')) ?>
               </p>
+
+              <?php if (!empty($item['tags'])): 
+                $cardTags = array_slice(array_filter(array_map('trim', explode(',', (string)$item['tags']))), 0, 3);
+              ?>
+                <div style="display: flex; gap: 0.35rem; flex-wrap: wrap; margin-bottom: 1.25rem;">
+                  <?php foreach ($cardTags as $ct): ?>
+                    <span style="font-family: var(--font-mono); font-size: 0.7rem; color: #38BDF8; background: rgba(56, 189, 248, 0.08); border: 1px solid rgba(56, 189, 248, 0.2); border-radius: 4px; padding: 0.15rem 0.45rem; font-weight: 600;">
+                      #<?= e($ct) ?>
+                    </span>
+                  <?php endforeach; ?>
+                </div>
+              <?php endif; ?>
 
               <div style="border-top: 1px solid var(--color-slate-200); padding-top: 1.25rem; margin-top: auto; display: flex; align-items: center; justify-content: space-between;">
                 <div>

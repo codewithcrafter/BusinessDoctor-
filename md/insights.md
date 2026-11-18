@@ -21,7 +21,7 @@
 - **Central Markdown URL**: [https://demo.businesdoctor.com/md/insights/website-performance-issues-losing-customers.md](https://demo.businesdoctor.com/md/insights/website-performance-issues-losing-customers.md)
 
 **Executive Summary:**
-Why Your Website Is Losing Customers: 7 Performance Issues You Should Fix Your website is often the first interaction a potential customer has with your business. Before cont...
+Your website is often the first interaction a potential customer has with your business. Identify 7 critical performance bottlenecks driving visitors away and actionable steps to optimize user retention and revenue.
 
 ### Modern UI/UX Design as a Revenue Multiplier: Why Premium Design Eliminates Price Resistance
 - **Category**: UI/UX & Branding | **Read Time**: 8 min read

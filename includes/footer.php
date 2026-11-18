@@ -18,7 +18,7 @@ $practices = getPracticeAreas();
       <!-- Col 1: Brand & Overview -->
       <div class="footer-col footer-brand">
         <a href="<?= appUrl() ?>" class="brand-logo" style="color: #ffffff;" aria-label="BusinessDoctor Home">
-          <img src="<?= getAssetUrl('assets/img/bdr_logo_transparent.png') ?>" alt="BusinessDoctor Logo" class="brand-logo-img" style="height: 52px; width: auto; max-width: 150px; object-fit: contain; aspect-ratio: 1816 / 1131; display: block;">
+          <img src="<?= getAssetUrl('assets/img/bdr_logo_transparent.png') ?>" alt="BusinessDoctor Logo" class="brand-logo-img" width="1816" height="1131" style="height: 52px; width: auto; max-width: 150px; object-fit: contain; aspect-ratio: 1816 / 1131; display: block;">
         </a>
         <p>
           Established international IT solutions and digital growth firm. We engineer high-performance web software, execute data-driven digital marketing, design distinctive brand systems, and scale multi-channel marketplace operations.

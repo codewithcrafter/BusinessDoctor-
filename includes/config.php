@@ -78,9 +78,9 @@ define('APP_NAME', 'BusinessDoctor');
 define('APP_LEGAL_NAME', 'BusinessDoctor IT Solutions & Digital Services Private Limited');
 define('APP_TAGLINE', 'Engineering Technology. Accelerating Digital Growth.');
 define('APP_EMAIL', 'sales@businesdoctor.com');
-define('APP_PHONE', '+1 (800) 492-3628');
-define('APP_CALL_NUMBER', getenv('APP_CALL_NUMBER') ?: '+18004923628');
-define('APP_WHATSAPP_NUMBER', getenv('APP_WHATSAPP_NUMBER') ?: '18004923628');
+define('APP_PHONE', '+91 99994 48988');
+define('APP_CALL_NUMBER', getenv('APP_CALL_NUMBER') ?: '+919999448988');
+define('APP_WHATSAPP_NUMBER', getenv('APP_WHATSAPP_NUMBER') ?: '919999448988');
 define('APP_WHATSAPP_MESSAGE', getenv('APP_WHATSAPP_MESSAGE') ?: 'Hello BusinessDoctor, I would like to inquire about your enterprise IT and digital services.');
 define('APP_HEADQUARTERS', 'First Floor, Ram Dutt Enclave, B-16, Block D, Uttam Nagar East, Uttam Nagar, New Delhi, Delhi, 110059');
 

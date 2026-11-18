@@ -277,12 +277,12 @@ require_once __DIR__ . '/includes/header.php';
       <table class="admin-table" style="width: 100%; border-collapse: collapse;">
         <thead>
           <tr style="border-bottom: 1px solid var(--adm-border);">
-            <th style="width: 38%; padding: 1rem 1.25rem;">CASE STUDY &amp; CLIENT</th>
-            <th style="width: 20%; padding: 1rem 1rem;">INDUSTRY &amp; PRACTICE</th>
+            <th style="width: 34%; padding: 1rem 1.25rem;">CASE STUDY &amp; CLIENT</th>
+            <th style="width: 18%; padding: 1rem 1rem;">INDUSTRY &amp; PRACTICE</th>
             <th style="width: 16%; padding: 1rem 1rem;">VERIFIED IMPACT METRIC</th>
-            <th style="width: 9%; padding: 1rem 0.75rem; text-align: center;">STATUS</th>
+            <th style="width: 8%; padding: 1rem 0.75rem; text-align: center;">STATUS</th>
             <th style="width: 8%; padding: 1rem 0.75rem; text-align: center;">FEATURED</th>
-            <th style="width: 9%; padding: 1rem 1.25rem; text-align: right;">ACTIONS</th>
+            <th style="width: 16%; padding: 1rem 1.25rem; text-align: right;">ACTIONS</th>
           </tr>
         </thead>
         <tbody>
@@ -298,7 +298,7 @@ require_once __DIR__ . '/includes/header.php';
                   <!-- Thumbnail Image with Fallback -->
                   <div style="width: 68px; height: 48px; border-radius: 6px; overflow: hidden; background: #07172C; border: 1px solid var(--adm-border); flex-shrink: 0; display: flex; align-items: center; justify-content: center; position: relative;">
                     <?php if ($hasImage): ?>
-                      <img src="../<?= e($c['featured_image']) ?>" alt="<?= e($c['title']) ?>" style="width: 100%; height: 100%; object-fit: cover;" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
+                      <img src="<?= getAssetUrl($c['featured_image']) ?>" alt="<?= e($c['title']) ?>" style="width: 100%; height: 100%; object-fit: cover;" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
                       <div style="display: none; width: 100%; height: 100%; align-items: center; justify-content: center; background: rgba(6, 181, 249, 0.08); color: var(--adm-teal);">
                         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" width="20" height="20" stroke-width="2"><path d="M22 19a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h5l2 3h9a2 2 0 0 1 2 2z"/></svg>
                       </div>

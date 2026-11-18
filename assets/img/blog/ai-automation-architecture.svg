@@ -83,11 +83,11 @@
   
   <text x="160" y="525" fill="#94A3B8" font-size="13">Median P95 Latency</text>
   <text x="160" y="560" fill="#0099DB" font-size="24" font-weight="800">142ms</text>
-  <text x="160" y="590" fill="#34D399" font-size="12">&darr; 64% vs Traditional</text>
+  <text x="160" y="590" fill="#34D399" font-size="12">&#8595; 64% vs Traditional</text>
 
   <text x="440" y="525" fill="#94A3B8" font-size="13">Enterprise Token Throughput</text>
   <text x="440" y="560" fill="#A78BFA" font-size="24" font-weight="800">4,280 tok/s</text>
-  <text x="440" y="590" fill="#34D399" font-size="12">&uarr; Auto-scaled across 8 nodes</text>
+  <text x="440" y="590" fill="#34D399" font-size="12">&#8593; Auto-scaled across 8 nodes</text>
 
   <text x="740" y="525" fill="#94A3B8" font-size="13">Deterministic Accuracy</text>
   <text x="740" y="560" fill="#FCD34D" font-size="24" font-weight="800">99.85%</text>
@@ -95,5 +95,5 @@
 
   <text x="1000" y="525" fill="#94A3B8" font-size="13">Cost Per 1k Queries</text>
   <text x="1000" y="560" fill="#34D399" font-size="24" font-weight="800">$0.0084</text>
-  <text x="1000" y="590" fill="#34D399" font-size="12">&darr; 82% with semantic cache</text>
+  <text x="1000" y="590" fill="#34D399" font-size="12">&#8595; 82% with semantic cache</text>
 </svg>

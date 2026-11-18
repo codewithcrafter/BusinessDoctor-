@@ -22,6 +22,8 @@ if (str_starts_with($baseRawSlug, 'service/')) {
 }
 if (str_ends_with($baseRawSlug, '-company-in-delhi')) {
     $baseRawSlug = substr($baseRawSlug, 0, -17);
+} elseif (str_ends_with($baseRawSlug, '-services-in-delhi')) {
+    $baseRawSlug = substr($baseRawSlug, 0, -18);
 }
 if (str_starts_with($baseRawSlug, 'company/')) {
     $baseRawSlug = substr($baseRawSlug, 8);
@@ -80,7 +82,7 @@ if (!$practice) {
               <polyline points="12 5 19 12 12 19"/>
             </svg>
           </a>
-          <a href="<?= appUrl('contact.php') ?>" class="btn btn-secondary btn-lg">
+          <a href="<?= appUrl('contact') ?>" class="btn btn-secondary btn-lg">
             <span>Inquire About Custom Engineering</span>
           </a>
         </div>
@@ -148,7 +150,7 @@ if (file_exists($servicePartial)) {
             <polyline points="12 5 19 12 12 19"/>
           </svg>
         </a>
-        <a href="<?= appUrl('audit.php') ?>" class="btn btn-secondary btn-lg">
+        <a href="<?= appUrl('audit') ?>" class="btn btn-secondary btn-lg">
           <span>Run Digital Architecture Audit</span>
         </a>
       </div>

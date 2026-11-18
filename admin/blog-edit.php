@@ -192,6 +192,31 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
                 $id
             ]);
 
+            // Dual-Driver Sync: Also update SQLite mirror
+            try {
+                $sqlitePath = ROOT_PATH . '/database/businessdoctor.sqlite';
+                if (file_exists($sqlitePath)) {
+                    $sqlitePdo = new PDO('sqlite:' . $sqlitePath);
+                    $sqlitePdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+                    $sqliteUpd = $sqlitePdo->prepare("
+                        UPDATE insights SET
+                            slug = ?, category = ?, title = ?, reading_time = ?, summary = ?, excerpt = ?,
+                            content = ?, featured_image = ?, cover_image_alt = ?, author_name = ?, author = ?,
+                            author_title = ?, author_bio = ?, tags = ?, seo_title = ?, seo_description = ?,
+                            canonical_url = ?, is_featured = ?, published_at = ?, schema_mode = ?,
+                            custom_schema_json = ?, status = ?, is_published = ?, updated_at = ?
+                        WHERE id = ? OR slug = ?
+                    ");
+                    $sqliteUpd->execute([
+                        $finalSlug, $category, $title, $readingTime, $excerpt, $excerpt,
+                        $content, $featuredImage, $coverImageAlt, $author, $author,
+                        $authorTitle, $authorBio, $tags, $seoTitle, $seoDescription,
+                        $canonicalUrl, $isFeatured, $finalPubDate, $schemaMode,
+                        $customSchemaJson, $status, $isPublished, $now, $id, $finalSlug
+                    ]);
+                }
+            } catch (Throwable $t) {}
+
             require_once __DIR__ . '/../includes/seo-sync.php';
             SeoSyncEngine::syncAll("Blog updated: {$title}");
             setFlashMessage('success', "Article '{$title}' updated successfully as " . strtoupper($status) . ".");
@@ -584,61 +609,66 @@ require_once __DIR__ . '/includes/header.php';
 
       </div> <!-- Closes #editorContainer -->
 
-<!-- 4. Executive Summary / Excerpt Card -->
-      <div class="admin-card" style="margin-top: 1.5rem;">
-        <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 0.5rem;">
-          <h3 class="admin-card-title" style="margin: 0;">Executive Summary</h3>
-          <span id="excerptCount" style="font-size: 0.72rem; color: var(--adm-text-dim); font-family: var(--adm-font-mono);">0/180</span>
-        </div>
-        <div class="adm-hint" style="margin-bottom: 0.75rem;">Lead-in highlight used across article cards, search results and social previews.</div>
-        <textarea id="blogExcerpt" name="excerpt" rows="3" class="adm-textarea" placeholder="Executive overview highlighting core strategic and engineering outcomes..."><?= e($excerpt) ?></textarea>
-      </div>
-
-      <!-- 5. Search Engine Optimization (SEO) Card -->
-      <div class="admin-card" style="margin-top: 1.5rem;">
-        <h3 class="admin-card-title" style="margin-bottom: 1rem;">Search Engine Optimization (SEO)</h3>
-
-        <div class="adm-form-group">
-          <label class="adm-label" for="blogSlug">URL Slug</label>
-          <input type="text" id="blogSlug" name="slug" value="<?= e($slug) ?>" class="adm-input" placeholder="e.g. scaling-cloud-microservices">
-        </div>
-
-        <div class="adm-form-group">
-          <div style="display: flex; justify-content: space-between; align-items: center;">
-            <label class="adm-label" for="seoTitle">Meta Title</label>
-            <span id="seoTitleCount" style="font-size: 0.72rem; color: var(--adm-text-dim); font-family: var(--adm-font-mono);">0/60</span>
-          </div>
-          <input type="text" id="seoTitle" name="seo_title" value="<?= e($seoTitle) ?>" maxlength="70" class="adm-input" placeholder="Custom Google title tag">
-        </div>
-
-        <div class="adm-form-group">
-          <div style="display: flex; justify-content: space-between; align-items: center;">
-            <label class="adm-label" for="seoDescription">Meta Description</label>
-            <span id="seoDescCount" style="font-size: 0.72rem; color: var(--adm-text-dim); font-family: var(--adm-font-mono);">0/160</span>
-          </div>
-          <textarea id="seoDescription" name="seo_description" rows="3" maxlength="170" class="adm-textarea" placeholder="Google snippet summary..."><?= e($seoDescription) ?></textarea>
-        </div>
-
-        <div class="adm-form-group">
-          <label class="adm-label" for="canonicalUrl">Canonical URL</label>
-          <input type="url" id="canonicalUrl" name="canonical_url" value="<?= e($canonicalUrl) ?>" class="adm-input" placeholder="https://demo.businesdoctor.com/blog/article-slug">
-          <div class="adm-hint">Overrides default self-referencing canonical URL if syndicating or cross-posting.</div>
-        </div>
-
-        <div class="adm-form-group">
-          <label class="adm-label" for="blogTags">Keywords / Tags</label>
-          <input type="text" id="blogTags" name="tags" value="<?= e($tags) ?>" class="adm-input" placeholder="Cloud, Architecture, Microservices (comma separated)">
-        </div>
-
-        <!-- Google SERP Live Snippet Box -->
-        <div style="margin-top: 1rem;">
-          <div style="font-size: 0.78rem; font-weight: 600; color: var(--adm-text-dim); margin-bottom: 0.4rem;">Google Search Preview:</div>
-          <div class="adm-serp-preview">
-            <div class="adm-serp-title" id="serpTitlePreview">BusinessDoctor Tech Perspective</div>
-            <div class="adm-serp-url" id="serpUrlPreview">https://demo.businesdoctor.com/blog/<?= urlencode($slug) ?></div>
-            <div class="adm-serp-desc" id="serpDescPreview">Engineering architecture and digital growth frameworks authored by BusinessDoctor.</div>
-          </div>
-        </div>
+<!-- 4. Executive Summary / Excerpt Card -->
+      <div class="admin-card" style="margin-top: 1.5rem;">
+        <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 0.5rem;">
+          <h3 class="admin-card-title" style="margin: 0;">Executive Summary</h3>
+          <span id="excerptCount" style="font-size: 0.72rem; color: var(--adm-text-dim); font-family: var(--adm-font-mono);">0/180</span>
+        </div>
+        <div class="adm-hint" style="margin-bottom: 0.75rem;">Lead-in highlight used across article cards, search results and social previews.</div>
+        <textarea id="blogExcerpt" name="excerpt" rows="3" class="adm-textarea" placeholder="Executive overview highlighting core strategic and engineering outcomes..."><?= e($excerpt) ?></textarea>
+      </div>
+
+      <!-- 5. Search Engine Optimization (SEO) Card -->
+      <div class="admin-card" style="margin-top: 1.5rem;">
+        <h3 class="admin-card-title" style="margin-bottom: 1rem;">Search Engine Optimization (SEO)</h3>
+
+        <div class="adm-form-group">
+          <label class="adm-label" for="blogSlug">URL Slug</label>
+          <input type="text" id="blogSlug" name="slug" value="<?= e($slug) ?>" class="adm-input" placeholder="e.g. scaling-cloud-microservices">
+        </div>
+
+        <div class="adm-form-group">
+          <div style="display: flex; justify-content: space-between; align-items: center;">
+            <label class="adm-label" for="seoTitle">Meta Title</label>
+            <span id="seoTitleCount" style="font-size: 0.72rem; color: var(--adm-text-dim); font-family: var(--adm-font-mono);">0/60</span>
+          </div>
+          <input type="text" id="seoTitle" name="seo_title" value="<?= e($seoTitle) ?>" maxlength="70" class="adm-input" placeholder="Custom Google title tag">
+        </div>
+
+        <div class="adm-form-group">
+          <div style="display: flex; justify-content: space-between; align-items: center;">
+            <label class="adm-label" for="seoDescription">Meta Description</label>
+            <span id="seoDescCount" style="font-size: 0.72rem; color: var(--adm-text-dim); font-family: var(--adm-font-mono);">0/160</span>
+          </div>
+          <textarea id="seoDescription" name="seo_description" rows="3" maxlength="170" class="adm-textarea" placeholder="Google snippet summary..."><?= e($seoDescription) ?></textarea>
+        </div>
+
+        <div class="adm-form-group">
+          <label class="adm-label" for="canonicalUrl">Canonical URL</label>
+          <input type="url" id="canonicalUrl" name="canonical_url" value="<?= e($canonicalUrl) ?>" class="adm-input" placeholder="https://demo.businesdoctor.com/blog/article-slug">
+          <div class="adm-hint">Overrides default self-referencing canonical URL if syndicating or cross-posting.</div>
+        </div>
+
+        <div class="adm-form-group">
+          <label class="adm-label" for="blogTags">
+            <span>Keywords &amp; Engineering Tags</span>
+            <span style="font-weight: normal; color: var(--adm-teal); font-size: 0.72rem; margin-left: 0.35rem;">(comma-separated)</span>
+          </label>
+          <input type="text" id="blogTags" name="tags" value="<?= e($tags) ?>" class="adm-input" placeholder="Web Performance, Core Web Vitals, Conversion Optimization" oninput="renderTagChips(this.value)">
+          <div id="tagChipsPreview" style="display: flex; gap: 0.4rem; flex-wrap: wrap; margin-top: 0.55rem; min-height: 24px;"></div>
+          <div class="adm-hint">Tags appear prominently on frontend blog posts, blog cards, and search filters.</div>
+        </div>
+
+        <!-- Google SERP Live Snippet Box -->
+        <div style="margin-top: 1rem;">
+          <div style="font-size: 0.78rem; font-weight: 600; color: var(--adm-text-dim); margin-bottom: 0.4rem;">Google Search Preview:</div>
+          <div class="adm-serp-preview">
+            <div class="adm-serp-title" id="serpTitlePreview">BusinessDoctor Tech Perspective</div>
+            <div class="adm-serp-url" id="serpUrlPreview">https://demo.businesdoctor.com/blog/<?= urlencode($slug) ?></div>
+            <div class="adm-serp-desc" id="serpDescPreview">Engineering architecture and digital growth frameworks authored by BusinessDoctor.</div>
+          </div>
+        </div>
       </div>
 
     </div> <!-- Closes Left Column -->
@@ -1499,8 +1529,26 @@ if (mdEditorEl) {
   mdEditorEl.addEventListener('input', updateLiveRecommendedSchema);
 }
 
+// Interactive Tag Chips Renderer
+function renderTagChips(val) {
+  const container = document.getElementById('tagChipsPreview');
+  if (!container) return;
+  const tags = val.split(',').map(t => t.trim()).filter(Boolean);
+  if (tags.length === 0) {
+    container.innerHTML = '<span style="font-size: 0.72rem; color: var(--adm-text-dim); font-style: italic;">No tags defined yet. Type tags above separated by commas.</span>';
+    return;
+  }
+  container.innerHTML = tags.map(t => `
+    <span style="display: inline-flex; align-items: center; gap: 0.35rem; background: rgba(6, 181, 249, 0.12); color: #06B5F9; border: 1px solid rgba(6, 181, 249, 0.3); border-radius: 20px; padding: 0.2rem 0.65rem; font-family: var(--adm-font-mono); font-size: 0.74rem; font-weight: 600;">
+      #${t.replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;')}
+    </span>
+  `).join('');
+}
+
 // Run initial live schema render on load
 document.addEventListener('DOMContentLoaded', function() {
+  const tagInput = document.getElementById('blogTags');
+  if (tagInput) renderTagChips(tagInput.value);
   updateLiveRecommendedSchema();
   if (document.getElementById('customSchemaEditor') && document.getElementById('customSchemaEditor').value.trim()) {
     validateCustomSchemaClient(false);

@@ -16,28 +16,7 @@ $requestUri = $_SERVER['REQUEST_URI'] ?? '/';
 $parsedUri = parse_url($requestUri);
 $cleanPath = $parsedUri['path'] ?? '/';
 $canonicalParams = '';
-if (!empty($parsedUri['query'])) {
-    parse_str($parsedUri['query'], $qp);
-    if (!empty($qp['slug'])) {
-        if (str_contains($cleanPath, 'service-detail')) {
-            $cleanPath = '/service/' . rawurlencode($qp['slug']);
-        } elseif (str_contains($cleanPath, 'insight-detail')) {
-            $cleanPath = '/blog/' . rawurlencode($qp['slug']);
-        } elseif (str_contains($cleanPath, 'case-study-detail')) {
-            $cleanPath = '/case-studies/' . rawurlencode($qp['slug']);
-        } else {
-            $canonicalParams = '?slug=' . urlencode($qp['slug']);
-        }
-    }
-}
-if (str_ends_with($cleanPath, '-company-in-delhi')) {
-    $rawS = substr($cleanPath, 1, -17);
-    if ($rawS === 'digital-marketing') {
-        $cleanPath = '/services';
-    } else {
-        $cleanPath = '/service/' . $rawS;
-    }
-}
+
 if ($cleanPath === '/services.php' || $cleanPath === '/company' || $cleanPath === '/company-in-delhi' || $cleanPath === '/digital-marketing-company-in-delhi') {
     $cleanPath = '/services';
 }
@@ -56,6 +35,7 @@ if ($cleanPath === '/audit.php' || $cleanPath === '/diagnostic.php') {
 if ($cleanPath === '/case-studies.php') {
     $cleanPath = '/case-studies';
 }
+
 $canonicalBase = defined('CANONICAL_BASE_URL') ? rtrim(CANONICAL_BASE_URL, '/') : 'https://demo.businesdoctor.com';
 if (!empty($canonicalUrl)) {
     $currentBase = defined('BASE_URL') ? rtrim(BASE_URL, '/') : '';
@@ -65,12 +45,15 @@ if (!empty($canonicalUrl)) {
         $canonicalUrl = $canonicalBase . '/' . ltrim($canonicalUrl, '/');
     }
 } else {
+    // Preserve query params for indexable filter pages if present
+    if (!empty($parsedUri['query'])) {
+        $canonicalParams = '?' . $parsedUri['query'];
+    }
     $canonicalUrl = $canonicalBase . '/' . ltrim($cleanPath, '/') . $canonicalParams;
 }
 // Ensure canonicalUrl uses clean URL without .php
 $canonicalUrl = preg_replace('/(?<!admin|api)\/(about|contact|audit|diagnostic|case-studies|services|insights|blog)\.php(\b|\?|$)/', '/$1$2', $canonicalUrl);
 $canonicalUrl = str_replace('/digital-marketing-company-in-delhi', '/services', $canonicalUrl);
-$canonicalUrl = preg_replace('/\/([a-zA-Z0-9_-]+)-company-in-delhi(\b|\?|$)/', '/service/$1$2', $canonicalUrl);
 ?>
 <!DOCTYPE html>
 <html lang="en">

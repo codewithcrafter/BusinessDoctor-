@@ -9,7 +9,7 @@
 - **Master Markdown Index**: [https://demo.businesdoctor.com/md](https://demo.businesdoctor.com/md)
 - **Corporate Legal Entity**: BusinessDoctor IT Solutions & Digital Services Private Limited
 - **Headquarters**: First Floor, Ram Dutt Enclave, B-16, Block D, Uttam Nagar East, Uttam Nagar, New Delhi, Delhi, 110059
-- **Advisory Contact**: [sales@businesdoctor.com](mailto:sales@businesdoctor.com) | Phone: +1 (800) 492-3628
+- **Advisory Contact**: [sales@businesdoctor.com](mailto:sales@businesdoctor.com) | Phone: +91 99994 48988
 
 ---
 

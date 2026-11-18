@@ -27,7 +27,7 @@ try {
 } catch (Exception $e) {}
 
 if (!$case) {
-    header("Location: " . appUrl('case-studies.php'));
+    header("Location: " . appUrl('case-studies'));
     exit;
 }
 
@@ -106,7 +106,7 @@ require_once __DIR__ . '/includes/header.php';
     <!-- Breadcrumb & Badges -->
     <div style="display: flex; align-items: center; justify-content: space-between; gap: 0.75rem; flex-wrap: wrap; margin-bottom: 1.25rem;">
       <div style="display: flex; align-items: center; gap: 0.75rem; flex-wrap: wrap;">
-        <a href="<?= appUrl('case-studies.php') ?>" class="text-link" style="color: #06B5F9; font-family: var(--font-mono); font-size: 0.8rem;">
+        <a href="<?= appUrl('case-studies') ?>" class="text-link" style="color: #06B5F9; font-family: var(--font-mono); font-size: 0.8rem;">
           &larr; ALL CASE STUDIES
         </a>
         <span style="color: rgba(255,255,255,0.3);">/</span>
@@ -117,16 +117,22 @@ require_once __DIR__ . '/includes/header.php';
           <?= e($case['service_category'] ?: $case['practice_area']) ?>
         </span>
       </div>
-      <?php if (!empty($case['project_url'])): ?>
-        <a href="<?= e($case['project_url']) ?>" target="_blank" rel="noopener noreferrer" style="display: inline-flex; align-items: center; gap: 0.45rem; padding: 0.35rem 0.85rem; background: rgba(6, 181, 249, 0.12); border: 1px solid rgba(6, 181, 249, 0.35); border-radius: 9999px; color: #06B5F9; font-family: var(--font-mono); font-size: 0.75rem; font-weight: 700; text-decoration: none; transition: background 0.2s;">
-          <span>Visit Live Project</span>
-          <svg viewBox="0 0 24 24" width="12" height="12" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-            <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path>
-            <polyline points="15 3 21 3 21 9"></polyline>
-            <line x1="10" y1="14" x2="21" y2="3"></line>
-          </svg>
+      <div style="display: flex; align-items: center; gap: 0.65rem; flex-wrap: wrap;">
+        <?php if (!empty($case['project_url'])): ?>
+          <a href="<?= e($case['project_url']) ?>" target="_blank" rel="noopener noreferrer" style="display: inline-flex; align-items: center; gap: 0.45rem; padding: 0.35rem 0.85rem; background: rgba(6, 181, 249, 0.12); border: 1px solid rgba(6, 181, 249, 0.35); border-radius: 9999px; color: #06B5F9; font-family: var(--font-mono); font-size: 0.75rem; font-weight: 700; text-decoration: none; transition: background 0.2s;">
+            <span>Visit Live Project</span>
+            <svg viewBox="0 0 24 24" width="12" height="12" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+              <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path>
+              <polyline points="15 3 21 3 21 9"></polyline>
+              <line x1="10" y1="14" x2="21" y2="3"></line>
+            </svg>
+          </a>
+        <?php endif; ?>
+        <a href="<?= appUrl('case-studies/' . $case['slug'] . '.md') ?>" target="_blank" style="display: inline-flex; align-items: center; gap: 0.4rem; padding: 0.35rem 0.85rem; background: rgba(255, 255, 255, 0.04); border: 1px solid rgba(6, 181, 249, 0.3); border-radius: 9999px; color: #38BDF8; font-family: var(--font-mono); font-size: 0.75rem; font-weight: 600; text-decoration: none;" title="Machine-readable Markdown for AI agents">
+          <svg viewBox="0 0 24 24" width="12" height="12" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/><polyline points="10 9 9 9 8 9"/></svg>
+          <span>.md Endpoint ↗</span>
         </a>
-      <?php endif; ?>
+      </div>
     </div>
 
     <h1 class="hero-headline-oversized" style="font-size: clamp(2.2rem, 4vw, 3.4rem); margin-bottom: 1.5rem; line-height: 1.25;">
@@ -173,7 +179,7 @@ require_once __DIR__ . '/includes/header.php';
     <!-- Hero Cover Image Exhibit -->
     <figure style="margin: 0 0 3.5rem 0;">
       <div style="border-radius: var(--radius-lg); overflow: hidden; border: 1px solid var(--color-slate-200); box-shadow: var(--shadow-md); background: #071224;">
-        <img src="<?= getAssetUrl($caseCover) ?>" alt="<?= e($case['cover_image_alt'] ?: $case['title']) ?>" style="width: 100%; max-height: 520px; object-fit: cover; display: block; aspect-ratio: 16 / 9;">
+        <img src="<?= getAssetUrl($caseCover) ?>" alt="<?= e($case['cover_image_alt'] ?: $case['title']) ?>" width="1280" height="720" style="width: 100%; max-height: 520px; object-fit: cover; display: block; aspect-ratio: 16 / 9;">
       </div>
       <figcaption style="margin-top: 0.85rem; font-family: var(--font-mono); font-size: 0.78rem; color: var(--color-text-muted); display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 0.5rem;">
         <span><?= e($case['cover_image_alt'] ?: $case['title']) ?></span>
@@ -269,7 +275,7 @@ require_once __DIR__ . '/includes/header.php';
       </h2>
       <figure style="margin: 0;">
         <div style="border-radius: var(--radius-lg); overflow: hidden; border: 1px solid var(--color-slate-200); box-shadow: var(--shadow-md); background: #071224;">
-          <img src="<?= getAssetUrl($spec['supp_src']) ?>" alt="<?= e($spec['supp_alt']) ?>" style="width: 100%; max-height: 500px; object-fit: cover; display: block; aspect-ratio: 16 / 9;">
+          <img src="<?= getAssetUrl($spec['supp_src']) ?>" alt="<?= e($spec['supp_alt']) ?>" width="1280" height="720" style="width: 100%; max-height: 500px; object-fit: cover; display: block; aspect-ratio: 16 / 9;">
         </div>
         <figcaption style="margin-top: 0.85rem; font-family: var(--font-mono); font-size: 0.78rem; color: var(--color-text-muted); display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 0.5rem;">
           <span><?= e($spec['supp_caption']) ?></span>
@@ -373,7 +379,7 @@ require_once __DIR__ . '/includes/header.php';
             <div class="card" style="padding: 0; display: flex; flex-direction: column; overflow: hidden; border-radius: var(--radius-md);">
               <div style="width: 100%; aspect-ratio: 16 / 9; overflow: hidden; background: #071224;">
                 <a href="<?= getCaseStudyUrl($rc['slug']) ?>">
-                  <img src="<?= getAssetUrl($rcImg) ?>" alt="<?= e($rc['title']) ?>" style="width: 100%; height: 100%; object-fit: cover;">
+                  <img src="<?= getAssetUrl($rcImg) ?>" alt="<?= e($rc['title']) ?>" width="1280" height="720" style="width: 100%; height: 100%; object-fit: cover;">
                 </a>
               </div>
               <div style="padding: 1.5rem; display: flex; flex-direction: column; flex-grow: 1;">
@@ -410,10 +416,10 @@ require_once __DIR__ . '/includes/header.php';
           Partner directly with our senior digital strategists and technical architects. We will conduct an end-to-end diagnostic audit of your systems.
         </p>
         <div class="closing-cta-buttons">
-          <a href="<?= appUrl('audit.php') ?>" class="btn btn-accent btn-lg">
+          <a href="<?= appUrl('audit') ?>" class="btn btn-accent btn-lg">
             <span>Request Diagnostic Audit</span>
           </a>
-          <a href="<?= appUrl('contact.php') ?>" class="btn btn-outline-gold btn-lg">
+          <a href="<?= appUrl('contact') ?>" class="btn btn-outline-gold btn-lg">
             <span>Schedule Discovery Session</span>
           </a>
         </div>

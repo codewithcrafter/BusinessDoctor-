@@ -9,7 +9,7 @@ declare(strict_types=1);
 
 $serviceName = 'SEO — Search Engine Optimization';
 $serviceSlug = 'seo';
-$consultationUrl = appUrl('contact.php?service=' . urlencode($serviceName));
+$consultationUrl = appUrl('contact?service=' . urlencode($serviceName));
 ?>
 
 <!-- ============================================================
@@ -44,25 +44,6 @@ $consultationUrl = appUrl('contact.php?service=' . urlencode($serviceName));
               <polyline points="6 9 12 15 18 9" />
             </svg>
           </a>
-        </div>
-
-        <div class="srv-hero-stats">
-          <div class="srv-hero-stat-item">
-            <span class="srv-hero-stat-val">3.8x</span>
-            <span class="srv-hero-stat-lbl">Organic Traffic Growth</span>
-          </div>
-          <div class="srv-hero-stat-item">
-            <span class="srv-hero-stat-val">50+</span>
-            <span class="srv-hero-stat-lbl">Keywords on Page 1</span>
-          </div>
-          <div class="srv-hero-stat-item">
-            <span class="srv-hero-stat-val">62%</span>
-            <span class="srv-hero-stat-lbl">Lower Cost per Lead</span>
-          </div>
-          <div class="srv-hero-stat-item">
-            <span class="srv-hero-stat-val">90 Days</span>
-            <span class="srv-hero-stat-lbl">to First Results</span>
-          </div>
         </div>
       </div>
 
@@ -375,7 +356,7 @@ $consultationUrl = appUrl('contact.php?service=' . urlencode($serviceName));
           <strong class="text-white">A faster, crawlable site that ranks more pages.</strong>
         </div>
         <div class="pt-3">
-          <a href="<?= appUrl('contact.php?service=' . urlencode($serviceName) . '&capability=' . urlencode('Technical SEO & Site Audit')) ?>"
+          <a href="<?= appUrl('contact?service=' . urlencode($serviceName) . '&capability=' . urlencode('Technical SEO & Site Audit')) ?>"
             class="srv-link-action">
             <span>Inquire About This Service</span>
             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
@@ -422,7 +403,7 @@ $consultationUrl = appUrl('contact.php?service=' . urlencode($serviceName));
           <strong class="text-white">More calls, walk-ins, and direction requests.</strong>
         </div>
         <div class="pt-3">
-          <a href="<?= appUrl('contact.php?service=' . urlencode($serviceName) . '&capability=' . urlencode('Local SEO Services in Delhi')) ?>"
+          <a href="<?= appUrl('contact?service=' . urlencode($serviceName) . '&capability=' . urlencode('Local SEO Services in Delhi')) ?>"
             class="srv-link-action">
             <span>Inquire About This Service</span>
             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
@@ -469,7 +450,7 @@ $consultationUrl = appUrl('contact.php?service=' . urlencode($serviceName));
           <strong class="text-white">Improve website visibility in search engine</strong>
         </div>
         <div class="pt-3">
-          <a href="<?= appUrl('contact.php?service=' . urlencode($serviceName) . '&capability=' . urlencode('On-Page SEO Services')) ?>"
+          <a href="<?= appUrl('contact?service=' . urlencode($serviceName) . '&capability=' . urlencode('On-Page SEO Services')) ?>"
             class="srv-link-action">
             <span>Inquire About This Service</span>
             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
@@ -514,7 +495,7 @@ $consultationUrl = appUrl('contact.php?service=' . urlencode($serviceName));
           <strong class="text-white">Revenue growth without adding ad spend.</strong>
         </div>
         <div class="pt-3">
-          <a href="<?= appUrl('contact.php?service=' . urlencode($serviceName) . '&capability=' . urlencode('E-commerce & Enterprise SEO')) ?>"
+          <a href="<?= appUrl('contact?service=' . urlencode($serviceName) . '&capability=' . urlencode('E-commerce & Enterprise SEO')) ?>"
             class="srv-link-action">
             <span>Inquire About This Service</span>
             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
@@ -560,7 +541,7 @@ $consultationUrl = appUrl('contact.php?service=' . urlencode($serviceName));
           <strong class="text-white">Building high domain authority of website</strong>
         </div>
         <div class="pt-3">
-          <a href="<?= appUrl('contact.php?service=' . urlencode($serviceName) . '&capability=' . urlencode('Off-Page SEO Services')) ?>"
+          <a href="<?= appUrl('contact?service=' . urlencode($serviceName) . '&capability=' . urlencode('Off-Page SEO Services')) ?>"
             class="srv-link-action">
             <span>Inquire About This Service</span>
             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
@@ -607,7 +588,7 @@ $consultationUrl = appUrl('contact.php?service=' . urlencode($serviceName));
           <strong class="text-white">Relevant content for users</strong>
         </div>
         <div class="pt-3">
-          <a href="<?= appUrl('contact.php?service=' . urlencode($serviceName) . '&capability=' . urlencode('SEO Content Optimisation')) ?>"
+          <a href="<?= appUrl('contact?service=' . urlencode($serviceName) . '&capability=' . urlencode('SEO Content Optimisation')) ?>"
             class="srv-link-action">
             <span>Inquire About This Service</span>
             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
@@ -1177,7 +1158,7 @@ $consultationUrl = appUrl('contact.php?service=' . urlencode($serviceName));
                   <polyline points="12 5 19 12 12 19" />
                 </svg>
               </a>
-              <a href="<?= appUrl('audit.php') ?>" class="btn-srv-secondary btn-srv-lg">
+              <a href="<?= appUrl('audit') ?>" class="btn-srv-secondary btn-srv-lg">
                 <span>Request Digital Audit</span>
                 <svg class="btn-srv-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
                   <polyline points="9 18 15 12 9 6" />
@@ -1215,7 +1196,7 @@ $consultationUrl = appUrl('contact.php?service=' . urlencode($serviceName));
                 <h3 class="srv-form-title">Request Technical Consultation</h3>
                 <p class="srv-form-subtitle">Direct consultation with senior enterprise architects.</p>
               </div>
-              <form action="<?= appUrl('contact.php') ?>" method="GET" class="srv-quick-form">
+              <form action="<?= appUrl('contact') ?>" method="GET" class="srv-quick-form">
                 <input type="hidden" name="service" value="<?= e($serviceName) ?>">
                 <div class="srv-form-group">
                   <label class="srv-form-label" for="quick_name_seo.php">Your Full Name</label>

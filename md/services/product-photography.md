@@ -4,8 +4,8 @@
 
 ## Discipline Information
 - **Practice Area**: 10 Product Photography
-- **Canonical Web URL**: [https://demo.businesdoctor.com/service/product-photography](https://demo.businesdoctor.com/service/product-photography)
-- **Clean Markdown URL**: [https://demo.businesdoctor.com/service/product-photography.md](https://demo.businesdoctor.com/service/product-photography.md)
+- **Canonical Web URL**: [https://demo.businesdoctor.com/product-photography-company-in-delhi](https://demo.businesdoctor.com/product-photography-company-in-delhi)
+- **Clean Markdown URL**: [https://demo.businesdoctor.com/product-photography-company-in-delhi.md](https://demo.businesdoctor.com/product-photography-company-in-delhi.md)
 - **Central Markdown URL**: [https://demo.businesdoctor.com/md/services/product-photography.md](https://demo.businesdoctor.com/md/services/product-photography.md)
 - **Direct Consultation**: [Schedule Practice Scope](https://demo.businesdoctor.com/contact?service=Product+Photography)
 
@@ -25,18 +25,6 @@ PRODUCT PHOTOGRAPHY COMPANY IN DELHI
             Explore Scope
 
           ](#services-list)
-
-            61 MP
-            Sony High-Resolution
-
-            RGB 255
-            Pure White Standards
-
-            100%
-            Marketplace Compliant
-
-            360°
-            Interactive Captures
 
           VISUAL CONVERSION STANDARDS
 
@@ -373,7 +361,7 @@ Yes, we create high-quality product images that follow the requirements of Amazo
 
               ](https://demo.businesdoctor.com/audit)
 
-                +1 (800) 492-3628
+                +91 99994 48988
 
                 sales@businesdoctor.com
 

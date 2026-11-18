@@ -4,8 +4,8 @@
 
 ## Discipline Information
 - **Practice Area**: 04 Ecommerce Management
-- **Canonical Web URL**: [https://demo.businesdoctor.com/service/ecommerce-management](https://demo.businesdoctor.com/service/ecommerce-management)
-- **Clean Markdown URL**: [https://demo.businesdoctor.com/service/ecommerce-management.md](https://demo.businesdoctor.com/service/ecommerce-management.md)
+- **Canonical Web URL**: [https://demo.businesdoctor.com/ecommerce-management-company-in-delhi](https://demo.businesdoctor.com/ecommerce-management-company-in-delhi)
+- **Clean Markdown URL**: [https://demo.businesdoctor.com/ecommerce-management-company-in-delhi.md](https://demo.businesdoctor.com/ecommerce-management-company-in-delhi.md)
 - **Central Markdown URL**: [https://demo.businesdoctor.com/md/services/ecommerce-management.md](https://demo.businesdoctor.com/md/services/ecommerce-management.md)
 - **Direct Consultation**: [Schedule Practice Scope](https://demo.businesdoctor.com/contact?service=Ecommerce+Management)
 
@@ -25,18 +25,6 @@ ECOMMERCE MANAGEMENT COMPANY IN DELHI
             Explore Our Services
 
           ](#services-list)
-
-            1 Team
-            One team for everything. No running behind 5 freelancers
-
-            6 Channels
-            Shopify, WooCommerce, Amazon, Flipkart, Myntra, Meesho
-
-            Profit
-            Plans built around your profit, not just sales numbers
-
-            Delhi NCR
-            Same-day support, phone calls and in-person meetings
 
           What You Get With Us
 
@@ -439,7 +427,7 @@ Yes. Share your store or marketplace link and our ecommerce management company i
 
               ](https://demo.businesdoctor.com/audit)
 
-                +1 (800) 492-3628
+                +91 99994 48988
 
                 sales@businesdoctor.com
 

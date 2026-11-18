@@ -4,8 +4,8 @@
 
 ## Discipline Information
 - **Practice Area**: 08 Video Editing
-- **Canonical Web URL**: [https://demo.businesdoctor.com/service/video-editing](https://demo.businesdoctor.com/service/video-editing)
-- **Clean Markdown URL**: [https://demo.businesdoctor.com/service/video-editing.md](https://demo.businesdoctor.com/service/video-editing.md)
+- **Canonical Web URL**: [https://demo.businesdoctor.com/video-editing-company-in-delhi](https://demo.businesdoctor.com/video-editing-company-in-delhi)
+- **Clean Markdown URL**: [https://demo.businesdoctor.com/video-editing-company-in-delhi.md](https://demo.businesdoctor.com/video-editing-company-in-delhi.md)
 - **Central Markdown URL**: [https://demo.businesdoctor.com/md/services/video-editing.md](https://demo.businesdoctor.com/md/services/video-editing.md)
 - **Direct Consultation**: [Schedule Practice Scope](https://demo.businesdoctor.com/contact?service=Video+Editing)
 
@@ -25,18 +25,6 @@ VIDEO EDITING COMPANY IN DELHI
             Explore Our Services
 
           ](#services-list)
-
-            Fast
-            Fast Turnaround: Delivery date fixed before start
-
-            Included
-            Revisions Included: We fix until it matches brief
-
-            All Ratios
-            Every Platform Size: 9:16, 16:9 and 1:1 files
-
-            100%
-            Full Ownership: Final videos are yours
 
           KEY TAKEAWAYS • WHY BRANDS HIRE BUSINESSDOCTOR?
 
@@ -451,7 +439,7 @@ Yes. Once the project is complete, the final videos are yours to use anywhere yo
 
               ](https://demo.businesdoctor.com/audit)
 
-                +1 (800) 492-3628
+                +91 99994 48988
 
                 sales@businesdoctor.com
 

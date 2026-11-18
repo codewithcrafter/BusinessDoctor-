@@ -116,7 +116,7 @@ require_once __DIR__ . '/includes/header.php';
                   <polyline points="12 5 19 12 12 19" />
                 </svg>
               </a>
-              <a href="contact.php" class="btn btn-secondary btn-lg">
+              <a href="/contact" class="btn btn-secondary btn-lg">
                 <span>Start a Project</span>
               </a>
             </div>
@@ -273,83 +273,135 @@ require_once __DIR__ . '/includes/header.php';
 
     <?php
     $featuredCapabilities = [
-      'web-software-development' => [
+      'seo' => [
         'number' => '01',
-        'name' => 'Web and software development services',
-        'description' => 'Business Doctor is an Affordable Digital Marketing company in Delhi that provides digital marketing services. We build every website from scratch and custom software solutions according to your needs, creating secure, fast and easy to use digital solutions. Our services reflect your brand identity and make your brand remarkable.',
+        'name' => 'SEO Services in Delhi',
+        'description' => 'Full-spectrum search engine optimization designed to dominate high-intent keywords, fix technical bottlenecks, and drive sustainable organic revenue for your business.',
         'features' => [
-          'Custom Website and Software Development',
-          'User-Friendly UI/UX Design',
-          'Mobile Friendly Development',
-          'Advanced Features and API Integration',
-          'Secure and Scalable Digital Solutions',
-        ],
-        'url' => getServiceUrl('web-development'),
-      ],
-      'digital-marketing-ppc-seo' => [
-        'number' => '02',
-        'name' => 'Digital marketing, PPC and SEO services',
-        'description' => 'Better search engine optimization, digital marketing and performance ads can help your website rank and get you more leads, as we are an affordable digital marketing company in Delhi. Our team provides you with everything that makes your business recognisable, from improving Google search rankings to running targeted ad campaigns. Business Doctor’s team provides you with the best and affordable seo and digital marketing services in delhi NCR.',
-        'features' => [
-          'Effective Keyword Research and SEO',
-          'On-Page, Off-Page and Technical SEO Optimisation',
-          'Google Ads and PPC Campaign Management',
-          'Social Media and Paid Advertising',
-          'Lead Generation and Performance Tracking',
+          'Technical SEO Audits & Core Web Vitals Optimization',
+          'High-Intent Keyword Strategy & Commercial Mapping',
+          'On-Page & Long-Form Content Architecture',
+          'Authoritative White-Hat Link Acquisition',
+          'Local Delhi NCR & Map Pack 3-Pack Ranking',
         ],
         'url' => getServiceUrl('seo'),
       ],
-      'ui-ux-brand-identity' => [
-        'number' => '03',
-        'name' => 'UI/UX Design and Brand Identity',
-        'description' => 'Business doctors create attractive and user friendly websites and software that help your business grow and provide you with leads, so that you can reach quality customers. We customise every project to make your brand memorable and to provide users with the most seamless experience.',
+      'ppc-paid-ads' => [
+        'number' => '02',
+        'name' => 'PPC Company in Delhi',
+        'description' => 'Data-driven performance advertising across Google Ads, Meta Ads, and LinkedIn to maximize pipeline ROAS and eliminate wasted ad spend.',
         'features' => [
-          'User Friendly UI/UX Design',
-          'Creative Websites',
-          'Logo and Brand Identity Design',
-          'Engaging Visual and Graphic Design',
-          'Consistent Brand Colours and Typography',
+          'Google Search & Performance Max Campaigns',
+          'Meta (Instagram & Facebook) High-ROAS Funnels',
+          'Negative Keyword Sculpting & Budget Protection',
+          'First-Party Conversion Tracking & Pixel Setup',
+          'Continuous Creative Testing & Data-Driven Scaling',
         ],
-        'url' => getServiceUrl('graphic-design'),
+        'url' => getServiceUrl('ppc-paid-ads'),
       ],
-      'ecommerce-marketplace-management' => [
-        'number' => '04',
-        'name' => 'E-Commerce and Marketplace Management Service',
-        'description' => 'Businessdoctor is the best digital marketing company in Delhi that helps businesses manage and grow their online stores across different platforms, from product listing and inventory management to order handling and sales tracking. Our team ensures a smooth shopping experience for customers and better business growth.',
+      'web-development' => [
+        'number' => '03',
+        'name' => 'Web Development Company in Delhi',
+        'description' => 'Custom full-stack web applications, headless commerce storefronts, and enterprise corporate portals engineered for sub-second speeds, security, and high conversions.',
         'features' => [
-          'Online Store Management',
-          'Product Listing and Optimisation',
-          'Marketplace Account Management',
-          'Order and Inventory Management',
-          'Sales and Performance Tracking',
+          'Custom Full-Stack Web Development from Scratch',
+          'Ultra-Fast Performance & Sub-Second TTFB',
+          'Mobile-First Responsive UI/UX Architecture',
+          'REST & GraphQL API Integrations',
+          'Enterprise OWASP Security Hardening',
+        ],
+        'url' => getServiceUrl('web-development'),
+      ],
+      'social-media-marketing' => [
+        'number' => '04',
+        'name' => 'Social Media Marketing Company in Delhi',
+        'description' => 'High-impact organic and paid social media marketing campaigns across Instagram, LinkedIn, and Facebook designed to build brand authority and generate qualified leads.',
+        'features' => [
+          'Strategic Social Content Calendar & Brand Voice',
+          'High-Engagement Reel & Story Creative Production',
+          'Targeted Audience Growth & Community Building',
+          'Paid Social Acquisition & Retargeting Funnels',
+          'Real-Time Telemetry & Transparent Reporting',
+        ],
+        'url' => getServiceUrl('social-media-marketing'),
+      ],
+      'smo' => [
+        'number' => '05',
+        'name' => 'SMO Company in Delhi',
+        'description' => 'Comprehensive social media optimization enhancing brand presence, profile authority, and organic discoverability across all major digital channels.',
+        'features' => [
+          'Complete Profile & Bio Search Architecture',
+          'Hashtag & Keyword Discovery Optimization',
+          'Cross-Platform Visual & Voice Consistency',
+          'Reputation Management & Social Trust Signals',
+          'Viral Community Engagement Strategies',
+        ],
+        'url' => getServiceUrl('smo'),
+      ],
+      'ecommerce-management' => [
+        'number' => '06',
+        'name' => 'E-Commerce Management Company in Delhi',
+        'description' => 'End-to-end multi-channel marketplace management, catalog synchronization, and storefront revenue optimization across Amazon, Flipkart, Shopify, and Meesho.',
+        'features' => [
+          'Amazon & Flipkart Full Account Management',
+          'Multi-Channel Inventory & Order Synchronization',
+          'A+ Content & High-Converting Storefronts',
+          'Buy Box Defense & Margin-Safe Algorithmic Repricing',
+          'Marketplace Sponsored Ads Optimization',
         ],
         'url' => getServiceUrl('ecommerce-management'),
       ],
-      'creative-production-video-marketing' => [
-        'number' => '05',
-        'name' => 'Creative Production and Video Marketing',
-        'description' => 'Businessdoctor is the best online digital marketing company in Delhi. Our team creates interesting and engaging content that grabs the audience\'s attention. Your engaging Instagram reels, product photography, videography and more everything is our responsibility.',
+      'google-business-profile' => [
+        'number' => '07',
+        'name' => 'Google Business Profile Company in Delhi',
+        'description' => 'Local SEO and Google Maps 3-pack dominance to capture nearby customers searching with immediate purchase and visit intent.',
         'features' => [
-          'Promotional Video Creation',
-          'Social Media Reels and Shorts',
-          'Product Photography and Videography',
-          'UGC Video Production',
-          'Video Editing and Motion Graphics',
+          'Google Maps 3-Pack Ranking & Proximity Strategy',
+          'Profile Verification & High-Relevance Categorization',
+          'Customer Review Acquisition & Review Management',
+          'Local Citation Consistency & NAP Uniformity',
+          'Google Posts, Offers & Product Catalog Sync',
+        ],
+        'url' => getServiceUrl('google-business-profile'),
+      ],
+      'graphic-design' => [
+        'number' => '08',
+        'name' => 'Graphic Design Company in Delhi',
+        'description' => 'Bespoke corporate identity, marketing collateral, brand guidelines, and high-impact visual design that makes your business memorable.',
+        'features' => [
+          'Logo & Complete Corporate Brand Guidelines',
+          'Marketing Collateral & Pitch Deck Design',
+          'Social Media Creatives & Ad Banner Kits',
+          'Packaging, Print & Digital-Ready Asset Formats',
+          'Custom Vector Illustrations & Visual Elements',
+        ],
+        'url' => getServiceUrl('graphic-design'),
+      ],
+      'video-editing' => [
+        'number' => '09',
+        'name' => 'Video Editing Company in Delhi',
+        'description' => 'High-retention social media reels, product demonstration videos, corporate brand films, and motion graphics that turn viewers into paying customers.',
+        'features' => [
+          'High-Retention Instagram Reels & YouTube Shorts',
+          'Commercial Product & Explainer Video Editing',
+          'Custom Motion Graphics & Kinetic Typography',
+          'Sound Design, Mixing & Vocal Mastering',
+          'Multi-Platform Aspect Ratios (9:16, 16:9, 1:1)',
         ],
         'url' => getServiceUrl('video-editing'),
       ],
-      'cloud-solutions-it-consulting' => [
-        'number' => '06',
-        'name' => 'Cloud Solutions and IT Consulting',
-        'description' => 'We are the Affordable Digital Marketing company in Delhi that provides IT solutions and cloud services to your business that make your data safe and daily operations smooth. We are the Best digital marketing company in Delhi, helping with cloud setup, data management, security and technical support so that you can manage your business technology easily.',
+      'product-photography' => [
+        'number' => '10',
+        'name' => 'Product Photography Company in Delhi',
+        'description' => '61MP commercial studio product photography adhering strictly to Amazon, Flipkart, and premium luxury e-commerce catalog specifications.',
         'features' => [
-          'Cloud Storage and Data Management',
-          'Cloud Setup and Migration',
-          'Data Security and Backup Solutions',
-          'IT Infrastructure Management',
-          'Technical Support and System Monitoring',
+          '61MP High-Resolution Commercial Studio Captures',
+          'Pure White RGB 255 Marketplace-Compliant Standards',
+          'Creative Lifestyle & In-Context Model Staging',
+          '360° Interactive Product Spin Photography',
+          'High-End Retouching & Color Fidelity Matching',
         ],
-        'url' => getServicesOverviewUrl(),
+        'url' => getServiceUrl('product-photography'),
       ],
     ];
     ?>
@@ -457,7 +509,7 @@ require_once __DIR__ . '/includes/header.php';
                 <p style="font-size: 0.85rem; color: rgba(255,255,255,0.78); line-height: 1.5; margin-bottom: 1rem;">
                   Need an architectural evaluation or custom scope for <?= e($p['name']) ?>?
                 </p>
-                <a href="contact.php" class="btn btn-accent btn-sm">
+                <a href="/contact" class="btn btn-accent btn-sm">
                   <span>Consult With Tech Lead</span>
                 </a>
               </div>
@@ -1506,7 +1558,7 @@ require_once __DIR__ . '/includes/header.php';
 
             <!-- Footer Link -->
             <div class="rc-footer">
-              <a href="case-study-detail.php?slug=<?= urlencode($case['slug']) ?>" class="rc-action-btn">
+              <a href="<?= getCaseStudyUrl($case['slug']) ?>" class="rc-action-btn">
                 <span>View Full Case Study</span>
                 <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2">
                   <line x1="5" y1="12" x2="19" y2="12" />
@@ -1520,7 +1572,7 @@ require_once __DIR__ . '/includes/header.php';
     </div>
 
     <div style="text-align: center; margin-top: 3.5rem;">
-      <a href="case-studies.php" class="btn btn-secondary btn-lg">
+      <a href="/case-studies" class="btn btn-secondary btn-lg">
         <span>Explore All Case Studies</span>
         <svg class="btn-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
           <line x1="5" y1="12" x2="19" y2="12" />
@@ -2022,14 +2074,14 @@ require_once __DIR__ . '/includes/header.php';
         </p>
 
         <div class="closing-cta-buttons">
-          <a href="contact.php" class="btn btn-accent btn-lg">
+          <a href="/contact" class="btn btn-accent btn-lg">
             <span>Start an Enterprise Project</span>
             <svg class="btn-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
               <line x1="5" y1="12" x2="19" y2="12" />
               <polyline points="12 5 19 12 12 19" />
             </svg>
           </a>
-          <a href="audit.php" class="btn btn-outline-gold btn-lg">
+          <a href="/audit" class="btn btn-outline-gold btn-lg">
             <span>Request Free Digital Audit</span>
           </a>
         </div>

@@ -12,6 +12,8 @@ require_once __DIR__ . '/includes/functions.php';
 
 $pageTitle = 'About our company / Business Doctor - Digital Marketing company in Delhi';
 $pageDescription = 'Business Doctor is a digital marketing company in Delhi that provides seo services in delhi , ppc services, social media marketing in Delhi, website development services and graphic design services in Delhi, which helps your business to grow and reach its full potential.';
+$canonicalUrl = appUrl('about');
+$schemaPageKey = 'about';
 
 require_once __DIR__ . '/includes/header.php';
 ?>
@@ -38,14 +40,14 @@ require_once __DIR__ . '/includes/header.php';
     </div>
 
     <div class="about-hero-actions">
-      <a href="contact.php" class="btn btn-accent btn-lg">
+      <a href="/contact" class="btn btn-accent btn-lg">
         <span>Schedule a Project Consultation</span>
         <svg class="btn-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
           <line x1="5" y1="12" x2="19" y2="12"/>
           <polyline points="12 5 19 12 12 19"/>
         </svg>
       </a>
-      <a href="services.php" class="btn btn-outline-gold btn-lg">
+      <a href="/services" class="btn btn-outline-gold btn-lg">
         <span>Explore Our Services</span>
       </a>
     </div>
@@ -328,14 +330,14 @@ require_once __DIR__ . '/includes/header.php';
           Schedule an introductory discovery call with our tech leads to discuss your web development, digital marketing, or branding requirements.
         </p>
         <div class="closing-cta-buttons">
-          <a href="contact.php" class="btn btn-accent btn-lg">
+          <a href="/contact" class="btn btn-accent btn-lg">
             <span>Schedule a Project Consultation</span>
             <svg class="btn-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
               <line x1="5" y1="12" x2="19" y2="12"/>
               <polyline points="12 5 19 12 12 19"/>
             </svg>
           </a>
-          <a href="audit.php" class="btn btn-outline-gold btn-lg">
+          <a href="/audit" class="btn btn-outline-gold btn-lg">
             <span>Request Free Digital Audit</span>
           </a>
         </div>

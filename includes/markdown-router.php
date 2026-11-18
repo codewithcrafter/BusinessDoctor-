@@ -83,8 +83,9 @@ class MarkdownRouter
         // Normalize clean route
         $cleanRoute = ($cleanRoute !== '/') ? rtrim($cleanRoute, '/') : '/';
 
-        // Block any request trying to access an index on /md or retired /llms.md
-        if ($cleanRoute === '/md' || $cleanRoute === '/md/index' || $cleanRoute === '/llms' || $path === '/llms.md') {
+        // Block any request trying to access an index on /md or retired /llms.md or /home.md
+        if ($cleanRoute === '/md' || $cleanRoute === '/md/index' || $cleanRoute === '/llms' || $path === '/llms.md'
+            || $cleanRoute === '/home' || $cleanRoute === '/' || $cleanRoute === '/index' || $path === '/home.md' || $path === '/md/home.md' || $path === '/.md' || $cleanRoute === '/index.php' || $cleanRoute === '/home.php') {
             self::sendNotFound("The requested Markdown document does not exist.");
         }
 
@@ -108,11 +109,7 @@ class MarkdownRouter
             }
 
             if ($subClean === 'home' || $subClean === 'index') {
-                $physicalHome = ROOT_PATH . '/md/home.md';
-                if (file_exists($physicalHome) && is_file($physicalHome)) {
-                    self::sendResponse(file_get_contents($physicalHome));
-                }
-                self::sendResponse(SeoSyncEngine::generateStaticPageMarkdown('home'));
+                self::sendNotFound("The requested Markdown document does not exist.");
             }
             if (in_array($subClean, ['about', 'contact', 'audit', 'services', 'insights', 'case-studies'], true)) {
                 $physicalPage = ROOT_PATH . '/md/' . $subClean . '.md';
@@ -133,14 +130,10 @@ class MarkdownRouter
         }
 
         // ----------------------------------------------------
-        // 3. Homepage Markdown: /home.md, /.md, /home, /index.php.md
+        // 3. Homepage Markdown: Blocked & Retired
         // ----------------------------------------------------
-        if ($cleanRoute === '/' || $cleanRoute === '/index.php' || $cleanRoute === '/home' || $cleanRoute === '/index') {
-            $physicalHome = ROOT_PATH . '/md/home.md';
-            if (file_exists($physicalHome) && is_file($physicalHome)) {
-                self::sendResponse(file_get_contents($physicalHome));
-            }
-            self::sendResponse(SeoSyncEngine::generateStaticPageMarkdown('home'));
+        if ($cleanRoute === '/' || $cleanRoute === '/index.php' || $cleanRoute === '/home' || $cleanRoute === '/index' || $cleanRoute === '/home.php') {
+            self::sendNotFound("The requested Markdown document does not exist.");
         }
 
         // ----------------------------------------------------
@@ -178,13 +171,12 @@ class MarkdownRouter
 
         // ----------------------------------------------------
         // 7. Individual Service Detail Pages:
-        //    A: /service/{slug}.md
-        //    B: /company/{slug}.md
+        //    A: /{slug}-company-in-delhi.md & /seo-services-in-delhi.md
+        //    B: /service/{slug}.md
         //    C: /services/{slug}.md
-        //    D: /{slug}-company-in-delhi.md
-        //    E: /service-detail.php.md?slug={slug}
+        //    D: /service-detail.php.md?slug={slug}
         // ----------------------------------------------------
-        if (preg_match('#^/(?:service|services|company)/([a-zA-Z0-9_-]+)$#', $cleanRoute, $m) || preg_match('#^/([a-zA-Z0-9_-]+)-company-in-delhi$#', $cleanRoute, $m)) {
+        if (preg_match('#^/(?:service|services|company)/([a-zA-Z0-9_-]+)$#', $cleanRoute, $m) || preg_match('#^/([a-zA-Z0-9_-]+-(?:company|services)-in-delhi)$#', $cleanRoute, $m) || preg_match('#^/([a-zA-Z0-9_-]+)-(?:company|services)-in-delhi$#', $cleanRoute, $m)) {
             if ($m[1] === 'digital-marketing') {
                 $physicalServices = ROOT_PATH . '/md/services.md';
                 if (file_exists($physicalServices) && is_file($physicalServices)) {

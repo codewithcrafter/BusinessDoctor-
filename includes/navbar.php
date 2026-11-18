@@ -13,7 +13,7 @@ $practiceAreas = getPracticeAreas();
   <div class="container navbar">
     <!-- Brand Logo -->
     <a href="<?= appUrl() ?>" class="brand-logo" aria-label="BusinessDoctor Home">
-      <img src="<?= getAssetUrl('assets/img/bdr_logo_transparent.png') ?>" alt="BusinessDoctor Logo" class="brand-logo-img">
+      <img src="<?= getAssetUrl('assets/img/bdr_logo_transparent.png') ?>" alt="BusinessDoctor Logo" class="brand-logo-img" width="1816" height="1131">
     </a>
 
     <!-- Desktop Navigation Menu -->

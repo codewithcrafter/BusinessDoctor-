@@ -9,7 +9,7 @@ declare(strict_types=1);
 
 $serviceName = 'Web & Custom Software Development';
 $serviceSlug = 'web-software-development';
-$consultationUrl = appUrl('contact.php?service=' . urlencode($serviceName));
+$consultationUrl = appUrl('contact?service=' . urlencode($serviceName));
 ?>
 
 <!-- ============================================================
@@ -43,25 +43,6 @@ $consultationUrl = appUrl('contact.php?service=' . urlencode($serviceName));
               <polyline points="6 9 12 15 18 9"/>
             </svg>
           </a>
-        </div>
-
-        <div class="srv-hero-stats">
-          <div class="srv-hero-stat-item">
-            <span class="srv-hero-stat-val">&lt; 0.8s</span>
-            <span class="srv-hero-stat-lbl">Global TTFB &amp; Load</span>
-          </div>
-          <div class="srv-hero-stat-item">
-            <span class="srv-hero-stat-val">100%</span>
-            <span class="srv-hero-stat-lbl">Clean Custom Code</span>
-          </div>
-          <div class="srv-hero-stat-item">
-            <span class="srv-hero-stat-val">99.9%</span>
-            <span class="srv-hero-stat-lbl">Uptime SLA Reliability</span>
-          </div>
-          <div class="srv-hero-stat-item">
-            <span class="srv-hero-stat-val">95+</span>
-            <span class="srv-hero-stat-lbl">Lighthouse Score</span>
-          </div>
         </div>
       </div>
 
@@ -325,7 +306,7 @@ $consultationUrl = appUrl('contact.php?service=' . urlencode($serviceName));
           <strong class="text-white">Built specifically for your business logic with zero framework overhead.</strong>
         </div>
         <div class="pt-3">
-          <a href="<?= appUrl('contact.php?service=' . urlencode($serviceName) . '&capability=' . urlencode('Custom Web Application Engineering')) ?>" class="srv-link-action">
+          <a href="<?= appUrl('contact?service=' . urlencode($serviceName) . '&capability=' . urlencode('Custom Web Application Engineering')) ?>" class="srv-link-action">
             <span>Inquire About This Service</span>
             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
           </a>
@@ -360,7 +341,7 @@ $consultationUrl = appUrl('contact.php?service=' . urlencode($serviceName));
           <strong class="text-white">Projects unmatched executive credibility and converts visitors into qualified inbound leads.</strong>
         </div>
         <div class="pt-3">
-          <a href="<?= appUrl('contact.php?service=' . urlencode($serviceName) . '&capability=' . urlencode('Enterprise Corporate & Service Websites')) ?>" class="srv-link-action">
+          <a href="<?= appUrl('contact?service=' . urlencode($serviceName) . '&capability=' . urlencode('Enterprise Corporate & Service Websites')) ?>" class="srv-link-action">
             <span>Inquire About This Service</span>
             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
           </a>
@@ -395,7 +376,7 @@ $consultationUrl = appUrl('contact.php?service=' . urlencode($serviceName));
           <strong class="text-white">Automates customer communications and eliminates costly manual back-office tasks.</strong>
         </div>
         <div class="pt-3">
-          <a href="<?= appUrl('contact.php?service=' . urlencode($serviceName) . '&capability=' . urlencode('Client Portals & B2B Dashboards')) ?>" class="srv-link-action">
+          <a href="<?= appUrl('contact?service=' . urlencode($serviceName) . '&capability=' . urlencode('Client Portals & B2B Dashboards')) ?>" class="srv-link-action">
             <span>Inquire About This Service</span>
             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
           </a>
@@ -430,7 +411,7 @@ $consultationUrl = appUrl('contact.php?service=' . urlencode($serviceName));
           <strong class="text-white">Allows your software to integrate seamlessly with the modern digital ecosystem.</strong>
         </div>
         <div class="pt-3">
-          <a href="<?= appUrl('contact.php?service=' . urlencode($serviceName) . '&capability=' . urlencode('High-Speed REST API Architecture')) ?>" class="srv-link-action">
+          <a href="<?= appUrl('contact?service=' . urlencode($serviceName) . '&capability=' . urlencode('High-Speed REST API Architecture')) ?>" class="srv-link-action">
             <span>Inquire About This Service</span>
             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
           </a>
@@ -465,7 +446,7 @@ $consultationUrl = appUrl('contact.php?service=' . urlencode($serviceName));
           <strong class="text-white">Ensures queries execute in single-digit milliseconds even as data volume expands exponentially.</strong>
         </div>
         <div class="pt-3">
-          <a href="<?= appUrl('contact.php?service=' . urlencode($serviceName) . '&capability=' . urlencode('Database Architecture & Query Optimization')) ?>" class="srv-link-action">
+          <a href="<?= appUrl('contact?service=' . urlencode($serviceName) . '&capability=' . urlencode('Database Architecture & Query Optimization')) ?>" class="srv-link-action">
             <span>Inquire About This Service</span>
             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
           </a>
@@ -500,7 +481,7 @@ $consultationUrl = appUrl('contact.php?service=' . urlencode($serviceName));
           <strong class="text-white">Eliminates technical debt and unlocks modern performance without rewriting from scratch.</strong>
         </div>
         <div class="pt-3">
-          <a href="<?= appUrl('contact.php?service=' . urlencode($serviceName) . '&capability=' . urlencode('Legacy Modernization & Code Refactoring')) ?>" class="srv-link-action">
+          <a href="<?= appUrl('contact?service=' . urlencode($serviceName) . '&capability=' . urlencode('Legacy Modernization & Code Refactoring')) ?>" class="srv-link-action">
             <span>Inquire About This Service</span>
             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
           </a>
@@ -1065,7 +1046,7 @@ $consultationUrl = appUrl('contact.php?service=' . urlencode($serviceName));
                 <span>Get a Free Consultation</span>
                 <svg class="btn-srv-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
               </a>
-              <a href="<?= appUrl('audit.php') ?>" class="btn-srv-secondary btn-srv-lg">
+              <a href="<?= appUrl('audit') ?>" class="btn-srv-secondary btn-srv-lg">
                 <span>Request Digital Audit</span>
                 <svg class="btn-srv-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="9 18 15 12 9 6"/></svg>
               </a>
@@ -1091,7 +1072,7 @@ $consultationUrl = appUrl('contact.php?service=' . urlencode($serviceName));
                 <h3 class="srv-form-title">Request Technical Consultation</h3>
                 <p class="srv-form-subtitle">Direct consultation with senior enterprise architects.</p>
               </div>
-              <form action="<?= appUrl('contact.php') ?>" method="GET" class="srv-quick-form">
+              <form action="<?= appUrl('contact') ?>" method="GET" class="srv-quick-form">
                 <input type="hidden" name="service" value="<?= e($serviceName) ?>">
                 <div class="srv-form-group">
                   <label class="srv-form-label" for="quick_name_web-software-development.php">Your Full Name</label>

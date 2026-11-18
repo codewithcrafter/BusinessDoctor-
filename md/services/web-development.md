@@ -4,8 +4,8 @@
 
 ## Discipline Information
 - **Practice Area**: 09 Web Development
-- **Canonical Web URL**: [https://demo.businesdoctor.com/service/web-development](https://demo.businesdoctor.com/service/web-development)
-- **Clean Markdown URL**: [https://demo.businesdoctor.com/service/web-development.md](https://demo.businesdoctor.com/service/web-development.md)
+- **Canonical Web URL**: [https://demo.businesdoctor.com/web-development-company-in-delhi](https://demo.businesdoctor.com/web-development-company-in-delhi)
+- **Clean Markdown URL**: [https://demo.businesdoctor.com/web-development-company-in-delhi.md](https://demo.businesdoctor.com/web-development-company-in-delhi.md)
 - **Central Markdown URL**: [https://demo.businesdoctor.com/md/services/web-development.md](https://demo.businesdoctor.com/md/services/web-development.md)
 - **Direct Consultation**: [Schedule Practice Scope](https://demo.businesdoctor.com/contact?service=Web+Development)
 
@@ -25,18 +25,6 @@ WEBSITE DEVELOPMENT COMPANY IN DELHI
             Explore Capabilities
 
           ](#services-list)
-
-            No Bloat
-            No Extra Code: Simple & lightweight
-
-            < 1.0s
-            Fast Loading: Smooth user experience
-
-            OWASP
-            Strong Security: Secure coding methods
-
-            PHP 8+
-            Long-Lasting Code: Clean & organised
 
           Architectural Philosophy
 
@@ -408,7 +396,7 @@ Corporate sites usually take between 4-6 weeks. Custom web apps & portals take b
 
               ](https://demo.businesdoctor.com/audit)
 
-                +1 (800) 492-3628
+                +91 99994 48988
 
                 sales@businesdoctor.com
 

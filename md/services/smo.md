@@ -4,8 +4,8 @@
 
 ## Discipline Information
 - **Practice Area**: 01 SMO — Social Media Optimization
-- **Canonical Web URL**: [https://demo.businesdoctor.com/service/smo](https://demo.businesdoctor.com/service/smo)
-- **Clean Markdown URL**: [https://demo.businesdoctor.com/service/smo.md](https://demo.businesdoctor.com/service/smo.md)
+- **Canonical Web URL**: [https://demo.businesdoctor.com/smo-company-in-delhi](https://demo.businesdoctor.com/smo-company-in-delhi)
+- **Clean Markdown URL**: [https://demo.businesdoctor.com/smo-company-in-delhi.md](https://demo.businesdoctor.com/smo-company-in-delhi.md)
 - **Central Markdown URL**: [https://demo.businesdoctor.com/md/services/smo.md](https://demo.businesdoctor.com/md/services/smo.md)
 - **Direct Consultation**: [Schedule Practice Scope](https://demo.businesdoctor.com/contact?service=SMO+%E2%80%94+Social+Media+Optimization)
 
@@ -25,18 +25,6 @@ SOCIAL MEDIA OPTIMIZATION • DELHI
             Explore Our Services
 
           ](#services-list)
-
-            150+
-            Profiles Optimized
-
-            6
-            Platforms Managed
-
-            90 Days
-            Growth Roadmap
-
-            24 Hrs
-            Free Audit Turnaround
 
           KEY TAKEAWAYS AT A GLANCE
 
@@ -453,7 +441,7 @@ You receive a weekly progress note and a detailed monthly report covering reach,
 
               No contract. No obligation. Your audit is yours to keep.
 
-                +1 (800) 492-3628
+                +91 99994 48988
 
                 sales@businesdoctor.com
 

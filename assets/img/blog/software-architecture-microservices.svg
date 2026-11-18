@@ -39,7 +39,7 @@
   <!-- API Gateway Top -->
   <rect x="420" y="240" width="440" height="60" rx="8" fill="rgba(99, 102, 241, 0.2)" stroke="#6366F1" stroke-width="1.5" />
   <text x="640" y="268" fill="#FFFFFF" font-size="15" font-weight="800" text-anchor="middle">ENTERPRISE API GATEWAY / REVERSE PROXY</text>
-  <text x="640" y="288" fill="#818CF8" font-size="11" text-anchor="middle">mTLS Authentication &bull; Rate Limiting &bull; JWT Validation</text>
+  <text x="640" y="288" fill="#818CF8" font-size="11" text-anchor="middle">mTLS Authentication &#8226; Rate Limiting &#8226; JWT Validation</text>
 
   <!-- Connectors from Gateway -->
   <line x1="490" y1="300" x2="270" y2="350" stroke="#6366F1" stroke-width="2" />
@@ -70,12 +70,12 @@
   <!-- Event Bus Stream -->
   <rect x="160" y="495" width="960" height="55" rx="8" fill="rgba(10, 15, 30, 0.9)" stroke="#F59E0B" stroke-dasharray="6" />
   <text x="640" y="525" fill="#FCD34D" font-size="14" font-weight="700" text-anchor="middle">DISTRIBUTED EVENT LOG (APACHE KAFKA / RABBITMQ)</text>
-  <text x="640" y="542" fill="#94A3B8" font-size="11" text-anchor="middle">Zero Data Loss &bull; At-Least-Once Delivery Semantics</text>
+  <text x="640" y="542" fill="#94A3B8" font-size="11" text-anchor="middle">Zero Data Loss &#8226; At-Least-Once Delivery Semantics</text>
 
   <!-- Connectors to Bus -->
   <line x1="270" y1="460" x2="270" y2="495" stroke="#F59E0B" stroke-width="1.5" />
   <line x1="640" y1="460" x2="640" y2="495" stroke="#F59E0B" stroke-width="1.5" />
   <line x1="1010" y1="460" x2="1010" y2="495" stroke="#F59E0B" stroke-width="1.5" />
 
-  <text x="640" y="605" fill="#10B981" font-size="14" font-weight="700" text-anchor="middle">Isolated Failure Domains &bull; Horizontal Scalability</text>
+  <text x="640" y="605" fill="#10B981" font-size="14" font-weight="700" text-anchor="middle">Isolated Failure Domains &#8226; Horizontal Scalability</text>
 </svg>

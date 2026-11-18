@@ -4,8 +4,8 @@
 
 ## Discipline Information
 - **Practice Area**: 03 PPC / Paid Ads
-- **Canonical Web URL**: [https://demo.businesdoctor.com/service/ppc-paid-ads](https://demo.businesdoctor.com/service/ppc-paid-ads)
-- **Clean Markdown URL**: [https://demo.businesdoctor.com/service/ppc-paid-ads.md](https://demo.businesdoctor.com/service/ppc-paid-ads.md)
+- **Canonical Web URL**: [https://demo.businesdoctor.com/ppc-company-in-delhi](https://demo.businesdoctor.com/ppc-company-in-delhi)
+- **Clean Markdown URL**: [https://demo.businesdoctor.com/ppc-company-in-delhi.md](https://demo.businesdoctor.com/ppc-company-in-delhi.md)
 - **Central Markdown URL**: [https://demo.businesdoctor.com/md/services/ppc-paid-ads.md](https://demo.businesdoctor.com/md/services/ppc-paid-ads.md)
 - **Direct Consultation**: [Schedule Practice Scope](https://demo.businesdoctor.com/contact?service=PPC+%2F+Paid+Ads)
 
@@ -469,7 +469,7 @@ Yes. Your ad accounts, data and creatives always stay with you. Share your requi
 
               ](https://demo.businesdoctor.com/audit)
 
-                +1 (800) 492-3628
+                +91 99994 48988
 
                 sales@businesdoctor.com
 

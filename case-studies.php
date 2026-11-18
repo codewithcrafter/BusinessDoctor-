@@ -11,7 +11,7 @@ require_once __DIR__ . '/includes/functions.php';
 
 $pageTitle = 'Enterprise Case Studies & Verified Client Outcomes — BusinessDoctor';
 $pageDescription = 'Examine verified case studies of businesses scaled through custom web development, high-ROI digital marketing, UI/UX design, and marketplace acceleration.';
-$canonicalUrl = appUrl('case-studies.php');
+$canonicalUrl = appUrl('case-studies');
 
 $cases = [];
 try {
@@ -334,7 +334,7 @@ require_once __DIR__ . '/includes/header.php';
             <!-- Card Visual / Cover Image Container (16:9 Full Width, Flush Framing) -->
             <div class="case-card-media">
               <a href="<?= $detailUrl ?>" style="display: block; width: 100%; height: 100%; text-decoration: none;" aria-label="<?= e($c['title']) ?>">
-                <img src="<?= getCaseAssetUrl($caseImg) ?>" alt="<?= e($c['cover_image_alt'] ?: $c['title']) ?>" loading="lazy">
+                <img src="<?= getCaseAssetUrl($caseImg) ?>" alt="<?= e($c['cover_image_alt'] ?: $c['title']) ?>" width="1280" height="720" loading="lazy">
               </a>
               <div style="position: absolute; top: 1rem; left: 1rem; pointer-events: none; z-index: 2;">
                 <span class="case-card-badge">
@@ -408,10 +408,10 @@ require_once __DIR__ . '/includes/header.php';
           Schedule a diagnostic consultation with our enterprise technical leadership. We will audit your existing operations and design a high-ROI transformation roadmap.
         </p>
         <div class="closing-cta-buttons">
-          <a href="<?= appUrl('audit.php') ?>" class="btn btn-accent btn-lg">
+          <a href="<?= appUrl('audit') ?>" class="btn btn-accent btn-lg">
             <span>Request Diagnostic Consultation</span>
           </a>
-          <a href="<?= appUrl('contact.php') ?>" class="btn btn-outline-gold btn-lg">
+          <a href="<?= appUrl('contact') ?>" class="btn btn-outline-gold btn-lg">
             <span>Speak With a Practice Lead</span>
           </a>
         </div>
