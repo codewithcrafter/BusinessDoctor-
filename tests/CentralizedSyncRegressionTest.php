@@ -64,16 +64,16 @@ class CentralizedSyncRegressionTest
         $this->assert("Ten Core Services Active", count($services) === 10, "Active services count = " . count($services));
 
         $expectedSlugs = [
-            'smo' => 'smo-company-in-delhi',
-            'google-business-profile' => 'google-business-profile-company-in-delhi',
-            'ppc-paid-ads' => 'ppc-company-in-delhi',
-            'ecommerce-management' => 'ecommerce-management-company-in-delhi',
-            'graphic-design' => 'graphic-design-company-in-delhi',
-            'seo' => 'seo-company-in-delhi',
-            'social-media-marketing' => 'social-media-marketing-company-in-delhi',
-            'product-photography' => 'product-photography-company-in-delhi',
-            'video-editing' => 'video-editing-company-in-delhi',
-            'web-development' => 'web-development-company-in-delhi',
+            'smo' => '/service/smo',
+            'google-business-profile' => '/service/google-business-profile',
+            'ppc-paid-ads' => '/service/ppc-paid-ads',
+            'ecommerce-management' => '/service/ecommerce-management',
+            'graphic-design' => '/service/graphic-design',
+            'seo' => '/service/seo',
+            'social-media-marketing' => '/service/social-media-marketing',
+            'product-photography' => '/service/product-photography',
+            'video-editing' => '/service/video-editing',
+            'web-development' => '/service/web-development',
         ];
 
         foreach ($expectedSlugs as $slug => $expectedPattern) {
@@ -94,27 +94,26 @@ class CentralizedSyncRegressionTest
 
         $sitemap = file_get_contents(ROOT_PATH . '/sitemap.xml');
         $llmsTxt = file_get_contents(ROOT_PATH . '/llms.txt');
-        $mdIndex = file_get_contents(ROOT_PATH . '/md/index.md');
 
         $this->assert("llms.md permanently removed", !file_exists(ROOT_PATH . '/llms.md'));
+        $this->assert("md/index.md permanently removed", !file_exists(ROOT_PATH . '/md/index.md'));
 
         $tenServices = [
-            'smo' => 'https://demo.businesdoctor.com/smo-company-in-delhi',
-            'google-business-profile' => 'https://demo.businesdoctor.com/google-business-profile-company-in-delhi',
-            'ppc-paid-ads' => 'https://demo.businesdoctor.com/ppc-company-in-delhi',
-            'ecommerce-management' => 'https://demo.businesdoctor.com/ecommerce-management-company-in-delhi',
-            'graphic-design' => 'https://demo.businesdoctor.com/graphic-design-company-in-delhi',
-            'seo' => 'https://demo.businesdoctor.com/seo-company-in-delhi',
-            'social-media-marketing' => 'https://demo.businesdoctor.com/social-media-marketing-company-in-delhi',
-            'product-photography' => 'https://demo.businesdoctor.com/product-photography-company-in-delhi',
-            'video-editing' => 'https://demo.businesdoctor.com/video-editing-company-in-delhi',
-            'web-development' => 'https://demo.businesdoctor.com/web-development-company-in-delhi',
+            'smo' => 'https://demo.businesdoctor.com/service/smo',
+            'google-business-profile' => 'https://demo.businesdoctor.com/service/google-business-profile',
+            'ppc-paid-ads' => 'https://demo.businesdoctor.com/service/ppc-paid-ads',
+            'ecommerce-management' => 'https://demo.businesdoctor.com/service/ecommerce-management',
+            'graphic-design' => 'https://demo.businesdoctor.com/service/graphic-design',
+            'seo' => 'https://demo.businesdoctor.com/service/seo',
+            'social-media-marketing' => 'https://demo.businesdoctor.com/service/social-media-marketing',
+            'product-photography' => 'https://demo.businesdoctor.com/service/product-photography',
+            'video-editing' => 'https://demo.businesdoctor.com/service/video-editing',
+            'web-development' => 'https://demo.businesdoctor.com/service/web-development',
         ];
 
         foreach ($tenServices as $slug => $expectedUrl) {
             $this->assert("Sitemap contains [{$expectedUrl}]", str_contains($sitemap, "<loc>{$expectedUrl}</loc>"), "Found in sitemap.xml");
             $this->assert("llms.txt contains [{$expectedUrl}]", str_contains($llmsTxt, "({$expectedUrl})"), "Found in llms.txt");
-            $this->assert("md/index.md contains [{$expectedUrl}]", str_contains($mdIndex, "({$expectedUrl})"), "Found in md/index.md");
             $this->assert("Physical markdown exists [md/services/{$slug}.md]", file_exists(ROOT_PATH . "/md/services/{$slug}.md"), "Physical file verified");
         }
 
@@ -123,7 +122,6 @@ class CentralizedSyncRegressionTest
         $this->assert("Zero stale /company/ in sitemap", !preg_match('#(?<!/md)/company/[a-zA-Z0-9_-]+#', $sitemap));
         $this->assert("Zero stale /services/ in llms.txt", !preg_match('#(?<!/md)/services/[a-zA-Z0-9_-]+(?!\.md)#', $llmsTxt));
         $this->assert("Zero stale /company/ in llms.txt", !preg_match('#(?<!/md)/company/[a-zA-Z0-9_-]+#', $llmsTxt));
-        $this->assert("Zero stale /company/ in md/index.md", !preg_match('#(?<!/md)/company/[a-zA-Z0-9_-]+#', $mdIndex));
         echo "\n";
     }
 
@@ -317,7 +315,7 @@ class CentralizedSyncRegressionTest
 
         $content = file_get_contents($aboutMd);
         $this->assert("About markdown has substantial content (> 3000 bytes)", strlen($content) > 3000, "Size = " . strlen($content) . " bytes");
-        $this->assert("About markdown contains canonical link", str_contains($content, 'https://demo.businesdoctor.com/about.php'));
+        $this->assert("About markdown contains canonical link", str_contains($content, 'https://demo.businesdoctor.com/about'));
         echo "\n";
     }
 
@@ -333,11 +331,12 @@ class CentralizedSyncRegressionTest
 
         // Check that core content did not drift
         $sitemap2 = file_get_contents(ROOT_PATH . '/sitemap.xml');
-        $this->assert("Second sitemap contains all 10 services", substr_count($sitemap2, '-company-in-delhi') >= 10);
+        $this->assert("Second sitemap contains all 10 services", substr_count($sitemap2, '/service/') >= 10);
 
         $llmsTxt2 = file_get_contents(ROOT_PATH . '/llms.txt');
-        $this->assert("Second llms.txt preserves canonical service URLs", substr_count($llmsTxt2, '-company-in-delhi') >= 10);
+        $this->assert("Second llms.txt preserves canonical service URLs", substr_count($llmsTxt2, '/service/') >= 10);
         $this->assert("Second regeneration does not recreate llms.md", !file_exists(ROOT_PATH . '/llms.md'));
+        $this->assert("Second regeneration does not recreate md/index.md", !file_exists(ROOT_PATH . '/md/index.md'));
         echo "\n";
     }
 

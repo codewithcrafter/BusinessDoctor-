@@ -53,7 +53,7 @@
 <rect x='580' y='260' width='600' height='320' rx='8' fill='rgba(15, 23, 42, 0.8)' stroke='rgba(6, 181, 249, 0.3)' stroke-width='1' />
 <text x='610' y='300' fill='#FFFFFF' font-size='15' font-weight='700'>ENTERPRISE MARKETPLACE ACCELERATION</text>
 <text x='610' y='345' fill='#0099DB' font-size='14' font-weight='700'>CATALOG SYNCHRONIZATION LATENCY</text>
-<text x='610' y='375' fill='#94A3B8' font-size='12'>Legacy 4-Hour Batch Sync &rarr; <tspan fill='#86EFAC' font-weight='700'>Real-Time 8-Second Stream Processing</tspan></text>
+<text x='610' y='375' fill='#94A3B8' font-size='12'>Legacy 4-Hour Batch Sync &#8594; <tspan fill='#86EFAC' font-weight='700'>Real-Time 8-Second Stream Processing</tspan></text>
 <text x='610' y='425' fill='#0099DB' font-size='14' font-weight='700'>STOCKOUT RISK ELIMINATION</text>
 <text x='610' y='455' fill='#94A3B8' font-size='12'>Automated safety buffers saved over <tspan fill='#86EFAC' font-weight='700'>$420,000 in overselling marketplace penalties</tspan>.</text>
 <text x='610' y='505' fill='#0099DB' font-size='14' font-weight='700'>ALGORITHMIC BUY BOX DOMINANCE</text>

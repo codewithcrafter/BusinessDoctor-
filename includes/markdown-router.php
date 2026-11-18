@@ -71,10 +71,7 @@ class MarkdownRouter
         } elseif (str_ends_with($path, '.md')) {
             $isMarkdownRequest = true;
             $cleanRoute = substr($path, 0, -3);
-        } elseif ($path === '/md' || $path === '/md/') {
-            $isMarkdownRequest = true;
-            $cleanRoute = '/md';
-        } elseif (str_starts_with($path, '/md/')) {
+        } elseif (str_starts_with($path, '/md/') && str_ends_with($path, '.md')) {
             $isMarkdownRequest = true;
         }
 
@@ -86,18 +83,24 @@ class MarkdownRouter
         // Normalize clean route
         $cleanRoute = ($cleanRoute !== '/') ? rtrim($cleanRoute, '/') : '/';
 
-        // ----------------------------------------------------
-        // 1. Central Markdown Index: /md or /md/ or /md/index
-        // ----------------------------------------------------
-        if ($cleanRoute === '/md' || $cleanRoute === '/md/index') {
-            self::sendResponse(SeoSyncEngine::generateMdMasterIndex());
+        // Block any request trying to access an index on /md or retired /llms.md
+        if ($cleanRoute === '/md' || $cleanRoute === '/md/index' || $cleanRoute === '/llms' || $path === '/llms.md') {
+            self::sendNotFound("The requested Markdown document does not exist.");
         }
 
         // ----------------------------------------------------
-        // 2. Central /md/... Sub-repository Mirror Requests
+        // 1. Central /md/... Sub-repository Mirror Requests (*.md)
         // ----------------------------------------------------
         if (str_starts_with($path, '/md/')) {
             $subPath = substr($path, 4); // Strip '/md/'
+            if ($subPath === 'index.md' || $subPath === 'index') {
+                self::sendNotFound("The requested Markdown document does not exist.");
+            }
+            $physicalFile = ROOT_PATH . '/md/' . ltrim($subPath, '/');
+            if (file_exists($physicalFile) && is_file($physicalFile)) {
+                self::sendResponse(file_get_contents($physicalFile));
+            }
+
             if (str_ends_with($subPath, '.md')) {
                 $subClean = substr($subPath, 0, -3);
             } else {
@@ -105,9 +108,17 @@ class MarkdownRouter
             }
 
             if ($subClean === 'home' || $subClean === 'index') {
+                $physicalHome = ROOT_PATH . '/md/home.md';
+                if (file_exists($physicalHome) && is_file($physicalHome)) {
+                    self::sendResponse(file_get_contents($physicalHome));
+                }
                 self::sendResponse(SeoSyncEngine::generateStaticPageMarkdown('home'));
             }
             if (in_array($subClean, ['about', 'contact', 'audit', 'services', 'insights', 'case-studies'], true)) {
+                $physicalPage = ROOT_PATH . '/md/' . $subClean . '.md';
+                if (file_exists($physicalPage) && is_file($physicalPage)) {
+                    self::sendResponse(file_get_contents($physicalPage));
+                }
                 self::sendResponse(SeoSyncEngine::generateStaticPageMarkdown($subClean));
             }
             if (preg_match('#^(?:services|service|company)/([a-zA-Z0-9_-]+)$#', $subClean, $m)) {
@@ -119,18 +130,16 @@ class MarkdownRouter
             if (preg_match('#^case-studies/([a-zA-Z0-9_-]+)$#', $subClean, $m)) {
                 self::renderCaseStudyMarkdown($m[1]);
             }
-
-            // Check if physical file exists in /md/...
-            $physicalFile = ROOT_PATH . '/md/' . ltrim($subPath, '/');
-            if (file_exists($physicalFile) && is_file($physicalFile)) {
-                self::sendResponse(file_get_contents($physicalFile));
-            }
         }
 
         // ----------------------------------------------------
-        // 3. Homepage Markdown: /.md, /index.php.md, /home.md
+        // 3. Homepage Markdown: /home.md, /.md, /home, /index.php.md
         // ----------------------------------------------------
         if ($cleanRoute === '/' || $cleanRoute === '/index.php' || $cleanRoute === '/home' || $cleanRoute === '/index') {
+            $physicalHome = ROOT_PATH . '/md/home.md';
+            if (file_exists($physicalHome) && is_file($physicalHome)) {
+                self::sendResponse(file_get_contents($physicalHome));
+            }
             self::sendResponse(SeoSyncEngine::generateStaticPageMarkdown('home'));
         }
 
@@ -138,6 +147,10 @@ class MarkdownRouter
         // 4. About Page Markdown: /about.php.md, /about.md
         // ----------------------------------------------------
         if ($cleanRoute === '/about.php' || $cleanRoute === '/about') {
+            $physicalAbout = ROOT_PATH . '/md/about.md';
+            if (file_exists($physicalAbout) && is_file($physicalAbout)) {
+                self::sendResponse(file_get_contents($physicalAbout));
+            }
             self::sendResponse(SeoSyncEngine::generateStaticPageMarkdown('about'));
         }
 
@@ -145,6 +158,10 @@ class MarkdownRouter
         // 5. Contact Page Markdown: /contact.php.md, /contact.md
         // ----------------------------------------------------
         if ($cleanRoute === '/contact.php' || $cleanRoute === '/contact') {
+            $physicalContact = ROOT_PATH . '/md/contact.md';
+            if (file_exists($physicalContact) && is_file($physicalContact)) {
+                self::sendResponse(file_get_contents($physicalContact));
+            }
             self::sendResponse(SeoSyncEngine::generateStaticPageMarkdown('contact'));
         }
 
@@ -152,6 +169,10 @@ class MarkdownRouter
         // 6. Services Overview: /services.md, /services, /company.md
         // ----------------------------------------------------
         if (in_array($cleanRoute, ['/services', '/services.php', '/company', '/company-in-delhi', '/digital-marketing-company-in-delhi'], true)) {
+            $physicalServices = ROOT_PATH . '/md/services.md';
+            if (file_exists($physicalServices) && is_file($physicalServices)) {
+                self::sendResponse(file_get_contents($physicalServices));
+            }
             self::sendResponse(SeoSyncEngine::generateStaticPageMarkdown('services'));
         }
 
@@ -165,6 +186,10 @@ class MarkdownRouter
         // ----------------------------------------------------
         if (preg_match('#^/(?:service|services|company)/([a-zA-Z0-9_-]+)$#', $cleanRoute, $m) || preg_match('#^/([a-zA-Z0-9_-]+)-company-in-delhi$#', $cleanRoute, $m)) {
             if ($m[1] === 'digital-marketing') {
+                $physicalServices = ROOT_PATH . '/md/services.md';
+                if (file_exists($physicalServices) && is_file($physicalServices)) {
+                    self::sendResponse(file_get_contents($physicalServices));
+                }
                 self::sendResponse(SeoSyncEngine::generateStaticPageMarkdown('services'));
             }
             self::renderServiceMarkdown($m[1]);
@@ -181,6 +206,10 @@ class MarkdownRouter
         // 8. Blog Listing: /blog.md, /blog.php.md, /insights.php.md, /insights.md
         // ----------------------------------------------------
         if ($cleanRoute === '/blog' || $cleanRoute === '/blog.php' || $cleanRoute === '/insights.php' || $cleanRoute === '/insights') {
+            $physicalInsights = ROOT_PATH . '/md/insights.md';
+            if (file_exists($physicalInsights) && is_file($physicalInsights)) {
+                self::sendResponse(file_get_contents($physicalInsights));
+            }
             self::sendResponse(SeoSyncEngine::generateStaticPageMarkdown('insights'));
         }
 
@@ -210,6 +239,10 @@ class MarkdownRouter
         // 10. Case Studies Listing: /case-studies.php.md, /case-studies.md
         // ----------------------------------------------------
         if ($cleanRoute === '/case-studies.php' || $cleanRoute === '/case-studies') {
+            $physicalCases = ROOT_PATH . '/md/case-studies.md';
+            if (file_exists($physicalCases) && is_file($physicalCases)) {
+                self::sendResponse(file_get_contents($physicalCases));
+            }
             self::sendResponse(SeoSyncEngine::generateStaticPageMarkdown('case-studies'));
         }
 
@@ -233,11 +266,31 @@ class MarkdownRouter
         // 12. Digital Audit: /audit.php.md, /audit.md, /diagnostic.php.md, /diagnostic.md
         // ----------------------------------------------------
         if ($cleanRoute === '/audit.php' || $cleanRoute === '/audit' || $cleanRoute === '/diagnostic.php' || $cleanRoute === '/diagnostic') {
+            $physicalAudit = ROOT_PATH . '/md/audit.md';
+            if (file_exists($physicalAudit) && is_file($physicalAudit)) {
+                self::sendResponse(file_get_contents($physicalAudit));
+            }
             self::sendResponse(SeoSyncEngine::generateStaticPageMarkdown('audit'));
         }
 
         // ----------------------------------------------------
-        // 13. Direct Physical Root Markdown Files (e.g. llms.md)
+        // 13. Direct / Custom Physical Markdown Files in /md/
+        //     e.g. /custom-page.md -> ROOT_PATH/md/custom-page.md
+        // ----------------------------------------------------
+        $trimmedRoute = trim($cleanRoute, '/');
+        if ($trimmedRoute !== '') {
+            $customCandidate1 = ROOT_PATH . '/md/' . $trimmedRoute . '.md';
+            $customCandidate2 = ROOT_PATH . '/md/' . $trimmedRoute;
+            if (file_exists($customCandidate1) && is_file($customCandidate1)) {
+                self::sendResponse(file_get_contents($customCandidate1));
+            }
+            if (file_exists($customCandidate2) && is_file($customCandidate2)) {
+                self::sendResponse(file_get_contents($customCandidate2));
+            }
+        }
+
+        // ----------------------------------------------------
+        // 14. Direct Physical Root Markdown Files (e.g. llms.md)
         // ----------------------------------------------------
         $rootTarget = ROOT_PATH . '/' . ltrim($path, '/');
         if (file_exists($rootTarget) && is_file($rootTarget)) {
@@ -245,7 +298,7 @@ class MarkdownRouter
         }
 
         // ----------------------------------------------------
-        // 14. Fallback: 404 for Unknown or Unmapped Route
+        // 15. Fallback: 404 for Unknown or Unmapped Route
         // ----------------------------------------------------
         self::sendNotFound("The requested Markdown document '{$path}' does not correspond to any published public page.");
     }
@@ -255,6 +308,11 @@ class MarkdownRouter
      */
     private static function renderServiceMarkdown(string $slug): void
     {
+        $physicalFile = ROOT_PATH . '/md/services/' . $slug . '.md';
+        if (file_exists($physicalFile) && is_file($physicalFile)) {
+            self::sendResponse(file_get_contents($physicalFile));
+        }
+
         $practice = getPracticeBySlug($slug);
         if (!$practice) {
             self::sendNotFound("Practice discipline '{$slug}' does not exist or is not active.");
@@ -268,6 +326,11 @@ class MarkdownRouter
      */
     private static function renderBlogMarkdown(string $slug): void
     {
+        $physicalFile = ROOT_PATH . '/md/insights/' . $slug . '.md';
+        if (file_exists($physicalFile) && is_file($physicalFile)) {
+            self::sendResponse(file_get_contents($physicalFile));
+        }
+
         try {
             $pdo = Database::getConnection();
             $stmt = $pdo->prepare("SELECT * FROM insights WHERE slug = ? AND status = 'published' AND is_deleted = 0 LIMIT 1");
@@ -289,6 +352,11 @@ class MarkdownRouter
      */
     private static function renderCaseStudyMarkdown(string $slug): void
     {
+        $physicalFile = ROOT_PATH . '/md/case-studies/' . $slug . '.md';
+        if (file_exists($physicalFile) && is_file($physicalFile)) {
+            self::sendResponse(file_get_contents($physicalFile));
+        }
+
         try {
             $pdo = Database::getConnection();
             $stmt = $pdo->prepare("SELECT * FROM case_studies WHERE slug = ? AND status = 'published' AND is_deleted = 0 LIMIT 1");

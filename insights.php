@@ -239,21 +239,14 @@ require_once __DIR__ . '/includes/header.php';
             <a href="<?= $featUrl ?>" style="display: block; width: 100%; height: 100%; margin: 0; padding: 0; text-decoration: none;" aria-label="<?= e($featured['title']) ?>">
               <img src="<?= getBlogAssetUrl($featImg) ?>" alt="<?= e($featAlt) ?>" style="display: block; width: 100%; height: 100%; object-fit: cover; aspect-ratio: 16 / 9; margin: 0; padding: 0; border: 0;">
             </a>
-            <div style="position: absolute; top: 1rem; left: 1rem; pointer-events: none;">
-              <span class="eyebrow-badge" style="background: rgba(6, 19, 38, 0.92); backdrop-filter: blur(8px); border-color: rgba(6, 181, 249, 0.45); font-size: 0.7rem; margin: 0;">
-                FEATURED BLOG
-              </span>
-            </div>
-            <div style="position: absolute; bottom: 0.75rem; right: 0.75rem; pointer-events: none;">
-              <span style="background: rgba(15, 23, 42, 0.88); color: #94A3B8; font-family: var(--font-mono); font-size: 0.68rem; padding: 0.25rem 0.5rem; border-radius: 4px; border: 1px solid rgba(255,255,255,0.12);">
-                ILLUSTRATIVE SCHEMATIC
-              </span>
-            </div>
           </div>
 
           <!-- Content Details -->
           <div style="padding: 2.75rem; display: flex; flex-direction: column; justify-content: center;">
             <div style="display: flex; align-items: center; gap: 0.85rem; margin-bottom: 1rem; flex-wrap: wrap;">
+              <span class="eyebrow-badge" style="background: rgba(6, 181, 249, 0.15); border-color: rgba(6, 181, 249, 0.5); font-size: 0.72rem; margin: 0;">
+                <span class="pill-dot"></span> FEATURED ARTICLE
+              </span>
               <span class="eyebrow-badge" style="margin-bottom: 0; font-size: 0.72rem;"><?= e($featured['category']) ?></span>
               <span style="font-family: var(--font-mono); font-size: 0.8rem; color: #06B5F9; font-weight: 700;"><?= e($featured['reading_time']) ?></span>
               <span style="font-family: var(--font-mono); font-size: 0.8rem; color: var(--color-text-muted);">● <?= formatExecutiveDate($featured['published_at'] ?? 'now') ?></span>
@@ -295,24 +288,19 @@ require_once __DIR__ . '/includes/header.php';
               <a href="<?= $itemUrl ?>" style="display: block; width: 100%; height: 100%; margin: 0; padding: 0; text-decoration: none;" aria-label="<?= e($item['title']) ?>">
                 <img src="<?= getBlogAssetUrl($itemImg) ?>" alt="<?= e($itemAlt) ?>" style="display: block; width: 100%; height: 100%; aspect-ratio: 16 / 9; object-fit: cover; margin: 0; padding: 0; border: 0;" loading="lazy">
               </a>
-              <div style="position: absolute; top: 1rem; left: 1rem; pointer-events: none;">
-                <span class="eyebrow-badge" style="background: rgba(6, 19, 38, 0.90); backdrop-filter: blur(8px); border-color: rgba(6, 181, 249, 0.35); font-size: 0.7rem; margin: 0;">
-                  <?= e($item['category']) ?>
-                </span>
-              </div>
-              <div style="position: absolute; bottom: 0.6rem; right: 0.6rem; pointer-events: none;">
-                <span style="background: rgba(15, 23, 42, 0.88); color: #94A3B8; font-family: var(--font-mono); font-size: 0.65rem; padding: 0.2rem 0.45rem; border-radius: 4px; border: 1px solid rgba(255,255,255,0.12);">
-                  ILLUSTRATIVE
-                </span>
-              </div>
             </div>
 
             <!-- Card Body Content Container -->
-            <div class="blog-card-body" style="padding: 2rem; display: flex; flex-direction: column; flex-grow: 1;">
-              <div style="display: flex; align-items: center; gap: 0.75rem; margin-bottom: 0.75rem; font-family: var(--font-mono); font-size: 0.78rem; color: var(--color-text-muted);">
-                <span><?= e($item['reading_time']) ?></span>
-                <span>●</span>
-                <span><?= formatExecutiveDate($item['published_at'] ?? 'now') ?></span>
+            <div class="blog-card-body" style="padding: 1.75rem 2rem 2rem; display: flex; flex-direction: column; flex-grow: 1;">
+              <div style="display: flex; align-items: center; justify-content: space-between; gap: 0.75rem; margin-bottom: 0.85rem; flex-wrap: wrap;">
+                <span class="eyebrow-badge" style="margin: 0; font-size: 0.7rem; padding: 0.2rem 0.55rem; background: rgba(6, 181, 249, 0.08); border-color: rgba(6, 181, 249, 0.3);">
+                  <?= e($item['category']) ?>
+                </span>
+                <div style="display: flex; align-items: center; gap: 0.5rem; font-family: var(--font-mono); font-size: 0.75rem; color: var(--color-text-muted);">
+                  <span><?= e($item['reading_time']) ?></span>
+                  <span>●</span>
+                  <span><?= formatExecutiveDate($item['published_at'] ?? 'now') ?></span>
+                </div>
               </div>
 
               <h2 style="font-size: 1.3rem; font-weight: 800; color: var(--color-text); line-height: 1.35; margin-bottom: 0.85rem;">

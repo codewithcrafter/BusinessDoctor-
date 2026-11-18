@@ -47,11 +47,11 @@
 <rect x='530' y='260' width='650' height='95' rx='8' fill='rgba(15, 23, 42, 0.8)' stroke='rgba(255,255,255,0.08)' stroke-width='1' />
 <text x='560' y='295' fill='#94A3B8' font-size='12' font-weight='600'>CUSTOMER ACQUISITION COST (CAC)</text>
 <text x='560' y='330' fill='#EF4444' font-size='18' font-weight='700' text-decoration='line-through'>$1,420</text>
-<text x='650' y='330' fill='#22C55E' font-size='22' font-weight='800'>&rarr; $512 (-64% Reduction)</text>
+<text x='650' y='330' fill='#22C55E' font-size='22' font-weight='800'>&#8594; $512 (-64% Reduction)</text>
 <rect x='530' y='375' width='650' height='95' rx='8' fill='rgba(15, 23, 42, 0.8)' stroke='rgba(255,255,255,0.08)' stroke-width='1' />
 <text x='560' y='410' fill='#94A3B8' font-size='12' font-weight='600'>CHECKOUT RUNTIME LATENCY</text>
 <text x='560' y='445' fill='#EF4444' font-size='18' font-weight='700' text-decoration='line-through'>4.8 Seconds</text>
-<text x='690' y='445' fill='#22C55E' font-size='22' font-weight='800'>&rarr; 280 Milliseconds</text>
+<text x='690' y='445' fill='#22C55E' font-size='22' font-weight='800'>&#8594; 280 Milliseconds</text>
 <rect x='530' y='490' width='650' height='90' rx='8' fill='rgba(15, 23, 42, 0.8)' stroke='rgba(6, 181, 249, 0.3)' stroke-width='1' />
 <text x='560' y='525' fill='#0099DB' font-size='12' font-weight='700'>DEPLOYED ARCHITECTURE</text>
 <text x='560' y='550' fill='#CBD5E1' font-size='12'>Event-Driven Stripe Issuing Hooks | Next.js Edge SSR | Redis Idempotent Queue</text>

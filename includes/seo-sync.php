@@ -1,7 +1,7 @@
 <?php
 /**
  * BusinessDoctor — Automated SEO, Schema & LLM Discovery Engine
- * Synchronizes sitemap.xml, llms.txt, and llms.md across the enterprise platform.
+ * Synchronizes sitemap.xml and llms.txt across the enterprise platform.
  * 
  * Provides centralized generation, atomic file writing, and audit tracking
  * for search engine indexers and generative AI discovery crawlers.
@@ -306,201 +306,8 @@ class SeoSyncEngine
         $lines[] = "";
         $lines[] = "## Public Tools & Resources";
         $lines[] = "- [XML Sitemap]({$baseUrl}/sitemap.xml): Complete search engine index containing verified canonical URLs for all public pages, services, articles, and case studies.";
-        $lines[] = "- [Public Markdown Index]({$baseUrl}/md): Directory of clean Markdown mirrors structured for AI agents, developers, and LLM context extraction.";
 
         return implode("\n", $lines) . "\n";
-    }
-
-    /**
-     * Generate in-depth /llms.md documentation index for AI systems & LLM RAG
-     */
-    public static function generateLlmsMd(): string
-    {
-        $baseUrl = self::getBaseUrl();
-        $appName = defined('APP_NAME') ? APP_NAME : 'BusinessDoctor';
-        $legalName = defined('APP_LEGAL_NAME') ? APP_LEGAL_NAME : 'BusinessDoctor IT Solutions & Digital Services Private Limited';
-        $tagline = defined('APP_TAGLINE') ? APP_TAGLINE : 'Engineering Technology. Accelerating Digital Growth.';
-        $phone = defined('APP_PHONE') ? APP_PHONE : '+1 (800) 492-3628';
-        $email = defined('APP_EMAIL') ? APP_EMAIL : 'solutions@businessdoctor.com';
-        $hq = defined('APP_HEADQUARTERS') ? APP_HEADQUARTERS : 'Executive Tech Park, Innovation District';
-
-        $services = self::getActiveServices();
-        $insights = self::getPublishedInsights();
-        $cases = self::getPublishedCaseStudies();
-
-        $lines = [];
-        $lines[] = "# {$appName} — Enterprise Knowledge Base & LLM Index";
-        $lines[] = "> {$tagline}";
-        $lines[] = "";
-        $lines[] = "Canonical Source: {$baseUrl}";
-        $lines[] = "Last Updated: " . date('Y-m-d H:i:s T');
-        $lines[] = "";
-
-        // Executive Overview
-        $lines[] = "## 1. Executive Overview & Firm Profile";
-        $lines[] = "";
-        $lines[] = "{$appName} ({$legalName}) is a premium technology and digital growth practice. The firm combines deep software engineering capabilities with revenue-focused digital marketing, conversion-centered design, and robust cloud infrastructure operations.";
-        $lines[] = "";
-        $lines[] = "- **Firm Legal Name**: {$legalName}";
-        $lines[] = "- **Primary URL**: {$baseUrl}";
-        $lines[] = "- **Inquiries**: {$email} | Telephone: {$phone}";
-        $lines[] = "- **Global Operations**: {$hq}";
-        $lines[] = "- **Engineering Philosophy**: Sub-second server responses, zero framework bloat, semantic accessible HTML5, resilient SQLite / MariaDB data layers, and privacy-first analytics.";
-        $lines[] = "";
-
-        // Core Practice Disciplines
-        $lines[] = "## 2. Core Practice Disciplines & Deliverables";
-        $lines[] = "";
-        foreach ($services as $slug => $s) {
-            $num = $s['number'] ?? '';
-            $name = $s['name'] ?? '';
-            $sTagline = $s['tagline'] ?? '';
-            $desc = $s['description'] ?? $s['summary'] ?? '';
-            $url = getServiceUrl($slug);
-
-            $lines[] = "### 2.{$num} {$name}";
-            $lines[] = "**Tagline**: {$sTagline}";
-            $lines[] = "**Canonical URL**: [{$url}]({$url})";
-            $lines[] = "";
-            $lines[] = $desc;
-            $lines[] = "";
-            
-            if (!empty($s['deliverables']) && is_array($s['deliverables'])) {
-                $lines[] = "**Key Deliverables:**";
-                foreach ($s['deliverables'] as $del) {
-                    $lines[] = "- " . $del;
-                }
-                $lines[] = "";
-            }
-
-            if (!empty($s['kpis']) && is_array($s['kpis'])) {
-                $lines[] = "**Target Performance KPIs:**";
-                foreach ($s['kpis'] as $kpi) {
-                    $lines[] = "- " . $kpi;
-                }
-                $lines[] = "";
-            }
-        }
-
-        // Case Studies
-        $lines[] = "## 3. Client Case Studies & Proof of Performance";
-        $lines[] = "";
-        if (empty($cases)) {
-            $lines[] = "No public case studies are currently published in the repository.";
-            $lines[] = "";
-        } else {
-            foreach ($cases as $idx => $c) {
-                $num = $idx + 1;
-                $title = $c['title'];
-                $slug = $c['slug'];
-                $url = "{$baseUrl}/case-studies/{$slug}";
-                $industry = $c['industry'] ?: ($c['client_industry'] ?: 'Enterprise');
-                $practice = $c['service_category'] ?: ($c['practice_area'] ?: 'Digital Practice');
-                $client = !empty($c['client_name']) ? $c['client_name'] : 'Confidential Enterprise Client';
-
-                $lines[] = "### 3.{$num} {$title}";
-                $lines[] = "- **Canonical URL**: [{$url}]({$url})";
-                $lines[] = "- **Industry**: {$industry} | **Discipline**: {$practice}";
-                $lines[] = "- **Client**: {$client}";
-                if (!empty($c['baseline_metric']) || !empty($c['outcome_metric'])) {
-                    $lines[] = "- **Metric Shift**: `{$c['baseline_metric']}` → `{$c['outcome_metric']}`" . (!empty($c['metric_label']) ? " ({$c['metric_label']})" : "");
-                }
-                $lines[] = "";
-
-                if (!empty($c['challenge'])) {
-                    $lines[] = "**The Challenge / Operational Bottleneck:**";
-                    $lines[] = trim(preg_replace('/\s+/', ' ', strip_tags($c['challenge'])));
-                    $lines[] = "";
-                }
-
-                if (!empty($c['solution']) || !empty($c['prescription'])) {
-                    $lines[] = "**Prescribed Engineering & Strategic Solution:**";
-                    $lines[] = trim(preg_replace('/\s+/', ' ', strip_tags($c['solution'] ?: $c['prescription'])));
-                    $lines[] = "";
-                }
-
-                if (!empty($c['implementation'])) {
-                    $lines[] = "**Implementation Architecture:**";
-                    $lines[] = trim(preg_replace('/\s+/', ' ', strip_tags($c['implementation'])));
-                    $lines[] = "";
-                }
-
-                if (!empty($c['results']) || !empty($c['result_description'])) {
-                    $lines[] = "**Quantifiable Business Outcomes:**";
-                    $lines[] = trim(preg_replace('/\s+/', ' ', strip_tags($c['results'] ?: $c['result_description'])));
-                    $lines[] = "";
-                }
-            }
-        }
-
-        // Editorial Insights & Blog
-        $lines[] = "## 4. Technical Blog & Editorial Perspectives";
-        $lines[] = "";
-        if (empty($insights)) {
-            $lines[] = "No technical articles are currently published in the knowledge base.";
-            $lines[] = "";
-        } else {
-            foreach ($insights as $idx => $art) {
-                $num = $idx + 1;
-                $title = $art['title'];
-                $slug = $art['slug'];
-                $url = "{$baseUrl}/blog/{$slug}";
-                $author = $art['author_name'] ?: ($art['author'] ?: 'BusinessDoctor Engineering');
-                $pubDate = !empty($art['published_at']) ? date('F j, Y', strtotime($art['published_at'])) : 'Published';
-                $readingTime = $art['reading_time'] ?? '5 min read';
-                $category = $art['category'] ?? 'Enterprise Strategy';
-
-                $lines[] = "### 4.{$num} {$title}";
-                $lines[] = "- **Canonical URL**: [{$url}]({$url})";
-                $lines[] = "- **Category**: {$category} | **Read Time**: {$readingTime}";
-                $lines[] = "- **Author**: {$author} | **Published**: {$pubDate}";
-                $lines[] = "";
-
-                $summary = !empty($art['summary']) ? $art['summary'] : (!empty($art['excerpt']) ? $art['excerpt'] : '');
-                if (!empty($summary)) {
-                    $lines[] = "**Executive Summary:**";
-                    $lines[] = trim(preg_replace('/\s+/', ' ', strip_tags($summary)));
-                    $lines[] = "";
-                }
-
-                // If content is present, extract a clean markdown outline/highlights
-                if (!empty($art['content'])) {
-                    $rawText = strip_tags($art['content']);
-                    $cleanSnippet = trim(preg_replace('/\s+/', ' ', $rawText));
-                    if (mb_strlen($cleanSnippet) > 500) {
-                        $cleanSnippet = mb_substr($cleanSnippet, 0, 497) . '...';
-                    }
-                    $lines[] = "**Key Content Preview:**";
-                    $lines[] = $cleanSnippet;
-                    $lines[] = "";
-                }
-            }
-        }
-
-        // Digital Diagnostic Tool
-        $lines[] = "## 5. Proprietary Digital Diagnostic Engine";
-        $lines[] = "";
-        $lines[] = "BusinessDoctor operates an interactive diagnostic assessment portal at [{$baseUrl}/audit]({$baseUrl}/audit). The tool evaluates enterprise digital operations across four foundational vectors:";
-        $lines[] = "1. **Architecture & Engineering**: Monolithic framework latency, Core Web Vitals (LCP, INP, CLS), database querying bottlenecks, and mobile responsiveness.";
-        $lines[] = "2. **Customer Acquisition & Traffic**: PPC ad spend waste, conversion funnel friction, organic search visibility, and CAC inflation.";
-        $lines[] = "3. **Systems & Security Posture**: Infrastructure uptime resilience, automated backup hygiene, SSL/TLS configurations, and API security.";
-        $lines[] = "4. **Brand Positioning & Trust**: Brand architecture, UI design consistency, and marketplace Buy Box protection.";
-        $lines[] = "";
-
-        // Contact & Engagement
-        $lines[] = "## 6. Enterprise Inquiries & Contact Channels";
-        $lines[] = "";
-        $lines[] = "- **Web Engagement Portal**: [{$baseUrl}/contact]({$baseUrl}/contact)";
-        $lines[] = "- **Email Advisory**: [{$email}](mailto:{$email})";
-        $lines[] = "- **Direct Phone Line**: {$phone}";
-        $lines[] = "- **Headquarters**: {$hq}";
-        $lines[] = "- **Public Markdown Index**: [{$baseUrl}/md]({$baseUrl}/md)";
-        $lines[] = "";
-        $lines[] = "---";
-        $lines[] = "*This document is maintained dynamically by the BusinessDoctor Centralized SEO & LLM Synchronization Engine. All rights reserved.*";
-        $lines[] = "";
-
-        return implode("\n", $lines);
     }
 
     /**
@@ -1502,7 +1309,7 @@ MD;
         // 1. Institutional
         $lines[] = "## 1. Institutional & Diagnostic Documents";
         $lines[] = "";
-        $lines[] = "- [Homepage Overview]({$baseUrl}/md/home.md) ([Clean URL]({$baseUrl}/.md) | [Web Page]({$baseUrl}/)): Enterprise digital practice overview.";
+        $lines[] = "- [Homepage Overview]({$baseUrl}/md/home.md) ([Clean URL]({$baseUrl}/home.md) | [Web Page]({$baseUrl}/)): Enterprise digital practice overview.";
         $lines[] = "- [Firm Profile & Practice]({$baseUrl}/md/about.md) ([Clean URL]({$baseUrl}/about.md) | [Web Page]({$baseUrl}/about)): Digital marketing practice and engineering ethos.";
         $lines[] = "- [Services Overview Hub]({$baseUrl}/md/services.md) ([Clean URL]({$baseUrl}/services.md) | [Web Page]({$baseUrl}/services)): Multi-disciplinary capability catalog.";
         $lines[] = "- [Executive Advisory & Inquiries]({$baseUrl}/md/contact.md) ([Clean URL]({$baseUrl}/contact.md) | [Web Page]({$baseUrl}/contact)): Direct engagement and consulting channels.";
@@ -1575,6 +1382,58 @@ MD;
         return implode("\n", $lines);
     }
 
+    public static function getCustomMarkdownRegistryPath(): string
+    {
+        return ROOT_PATH . '/md/.custom_markdown.json';
+    }
+
+    public static function getCustomMarkdownRegistry(): array
+    {
+        $file = self::getCustomMarkdownRegistryPath();
+        if (file_exists($file)) {
+            $data = json_decode((string)file_get_contents($file), true);
+            if (is_array($data)) {
+                return $data;
+            }
+        }
+        return [];
+    }
+
+    public static function isCustomMarkdown(string $repoFile): bool
+    {
+        $repoFile = ltrim(str_replace('\\', '/', $repoFile), '/');
+        $registry = self::getCustomMarkdownRegistry();
+        return isset($registry[$repoFile]);
+    }
+
+    public static function setCustomMarkdown(string $repoFile, string $title = '', string $user = 'admin'): bool
+    {
+        $repoFile = ltrim(str_replace('\\', '/', $repoFile), '/');
+        $registry = self::getCustomMarkdownRegistry();
+        $registry[$repoFile] = [
+            'file' => $repoFile,
+            'title' => $title ?: basename($repoFile, '.md'),
+            'updated_at' => date('Y-m-d H:i:s'),
+            'updated_by' => $user,
+        ];
+        $dir = dirname(self::getCustomMarkdownRegistryPath());
+        if (!is_dir($dir)) {
+            @mkdir($dir, 0755, true);
+        }
+        return (bool)file_put_contents(self::getCustomMarkdownRegistryPath(), json_encode($registry, JSON_PRETTY_PRINT | JSON_UNESCAPED_SLASHES));
+    }
+
+    public static function removeCustomMarkdown(string $repoFile): bool
+    {
+        $repoFile = ltrim(str_replace('\\', '/', $repoFile), '/');
+        $registry = self::getCustomMarkdownRegistry();
+        if (isset($registry[$repoFile])) {
+            unset($registry[$repoFile]);
+            return (bool)file_put_contents(self::getCustomMarkdownRegistryPath(), json_encode($registry, JSON_PRETTY_PRINT | JSON_UNESCAPED_SLASHES));
+        }
+        return true;
+    }
+
     public static function syncMarkdownFiles(): array
     {
         $mdBaseDir = ROOT_PATH . '/md';
@@ -1591,20 +1450,30 @@ MD;
         $written = [];
         $purged = [];
 
-        // 1. Master Index
-        $masterIndexContent = self::generateMdMasterIndex();
+        // Purge legacy index.md and index.php in md/ if present
         $masterIndexPath = $mdBaseDir . '/index.md';
-        if (self::writeFileAtomic($masterIndexPath, $masterIndexContent)) {
-            $written[] = 'md/index.md';
+        if (file_exists($masterIndexPath)) {
+            @unlink($masterIndexPath);
+            $purged[] = 'md/index.md';
+        }
+        $mdIndexPhp = ROOT_PATH . '/md/index.php';
+        if (file_exists($mdIndexPhp)) {
+            @unlink($mdIndexPhp);
+            $purged[] = 'md/index.php';
         }
 
-        // 2. Static Pages & Section Catalogs
+        // Static Pages & Section Catalogs
         $staticDocs = ['about', 'contact', 'audit', 'home', 'services', 'insights', 'case-studies'];
         foreach ($staticDocs as $doc) {
+            $rel = "md/{$doc}.md";
+            if (self::isCustomMarkdown($rel)) {
+                $written[] = "{$rel} (custom preserved)";
+                continue;
+            }
             $path = $mdBaseDir . "/{$doc}.md";
             $content = self::generateStaticPageMarkdown($doc);
             if (self::writeFileAtomic($path, $content)) {
-                $written[] = "md/{$doc}.md";
+                $written[] = $rel;
             }
         }
 
@@ -1613,16 +1482,21 @@ MD;
         $validServiceSlugs = [];
         foreach ($services as $slug => $s) {
             $validServiceSlugs[] = $slug;
+            $rel = "md/services/{$slug}.md";
+            if (self::isCustomMarkdown($rel)) {
+                $written[] = "{$rel} (custom preserved)";
+                continue;
+            }
             $path = $servicesDir . "/{$slug}.md";
             $content = self::generateServiceMarkdown($slug, $s);
             if (self::writeFileAtomic($path, $content)) {
-                $written[] = "md/services/{$slug}.md";
+                $written[] = $rel;
             }
         }
-        // Purge inactive/deleted services
+        // Purge inactive/deleted services (preserving custom ones)
         foreach (glob($servicesDir . '/*.md') ?: [] as $file) {
             $fileSlug = basename($file, '.md');
-            if (!in_array($fileSlug, $validServiceSlugs, true)) {
+            if (!in_array($fileSlug, $validServiceSlugs, true) && !self::isCustomMarkdown("md/services/{$fileSlug}.md")) {
                 @unlink($file);
                 $purged[] = "md/services/{$fileSlug}.md";
             }
@@ -1634,16 +1508,21 @@ MD;
         foreach ($cases as $c) {
             $slug = $c['slug'];
             $validCaseSlugs[] = $slug;
+            $rel = "md/case-studies/{$slug}.md";
+            if (self::isCustomMarkdown($rel)) {
+                $written[] = "{$rel} (custom preserved)";
+                continue;
+            }
             $path = $casesDir . "/{$slug}.md";
             $content = self::generateCaseStudyMarkdown($c);
             if (self::writeFileAtomic($path, $content)) {
-                $written[] = "md/case-studies/{$slug}.md";
+                $written[] = $rel;
             }
         }
-        // Purge unpublished, draft, or deleted case studies
+        // Purge unpublished, draft, or deleted case studies (preserving custom ones)
         foreach (glob($casesDir . '/*.md') ?: [] as $file) {
             $fileSlug = basename($file, '.md');
-            if (!in_array($fileSlug, $validCaseSlugs, true)) {
+            if (!in_array($fileSlug, $validCaseSlugs, true) && !self::isCustomMarkdown("md/case-studies/{$fileSlug}.md")) {
                 @unlink($file);
                 $purged[] = "md/case-studies/{$fileSlug}.md";
             }
@@ -1655,16 +1534,21 @@ MD;
         foreach ($insights as $art) {
             $slug = $art['slug'];
             $validInsightSlugs[] = $slug;
+            $rel = "md/insights/{$slug}.md";
+            if (self::isCustomMarkdown($rel)) {
+                $written[] = "{$rel} (custom preserved)";
+                continue;
+            }
             $path = $insightsDir . "/{$slug}.md";
             $content = self::generateBlogMarkdown($art);
             if (self::writeFileAtomic($path, $content)) {
-                $written[] = "md/insights/{$slug}.md";
+                $written[] = $rel;
             }
         }
-        // Purge unpublished, draft, or deleted insights
+        // Purge unpublished, draft, or deleted insights (preserving custom ones)
         foreach (glob($insightsDir . '/*.md') ?: [] as $file) {
             $fileSlug = basename($file, '.md');
-            if (!in_array($fileSlug, $validInsightSlugs, true)) {
+            if (!in_array($fileSlug, $validInsightSlugs, true) && !self::isCustomMarkdown("md/insights/{$fileSlug}.md")) {
                 @unlink($file);
                 $purged[] = "md/insights/{$fileSlug}.md";
             }
@@ -1706,7 +1590,7 @@ MD;
                 'clean_md_url' => $cleanMd,
                 'repo_md_path' => "md/services/{$slug}.md",
                 'generator' => 'SeoSyncEngine::generateServiceMarkdown',
-                'manifests' => ['sitemap.xml', 'llms.txt', 'llms.md', 'md/index.md', 'md/services.md'],
+                'manifests' => ['sitemap.xml', 'llms.txt', 'md/services.md'],
                 'schemas' => ['Service', 'BreadcrumbList', 'Organization'],
             ];
         }
@@ -1724,7 +1608,7 @@ MD;
                 'clean_md_url' => $cleanMd,
                 'repo_md_path' => "md/insights/{$slug}.md",
                 'generator' => 'SeoSyncEngine::generateBlogMarkdown',
-                'manifests' => ['sitemap.xml', 'llms.txt', 'llms.md', 'md/index.md', 'md/insights.md'],
+                'manifests' => ['sitemap.xml', 'llms.txt', 'md/insights.md'],
                 'schemas' => ['Article', 'BreadcrumbList'],
             ];
         }
@@ -1742,7 +1626,7 @@ MD;
                 'clean_md_url' => $cleanMd,
                 'repo_md_path' => "md/case-studies/{$slug}.md",
                 'generator' => 'SeoSyncEngine::generateCaseStudyMarkdown',
-                'manifests' => ['sitemap.xml', 'llms.txt', 'llms.md', 'md/index.md', 'md/case-studies.md'],
+                'manifests' => ['sitemap.xml', 'llms.txt', 'md/case-studies.md'],
                 'schemas' => ['CaseStudy', 'BreadcrumbList'],
             ];
         }
@@ -1759,7 +1643,7 @@ MD;
                 'clean_md_url' => $cleanMd,
                 'repo_md_path' => "md/{$key}.md",
                 'generator' => 'SeoSyncEngine::generateStaticPageMarkdown',
-                'manifests' => ['sitemap.xml', 'llms.txt', 'llms.md', 'md/index.md'],
+                'manifests' => ['sitemap.xml', 'llms.txt'],
                 'schemas' => ['WebPage', 'BreadcrumbList'],
             ];
         }
@@ -1908,16 +1792,10 @@ MD;
             @unlink($llmsMdPath);
         }
 
-        // 4. Generate & Synchronize Markdown Files (/md and /md/*.md)
+        // 4. Generate & Synchronize Markdown Files (/md/*.md)
         $mdSyncResult = ['written' => [], 'purged' => []];
         try {
             $mdSyncResult = self::syncMarkdownFiles();
-            $masterIndexPath = ROOT_PATH . '/md/index.md';
-            $filesWritten['md_index'] = [
-                'path' => 'md/index.md',
-                'size_bytes' => file_exists($masterIndexPath) ? filesize($masterIndexPath) : 0,
-                'status' => 'written'
-            ];
             $filesWritten['md_files'] = [
                 'count_written' => count($mdSyncResult['written']),
                 'count_purged' => count($mdSyncResult['purged']),
@@ -1977,14 +1855,13 @@ MD;
         $sitemapPath = ROOT_PATH . '/sitemap.xml';
         $llmsTxtPath = ROOT_PATH . '/llms.txt';
         $llmsMdPath = ROOT_PATH . '/llms.md';
-        $mdIndexPath = ROOT_PATH . '/md/index.md';
 
         $staticCount = count(self::getStaticPages());
         $servicesCount = count(self::getActiveServices());
         $casesCount = count(self::getPublishedCaseStudies());
         $insightsCount = count(self::getPublishedInsights());
         $totalSitemapUrls = $staticCount + $servicesCount + $casesCount + $insightsCount;
-        $totalMdFiles = $logData['metrics']['total_md_files'] ?? ($staticCount + $servicesCount + $casesCount + $insightsCount + 1);
+        $totalMdFiles = $logData['metrics']['total_md_files'] ?? ($staticCount + $servicesCount + $casesCount + $insightsCount);
 
         return [
             'last_sync_timestamp' => $logData['last_sync_timestamp'] ?? 'Never',
@@ -2011,16 +1888,6 @@ MD;
                     'exists' => file_exists($llmsTxtPath),
                     'size' => file_exists($llmsTxtPath) ? filesize($llmsTxtPath) : 0,
                     'mtime' => file_exists($llmsTxtPath) ? date('Y-m-d H:i:s', filemtime($llmsTxtPath)) : null
-                ],
-                'llms_md' => [
-                    'exists' => file_exists($llmsMdPath),
-                    'size' => file_exists($llmsMdPath) ? filesize($llmsMdPath) : 0,
-                    'mtime' => file_exists($llmsMdPath) ? date('Y-m-d H:i:s', filemtime($llmsMdPath)) : null
-                ],
-                'md_index' => [
-                    'exists' => file_exists($mdIndexPath),
-                    'size' => file_exists($mdIndexPath) ? filesize($mdIndexPath) : 0,
-                    'mtime' => file_exists($mdIndexPath) ? date('Y-m-d H:i:s', filemtime($mdIndexPath)) : null
                 ]
             ]
         ];

@@ -3,10 +3,17 @@
 $uri = parse_url($_SERVER['REQUEST_URI'], PHP_URL_PATH);
 $file = __DIR__ . $uri;
 
+// Block /md and retired /llms.md so NO markdown file is served
+if ($uri === '/md' || $uri === '/md/' || $uri === '/md/index' || $uri === '/md/index.php' || $uri === '/md/index.md' || $uri === '/llms.md') {
+    http_response_code(404);
+    echo "404 Not Found";
+    return true;
+}
+
 // ============================================================
 // Universal Discovery & Markdown Request Interception (*.md, /llms.txt, /sitemap.xml)
 // ============================================================
-if (str_ends_with($uri, '.md') || in_array($uri, ['/.md', '/md', '/md/', '/llms.txt', '/sitemap.xml'], true) || str_starts_with($uri, '/md/')) {
+if (str_ends_with($uri, '.md') || in_array($uri, ['/.md', '/llms.txt', '/sitemap.xml'], true) || (str_starts_with($uri, '/md/') && str_ends_with($uri, '.md'))) {
     require_once __DIR__ . '/includes/markdown-router.php';
     MarkdownRouter::handleRequest($_SERVER['REQUEST_URI']);
     return true;

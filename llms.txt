@@ -38,4 +38,3 @@ This index links to Markdown resources intended for AI/LLM consumption. All list
 
 ## Public Tools & Resources
 - [XML Sitemap](https://demo.businesdoctor.com/sitemap.xml): Complete search engine index containing verified canonical URLs for all public pages, services, articles, and case studies.
-- [Public Markdown Index](https://demo.businesdoctor.com/md): Directory of clean Markdown mirrors structured for AI agents, developers, and LLM context extraction.

@@ -108,16 +108,20 @@ try {
     }
 } catch (Exception $e) {}
 
+$servicePartial = __DIR__ . '/includes/services/' . $practice['slug'] . '.php';
+$serviceHtml = file_exists($servicePartial) ? (string)file_get_contents($servicePartial) : '';
+
 $schemaPageKey = 'service-detail';
 $schemaContextData = [
     'title' => $practice['name'],
     'summary' => $practice['summary'],
-    'canonical_url' => $canonicalUrl
+    'canonical_url' => $canonicalUrl,
+    'slug' => $practice['slug'],
+    'html_content' => $serviceHtml
 ];
 
 require_once __DIR__ . '/includes/header.php';
 
-$servicePartial = __DIR__ . '/includes/services/' . $practice['slug'] . '.php';
 if (file_exists($servicePartial)) {
     echo '<div class="srv-wrapper">';
     require $servicePartial;

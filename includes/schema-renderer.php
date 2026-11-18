@@ -161,13 +161,27 @@ function extractFaqsFromContent(string $html): array
         return $faqs;
     }
 
-    // Pattern 1: Structured FAQ items (e.g. class="faq-question" and "faq-answer")
-    if (preg_match_all('/class=["\'][^"\']*faq-question[^"\']*["\'][^>]*>(.*?)<\/[^>]+>[\s\S]*?class=["\'][^"\']*faq-answer[^"\']*["\'][^>]*>(.*?)<\/[^>]+>/i', $html, $matches, PREG_SET_ORDER)) {
+    // Pattern 1: BusinessDoctor Structured FAQ items (e.g. srv-faq-question or srv-faq-question-text and srv-faq-content)
+    if (preg_match_all('/class=["\'][^"\']*(?:srv-faq-question|faq-question)[^"\']*["\'][^>]*>(.*?)<\/(?:span|h[2-6]|div|button)>[\s\S]*?class=["\'][^"\']*(?:srv-faq-content|faq-answer)[^"\']*["\'][^>]*>([\s\S]*?)<\/div>/i', $html, $matches, PREG_SET_ORDER)) {
         foreach ($matches as $m) {
             $q = trim(strip_tags($m[1]));
+            $q = preg_replace('/^\d+[\.\)]\s*/', '', $q);
             $a = trim(strip_tags($m[2]));
-            if (!empty($q) && !empty($a)) {
+            if (!empty($q) && !empty($a) && mb_strlen($q) > 5 && mb_strlen($a) > 10) {
                 $faqs[] = ['question' => $q, 'answer' => $a];
+            }
+        }
+    }
+
+    // Pattern 1b: Legacy class="faq-question" and "faq-answer"
+    if (empty($faqs)) {
+        if (preg_match_all('/class=["\'][^"\']*faq-question[^"\']*["\'][^>]*>(.*?)<\/[^>]+>[\s\S]*?class=["\'][^"\']*faq-answer[^"\']*["\'][^>]*>(.*?)<\/[^>]+>/i', $html, $matches, PREG_SET_ORDER)) {
+            foreach ($matches as $m) {
+                $q = trim(strip_tags($m[1]));
+                $a = trim(strip_tags($m[2]));
+                if (!empty($q) && !empty($a)) {
+                    $faqs[] = ['question' => $q, 'answer' => $a];
+                }
             }
         }
     }
@@ -778,6 +792,44 @@ function renderPageSchemas(?string $pageKey = null, array $contextData = []): st
                     $pretty = json_encode($breadcrumbSchema, JSON_PRETTY_PRINT | JSON_UNESCAPED_SLASHES | JSON_UNESCAPED_UNICODE);
                     $output .= "\n  <!-- Schema.org JSON-LD: BreadcrumbList (Auto-Generated) -->\n";
                     $output .= "  <script type=\"application/ld+json\">\n" . $pretty . "\n  </script>\n";
+                }
+            }
+        }
+
+        // Auto-inject FAQPage schema if HTML contains FAQs (e.g. Service Detail pages or other inner pages)
+        $rawHtmlToCheck = $contextData['html_content'] ?? '';
+        if (empty($rawHtmlToCheck) && $pageKey === 'service-detail' && !empty($contextData['slug'])) {
+            $candidateFile = __DIR__ . '/services/' . $contextData['slug'] . '.php';
+            if (file_exists($candidateFile)) {
+                $rawHtmlToCheck = (string)file_get_contents($candidateFile);
+            }
+        }
+
+        if (!empty($rawHtmlToCheck)) {
+            $extractedFaqs = extractFaqsFromContent($rawHtmlToCheck);
+            if (!empty($extractedFaqs)) {
+                $faqItems = [];
+                foreach ($extractedFaqs as $fItem) {
+                    $faqItems[] = [
+                        '@type' => 'Question',
+                        'name' => $fItem['question'],
+                        'acceptedAnswer' => [
+                            '@type' => 'Answer',
+                            'text' => $fItem['answer']
+                        ]
+                    ];
+                }
+                $faqSchema = [
+                    '@context' => 'https://schema.org',
+                    '@type' => 'FAQPage',
+                    'mainEntity' => $faqItems
+                ];
+                $sigFaq = md5(json_encode($faqSchema));
+                if (!isset($renderedSchemas[$sigFaq])) {
+                    $renderedSchemas[$sigFaq] = true;
+                    $prettyFaq = json_encode($faqSchema, JSON_PRETTY_PRINT | JSON_UNESCAPED_SLASHES | JSON_UNESCAPED_UNICODE);
+                    $output .= "\n  <!-- Schema.org JSON-LD: FAQPage (Frequently Asked Questions) -->\n";
+                    $output .= "  <script type=\"application/ld+json\">\n" . $prettyFaq . "\n  </script>\n";
                 }
             }
         }

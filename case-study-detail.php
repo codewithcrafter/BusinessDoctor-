@@ -242,7 +242,7 @@ require_once __DIR__ . '/includes/header.php';
         Critical Operational &amp; Revenue Roadblocks
       </h2>
       <div style="font-size: 1.05rem; line-height: 1.75; color: var(--color-text-muted);">
-        <?= nl2br(e($case['challenge'] ?: $case['project_summary'])) ?>
+        <?= renderBlogContent($case['challenge'] ?: $case['project_summary']) ?>
       </div>
     </div>
 
@@ -255,7 +255,7 @@ require_once __DIR__ . '/includes/header.php';
         Engineering Solution &amp; Execution
       </h2>
       <div style="font-size: 1.05rem; line-height: 1.75; color: var(--color-text); margin: 0;">
-        <?= nl2br(e($case['solution'] ?: $case['prescription'])) ?>
+        <?= renderBlogContent($case['solution'] ?: $case['prescription']) ?>
       </div>
     </div>
 
@@ -343,7 +343,7 @@ require_once __DIR__ . '/includes/header.php';
         Long-Term Business &amp; Technical Impact
       </h2>
       <div style="font-size: 1.05rem; line-height: 1.75; color: var(--color-text-muted);">
-        <?= nl2br(e($case['results'] ?: $case['result_description'])) ?>
+        <?= renderBlogContent($case['results'] ?: $case['result_description']) ?>
       </div>
     </div>
     </div>
